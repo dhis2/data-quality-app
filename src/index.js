@@ -18,7 +18,7 @@ import registerServiceWorker from './registerServiceWorker';
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
 // init d2
-getManifest('manifest.webapp').then(manifest => {
+getManifest('manifest.webapp').then((manifest) => {
     const baseUrl =
         process.env.NODE_ENV === 'production'
             ? manifest.getBaseUrl()
@@ -33,7 +33,7 @@ getManifest('manifest.webapp').then(manifest => {
         >
             <App />
         </D2UIApp>,
-        document.getElementById('root')
+        document.getElementById('root'),
     );
 });
 

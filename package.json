@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/"
   },
   "manifest.webapp": {
     "name": "DHIS2 App Template",
@@ -37,5 +38,8 @@
         "href": ".."
       }
     }
+  },
+  "devDependencies": {
+    "eslint-config-dhis2": "^3.0.7"
   }
 }
