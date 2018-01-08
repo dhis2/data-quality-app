@@ -11,7 +11,7 @@ const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 const App = () => (
     <div className="app-wrapper">
         <HeaderBar />
-        <div id="container" />
+        <div className="container" />
     </div>
 );
 

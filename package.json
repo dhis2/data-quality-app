@@ -16,16 +16,24 @@
     "rxjs": "^5.5.5"
   },
   "devDependencies": {
-    "eslint-config-dhis2": "^3.0.7"
-  },  
+    "eslint-config-dhis2": "^3.0.7",
+    "pre-commit": "^1.2.2"
+  },
   "scripts": {
     "prestart": "d2-manifest package.json ./public/manifest.webapp",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "test-no-iterative": "CI=true react-scripts test --env=jsdom",
+    "validate": "npm ls --depth 0"
   },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test-no-iterative"
+  ],
   "manifest.webapp": {
     "name": "DHIS2 App Template",
     "description": "DHIS2 App Template",
