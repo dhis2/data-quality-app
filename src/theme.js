@@ -1,10 +1,8 @@
-
 import Spacing from 'material-ui/styles/spacing';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import {
     blue100,
-    blue500,
     blue700,
     grey100,
     grey400,
@@ -19,7 +17,7 @@ const theme = {
     spacing: Spacing,
     fontFamily: 'Roboto, sans-serif',
     palette: {
-        primary1Color: blue500,
+        primary1Color: '#004ba0',
         primary2Color: blue700,
         primary3Color: blue100,
         accent1Color: orange500,
@@ -33,4 +31,6 @@ const theme = {
     },
 };
 
-export default getMuiTheme(theme);
+const muiTheme = getMuiTheme(theme);
+
+export default muiTheme;
