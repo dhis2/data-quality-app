@@ -46,7 +46,7 @@ class ValidationRulesAnalysis extends Page {
                                     floatingLabelText={translator(i18nKeys.validationRulesAnalysis.form.endDate)}
                                     defaultDate={new Date()}
                                 />
-                                <ValidationRuleGroupsSelect />
+                                <ValidationRuleGroupsSelect style={styles.inputForm} />
                                 <Checkbox
                                     label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
                                     labelPosition="left"
@@ -58,7 +58,7 @@ class ValidationRulesAnalysis extends Page {
                             </div>
                             <div className={cssClasses.right}>
                                 <span>{translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}</span>
-                                <AvailableOrganisationUnitsTree style={styles.inputForm} />
+                                <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
