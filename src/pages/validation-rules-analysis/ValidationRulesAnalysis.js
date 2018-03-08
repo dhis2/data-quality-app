@@ -29,7 +29,7 @@ class ValidationRulesAnalysis extends Page {
         const translator = this.context.translator;
         return (
             <div className="page-wrapper">
-                <h1 className={cssClasses.header}>
+                <h1>
                     {translator(i18nKeys.validationRulesAnalysis.header)}
                 </h1>
                 <Card>

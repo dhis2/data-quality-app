@@ -68,6 +68,10 @@ export const i18nKeys = {
         homeAction: 'View Data Values',
         header: 'Follow-Up Analysis',
         description: 'View or edit data values marked for further follow-up during data entry or analysis.',
+        actionButton: 'follow up',
+        form: {
+            organisationUnit: 'Parent organisation unit',
+        },
     },
     availableOrganisationUnitsTree: {
         updatingMessage: 'Updating Organisation Units Tree...',
@@ -75,6 +79,10 @@ export const i18nKeys = {
     validationRuleGroupsSelect: {
         validationRuleGroupLabel: 'Validation Rule Group',
         allValidationRulesOption: '[All Validation Rules]',
+    },
+    datasetsForOrganisationUnitSelect: {
+        dataSetLabel: 'Data Set',
+        allDataSetsOption: '[All Data Sets]',
     },
 };
 

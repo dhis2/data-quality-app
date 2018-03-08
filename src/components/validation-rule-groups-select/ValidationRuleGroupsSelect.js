@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // Material UI
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+
 import { i18nKeys } from '../../i18n';
 
 class ValidationRuleGroupsSelect extends PureComponent {

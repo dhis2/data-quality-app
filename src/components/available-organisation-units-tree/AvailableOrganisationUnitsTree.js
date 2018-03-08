@@ -14,6 +14,14 @@ class AvailableOrganisationUnitsTree extends PureComponent {
       translator: PropTypes.func,
   }
 
+  static propTypes = {
+      onChange: PropTypes.func,
+  }
+
+  static defaultProps = {
+      onChange: null,
+  }
+
   constructor() {
       super();
 
@@ -46,6 +54,12 @@ class AvailableOrganisationUnitsTree extends PureComponent {
   handleOrgUnitClick(event, orgUnit) {
       if (!this.state.selected.includes(orgUnit.path)) {
           this.setState({ selected: [orgUnit.path] });
+          if (this.props.onChange) {
+              const selectedOrganisationUnitSplitted = orgUnit.path.split('/');
+              const selectedOrganisationUnitId =
+                selectedOrganisationUnitSplitted[selectedOrganisationUnitSplitted.length - 1];
+              this.props.onChange(selectedOrganisationUnitId);
+          }
       }
   }
 
