@@ -8,11 +8,7 @@ import Home from './home/Home';
 
 import {VALIDATION_RULES_ANALYSIS_SECTION_KEY} from './sections.conf';
 
-jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
-jest.mock('d2-ui/lib/app-header/headerBar.store', () => ({}));
-jest.mock('d2-ui/lib/component-helpers/withStateFrom', () => () => ('HeaderBar'));
-jest.mock('d2-ui/lib/circular-progress/CircularProgress', () => ('CircularProgress'));
-
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('./Page'); // Page is now a mock constructor
 
 const notPageComponentShallow = () => {

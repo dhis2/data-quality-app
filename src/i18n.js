@@ -31,6 +31,14 @@ export const i18nKeys = {
         header: 'Std Dev Outlier Analysis',
         description: 'Analyze potential outlier values based on standard deviations.' +
         ' Outlier values can be examined and marked for follow-up.',
+        actionButton: 'start',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            standardDeviations: 'Select number of standard deviations',
+            dataSet: 'Data Set',
+            organisationUnit: 'Parent organisation unit',
+        },
     },
     minMaxOutlierAnalysis: {
         homeLabel: 'Min-Max Outlier Analysis',
@@ -44,6 +52,9 @@ export const i18nKeys = {
         homeAction: 'View Data Values',
         header: 'Follow-Up Analysis',
         description: 'View or edit data values marked for further follow-up during data entry or analysis.',
+    },
+    availableOrganisationUnitsTree: {
+        updatingMessage: 'Updating Organisation Units Tree...',
     },
 };
 
