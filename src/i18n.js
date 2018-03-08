@@ -46,6 +46,13 @@ export const i18nKeys = {
         header: 'Min-Max Outlier Analysis',
         description: 'Analyze potential outlier values based on min and max values.' +
         ' Outlier values can be examined and marked for follow-up.',
+        actionButton: 'start',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            dataSet: 'Data Set',
+            organisationUnit: 'Parent organisation unit',
+        },
     },
     followUpAnalysis: {
         homeLabel: 'Follow-Up Analysis',
