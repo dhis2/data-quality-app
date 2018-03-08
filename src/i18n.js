@@ -24,6 +24,15 @@ export const i18nKeys = {
         homeAction: 'Run Validation',
         header: 'Validation Rule Analysis',
         description: 'Run validation rules in order to unveil anomalies and errors in the data in the database.',
+        actionButton: 'validate',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            organisationUnit: 'Parent organisation unit',
+            validationRuleGroup: 'Validation Rule Group',
+            sendNotifications: 'Send Notifications',
+            persistNewResults: 'Persist new results',
+        },
     },
     stdDevOutlierAnalysis: {
         homeLabel: 'Std Dev Outlier Analysis',
@@ -62,6 +71,10 @@ export const i18nKeys = {
     },
     availableOrganisationUnitsTree: {
         updatingMessage: 'Updating Organisation Units Tree...',
+    },
+    validationRuleGroupsSelect: {
+        validationRuleGroupLabel: 'Validation Rule Group',
+        allValidationRulesOption: '[All Validation Rules]',
     },
 };
 

@@ -28,7 +28,7 @@ class MinMaxOutlierAnalysis extends Page {
         return (
             <div className="page-wrapper">
                 <h1 className={cssClasses.header}>
-                    {translator(i18nKeys.stdDevOutlierAnalysis.header)}
+                    {translator(i18nKeys.minMaxOutlierAnalysis.header)}
                 </h1>
                 <Card>
                     <CardText>
