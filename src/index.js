@@ -48,6 +48,7 @@ getManifest('manifest.webapp').then((manifest) => {
                 schemas: [
                     'organisationUnit',
                     'dataSet',
+                    'validationRuleGroup',
                 ],
             }}
         >
