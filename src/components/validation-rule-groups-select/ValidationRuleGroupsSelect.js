@@ -32,7 +32,7 @@ class ValidationRuleGroupsSelect extends PureComponent {
   componentWillMount() {
       const d2 = this.context.d2;
       if (this.state.validationRuleGroups == null) {
-          d2.models.dataSet.list({
+          d2.models.validationRuleGroup.list({
               paging: false,
               fields: 'id,displayName',
           }).then((validationRuleGroupsResponse) => {
