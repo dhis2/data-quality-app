@@ -5,6 +5,8 @@ import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 
+import classNames from 'classnames';
+
 import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
@@ -13,14 +15,9 @@ import AvailableOrganisationUnitsTree from
 // i18n
 import { i18nKeys } from '../../i18n';
 
-// cssClasses
-import cssClasses from './MinMaxOutlierAnalysis.css';
-
-const styles = {
-    inputForm: {
-        width: '100%',
-    },
-};
+// styles
+import pageStyles from '../PageStyles';
+import cssClasses from '../Page.css';
 
 class MinMaxOutlierAnalysis extends Page {
     render() {
@@ -32,29 +29,30 @@ class MinMaxOutlierAnalysis extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <div className={cssClasses.container}>
-                            <div className={cssClasses.section}>
+                        <div className="row">
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)}
                                     defaultDate={new Date()}
                                 />
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)}
                                     defaultDate={new Date()}
                                 />
                             </div>
-                            <div className={cssClasses.section}>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}</span>
                                 <AvailableDatasetsSelect />
                             </div>
-                            <div className={cssClasses.section}>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}</span>
                                 <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
+                            className={cssClasses.mainButton}
                             primary={Boolean(true)}
                             label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
                         />

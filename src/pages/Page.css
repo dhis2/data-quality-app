@@ -1,0 +1,8 @@
+.section {
+    min-height: 280px;
+    max-height: 480px;
+}
+
+.mainButton {
+    margin-top: 48px;
+}

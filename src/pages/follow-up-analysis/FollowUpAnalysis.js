@@ -4,6 +4,8 @@ import React from 'react';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import classNames from 'classnames';
+
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
@@ -13,8 +15,8 @@ import DatasetsForOrganisationUnitSelect from
 // i18n
 import { i18nKeys } from '../../i18n';
 
-// cssClasses
-import cssClasses from './FollowUpAnalysis.css';
+// styles
+import cssClasses from '../Page.css';
 
 class FollowUpAnalysis extends Page {
     constructor() {
@@ -42,20 +44,21 @@ class FollowUpAnalysis extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <div className={cssClasses.container}>
-                            <div className={cssClasses.left}>
+                        <div className="row">
+                            <div className={classNames('col-md-9', cssClasses.section)}>
                                 <span>{translator(i18nKeys.followUpAnalysis.form.organisationUnit)}</span>
                                 <AvailableOrganisationUnitsTree
                                     onChange={this.organisationUnitChanged}
                                 />
                             </div>
-                            <div className={cssClasses.right}>
+                            <div className={classNames('col-md-3', cssClasses.section)}>
                                 <DatasetsForOrganisationUnitSelect
                                     organisationUnitId={this.state.organisationUnitId}
                                 />
                             </div>
                         </div>
                         <RaisedButton
+                            className={cssClasses.mainButton}
                             primary={Boolean(true)}
                             label={translator(i18nKeys.followUpAnalysis.actionButton)}
                         />

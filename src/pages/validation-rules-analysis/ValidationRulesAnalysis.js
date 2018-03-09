@@ -6,6 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import Checkbox from 'material-ui/Checkbox';
 
+import classNames from 'classnames';
+
 import Page from '../Page';
 import ValidationRuleGroupsSelect from
     '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
@@ -15,14 +17,9 @@ import AvailableOrganisationUnitsTree from
 // i18n
 import { i18nKeys } from '../../i18n';
 
-// cssClasses
-import cssClasses from './ValidationRulesAnalysis.css';
-
-const styles = {
-    inputForm: {
-        width: '100%',
-    },
-};
+// styles
+import pageStyles from '../PageStyles';
+import cssClasses from '../Page.css';
 
 class ValidationRulesAnalysis extends Page {
     render() {
@@ -34,19 +31,19 @@ class ValidationRulesAnalysis extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <div className={cssClasses.container}>
-                            <div className={cssClasses.left}>
+                        <div className="row">
+                            <div className={classNames('col-md-3', cssClasses.section)}>
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.validationRulesAnalysis.form.startDate)}
                                     defaultDate={new Date()}
                                 />
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.validationRulesAnalysis.form.endDate)}
                                     defaultDate={new Date()}
                                 />
-                                <ValidationRuleGroupsSelect style={styles.inputForm} />
+                                <ValidationRuleGroupsSelect style={pageStyles.inputForm} />
                                 <Checkbox
                                     label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
                                     labelPosition="left"
@@ -56,12 +53,13 @@ class ValidationRulesAnalysis extends Page {
                                     labelPosition="left"
                                 />
                             </div>
-                            <div className={cssClasses.right}>
+                            <div className={classNames('col-md-9', cssClasses.section)}>
                                 <span>{translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}</span>
                                 <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
+                            className={cssClasses.mainButton}
                             primary={Boolean(true)}
                             label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
                         />

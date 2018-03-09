@@ -56,12 +56,17 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
               value={-1}
           >
               <MenuItem
+                  key={'-1'}
                   value={-1}
                   primaryText={translator(i18nKeys.datasetsForOrganisationUnitSelect.allDataSetsOption)}
               />
               {this.state.dataSets &&
                 this.state.dataSets.map(item => (
-                    <MenuItem value={item.id} primaryText={item.displayName} />
+                    <MenuItem
+                        key={item.id}
+                        value={item.id}
+                        primaryText={item.displayName}
+                    />
                 ))
               }
           </SelectField>

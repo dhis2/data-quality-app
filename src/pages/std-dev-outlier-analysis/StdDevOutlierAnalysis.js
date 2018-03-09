@@ -7,6 +7,8 @@ import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+import classNames from 'classnames';
+
 import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
@@ -15,14 +17,9 @@ import AvailableOrganisationUnitsTree from
 // i18n
 import { i18nKeys } from '../../i18n';
 
-// cssClasses
-import cssClasses from './StdDevOutlierAnalysis.css';
-
-const styles = {
-    inputForm: {
-        width: '100%',
-    },
-};
+// styles
+import pageStyles from '../PageStyles';
+import cssClasses from '../Page.css';
 
 class StdDevOutlierAnalysis extends Page {
     render() {
@@ -34,20 +31,20 @@ class StdDevOutlierAnalysis extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <div className={cssClasses.container}>
-                            <div className={cssClasses.section}>
+                        <div className="row">
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)}
                                     defaultDate={new Date()}
                                 />
                                 <DatePicker
-                                    textFieldStyle={styles.inputForm}
+                                    textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)}
                                     defaultDate={new Date()}
                                 />
                                 <SelectField
-                                    style={styles.inputForm}
+                                    style={pageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
                                     }
@@ -64,16 +61,17 @@ class StdDevOutlierAnalysis extends Page {
                                     <MenuItem value={5} primaryText="5" />
                                 </SelectField>
                             </div>
-                            <div className={cssClasses.section}>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}</span>
                                 <AvailableDatasetsSelect />
                             </div>
-                            <div className={cssClasses.section}>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}</span>
                                 <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
+                            className={cssClasses.mainButton}
                             primary={Boolean(true)}
                             label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
                         />
