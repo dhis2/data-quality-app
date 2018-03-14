@@ -31,6 +31,14 @@ class MinMaxOutlierAnalysis extends Page {
                     <CardText>
                         <div className="row">
                             <div className={classNames('col-md-4', cssClasses.section)}>
+                                <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}</span>
+                                <AvailableDatasetsSelect />
+                            </div>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
+                                <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}</span>
+                                <AvailableOrganisationUnitsTree />
+                            </div>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <DatePicker
                                     textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)}
@@ -41,14 +49,6 @@ class MinMaxOutlierAnalysis extends Page {
                                     floatingLabelText={translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)}
                                     defaultDate={new Date()}
                                 />
-                            </div>
-                            <div className={classNames('col-md-4', cssClasses.section)}>
-                                <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}</span>
-                                <AvailableDatasetsSelect />
-                            </div>
-                            <div className={classNames('col-md-4', cssClasses.section)}>
-                                <span>{translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}</span>
-                                <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
