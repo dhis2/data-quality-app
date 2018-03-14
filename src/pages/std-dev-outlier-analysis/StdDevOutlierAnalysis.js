@@ -33,6 +33,14 @@ class StdDevOutlierAnalysis extends Page {
                     <CardText>
                         <div className="row">
                             <div className={classNames('col-md-4', cssClasses.section)}>
+                                <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}</span>
+                                <AvailableDatasetsSelect />
+                            </div>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
+                                <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}</span>
+                                <AvailableOrganisationUnitsTree />
+                            </div>
+                            <div className={classNames('col-md-4', cssClasses.section)}>
                                 <DatePicker
                                     textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)}
@@ -60,14 +68,6 @@ class StdDevOutlierAnalysis extends Page {
                                     <MenuItem value={4.5} primaryText="4.5" />
                                     <MenuItem value={5} primaryText="5" />
                                 </SelectField>
-                            </div>
-                            <div className={classNames('col-md-4', cssClasses.section)}>
-                                <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}</span>
-                                <AvailableDatasetsSelect />
-                            </div>
-                            <div className={classNames('col-md-4', cssClasses.section)}>
-                                <span>{translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}</span>
-                                <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
