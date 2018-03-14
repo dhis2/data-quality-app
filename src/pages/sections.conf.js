@@ -22,6 +22,7 @@ export const sections = [
             icon: 'done_all',
             description: i18nKeys.validationRulesAnalysis.description,
             actionText: i18nKeys.validationRulesAnalysis.homeAction,
+            docs: 'validation_rule_analysis',
         },
     },
     {
@@ -33,6 +34,7 @@ export const sections = [
             icon: 'show_chart',
             description: i18nKeys.stdDevOutlierAnalysis.description,
             actionText: i18nKeys.stdDevOutlierAnalysis.homeAction,
+            docs: 'standard_deviation_analysis',
         },
     },
     {
@@ -44,6 +46,7 @@ export const sections = [
             icon: 'compare_arrows',
             description: i18nKeys.minMaxOutlierAnalysis.description,
             actionText: i18nKeys.minMaxOutlierAnalysis.homeAction,
+            docs: 'min_max_analysis',
         },
     },
     {
@@ -55,8 +58,20 @@ export const sections = [
             icon: 'description',
             description: i18nKeys.followUpAnalysis.description,
             actionText: i18nKeys.followUpAnalysis.homeAction,
+            docs: 'follow_up_analysis',
         },
     },
 ];
+
+export const getDocsKeyForSection = (sectionKey) => {
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        if (section.key === sectionKey) {
+            return section.info.docs;
+        }
+    }
+
+    return '';
+};
 
 export default sections;

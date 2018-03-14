@@ -12,6 +12,8 @@ import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import DatasetsForOrganisationUnitSelect from
     '../../components/datasets-for-organisation-unit-select/DatasetsForOrganisationUnitSelect';
+import PageHelper from '../../components/page-helper/PageHelper';
+import { getDocsKeyForSection } from '../sections.conf';
 
 // i18n
 import { i18nKeys } from '../../i18n';
@@ -43,6 +45,9 @@ class FollowUpAnalysis extends Page {
             <div className="page-wrapper">
                 <h1>
                     {translator(i18nKeys.followUpAnalysis.header)}
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 <Card>
                     <CardText>

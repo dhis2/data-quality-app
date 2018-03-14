@@ -11,6 +11,8 @@ import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
+import PageHelper from '../../components/page-helper/PageHelper';
+import { getDocsKeyForSection } from '../sections.conf';
 
 // i18n
 import { i18nKeys } from '../../i18n';
@@ -26,6 +28,9 @@ class MinMaxOutlierAnalysis extends Page {
             <div className="page-wrapper">
                 <h1>
                     {translator(i18nKeys.minMaxOutlierAnalysis.header)}
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 <Card>
                     <CardText>

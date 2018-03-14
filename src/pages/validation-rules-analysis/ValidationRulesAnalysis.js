@@ -13,6 +13,8 @@ import ValidationRuleGroupsSelect from
     '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
+import PageHelper from '../../components/page-helper/PageHelper';
+import { getDocsKeyForSection } from '../sections.conf';
 
 // i18n
 import { i18nKeys } from '../../i18n';
@@ -28,6 +30,9 @@ class ValidationRulesAnalysis extends Page {
             <div className="page-wrapper">
                 <h1>
                     {translator(i18nKeys.validationRulesAnalysis.header)}
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 <Card>
                     <CardText>
