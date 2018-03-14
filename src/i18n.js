@@ -71,6 +71,8 @@ export const i18nKeys = {
         actionButton: 'follow up',
         form: {
             organisationUnit: 'Parent organisation unit',
+            startDate: 'Start Date',
+            endDate: 'End Date',
         },
     },
     availableOrganisationUnitsTree: {

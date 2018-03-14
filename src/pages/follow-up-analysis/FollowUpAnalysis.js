@@ -3,6 +3,7 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import DatePicker from 'material-ui/DatePicker';
 
 import classNames from 'classnames';
 
@@ -17,6 +18,7 @@ import { i18nKeys } from '../../i18n';
 
 // styles
 import cssClasses from '../Page.css';
+import pageStyles from '../PageStyles';
 
 class FollowUpAnalysis extends Page {
     constructor() {
@@ -45,15 +47,25 @@ class FollowUpAnalysis extends Page {
                 <Card>
                     <CardText>
                         <div className="row">
-                            <div className={classNames('col-md-9', cssClasses.section)}>
+                            <div className={classNames('col-md-6', cssClasses.section)}>
                                 <span>{translator(i18nKeys.followUpAnalysis.form.organisationUnit)}</span>
                                 <AvailableOrganisationUnitsTree
                                     onChange={this.organisationUnitChanged}
                                 />
                             </div>
-                            <div className={classNames('col-md-3', cssClasses.section)}>
+                            <div className={classNames('col-md-6', cssClasses.section)}>
                                 <DatasetsForOrganisationUnitSelect
                                     organisationUnitId={this.state.organisationUnitId}
+                                />
+                                <DatePicker
+                                    textFieldStyle={pageStyles.inputForm}
+                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
+                                    defaultDate={new Date()}
+                                />
+                                <DatePicker
+                                    textFieldStyle={pageStyles.inputForm}
+                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
+                                    defaultDate={new Date()}
                                 />
                             </div>
                         </div>
