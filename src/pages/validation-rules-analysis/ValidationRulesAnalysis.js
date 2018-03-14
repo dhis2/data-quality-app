@@ -32,7 +32,11 @@ class ValidationRulesAnalysis extends Page {
                 <Card>
                     <CardText>
                         <div className="row">
-                            <div className={classNames('col-md-3', cssClasses.section)}>
+                            <div className={classNames('col-md-6', cssClasses.section)}>
+                                <span>{translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}</span>
+                                <AvailableOrganisationUnitsTree />
+                            </div>
+                            <div className={classNames('col-md-6', cssClasses.section)}>
                                 <DatePicker
                                     textFieldStyle={pageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.validationRulesAnalysis.form.startDate)}
@@ -52,10 +56,6 @@ class ValidationRulesAnalysis extends Page {
                                     label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
                                     labelPosition="left"
                                 />
-                            </div>
-                            <div className={classNames('col-md-9', cssClasses.section)}>
-                                <span>{translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}</span>
-                                <AvailableOrganisationUnitsTree />
                             </div>
                         </div>
                         <RaisedButton
