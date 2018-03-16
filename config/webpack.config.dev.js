@@ -159,6 +159,7 @@ module.exports = {
           {
             test: /\.css$/,
             include: paths.appSrc,
+            exclude: paths.customCss,
             use: [
               require.resolve('style-loader'),
               {
@@ -190,6 +191,13 @@ module.exports = {
                 },
               },
             ],
+          },
+          // Process css
+          {
+
+            test: /\.css$/,
+            include: [paths.customCss],
+            loader: 'style-loader!css-loader',
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.

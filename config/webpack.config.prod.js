@@ -168,6 +168,7 @@ module.exports = {
           {
             test: /\.css$/,
             include: paths.appSrc,
+            exclude: paths.customCss,
             loader: ExtractTextPlugin.extract(
                 Object.assign(
                     {
@@ -214,6 +215,13 @@ module.exports = {
             ),
 
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          // Process css
+          {
+
+            test: /\.css$/,
+            include: [paths.customCss],
+            loader: 'style-loader!css-loader',
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
