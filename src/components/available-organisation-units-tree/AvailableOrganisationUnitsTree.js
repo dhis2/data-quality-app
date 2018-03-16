@@ -33,7 +33,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
       this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
       const d2 = this.context.d2;
       if (this.state.rootWithMember == null) {
           d2.models.organisationUnits.list({

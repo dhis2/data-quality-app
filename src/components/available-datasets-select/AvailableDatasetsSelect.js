@@ -16,7 +16,7 @@ class AvailableDatasetsSelect extends PureComponent {
       };
   }
 
-  componentWillMount() {
+  componentDidMount() {
       const d2 = this.context.d2;
       if (this.state.dataSets == null) {
           d2.models.dataSet.list({

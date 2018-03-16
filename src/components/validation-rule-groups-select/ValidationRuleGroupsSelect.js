@@ -29,7 +29,7 @@ class ValidationRuleGroupsSelect extends PureComponent {
       };
   }
 
-  componentWillMount() {
+  componentDidMount() {
       const d2 = this.context.d2;
       if (this.state.validationRuleGroups == null) {
           d2.models.validationRuleGroup.list({
