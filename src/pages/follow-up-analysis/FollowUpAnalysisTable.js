@@ -1,37 +1,36 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-// import classNames from 'classnames';
-
 import {
-    Card, Checkbox, FlatButton, FontIcon, Table, TableBody, TableHeader, TableHeaderColumn, TableRow,
+    Checkbox, FontIcon, RaisedButton, Table, TableBody, TableHeader, TableHeaderColumn, TableRow,
     TableRowColumn,
 } from 'material-ui';
 
-import pageStyles from '../Page.css';
 import FormattedNumber from '../../components/formatters/FormattedNumber';
 import DownloadAs from '../../components/download-as/DownloadAs';
+import { i18nKeys } from '../../i18n';
 
-const styles = {
-    iconColor: {
-        fill: '#ff9900',
-    },
-    footer: {
-        display: 'flex',
-        alignItems: 'center',
-    },
-    downloadBtn: {
-        marginRight: '50px',
-        backgroundColor: 'green',
-    },
-};
+// styles
+import cssPageStyles from '../Page.css';
+import jsPageStyles from '../PageStyles';
+import followUpAnalysisTableStyles from './FollowUpAnalysisTableStyles';
 
 class FollowUpAnalysisTable extends PureComponent {
     static propTypes = {
         elements: PropTypes.array.isRequired,
     }
 
+    static contextTypes = {
+        translator: PropTypes.func,
+        d2: PropTypes.object,
+    }
+
+    static unfollow() {
+        console.log('Unfollow not implemented yet!');
+    }
+
     render() {
+        const translator = this.context.translator;
         const elements = this.props.elements;
         let i = 0;
         for (i; i < 5; i++) {
@@ -56,19 +55,19 @@ class FollowUpAnalysisTable extends PureComponent {
                 <TableRowColumn>{element.dataElement}</TableRowColumn>
                 <TableRowColumn>{element.organisation}</TableRowColumn>
                 <TableRowColumn>{element.period}</TableRowColumn>
-                <TableRowColumn className={pageStyles.number}>
+                <TableRowColumn className={jsPageStyles.number}>
                     <FormattedNumber value={element.min} />
                 </TableRowColumn>
-                <TableRowColumn className={pageStyles.number}>
+                <TableRowColumn className={jsPageStyles.number}>
                     <FormattedNumber value={element.max} />
                 </TableRowColumn>
-                <TableRowColumn className={pageStyles.number}>
+                <TableRowColumn className={jsPageStyles.number}>
                     <FormattedNumber value={element.value} />
                 </TableRowColumn>
                 <TableRowColumn>
                     <Checkbox
                         onCheck={toggleCheckbox}
-                        iconStyle={styles.iconColor}
+                        iconStyle={followUpAnalysisTableStyles.iconColor}
                     />
                 </TableRowColumn>
                 <TableRowColumn>
@@ -81,13 +80,13 @@ class FollowUpAnalysisTable extends PureComponent {
             </TableRow>
         ));
         return (
-            <Card>
-                <div className={'col-xs-12 end-xs'}>
+            <div>
+                <div className={cssPageStyles.cardHeader}>
                     <DownloadAs />
                 </div>
                 <Table
                     selectable={false}
-                    className={pageStyles.appTable}
+                    className={cssPageStyles.appTable}
                 >
                     <TableHeader
                         displaySelectAll={false}
@@ -109,15 +108,19 @@ class FollowUpAnalysisTable extends PureComponent {
                         {rows}
                     </TableBody>
                 </Table>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <span className={'col-xs-2'}>
-                        <FlatButton>UNFOLLOW</FlatButton>
+                <div className={cssPageStyles.cardFooter}>
+                    <span>
+                        <RaisedButton
+                            primary={Boolean(true)}
+                            label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
+                            onClick={FollowUpAnalysisTable.unfollow}
+                        />
                     </span>
-                    <span style={{ textAlign: 'right' }} className={'col-xs-10'}>
+                    <span>
                         <DownloadAs />
                     </span>
                 </div>
-            </Card>
+            </div>
         );
     }
 }
