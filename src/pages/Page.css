@@ -27,3 +27,23 @@
 .number {
     text-align: right !important;
 }
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+}
