@@ -1,5 +1,6 @@
 html {
   background: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .leftBar {
@@ -20,6 +21,7 @@ html {
 }
 
 h1 {
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 300;
   letter-spacing: 1.2px;
