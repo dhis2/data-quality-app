@@ -68,7 +68,8 @@ export const i18nKeys = {
         homeAction: 'View Data Values',
         header: 'Follow-Up Analysis',
         description: 'View or edit data values marked for further follow-up during data entry or analysis.',
-        actionButton: 'follow up',
+        actionButtonFollow: 'follow up',
+        actionButtonUnfollow: 'unfollow',
         form: {
             organisationUnit: 'Parent organisation unit',
             startDate: 'Start Date',
