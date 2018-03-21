@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Material UI
+import { FontIcon, IconButton } from 'material-ui';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
@@ -19,8 +20,11 @@ import { getDocsKeyForSection } from '../sections.conf';
 import { i18nKeys } from '../../i18n';
 
 // styles
-import cssClasses from '../Page.css';
-import pageStyles from '../PageStyles';
+import cssPageStyles from '../Page.css';
+import jsPageStyles from '../PageStyles';
+
+import FollowUpAnalysisTable from './FollowUpAnalysisTable';
+import AlertBar from '../../components/alert-bar/AlertBar';
 
 class FollowUpAnalysis extends Page {
     constructor() {
@@ -28,9 +32,12 @@ class FollowUpAnalysis extends Page {
 
         this.state = {
             organisationUnitId: null,
+            showTable: false,
         };
 
         this.organisationUnitChanged = this.organisationUnitChanged.bind(this);
+        this.getFollowUpList = this.getFollowUpList.bind(this);
+        this.backToHome = this.backToHome.bind(this);
     }
 
     organisationUnitChanged(organisationUnitId) {
@@ -39,47 +46,88 @@ class FollowUpAnalysis extends Page {
         });
     }
 
+    getFollowUpList() {
+        this.setState({ ...this.state, showTable: true });
+    }
+
+    backToHome() {
+        this.setState({ ...this.state, showTable: false });
+    }
+
     render() {
         const translator = this.context.translator;
+        const elements = [];
+        let i = 0;
+        for (i; i < 35; i++) {
+            const one = {
+                label: i,
+                dataElement: `Bananas ${i}`,
+                organisation: `Organisation ${i}`,
+                period: 'Mês do Ano X',
+                min: 10,
+                max: 99999,
+                value: 12345678,
+                comment: 'A beautiful comment!',
+            };
+            elements.push(one);
+        }
         return (
-            <div className="page-wrapper">
-                <h1>
-                    {translator(i18nKeys.followUpAnalysis.header)}
+            <div>
+                <h1 className={cssPageStyles.pageHeader}>
+                    <IconButton
+                        onClick={this.backToHome}
+                        style={{ display: this.state.showTable ? 'inline' : 'none' }}
+                    >
+                        <FontIcon className={'material-icons'}>
+                            arrow_back
+                        </FontIcon>
+                    </IconButton>
+                    <span>{translator(i18nKeys.followUpAnalysis.header)}</span>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
+                <AlertBar show={Boolean(true)} />
                 <Card>
-                    <CardText>
-                        <div className="row">
-                            <div className={classNames('col-md-6', cssClasses.section)}>
-                                <span>{translator(i18nKeys.followUpAnalysis.form.organisationUnit)}</span>
-                                <AvailableOrganisationUnitsTree
-                                    onChange={this.organisationUnitChanged}
+                    {
+                        !this.state.showTable ? (
+                            <CardText>
+                                <div className="row">
+                                    <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                        <span>{translator(i18nKeys.followUpAnalysis.form.organisationUnit)}</span>
+                                        <AvailableOrganisationUnitsTree
+                                            onChange={this.organisationUnitChanged}
+                                        />
+                                    </div>
+                                    <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                        <DatasetsForOrganisationUnitSelect
+                                            organisationUnitId={this.state.organisationUnitId}
+                                        />
+                                        <DatePicker
+                                            textFieldStyle={jsPageStyles.inputForm}
+                                            floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
+                                            defaultDate={new Date()}
+                                        />
+                                        <DatePicker
+                                            textFieldStyle={jsPageStyles.inputForm}
+                                            floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
+                                            defaultDate={new Date()}
+                                        />
+                                    </div>
+                                </div>
+                                <RaisedButton
+                                    className={cssPageStyles.mainButton}
+                                    primary={Boolean(true)}
+                                    label={translator(i18nKeys.followUpAnalysis.actionButtonFollow)}
+                                    onClick={this.getFollowUpList}
                                 />
-                            </div>
-                            <div className={classNames('col-md-6', cssClasses.section)}>
-                                <DatasetsForOrganisationUnitSelect
-                                    organisationUnitId={this.state.organisationUnitId}
-                                />
-                                <DatePicker
-                                    textFieldStyle={pageStyles.inputForm}
-                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
-                                    defaultDate={new Date()}
-                                />
-                                <DatePicker
-                                    textFieldStyle={pageStyles.inputForm}
-                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
-                                    defaultDate={new Date()}
-                                />
-                            </div>
-                        </div>
-                        <RaisedButton
-                            className={cssClasses.mainButton}
-                            primary={Boolean(true)}
-                            label={translator(i18nKeys.followUpAnalysis.actionButton)}
-                        />
-                    </CardText>
+                            </CardText>
+                        ) : (
+                            <CardText>
+                                <FollowUpAnalysisTable elements={elements} />
+                            </CardText>
+                        )
+                    }
                 </Card>
             </div>
         );

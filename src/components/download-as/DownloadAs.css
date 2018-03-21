@@ -1,0 +1,8 @@
+.downloadAs {
+    color: #757575;
+    font-size: 12px;
+}
+.downloadAs span {
+    margin-left: 20px;
+    cursor: pointer;
+}

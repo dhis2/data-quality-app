@@ -6,3 +6,51 @@
 .mainButton {
     margin-top: 48px;
 }
+
+.appTable th {
+    color: #757575 !important;
+    border-bottom: 2px solid #e0e0e0 !important;
+    font-size: 16px !important;
+    height: 48px !important;
+}
+
+
+.appTable tr {
+    color: #000000 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.appTable tr td {
+    font-size: 14px !important;
+}
+
+.number {
+    text-align: right !important;
+}
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.end{
+    justify-content: flex-end;
+}
