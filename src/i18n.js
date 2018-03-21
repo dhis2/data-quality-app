@@ -19,49 +19,17 @@ i18n
     });
 
 export const i18nKeys = {
-    validationRulesAnalysis: {
-        homeLabel: 'Validation Rule Analysis',
-        homeAction: 'Run Validation',
-        header: 'Validation Rule Analysis',
-        description: 'Run validation rules in order to unveil anomalies and errors in the data in the database.',
-        actionButton: 'validate',
-        form: {
-            startDate: 'Start Date',
-            endDate: 'End Date',
-            organisationUnit: 'Parent organisation unit',
-            validationRuleGroup: 'Validation Rule Group',
-            sendNotifications: 'Send Notifications',
-            persistNewResults: 'Persist new results',
-        },
+    availableOrganisationUnitsTree: {
+        updatingMessage: 'Updating Organisation Units Tree...',
     },
-    stdDevOutlierAnalysis: {
-        homeLabel: 'Std Dev Outlier Analysis',
-        homeAction: 'Analyze',
-        header: 'Std Dev Outlier Analysis',
-        description: 'Analyze potential outlier values based on standard deviations.' +
-        ' Outlier values can be examined and marked for follow-up.',
-        actionButton: 'start',
-        form: {
-            startDate: 'Start Date',
-            endDate: 'End Date',
-            standardDeviations: 'Select number of standard deviations',
-            dataSet: 'Data Set',
-            organisationUnit: 'Parent organisation unit',
-        },
+    datasetsForOrganisationUnitSelect: {
+        dataSetLabel: 'Data Set',
+        allDataSetsOption: '[All Data Sets]',
     },
-    minMaxOutlierAnalysis: {
-        homeLabel: 'Min-Max Outlier Analysis',
-        homeAction: 'Analyze',
-        header: 'Min-Max Outlier Analysis',
-        description: 'Analyze potential outlier values based on min and max values.' +
-        ' Outlier values can be examined and marked for follow-up.',
-        actionButton: 'start',
-        form: {
-            startDate: 'Start Date',
-            endDate: 'End Date',
-            dataSet: 'Data Set',
-            organisationUnit: 'Parent organisation unit',
-        },
+    downloadAs: {
+        pdf: 'DOWNLOAD AS PDF',
+        xls: 'DOWNLOAD AS XLS',
+        csv: 'DOWNLOAD AS CSV',
     },
     followUpAnalysis: {
         homeLabel: 'Follow-Up Analysis',
@@ -86,18 +54,55 @@ export const i18nKeys = {
             comment: 'Comment',
         },
     },
-    availableOrganisationUnitsTree: {
-        updatingMessage: 'Updating Organisation Units Tree...',
+    moreThan500: 'More than 500 values found, please narrow the search to see all',
+    minMaxOutlierAnalysis: {
+        homeLabel: 'Min-Max Outlier Analysis',
+        homeAction: 'Analyze',
+        header: 'Min-Max Outlier Analysis',
+        description: 'Analyze potential outlier values based on min and max values.' +
+        ' Outlier values can be examined and marked for follow-up.',
+        actionButton: 'start',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            dataSet: 'Data Set',
+            organisationUnit: 'Parent organisation unit',
+        },
+    },
+    stdDevOutlierAnalysis: {
+        homeLabel: 'Std Dev Outlier Analysis',
+        homeAction: 'Analyze',
+        header: 'Std Dev Outlier Analysis',
+        description: 'Analyze potential outlier values based on standard deviations.' +
+        ' Outlier values can be examined and marked for follow-up.',
+        actionButton: 'start',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            standardDeviations: 'Select number of standard deviations',
+            dataSet: 'Data Set',
+            organisationUnit: 'Parent organisation unit',
+        },
+    },
+    validationRulesAnalysis: {
+        homeLabel: 'Validation Rule Analysis',
+        homeAction: 'Run Validation',
+        header: 'Validation Rule Analysis',
+        description: 'Run validation rules in order to unveil anomalies and errors in the data in the database.',
+        actionButton: 'validate',
+        form: {
+            startDate: 'Start Date',
+            endDate: 'End Date',
+            organisationUnit: 'Parent organisation unit',
+            validationRuleGroup: 'Validation Rule Group',
+            sendNotifications: 'Send Notifications',
+            persistNewResults: 'Persist new results',
+        },
     },
     validationRuleGroupsSelect: {
         validationRuleGroupLabel: 'Validation Rule Group',
         allValidationRulesOption: '[All Validation Rules]',
     },
-    datasetsForOrganisationUnitSelect: {
-        dataSetLabel: 'Data Set',
-        allDataSetsOption: '[All Data Sets]',
-    },
-    moreThan500: 'More than 500 values found, please narrow the search to see all',
 };
 
 export default i18n;
