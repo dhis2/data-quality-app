@@ -83,14 +83,14 @@ class FollowUpAnalysisTable extends PureComponent {
                         enableSelectAll={false}
                     >
                         <TableRow>
-                            <TableHeaderColumn>Data Element</TableHeaderColumn>
-                            <TableHeaderColumn>Organisation Unit</TableHeaderColumn>
-                            <TableHeaderColumn>Period</TableHeaderColumn>
-                            <TableHeaderColumn>Min</TableHeaderColumn>
-                            <TableHeaderColumn>Value</TableHeaderColumn>
-                            <TableHeaderColumn>Max</TableHeaderColumn>
-                            <TableHeaderColumn>Unfollow</TableHeaderColumn>
-                            <TableHeaderColumn>Comment</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}</TableHeaderColumn>
+                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false} stripedRows={false}>
