@@ -23,7 +23,7 @@ import { i18nKeys } from '../../i18n';
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
-import FollowUpAnalysisTable from './FollowUpAnalysisTable';
+import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 
 class FollowUpAnalysis extends Page {
