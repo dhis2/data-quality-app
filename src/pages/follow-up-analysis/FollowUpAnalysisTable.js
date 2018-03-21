@@ -83,14 +83,30 @@ class FollowUpAnalysisTable extends PureComponent {
                         enableSelectAll={false}
                     >
                         <TableRow>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}</TableHeaderColumn>
-                            <TableHeaderColumn>{translator(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}</TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}
+                            </TableHeaderColumn>
+                            <TableHeaderColumn>
+                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}
+                            </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false} stripedRows={false}>
