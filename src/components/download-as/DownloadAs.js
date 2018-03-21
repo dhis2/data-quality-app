@@ -1,8 +1,15 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+
+import { i18nKeys } from '../../i18n';
 
 import styles from './DownloadAs.css';
 
 class DownloadAs extends PureComponent {
+    static contextTypes = {
+        translator: PropTypes.func,
+    }
+
     static pdf() {
         console.log('Download as PDF not implemented!');
     }
@@ -16,6 +23,7 @@ class DownloadAs extends PureComponent {
     }
 
     render() {
+        const translator = this.context.translator;
         return (
             <div className={styles.downloadAs}>
                 <span
@@ -23,10 +31,10 @@ class DownloadAs extends PureComponent {
                     role={'button'}
                     tabIndex={0}
                 >
-                    DOWNLOAD AS PDF
+                    {translator(i18nKeys.downloadAs.pdf)}
                 </span>
-                <span onClick={DownloadAs.xls} role={'button'} tabIndex={0}>DOWNLOAD AS XLS</span>
-                <span onClick={DownloadAs.csv} role={'button'} tabIndex={0}>DOWNLOAD AS CSV</span>
+                <span onClick={DownloadAs.xls} role={'button'} tabIndex={0}>{translator(i18nKeys.downloadAs.xls)}</span>
+                <span onClick={DownloadAs.csv} role={'button'} tabIndex={0}>{translator(i18nKeys.downloadAs.csv)}</span>
             </div>
         );
     }
