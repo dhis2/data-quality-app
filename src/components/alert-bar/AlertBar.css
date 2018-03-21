@@ -1,0 +1,7 @@
+.alertBar {
+    padding: 5px;
+    justify-content: center;
+    background-color: #ececec;
+    color: #999999;
+    margin-bottom: 12px;
+}
