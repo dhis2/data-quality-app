@@ -7,14 +7,13 @@ import {
     TableRowColumn,
 } from 'material-ui';
 
-import FormattedNumber from '../../components/formatters/FormattedNumber';
-import DownloadAs from '../../components/download-as/DownloadAs';
-import { i18nKeys } from '../../i18n';
+import FormattedNumber from '../../../components/formatters/FormattedNumber';
+import DownloadAs from '../../../components/download-as/DownloadAs';
+import { i18nKeys } from '../../../i18n';
 
 // styles
-import cssPageStyles from '../Page.css';
-import jsPageStyles from '../PageStyles';
-import jsStyles from './FollowUpAnalysisTableStyles';
+import cssPageStyles from '../../Page.css';
+import jsPageStyles from '../../PageStyles';
 
 class FollowUpAnalysisTable extends PureComponent {
     static propTypes = {
@@ -54,13 +53,13 @@ class FollowUpAnalysisTable extends PureComponent {
                 <TableRowColumn>
                     <Checkbox
                         onCheck={toggleCheckbox}
-                        iconStyle={jsStyles.iconColor}
+                        iconStyle={jsPageStyles.iconColor}
                     />
                 </TableRowColumn>
                 <TableRowColumn>
                     <FontIcon
                         className={'material-icons'}
-                        style={jsStyles.comment}
+                        style={jsPageStyles.cursorStyle}
                     >
                         speaker_notes
                     </FontIcon>
