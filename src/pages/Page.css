@@ -43,7 +43,14 @@
 
 .cardFooter {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 48px;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.end{
+    justify-content: flex-end;
 }
