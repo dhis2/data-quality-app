@@ -1,12 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
 
 // Material UI
 import { FontIcon, IconButton } from 'material-ui';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
-
-import classNames from 'classnames';
 
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from
@@ -24,6 +23,7 @@ import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
 import FollowUpAnalysisTable from './FollowUpAnalysisTable';
+import AlertBar from '../../components/alert-bar/AlertBar';
 
 class FollowUpAnalysis extends Page {
     constructor() {
@@ -36,7 +36,7 @@ class FollowUpAnalysis extends Page {
 
         this.organisationUnitChanged = this.organisationUnitChanged.bind(this);
         this.getFollowUpList = this.getFollowUpList.bind(this);
-        this.backToHome = this.backToHome.bind(this);
+        this.back = this.back.bind(this);
     }
 
     organisationUnitChanged(organisationUnitId) {
@@ -49,17 +49,32 @@ class FollowUpAnalysis extends Page {
         this.setState({ ...this.state, showTable: true });
     }
 
-    backToHome() {
+    back() {
         this.setState({ ...this.state, showTable: false });
     }
 
     render() {
         const translator = this.context.translator;
+        const elements = [];
+        let i = 0;
+        for (i; i < 55; i++) {
+            const one = {
+                label: i,
+                dataElement: `Bananas ${i}`,
+                organisation: `Organisation ${i}`,
+                period: 'Mês do Ano X',
+                min: 10,
+                max: 99999,
+                value: 12345678,
+                comment: 'A beautiful comment!',
+            };
+            elements.push(one);
+        }
         return (
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
                     <IconButton
-                        onClick={this.backToHome}
+                        onClick={this.back}
                         style={{ display: this.state.showTable ? 'inline' : 'none' }}
                     >
                         <FontIcon className={'material-icons'}>
@@ -71,6 +86,7 @@ class FollowUpAnalysis extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
+                <AlertBar show={Boolean(true)} />
                 <Card>
                     {
                         !this.state.showTable ? (
@@ -107,7 +123,7 @@ class FollowUpAnalysis extends Page {
                             </CardText>
                         ) : (
                             <CardText>
-                                <FollowUpAnalysisTable elements={[]} />
+                                <FollowUpAnalysisTable elements={elements} />
                             </CardText>
                         )
                     }

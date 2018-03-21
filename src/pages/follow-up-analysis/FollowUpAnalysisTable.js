@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import {
     Checkbox, FontIcon, RaisedButton, Table, TableBody, TableHeader, TableHeaderColumn, TableRow,
@@ -13,7 +14,7 @@ import { i18nKeys } from '../../i18n';
 // styles
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
-import followUpAnalysisTableStyles from './FollowUpAnalysisTableStyles';
+import jsStyles from './FollowUpAnalysisTableStyles';
 
 class FollowUpAnalysisTable extends PureComponent {
     static propTypes = {
@@ -32,24 +33,10 @@ class FollowUpAnalysisTable extends PureComponent {
     render() {
         const translator = this.context.translator;
         const elements = this.props.elements;
-        let i = 0;
-        for (i; i < 5; i++) {
-            const one = {
-                label: i,
-                dataElement: `Bananas ${i}`,
-                organisation: `Organisation ${i}`,
-                period: 'Mês do Ano X',
-                min: 10,
-                max: 99999,
-                value: 12345678,
-                comment: 'A beautiful comment!',
-            };
-            elements.push(one);
-        }
-
         const toggleCheckbox = (() => {
         });
 
+        // Table Rows
         const rows = elements.map(element => (
             <TableRow key={element.label}>
                 <TableRowColumn>{element.dataElement}</TableRowColumn>
@@ -67,18 +54,20 @@ class FollowUpAnalysisTable extends PureComponent {
                 <TableRowColumn>
                     <Checkbox
                         onCheck={toggleCheckbox}
-                        iconStyle={followUpAnalysisTableStyles.iconColor}
+                        iconStyle={jsStyles.iconColor}
                     />
                 </TableRowColumn>
                 <TableRowColumn>
                     <FontIcon
                         className={'material-icons'}
+                        style={jsStyles.comment}
                     >
                         speaker_notes
                     </FontIcon>
                 </TableRowColumn>
             </TableRow>
         ));
+
         return (
             <div>
                 <div className={cssPageStyles.cardHeader}>
@@ -108,17 +97,13 @@ class FollowUpAnalysisTable extends PureComponent {
                         {rows}
                     </TableBody>
                 </Table>
-                <div className={cssPageStyles.cardFooter}>
-                    <span>
-                        <RaisedButton
-                            primary={Boolean(true)}
-                            label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
-                            onClick={FollowUpAnalysisTable.unfollow}
-                        />
-                    </span>
-                    <span>
-                        <DownloadAs />
-                    </span>
+                <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.spaceBetween)}>
+                    <RaisedButton
+                        primary={Boolean(true)}
+                        label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
+                        onClick={FollowUpAnalysisTable.unfollow}
+                    />
+                    <DownloadAs />
                 </div>
             </div>
         );
