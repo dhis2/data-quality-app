@@ -75,6 +75,16 @@ export const i18nKeys = {
             startDate: 'Start Date',
             endDate: 'End Date',
         },
+        tableHeaderColumn: {
+            dataElement: 'Data Element',
+            organisationUnit: 'Organisational Unit',
+            period: 'Period',
+            min: 'Min',
+            value: 'Value',
+            max: 'Max',
+            unfollow: 'Unfollow',
+            comment: 'Comment',
+        },
     },
     availableOrganisationUnitsTree: {
         updatingMessage: 'Updating Organisation Units Tree...',
@@ -87,6 +97,7 @@ export const i18nKeys = {
         dataSetLabel: 'Data Set',
         allDataSetsOption: '[All Data Sets]',
     },
+    moreThan500: 'More than 500 values found, please narrow the search to see all',
 };
 
 export default i18n;
