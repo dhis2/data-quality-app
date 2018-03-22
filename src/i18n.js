@@ -45,7 +45,7 @@ export const i18nKeys = {
         },
         tableHeaderColumn: {
             dataElement: 'Data Element',
-            organisationUnit: 'Organisational Unit',
+            organisationUnit: 'Organisation Unit',
             period: 'Period',
             min: 'Min',
             value: 'Value',
@@ -97,6 +97,15 @@ export const i18nKeys = {
             validationRuleGroup: 'Validation Rule Group',
             sendNotifications: 'Send Notifications',
             persistNewResults: 'Persist new results',
+        },
+        tableHeaderColumn: {
+            organisationUnit: 'Organisation Unit',
+            period: 'Period',
+            importance: 'Importance',
+            validationRule: 'Validation Rule',
+            value: 'Value',
+            operator: 'Operator',
+            details: 'Details',
         },
     },
     validationRuleGroupsSelect: {
