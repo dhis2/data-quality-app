@@ -69,6 +69,17 @@ export const i18nKeys = {
             organisationUnit: 'Parent organisation unit',
         },
     },
+    outlierAnalysisTable: {
+        tableHeaderColumn: {
+            dataElement: 'Data Element',
+            organisationUnit: 'Organisation Unit',
+            period: 'Period',
+            min: 'Min',
+            value: 'Value',
+            max: 'Max',
+            mark: 'Mark',
+        },
+    },
     stdDevOutlierAnalysis: {
         homeLabel: 'Std Dev Outlier Analysis',
         homeAction: 'Analyze',
