@@ -2,10 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import {
-    FontIcon, Table, TableBody, TableHeader, TableHeaderColumn, TableRow,
-    TableRowColumn,
-} from 'material-ui';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui';
 
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import DownloadAs from '../../../components/download-as/DownloadAs';
@@ -14,6 +11,7 @@ import DownloadAs from '../../../components/download-as/DownloadAs';
 import cssPageStyles from '../../Page.css';
 import jsPageStyles from '../../PageStyles';
 import { i18nKeys } from '../../../i18n';
+import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
@@ -25,8 +23,11 @@ class ValidationRulesAnalysisTable extends PureComponent {
         d2: PropTypes.object,
     }
 
-    static unfollow() {
-        console.log('Unfollow not implemented yet!');
+    constructor() {
+        super();
+        this.state = {
+            openDetails: false,
+        };
     }
 
     render() {
@@ -48,12 +49,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     <FormattedNumber value={element.valueTwo} />
                 </TableRowColumn>
                 <TableRowColumn>
-                    <FontIcon
-                        className={'material-icons'}
-                        style={jsPageStyles.cursorStyle}
-                    >
-                        info
-                    </FontIcon>
+                    <ValidationRulesDetails details={element.details} />
                 </TableRowColumn>
             </TableRow>
         ));
