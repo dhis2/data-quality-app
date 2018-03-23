@@ -13,7 +13,7 @@ import AvailableDatasetsSelect from '../../components/available-datasets-select/
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import OutlierAnalyisTable, { generateElementKey } from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 
 // i18n
@@ -62,7 +62,7 @@ class MinMaxOutlierAnalysis extends Page {
             }).then((response) => {
                 if (this.isPageMounted()) {
                     const elements = response.map(e => ({
-                        key: `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`,
+                        key: generateElementKey(e),
                         attributeOptionComboId: e.attributeOptionComboId,
                         categoryOptionComboId: e.categoryOptionComboId,
                         periodId: e.periodId,
@@ -223,7 +223,7 @@ class MinMaxOutlierAnalysis extends Page {
                                 </div>
                                 <RaisedButton
                                     className={cssPageStyles.mainButton}
-                                    primary={Boolean(true)}
+                                    primary
                                     label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
                                     onClick={this.start}
                                     disabled={!this.isFormValid()}

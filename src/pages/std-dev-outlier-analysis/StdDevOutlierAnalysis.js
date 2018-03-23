@@ -15,17 +15,20 @@ import AvailableDatasetsSelect from '../../components/available-datasets-select/
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import { getDocsKeyForSection } from '../sections.conf';
+import OutlierAnalyisTable, { generateElementKey } from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import AlertBar from '../../components/alert-bar/AlertBar';
 
 // i18n
 import { i18nKeys } from '../../i18n';
 
+// helpers
+import { convertDateToApiDateFormat } from '../../helpers/dates';
+import { getDocsKeyForSection } from '../sections.conf';
+import { apiConf } from '../../server.conf';
+
 // styles
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
-import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
-import AlertBar from '../../components/alert-bar/AlertBar';
-
 
 class StdDevOutlierAnalysis extends Page {
     constructor() {
@@ -33,36 +36,144 @@ class StdDevOutlierAnalysis extends Page {
 
         this.state = {
             showTable: false,
+            startDate: new Date(),
+            endDate: new Date(),
+            organisationUnitId: null,
+            dataSetIds: [],
+            elements: [],
+            standardDeviation: 3.0,     // FIXME to constant
         };
 
         this.start = this.start.bind(this);
         this.back = this.back.bind(this);
+
+        this.startDateOnChange = this.startDateOnChange.bind(this);
+        this.endDateOnChange = this.endDateOnChange.bind(this);
+        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
+        this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
+        this.standardDeviationOnChange = this.standardDeviationOnChange.bind(this);
+        this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
     start() {
-        this.setState({ showTable: true });
+        const api = this.context.d2.Api.getApi();
+        if (this.isFormValid()) {
+            api.post(apiConf.endpoints.standardDeviationOutliersAnalysis, {
+                fromDate: convertDateToApiDateFormat(this.state.startDate),
+                toDate: convertDateToApiDateFormat(this.state.endDate),
+                organisationUnitId: this.state.organisationUnitId,
+                dataSetIds: this.state.dataSetIds,
+                standardDeviation: this.state.standardDeviation,
+            }).then((response) => {
+                if (this.isPageMounted()) {
+                    const elements = response.map(e => ({
+                        key: generateElementKey(e),
+                        attributeOptionComboId: e.attributeOptionComboId,
+                        categoryOptionComboId: e.categoryOptionComboId,
+                        periodId: e.periodId,
+                        sourceId: e.sourceId,
+                        dataElementId: e.dataElementId,
+                        dataElement: e.dataElementName,
+                        organisation: e.sourceName,
+                        period: e.period.name,
+                        min: e.min,
+                        max: e.max,
+                        value: Number.parseInt(e.value, 10),
+                        marked: e.followup,
+                    }));
+
+                    this.setState({
+                        elements,
+                        showTable: true,
+                    });
+                }
+            }).catch(() => {
+                if (this.isPageMounted()) {
+                    // TODO
+                }
+            });
+        }
     }
 
     back() {
         this.setState({ showTable: false });
     }
+
+    startDateOnChange(event, date) {
+        this.setState({ startDate: new Date(date) });
+    }
+
+    endDateOnChange(event, date) {
+        this.setState({ endDate: new Date(date) });
+    }
+
+    organisationUnitOnChange(organisationUnitId) {
+        this.setState({ organisationUnitId });
+    }
+
+    dataSetsOnChange(event) {
+        const dataSetIds = [];
+        const selectedOptions = event.target.selectedOptions;
+        for (let i = 0; i < selectedOptions.length; i++) {
+            dataSetIds.push(selectedOptions[i].value);
+        }
+        this.setState({ dataSetIds });
+    }
+
+    standardDeviationOnChange(event, index, value) {
+        this.setState({ standardDeviation: value });
+    }
+
+    toggleCheckbox(element) {
+        const api = this.context.d2.Api.getApi();
+        const elements = this.state.elements;
+        for (let i = 0; i < elements.length; i++) {
+            const currentElement = elements[i];
+            if (currentElement.key === element.key) {
+                api.post(apiConf.endpoints.markDataValue, {
+                    followups: [
+                        {
+                            dataElementId: element.dataElementId,
+                            periodId: element.periodId,
+                            organisationUnitId: element.organisationUnitId,
+                            categoryOptionComboId: element.categoryOptionComboId,
+                            attributeOptionComboId: element.attributeOptionComboId,
+                            followup: !currentElement.marked,
+                        },
+                    ],
+                }).then(() => {
+                    if (this.isPageMounted()) {
+                        currentElement.marked = !currentElement.marked;
+                        elements[i] = currentElement;
+                        this.setState({
+                            elements,
+                        });
+                    }
+                }).catch(() => {
+                    if (this.isPageMounted()) {
+                        // TODO
+                    }
+                });
+                break;
+            }
+        }
+    }
+
+    isFormValid() {
+        return this.state.startDate &&
+        this.state.endDate &&
+        this.state.organisationUnitId &&
+        this.state.standardDeviation &&
+        this.state.dataSetIds &&
+        this.state.dataSetIds.length > 0;
+    }
+
+    showAlertBar() {
+        return this.state.elements && this.state.elements.length >= 500;
+    }
+
     render() {
         const translator = this.context.translator;
-        const elements = [];
-        let i = 0;
-        for (i; i < 35; i++) {
-            const one = {
-                label: i,
-                dataElement: `Bananas ${i}`,
-                organisation: `Organisation ${i}`,
-                period: 'Mês do Ano X',
-                min: 10,
-                max: 99999,
-                value: 12345678,
-                mark: 'A beautiful comment!',
-            };
-            elements.push(one);
-        }
         return (
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
@@ -79,7 +190,7 @@ class StdDevOutlierAnalysis extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <AlertBar show={Boolean(true)} />
+                <AlertBar show={this.showAlertBar()} />
                 <Card>
                     {
                         !this.state.showTable ? (
@@ -89,13 +200,13 @@ class StdDevOutlierAnalysis extends Page {
                                         <span>
                                             {translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
                                         </span>
-                                        <AvailableDatasetsSelect />
+                                        <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                                     </div>
                                     <div className={classNames('col-md-4', cssPageStyles.section)}>
                                         <span>
                                             {translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
                                         </span>
-                                        <AvailableOrganisationUnitsTree />
+                                        <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                                     </div>
                                     <div className={classNames('col-md-4', cssPageStyles.section)}>
                                         <DatePicker
@@ -103,21 +214,28 @@ class StdDevOutlierAnalysis extends Page {
                                             floatingLabelText={
                                                 translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)
                                             }
+                                            onChange={this.startDateOnChange}
                                             defaultDate={new Date()}
+                                            maxDate={new Date()}
+                                            value={this.state.startDate}
                                         />
                                         <DatePicker
                                             textFieldStyle={jsPageStyles.inputForm}
                                             floatingLabelText={
                                                 translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)
                                             }
+                                            onChange={this.endDateOnChange}
                                             defaultDate={new Date()}
+                                            maxDate={new Date()}
+                                            value={this.state.endDate}
                                         />
                                         <SelectField
                                             style={jsPageStyles.inputForm}
                                             floatingLabelText={
                                                 translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
                                             }
-                                            value={3.0}
+                                            onChange={this.standardDeviationOnChange}
+                                            value={this.state.standardDeviation}
                                         >
                                             <MenuItem value={1.0} primaryText="1.0" />
                                             <MenuItem value={1.5} primaryText="1.5" />
@@ -133,14 +251,18 @@ class StdDevOutlierAnalysis extends Page {
                                 </div>
                                 <RaisedButton
                                     className={cssPageStyles.mainButton}
-                                    primary={Boolean(true)}
+                                    primary
                                     label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
                                     onClick={this.start}
+                                    disabled={!this.isFormValid()}
                                 />
                             </CardText>
                         ) : (
                             <CardText>
-                                <OutlierAnalyisTable elements={elements} />
+                                <OutlierAnalyisTable
+                                    elements={this.state.elements}
+                                    toggleCheckbox={this.toggleCheckbox}
+                                />
                             </CardText>
                         )
                     }

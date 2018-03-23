@@ -18,11 +18,27 @@ class DownloadAs extends PureComponent {
     render() {
         const api = this.context.d2.Api.getApi();
         const translator = this.context.translator;
+        const timestamp = new Date().getTime();       // To clear cache
         return (
             <div className={styles.downloadAs}>
-                <a href={`${api.baseUrl}${this.props.endpoint}.pdf`} target="_blank" >{translator(i18nKeys.downloadAs.pdf)}</a>
-                <a href={`${api.baseUrl}${this.props.endpoint}.xls`} target="_blank" >{translator(i18nKeys.downloadAs.xls)}</a>
-                <a href={`${api.baseUrl}${this.props.endpoint}.csv`} target="_blank" >{translator(i18nKeys.downloadAs.csv)}</a>
+                <a
+                    href={`${api.baseUrl}${this.props.endpoint}.pdf?t=${timestamp}`}
+                    target="_blank"
+                >
+                    {translator(i18nKeys.downloadAs.pdf)}
+                </a>
+                <a
+                    href={`${api.baseUrl}${this.props.endpoint}.xls?t=${timestamp}`}
+                    target="_blank"
+                >
+                    {translator(i18nKeys.downloadAs.xls)}
+                </a>
+                <a
+                    href={`${api.baseUrl}${this.props.endpoint}.csv?t=${timestamp}`}
+                    target="_blank"
+                >
+                    {translator(i18nKeys.downloadAs.csv)}
+                </a>
             </div>
         );
     }
