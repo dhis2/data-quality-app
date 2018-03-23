@@ -5,6 +5,11 @@ export const apiConf = {
         markDataValue: '/analysis/followup/mark',
         reportAnalysis: '/analysis/report',
     },
+    results: {
+        analysis: {
+            limit: 500,
+        },
+    },
 };
 
 export default apiConf;
