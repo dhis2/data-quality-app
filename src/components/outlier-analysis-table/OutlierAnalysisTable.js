@@ -9,6 +9,9 @@ import {
 import FormattedNumber from '../../components/formatters/FormattedNumber';
 import DownloadAs from '../../components/download-as/DownloadAs';
 
+// helpers
+import { apiConf } from '../../server.conf';
+
 // styles
 import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
@@ -17,6 +20,7 @@ import { i18nKeys } from '../../i18n';
 class OutlierAnalyisTable extends PureComponent {
     static propTypes = {
         elements: PropTypes.array.isRequired,
+        toggleCheckbox: PropTypes.func.isRequired,
     }
 
     static contextTypes = {
@@ -24,40 +28,51 @@ class OutlierAnalyisTable extends PureComponent {
         d2: PropTypes.object,
     }
 
+    // FIXME use Component instead of PureComponent to Update when Parent componet updates state
+    componentWillReceiveProps() {
+        this.forceUpdate();
+    }
+
     render() {
         const translator = this.context.translator;
         const elements = this.props.elements;
-        const toggleCheckbox = (() => {
-        });
 
         // Table Rows
-        const rows = elements.map(element => (
-            <TableRow key={element.label}>
-                <TableRowColumn>{element.dataElement}</TableRowColumn>
-                <TableRowColumn>{element.organisation}</TableRowColumn>
-                <TableRowColumn>{element.period}</TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
-                    <FormattedNumber value={element.min} />
-                </TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
-                    <FormattedNumber value={element.value} />
-                </TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
-                    <FormattedNumber value={element.max} />
-                </TableRowColumn>
-                <TableRowColumn>
-                    <Checkbox
-                        onCheck={toggleCheckbox}
-                        iconStyle={jsPageStyles.iconColor}
-                    />
-                </TableRowColumn>
-            </TableRow>
-        ));
+        const rows = elements.map((element) => {
+            const toggleCheckbox = (() => {
+                this.props.toggleCheckbox(element);
+            });
+
+            return (
+                <TableRow key={element.key}>
+                    <TableRowColumn>{element.dataElement}</TableRowColumn>
+                    <TableRowColumn>{element.organisation}</TableRowColumn>
+                    <TableRowColumn>{element.period}</TableRowColumn>
+                    <TableRowColumn className={jsPageStyles.number}>
+                        <FormattedNumber value={element.min} />
+                    </TableRowColumn>
+                    <TableRowColumn className={jsPageStyles.number}>
+                        <FormattedNumber value={element.value} />
+                    </TableRowColumn>
+                    <TableRowColumn className={jsPageStyles.number}>
+                        <FormattedNumber value={element.max} />
+                    </TableRowColumn>
+                    <TableRowColumn>
+                        <Checkbox
+                            checked={element.marked}
+                            onCheck={toggleCheckbox}
+                            iconStyle={jsPageStyles.iconColor}
+
+                        />
+                    </TableRowColumn>
+                </TableRow>
+            );
+        });
 
         return (
             <div>
                 <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
                 <Table
                     selectable={false}
@@ -97,7 +112,7 @@ class OutlierAnalyisTable extends PureComponent {
                     </TableBody>
                 </Table>
                 <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
             </div>
         );
