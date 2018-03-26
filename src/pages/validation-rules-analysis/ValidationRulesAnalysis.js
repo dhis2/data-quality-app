@@ -56,11 +56,46 @@ class ValidationRulesAnalysis extends Page {
                 organisation: `Organisation ${i}`,
                 period: 'Mês do Ano X',
                 importance: 10,
-                validationRule: 99999,
+                validationRule: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
                 valueOne: 12345678,
                 operator: '<=',
                 valueTwo: 1234,
-                details: 'A beautiful detail!',
+                details: {
+                    rule: {
+                        name: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
+                        description: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
+                    },
+                    leftSide: {
+                        dataElements: [
+                            {
+                                name: 'Q_Exclusive breastfeeding at time of Penta 3 Fixed, <1y',
+                                value: 12320,
+                            },
+                            {
+                                name: 'ANC 2nd visit Outreach',
+                            },
+                            {
+                                name: 'ANC 2nd visit Fixed 2',
+                                value: 24230,
+                            },
+                            {
+                                name: 'ANC 2nd visit Fixed',
+                                value: 423420,
+                            },
+                        ],
+                    },
+                    rightSide: {
+                        dataElements: [
+                            {
+                                name: 'Penta3 doses given Fixed 1, <1y',
+                            },
+                            {
+                                name: 'Penta3 doses given Fixed x, <1y',
+                                value: 20,
+                            },
+                        ],
+                    },
+                },
             };
             elements.push(one);
         }
