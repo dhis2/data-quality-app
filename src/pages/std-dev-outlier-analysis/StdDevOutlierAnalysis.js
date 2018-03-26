@@ -15,7 +15,7 @@ import AvailableDatasetsSelect from '../../components/available-datasets-select/
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import OutlierAnalyisTable, { generateElementKey } from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 
 // i18n
@@ -66,23 +66,7 @@ class StdDevOutlierAnalysis extends Page {
                 standardDeviation: this.state.standardDeviation,
             }).then((response) => {
                 if (this.isPageMounted()) {
-                    // TODO move to a static transformer function
-                    const elements = response.map(e => ({
-                        key: generateElementKey(e),
-                        attributeOptionComboId: e.attributeOptionComboId,
-                        categoryOptionComboId: e.categoryOptionComboId,
-                        periodId: e.periodId,
-                        sourceId: e.sourceId,
-                        dataElementId: e.dataElementId,
-                        dataElement: e.dataElementName,
-                        organisation: e.sourceName,
-                        period: e.period.name,
-                        min: e.min,
-                        max: e.max,
-                        value: Number.parseInt(e.value, 10),
-                        marked: e.followup,
-                    }));
-
+                    const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
                     this.setState({
                         elements,
                         showTable: true,

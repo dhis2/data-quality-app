@@ -13,7 +13,7 @@ import AvailableDatasetsSelect from '../../components/available-datasets-select/
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import OutlierAnalyisTable, { generateElementKey } from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 
 // i18n
@@ -29,6 +29,16 @@ import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
 class MinMaxOutlierAnalysis extends Page {
+    static STATE_PROPERTIES = [
+        'showTable',
+        'startDate',
+        'endDate',
+        'organisationUnitId',
+        'dataSetIds',
+        'elements',
+        'loading',
+    ]
+
     constructor() {
         super();
 
@@ -39,6 +49,7 @@ class MinMaxOutlierAnalysis extends Page {
             organisationUnitId: null,
             dataSetIds: [],
             elements: [],
+            loading: false,
         };
 
         this.start = this.start.bind(this);
@@ -51,6 +62,20 @@ class MinMaxOutlierAnalysis extends Page {
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && MinMaxOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
+    }
+
     start() {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
@@ -61,23 +86,7 @@ class MinMaxOutlierAnalysis extends Page {
                 dataSetIds: this.state.dataSetIds,
             }).then((response) => {
                 if (this.isPageMounted()) {
-                    // TODO move to a static transformer function
-                    const elements = response.map(e => ({
-                        key: generateElementKey(e),
-                        attributeOptionComboId: e.attributeOptionComboId,
-                        categoryOptionComboId: e.categoryOptionComboId,
-                        periodId: e.periodId,
-                        sourceId: e.sourceId,
-                        dataElementId: e.dataElementId,
-                        dataElement: e.dataElementName,
-                        organisation: e.sourceName,
-                        period: e.period.name,
-                        min: e.min,
-                        max: e.max,
-                        value: Number.parseInt(e.value, 10),
-                        marked: e.followup,
-                    }));
-
+                    const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
                     this.setState({
                         elements,
                         showTable: true,

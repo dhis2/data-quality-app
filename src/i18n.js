@@ -123,6 +123,9 @@ export const i18nKeys = {
         validationRuleGroupLabel: 'Validation Rule Group',
         allValidationRulesOption: '[All Validation Rules]',
     },
+    messages: {
+        performingAnalysis: 'Performing analysis',
+    },
 };
 
 export default i18n;

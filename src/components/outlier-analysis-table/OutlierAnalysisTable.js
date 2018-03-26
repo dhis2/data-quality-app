@@ -17,9 +17,6 @@ import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
 import { i18nKeys } from '../../i18n';
 
-export const generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
-
 const OutlierAnalyisTable = (props, context) => {
     const translator = context.translator;
     const elements = props.elements;
@@ -105,6 +102,25 @@ const OutlierAnalyisTable = (props, context) => {
         </div>
     );
 };
+
+const generateElementKey = e =>
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
+
+OutlierAnalyisTable.convertElementFromApiResponse = e => ({
+    key: generateElementKey(e),
+    attributeOptionComboId: e.attributeOptionComboId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    periodId: e.periodId,
+    sourceId: e.sourceId,
+    dataElementId: e.dataElementId,
+    dataElement: e.dataElementName,
+    organisation: e.sourceName,
+    period: e.period.name,
+    min: e.min,
+    max: e.max,
+    value: Number.parseInt(e.value, 10),
+    marked: e.followup,
+});
 
 OutlierAnalyisTable.propTypes = {
     elements: PropTypes.array.isRequired,
