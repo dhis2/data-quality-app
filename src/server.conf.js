@@ -2,6 +2,7 @@ export const apiConf = {
     endpoints: {
         minMaxOutliersAnalysis: '/analysis/minMaxOutlier',
         standardDeviationOutliersAnalysis: '/analysis/stdDevOutlier',
+        folloupAnalysis: '/analysis/followup',
         markDataValue: '/analysis/followup/mark',
         reportAnalysis: '/analysis/report',
     },
