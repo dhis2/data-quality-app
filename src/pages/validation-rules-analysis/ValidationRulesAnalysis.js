@@ -75,7 +75,7 @@ class ValidationRulesAnalysis extends Page {
                                 name: 'ANC 2nd visit Outreach',
                             },
                             {
-                                name: 'ANC 2nd visit Fixed',
+                                name: 'ANC 2nd visit Fixed 2',
                                 value: 24230,
                             },
                             {
@@ -87,10 +87,10 @@ class ValidationRulesAnalysis extends Page {
                     rightSide: {
                         dataElements: [
                             {
-                                name: 'Penta3 doses given Fixed, <1y',
+                                name: 'Penta3 doses given Fixed 1, <1y',
                             },
                             {
-                                name: 'Penta3 doses given Fixed, <1y',
+                                name: 'Penta3 doses given Fixed x, <1y',
                                 value: 20,
                             },
                         ],

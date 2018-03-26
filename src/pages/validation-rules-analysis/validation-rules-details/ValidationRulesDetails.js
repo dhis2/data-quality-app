@@ -56,9 +56,7 @@ class ValidationRulesDetails extends React.Component {
         const result = (
             <div className={classNames('row', styles.sectionBox)}>
                 <div className={classNames('col-xs-12', styles.sectionTitle)}>
-                    <div className={'box'}>
-                        {translator(i18nKeys.validationRulesAnalysis.details.resultSectionTitle)}
-                    </div>
+                    {translator(i18nKeys.validationRulesAnalysis.details.resultSectionTitle)}
                 </div>
                 <div className={classNames('col-xs-12', styles.sectionSubTitle)}>
                     {translator(i18nKeys.validationRulesAnalysis.details.rule.subTitle)}
@@ -78,67 +76,36 @@ class ValidationRulesDetails extends React.Component {
             </div>
         );
 
-        const leftSide = (
-            <div className={classNames('row', styles.sectionBox)}>
-                <div className={classNames('col-xs-12', styles.sectionTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle)}
-                </div>
-                <div className={classNames('col-xs-9', styles.sectionSubTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
-                </div>
-                <div className={classNames('col-xs-3', styles.sectionSubTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
-                </div>
-                {
-                    this.props.details.leftSide.dataElements.map(element =>
-                        (
-                            <div className={'col-xs-12'}>
-                                <div className={'row'}>
-                                    <div className={'col-xs-9'}>
-                                        {element.name}
-                                    </div>
-                                    <div className={classNames('col-xs-3', cssPageStyles.number)}>
-                                        {element.value ? <FormattedNumber value={element.value} /> : '-'}
-                                    </div>
-                                </div>
-                            </div>
-                        ),
-                    )
-                }
-            </div>
-        );
-
-        const rightSide = (
-            <div className={classNames('row', styles.sectionBox)}>
-                <div className={classNames('col-xs-12', styles.sectionTitle)}>
-                    <div className={'box'}>
-                        {translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle)}
+        const buildSection = (side, elements) =>
+            (
+                <div className={classNames('row', styles.sectionBox)}>
+                    <div className={classNames('col-xs-12', styles.sectionTitle)}>
+                        {side}
                     </div>
-                </div>
-                <div className={classNames('col-xs-9', styles.sectionSubTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
-                </div>
-                <div className={classNames('col-xs-3', styles.sectionSubTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
-                </div>
-                {
-                    this.props.details.rightSide.dataElements.map(element =>
-                        (
-                            <div className={'col-xs-12'}>
-                                <div className={'row'}>
-                                    <div className={'col-xs-9'}>
-                                        {element.name}
-                                    </div>
-                                    <div className={classNames('col-xs-3', cssPageStyles.number)}>
-                                        {element.value ? <FormattedNumber value={element.value} /> : '-'}
+                    <div className={classNames('col-xs-10', styles.sectionSubTitle)}>
+                        {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
+                    </div>
+                    <div className={classNames('col-xs-2', styles.sectionSubTitle)}>
+                        {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
+                    </div>
+                    {
+                        elements.map(element =>
+                            (
+                                <div key={element.name} className={'col-xs-12'}>
+                                    <div className={'row'}>
+                                        <div className={'col-xs-10'}>
+                                            {element.name}
+                                        </div>
+                                        <div className={classNames('col-xs-2', cssPageStyles.number)}>
+                                            {element.value ? <FormattedNumber value={element.value} /> : '-'}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ),
-                    )
-                }
-            </div>
-        );
+                            ),
+                        )
+                    }
+                </div>
+            );
 
         return (
             <div>
@@ -154,13 +121,25 @@ class ValidationRulesDetails extends React.Component {
                     title={translator(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
                     actions={dialogActions}
                     modal={false}
-                    contentStyle={jsPageStyles.dialog}
                     open={this.state.open}
                     onRequestClose={this.handleClose}
                 >
+                    {/* Result */}
                     {result}
-                    {leftSide}
-                    {rightSide}
+                    {/* Left Side */}
+                    {
+                        buildSection(
+                            translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
+                            this.props.details.leftSide.dataElements,
+                        )
+                    }
+                    {/* Right Side */}
+                    {
+                        buildSection(
+                            translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
+                            this.props.details.rightSide.dataElements,
+                        )
+                    }
                 </Dialog>
             </div>
         );
