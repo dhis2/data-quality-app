@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -9,30 +9,27 @@ import {
 import FormattedNumber from '../../components/formatters/FormattedNumber';
 import DownloadAs from '../../components/download-as/DownloadAs';
 
+// helpers
+import { apiConf } from '../../server.conf';
+
 // styles
 import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
 import { i18nKeys } from '../../i18n';
 
-class OutlierAnalyisTable extends PureComponent {
-    static propTypes = {
-        elements: PropTypes.array.isRequired,
-    }
+const OutlierAnalyisTable = (props, context) => {
+    const translator = context.translator;
+    const elements = props.elements;
+    const parentToggleCheckbox = props.toggleCheckbox;
 
-    static contextTypes = {
-        translator: PropTypes.func,
-        d2: PropTypes.object,
-    }
-
-    render() {
-        const translator = this.context.translator;
-        const elements = this.props.elements;
-        const toggleCheckbox = (() => {
+    // Table Rows
+    const rows = elements.map((element) => {
+        const updateCheckbox = (() => {
+            parentToggleCheckbox(element);
         });
 
-        // Table Rows
-        const rows = elements.map(element => (
-            <TableRow key={element.label}>
+        return (
+            <TableRow key={element.key}>
                 <TableRowColumn>{element.dataElement}</TableRowColumn>
                 <TableRowColumn>{element.organisation}</TableRowColumn>
                 <TableRowColumn>{element.period}</TableRowColumn>
@@ -47,61 +44,101 @@ class OutlierAnalyisTable extends PureComponent {
                 </TableRowColumn>
                 <TableRowColumn>
                     <Checkbox
-                        onCheck={toggleCheckbox}
+                        checked={element.marked}
+                        onCheck={updateCheckbox}
                         iconStyle={jsPageStyles.iconColor}
+
                     />
                 </TableRowColumn>
             </TableRow>
-        ));
-
-        return (
-            <div>
-                <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs />
-                </div>
-                <Table
-                    selectable={false}
-                    className={cssPageStyles.appTable}
-                >
-                    <TableHeader
-                        displaySelectAll={false}
-                        adjustForCheckbox={false}
-                        enableSelectAll={false}
-                    >
-                        <TableRow>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
-                            </TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody displayRowCheckbox={false} stripedRows={false}>
-                        {rows}
-                    </TableBody>
-                </Table>
-                <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
-                    <DownloadAs />
-                </div>
-            </div>
         );
-    }
-}
+    });
+
+    return (
+        <div>
+            <div className={cssPageStyles.cardHeader}>
+                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
+            </div>
+            <Table
+                selectable={false}
+                className={cssPageStyles.appTable}
+            >
+                <TableHeader
+                    displaySelectAll={false}
+                    adjustForCheckbox={false}
+                    enableSelectAll={false}
+                >
+                    <TableRow>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
+                        </TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
+                        </TableHeaderColumn>
+                    </TableRow>
+                </TableHeader>
+                <TableBody displayRowCheckbox={false} stripedRows={false}>
+                    {rows}
+                </TableBody>
+            </Table>
+            <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
+                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
+            </div>
+        </div>
+    );
+};
+
+const generateElementKey = e =>
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
+
+OutlierAnalyisTable.convertElementFromApiResponse = e => ({
+    key: generateElementKey(e),
+    attributeOptionComboId: e.attributeOptionComboId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    periodId: e.periodId,
+    sourceId: e.sourceId,
+    dataElementId: e.dataElementId,
+    dataElement: e.dataElementName,
+    organisation: e.sourceName,
+    period: e.period.name,
+    min: e.min,
+    max: e.max,
+    value: Number.parseInt(e.value, 10),
+    marked: e.followup,
+});
+
+OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
+    dataElementId: e.dataElementId,
+    periodId: e.periodId,
+    organisationUnitId: e.organisationUnitId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    attributeOptionComboId: e.attributeOptionComboId,
+    followup: !e.marked,
+});
+
+OutlierAnalyisTable.propTypes = {
+    elements: PropTypes.array.isRequired,
+    toggleCheckbox: PropTypes.func.isRequired,
+};
+
+OutlierAnalyisTable.contextTypes = {
+    translator: PropTypes.func,
+    d2: PropTypes.object,
+};
 
 export default OutlierAnalyisTable;
