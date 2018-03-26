@@ -77,8 +77,20 @@ class MinMaxOutlierAnalysis extends Page {
     }
 
     start() {
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    // type: LOADING,
+                    message: translator(i18nKeys.messages.performingAnalysis),
+                },
+                pageState: {
+                    loading: true,
+                },
+            });
+
             api.post(apiConf.endpoints.minMaxOutliersAnalysis, {
                 fromDate: convertDateToApiDateFormat(this.state.startDate),
                 toDate: convertDateToApiDateFormat(this.state.endDate),
@@ -87,16 +99,21 @@ class MinMaxOutlierAnalysis extends Page {
             }).then((response) => {
                 if (this.isPageMounted()) {
                     const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
-                    this.setState({
-                        elements,
-                        showTable: true,
+
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                        // type: SUCCESS,
+                            message: translator(i18nKeys.performingAnalysis),
+                        },
+                        pageState: {
+                            elements,
+                            loading: false,
+                            showTable: true,
+                        },
                     });
                 }
-            }).catch(() => {
-                if (this.isPageMounted()) {
-                // TODO
-                }
-            });
+            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
         }
     }
 
@@ -126,35 +143,43 @@ class MinMaxOutlierAnalysis extends Page {
     }
 
     toggleCheckbox(element) {
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    snackbarConf: {
+                    // type: LOADING,
+                        message: translator(i18nKeys.messages.performingRequest),
+                    },
+                    pageState: {
+                        loading: true,
+                    },
+                });
                 api.post(apiConf.endpoints.markDataValue, {
-                    followups: [
-                        {
-                            dataElementId: element.dataElementId,
-                            periodId: element.periodId,
-                            organisationUnitId: element.organisationUnitId,
-                            categoryOptionComboId: element.categoryOptionComboId,
-                            attributeOptionComboId: element.attributeOptionComboId,
-                            followup: !currentElement.marked,
-                        },
-                    ],
+                    followups: [OutlierAnalyisTable.convertElementToToggleFollowupRequest(currentElement)],
                 }).then(() => {
                     if (this.isPageMounted()) {
                         currentElement.marked = !currentElement.marked;
                         elements[i] = currentElement;
-                        this.setState({
-                            elements,
+
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            snackbarConf: {
+                            // type: SUCCESS,
+                                message: translator(
+                                    currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
+                            },
+                            pageState: {
+                                elements,
+                                loading: false,
+                            },
                         });
                     }
-                }).catch(() => {
-                    if (this.isPageMounted()) {
-                        // TODO
-                    }
-                });
+                }).catch(this.manageError.bind(this));    // FIXME why do I need bind
                 break;
             }
         }
@@ -166,6 +191,10 @@ class MinMaxOutlierAnalysis extends Page {
             this.state.organisationUnitId &&
             this.state.dataSetIds &&
             this.state.dataSetIds.length > 0;
+    }
+
+    isActionDisabled() {
+        return !this.isFormValid() || this.state.loading;
     }
 
     showAlertBar() {
@@ -238,7 +267,7 @@ class MinMaxOutlierAnalysis extends Page {
                                 primary
                                 label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
                                 onClick={this.start}
-                                disabled={!this.isFormValid()}
+                                disabled={this.isActionDisabled()}
                             />
                         </div>
                         {/* TABLE */}

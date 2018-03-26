@@ -124,7 +124,12 @@ export const i18nKeys = {
         allValidationRulesOption: '[All Validation Rules]',
     },
     messages: {
+        performingRequest: 'Performing request',
         performingAnalysis: 'Performing analysis',
+        analysisDone: 'Analysis done',
+        unexpectedAnalysisError: 'An unexpected error happened during analysis',
+        marked: 'Marked',
+        unmarked: 'Unmarked',
     },
 };
 

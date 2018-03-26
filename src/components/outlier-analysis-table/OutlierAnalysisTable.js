@@ -122,6 +122,15 @@ OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     marked: e.followup,
 });
 
+OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
+    dataElementId: e.dataElementId,
+    periodId: e.periodId,
+    organisationUnitId: e.organisationUnitId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    attributeOptionComboId: e.attributeOptionComboId,
+    followup: !e.marked,
+});
+
 OutlierAnalyisTable.propTypes = {
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
