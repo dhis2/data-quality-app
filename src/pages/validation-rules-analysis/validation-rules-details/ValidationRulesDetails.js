@@ -85,7 +85,7 @@ class ValidationRulesDetails extends React.Component {
                     <div className={classNames('col-xs-10', styles.sectionSubTitle)}>
                         {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
                     </div>
-                    <div className={classNames('col-xs-2', styles.sectionSubTitle)}>
+                    <div className={classNames('col-xs-2', styles.sectionSubTitle, cssPageStyles.number)}>
                         {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
                     </div>
                     {
