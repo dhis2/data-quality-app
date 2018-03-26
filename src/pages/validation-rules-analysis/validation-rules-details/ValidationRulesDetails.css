@@ -1,0 +1,22 @@
+.sectionBox {
+    border: 1px solid #f1f1f1;
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 6px;
+}
+
+.sectionBox:last-child {
+
+}
+
+.sectionTitle {
+    line-height: 2;
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.sectionSubTitle {
+    line-height: 2;
+    font-weight: bold;
+}

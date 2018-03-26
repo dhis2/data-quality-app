@@ -118,6 +118,20 @@ export const i18nKeys = {
             operator: 'Operator',
             details: 'Details',
         },
+        details: {
+            dialogTitle: 'Validation Details',
+            resultSectionTitle: 'VALIDATIONS RESULT DETAILS',
+            rule: {
+                subTitle: 'VALIDATION RULE',
+                nameLabel: 'Name',
+                descriptionLabel: 'Description',
+            },
+            leftSideSectionTitle: 'LEFT SIDE',
+            rightSideSectionTitle: 'RIGHT SIDE',
+            dataElementLabel: 'DATA ELEMENT',
+            valueLabel: 'VALUE',
+            close: 'Close',
+        },
     },
     validationRuleGroupsSelect: {
         validationRuleGroupLabel: 'Validation Rule Group',
