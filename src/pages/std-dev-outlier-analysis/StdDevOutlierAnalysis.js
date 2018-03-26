@@ -29,8 +29,20 @@ import { apiConf } from '../../server.conf';
 // styles
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
+import MinMaxOutlierAnalysis from '../min-max-outlier-analysis/MinMaxOutlierAnalysis';
 
 class StdDevOutlierAnalysis extends Page {
+    static STATE_PROPERTIES = [
+        'showTable',
+        'startDate',
+        'endDate',
+        'organisationUnitId',
+        'dataSetIds',
+        'elements',
+        'standardDeviation',
+        'loading',
+    ]
+
     constructor() {
         super();
 
@@ -55,9 +67,35 @@ class StdDevOutlierAnalysis extends Page {
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && MinMaxOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
+    }
+
     start() {
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    // type: LOADING,
+                    message: translator(i18nKeys.messages.performingAnalysis),
+                },
+                pageState: {
+                    loading: true,
+                },
+            });
+
             api.post(apiConf.endpoints.standardDeviationOutliersAnalysis, {
                 fromDate: convertDateToApiDateFormat(this.state.startDate),
                 toDate: convertDateToApiDateFormat(this.state.endDate),
@@ -67,16 +105,21 @@ class StdDevOutlierAnalysis extends Page {
             }).then((response) => {
                 if (this.isPageMounted()) {
                     const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
-                    this.setState({
-                        elements,
-                        showTable: true,
+
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            // type: SUCCESS,
+                            message: translator(i18nKeys.performingAnalysis),
+                        },
+                        pageState: {
+                            elements,
+                            loading: false,
+                            showTable: true,
+                        },
                     });
                 }
-            }).catch(() => {
-                if (this.isPageMounted()) {
-                    // TODO
-                }
-            });
+            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
         }
     }
 
@@ -110,35 +153,43 @@ class StdDevOutlierAnalysis extends Page {
     }
 
     toggleCheckbox(element) {
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    snackbarConf: {
+                        // type: LOADING,
+                        message: translator(i18nKeys.messages.performingRequest),
+                    },
+                    pageState: {
+                        loading: true,
+                    },
+                });
                 api.post(apiConf.endpoints.markDataValue, {
-                    followups: [
-                        {
-                            dataElementId: element.dataElementId,
-                            periodId: element.periodId,
-                            organisationUnitId: element.organisationUnitId,
-                            categoryOptionComboId: element.categoryOptionComboId,
-                            attributeOptionComboId: element.attributeOptionComboId,
-                            followup: !currentElement.marked,
-                        },
-                    ],
+                    followups: [OutlierAnalyisTable.convertElementToToggleFollowupRequest(currentElement)],
                 }).then(() => {
                     if (this.isPageMounted()) {
                         currentElement.marked = !currentElement.marked;
                         elements[i] = currentElement;
-                        this.setState({
-                            elements,
+
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            snackbarConf: {
+                                // type: SUCCESS,
+                                message: translator(
+                                    currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
+                            },
+                            pageState: {
+                                elements,
+                                loading: false,
+                            },
                         });
                     }
-                }).catch(() => {
-                    if (this.isPageMounted()) {
-                        // TODO
-                    }
-                });
+                }).catch(this.manageError.bind(this));    // FIXME why do I need bind
                 break;
             }
         }
@@ -151,6 +202,10 @@ class StdDevOutlierAnalysis extends Page {
         this.state.standardDeviation &&
         this.state.dataSetIds &&
         this.state.dataSetIds.length > 0;
+    }
+
+    isActionDisabled() {
+        return !this.isFormValid() || this.state.loading;
     }
 
     showAlertBar() {
@@ -241,7 +296,7 @@ class StdDevOutlierAnalysis extends Page {
                                 primary
                                 label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
                                 onClick={this.start}
-                                disabled={!this.isFormValid()}
+                                disabled={this.isActionDisabled()}
                             />
                         </div>
                         {/* TABLE */}
