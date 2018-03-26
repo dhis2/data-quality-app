@@ -2,7 +2,9 @@
     color: #757575;
     font-size: 12px;
 }
-.downloadAs span {
+.downloadAs a {
     margin-left: 20px;
-    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
 }

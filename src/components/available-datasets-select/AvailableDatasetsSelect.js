@@ -8,6 +8,14 @@ class AvailableDatasetsSelect extends PureComponent {
       d2: PropTypes.object,
   }
 
+  static propTypes = {
+      onChange: PropTypes.func,
+  }
+
+  static defaultProps = {
+      onChange: null,
+  }
+
   constructor() {
       super();
 
@@ -37,6 +45,7 @@ class AvailableDatasetsSelect extends PureComponent {
           <select
               multiple
               className={styles.select}
+              onChange={this.props.onChange}
           >
               {(this.state.dataSets || []).map(item => (
                   <option

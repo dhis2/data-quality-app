@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// i18n
+import { i18nKeys } from '../i18n';
+
 class Page extends Component {
   static propTypes = {
       sectionKey: PropTypes.string.isRequired,
@@ -30,6 +33,25 @@ class Page extends Component {
 
   isPageMounted() {
       return this.pageMounted;
+  }
+
+  manageError(error) {
+      if (this.isPageMounted()) {
+          const messageError = error && error.message ?
+              error.message :
+              this.context.translator(i18nKeys.messages.unexpectedAnalysisError);
+
+          this.context.updateAppState({
+              showSnackbar: true,
+              snackbarConf: {
+                  // type: ERROR,
+                  message: messageError,
+              },
+              pageState: {
+                  loading: false,
+              },
+          });
+      }
   }
 }
 
