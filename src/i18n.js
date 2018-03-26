@@ -53,6 +53,10 @@ export const i18nKeys = {
             unfollow: 'Unfollow',
             comment: 'Comment',
         },
+        commentModal: {
+            title: 'Comment',
+            close: 'Close',
+        },
     },
     moreThan500: 'More than 500 values found, please narrow the search to see all',
     minMaxOutlierAnalysis: {
@@ -144,6 +148,7 @@ export const i18nKeys = {
         unexpectedAnalysisError: 'An unexpected error happened during analysis',
         marked: 'Marked',
         unmarked: 'Unmarked',
+        unfollow: 'Unfollow done',
     },
 };
 

@@ -11,11 +11,11 @@ import DownloadAs from '../../components/download-as/DownloadAs';
 
 // helpers
 import { apiConf } from '../../server.conf';
+import { i18nKeys } from '../../i18n';
 
 // styles
 import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
-import { i18nKeys } from '../../i18n';
 
 const OutlierAnalyisTable = (props, context) => {
     const translator = context.translator;
@@ -111,7 +111,7 @@ OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     attributeOptionComboId: e.attributeOptionComboId,
     categoryOptionComboId: e.categoryOptionComboId,
     periodId: e.periodId,
-    sourceId: e.sourceId,
+    organisationUnitId: e.sourceId,
     dataElementId: e.dataElementId,
     dataElement: e.dataElementName,
     organisation: e.sourceName,
