@@ -45,7 +45,7 @@ class FollowUpAnalysisTable extends Component {
         min: e.min,
         max: e.max,
         value: Number.parseInt(e.value, 10),
-        marked: e.followup,
+        marked: !e.followup,
         comment: e.comment,
     });
 
@@ -82,7 +82,7 @@ class FollowUpAnalysisTable extends Component {
         const unfollowups = [];
         for (let i = 0; i < this.props.elements.length; i++) {
             const e = this.props.elements[i];
-            if (e.marked === false) {
+            if (e.marked) {
                 unfollowups.push(FollowUpAnalysisTable.convertElementToUnFollowupRequest(e));
             }
         }
