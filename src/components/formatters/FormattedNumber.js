@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 const FormattedNumber = props =>
     (
         <span>
-            {new Intl.NumberFormat(sessionStorage.getItem('uiLocale')).format(props.value)}
+            {
+                new Intl.NumberFormat(
+                    sessionStorage.getItem('uiLocale'),
+                    { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+                ).format(props.value)
+            }
         </span>
     );
 
