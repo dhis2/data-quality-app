@@ -56,7 +56,11 @@ class ValidationRulesAnalysis extends Page {
         this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
     }
 
+    static generateElementKey = e =>
+        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}`;
+
     static convertElementFromApiResponse = e => ({
+        key: ValidationRulesAnalysis.generateElementKey(e),
         validationRuleId: e.validationRuleId,
         organisation: e.organisationUnitDisplayName,
         organisationUnitId: e.organisationUnitId,
