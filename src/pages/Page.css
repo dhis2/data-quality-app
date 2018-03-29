@@ -14,7 +14,6 @@
     height: 48px !important;
 }
 
-
 .appTable tr {
     color: #000000 !important;
     border-bottom: 1px solid #e0e0e0 !important;
@@ -24,8 +23,12 @@
     font-size: 14px !important;
 }
 
-.number {
+.right {
     text-align: right !important;
+}
+
+.center {
+    text-align: center !important;
 }
 
 .pageHeader {
