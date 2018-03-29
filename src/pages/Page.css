@@ -57,3 +57,11 @@
 .end{
     justify-content: flex-end;
 }
+
+.formLabel {
+    font-family: Roboto;
+    font-size: 14px;
+    text-align: left;
+    color: #757575;
+    margin-bottom: 5px;
+}

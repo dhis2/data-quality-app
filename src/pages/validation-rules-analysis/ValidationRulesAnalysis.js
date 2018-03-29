@@ -207,9 +207,9 @@ class ValidationRulesAnalysis extends Page {
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
                             <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                <span>
+                                <div className={cssPageStyles.formLabel}>
                                     {translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
-                                </span>
+                                </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
                             <div className={classNames('col-md-6', cssPageStyles.section)}>

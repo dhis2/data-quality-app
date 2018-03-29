@@ -252,7 +252,9 @@ class FollowUpAnalysis extends Page {
                         <div style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                             <div className="row">
                                 <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                    <span>{translator(i18nKeys.followUpAnalysis.form.organisationUnit)}</span>
+                                    <div className={cssPageStyles.formLabel}>
+                                        {translator(i18nKeys.followUpAnalysis.form.organisationUnit)}
+                                    </div>
                                     <AvailableOrganisationUnitsTree
                                         onChange={this.organisationUnitChanged}
                                     />
