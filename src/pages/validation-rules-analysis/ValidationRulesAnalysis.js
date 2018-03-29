@@ -31,6 +31,10 @@ import { apiConf } from '../../server.conf';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 
 class ValidationRulesAnalysis extends Page {
+    static STATE_PROPERTIES = [
+        'loading',
+    ]
+
     constructor() {
         super();
 
@@ -43,6 +47,7 @@ class ValidationRulesAnalysis extends Page {
             sendNotifications: false,
             persistNewResults: false,
             elements: [],
+            loading: false,
         };
 
         this.validate = this.validate.bind(this);
@@ -54,6 +59,20 @@ class ValidationRulesAnalysis extends Page {
         this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
         this.updateSendNotifications = this.updateSendNotifications.bind(this);
         this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
     static generateElementKey = e =>
@@ -74,26 +93,50 @@ class ValidationRulesAnalysis extends Page {
     });
 
     validate() {
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
 
-        const request = {
-            startDate: convertDateToApiDateFormat(this.state.startDate),
-            endDate: convertDateToApiDateFormat(this.state.endDate),
-            organisationUnitId: this.state.organisationUnitId,
-            sendNotifications: this.state.sendNotifications,
-            persistNewResults: this.state.persistNewResults,
-        };
+        if (this.isFormValid()) {
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    // type: LOADING,
+                    message: translator(i18nKeys.messages.performingAnalysis),
+                },
+                pageState: {
+                    loading: true,
+                },
+            });
 
-        if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
-            request.validationRuleGroupId = this.state.validationRuleGroupId;
-        }
+            const request = {
+                startDate: convertDateToApiDateFormat(this.state.startDate),
+                endDate: convertDateToApiDateFormat(this.state.endDate),
+                organisationUnitId: this.state.organisationUnitId,
+                sendNotifications: this.state.sendNotifications,
+                persistNewResults: this.state.persistNewResults,
+            };
 
-        api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
-            if (this.isPageMounted()) {
-                const elements = response.map(ValidationRulesAnalysis.convertElementFromApiResponse);
-                this.setState({ ...this.state, showTable: true, elements });
+            if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
+                request.validationRuleGroupId = this.state.validationRuleGroupId;
             }
-        }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+
+            api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
+                if (this.isPageMounted()) {
+                    const elements = response.map(ValidationRulesAnalysis.convertElementFromApiResponse);
+                    this.setState({ ...this.state, showTable: true, elements });
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            // type: SUCCESS,
+                            message: translator(i18nKeys.performingAnalysis),
+                        },
+                        pageState: {
+                            loading: false,
+                        },
+                    });
+                }
+            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+        }
     }
 
     back() {
@@ -128,6 +171,16 @@ class ValidationRulesAnalysis extends Page {
         return this.state.showTable &&
             this.state.elements &&
             this.state.elements.length >= apiConf.results.analysis.limit;
+    }
+
+    isFormValid() {
+        return this.state.startDate &&
+            this.state.endDate &&
+            this.state.organisationUnitId;
+    }
+
+    isActionDisabled() {
+        return !this.isFormValid() || this.state.loading;
     }
 
     render() {
@@ -168,6 +221,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.startDateOnChange}
                                     value={this.state.startDate}
                                     defaultDate={new Date()}
+                                    maxDate={new Date()}
                                 />
                                 <DatePicker
                                     textFieldStyle={jsPageStyles.inputForm}
@@ -177,6 +231,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.endDateOnChange}
                                     value={this.state.endDate}
                                     defaultDate={new Date()}
+                                    maxDate={new Date()}
                                 />
                                 <ValidationRuleGroupsSelect
                                     style={jsPageStyles.inputForm}
@@ -200,6 +255,7 @@ class ValidationRulesAnalysis extends Page {
                             className={cssPageStyles.mainButton}
                             primary={Boolean(true)}
                             label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
+                            disabled={this.isActionDisabled()}
                             onClick={this.validate}
                         />
                     </CardText>
