@@ -13,6 +13,7 @@ import styles from './ValidationRulesAnalysisTable.css';
 
 import { i18nKeys } from '../../../i18n';
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
+import { apiConf } from '../../../server.conf';
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
@@ -63,7 +64,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
         return (
             <div>
                 <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
                 </div>
                 <Table
                     selectable={false}
@@ -106,7 +107,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     </TableBody>
                 </Table>
                 <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
                 </div>
             </div>
         );
