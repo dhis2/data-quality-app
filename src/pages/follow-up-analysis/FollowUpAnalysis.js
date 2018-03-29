@@ -44,11 +44,6 @@ class FollowUpAnalysis extends Page {
         super();
 
         this.state = {
-            organisationUnitId: null,
-            showTable: false,
-        };
-
-        this.state = {
             showTable: false,
             startDate: new Date(),
             endDate: new Date(),
