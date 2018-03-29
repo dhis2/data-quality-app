@@ -1,5 +1,8 @@
 export const apiConf = {
     endpoints: {
+        validationRulesAnalysis: '/analysis/validationRules',
+        validationRulesExpression: '/analysis/validationRulesExpression',
+        validationRules: '/validationRules',
         minMaxOutliersAnalysis: '/analysis/minMaxOutlier',
         standardDeviationOutliersAnalysis: '/analysis/stdDevOutlier',
         folloupAnalysis: '/analysis/followup',
