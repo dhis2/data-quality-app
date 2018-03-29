@@ -124,6 +124,12 @@ class ValidationRulesAnalysis extends Page {
         this.setState({ persistNewResults: checked });
     }
 
+    showAlertBar() {
+        return this.state.showTable &&
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
+    }
+
     render() {
         const translator = this.context.translator;
 
@@ -143,7 +149,7 @@ class ValidationRulesAnalysis extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <AlertBar show={Boolean(true)} />
+                <AlertBar show={this.showAlertBar()} />
                 <Card>
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
