@@ -179,23 +179,17 @@ class FollowUpAnalysis extends Page {
         }).then(() => {
             if (this.isPageMounted()) {
                 // remove unfollowed elements
-                // FIXME improve the algorithm
-                const elements = [];
-                for (let i = 0; i < this.state.elements.length; i++) {
-                    const currentElement = this.state.elements[i];
-                    let marked = true;
+                const elements = this.state.elements.filter((element) => {
                     for (let j = 0; j < unfollowups.length; j++) {
                         const unfollow = unfollowups[j];
-                        if (FollowUpAnalysisTable.areElementsTheSame(currentElement, unfollow)) {
-                            marked = false;
-                            break;
+                        if (FollowUpAnalysisTable.areElementsTheSame(element, unfollow)) {
+                            return false;
                         }
                     }
 
-                    if (marked) {
-                        elements.push(currentElement);
-                    }
-                }
+                    return true;
+                });
+
                 this.context.updateAppState({
                     showSnackbar: true,
                     snackbarConf: {
