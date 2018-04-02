@@ -9,9 +9,11 @@ import DownloadAs from '../../../components/download-as/DownloadAs';
 
 // styles
 import cssPageStyles from '../../Page.css';
-import jsPageStyles from '../../PageStyles';
+import styles from './ValidationRulesAnalysisTable.css';
+
 import { i18nKeys } from '../../../i18n';
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
+import { apiConf } from '../../../server.conf';
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
@@ -20,7 +22,6 @@ class ValidationRulesAnalysisTable extends PureComponent {
 
     static contextTypes = {
         translator: PropTypes.func,
-        d2: PropTypes.object,
     }
 
     constructor() {
@@ -36,20 +37,26 @@ class ValidationRulesAnalysisTable extends PureComponent {
 
         // Table Rows
         const rows = elements.map(element => (
-            <TableRow key={element.label}>
+            <TableRow key={element.key}>
                 <TableRowColumn>{element.organisation}</TableRowColumn>
                 <TableRowColumn>{element.period}</TableRowColumn>
                 <TableRowColumn>{element.importance}</TableRowColumn>
                 <TableRowColumn>{element.validationRule}</TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
-                    <FormattedNumber value={element.valueOne} />
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber value={element.leftValue} />
                 </TableRowColumn>
-                <TableRowColumn>{element.operator}</TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
-                    <FormattedNumber value={element.valueTwo} />
+                <TableRowColumn className={cssPageStyles.right}>
+                    {element.operator}
                 </TableRowColumn>
-                <TableRowColumn>
-                    <ValidationRulesDetails details={element.details} />
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber value={element.rightValue} />
+                </TableRowColumn>
+                <TableRowColumn className={cssPageStyles.center}>
+                    <ValidationRulesDetails
+                        validationRuleId={element.validationRuleId}
+                        periodId={element.periodId}
+                        organisationUnitId={element.organisationUnitId}
+                    />
                 </TableRowColumn>
             </TableRow>
         ));
@@ -57,11 +64,11 @@ class ValidationRulesAnalysisTable extends PureComponent {
         return (
             <div>
                 <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
                 </div>
                 <Table
                     selectable={false}
-                    className={cssPageStyles.appTable}
+                    className={classNames(cssPageStyles.appTable, styles.validationTable)}
                 >
                     <TableHeader
                         displaySelectAll={false}
@@ -81,16 +88,16 @@ class ValidationRulesAnalysisTable extends PureComponent {
                             <TableHeaderColumn>
                                 {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.validationRule)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.operator)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.center}>
                                 {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.details)}
                             </TableHeaderColumn>
                         </TableRow>
@@ -100,7 +107,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     </TableBody>
                 </Table>
                 <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
-                    <DownloadAs />
+                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
                 </div>
             </div>
         );

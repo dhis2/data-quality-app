@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
@@ -12,14 +12,18 @@ import jsPageStyles from '../../PageStyles';
 import cssPageStyles from '../../Page.css';
 
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
+import { apiConf } from '../../../server.conf';
 
-class ValidationRulesDetails extends React.Component {
+class ValidationRulesDetails extends PureComponent {
     static propTypes = {
-        details: PropTypes.object.isRequired,
+        validationRuleId: PropTypes.string.isRequired,
+        periodId: PropTypes.string.isRequired,
+        organisationUnitId: PropTypes.string.isRequired,
     }
 
     static contextTypes = {
         translator: PropTypes.func,
+        d2: PropTypes.object,
     }
 
     constructor(props) {
@@ -27,14 +31,29 @@ class ValidationRulesDetails extends React.Component {
 
         this.state = {
             open: false,
+            rule: {},
+            expression: {
+                leftSide: [],
+                rightSide: [],
+            },
         };
 
-        this.showDetails = this.showDetails.bind(this);
+        this.loadDetails = this.loadDetails.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
 
-    showDetails() {
-        this.setState({ open: true });
+    loadDetails() {
+        const api = this.context.d2.Api.getApi();
+        const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`;
+        const requestExpression = `${apiConf.endpoints.validationRulesExpression}` +
+            `?validationRuleId=${this.props.validationRuleId}` +
+            `&periodId=${this.props.periodId}` +
+            `&organisationUnitId=${this.props.organisationUnitId}`;
+        Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
+            this.setState({ open: true, rule, expression });
+        }).catch(() => {
+            // TODO
+        });
     }
 
     handleClose = () => {
@@ -65,13 +84,13 @@ class ValidationRulesDetails extends React.Component {
                     {translator(i18nKeys.validationRulesAnalysis.details.rule.nameLabel)}
                 </div>
                 <div className={'col-xs-9'}>
-                    {this.props.details.rule.name}
+                    {this.state.rule.displayName}
                 </div>
                 <div className={'col-xs-3'}>
                     {translator(i18nKeys.validationRulesAnalysis.details.rule.descriptionLabel)}
                 </div>
                 <div className={'col-xs-9'}>
-                    {this.props.details.rule.description}
+                    {this.state.rule.displayDescription}
                 </div>
             </div>
         );
@@ -85,7 +104,7 @@ class ValidationRulesDetails extends React.Component {
                     <div className={classNames('col-xs-10', styles.sectionSubTitle)}>
                         {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
                     </div>
-                    <div className={classNames('col-xs-2', styles.sectionSubTitle, cssPageStyles.number)}>
+                    <div className={classNames('col-xs-2', styles.sectionSubTitle, cssPageStyles.right)}>
                         {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
                     </div>
                     {
@@ -96,8 +115,8 @@ class ValidationRulesDetails extends React.Component {
                                         <div className={'col-xs-10'}>
                                             {element.name}
                                         </div>
-                                        <div className={classNames('col-xs-2', cssPageStyles.number)}>
-                                            {element.value ? <FormattedNumber value={element.value} /> : '-'}
+                                        <div className={classNames('col-xs-2', cssPageStyles.right)}>
+                                            {element.value ? <FormattedNumber value={Number(element.value)} /> : '-'}
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +131,7 @@ class ValidationRulesDetails extends React.Component {
                 <FontIcon
                     className={'material-icons'}
                     style={jsPageStyles.cursorStyle}
-                    onClick={this.showDetails}
+                    onClick={this.loadDetails}
                 >
                     info
                 </FontIcon>
@@ -130,14 +149,14 @@ class ValidationRulesDetails extends React.Component {
                     {
                         buildSection(
                             translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
-                            this.props.details.leftSide.dataElements,
+                            this.state.expression.leftSide ? this.state.expression.leftSide : [],
                         )
                     }
                     {/* Right Side */}
                     {
                         buildSection(
                             translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
-                            this.props.details.rightSide.dataElements,
+                            this.state.expression.rightSide ? this.state.expression.rightSide : [],
                         )
                     }
                 </Dialog>
