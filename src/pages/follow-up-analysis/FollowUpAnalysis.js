@@ -55,7 +55,7 @@ class FollowUpAnalysis extends Page {
 
 
         this.getFollowUpList = this.getFollowUpList.bind(this);
-        this.backToHome = this.backToHome.bind(this);
+        this.back = this.back.bind(this);
 
         this.startDateOnChange = this.startDateOnChange.bind(this);
         this.endDateOnChange = this.endDateOnChange.bind(this);
@@ -125,7 +125,7 @@ class FollowUpAnalysis extends Page {
         }
     }
 
-    backToHome() {
+    back() {
         this.setState({ ...this.state, showTable: false });
     }
 
@@ -227,7 +227,7 @@ class FollowUpAnalysis extends Page {
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
                     <IconButton
-                        onClick={this.backToHome}
+                        onClick={this.back}
                         style={{ display: this.state.showTable ? 'inline' : 'none' }}
                     >
                         <FontIcon className={'material-icons'}>
