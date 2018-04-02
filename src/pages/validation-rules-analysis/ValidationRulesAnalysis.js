@@ -43,7 +43,7 @@ class ValidationRulesAnalysis extends Page {
             startDate: new Date(),
             endDate: new Date(),
             organisationUnitId: null,
-            validationRuleGroupId: -1,
+            validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,
             sendNotifications: false,
             persistNewResults: false,
             elements: [],
@@ -253,8 +253,8 @@ class ValidationRulesAnalysis extends Page {
                         </div>
                         <RaisedButton
                             className={cssPageStyles.mainButton}
-                            primary={Boolean(true)}
                             label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
+                            primary
                             disabled={this.isActionDisabled()}
                             onClick={this.validate}
                         />
