@@ -118,7 +118,7 @@ OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     period: e.period.name,
     min: e.min,
     max: e.max,
-    value: Number.parseInt(e.value, 10),
+    value: Number.parseFloat(e.value),
     marked: e.followup,
 });
 

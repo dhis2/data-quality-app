@@ -228,15 +228,15 @@ class MinMaxOutlierAnalysis extends Page {
                         <div style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                             <div className="row">
                                 <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <span>
+                                    <div className={cssPageStyles.formLabel}>
                                         {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
-                                    </span>
+                                    </div>
                                     <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                                 </div>
                                 <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <span>
+                                    <div className={cssPageStyles.formLabel}>
                                         {translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}
-                                    </span>
+                                    </div>
                                     <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                                 </div>
                                 <div className={classNames('col-md-4', cssPageStyles.section)}>

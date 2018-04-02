@@ -11,8 +11,9 @@ import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect';
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 
 const ownShallow = () => {
+  const onChange = jest.fn();
   return shallow(
-      <ValidationRuleGroupsSelect />,
+      <ValidationRuleGroupsSelect onChange={onChange} />,
       {
         disableLifecycleMethods: true,
         context: {

@@ -10,7 +10,9 @@ import { FontIcon, IconButton } from 'material-ui';
 
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';
-import ValidationRuleGroupsSelect from
+import ValidationRuleGroupsSelect, {
+    ALL_VALIDATION_RULE_GROUPS_ID,
+} from
     '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
@@ -25,80 +27,165 @@ import jsPageStyles from '../PageStyles';
 import cssPageStyles from '../Page.css';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
 
+import { apiConf } from '../../server.conf';
+import { convertDateToApiDateFormat } from '../../helpers/dates';
 
 class ValidationRulesAnalysis extends Page {
+    static STATE_PROPERTIES = [
+        'loading',
+    ]
+
     constructor() {
         super();
 
         this.state = {
             showTable: false,
+            startDate: new Date(),
+            endDate: new Date(),
+            organisationUnitId: null,
+            validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,
+            sendNotifications: false,
+            persistNewResults: false,
+            elements: [],
+            loading: false,
         };
 
         this.validate = this.validate.bind(this);
         this.back = this.back.bind(this);
+
+        this.startDateOnChange = this.startDateOnChange.bind(this);
+        this.endDateOnChange = this.endDateOnChange.bind(this);
+        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
+        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
+        this.updateSendNotifications = this.updateSendNotifications.bind(this);
+        this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
+    }
+
+    static generateElementKey = e =>
+        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}`;
+
+    static convertElementFromApiResponse = e => ({
+        key: ValidationRulesAnalysis.generateElementKey(e),
+        validationRuleId: e.validationRuleId,
+        organisation: e.organisationUnitDisplayName,
+        organisationUnitId: e.organisationUnitId,
+        period: e.periodDisplayName,
+        periodId: e.periodId,
+        importance: e.importance,
+        validationRule: e.validationRuleDescription,
+        leftValue: e.leftSideValue,
+        operator: e.operator,
+        rightValue: e.rightSideValue,
+    });
+
     validate() {
-        this.setState({ showTable: true });
+        const translator = this.context.translator;
+        const api = this.context.d2.Api.getApi();
+
+        if (this.isFormValid()) {
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    // type: LOADING,
+                    message: translator(i18nKeys.messages.performingAnalysis),
+                },
+                pageState: {
+                    loading: true,
+                },
+            });
+
+            const request = {
+                startDate: convertDateToApiDateFormat(this.state.startDate),
+                endDate: convertDateToApiDateFormat(this.state.endDate),
+                organisationUnitId: this.state.organisationUnitId,
+                sendNotifications: this.state.sendNotifications,
+                persistNewResults: this.state.persistNewResults,
+            };
+
+            if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
+                request.validationRuleGroupId = this.state.validationRuleGroupId;
+            }
+
+            api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
+                if (this.isPageMounted()) {
+                    const elements = response.map(ValidationRulesAnalysis.convertElementFromApiResponse);
+                    this.setState({ ...this.state, showTable: true, elements });
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            // type: SUCCESS,
+                            message: translator(i18nKeys.performingAnalysis),
+                        },
+                        pageState: {
+                            loading: false,
+                        },
+                    });
+                }
+            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+        }
     }
 
     back() {
         this.setState({ showTable: false });
     }
 
+    startDateOnChange(event, date) {
+        this.setState({ startDate: new Date(date) });
+    }
+
+    endDateOnChange(event, date) {
+        this.setState({ endDate: new Date(date) });
+    }
+
+    organisationUnitOnChange(organisationUnitId) {
+        this.setState({ organisationUnitId });
+    }
+
+    validationRuleGroupOnChange(event, index, value) {
+        this.setState({ validationRuleGroupId: value });
+    }
+
+    updateSendNotifications(event, checked) {
+        this.setState({ sendNotifications: checked });
+    }
+
+    updatePersistNewResults(event, checked) {
+        this.setState({ persistNewResults: checked });
+    }
+
+    showAlertBar() {
+        return this.state.showTable &&
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
+    }
+
+    isFormValid() {
+        return this.state.startDate &&
+            this.state.endDate &&
+            this.state.organisationUnitId;
+    }
+
+    isActionDisabled() {
+        return !this.isFormValid() || this.state.loading;
+    }
+
     render() {
         const translator = this.context.translator;
-        const elements = [];
-        let i = 0;
-        for (i; i < 55; i++) {
-            const one = {
-                label: i,
-                organisation: `Organisation ${i}`,
-                period: 'Mês do Ano X',
-                importance: 10,
-                validationRule: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
-                valueOne: 12345678,
-                operator: '<=',
-                valueTwo: 1234,
-                details: {
-                    rule: {
-                        name: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
-                        description: `Penta${i}, Exclusive breastfeeding, <1 year Fixed`,
-                    },
-                    leftSide: {
-                        dataElements: [
-                            {
-                                name: 'Q_Exclusive breastfeeding at time of Penta 3 Fixed, <1y',
-                                value: 12320,
-                            },
-                            {
-                                name: 'ANC 2nd visit Outreach',
-                            },
-                            {
-                                name: 'ANC 2nd visit Fixed 2',
-                                value: 24230,
-                            },
-                            {
-                                name: 'ANC 2nd visit Fixed',
-                                value: 423420,
-                            },
-                        ],
-                    },
-                    rightSide: {
-                        dataElements: [
-                            {
-                                name: 'Penta3 doses given Fixed 1, <1y',
-                            },
-                            {
-                                name: 'Penta3 doses given Fixed x, <1y',
-                                value: 20,
-                            },
-                        ],
-                    },
-                },
-            };
-            elements.push(one);
-        }
+
         return (
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
@@ -115,57 +202,66 @@ class ValidationRulesAnalysis extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <AlertBar show={Boolean(true)} />
+                <AlertBar show={this.showAlertBar()} />
                 <Card>
-                    {
-                        !this.state.showTable ? (
-                            <CardText>
-                                <div className="row">
-                                    <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                        <span>
-                                            {translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
-                                        </span>
-                                        <AvailableOrganisationUnitsTree />
-                                    </div>
-                                    <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                        <DatePicker
-                                            textFieldStyle={jsPageStyles.inputForm}
-                                            floatingLabelText={
-                                                translator(i18nKeys.validationRulesAnalysis.form.startDate)
-                                            }
-                                            defaultDate={new Date()}
-                                        />
-                                        <DatePicker
-                                            textFieldStyle={jsPageStyles.inputForm}
-                                            floatingLabelText={
-                                                translator(i18nKeys.validationRulesAnalysis.form.endDate)
-                                            }
-                                            defaultDate={new Date()}
-                                        />
-                                        <ValidationRuleGroupsSelect style={jsPageStyles.inputForm} />
-                                        <Checkbox
-                                            label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
-                                            labelPosition="left"
-                                        />
-                                        <Checkbox
-                                            label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
-                                            labelPosition="left"
-                                        />
-                                    </div>
+                    <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
+                        <div className="row">
+                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
                                 </div>
-                                <RaisedButton
-                                    className={cssPageStyles.mainButton}
-                                    primary={Boolean(true)}
-                                    label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
-                                    onClick={this.validate}
+                                <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
+                            </div>
+                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.validationRulesAnalysis.form.startDate)
+                                    }
+                                    onChange={this.startDateOnChange}
+                                    value={this.state.startDate}
+                                    defaultDate={new Date()}
+                                    maxDate={new Date()}
                                 />
-                            </CardText>
-                        ) : (
-                            <CardText>
-                                <ValidationRulesAnalysisTable elements={elements} />
-                            </CardText>
-                        )
-                    }
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.validationRulesAnalysis.form.endDate)
+                                    }
+                                    onChange={this.endDateOnChange}
+                                    value={this.state.endDate}
+                                    defaultDate={new Date()}
+                                    maxDate={new Date()}
+                                />
+                                <ValidationRuleGroupsSelect
+                                    style={jsPageStyles.inputForm}
+                                    onChange={this.validationRuleGroupOnChange}
+                                />
+                                <Checkbox
+                                    label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
+                                    labelPosition="left"
+                                    checked={this.state.sendNotifications}
+                                    onCheck={this.updateSendNotifications}
+                                />
+                                <Checkbox
+                                    label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
+                                    labelPosition="left"
+                                    checked={this.state.persistNewResults}
+                                    onCheck={this.updatePersistNewResults}
+                                />
+                            </div>
+                        </div>
+                        <RaisedButton
+                            className={cssPageStyles.mainButton}
+                            label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
+                            primary
+                            disabled={this.isActionDisabled()}
+                            onClick={this.validate}
+                        />
+                    </CardText>
+                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                        <ValidationRulesAnalysisTable elements={this.state.elements} />
+                    </CardText>
                 </Card>
             </div>
         );
