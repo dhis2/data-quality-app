@@ -53,9 +53,7 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
               this.setState({
                   dataSets: [translatedAllDataSetsOption, ...dataSetsResponse.dataSets.toArray()],
               });
-          }).catch(() => {
-              // TODO
-          });
+          }).catch(() => { this.manageError(); });
       }
   }
 

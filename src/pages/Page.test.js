@@ -10,6 +10,7 @@ import {VALIDATION_RULES_ANALYSIS_SECTION_KEY} from './sections.conf';
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('./Page'); // Page is now a mock constructor
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
 const notPageComponentShallow = () => {
   return shallow(

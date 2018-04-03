@@ -1,23 +1,3 @@
-import i18n from 'i18next';
-import Backend from 'i18next-xhr-backend';
-import { reactI18nextModule } from 'react-i18next';
-
-i18n
-    .use(Backend)
-    .use(reactI18nextModule)
-    .init({
-        debug: false /* process.env.NODE_ENV === 'development' */,
-        returnEmptyString: false,
-        fallbackLng: false,
-        keySeparator: '|',
-        backend: {
-            loadPath: './i18n/{{lng}}.json',
-        },
-        react: {
-            wait: true,
-        },
-    });
-
 export const i18nKeys = {
     availableOrganisationUnitsTree: {
         updatingMessage: 'Updating Organisation Units Tree...',
@@ -145,6 +125,8 @@ export const i18nKeys = {
         performingRequest: 'Performing request',
         performingAnalysis: 'Performing analysis',
         analysisDone: 'Analysis done',
+        validationSuccess: 'Validation passed successfully',
+        noValuesFound: 'No values found',
         unexpectedAnalysisError: 'An unexpected error happened during analysis',
         marked: 'Marked',
         unmarked: 'Unmarked',
@@ -152,4 +134,4 @@ export const i18nKeys = {
     },
 };
 
-export default i18n;
+export default i18nKeys;

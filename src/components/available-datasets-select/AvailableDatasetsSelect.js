@@ -34,9 +34,7 @@ class AvailableDatasetsSelect extends PureComponent {
               this.setState({
                   dataSets: dataSetsResponse.toArray(),
               });
-          }).catch(() => {
-              // TODO
-          });
+          }).catch(() => { this.manageError(); });
       }
   }
 

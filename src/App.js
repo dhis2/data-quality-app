@@ -6,6 +6,8 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
+import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
+import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
 import './custom-css/D2UISidebarOverrides.css';
 
 import AppRouter from './components/app-router/AppRouter';
@@ -27,7 +29,6 @@ class App extends PureComponent {
       snackbarConf: PropTypes.shape({
           type: PropTypes.string,
           message: PropTypes.string,
-          duration: PropTypes.number,
       }),
       currentSection: PropTypes.string,
       updateAppState: PropTypes.func,
@@ -44,6 +45,7 @@ class App extends PureComponent {
               type: '',
               message: '',
           },
+          pageState: {},
       };
 
       this.updateAppState = this.updateAppState.bind(this);
@@ -60,31 +62,13 @@ class App extends PureComponent {
   }
 
   updateAppState(appState) {
-      const newAppState = Object.assign({}, appState);
-
-      if (typeof this.state.snackbarTimeoutId !== 'undefined') {
-          clearTimeout(this.state.snackbarTimeoutId);
-      }
-
-      // Hack to hide previous snackbar before changing its style
-      if (this.state.showSnackbar && newAppState.showSnackbar) {
-          const newShowSnackbar = appState.showSnackbar;
-          const newSnackbarConf = appState.snackbarConf;
-          newAppState.showSnackbar = false;
-          newAppState.snackbarConf = this.state.snackbarConf;
-
-          this.state.snackbarTimeoutId = setTimeout(() => {
-              this.setState({ ...newAppState, showSnackbar: newShowSnackbar, snackbarConf: newSnackbarConf });
-          }, 500);
-      }
-
-      if (newAppState.currentSection
-        && !newAppState.pageState
-        && this.state.currentSection !== newAppState.currentSection) {
+      if (appState.currentSection
+        && !appState.pageState
+        && this.state.currentSection !== appState.currentSection) {
       // clear page state because we are updating page
-          this.setState({ ...newAppState, pageState: undefined, showSnackbar: false });
+          this.setState({ ...appState, pageState: {}, showSnackbar: false });
       } else {
-          this.setState(newAppState);
+          this.setState(appState);
       }
   }
 
@@ -98,6 +82,18 @@ class App extends PureComponent {
               containerElement: <Link to={section.path} />,
           },
       ));
+
+      const feedbackElement = this.state.pageState.loading ?
+          (
+              <div className={styles.centered}>
+                  <CircularProgress />
+              </div>
+          ) : (
+              <FeedbackSnackbar
+                  show={this.state.showSnackbar}
+                  conf={this.state.snackbarConf}
+              />
+          );
 
       return (
           <div>
@@ -114,6 +110,7 @@ class App extends PureComponent {
                       />
                   </div>
               </div>
+              {feedbackElement}
           </div>
       );
   }
