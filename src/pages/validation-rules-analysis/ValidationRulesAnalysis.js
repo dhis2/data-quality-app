@@ -8,6 +8,8 @@ import DatePicker from 'material-ui/DatePicker';
 import Checkbox from 'material-ui/Checkbox';
 import { FontIcon, IconButton } from 'material-ui';
 
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import ValidationRuleGroupsSelect, {
@@ -33,7 +35,9 @@ import { convertDateToApiDateFormat } from '../../helpers/dates';
 class ValidationRulesAnalysis extends Page {
     static STATE_PROPERTIES = [
         'loading',
-    ]
+        'elements',
+        'showTable',
+    ];
 
     constructor() {
         super();
@@ -93,21 +97,10 @@ class ValidationRulesAnalysis extends Page {
     });
 
     validate() {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
+        const translator = this.context.translator;
 
         if (this.isFormValid()) {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    // type: LOADING,
-                    message: translator(i18nKeys.messages.performingAnalysis),
-                },
-                pageState: {
-                    loading: true,
-                },
-            });
-
             const request = {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
@@ -120,22 +113,34 @@ class ValidationRulesAnalysis extends Page {
                 request.validationRuleGroupId = this.state.validationRuleGroupId;
             }
 
+            this.context.updateAppState({
+                pageState: {
+                    loading: true,
+                },
+            });
+
             api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
                 if (this.isPageMounted()) {
                     const elements = response.map(ValidationRulesAnalysis.convertElementFromApiResponse);
-                    this.setState({ ...this.state, showTable: true, elements });
-                    this.context.updateAppState({
+                    const feedback = elements && elements.length > 0 ? {
+                        showSnackbar: false,
+                    } : {
                         showSnackbar: true,
                         snackbarConf: {
-                            // type: SUCCESS,
-                            message: translator(i18nKeys.performingAnalysis),
+                            type: SUCCESS,
+                            message: translator(i18nKeys.messages.validationSuccess),
                         },
+                    };
+                    this.context.updateAppState({
+                        ...feedback,
                         pageState: {
                             loading: false,
+                            elements,
+                            showTable: elements && elements.length > 0,
                         },
                     });
                 }
-            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+            }).catch(() => { this.manageError(); });
         }
     }
 

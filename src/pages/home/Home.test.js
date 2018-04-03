@@ -8,6 +8,7 @@ import GridSection from './grid-section/GridSection';
 import { sections } from '../sections.conf';
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
 const ownShallow = () => {
   return shallow(

@@ -125,6 +125,8 @@ export const i18nKeys = {
         performingRequest: 'Performing request',
         performingAnalysis: 'Performing analysis',
         analysisDone: 'Analysis done',
+        validationSuccess: 'Validation passed successfully',
+        noValuesFound: 'No values found',
         unexpectedAnalysisError: 'An unexpected error happened during analysis',
         marked: 'Marked',
         unmarked: 'Unmarked',

@@ -10,6 +10,7 @@ import {sections} from "../../pages/sections.conf";
 const pageState = {};
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
 const ownShallow = () => {
   return shallow(

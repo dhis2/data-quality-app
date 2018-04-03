@@ -14,6 +14,8 @@ import { i18nKeys } from '../../../i18n';
 // styles
 import cssPageStyles from '../../Page.css';
 import jsPageStyles from '../../PageStyles';
+import styles from './FollowUpAnalysisTable.css';
+
 import { apiConf } from '../../../server.conf';
 
 class FollowUpAnalysisTable extends Component {
@@ -104,12 +106,13 @@ class FollowUpAnalysisTable extends Component {
             />,
         ];
 
+        let oneChecked = false;
         // Table Rows
         const rows = this.props.elements.map((element) => {
             const updateCheckbox = (() => {
                 this.props.toggleCheckbox(element);
             });
-
+            oneChecked = element.marked ? true : oneChecked;
             const showComment = (() => {
                 if (element.comment) {
                     this.setState({
@@ -124,13 +127,13 @@ class FollowUpAnalysisTable extends Component {
                     <TableRowColumn>{element.dataElement}</TableRowColumn>
                     <TableRowColumn>{element.organisation}</TableRowColumn>
                     <TableRowColumn>{element.period}</TableRowColumn>
-                    <TableRowColumn className={jsPageStyles.number}>
+                    <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber value={element.min} />
                     </TableRowColumn>
-                    <TableRowColumn className={jsPageStyles.number}>
+                    <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber value={element.max} />
                     </TableRowColumn>
-                    <TableRowColumn className={jsPageStyles.number}>
+                    <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber value={element.value} />
                     </TableRowColumn>
                     <TableRowColumn>
@@ -172,7 +175,7 @@ class FollowUpAnalysisTable extends Component {
                 </div>
                 <Table
                     selectable={false}
-                    className={cssPageStyles.appTable}
+                    className={classNames(cssPageStyles.appTable, styles.followUpAnalysisTable)}
                 >
                     <TableHeader
                         displaySelectAll={false}
@@ -189,13 +192,13 @@ class FollowUpAnalysisTable extends Component {
                             <TableHeaderColumn>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
@@ -213,7 +216,7 @@ class FollowUpAnalysisTable extends Component {
                 <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.spaceBetween)}>
                     <RaisedButton
                         primary
-                        disabled={this.props.loading}
+                        disabled={this.props.loading || !oneChecked}
                         label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
                         onClick={this.unfollow}
                     />

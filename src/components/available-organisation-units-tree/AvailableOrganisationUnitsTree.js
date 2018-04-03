@@ -45,9 +45,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
               this.setState({
                   rootWithMembers: organisationUnits[0],
               });
-          }).catch(() => {
-          // TODO
-          });
+          }).catch(() => { this.manageError(); });
       }
   }
 
