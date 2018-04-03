@@ -1,16 +1,6 @@
 language: node_js
 node_js:
 - node
-env:
-  global:
-  - CC_TEST_REPORTER_ID=daeae58060a32f8d37e835457e8b2a1f9af55a38694826f4f6628a30383314f6
-  - secure: 4CQlYOTIfkJH39et9hn7R0fdb1d+49XJA7Hf029jFyLLILFJhUTLgoheFAetmpPaJlxM0KkEBMOwzHDcP0P0A90xCrtjbgHqihyZnQBoo6Q3YD2gpNN7toaufZUoa0Opzjne6AKRAwO2pn1WRmbHxUQ8Lq6SJWI2idlAwecJ18+f1w9kQwZmhSPY8hq1yo8rDQdW8D0J9JCzUYT2sNhstXutGGS+Wl3QmmaKY/6yQLbV83ZTyBImHsiAX+5nwry/owzDo5xc+GyFI//oHtImjyg7BMbO7kqz6YEyK9JwX76xF6HtlI5pHVzg1FQkTlA65QHPw80d/zno47amjuRs24Z0Zew9dQyZIz1tG/awSqoAnT8Skfa0O62L0z7UNMnzQyFac+UINOR+6j6eMNLQ2uOG9abondI0qk0ozWgneoiiQvdaGql62WmaJ+nbt/icUoYKWnihbU+BuL5zI+/ugl1DA+W7w4YlxHfslIogoaSgu/hczis2yDhosL5ik2ABgPOk3EF1fc5L55ZadLqKcfw28+FOGJ7tEY+ytz8SBwXZwEFTGXku8q63P4BYvTgPk3/Bjr3MrzE3Gffz5blb4gwq51YZJr6m/Kxv8dgIhNNGgQYmoP1w1fjWPTrnHXZCBuBlo+2Skfw3Os3cyWcnY89cKNtXXZ35iBm+tBEkURw=
-  - secure: rfF0QekJX7ZiunkjXskj0rhHbicH2tYI3vn+53Aw52s96TUSYJYHygA+OSnsPPKLaZ4sULGgW0tlSShC9bzi7IryYUBZRuzBc+QVSVlmWZCGblw2culvFpZjjlvtg+ULhtAjx9a3ctlV2HMvOvuIvmjdU8EEL0GWHk5Jl9LqwxzcokDI/oEo7zXdLd0u6T9UjEfxfAkYV0vM2Z0v5ZEz1SLIjW0H7cSJ6Sd48JlyQv92CVJvBkuR7FIDfjhBIx3MLicvyCg3pmDrC/9XnmtK7UrfSTAZWaReAtsgJT+pZpfJOYPPst6BKZ9bUyaJY2Iy0KhlYFNX0tRilv89jUizvVgS20wBrkwFtS6UDc0Kx1kEDucC4YCW9U/27u7GN6FBTg/j8Ng0mbkzD7AG+9cwtxxUVuLYRYRIdZgbE09x8Vr2UOgZRJayovxqEwmcjpo8vBt+Op4dSF+AxtsmoYcvn5ABehrhPXmDFgJdPsZ3BgPiq16Amq1FNdeYqT+PHNph9z+wwLpKZsIx+RNlG9eVkdLsKoR9Yjuz5qZMIklEk0JnFDQEHD2wJZ4WFqbQswariLLqLcq7wD4XPLw0MbThYTa4dM6uGKB69wiLlIbatm9zkBW3zbUxCPZp1jjneWGnDsAUeqvpkbcHtn0eUXrGrcgg0+6D6TWYXMpfeL0GvU8=
-before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
 script:
 - yarn lint
 - yarn coverage
@@ -18,5 +8,9 @@ script:
 after_script:
 - "./cc-test-reporter after-build -d --exit-code $TRAVIS_TEST_RESULT"
 - if ( [ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ] ) && [ "$TRAVIS_REPO_SLUG"
-  == "dhis2/data-quality-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ]
-  ; then mvn clean deploy --settings deploy/settings.xml && exit 0; fi
+  == "dhis2/data-quality-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+  mvn clean deploy --settings deploy/settings.xml && exit 0; fi
+env:
+  global:
+  - secure: xKlWz1ue9bL+Gz6+Qk0bdQtvLcWjE8eJf76WGbEomFQnshVS4fY+b5pmAlP5ulnV2uOdVdH8MugMxZmSIEEfBwMvbclk01zGcaQF6/G2Z2xdDJdxCe5gzSCWi2yXFezeT0N8NRw2gDHUgjlmlYyY/8lGET5Ef7QVXUXfuT/HR4WmIWfVeDNkNHhVzgm/bZ9awqYamFQlQwgqS6ZFRk0BWQBxhDYC18Lwk55axRKaO1/xN+QSNQd64BzuSSpVCoA4y47a/kNFbdSB5FSqAvapAdWXGA2coCpCAd775tQuN7ANglnnw86BYq0WMEsobrBgl+P+zWA+K4x9dEV/i2ywDKkNerGR2HZ8d2glOUgvIDsme1Isj5Y5gpsC+cXRStLBSwBV1JG59NY4sT/VRbuUdH0i4YezOVfAns5AuyODyb4AgY42kFiPnACiaBy9e6a+bG0PfrsU97bRf1qg3ATYuNqlJtWXwIr4qQXbM2uRC5HgEhoEGjpED5/JiWrW693EvJnLK+HTi4HVcg60BhLPrrX9swJCx19ITg2qSIrM7o1g9pCCc5VoL3JkVe/DU3TvcRk3MTVSufN4ApKy+BarI6lV9+2XEwsq0N5MaiFPZJ7iQ+43vv+rrL44atUP6tTwWd5I1vk27m/72P992GHQwlC+ny4UbSitgX2TZK95opU=
+  - secure: xJrRzsbn39sFR6pHHYVIhQnMLu3mLGp9QHh/XNOKC79+3NjbJ9BZJatVRCPh+jd56BA7/pkFDUqf81VnwtWwYbS15EeF63+H01ja2jMFYRrt1O+Pkv4wp8oLetSasMRd8jsbCeGSrQGEJZYjExxg5stWqrPN4eW38895/ROp2XwoQyJPcVUbAuQIgQ7KpoQy5Br1Er9s4gMH6595sE4O10YH+l/C07uJMeJ5A6j+CyaECU4/gohLHZ7M+4y+rtVQPFKqdvVFDO2sRQt25R08ckEau9YIoHpMPOOzY78Dbyq8CgNH+P5fs0qgQfQOOFf1SxTxlIKSz6F9jpxU6Zd8Ovt3KdzO6/EEpXenM6WbHV8/paHAC9ZJe7eJWsUD/92IUYxsVXNbt1D5m32BxT+hXH+/Hea9jyDc+EIaMIxDRsxOT9AXHQR7SNxirjmEJPEqTwFxWM2pLqmXPEgKLkzHd7a7UiKOBlpcUb9foD4Wck4H8ezLZJZ4AdbU0jL3zLaut0z1XpDHjtYoLIbA5a+QyuIaKRHoye/rkyevh/WQNh5vZxbTzoJeDcFMaCMSKLabLOxs9FvurVUnaghDkoLKSQkLG9c4B23xCTFXdJNqWWMsKmmgoflQNIW6vf8hp8qbSk5nZr5kJYWN0tcnlnorZo11AYT9xRHvRYzCWjBPOdU=
