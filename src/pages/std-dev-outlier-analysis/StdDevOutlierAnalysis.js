@@ -8,6 +8,8 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { FontIcon, IconButton } from 'material-ui';
 
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
@@ -29,7 +31,6 @@ import { apiConf } from '../../server.conf';
 // styles
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
-import MinMaxOutlierAnalysis from '../min-max-outlier-analysis/MinMaxOutlierAnalysis';
 
 class StdDevOutlierAnalysis extends Page {
     static STATE_PROPERTIES = [
@@ -41,7 +42,7 @@ class StdDevOutlierAnalysis extends Page {
         'elements',
         'standardDeviation',
         'loading',
-    ]
+    ];
 
     constructor() {
         super();
@@ -71,7 +72,7 @@ class StdDevOutlierAnalysis extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && MinMaxOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && StdDevOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });
@@ -86,11 +87,6 @@ class StdDevOutlierAnalysis extends Page {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    // type: LOADING,
-                    message: translator(i18nKeys.messages.performingAnalysis),
-                },
                 pageState: {
                     loading: true,
                 },
@@ -106,20 +102,26 @@ class StdDevOutlierAnalysis extends Page {
                 if (this.isPageMounted()) {
                     const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
 
-                    this.context.updateAppState({
+                    const feedback = elements && elements.length > 0 ? {
+                        showSnackbar: false,
+                    } : {
                         showSnackbar: true,
                         snackbarConf: {
-                            // type: SUCCESS,
-                            message: translator(i18nKeys.performingAnalysis),
+                            type: SUCCESS,
+                            message: translator(i18nKeys.messages.noValuesFound),
                         },
+                    };
+
+                    this.context.updateAppState({
+                        ...feedback,
                         pageState: {
-                            elements,
                             loading: false,
-                            showTable: true,
+                            elements,
+                            showTable: elements && elements.length > 0,
                         },
                     });
                 }
-            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+            }).catch(() => { this.manageError(); });
         }
     }
 
@@ -160,11 +162,6 @@ class StdDevOutlierAnalysis extends Page {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
                 this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        // type: LOADING,
-                        message: translator(i18nKeys.messages.performingRequest),
-                    },
                     pageState: {
                         loading: true,
                     },
@@ -179,7 +176,7 @@ class StdDevOutlierAnalysis extends Page {
                         this.context.updateAppState({
                             showSnackbar: true,
                             snackbarConf: {
-                                // type: SUCCESS,
+                                type: SUCCESS,
                                 message: translator(
                                     currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
                             },
@@ -189,7 +186,7 @@ class StdDevOutlierAnalysis extends Page {
                             },
                         });
                     }
-                }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+                }).catch(() => { this.manageError(); });
                 break;
             }
         }

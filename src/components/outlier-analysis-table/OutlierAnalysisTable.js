@@ -16,6 +16,7 @@ import { i18nKeys } from '../../i18n';
 // styles
 import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
+import styles from './OutlierAnalysisTable.css';
 
 const OutlierAnalyisTable = (props, context) => {
     const translator = context.translator;
@@ -33,13 +34,13 @@ const OutlierAnalyisTable = (props, context) => {
                 <TableRowColumn>{element.dataElement}</TableRowColumn>
                 <TableRowColumn>{element.organisation}</TableRowColumn>
                 <TableRowColumn>{element.period}</TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
+                <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.min} />
                 </TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
+                <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.value} />
                 </TableRowColumn>
-                <TableRowColumn className={jsPageStyles.number}>
+                <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.max} />
                 </TableRowColumn>
                 <TableRowColumn>
@@ -61,7 +62,7 @@ const OutlierAnalyisTable = (props, context) => {
             </div>
             <Table
                 selectable={false}
-                className={cssPageStyles.appTable}
+                className={classNames(cssPageStyles.appTable, styles.outlierAnalysisTable)}
             >
                 <TableHeader
                     displaySelectAll={false}
@@ -78,13 +79,13 @@ const OutlierAnalyisTable = (props, context) => {
                         <TableHeaderColumn>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
                         </TableHeaderColumn>
-                        <TableHeaderColumn>
+                        <TableHeaderColumn className={cssPageStyles.right}>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
                         </TableHeaderColumn>
-                        <TableHeaderColumn>
+                        <TableHeaderColumn className={cssPageStyles.right}>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
                         </TableHeaderColumn>
-                        <TableHeaderColumn>
+                        <TableHeaderColumn className={cssPageStyles.right}>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
                         </TableHeaderColumn>
                         <TableHeaderColumn>

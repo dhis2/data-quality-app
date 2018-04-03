@@ -30,7 +30,7 @@ class ValidationRulesDetails extends PureComponent {
         super(props);
 
         this.state = {
-            open: false,
+            openDetails: false,
             rule: {},
             expression: {
                 leftSide: [],
@@ -50,14 +50,12 @@ class ValidationRulesDetails extends PureComponent {
             `&periodId=${this.props.periodId}` +
             `&organisationUnitId=${this.props.organisationUnitId}`;
         Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
-            this.setState({ open: true, rule, expression });
-        }).catch(() => {
-            // TODO
-        });
+            this.setState({ openDetails: true, rule, expression });
+        }).catch(() => { this.manageError(); });
     }
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ openDetails: false });
     };
 
     render() {
@@ -140,7 +138,7 @@ class ValidationRulesDetails extends PureComponent {
                     title={translator(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
                     actions={dialogActions}
                     modal={false}
-                    open={this.state.open}
+                    open={this.state.openDetails}
                     onRequestClose={this.handleClose}
                 >
                     {/* Result */}

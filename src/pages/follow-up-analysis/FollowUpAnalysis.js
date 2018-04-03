@@ -6,6 +6,8 @@ import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
@@ -84,11 +86,6 @@ class FollowUpAnalysis extends Page {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    // type: LOADING,
-                    message: translator(i18nKeys.messages.performingAnalysis),
-                },
                 pageState: {
                     loading: true,
                 },
@@ -108,20 +105,26 @@ class FollowUpAnalysis extends Page {
                 if (this.isPageMounted()) {
                     const elements = response.map(FollowUpAnalysisTable.convertElementFromApiResponse);
 
-                    this.context.updateAppState({
+                    const feedback = elements && elements.length > 0 ? {
+                        showSnackbar: false,
+                    } : {
                         showSnackbar: true,
                         snackbarConf: {
-                            // type: SUCCESS,
-                            message: translator(i18nKeys.performingAnalysis),
+                            type: SUCCESS,
+                            message: translator(i18nKeys.messages.noValuesFound),
                         },
+                    };
+
+                    this.context.updateAppState({
+                        ...feedback,
                         pageState: {
-                            elements,
                             loading: false,
-                            showTable: true,
+                            elements,
+                            showTable: elements && elements.length > 0,
                         },
                     });
                 }
-            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+            }).catch(() => { this.manageError(); });
         }
     }
 
@@ -164,11 +167,6 @@ class FollowUpAnalysis extends Page {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                // type: LOADING,
-                message: translator(i18nKeys.messages.performingRequest),
-            },
             pageState: {
                 loading: true,
             },
@@ -193,7 +191,7 @@ class FollowUpAnalysis extends Page {
                 this.context.updateAppState({
                     showSnackbar: true,
                     snackbarConf: {
-                        // type: SUCCESS,
+                        type: SUCCESS,
                         message: translator(i18nKeys.messages.unfollow),
                     },
                     pageState: {
@@ -202,7 +200,7 @@ class FollowUpAnalysis extends Page {
                     },
                 });
             }
-        }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+        }).catch(() => { this.manageError(); });
     }
 
     isFormValid() {

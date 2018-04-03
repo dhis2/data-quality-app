@@ -6,6 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import { FontIcon, IconButton } from 'material-ui';
 
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
@@ -37,7 +39,7 @@ class MinMaxOutlierAnalysis extends Page {
         'dataSetIds',
         'elements',
         'loading',
-    ]
+    ];
 
     constructor() {
         super();
@@ -81,11 +83,6 @@ class MinMaxOutlierAnalysis extends Page {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    // type: LOADING,
-                    message: translator(i18nKeys.messages.performingAnalysis),
-                },
                 pageState: {
                     loading: true,
                 },
@@ -100,20 +97,26 @@ class MinMaxOutlierAnalysis extends Page {
                 if (this.isPageMounted()) {
                     const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
 
-                    this.context.updateAppState({
+                    const feedback = elements && elements.length > 0 ? {
+                        showSnackbar: false,
+                    } : {
                         showSnackbar: true,
                         snackbarConf: {
-                        // type: SUCCESS,
-                            message: translator(i18nKeys.performingAnalysis),
+                            type: SUCCESS,
+                            message: translator(i18nKeys.messages.noValuesFound),
                         },
+                    };
+
+                    this.context.updateAppState({
+                        ...feedback,
                         pageState: {
-                            elements,
                             loading: false,
-                            showTable: true,
+                            elements,
+                            showTable: elements && elements.length > 0,
                         },
                     });
                 }
-            }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+            }).catch(() => { this.manageError(); });
         }
     }
 
@@ -150,11 +153,6 @@ class MinMaxOutlierAnalysis extends Page {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
                 this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                    // type: LOADING,
-                        message: translator(i18nKeys.messages.performingRequest),
-                    },
                     pageState: {
                         loading: true,
                     },
@@ -169,7 +167,7 @@ class MinMaxOutlierAnalysis extends Page {
                         this.context.updateAppState({
                             showSnackbar: true,
                             snackbarConf: {
-                            // type: SUCCESS,
+                                type: SUCCESS,
                                 message: translator(
                                     currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
                             },
@@ -179,7 +177,7 @@ class MinMaxOutlierAnalysis extends Page {
                             },
                         });
                     }
-                }).catch(this.manageError.bind(this));    // FIXME why do I need bind
+                }).catch(() => { this.manageError(); });
                 break;
             }
         }
