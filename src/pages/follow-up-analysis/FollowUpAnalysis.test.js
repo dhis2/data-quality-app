@@ -7,6 +7,8 @@ import { RaisedButton, IconButton } from 'material-ui';
 import FollowUpAnalysis from './FollowUpAnalysis';
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
 
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+
 import {
   sections,
   FOLLOW_UP_ANALYSIS_SECTION_KEY,
