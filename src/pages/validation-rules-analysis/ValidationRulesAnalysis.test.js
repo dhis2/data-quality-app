@@ -8,6 +8,7 @@ import {
     sections,
     VALIDATION_RULES_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
+import { IconButton } from 'material-ui';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -38,54 +39,95 @@ const ownShallow = () => {
     );
 };
 
-describe('Test <ValidationRulesAnalysis /> render', () => {
+describe('Test <ValidationRulesAnalysis /> rendering:', () => {
+    let wrapper;
+    beforeEach(() => {
+        wrapper = ownShallow();
+    });
+
     it('Should render without crashing', () =>{
         ownShallow();
     });
 
     it('Should show correct title.', () =>{
-        const wrapper = ownShallow();
         expect(wrapper.find('h1')).toHaveLength(1);
         expect(wrapper.find('h1').text()).toBe('<IconButton />Validation Rule Analysis<PageHelper />');
     });
 
     it('Should render an "AvailableOrganisationUnitsTree" component.', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('AvailableOrganisationUnitsTree')).toHaveLength(1);
     });
 
     it('Renders a "Start Date" - DatePicker.', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('DatePicker').at(0).props().floatingLabelText).toBe('Start Date');
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('DatePicker').at(1).props().floatingLabelText).toBe('End Date');
     });
 
     it('Should render a "Validation Rule Group" - Select.', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('ValidationRuleGroupsSelect')).toHaveLength(1);
     });
 
     it('Should render a Checkbox to choose "Send notifications".', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('Checkbox').at(0).props().label).toBe('Send Notifications');
     });
 
     it('Should render a Checkbox to choose "Persist new results".', () => {
-        const wrapper = ownShallow();
         expect(wrapper.find('Checkbox').at(1).props().label).toBe('Persist new results');
     });
 
-    it('Should render "Validate" button.', () => {
-        const wrapper = ownShallow();
+    it('Should render a disabled "Validate" button.', () => {
+        wrapper.setState({
+            organisationUnitId: null,
+            startDate: new Date(),
+            endDate: new Date(),
+        });
         expect(wrapper.find('RaisedButton')).toHaveLength(1);
+        expect(wrapper.find('RaisedButton').props().disabled).toBeTruthy();
+        expect(wrapper.instance().isActionDisabled()).toBeTruthy();
+    });
+
+    it('Should render an active "Validate" button.', () => {
+        wrapper.setState({
+            organisationUnitId: 'TestOrganisationUnitId',
+            startDate: new Date(),
+            endDate: new Date(),
+        });
+        expect(wrapper.find('RaisedButton')).toHaveLength(1);
+        expect(wrapper.find('RaisedButton').props().disabled).toBeFalsy();
+        expect(wrapper.instance().isActionDisabled()).toBeFalsy();
+    });
+
+    it('Should not show "ValidationRulesAnalysisTable" component when has no elements.', () => {
+        const elements = [];
+        wrapper.setState({
+            elements,
+            showTable: elements && elements.length > 0,
+        });
+        expect(wrapper.find(IconButton)).toHaveLength(1);
+        expect(wrapper.find(IconButton).props().style.display).toBe('none');
+        expect(wrapper.find('ValidationRulesAnalysisTable')).toHaveLength(1);
+        expect(wrapper.find('ValidationRulesAnalysisTable').parent().props().style.display).toBe('none');
+        expect(wrapper.state('showTable')).toBeFalsy();
+    });
+
+    it('Should show "ValidationRulesAnalysisTable" component and back icon when has elements.', () => {
+        const elements = ['one', 'two', 'three'];
+        wrapper.setState({
+            elements,
+            showTable: elements && elements.length > 0,
+        });
+        expect(wrapper.find(IconButton)).toHaveLength(1);
+        expect(wrapper.find(IconButton).props().style.display).toBe('inline');
+        expect(wrapper.find('ValidationRulesAnalysisTable')).toHaveLength(1);
+        expect(wrapper.find('ValidationRulesAnalysisTable').parent().props().style.display).toBe('block');
+        expect(wrapper.state('showTable')).toBeTruthy();
     });
 });
 
-describe('Test <ValidationRulesAnalysis /> actions', () => {
+describe('Test <ValidationRulesAnalysis /> actions:', () => {
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'organisationUnitOnChange').and.callThrough();
@@ -94,47 +136,65 @@ describe('Test <ValidationRulesAnalysis /> actions', () => {
             organisationUnitId: null,
         });
         wrapper.find('AvailableOrganisationUnitsTree').simulate('change', 'TestOrganisationUnitId');
-        wrapper.update();
-        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId');
         expect(wrapper.state('organisationUnitId')).toBe('TestOrganisationUnitId');
     });
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'startDateOnChange');
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'startDateOnChange').and.callThrough();
         const wrapper = ownShallow();
+        const testStartDate  = new Date();
         wrapper.setState({
-            organisationUnitId: null,
+            startDate: null,
         });
-        wrapper.find('DatePicker').at(0).simulate('change');
-        expect(spy).toHaveBeenCalled();
+        wrapper.find('DatePicker').at(0).simulate('change', null, testStartDate);
+        expect(spy).toHaveBeenCalledWith(null, testStartDate);
+        expect(wrapper.state('startDate')).toMatchObject(testStartDate);
     });
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'endDateOnChange');
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'endDateOnChange').and.callThrough();
         const wrapper = ownShallow();
-        wrapper.find('DatePicker').at(1).simulate('change');
-        expect(spy).toHaveBeenCalled();
+        const testEndDate  = new Date();
+        wrapper.setState({
+            endDate: null,
+        });
+        wrapper.find('DatePicker').at(1).simulate('change', null, testEndDate);
+        expect(spy).toHaveBeenCalledWith(null, testEndDate);
+        expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
     it('Should call validationRuleGroupOnChange function when ValidationRuleGroupsSelect changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'validationRuleGroupOnChange');
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'validationRuleGroupOnChange').and.callThrough();
         const wrapper = ownShallow();
-        wrapper.find('ValidationRuleGroupsSelect').at(0).simulate('change');
-        expect(spy).toHaveBeenCalled();
+        wrapper.setState({
+            validationRuleGroupId: null,
+        });
+        wrapper.find('ValidationRuleGroupsSelect').at(0).simulate('change', null, null, 'TestValidationRuleGroupId');
+        expect(spy).toHaveBeenCalledWith(null, null, 'TestValidationRuleGroupId');
+        expect(wrapper.state('validationRuleGroupId')).toBe('TestValidationRuleGroupId');
     });
 
     it('Should call updateSendNotifications when "Send notifications" checkbox change.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updateSendNotifications');
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updateSendNotifications').and.callThrough();
         const wrapper = ownShallow();
-        wrapper.find('Checkbox').at(0).simulate('check');
-        expect(spy).toHaveBeenCalled();
+        wrapper.setState({
+            sendNotifications: null,
+        });
+        wrapper.find('Checkbox').at(0).simulate('check', null, true);
+        expect(spy).toHaveBeenCalledWith(null, true);
+        expect(wrapper.state('sendNotifications')).toBeTruthy();
     });
 
     it('Should call updatePersistNewResults when "Persist new results" checkbox change.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updatePersistNewResults');
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updatePersistNewResults').and.callThrough();
         const wrapper = ownShallow();
-        wrapper.find('Checkbox').at(1).simulate('check');
-        expect(spy).toHaveBeenCalled();
+        wrapper.setState({
+            persistNewResults: null,
+        });
+        wrapper.find('Checkbox').at(1).simulate('check', null, true);
+        expect(spy).toHaveBeenCalledWith(null, true);
+        expect(wrapper.state('persistNewResults')).toBeTruthy();
     });
 
     it('Should call validate function when Validate button is clicked.', () => {
@@ -142,6 +202,20 @@ describe('Test <ValidationRulesAnalysis /> actions', () => {
         const wrapper = ownShallow();
         wrapper.find('RaisedButton').simulate('click');
         expect(spy).toHaveBeenCalled();
+    });
+
+    it('Calls back method when IconButton (back) is clicked', () => {
+        const spy = spyOn(ValidationRulesAnalysis.prototype, 'back');
+        const wrapper = ownShallow();
+        wrapper.find(IconButton).simulate('click');
+        expect(spy).toHaveBeenCalled();
+    });
+
+    it('Update state when back button is clicked', () => {
+        const wrapper = ownShallow();
+        wrapper.setState({showTable: true});
+        wrapper.find(IconButton).simulate('click');
+        expect(wrapper.state('showTable')).toBe(false);
     });
 
 });
