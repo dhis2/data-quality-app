@@ -81,8 +81,8 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     it('Should render a disabled "Validate" button.', () => {
         wrapper.setState({
             organisationUnitId: null,
-            startDate: new Date(),
-            endDate: new Date(),
+            startDate: null,
+            endDate: null,
         });
         expect(wrapper.find('RaisedButton')).toHaveLength(1);
         expect(wrapper.find('RaisedButton').props().disabled).toBeTruthy();
