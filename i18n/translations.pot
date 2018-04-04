@@ -5,164 +5,199 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-03T09:51:13.767Z\n"
-"PO-Revision-Date: 2018-04-03T09:51:13.767Z\n"
+"POT-Creation-Date: 2018-04-04T12:44:20.332Z\n"
+"PO-Revision-Date: 2018-04-04T12:44:20.332Z\n"
 
-msgid "updatingMessage"
+msgid "Updating Organisation Units Tree..."
 msgstr ""
 
-msgid "dataSetLabel"
+msgid "Data Set"
 msgstr ""
 
-msgid "allDataSetsOption"
+msgid "[All Data Sets]"
 msgstr ""
 
-msgid "pdf"
+msgid "DOWNLOAD AS PDF"
 msgstr ""
 
-msgid "xls"
+msgid "DOWNLOAD AS XLS"
 msgstr ""
 
-msgid "csv"
+msgid "DOWNLOAD AS CSV"
 msgstr ""
 
-msgid "homeLabel"
+msgid "Follow-Up Analysis"
 msgstr ""
 
-msgid "homeAction"
+msgid "View Data Values"
 msgstr ""
 
-msgid "header"
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
 msgstr ""
 
-msgid "description"
-msgstr ""
-
-msgid "actionButtonFollow"
-msgstr ""
-
-msgid "actionButtonUnfollow"
-msgstr ""
-
-msgid "organisationUnit"
-msgstr ""
-
-msgid "startDate"
-msgstr ""
-
-msgid "endDate"
-msgstr ""
-
-msgid "dataElement"
-msgstr ""
-
-msgid "period"
-msgstr ""
-
-msgid "min"
-msgstr ""
-
-msgid "value"
-msgstr ""
-
-msgid "max"
+msgid "follow up"
 msgstr ""
 
 msgid "unfollow"
 msgstr ""
 
-msgid "comment"
+msgid "Parent organisation unit"
 msgstr ""
 
-msgid "title"
+msgid "Start Date"
 msgstr ""
 
-msgid "close"
+msgid "End Date"
 msgstr ""
 
-msgid "moreThan500"
+msgid "Data Element"
 msgstr ""
 
-msgid "actionButton"
+msgid "Organisation Unit"
 msgstr ""
 
-msgid "dataSet"
+msgid "Period"
 msgstr ""
 
-msgid "mark"
+msgid "Min"
 msgstr ""
 
-msgid "standardDeviations"
+msgid "Value"
 msgstr ""
 
-msgid "validationRuleGroup"
+msgid "Max"
 msgstr ""
 
-msgid "sendNotifications"
+msgid "Unfollow"
 msgstr ""
 
-msgid "persistNewResults"
+msgid "Comment"
 msgstr ""
 
-msgid "importance"
+msgid "Close"
 msgstr ""
 
-msgid "validationRule"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 
-msgid "operator"
+msgid "Min-Max Outlier Analysis"
 msgstr ""
 
-msgid "details"
+msgid "Analyze"
 msgstr ""
 
-msgid "dialogTitle"
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier "
+"values can be examined and marked for follow-up."
 msgstr ""
 
-msgid "resultSectionTitle"
+msgid "start"
 msgstr ""
 
-msgid "subTitle"
+msgid "Mark"
 msgstr ""
 
-msgid "nameLabel"
+msgid "Std Dev Outlier Analysis"
 msgstr ""
 
-msgid "descriptionLabel"
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
 msgstr ""
 
-msgid "leftSideSectionTitle"
+msgid "Select number of standard deviations"
 msgstr ""
 
-msgid "rightSideSectionTitle"
+msgid "Validation Rule Analysis"
 msgstr ""
 
-msgid "dataElementLabel"
+msgid "Run Validation"
 msgstr ""
 
-msgid "valueLabel"
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
 msgstr ""
 
-msgid "validationRuleGroupLabel"
+msgid "validate"
 msgstr ""
 
-msgid "allValidationRulesOption"
+msgid "Validation Rule Group"
 msgstr ""
 
-msgid "performingRequest"
+msgid "Send Notifications"
 msgstr ""
 
-msgid "performingAnalysis"
+msgid "Persist new results"
 msgstr ""
 
-msgid "analysisDone"
+msgid "Importance"
 msgstr ""
 
-msgid "unexpectedAnalysisError"
+msgid "Validation Rule"
 msgstr ""
 
-msgid "marked"
+msgid "Operator"
 msgstr ""
 
-msgid "unmarked"
+msgid "Details"
+msgstr ""
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Performing request"
+msgstr ""
+
+msgid "Performing analysis"
+msgstr ""
+
+msgid "Analysis done"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr ""
+
+msgid "No values found"
+msgstr ""
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "Marked"
+msgstr ""
+
+msgid "Unmarked"
+msgstr ""
+
+msgid "Unfollow done"
 msgstr ""
