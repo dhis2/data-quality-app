@@ -21,7 +21,7 @@ const addKeysFromConfigObject = (obj) => {
       if (typeof obj[key] == "object") {
         addKeysFromConfigObject(obj[key]);
       } else {
-        translations[key] = '';
+        translations[obj[key]] = '';
       }
     }
   }
