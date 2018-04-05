@@ -8,7 +8,10 @@ import {
     sections,
     VALIDATION_RULES_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
-import { IconButton } from 'material-ui';
+import { Checkbox, DatePicker, IconButton, RaisedButton } from 'material-ui';
+import ValidationRuleGroupsSelect from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
+import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
+import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -31,7 +34,6 @@ const ownShallow = () => {
         {
             context: {
                 updateAppState: jest.fn(),
-                validate: jest.fn(),
                 translator: (key) => key,
             },
             disableLifecycleMethods: true
@@ -59,23 +61,23 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     });
 
     it('Renders a "Start Date" - DatePicker.', () => {
-        expect(wrapper.find('DatePicker').at(0).props().floatingLabelText).toBe('Start Date');
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
-        expect(wrapper.find('DatePicker').at(1).props().floatingLabelText).toBe('End Date');
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
     });
 
     it('Should render a "Validation Rule Group" - Select.', () => {
-        expect(wrapper.find('ValidationRuleGroupsSelect')).toHaveLength(1);
+        expect(wrapper.find(ValidationRuleGroupsSelect)).toHaveLength(1);
     });
 
     it('Should render a Checkbox to choose "Send notifications".', () => {
-        expect(wrapper.find('Checkbox').at(0).props().label).toBe('Send Notifications');
+        expect(wrapper.find(Checkbox).at(0).props().label).toBe('Send Notifications');
     });
 
     it('Should render a Checkbox to choose "Persist new results".', () => {
-        expect(wrapper.find('Checkbox').at(1).props().label).toBe('Persist new results');
+        expect(wrapper.find(Checkbox).at(1).props().label).toBe('Persist new results');
     });
 
     it('Should render a disabled "Validate" button.', () => {
@@ -84,8 +86,8 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
             startDate: null,
             endDate: null,
         });
-        expect(wrapper.find('RaisedButton')).toHaveLength(1);
-        expect(wrapper.find('RaisedButton').props().disabled).toBeTruthy();
+        expect(wrapper.find(RaisedButton)).toHaveLength(1);
+        expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
         expect(wrapper.instance().isActionDisabled()).toBeTruthy();
     });
 
@@ -95,8 +97,8 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
             startDate: new Date(),
             endDate: new Date(),
         });
-        expect(wrapper.find('RaisedButton')).toHaveLength(1);
-        expect(wrapper.find('RaisedButton').props().disabled).toBeFalsy();
+        expect(wrapper.find(RaisedButton)).toHaveLength(1);
+        expect(wrapper.find(RaisedButton).props().disabled).toBeFalsy();
         expect(wrapper.instance().isActionDisabled()).toBeFalsy();
     });
 
@@ -108,8 +110,8 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
         });
         expect(wrapper.find(IconButton)).toHaveLength(1);
         expect(wrapper.find(IconButton).props().style.display).toBe('none');
-        expect(wrapper.find('ValidationRulesAnalysisTable')).toHaveLength(1);
-        expect(wrapper.find('ValidationRulesAnalysisTable').parent().props().style.display).toBe('none');
+        expect(wrapper.find(ValidationRulesAnalysisTable)).toHaveLength(1);
+        expect(wrapper.find(ValidationRulesAnalysisTable).parent().props().style.display).toBe('none');
         expect(wrapper.state('showTable')).toBeFalsy();
     });
 
@@ -121,8 +123,8 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
         });
         expect(wrapper.find(IconButton)).toHaveLength(1);
         expect(wrapper.find(IconButton).props().style.display).toBe('inline');
-        expect(wrapper.find('ValidationRulesAnalysisTable')).toHaveLength(1);
-        expect(wrapper.find('ValidationRulesAnalysisTable').parent().props().style.display).toBe('block');
+        expect(wrapper.find(ValidationRulesAnalysisTable)).toHaveLength(1);
+        expect(wrapper.find(ValidationRulesAnalysisTable).parent().props().style.display).toBe('block');
         expect(wrapper.state('showTable')).toBeTruthy();
     });
 });
@@ -135,7 +137,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             organisationUnitId: null,
         });
-        wrapper.find('AvailableOrganisationUnitsTree').simulate('change', 'TestOrganisationUnitId');
+        wrapper.find(AvailableOrganisationUnitsTree).simulate('change', 'TestOrganisationUnitId');
         expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId');
         expect(wrapper.state('organisationUnitId')).toBe('TestOrganisationUnitId');
     });
@@ -147,7 +149,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             startDate: null,
         });
-        wrapper.find('DatePicker').at(0).simulate('change', null, testStartDate);
+        wrapper.find(DatePicker).at(0).simulate('change', null, testStartDate);
         expect(spy).toHaveBeenCalledWith(null, testStartDate);
         expect(wrapper.state('startDate')).toMatchObject(testStartDate);
     });
@@ -159,7 +161,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             endDate: null,
         });
-        wrapper.find('DatePicker').at(1).simulate('change', null, testEndDate);
+        wrapper.find(DatePicker).at(1).simulate('change', null, testEndDate);
         expect(spy).toHaveBeenCalledWith(null, testEndDate);
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
@@ -192,7 +194,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             persistNewResults: null,
         });
-        wrapper.find('Checkbox').at(1).simulate('check', null, true);
+        wrapper.find(Checkbox).at(1).simulate('check', null, true);
         expect(spy).toHaveBeenCalledWith(null, true);
         expect(wrapper.state('persistNewResults')).toBeTruthy();
     });
@@ -200,7 +202,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     it('Should call validate function when Validate button is clicked.', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'validate');
         const wrapper = ownShallow();
-        wrapper.find('RaisedButton').simulate('click');
+        wrapper.find(RaisedButton).simulate('click');
         expect(spy).toHaveBeenCalled();
     });
 
