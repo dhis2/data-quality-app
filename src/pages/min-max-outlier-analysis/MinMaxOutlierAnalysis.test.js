@@ -22,6 +22,7 @@ for(let i = 0; i < sections.length; i++) {
 }
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
 const ownShallow = () => {
   return shallow(
