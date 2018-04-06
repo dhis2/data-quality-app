@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06 08:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 2.2.5\n"
+"X-Pootle-Path: /sv/data-quality-app/sv.po\n"
+"X-Pootle-Revision: 29703\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "[All Data Sets]"
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr "LADDA NED SOM PDF"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "LADDA NED SOM XLS"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "LADDA NED SOM CSV"
+
+msgid "Follow-Up Analysis"
+msgstr "Uppföljningsanalys"
+
+msgid "View Data Values"
+msgstr "Visa datavärden"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "follow up"
+msgstr "Följ upp"
+
+msgid "unfollow"
+msgstr "sluta följa"
+
+msgid "Parent organisation unit"
+msgstr ""
+
+msgid "Start Date"
+msgstr "Start datum"
+
+msgid "End Date"
+msgstr "Slutdatum"
+
+msgid "Data Element"
+msgstr "Data element"
+
+msgid "Organisation Unit"
+msgstr "Organisationsenhet"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Värde"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Unfollow"
+msgstr "Sluta följa"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Close"
+msgstr "Stäng"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Min-max outlier analysis"
+
+msgid "Analyze"
+msgstr "Analysera"
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values "
+"can be examined and marked for follow-up."
+msgstr ""
+
+msgid "start"
+msgstr "start"
+
+msgid "Mark"
+msgstr "Markera"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Standardavvikelse outlier analys"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Select number of standard deviations"
+msgstr "Välj antal standardavvikelser"
+
+msgid "Validation Rule Analysis"
+msgstr "Valideringsregeln analys"
+
+msgid "Run Validation"
+msgstr "Kör validering"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "validate"
+msgstr "validera"
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregelngrupp"
+
+msgid "Send Notifications"
+msgstr "Skicka notifieringar"
+
+msgid "Persist new results"
+msgstr "Spara nya resultater"
+
+msgid "Importance"
+msgstr "Viktighet"
+
+msgid "Validation Rule"
+msgstr "Valideringsregeln"
+
+msgid "Operator"
+msgstr "Operatör"
+
+msgid "Details"
+msgstr "Detaljer"
+
+msgid "Validation Details"
+msgstr "Validering Detaljer"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "Valideringsregler Detaljer"
+
+msgid "VALIDATION RULE"
+msgstr "VALIDERINGSREGELN"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "LEFT SIDE"
+msgstr "VÄNSTER SIDA"
+
+msgid "RIGHT SIDE"
+msgstr "HÖGRE SIDA"
+
+msgid "DATA ELEMENT"
+msgstr "DATAELEMENT"
+
+msgid "VALUE"
+msgstr "VÄRDE"
+
+msgid "[All Validation Rules]"
+msgstr "[Alla valideringsregler]"
+
+msgid "Performing request"
+msgstr "Utför begäran"
+
+msgid "Performing analysis"
+msgstr "Utför analys"
+
+msgid "Analysis done"
+msgstr "Analys slutförts"
+
+msgid "Validation passed successfully"
+msgstr "Validering godkänd"
+
+msgid "No values found"
+msgstr "Inga värden hittades"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Ett oväntat fel inträffade under analysen"
+
+msgid "Marked"
+msgstr "Markerad"
+
+msgid "Unmarked"
+msgstr "Avmarkerad"
+
+msgid "Unfollow done"
+msgstr "Sluta följa utförd"
