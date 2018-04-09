@@ -24,13 +24,6 @@ class ValidationRulesAnalysisTable extends PureComponent {
         translator: PropTypes.func,
     }
 
-    constructor() {
-        super();
-        this.state = {
-            openDetails: false,
-        };
-    }
-
     render() {
         const translator = this.context.translator;
         const elements = this.props.elements;
