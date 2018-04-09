@@ -12,6 +12,8 @@ import { Checkbox, DatePicker, IconButton, RaisedButton } from 'material-ui';
 import ValidationRuleGroupsSelect from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
+import AlertBar from '../../components/alert-bar/AlertBar';
+import PageHelper from '../../components/page-helper/PageHelper';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -54,6 +56,14 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
         expect(wrapper.find('h1').text()).toBe('<IconButton />Validation Rule Analysis<PageHelper />');
+    });
+
+    it('Should have an "AlertBar" component.', () => {
+        expect(wrapper.find(AlertBar)).toHaveLength(1);
+    });
+
+    it('Should have an "PageHelper" component.', () => {
+        expect(wrapper.find(PageHelper)).toHaveLength(1);
     });
 
     it('Should render an "AvailableOrganisationUnitsTree" component.', () => {
@@ -127,6 +137,7 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
         expect(wrapper.find(ValidationRulesAnalysisTable).parent().props().style.display).toBe('block');
         expect(wrapper.state('showTable')).toBeTruthy();
     });
+
 });
 
 describe('Test <ValidationRulesAnalysis /> actions:', () => {
@@ -215,7 +226,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
 
     it('Update state when back button is clicked', () => {
         const wrapper = ownShallow();
-        wrapper.setState({showTable: true});
+        wrapper.setState({ showTable: true });
         wrapper.find(IconButton).simulate('click');
         expect(wrapper.state('showTable')).toBe(false);
     });
