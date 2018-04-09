@@ -1,35 +1,38 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
 import classNames from 'classnames';
 
-import styles from './ValidationRulesDetails.css';
-
 // i18n
 import { i18nKeys } from '../../../i18n';
+
+import Page from '../../Page';
+
 import jsPageStyles from '../../PageStyles';
 import cssPageStyles from '../../Page.css';
+import styles from './ValidationRulesDetails.css';
 
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import { apiConf } from '../../../server.conf';
+import ValidationRulesAnalysis from '../ValidationRulesAnalysis';
 
-class ValidationRulesDetails extends PureComponent {
+class ValidationRulesDetails extends Page {
+    static STATE_PROPERTIES = [
+        'loading',
+    ];
+
     static propTypes = {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
         organisationUnitId: PropTypes.string.isRequired,
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-        d2: PropTypes.object,
-    }
-
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
+            loading: false,
             openDetails: false,
             rule: {},
             expression: {
@@ -42,21 +45,49 @@ class ValidationRulesDetails extends PureComponent {
         this.handleClose = this.handleClose.bind(this);
     }
 
-    loadDetails() {
-        const api = this.context.d2.Api.getApi();
-        const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`;
-        const requestExpression = `${apiConf.endpoints.validationRulesExpression}` +
-            `?validationRuleId=${this.props.validationRuleId}` +
-            `&periodId=${this.props.periodId}` +
-            `&organisationUnitId=${this.props.organisationUnitId}`;
-        Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
-            this.setState({ openDetails: true, rule, expression });
-        }).catch(() => { this.manageError(); });
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
-    handleClose = () => {
+    loadDetails() {
+        if (!this.state.loading) {
+            const api = this.context.d2.Api.getApi();
+            const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`;
+            const requestExpression = `${apiConf.endpoints.validationRulesExpression}` +
+                `?validationRuleId=${this.props.validationRuleId}` +
+                `&periodId=${this.props.periodId}` +
+                `&organisationUnitId=${this.props.organisationUnitId}`;
+            this.context.updateAppState({
+                pageState: {
+                    loading: true,
+                },
+            });
+            Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
+                this.context.updateAppState({
+                    pageState: {
+                        loading: false,
+                    },
+                });
+                this.setState({ openDetails: true, rule, expression });
+            }).catch(() => {
+                this.manageError();
+            });
+        }
+    }
+
+    handleClose() {
         this.setState({ openDetails: false });
-    };
+    }
 
     render() {
         const translator = this.context.translator;
@@ -64,6 +95,7 @@ class ValidationRulesDetails extends PureComponent {
         // Details Actions
         const dialogActions = [
             <FlatButton
+                key={`FB${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                 label={translator(i18nKeys.validationRulesAnalysis.details.close)}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
@@ -127,6 +159,7 @@ class ValidationRulesDetails extends PureComponent {
         return (
             <div>
                 <FontIcon
+                    key={`FI|${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     className={'material-icons'}
                     style={jsPageStyles.cursorStyle}
                     onClick={this.loadDetails}
@@ -134,10 +167,11 @@ class ValidationRulesDetails extends PureComponent {
                     info
                 </FontIcon>
                 <Dialog
+                    key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     autoScrollBodyContent={Boolean(true)}
                     title={translator(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
                     actions={dialogActions}
-                    modal={false}
+                    modal={Boolean(true)}
                     open={this.state.openDetails}
                     onRequestClose={this.handleClose}
                 >
