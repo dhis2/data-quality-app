@@ -32,6 +32,8 @@ import { apiConf } from '../../server.conf';
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
+export const DEFAULT_STANDARD_DEVIATION = 3.0;
+
 class StdDevOutlierAnalysis extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -54,7 +56,7 @@ class StdDevOutlierAnalysis extends Page {
             organisationUnitId: null,
             dataSetIds: [],
             elements: [],
-            standardDeviation: 3.0,     // FIXME to constant
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         };
 
         this.start = this.start.bind(this);

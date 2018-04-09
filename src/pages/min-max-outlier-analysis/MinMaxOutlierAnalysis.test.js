@@ -56,7 +56,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     wrapper = ownShallow();
   });
 
-  it('Min Max Outlier Analysis renders without crashing', () => {
+  it('Renders without crashing', () => {
     ownShallow();
   });
 
@@ -65,15 +65,15 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.minMaxOutlierAnalysis.header}<PageHelper />`);
   });
 
-  it('Min Max Outlier Analysis renders a OutlierAnalyisTable', () => {
+  it('Renders a OutlierAnalyisTable', () => {
     expect(wrapper.find(OutlierAnalyisTable)).toHaveLength(1);
   });
 
-  it('Min Max Outlier Analysis renders a RaisedButton', () => {
+  it('Renders a RaisedButton', () => {
     expect(wrapper.find(RaisedButton)).toHaveLength(1);
   });
 
-  it('Min Max Outlier Analysis renders am IconButton', () => {
+  it('Renders am IconButton', () => {
     expect(wrapper.find(IconButton)).toHaveLength(1);
   });
 
@@ -88,6 +88,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
   it('Should render a disabled action button.', () => {
     wrapper.setState({
       organisationUnitId: null,
+      dataSetIds: null,
       startDate: new Date(),
       endDate: new Date(),
     });
@@ -130,7 +131,6 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 });
 
 describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
-
   it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
     const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'organisationUnitOnChange').and.callThrough();
     const wrapper = ownShallow();
@@ -176,25 +176,24 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('Min Max Outlier Analysis calls start method when RaisedButton is clicked', () => {
+  it('Should calls start method when RaisedButton is clicked', () => {
     const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'start');
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');
     expect(spy).toHaveBeenCalled();
   });
 
-  it('Min Max Outlier Analysis calls back method when IconButton (back) is clicked', () => {
+  it('Should calls back method when IconButton (back) is clicked', () => {
     const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'back');
     const wrapper = ownShallow();
     wrapper.find(IconButton).simulate('click');
     expect(spy).toHaveBeenCalled();
   });
 
-  it('Min Max Outlier Analysis update state when back button is clicked', () => {
+  it('Should update state when back button is clicked', () => {
     const wrapper = ownShallow();
     wrapper.setState({showTable: true});
     wrapper.find(IconButton).simulate('click');
     expect(wrapper.state('showTable')).toBe(false);
   });
-
 });
