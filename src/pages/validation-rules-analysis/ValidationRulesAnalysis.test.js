@@ -67,7 +67,7 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     });
 
     it('Should render an "AvailableOrganisationUnitsTree" component.', () => {
-        expect(wrapper.find('AvailableOrganisationUnitsTree')).toHaveLength(1);
+        expect(wrapper.find(AvailableOrganisationUnitsTree)).toHaveLength(1);
     });
 
     it('Renders a "Start Date" - DatePicker.', () => {
@@ -183,7 +183,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             validationRuleGroupId: null,
         });
-        wrapper.find('ValidationRuleGroupsSelect').at(0).simulate('change', null, null, 'TestValidationRuleGroupId');
+        wrapper.find(ValidationRuleGroupsSelect).at(0).simulate('change', null, null, 'TestValidationRuleGroupId');
         expect(spy).toHaveBeenCalledWith(null, null, 'TestValidationRuleGroupId');
         expect(wrapper.state('validationRuleGroupId')).toBe('TestValidationRuleGroupId');
     });
