@@ -284,14 +284,12 @@ class FollowUpAnalysis extends Page {
                         </div>
                         {/* TABLE */}
                         <div style={{ display: this.state.showTable ? 'block' : 'none' }}>
-                            <CardText>
-                                <FollowUpAnalysisTable
-                                    elements={this.state.elements}
-                                    toggleCheckbox={this.toggleCheckbox}
-                                    unfollow={this.unfollow}
-                                    loading={this.state.loading}
-                                />
-                            </CardText>
+                            <FollowUpAnalysisTable
+                                elements={this.state.elements}
+                                toggleCheckbox={this.toggleCheckbox}
+                                unfollow={this.unfollow}
+                                loading={this.state.loading}
+                            />
                         </div>
                     </CardText>
                 </Card>

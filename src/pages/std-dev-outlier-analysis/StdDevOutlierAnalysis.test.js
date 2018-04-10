@@ -81,12 +81,24 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     expect(wrapper.find(IconButton)).toHaveLength(1);
   });
 
+  it('Should render an AvailableOrganisationUnitsTree component.', () => {
+    expect(wrapper.find(AvailableOrganisationUnitsTree)).toHaveLength(1);
+  });
+
+  it('Should render an AvailableDatasetsSelect component.', () => {
+    expect(wrapper.find(AvailableDatasetsSelect)).toHaveLength(1);
+  });
+
   it('Renders a "Start Date" - DatePicker.', () => {
     expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.startDate);
   });
 
   it('Renders a "End Date" - DatePicker.', () => {
     expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.endDate);
+  });
+
+  it('Should render a SelectField component.', () => {
+    expect(wrapper.find(SelectField)).toHaveLength(1);
   });
 
   it('Should render a disabled action button.', () => {
@@ -115,7 +127,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     expect(wrapper.instance().isActionDisabled()).toBeFalsy();
   });
 
-  it('Should not show "OutlierAnalyisTable" component when showTable is false.', () => {
+  it('Should not show OutlierAnalyisTable component when showTable is false.', () => {
     wrapper.setState({
       showTable: false,
     });
@@ -125,7 +137,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     expect(wrapper.find(OutlierAnalyisTable).parent().props().style.display).toBe('none');
   });
 
-  it('Should show "OutlierAnalyisTable" component and back icon when showTable is true.', () => {
+  it('Should show OutlierAnalyisTable component and back icon when showTable is true.', () => {
     wrapper.setState({
       showTable: true,
     });

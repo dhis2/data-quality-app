@@ -77,6 +77,14 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     expect(wrapper.find(IconButton)).toHaveLength(1);
   });
 
+  it('Should render an AvailableOrganisationUnitsTree component.', () => {
+    expect(wrapper.find(AvailableOrganisationUnitsTree)).toHaveLength(1);
+  });
+
+  it('Should render an AvailableDatasetsSelect component.', () => {
+    expect(wrapper.find(AvailableDatasetsSelect)).toHaveLength(1);
+  });
+
   it('Renders a "Start Date" - DatePicker.', () => {
     expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.minMaxOutlierAnalysis.form.startDate);
   });
@@ -109,7 +117,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     expect(wrapper.instance().isActionDisabled()).toBeFalsy();
   });
 
-  it('Should not show "OutlierAnalyisTable" component when showTable is false.', () => {
+  it('Should not show OutlierAnalyisTable component when showTable is false.', () => {
     wrapper.setState({
       showTable: false,
     });
@@ -119,7 +127,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     expect(wrapper.find(OutlierAnalyisTable).parent().props().style.display).toBe('none');
   });
 
-  it('Should show "OutlierAnalyisTable" component and back icon when showTable is true.', () => {
+  it('Should show OutlierAnalyisTable component and back icon when showTable is true.', () => {
     wrapper.setState({
       showTable: true,
     });
