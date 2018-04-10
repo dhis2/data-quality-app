@@ -208,4 +208,22 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
         expect(wrapper.state('showTable')).toBe(false);
     });
 
+    it('Should change element marked state when toggleCheckbox is called.', () => {
+        const wrapper = ownShallow();
+        wrapper.setState({
+            elements: [
+                {
+                    key: 'key1',
+                    marked: false,
+                },
+                {
+                    key: 'key2',
+                    marked: false ,
+                }
+            ]
+        });
+        wrapper.instance().toggleCheckbox({ key: 'key1' });
+        expect(wrapper.state('elements')[0].marked).toBe(true);
+    });
+
 });

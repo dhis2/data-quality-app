@@ -194,7 +194,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         wrapper.setState({
             sendNotifications: null,
         });
-        wrapper.find('Checkbox').at(0).simulate('check', null, true);
+        wrapper.find(Checkbox).at(0).simulate('check', null, true);
         expect(spy).toHaveBeenCalledWith(null, true);
         expect(wrapper.state('sendNotifications')).toBeTruthy();
     });
