@@ -239,60 +239,56 @@ class FollowUpAnalysis extends Page {
                 </h1>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
-                    <CardText>
-                        {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
-                        <div style={{ display: !this.state.showTable ? 'block' : 'none' }}>
-                            <div className="row">
-                                <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                    <div className={cssPageStyles.formLabel}>
-                                        {translator(i18nKeys.followUpAnalysis.form.organisationUnit)}
-                                    </div>
-                                    <AvailableOrganisationUnitsTree
-                                        onChange={this.organisationUnitChanged}
-                                    />
+                    {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
+                    <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
+                        <div className="row">
+                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.followUpAnalysis.form.organisationUnit)}
                                 </div>
-                                <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                    <DatasetsForOrganisationUnitSelect
-                                        organisationUnitId={this.state.organisationUnitId}
-                                        onChange={this.dataSetOnChange}
-                                    />
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
-                                        onChange={this.startDateOnChange}
-                                        defaultDate={new Date()}
-                                        maxDate={new Date()}
-                                        value={this.state.startDate}
-                                    />
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
-                                        onChange={this.endDateOnChange}
-                                        defaultDate={new Date()}
-                                        maxDate={new Date()}
-                                        value={this.state.endDate}
-                                    />
-                                </div>
-                            </div>
-                            <RaisedButton
-                                className={cssPageStyles.mainButton}
-                                primary
-                                label={translator(i18nKeys.followUpAnalysis.actionButtonFollow)}
-                                onClick={this.getFollowUpList}
-                                disabled={this.isActionDisabled()}
-                            />
-                        </div>
-                        {/* TABLE */}
-                        <div style={{ display: this.state.showTable ? 'block' : 'none' }}>
-                            <CardText>
-                                <FollowUpAnalysisTable
-                                    elements={this.state.elements}
-                                    toggleCheckbox={this.toggleCheckbox}
-                                    unfollow={this.unfollow}
-                                    loading={this.state.loading}
+                                <AvailableOrganisationUnitsTree
+                                    onChange={this.organisationUnitChanged}
                                 />
-                            </CardText>
+                            </div>
+                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                                <DatasetsForOrganisationUnitSelect
+                                    organisationUnitId={this.state.organisationUnitId}
+                                    onChange={this.dataSetOnChange}
+                                />
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
+                                    onChange={this.startDateOnChange}
+                                    defaultDate={new Date()}
+                                    maxDate={new Date()}
+                                    value={this.state.startDate}
+                                />
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
+                                    onChange={this.endDateOnChange}
+                                    defaultDate={new Date()}
+                                    maxDate={new Date()}
+                                    value={this.state.endDate}
+                                />
+                            </div>
                         </div>
+                        <RaisedButton
+                            className={cssPageStyles.mainButton}
+                            primary
+                            label={translator(i18nKeys.followUpAnalysis.actionButtonFollow)}
+                            onClick={this.getFollowUpList}
+                            disabled={this.isActionDisabled()}
+                        />
+                    </CardText>
+                    {/* TABLE */}
+                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                        <FollowUpAnalysisTable
+                            elements={this.state.elements}
+                            toggleCheckbox={this.toggleCheckbox}
+                            unfollow={this.unfollow}
+                            loading={this.state.loading}
+                        />
                     </CardText>
                 </Card>
             </div>
