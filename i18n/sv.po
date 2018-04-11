@@ -1,12 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: i18next-conv\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06 08:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-11T07:57:24.328Z\n"
-"PO-Revision-Date: 2018-04-11T07:57:24.328Z\n"
+"X-Generator: Translate Toolkit 2.2.5\n"
+"X-Pootle-Path: /sv/data-quality-app/sv.po\n"
+"X-Pootle-Revision: 29703\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -18,19 +24,19 @@ msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "LADDA NED SOM PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "LADDA NED SOM XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "LADDA NED SOM CSV"
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Uppföljningsanalys"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Visa datavärden"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -38,69 +44,69 @@ msgid ""
 msgstr ""
 
 msgid "follow up"
-msgstr ""
+msgstr "Följ upp"
 
 msgid "unfollow"
-msgstr ""
+msgstr "sluta följa"
 
 msgid "Parent organisation unit"
 msgstr ""
 
 msgid "Start Date"
-msgstr ""
+msgstr "Start datum"
 
 msgid "End Date"
-msgstr ""
+msgstr "Slutdatum"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Data element"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisationsenhet"
 
 msgid "Period"
-msgstr ""
+msgstr "Period"
 
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 msgid "Value"
-msgstr ""
+msgstr "Värde"
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Sluta följa"
 
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
+msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "Min-max outlier analysis"
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analysera"
 
 msgid ""
-"Analyze potential outlier values based on min and max values. Outlier "
-"values can be examined and marked for follow-up."
+"Analyze potential outlier values based on min and max values. Outlier values "
+"can be examined and marked for follow-up."
 msgstr ""
 
 msgid "start"
-msgstr ""
+msgstr "start"
 
 msgid "Mark"
-msgstr ""
+msgstr "Markera"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Standardavvikelse outlier analys"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -108,13 +114,13 @@ msgid ""
 msgstr ""
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "Välj antal standardavvikelser"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Valideringsregeln analys"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Kör validering"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -122,82 +128,82 @@ msgid ""
 msgstr ""
 
 msgid "validate"
-msgstr ""
+msgstr "validera"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Valideringsregelngrupp"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Skicka notifieringar"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Spara nya resultater"
 
 msgid "Importance"
-msgstr ""
+msgstr "Viktighet"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Valideringsregeln"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operatör"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Validering Detaljer"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "Valideringsregler Detaljer"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "VALIDERINGSREGELN"
 
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "VÄNSTER SIDA"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "HÖGRE SIDA"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATAELEMENT"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VÄRDE"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Alla valideringsregler]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Utför begäran"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Utför analys"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Analys slutförts"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Validering godkänd"
 
 msgid "No values found"
-msgstr ""
+msgstr "Inga värden hittades"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Ett oväntat fel inträffade under analysen"
 
 msgid "Marked"
-msgstr ""
+msgstr "Markerad"
 
 msgid "Unmarked"
-msgstr ""
+msgstr "Avmarkerad"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Sluta följa utförd"
