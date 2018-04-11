@@ -15,7 +15,6 @@ import AlertBar from '../../components/alert-bar/AlertBar';
 import PageHelper from '../../components/page-helper/PageHelper';
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
-import FollowUpAnalysis from '../follow-up-analysis/FollowUpAnalysis';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -90,7 +89,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
         expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
     });
 
-    it('Shold not render a OutlierAnalyisTable when has no elements.', () => {
+    it('Should not render a OutlierAnalyisTable when has no elements.', () => {
         const elements = [];
         wrapper.setState({
             elements,
