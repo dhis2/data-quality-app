@@ -205,8 +205,8 @@ class FollowUpAnalysis extends Page {
 
     isFormValid() {
         return this.state.startDate &&
-        this.state.endDate &&
-        this.state.organisationUnitId;
+            this.state.endDate &&
+            this.state.organisationUnitId;
     }
 
     isActionDisabled() {
@@ -215,8 +215,8 @@ class FollowUpAnalysis extends Page {
 
     showAlertBar() {
         return this.state.showTable &&
-        this.state.elements &&
-        this.state.elements.length >= apiConf.results.analysis.limit;
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
     }
 
     render() {
@@ -260,7 +260,7 @@ class FollowUpAnalysis extends Page {
                                     floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
-                                    maxDate={new Date()}
+                                    maxDate={this.state.endDate}
                                     value={this.state.startDate}
                                 />
                                 <DatePicker
@@ -268,6 +268,7 @@ class FollowUpAnalysis extends Page {
                                     floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
+                                    minDate={this.state.startDate}
                                     maxDate={new Date()}
                                     value={this.state.endDate}
                                 />

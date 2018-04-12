@@ -196,11 +196,11 @@ class StdDevOutlierAnalysis extends Page {
 
     isFormValid() {
         return this.state.startDate &&
-        this.state.endDate &&
-        this.state.organisationUnitId &&
-        this.state.standardDeviation &&
-        this.state.dataSetIds &&
-        this.state.dataSetIds.length > 0;
+            this.state.endDate &&
+            this.state.organisationUnitId &&
+            this.state.standardDeviation &&
+            this.state.dataSetIds &&
+            this.state.dataSetIds.length > 0;
     }
 
     isActionDisabled() {
@@ -209,8 +209,8 @@ class StdDevOutlierAnalysis extends Page {
 
     showAlertBar() {
         return this.state.showTable &&
-          this.state.elements &&
-          this.state.elements.length >= apiConf.results.analysis.limit;
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
     }
 
     render() {
@@ -256,7 +256,7 @@ class StdDevOutlierAnalysis extends Page {
                                     }
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
-                                    maxDate={new Date()}
+                                    maxDate={this.state.endDate}
                                     value={this.state.startDate}
                                 />
                                 <DatePicker
@@ -266,6 +266,7 @@ class StdDevOutlierAnalysis extends Page {
                                     }
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
+                                    minDate={this.state.startDate}
                                     maxDate={new Date()}
                                     value={this.state.endDate}
                                 />
