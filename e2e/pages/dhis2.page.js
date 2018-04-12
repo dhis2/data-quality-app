@@ -21,10 +21,11 @@ class DHIS2Page extends Page {
   isLoggedIn() {
     return !browser.isVisible('#loginForm');
   }
-
+  /*
   isFromLocation(location) {
-    browser.waitForVisible(`a.title-link*=${location}`, 5000);
+    browser.waitForVisible(`#titleArea*=${location}`, 5000);
   }
+  */
 }
 
 module.exports = new DHIS2Page();
