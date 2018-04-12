@@ -197,8 +197,8 @@ class MinMaxOutlierAnalysis extends Page {
 
     showAlertBar() {
         return this.state.showTable &&
-        this.state.elements &&
-        this.state.elements.length >= apiConf.results.analysis.limit;
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
     }
 
     render() {
@@ -221,61 +221,59 @@ class MinMaxOutlierAnalysis extends Page {
                 </h1>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
-                    <CardText>
-                        {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
-                        <div style={{ display: !this.state.showTable ? 'block' : 'none' }}>
-                            <div className="row">
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <div className={cssPageStyles.formLabel}>
-                                        {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
-                                    </div>
-                                    <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
+                    {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
+                    <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
+                        <div className="row">
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
                                 </div>
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <div className={cssPageStyles.formLabel}>
-                                        {translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}
-                                    </div>
-                                    <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
-                                </div>
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)
-                                        }
-                                        onChange={this.startDateOnChange}
-                                        defaultDate={new Date()}
-                                        maxDate={this.state.endDate}
-                                        value={this.state.startDate}
-                                    />
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
-                                        }
-                                        onChange={this.endDateOnChange}
-                                        defaultDate={new Date()}
-                                        minDate={this.state.startDate}
-                                        maxDate={new Date()}
-                                        value={this.state.endDate}
-                                    />
-                                </div>
+                                <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                             </div>
-                            <RaisedButton
-                                className={cssPageStyles.mainButton}
-                                primary
-                                label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
-                                onClick={this.start}
-                                disabled={this.isActionDisabled()}
-                            />
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.minMaxOutlierAnalysis.form.organisationUnit)}
+                                </div>
+                                <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
+                            </div>
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)
+                                    }
+                                    onChange={this.startDateOnChange}
+                                    defaultDate={new Date()}
+                                    maxDate={this.state.endDate}
+                                    value={this.state.startDate}
+                                />
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
+                                    }
+                                    onChange={this.endDateOnChange}
+                                    defaultDate={new Date()}
+                                    minDate={this.state.startDate}
+                                    maxDate={new Date()}
+                                    value={this.state.endDate}
+                                />
+                            </div>
                         </div>
-                        {/* TABLE */}
-                        <div style={{ display: this.state.showTable ? 'block' : 'none' }}>
-                            <OutlierAnalyisTable
-                                elements={this.state.elements}
-                                toggleCheckbox={this.toggleCheckbox}
-                            />
-                        </div>
+                        <RaisedButton
+                            className={cssPageStyles.mainButton}
+                            primary
+                            label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
+                            onClick={this.start}
+                            disabled={this.isActionDisabled()}
+                        />
+                    </CardText>
+                    {/* TABLE */}
+                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                        <OutlierAnalyisTable
+                            elements={this.state.elements}
+                            toggleCheckbox={this.toggleCheckbox}
+                        />
                     </CardText>
                 </Card>
             </div>

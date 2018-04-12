@@ -48,7 +48,6 @@ const OutlierAnalyisTable = (props, context) => {
                         checked={element.marked}
                         onCheck={updateCheckbox}
                         iconStyle={jsPageStyles.iconColor}
-
                     />
                 </TableRowColumn>
             </TableRow>
@@ -104,11 +103,11 @@ const OutlierAnalyisTable = (props, context) => {
     );
 };
 
-const generateElementKey = e =>
+OutlierAnalyisTable.generateElementKey = e =>
     `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    key: generateElementKey(e),
+    key: OutlierAnalyisTable.generateElementKey(e),
     attributeOptionComboId: e.attributeOptionComboId,
     categoryOptionComboId: e.categoryOptionComboId,
     periodId: e.periodId,
