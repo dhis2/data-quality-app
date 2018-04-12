@@ -187,7 +187,6 @@ describe('Test <FollowUpAnalysisTable /> actions:', () => {
     });
 
     it('Should change showDialog state to false when closeCommentDialog method is called.', () => {
-        const spy = spyOn(FollowUpAnalysisTable.prototype, 'showComment').and.callThrough();
         const wrapper = ownShallow();
         wrapper.setState({
             showComment: true,
