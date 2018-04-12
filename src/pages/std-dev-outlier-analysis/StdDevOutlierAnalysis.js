@@ -255,7 +255,7 @@ class StdDevOutlierAnalysis extends Page {
                                         }
                                         onChange={this.startDateOnChange}
                                         defaultDate={new Date()}
-                                        maxDate={new Date()}
+                                        maxDate={this.state.endDate}
                                         value={this.state.startDate}
                                     />
                                     <DatePicker
@@ -265,6 +265,7 @@ class StdDevOutlierAnalysis extends Page {
                                         }
                                         onChange={this.endDateOnChange}
                                         defaultDate={new Date()}
+                                        minDate={this.state.startDate}
                                         maxDate={new Date()}
                                         value={this.state.endDate}
                                     />
