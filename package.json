@@ -76,8 +76,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "prestart": "d2-manifest package.json ./public/manifest.webapp",
+    "prestart": "d2-manifest package.json ./public/manifest.webapp && yarn convert-po",
     "start": "node scripts/start.js",
+    "prebuild": "yarn run manifest && yarn run convert-po",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
