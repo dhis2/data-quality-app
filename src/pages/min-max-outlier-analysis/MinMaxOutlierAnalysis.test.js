@@ -1,48 +1,57 @@
 /* eslint-disable */
+/* React and Enzyme */
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { RaisedButton, IconButton, DatePicker } from 'material-ui';
+/* Material UI */
+import { RaisedButton, IconButton } from 'material-ui';
+import DatePicker from 'material-ui/DatePicker';
 
+/* React components */
 import MinMaxOutlierAnalysis from './MinMaxOutlierAnalysis';
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
+import AvailableOrganisationUnitsTree from "../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree";
+
+/* helpers */
+import { i18nKeys } from '../../i18n';
 
 import {
-  sections,
-  MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY,
+    sections,
+    MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import PageHelper from '../../components/page-helper/PageHelper';
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
-import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
-  const section = sections[i];
-  if (section.key === MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY) {
-    pageInfo = section.info;
-    break;
-  }
+    const section = sections[i];
+    if (section.key === MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY) {
+        pageInfo = section.info;
+        break;
+    }
 }
 
+const ownShallow = () => {
+    return shallow(
+        <MinMaxOutlierAnalysis
+            sectionKey={MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY}
+            pageInfo={pageInfo}
+        />,
+        {
+            context: {
+                updateAppState: jest.fn(),
+                translator: (key) => key,
+            },
+            disableLifecycleMethods: true
+        }
+    );
+};
+
+/* Mocks */
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
-const ownShallow = () => {
-  return shallow(
-      <MinMaxOutlierAnalysis
-          sectionKey={MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY}
-          pageInfo={pageInfo}
-      />,
-      {
-        context: {
-          updateAppState: jest.fn(),
-          translator: (key) => key,
-        },
-        disableLifecycleMethods: true
-      }
-  );
-};
 describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 
     let wrapper;
@@ -56,7 +65,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe('<IconButton />Min-Max Outlier Analysis<PageHelper />');
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.minMaxOutlierAnalysis.header}<PageHelper />`);
     });
 
     it('Min Max Outlier Analysis renders an IconButton', () => {
@@ -81,12 +90,12 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 
     it('Renders a "Start Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.minMaxOutlierAnalysis.form.startDate);
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.minMaxOutlierAnalysis.form.endDate);
     });
 
     it('Should not render a OutlierAnalyisTable when has no elements.', () => {
@@ -155,7 +164,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 
 });
 
-describe('Test <FollowUpAnalysis /> actions:', () => {
+describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
 
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
         const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'dataSetsOnChange').and.callThrough();

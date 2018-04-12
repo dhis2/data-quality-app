@@ -1,48 +1,57 @@
 /* eslint-disable */
+/* React and Enzyme */
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { RaisedButton, IconButton, DatePicker, SelectField } from 'material-ui';
+/* Material UI */
+import { RaisedButton, IconButton } from 'material-ui';
+import DatePicker from 'material-ui/DatePicker';
+import SelectField from 'material-ui/SelectField';
 
-import StdDevOutlierAnalysis from './StdDevOutlierAnalysis';
+/* React components */
+import StdDevOutlierAnalysis, {DEFAULT_STANDARD_DEVIATION} from './StdDevOutlierAnalysis';
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
+import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
+import AvailableOrganisationUnitsTree from "../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree";
+
+/* helpers */
+import { i18nKeys } from '../../i18n';
 
 import {
-  sections,
-  STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
+    sections,
+    STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import PageHelper from '../../components/page-helper/PageHelper';
-import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
-  const section = sections[i];
-  if (section.key === STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY) {
-    pageInfo = section.info;
-    break;
-  }
+    const section = sections[i];
+    if (section.key === STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY) {
+        pageInfo = section.info;
+        break;
+    }
 }
 
+const ownShallow = () => {
+    return shallow(
+        <StdDevOutlierAnalysis
+            sectionKey={STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY}
+            pageInfo={pageInfo}
+        />,
+        {
+            context: {
+                updateAppState: jest.fn(),
+                translator: (key) => key,
+            },
+            disableLifecycleMethods: true
+        }
+    );
+};
+
+/* Mocks */
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-
-const ownShallow = () => {
-  return shallow(
-      <StdDevOutlierAnalysis
-          sectionKey={STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY}
-          pageInfo={pageInfo}
-      />,
-      {
-        context: {
-          updateAppState: jest.fn(),
-          translator: (key) => key,
-        },
-        disableLifecycleMethods: true
-      }
-  );
-};
 
 describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
@@ -57,7 +66,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe('<IconButton />Std Dev Outlier Analysis<PageHelper />');
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.stdDevOutlierAnalysis.header}<PageHelper />`);
     });
 
     it('Renders an IconButton', () => {
@@ -82,19 +91,19 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
     it('Renders a "Start Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.startDate);
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.endDate);
     });
 
     it('Renders a "SelectField" to choose Standard Deviation.', () => {
         expect(wrapper.find(SelectField).length).toBe(1);
     });
 
-    it('Should not render a OutlierAnalyisTable when has no elements.', () => {
+    it('Should not render a OutlierAnalysisTable when has no elements.', () => {
         const elements = [];
         wrapper.setState({
             elements,
@@ -107,7 +116,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
         expect(wrapper.state('showTable')).toBeFalsy();
     });
 
-    it('Should show "OutlierAnalyisTable" component and back icon when has elements.', () => {
+    it('Should show "OutlierAnalysisTable" component and back icon when has elements.', () => {
         const elements = ['one', 'two', 'three'];
         wrapper.setState({
             elements,
@@ -127,6 +136,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
             startDate: new Date(),
             organisationUnitId: 'TestOrganisationUnitId',
             dataSetIds: ['id1', 'id2', 'id3'],
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
@@ -139,6 +149,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
             startDate: null,
             organisationUnitId: null,
             dataSetIds: null,
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
@@ -152,6 +163,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
             startDate: new Date(),
             organisationUnitId: 'TestOrganisationUnitId',
             dataSetIds: ['id1', 'id2', 'id3'],
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeFalsy();
@@ -217,15 +229,16 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
-    it('Should call standardDeviationOnChange function when SelectField changes.', () => {
+    it('Should call standardDeviationOnChange function when Standard Deviation SelectField changes.', () => {
         const spy = spyOn(StdDevOutlierAnalysis.prototype, 'standardDeviationOnChange').and.callThrough();
         const wrapper = ownShallow();
+        const testStandardDeviation  = 4.0;
         wrapper.setState({
-            standardDeviation: 3,
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });
-        wrapper.find(SelectField).simulate('change', null, 8, 5);
-        expect(spy).toHaveBeenCalledWith(null, 8, 5);
-        expect(wrapper.state('standardDeviation')).toBe(5);
+        wrapper.find(SelectField).at(0).simulate('change', null, null, testStandardDeviation);
+        expect(spy).toHaveBeenCalledWith(null, null, testStandardDeviation);
+        expect(wrapper.state('standardDeviation')).toBe(testStandardDeviation);
     });
 
 

@@ -1,49 +1,58 @@
 /* eslint-disable */
+/* React and Enzyme */
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { RaisedButton, IconButton, DatePicker } from 'material-ui';
+/* Material UI */
+import { RaisedButton, IconButton } from 'material-ui';
+import DatePicker from 'material-ui/DatePicker';
 
-import FollowUpAnalysis from './FollowUpAnalysis';
-import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
-
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-
-import {
-  sections,
-  FOLLOW_UP_ANALYSIS_SECTION_KEY,
-} from '../sections.conf';
+/* React components */
 import PageHelper from '../../components/page-helper/PageHelper';
 import AlertBar from '../../components/alert-bar/AlertBar';
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
-import DatasetsForOrganisationUnitSelect from '../../components/datasets-for-organisation-unit-select/DatasetsForOrganisationUnitSelect';
+import FollowUpAnalysis from './FollowUpAnalysis';
+import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
+import AvailableOrganisationUnitsTree from
+        '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
+import DatasetsForOrganisationUnitSelect, { ALL_DATA_SETS_OPTION_ID } from
+        '../../components/datasets-for-organisation-unit-select/DatasetsForOrganisationUnitSelect';
+
+import {
+    sections,
+    FOLLOW_UP_ANALYSIS_SECTION_KEY,
+} from '../sections.conf';
+
+
+/* helpers */
+import { i18nKeys } from '../../i18n';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
-  const section = sections[i];
-  if (section.key === FOLLOW_UP_ANALYSIS_SECTION_KEY) {
-    pageInfo = section.info;
-    break;
-  }
+    const section = sections[i];
+    if (section.key === FOLLOW_UP_ANALYSIS_SECTION_KEY) {
+        pageInfo = section.info;
+        break;
+    }
 }
 
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-
 const ownShallow = () => {
-  return shallow(
-      <FollowUpAnalysis
-          sectionKey={FOLLOW_UP_ANALYSIS_SECTION_KEY}
-          pageInfo={pageInfo}
-      />,
-      {
-        context: {
-          updateAppState: jest.fn(),
-          translator: (key) => key,
-        },
-        disableLifecycleMethods: true
-      }
-  );
+    return shallow(
+        <FollowUpAnalysis
+            sectionKey={FOLLOW_UP_ANALYSIS_SECTION_KEY}
+            pageInfo={pageInfo}
+        />,
+        {
+            context: {
+                updateAppState: jest.fn(),
+                translator: (key) => key,
+            },
+            disableLifecycleMethods: true
+        }
+    );
 };
+
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 
 describe('Test <FollowUpAnalysis /> rendering:', () => {
 
@@ -53,12 +62,12 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
     });
 
     it('Followup Analysis renders without crashing', () => {
-      ownShallow();
+        ownShallow();
     });
 
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe('<IconButton />Follow-Up Analysis<PageHelper />');
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.followUpAnalysis.header}<PageHelper />`);
     });
 
     it('Followup Analysis renders an IconButton', () => {
@@ -82,11 +91,11 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
     });
 
     it('Renders a "Start Date" - DatePicker.', () => {
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.startDate);
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.endDate);
     });
 
     it('Should not render a "FollowUpAnalysisTable" component when has no elements.' , () => {
@@ -120,6 +129,7 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
             organisationUnitId: null,
             startDate: null,
             endDate: null,
+            dataSetId: ALL_DATA_SETS_OPTION_ID,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
@@ -131,6 +141,7 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
             organisationUnitId: 'TestOrganisationUnitId',
             startDate: new Date(),
             endDate: new Date(),
+            dataSetId: ALL_DATA_SETS_OPTION_ID,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeFalsy();
@@ -194,7 +205,7 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
         expect(spy).toHaveBeenCalled();
     });
 
-    it('Followup Analysis calls start method when RaisedButton is clicked', () => {
+    it('Followup Analysis calls getFollowUpList method when RaisedButton is clicked', () => {
         const spy = spyOn(FollowUpAnalysis.prototype, 'getFollowUpList');
         const wrapper = ownShallow();
         wrapper.find(RaisedButton).simulate('click');
