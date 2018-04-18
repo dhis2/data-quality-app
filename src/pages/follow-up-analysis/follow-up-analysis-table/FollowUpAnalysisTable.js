@@ -96,8 +96,23 @@ class FollowUpAnalysisTable extends Component {
         this.setState({ showComment: false });
     }
 
+    updateCheckbox(element) {
+        this.props.toggleCheckbox(element);
+    }
+
+    showComment(element) {
+        if (element.comment) {
+            this.setState({
+                showComment: true,
+                comment: element.comment,
+            });
+        }
+    }
+
     render() {
         const translator = this.context.translator;
+        let oneChecked = false;
+
         const commentDialogActions = [
             <FlatButton
                 label={i18nKeys.followUpAnalysis.commentModal.close}
@@ -106,21 +121,17 @@ class FollowUpAnalysisTable extends Component {
             />,
         ];
 
-        let oneChecked = false;
         // Table Rows
         const rows = this.props.elements.map((element) => {
             const updateCheckbox = (() => {
-                this.props.toggleCheckbox(element);
+                this.updateCheckbox(element);
             });
-            oneChecked = element.marked ? true : oneChecked;
+
             const showComment = (() => {
-                if (element.comment) {
-                    this.setState({
-                        showComment: true,
-                        comment: element.comment,
-                    });
-                }
+                this.showComment(element);
             });
+
+            oneChecked = element.marked ? true : oneChecked;
 
             return (
                 <TableRow key={element.key}>
@@ -145,7 +156,7 @@ class FollowUpAnalysisTable extends Component {
                     </TableRowColumn>
                     <TableRowColumn>
                         {element.comment &&
-                            <IconButton onClick={showComment} >
+                            <IconButton key={element.key} onClick={showComment} >
                                 <FontIcon
                                     className={'material-icons'}
                                     style={jsPageStyles.cursorStyle}

@@ -226,7 +226,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.startDateOnChange}
                                     value={this.state.startDate}
                                     defaultDate={new Date()}
-                                    maxDate={new Date()}
+                                    maxDate={this.state.endDate}
                                 />
                                 <DatePicker
                                     textFieldStyle={jsPageStyles.inputForm}
@@ -236,6 +236,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.endDateOnChange}
                                     value={this.state.endDate}
                                     defaultDate={new Date()}
+                                    minDate={this.state.startDate}
                                     maxDate={new Date()}
                                 />
                                 <ValidationRuleGroupsSelect
