@@ -147,14 +147,16 @@ class FollowUpAnalysisTable extends Component {
                     <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber value={element.value} />
                     </TableRowColumn>
-                    <TableRowColumn>
-                        <Checkbox
-                            checked={element.marked}
-                            onCheck={updateCheckbox}
-                            iconStyle={jsPageStyles.iconColor}
-                        />
+                    <TableRowColumn className={cssPageStyles.centerFlex}>
+                        <span className={cssPageStyles.checkboxWrapper}>
+                            <Checkbox
+                                checked={element.marked}
+                                onCheck={updateCheckbox}
+                                iconStyle={jsPageStyles.iconColor}
+                            />
+                        </span>
                     </TableRowColumn>
-                    <TableRowColumn>
+                    <TableRowColumn className={cssPageStyles.center}>
                         {element.comment &&
                             <IconButton key={element.key} onClick={showComment} >
                                 <FontIcon
@@ -212,10 +214,10 @@ class FollowUpAnalysisTable extends Component {
                             <TableHeaderColumn className={cssPageStyles.right}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.center}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn className={cssPageStyles.center}>
                                 {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}
                             </TableHeaderColumn>
                         </TableRow>

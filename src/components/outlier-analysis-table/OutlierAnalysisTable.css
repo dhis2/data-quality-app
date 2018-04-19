@@ -1,7 +1,7 @@
-.outlierAnalysisTable td:nth-child(1), table td:nth-child(2) {
-    width: 20%;
-}
-
-.outlierAnalysisTable th:nth-child(1), table th:nth-child(2) {
-    width: 20%;
-}
+.outlierAnalysisTable
+    td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6)
+    {
+        overflow: visible !important;
+    }

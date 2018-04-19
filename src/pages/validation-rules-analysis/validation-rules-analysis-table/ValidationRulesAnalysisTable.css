@@ -1,15 +1,12 @@
-.validationTable td:nth-child(1), table td:nth-child(2) {
-    width: 16%;
-}
+.validationTable
+    td:nth-child(3),
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(7)
+    {
+        overflow: visible !important;
+    }
 
-.validationTable th:nth-child(1), table th:nth-child(2) {
-    width: 16%;
-}
-
-.validationTable td:nth-child(4) {
-    width: 24%;
-}
-
-.validationTable th:nth-child(4) {
-    width: 24%;
+.operator {
+    font-size: 16px !important;
 }
