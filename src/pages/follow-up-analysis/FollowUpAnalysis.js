@@ -143,6 +143,7 @@ class FollowUpAnalysis extends Page {
     organisationUnitChanged(organisationUnitId) {
         this.setState({
             organisationUnitId,
+            dataSetId: ALL_DATA_SETS_OPTION_ID,
         });
     }
 
