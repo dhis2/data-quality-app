@@ -39,7 +39,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     <FormattedNumber value={element.leftValue} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    {element.operator}
+                    <span className={styles.operator}>{element.operator}</span>
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.rightValue} />
