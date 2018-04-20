@@ -89,8 +89,8 @@ class MinMaxOutlierAnalysis extends Page {
             });
 
             api.post(apiConf.endpoints.minMaxOutliersAnalysis, {
-                fromDate: convertDateToApiDateFormat(this.state.startDate),
-                toDate: convertDateToApiDateFormat(this.state.endDate),
+                startDate: convertDateToApiDateFormat(this.state.startDate),
+                endDate: convertDateToApiDateFormat(this.state.endDate),
                 organisationUnitId: this.state.organisationUnitId,
                 dataSetIds: this.state.dataSetIds,
             }).then((response) => {
