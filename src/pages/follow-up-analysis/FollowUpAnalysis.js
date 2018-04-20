@@ -92,8 +92,8 @@ class FollowUpAnalysis extends Page {
             });
 
             const request = {
-                fromDate: convertDateToApiDateFormat(this.state.startDate),
-                toDate: convertDateToApiDateFormat(this.state.endDate),
+                startDate: convertDateToApiDateFormat(this.state.startDate),
+                endDate: convertDateToApiDateFormat(this.state.endDate),
                 organisationUnitId: this.state.organisationUnitId,
             };
 
