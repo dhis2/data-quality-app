@@ -125,6 +125,17 @@ class ValidationRulesDetails extends Page {
             </div>
         );
 
+        const showNoData = side => (
+            <div className={classNames('row', styles.sectionBox)}>
+                <div className={classNames('col-xs-12', styles.sectionTitle)}>
+                    {side}
+                </div>
+                <div className={classNames('col-xs-12', cssPageStyles.center)}>
+                    <div className={styles.noData}>{translator(i18nKeys.validationRulesAnalysis.details.noData)}</div>
+                </div>
+            </div>
+        );
+
         const buildSection = (side, elements) =>
             (
                 <div className={classNames('row', styles.sectionBox)}>
@@ -179,17 +190,23 @@ class ValidationRulesDetails extends Page {
                     {result}
                     {/* Left Side */}
                     {
-                        buildSection(
-                            translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
-                            this.state.expression.leftSide ? this.state.expression.leftSide : [],
-                        )
+                        this.state.expression.leftSide && this.state.expression.leftSide.length > 0 ?
+                            buildSection(
+                                translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
+                                this.state.expression.leftSide,
+                            ) : (
+                                showNoData(translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle))
+                            )
                     }
                     {/* Right Side */}
                     {
-                        buildSection(
-                            translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
-                            this.state.expression.rightSide ? this.state.expression.rightSide : [],
-                        )
+                        this.state.expression.rightSide && this.state.expression.rightSide.length > 0 ?
+                            buildSection(
+                                translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
+                                this.state.expression.rightSide,
+                            ) : (
+                                showNoData(translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle))
+                            )
                     }
                 </Dialog>
             </div>
