@@ -32,6 +32,8 @@ import { apiConf } from '../../server.conf';
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
+export const DEFAULT_STANDARD_DEVIATION = 3.0;
+
 class StdDevOutlierAnalysis extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -54,7 +56,7 @@ class StdDevOutlierAnalysis extends Page {
             organisationUnitId: null,
             dataSetIds: [],
             elements: [],
-            standardDeviation: 3.0,     // FIXME to constant
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         };
 
         this.start = this.start.bind(this);
@@ -93,8 +95,8 @@ class StdDevOutlierAnalysis extends Page {
             });
 
             api.post(apiConf.endpoints.standardDeviationOutliersAnalysis, {
-                fromDate: convertDateToApiDateFormat(this.state.startDate),
-                toDate: convertDateToApiDateFormat(this.state.endDate),
+                startDate: convertDateToApiDateFormat(this.state.startDate),
+                endDate: convertDateToApiDateFormat(this.state.endDate),
                 organisationUnitId: this.state.organisationUnitId,
                 dataSetIds: this.state.dataSetIds,
                 standardDeviation: this.state.standardDeviation,
@@ -194,11 +196,11 @@ class StdDevOutlierAnalysis extends Page {
 
     isFormValid() {
         return this.state.startDate &&
-        this.state.endDate &&
-        this.state.organisationUnitId &&
-        this.state.standardDeviation &&
-        this.state.dataSetIds &&
-        this.state.dataSetIds.length > 0;
+            this.state.endDate &&
+            this.state.organisationUnitId &&
+            this.state.standardDeviation &&
+            this.state.dataSetIds &&
+            this.state.dataSetIds.length > 0;
     }
 
     isActionDisabled() {
@@ -207,8 +209,8 @@ class StdDevOutlierAnalysis extends Page {
 
     showAlertBar() {
         return this.state.showTable &&
-          this.state.elements &&
-          this.state.elements.length >= apiConf.results.analysis.limit;
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit;
     }
 
     render() {
@@ -231,78 +233,77 @@ class StdDevOutlierAnalysis extends Page {
                 </h1>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
-                    <CardText>
-                        {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
-                        <div style={{ display: !this.state.showTable ? 'block' : 'none' }}>
-                            <div className="row">
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <div className={cssPageStyles.formLabel}>
-                                        {translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
-                                    </div>
-                                    <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
+                    {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
+                    <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
+                        <div className="row">
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
                                 </div>
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <div className={cssPageStyles.formLabel}>
-                                        {translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
-                                    </div>
-                                    <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
-                                </div>
-                                <div className={classNames('col-md-4', cssPageStyles.section)}>
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)
-                                        }
-                                        onChange={this.startDateOnChange}
-                                        defaultDate={new Date()}
-                                        maxDate={new Date()}
-                                        value={this.state.startDate}
-                                    />
-                                    <DatePicker
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)
-                                        }
-                                        onChange={this.endDateOnChange}
-                                        defaultDate={new Date()}
-                                        maxDate={new Date()}
-                                        value={this.state.endDate}
-                                    />
-                                    <SelectField
-                                        style={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
-                                        }
-                                        onChange={this.standardDeviationOnChange}
-                                        value={this.state.standardDeviation}
-                                    >
-                                        <MenuItem value={1.0} primaryText="1.0" />
-                                        <MenuItem value={1.5} primaryText="1.5" />
-                                        <MenuItem value={2.0} primaryText="2.0" />
-                                        <MenuItem value={2.5} primaryText="2.5" />
-                                        <MenuItem value={3} primaryText="3.0" />
-                                        <MenuItem value={3.5} primaryText="3.5" />
-                                        <MenuItem value={4} primaryText="4.0" />
-                                        <MenuItem value={4.5} primaryText="4.5" />
-                                        <MenuItem value={5} primaryText="5" />
-                                    </SelectField>
-                                </div>
+                                <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                             </div>
-                            <RaisedButton
-                                className={cssPageStyles.mainButton}
-                                primary
-                                label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
-                                onClick={this.start}
-                                disabled={this.isActionDisabled()}
-                            />
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
+                                </div>
+                                <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
+                            </div>
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)
+                                    }
+                                    onChange={this.startDateOnChange}
+                                    defaultDate={new Date()}
+                                    maxDate={this.state.endDate}
+                                    value={this.state.startDate}
+                                />
+                                <DatePicker
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)
+                                    }
+                                    onChange={this.endDateOnChange}
+                                    defaultDate={new Date()}
+                                    minDate={this.state.startDate}
+                                    maxDate={new Date()}
+                                    value={this.state.endDate}
+                                />
+                                <SelectField
+                                    style={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
+                                    }
+                                    onChange={this.standardDeviationOnChange}
+                                    value={this.state.standardDeviation}
+                                >
+                                    <MenuItem value={1.0} primaryText="1.0" />
+                                    <MenuItem value={1.5} primaryText="1.5" />
+                                    <MenuItem value={2.0} primaryText="2.0" />
+                                    <MenuItem value={2.5} primaryText="2.5" />
+                                    <MenuItem value={3} primaryText="3.0" />
+                                    <MenuItem value={3.5} primaryText="3.5" />
+                                    <MenuItem value={4} primaryText="4.0" />
+                                    <MenuItem value={4.5} primaryText="4.5" />
+                                    <MenuItem value={5} primaryText="5" />
+                                </SelectField>
+                            </div>
                         </div>
-                        {/* TABLE */}
-                        <div style={{ display: this.state.showTable ? 'block' : 'none' }}>
-                            <OutlierAnalyisTable
-                                elements={this.state.elements}
-                                toggleCheckbox={this.toggleCheckbox}
-                            />
-                        </div>
+                        <RaisedButton
+                            className={cssPageStyles.mainButton}
+                            primary
+                            label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
+                            onClick={this.start}
+                            disabled={this.isActionDisabled()}
+                        />
+                    </CardText>
+                    {/* TABLE */}
+                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                        <OutlierAnalyisTable
+                            elements={this.state.elements}
+                            toggleCheckbox={this.toggleCheckbox}
+                        />
                     </CardText>
                 </Card>
             </div>

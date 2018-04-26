@@ -16,3 +16,9 @@
     line-height: 2;
     font-weight: bold;
 }
+
+.noData {
+    font-style: italic;
+    color: #bcbcbc;
+    padding: 30px;
+}

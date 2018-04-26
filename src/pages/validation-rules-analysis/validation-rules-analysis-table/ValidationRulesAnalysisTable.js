@@ -24,13 +24,6 @@ class ValidationRulesAnalysisTable extends PureComponent {
         translator: PropTypes.func,
     }
 
-    constructor() {
-        super();
-        this.state = {
-            openDetails: false,
-        };
-    }
-
     render() {
         const translator = this.context.translator;
         const elements = this.props.elements;
@@ -46,7 +39,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     <FormattedNumber value={element.leftValue} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    {element.operator}
+                    <span className={styles.operator}>{element.operator}</span>
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.rightValue} />

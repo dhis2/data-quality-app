@@ -43,13 +43,14 @@ const OutlierAnalyisTable = (props, context) => {
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.max} />
                 </TableRowColumn>
-                <TableRowColumn>
-                    <Checkbox
-                        checked={element.marked}
-                        onCheck={updateCheckbox}
-                        iconStyle={jsPageStyles.iconColor}
-
-                    />
+                <TableRowColumn className={cssPageStyles.centerFlex}>
+                    <span className={cssPageStyles.checkboxWrapper}>
+                        <Checkbox
+                            checked={element.marked}
+                            onCheck={updateCheckbox}
+                            iconStyle={jsPageStyles.iconColor}
+                        />
+                    </span>
                 </TableRowColumn>
             </TableRow>
         );
@@ -88,7 +89,7 @@ const OutlierAnalyisTable = (props, context) => {
                         <TableHeaderColumn className={cssPageStyles.right}>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
                         </TableHeaderColumn>
-                        <TableHeaderColumn>
+                        <TableHeaderColumn className={cssPageStyles.center}>
                             {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
                         </TableHeaderColumn>
                     </TableRow>
@@ -104,11 +105,11 @@ const OutlierAnalyisTable = (props, context) => {
     );
 };
 
-const generateElementKey = e =>
+OutlierAnalyisTable.generateElementKey = e =>
     `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    key: generateElementKey(e),
+    key: OutlierAnalyisTable.generateElementKey(e),
     attributeOptionComboId: e.attributeOptionComboId,
     categoryOptionComboId: e.categoryOptionComboId,
     periodId: e.periodId,

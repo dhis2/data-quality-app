@@ -115,6 +115,7 @@ export const i18nKeys = {
             dataElementLabel: 'DATA ELEMENT',
             valueLabel: 'VALUE',
             close: 'Close',
+            noData: 'no data available',
         },
     },
     validationRuleGroupsSelect: {

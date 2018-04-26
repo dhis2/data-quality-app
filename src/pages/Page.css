@@ -31,6 +31,12 @@
     text-align: center !important;
 }
 
+.centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .pageHeader {
     display: flex;
     align-items: center;
@@ -64,4 +70,13 @@
     text-align: left;
     color: #757575;
     margin-bottom: 5px;
+}
+
+.checkboxWrapper {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.checkboxWrapper > div > div > div {
+    margin: 0px !important;
 }

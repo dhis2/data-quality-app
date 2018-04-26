@@ -46,6 +46,10 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
       const translatedAllDataSetsOption = ALL_DATA_SETS_OPTION;
       translatedAllDataSetsOption.displayName = translator(ALL_DATA_SETS_OPTION.displayName);
       if (this.props.organisationUnitId !== nextProps.organisationUnitId) {
+          this.setState({
+              dataSets: [ALL_DATA_SETS_OPTION],
+              selected: ALL_DATA_SETS_OPTION.id,
+          });
           d2.models.organisationUnits.get(nextProps.organisationUnitId, {
               paging: false,
               fields: 'dataSets[id, displayName]',
