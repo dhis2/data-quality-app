@@ -129,7 +129,7 @@ class FollowUpAnalysis extends Page {
     }
 
     back() {
-        this.setState({ ...this.state, showTable: false });
+        this.setState({ showTable: false });
     }
 
     startDateOnChange(event, date) {
