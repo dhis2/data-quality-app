@@ -20,7 +20,7 @@ module.exports = class Page {
   }
 
   get startButton() {
-    return browser.element('button[id=start-button]');
+    return browser.element('button[id=start-analysis-button]');
   }
 
   get resultsTable() {

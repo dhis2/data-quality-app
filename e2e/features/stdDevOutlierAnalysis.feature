@@ -7,7 +7,7 @@ Feature: Std Dev Outlier Analysis
     When I open Std Dev Outlier Analysis page
 	
 	Scenario: I want to see all items in the page
-	Then A column with list of Data Set is displayed 
+    Then A column with list of Data Set is displayed
 	And A column with Parent organization unit selection checkboxes
 	And A start date selection
 	And An end date selection

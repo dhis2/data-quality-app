@@ -32,7 +32,7 @@ defineSupportCode(( {Given, When, Then} ) => {
     expect(this.page.endDateInput.isVisible()).to.equal(true);
   });
 
-  Then(/^Start option for min max outlier analysis is displayed/, () => {
+  Then(/^A Start analysis option is displayed/, () => {
     expect(this.page.startButton.isVisible()).to.equal(true);
   });
 
@@ -59,7 +59,7 @@ defineSupportCode(( {Given, When, Then} ) => {
     browser.pause(1000);                                                               // to make sure date picker closes
   });
 
-  When(/^Start min max outlier analysis/, () => {
+  When(/^Start analysis/, () => {
     this.page.startButton.click();
     browser.pause(10000);                         // time for task to process
   });

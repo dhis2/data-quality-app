@@ -11,13 +11,13 @@ Feature: Min-Max Outlier Analysis
     And A column with Parent organization unit selection is displayed
     And A start date selection is displayed
     And An end date selection is displayed
-    And Start option for min max outlier analysis is displayed
+    And A Start analysis option is displayed
 
   Scenario: I want to start Analysis and check results
     When I select Data set with results
     And I select Parent Organisation with results
     And I select valid time range to get results
-    And Start min max outlier analysis
+    And Start analysis
     Then New page is displayed
     And Print action "Download as PDF" is displayed
     And Print action "Download as XLS" is displayed
@@ -34,7 +34,7 @@ Feature: Min-Max Outlier Analysis
     When I select multiple Data set with results
     And I select Parent Organisation with results
     And I select valid time range to get results
-    And Start min max outlier analysis
+    And Start analysis
     Then New page is displayed
 
   Scenario: I want to not start Analysis without data set
@@ -49,7 +49,7 @@ Feature: Min-Max Outlier Analysis
 
   Scenario: I want to see No results message after start analysis
     When I fill form with data to retrieve no results
-    And Start min max outlier analysis
+    And Start analysis
     Then No results message is displayed
 
   Scenario: I cannot be able to generate Analysis with future start date
@@ -70,7 +70,7 @@ Feature: Min-Max Outlier Analysis
     And I select Parent Organisation with results
     And I Select start date equals to today less 100 years
     And I Select valid end date
-    And Start min max outlier analysis
+    And Start analysis
     Then New page is displayed
 
   Scenario: I cannot be able to generate Analysis with start date smaller than today less 100

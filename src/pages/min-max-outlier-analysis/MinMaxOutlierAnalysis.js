@@ -265,7 +265,7 @@ class MinMaxOutlierAnalysis extends Page {
                             </div>
                         </div>
                         <RaisedButton
-                            id="start-button"
+                            id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
                             label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
