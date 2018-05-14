@@ -224,7 +224,7 @@ class MinMaxOutlierAnalysis extends Page {
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
-                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                            <div className={classNames('col-md-4', 'dataSetsContainer', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
                                     {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
                                 </div>
@@ -238,6 +238,7 @@ class MinMaxOutlierAnalysis extends Page {
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <DatePicker
+                                    id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)
@@ -247,20 +248,24 @@ class MinMaxOutlierAnalysis extends Page {
                                     maxDate={this.state.endDate}
                                     value={this.state.startDate}
                                 />
-                                <DatePicker
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={
-                                        translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
-                                    }
-                                    onChange={this.endDateOnChange}
-                                    defaultDate={new Date()}
-                                    minDate={this.state.startDate}
-                                    maxDate={new Date()}
-                                    value={this.state.endDate}
-                                />
+                                <div id="end-date-test">
+                                    <DatePicker
+                                        id="end-date"
+                                        textFieldStyle={jsPageStyles.inputForm}
+                                        floatingLabelText={
+                                            translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
+                                        }
+                                        onChange={this.endDateOnChange}
+                                        defaultDate={new Date()}
+                                        minDate={this.state.startDate}
+                                        maxDate={new Date()}
+                                        value={this.state.endDate}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <RaisedButton
+                            id="start-button"
                             className={cssPageStyles.mainButton}
                             primary
                             label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
@@ -269,7 +274,7 @@ class MinMaxOutlierAnalysis extends Page {
                         />
                     </CardText>
                     {/* TABLE */}
-                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
                         <OutlierAnalyisTable
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}

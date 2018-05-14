@@ -13,6 +13,7 @@ exports.config = {
     './e2e/features/home.feature',
     './e2e/features/help.feature',
     './e2e/features/sideMenu.feature',
+    './e2e/features/minMaxOutlierAnalysis.feature',
   ],
   // Patterns to exclude.
   exclude: [

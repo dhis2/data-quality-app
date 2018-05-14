@@ -22,18 +22,21 @@ class DownloadAs extends PureComponent {
         return (
             <div className={styles.downloadAs}>
                 <a
+                    className="print-action-link"
                     href={`${api.baseUrl}${this.props.endpoint}.pdf?t=${timestamp}`}
                     target="_blank"
                 >
                     {translator(i18nKeys.downloadAs.pdf)}
                 </a>
                 <a
+                    className="print-action-link"
                     href={`${api.baseUrl}${this.props.endpoint}.xls?t=${timestamp}`}
                     target="_blank"
                 >
                     {translator(i18nKeys.downloadAs.xls)}
                 </a>
                 <a
+                    className="print-action-link"
                     href={`${api.baseUrl}${this.props.endpoint}.csv?t=${timestamp}`}
                     target="_blank"
                 >
