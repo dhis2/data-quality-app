@@ -8,9 +8,9 @@ Feature: Min-Max Outlier Analysis
 
   Scenario: I want to see all items in the page
     Then A column with list of Data Set is displayed
-    And A column with Parent organization unit selection checkboxes
-    And A start date selection
-    And An end date selection
+    And A column with Parent organization unit selection is displayed
+    And A start date selection is displayed
+    And An end date selection is displayed
     And Start option for min max outlier analysis is displayed
 
   Scenario: I want to start Analysis and check results

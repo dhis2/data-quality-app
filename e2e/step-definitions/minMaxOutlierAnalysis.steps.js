@@ -8,7 +8,8 @@ defineSupportCode(( {Given, When, Then} ) => {
   // Background:
   // *********************************************************
   When(/^I open Min-Max Outlier Analysis page$/, () => {
-    minMaxOutlierAnalysis.open();
+    this.page = minMaxOutlierAnalysis;
+    this.page.open();
     browser.pause(1000);
   });
 
@@ -16,72 +17,72 @@ defineSupportCode(( {Given, When, Then} ) => {
   // Scenario: I want to see all items in the page
   // *********************************************************
   Then(/^A column with list of Data Set is displayed$/, () => {
-    expect(minMaxOutlierAnalysis.dataSetSelect.isVisible()).to.equal(true);
+    expect(this.page.dataSetSelect.isVisible()).to.equal(true);
   });
 
-  Then(/^A column with Parent organization unit selection checkboxes$/, () => {
-    expect(minMaxOutlierAnalysis.organisationUnitTreeView.isVisible()).to.equal(true);
+  Then(/^A column with Parent organization unit selection is displayed$/, () => {
+    expect(this.page.organisationUnitTreeView.isVisible()).to.equal(true);
   });
 
-  Then(/^A start date selection/, () => {
-    expect(minMaxOutlierAnalysis.startDateInput.isVisible()).to.equal(true);
+  Then(/^A start date selection is displayed/, () => {
+    expect(this.page.startDateInput.isVisible()).to.equal(true);
   });
 
-  Then(/^An end date selection/, () => {
-    expect(minMaxOutlierAnalysis.endDateInput.isVisible()).to.equal(true);
+  Then(/^An end date selection is displayed/, () => {
+    expect(this.page.endDateInput.isVisible()).to.equal(true);
   });
 
   Then(/^Start option for min max outlier analysis is displayed/, () => {
-    expect(minMaxOutlierAnalysis.startButton.isVisible()).to.equal(true);
+    expect(this.page.startButton.isVisible()).to.equal(true);
   });
 
   // *********************************************************
   // Scenario: I want to start Analysis and check results
   // *********************************************************
   When(/^I select Data set with results/, () => {
-    minMaxOutlierAnalysis.getDataSetOptionByIndex(1).click();
+    this.page.getDataSetOptionByIndex(1).click();
   });
 
   When(/^I select Parent Organisation with results/, () => {
-    minMaxOutlierAnalysis.getOneOrgUnitTreeFromTreeByIndex(0).click();
+    this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
   });
 
   When(/^I select valid time range to get results/, () => {
     const today = new Date();
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);                                                               // to make sure buttons are available
-    minMaxOutlierAnalysis.openStartDateYearsPicker();
+    this.page.openStartDateYearsPicker();
     browser.pause(1000);                                                               // to make sure buttons are available
-    minMaxOutlierAnalysis.getStartDateYearButton(today.getFullYear() - 3).click();     // 3 years behind
+    this.page.getStartDateYearButton(today.getFullYear() - 3).click();     // 3 years behind
     browser.pause(1000);                                                               // to make sure buttons are available
-    minMaxOutlierAnalysis.confirmStartDatePicker();
+    this.page.confirmStartDatePicker();
     browser.pause(1000);                                                               // to make sure date picker closes
   });
 
   When(/^Start min max outlier analysis/, () => {
-    minMaxOutlierAnalysis.startButton.click();
+    this.page.startButton.click();
     browser.pause(10000);                         // time for task to process
   });
 
   Then(/^New page is displayed/, () => {
-    expect(minMaxOutlierAnalysis.resultsTable.isVisible()).to.equal(true);
+    expect(this.page.resultsTable.isVisible()).to.equal(true);
   });
 
   Then(/^Print action "(.+)" is displayed/, (actionText) => {
-    expect(minMaxOutlierAnalysis.getPrintingActionByText(actionText).isVisible()).to.equal(true);
+    expect(this.page.getPrintingActionByText(actionText).isVisible()).to.equal(true);
   });
 
   Then(/^There is a table with column "(.+)"/, (columnHeaderText) => {
-    expect(minMaxOutlierAnalysis.getResultsTableHeaderByText(columnHeaderText).isVisible()).to.equal(true);
+    expect(this.page.getResultsTableHeaderByText(columnHeaderText).isVisible()).to.equal(true);
   });
 
   // *********************************************************
   // Scenario: I want to start Analysis with multiple Data Set
   // *********************************************************
   When(/^I select multiple Data set with results/, () => {
-    minMaxOutlierAnalysis.getDataSetOptionByIndex(1).click();
+    this.page.getDataSetOptionByIndex(1).click();
     browser.keys(['Shift']);                                    // shift down
-    minMaxOutlierAnalysis.getDataSetOptionByIndex(2).click();
+    this.page.getDataSetOptionByIndex(2).click();
     browser.keys(['Shift']);                                    // shift up
   });
 
@@ -89,20 +90,20 @@ defineSupportCode(( {Given, When, Then} ) => {
   // Scenario: I want to not start Analysis without data set
   // *********************************************************
   Then(/^Start Button is not active/, () => {
-    expect(minMaxOutlierAnalysis.startButton.isEnabled()).to.equal(false);
+    expect(this.page.startButton.isEnabled()).to.equal(false);
   });
 
   // *********************************************************
   // Scenario: I want to see No results message after start analysis
   // *********************************************************
   When(/^I fill form with data to retrieve no results/, () => {
-    minMaxOutlierAnalysis.getDataSetOptionByIndex(0).click();           // no results
-    minMaxOutlierAnalysis.getOneOrgUnitTreeFromTreeByIndex(0).click();
+    this.page.getDataSetOptionByIndex(0).click();           // no results
+    this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
   });
 
   Then(/^No results message is displayed/, () => {
-    expect(minMaxOutlierAnalysis.snackBarMessageElement.isVisible()).to.equal(true);
-    expect(minMaxOutlierAnalysis.snackBarMessageElement.getText()).to.equal('No values found');
+    expect(this.page.snackBarMessageElement.isVisible()).to.equal(true);
+    expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
   });
 
   // *********************************************************
@@ -113,13 +114,13 @@ defineSupportCode(( {Given, When, Then} ) => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    expect(minMaxOutlierAnalysis.getStartDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
+    expect(this.page.getStartDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
 
     // to not conflict with next steps
-    minMaxOutlierAnalysis.closeStartDatePicker();
+    this.page.closeStartDatePicker();
     browser.pause(10000);
   });
 
@@ -128,13 +129,13 @@ defineSupportCode(( {Given, When, Then} ) => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    minMaxOutlierAnalysis.openEndDate();
+    this.page.openEndDate();
     browser.pause(1000);
 
-    expect(minMaxOutlierAnalysis.getEndDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
+    expect(this.page.getEndDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
 
     // to not conflict with next steps
-    minMaxOutlierAnalysis.closeEndDatePicker();
+    this.page.closeEndDatePicker();
     browser.pause(10000);
   });
 
@@ -144,10 +145,10 @@ defineSupportCode(( {Given, When, Then} ) => {
   When(/^I select start date for today/, () => {
     const today = new Date();
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    minMaxOutlierAnalysis.selectDateForStartDatePicker(today);
+    this.page.selectDateForStartDatePicker(today);
   });
 
   Then(/^I cannot select end date to yesterday/, () => {
@@ -155,13 +156,13 @@ defineSupportCode(( {Given, When, Then} ) => {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
-    minMaxOutlierAnalysis.openEndDate();
+    this.page.openEndDate();
     browser.pause(1000);
 
-    expect(minMaxOutlierAnalysis.getEndDatePickerDayButtonOfDate(yesterday).isEnabled()).to.equal(false);
+    expect(this.page.getEndDatePickerDayButtonOfDate(yesterday).isEnabled()).to.equal(false);
 
     // to not conflict with next steps
-    minMaxOutlierAnalysis.closeEndDatePicker();
+    this.page.closeEndDatePicker();
     browser.pause(10000);
   });
 
@@ -173,10 +174,10 @@ defineSupportCode(( {Given, When, Then} ) => {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    minMaxOutlierAnalysis.selectDateForStartDatePicker(yesterday);
+    this.page.selectDateForStartDatePicker(yesterday);
   });
 
   When(/^I select end date to yesterday/, () => {
@@ -184,19 +185,19 @@ defineSupportCode(( {Given, When, Then} ) => {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
-    minMaxOutlierAnalysis.openEndDate();
+    this.page.openEndDate();
     browser.pause(1000);
 
-    minMaxOutlierAnalysis.selectDateForEndDatePicker(yesterday);
+    this.page.selectDateForEndDatePicker(yesterday);
   });
 
   Then(/^I cannot select start date to today/, () => {
     const today = new Date();
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    expect(minMaxOutlierAnalysis.getStartDatePickerDayButtonOfDate(today).isEnabled()).to.equal(false);
+    expect(this.page.getStartDatePickerDayButtonOfDate(today).isEnabled()).to.equal(false);
 
     // to not conflict with next steps
     minMaxOutlierAnalysis.closeStartDatePicker();
@@ -210,19 +211,19 @@ defineSupportCode(( {Given, When, Then} ) => {
     const oneHundredYearsAgo = new Date();
     oneHundredYearsAgo.setFullYear(oneHundredYearsAgo.getFullYear() - 100);
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    minMaxOutlierAnalysis.selectDateForStartDatePicker(oneHundredYearsAgo);
+    this.page.selectDateForStartDatePicker(oneHundredYearsAgo);
   });
 
   When(/^I Select valid end date/, () => {
     const today = new Date();
 
-    minMaxOutlierAnalysis.openEndDate();
+    this.page.openEndDate();
     browser.pause(1000);
 
-    minMaxOutlierAnalysis.selectDateForEndDatePicker(today);
+    this.page.selectDateForEndDatePicker(today);
   });
 
   // *********************************************************
@@ -233,13 +234,13 @@ defineSupportCode(( {Given, When, Then} ) => {
     oneHundredYearsAgoLessOneDay.setFullYear(oneHundredYearsAgoLessOneDay.getFullYear() - 100);
     oneHundredYearsAgoLessOneDay.setDate(oneHundredYearsAgoLessOneDay.getDate() - 1);
 
-    minMaxOutlierAnalysis.openStartDate();
+    this.page.openStartDate();
     browser.pause(1000);
 
-    expect(minMaxOutlierAnalysis.getStartDatePickerDayButtonOfDate(oneHundredYearsAgoLessOneDay).isEnabled()).to.equal(false);
+    expect(this.page.getStartDatePickerDayButtonOfDate(oneHundredYearsAgoLessOneDay).isEnabled()).to.equal(false);
 
     // to not conflict with next steps
-    minMaxOutlierAnalysis.closeStartDatePicker();
+    this.page.closeStartDatePicker();
     browser.pause(10000);
   });
 });
