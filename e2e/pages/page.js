@@ -4,7 +4,7 @@ module.exports = class Page {
   }
 
   get dataSetSelect() {
-    return browser.element('.dataSetsContainer select');
+    return browser.element('.data-sets-container select');
   }
 
   get organisationUnitTreeView() {

@@ -5,84 +5,79 @@ Feature: Std Dev Outlier Analysis
   Background:
     Given that I am logged in to the Sierra Leone DHIS2
     When I open Std Dev Outlier Analysis page
-	
-	Scenario: I want to see all items in the page
+
+  Scenario: I want to see all items in the page
     Then A column with list of Data Set is displayed
-	And A column with Parent organization unit selection checkboxes
-	And A start date selection
-	And An end date selection
-	And Number of Standard deviations
-    And Start button
-	
-	
-	Scenario: I want to start Analysis and check results
-	When I select Data set with results
-	And Select Parent Organisation with results
-	And Select valid time range to get results
-	And Click Start
-	Then New page is displayed
-	And Download as PDF is displayed
-	And Download as XLS is displayed
-	And Download as CSV is displayed
-	And There is a table with column Data Element
-	And There is a table with column Organisation Unit
-	And There is a table with column Period
-	And There is a table with column Validation Rule
-	And There is a table with column Value
-	And There is a table with column Operator
-	And There is a table with column Value
-	And There is a table with column Details with icon in each line
-	
-	Scenario: I want to not start Analysis without data set
-	When I do not select Data set
-	And Select Parent Organisation
-	And Select valid time range
-	Then Start Button is not active
-	
-	Scenario: I want to not start Analysis without Parent
-	When I select Data set
-	And I do not Select Parent Organisation
-	And Select valid time range
-	Then Start Button is not active	
-	
-	Scenario: I want to see No results message after start analysis
-	When I fill form with data to retrieve no results
-	And Click Start 
-	Then No results message is displayed
-		
-	Scenario: I cannot be able to generate Analysis with future start date
-	Then I cannot select start date greater than today
-	And  I cannot select end date greater than today
-	
-   Scenario: I cannot be able to generate Analysis with start date after future end date
-	When I select start date
-	Then I cannot select end date smaller than start date
-	
-   Scenario: I cannot be able to select invalid dates for Analysis
-	When I select start date
-	And I select end date greater than start date
-	Then I cannot select start date greater than end date
-		
-   Scenario: I want to generate Analysis with same start and end date
-    When I Check Parent organization unit
-    And I Select start date
-    And I Select end date equals to start date
-    And Click Start
-    Then The Analysis is generated
-	
-   Scenario: I want to generate Analysis with today start and end date
-    When I fill the form
-    And I Select today start date
-    And I Select today end date
-    And Click Start
-    Then The Analysis is generated
-	
-   Scenario: I want to generate Analysis with smaller start date available
-    When I fill the form
+    And A column with Parent organization unit selection is displayed
+    And A start date selection is displayed
+    And An end date selection is displayed
+    And A standard deviation is displayed
+    And A Start analysis option is displayed
+
+  Scenario: I want to start Analysis and check results
+    When I select Data set with results
+    And I select Parent Organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And Start analysis
+    Then New page is displayed
+    And Print action "Download as PDF" is displayed
+    And Print action "Download as XLS" is displayed
+    And Print action "Download as CSV" is displayed
+    And There is a table with column "Data Element"
+    And There is a table with column "Organisation Unit"
+    And There is a table with column "Period"
+    And There is a table with column "Min"
+    And There is a table with column "Value"
+    And There is a table with column "Max"
+    And There is a table with column "Mark"
+
+  Scenario: I want to start Analysis with multiple Data Set
+    When I select multiple Data set with results
+    And I select Parent Organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And Start analysis
+    Then New page is displayed
+
+  Scenario: I want to not start Analysis without data set
+    When I select Parent Organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    Then Start Button is not active
+
+  Scenario: I want to not start Analysis without Parent Organisation Unit
+    When I select Data set with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    Then Start Button is not active
+
+  Scenario: I want to see No results message after start analysis
+    When I fill form with data to retrieve no results
+    And Start analysis
+    Then No results message is displayed
+
+  Scenario: I cannot be able to generate Analysis with future start date
+    Then I cannot select start date greater than today
+    And  I cannot select end date greater than today
+
+  Scenario: I cannot be able to generate Analysis with start date after future end date
+    When I select start date for today
+    Then I cannot select end date to yesterday
+
+  Scenario: I cannot be able to select start date after end date
+    When I select start date to yesterday
+    And I select end date to yesterday
+    Then I cannot select start date to today
+
+  Scenario: I want to generate Analysis with the smallest start date available
+    When I select Data set with results
+    And I select Parent Organisation with results
     And I Select start date equals to today less 100 years
     And I Select valid end date
-    And Click Start
-    Then The Analysis is generated	
-	
-   Scenario:  I cannot be able to generate Analysis with start date smaller than today less 100
-    Then User cannot select start date equals to today less 100 years and 1 day
+    And I select valid standard deviation to get results
+    And Start analysis
+    Then New page is displayed
+
+  Scenario: I cannot be able to generate Analysis with start date smaller than today less 100
+    Then I cannot select start date equals to today less 100 years and 1 day

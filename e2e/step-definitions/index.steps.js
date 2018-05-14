@@ -3,7 +3,6 @@ const steps = [
   require('./home.steps'),
   require('./help.steps'),
   require('./sideMenu.steps'),
-  require('./minMaxOutlierAnalysis.steps'),
 ];
 
 module.exports = function () {

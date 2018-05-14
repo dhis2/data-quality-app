@@ -14,7 +14,7 @@ exports.config = {
     './e2e/features/help.feature',
     './e2e/features/sideMenu.feature',
     './e2e/features/minMaxOutlierAnalysis.feature',
-    /*'./e2e/features/stdDevOutlierAnalysis.feature',*/
+    './e2e/features/stdDevOutlierAnalysis.feature',
   ],
   // Patterns to exclude.
   exclude: [
@@ -47,7 +47,6 @@ exports.config = {
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
     maxInstances: 5,
-    //
     browserName: 'chrome'
   }],
   //
