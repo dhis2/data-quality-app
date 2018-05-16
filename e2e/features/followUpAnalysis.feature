@@ -33,7 +33,6 @@ Feature: Follow-Up analysis
     And I select a comment
     Then the comment is displayed
 
-  # FIXME this will change database making it problematic for consecutive runs
   Scenario:  I want to unfollow results
     When I select parent organisation with results
     And I select data set with results
@@ -84,20 +83,4 @@ Feature: Follow-Up analysis
 
   Scenario: I cannot be able to generate analysis with start date smaller than possible smallest date
     Then I cannot select start date smaller than the smallest date possible
-  # SHOULD WE TEST THOSE ONES
-#  Scenario: I want to generate Follow-up analysis for all data sets
-#    When I Check parent organisation unit
-#    And I select first item on data sets
-#    And I Select valid start date
-#    And I Select valid end date
-#    And Click Start
-#    Then The Follow-Up is generated
-#
-#  Scenario: I want to generate Follow-up analysis for last data set
-#    When I Check parent organisation unit
-#    And I select last item on data sets
-#    And I Select valid start date
-#    And I Select valid end date
-#    And Click Start
-#    Then The Follow-Up is generated
 	
