@@ -224,7 +224,7 @@ class MinMaxOutlierAnalysis extends Page {
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
-                            <div className={classNames('col-md-4', 'data-sets-container', cssPageStyles.section)}>
+                            <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
                                     {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
                                 </div>

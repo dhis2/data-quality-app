@@ -45,39 +45,44 @@ defineSupportCode(({ Given, When, Then }) => {
   // *********************************************************
   // Scenario: I want to see all items in the page
   // *********************************************************
-  Then(/^A column with list of Data Set is displayed$/, () => {
+  Then(/a column with list of data set is displayed$/, () => {
     expect(this.page.dataSetSelect.isVisible()).to.equal(true);
   });
 
-  Then(/^A column with Parent organization unit selection is displayed$/, () => {
+  Then(/^a column with Parent organisation unit selection is displayed$/, () => {
     expect(this.page.organisationUnitTreeView.isVisible()).to.equal(true);
   });
 
-  Then(/^A start date selection is displayed/, () => {
+  Then(/^a start date selection is displayed/, () => {
     expect(this.page.startDateInput.isVisible()).to.equal(true);
   });
 
-  Then(/^An end date selection is displayed/, () => {
+  Then(/^an end date selection is displayed/, () => {
     expect(this.page.endDateInput.isVisible()).to.equal(true);
   });
 
-  Then(/^A Start analysis option is displayed/, () => {
-    expect(this.page.startButton.isVisible()).to.equal(true);
-  });
-
-  Then(/^A standard deviation is displayed/, () => {
+  Then(/^a standard deviation is displayed/, () => {
     expect(this.page.standardDevDropdown.isVisible()).to.equal(true);
   });
 
+  Then(/^a start min-max analysis option is displayed/, () => {
+    expect(this.page.startButton.isVisible()).to.equal(true);
+  });
+
+  Then(/^a start std dev outlier analysis option is displayed/, () => {
+    expect(this.page.startButton.isVisible()).to.equal(true);
+  });
+
   // *********************************************************
-  // Scenario: I want to start Analysis and check results
+  // Scenario: I want to start min-max analysis and check results
   // *********************************************************
-  When(/^I select Data set with results/, () => {
+  When(/^I select data set with results/, () => {
     this.page.getDataSetOptionByIndex(1).click();
   });
 
-  When(/^I select Parent Organisation with results/, () => {
+  When(/^I select parent organisation with results/, () => {
     this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
+    expect(this.page.isOrganisationUnitSelected()).to.equal(true);
   });
 
   When(/^I select valid standard deviation to get results/, () => {
@@ -90,67 +95,104 @@ defineSupportCode(({ Given, When, Then }) => {
   When(/^I select valid time range to get results/, () => {
     const today = new Date();
     this.page.openStartDate();
-    browser.pause(1000);                                                               // to make sure buttons are available
+    browser.pause(1000);                                                      // to make sure buttons are available
     this.page.openStartDateYearsPicker();
-    browser.pause(1000);                                                               // to make sure buttons are available
-    this.page.getStartDateYearButton(today.getFullYear() - 3).click();     // 3 years behind
-    browser.pause(1000);                                                               // to make sure buttons are available
+    browser.pause(1000);                                                      // to make sure buttons are available
+    this.page.getStartDateYearButton(today.getFullYear() - 3).click();        // 3 years behind
+    browser.pause(1000);                                                      // to make sure buttons are available
     this.page.confirmStartDatePicker();
-    browser.pause(1000);                                                               // to make sure date picker closes
+    browser.pause(1000);                                                      // to make sure date picker closes
   });
 
-  When(/^Start analysis/, () => {
+  When(/^I start min max min-max analysis/, () => {
     this.page.startButton.click();
     browser.pause(60000);                         // time for task to process
   });
 
-  Then(/^New page is displayed/, () => {
+  When(/^I start std dev outlier analysis/, () => {
+    this.page.startButton.click();
+    browser.pause(60000);                         // time for task to process
+  });
+
+  Then(/^a new page is displayed/, () => {
     expect(this.page.resultsTable.isVisible()).to.equal(true);
   });
 
-  Then(/^Print action "(.+)" is displayed/, (actionText) => {
-    expect(this.page.getPrintingActionByText(actionText).isVisible()).to.equal(true);
+  Then(/^action to download as PDF is displayed/, () => {
+    expect(this.page.downloadAsPdfButton.isVisible()).to.equal(true);
   });
 
-  Then(/^There is a table with column "(.+)"/, (columnHeaderText) => {
-    expect(this.page.getResultsTableHeaderByText(columnHeaderText).isVisible()).to.equal(true);
+  Then(/^action to download as XLS is displayed/, () => {
+    expect(this.page.downloadAsXlsButton.isVisible()).to.equal(true);
+  });
+
+  Then(/^action to download as CSV is displayed/, () => {
+    expect(this.page.downloadAsCsvButton.isVisible()).to.equal(true);
+  });
+
+  Then(/^a table with results is displayed/, () => {
+    expect(this.page.resultsTableRows.length > 0).to.equal(true);
   });
 
   // *********************************************************
-  // Scenario: I want to start Analysis with multiple Data Set
+  // Scenario: I want to start min-max analysis with multiple data set
   // *********************************************************
-  When(/^I select multiple Data set with results/, () => {
+  When(/^I select multiple data set with results/, () => {
     this.page.getDataSetOptionByIndex(1).click();
     browser.keys(['Shift']);                                    // shift down
     this.page.getDataSetOptionByIndex(2).click();
     browser.keys(['Shift']);                                    // shift up
+    let selectedOptionsCount = 0;
+    const options = this.page.dataSetSelect.elements('<option>').value;
+    for( let currentOption of options ) {
+      let backgroundColor = currentOption.getCssProperty('background-color').value;
+      if (backgroundColor === 'rgba(0,105,217,1)') {
+        selectedOptionsCount++;
+      }
+    }
+    expect(selectedOptionsCount).to.equal(2);
   });
 
   // *********************************************************
-  // Scenario: I want to not start Analysis without data set
+  // Scenario: I want to not start min-max analysis without data set
   // *********************************************************
-  Then(/^Start Button is not active/, () => {
+  When(/^no data set is selected/, () => {
+    expect(this.page.dataSetSelect.getValue()).to.equal('');
+  });
+
+  Then(/^start button to generate min-max analysis is not active/, () => {
+    expect(this.page.startButton.isEnabled()).to.equal(false);
+  });
+
+  Then(/^the start std dev outlier analysis button is not active/, () => {
     expect(this.page.startButton.isEnabled()).to.equal(false);
   });
 
   // *********************************************************
-  // Scenario: I want to see No results message after start analysis
+  // Scenario: I want to not start min-max analysis without parent organisation Unit
   // *********************************************************
-  When(/^I fill form with data to retrieve no results/, () => {
-    this.page.getDataSetOptionByIndex(0).click();           // no results
-    this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
+  When(/^no parent organisation unit is selected/, () => {
+    expect(this.page.isOrganisationUnitSelected()).to.equal(false);
   });
 
-  Then(/^No results message is displayed/, () => {
+  // *********************************************************
+  // Scenario: I want to see a no results message after start min-max analysis
+  // *********************************************************
+  When(/^I fill form with data to retrieve no results/, () => {
+    this.page.getDataSetOptionByIndex(0).click();
+    this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
+    // rest of the form at default values
+  });
+
+  Then(/^a no results message is displayed/, () => {
     expect(this.page.snackBarMessageElement.isVisible()).to.equal(true);
     expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
   });
 
   // *********************************************************
-  // Scenario: I cannot be able to generate Analysis with future start date
+  // Scenario: I cannot be able to generate analysis with future start date
   // *********************************************************
-  Then(/^I cannot select start date greater than today/, () => {
-    // FIXME reuse the code to generate tomorrow date
+  Then(/^I cannot select the start date greater than today/, () => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -164,8 +206,7 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);
   });
 
-  Then(/^I cannot select end date greater than today/, () => {
-    // FIXME reuse the code to generate tomorrow date
+  Then(/^I cannot select the end date greater than today/, () => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -180,9 +221,48 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   // *********************************************************
-  // Scenario: I cannot be able to generate Analysis with start date after future end date
+  // Scenario: I cannot be able to generate analysis with start date after future end date
   // *********************************************************
-  When(/^I select start date for today/, () => {
+  When(/^I select start date to past date/, () => {
+    const oneYearAgo = new Date();
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+    this.page.openStartDate();
+    browser.pause(1000);
+
+    this.page.selectDateForStartDatePicker(oneYearAgo);
+    browser.pause(1000);
+  });
+
+  When(/^I select end date to date after the start date/, () => {
+    const endDate = this.page.startDate;
+    endDate.setDate(endDate.getDate() + 1);
+
+    this.page.openEndDate();
+    browser.pause(1000);
+
+    this.page.selectDateForEndDatePicker(endDate);
+    browser.pause(1000);
+  });
+
+  Then(/^I cannot select the start date after the end date/, () => {
+    const startDate = this.page.endDate;
+    startDate.setDate(startDate.getDate() + 1);
+
+    this.page.openStartDate();
+    browser.pause(1000);
+
+    expect(this.page.getStartDatePickerDayButtonOfDate(startDate).isEnabled()).to.equal(false);
+
+    // to not conflict with next steps
+    this.page.closeStartDatePicker();
+    browser.pause(1000);
+  });
+
+  // *********************************************************
+  // Scenario: I cannot be able to generate analysis with end date before start date
+  // *********************************************************
+  When(/^I select valid start date/, () => {
     const today = new Date();
 
     this.page.openStartDate();
@@ -192,8 +272,7 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);
   });
 
-  Then(/^I cannot select end date to yesterday/, () => {
-    // FIXME reuse the code to generate yesterday date
+  Then(/^I cannot select end date date previous than the start date/, () => {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -208,49 +287,9 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   // *********************************************************
-  // Scenario: I cannot be able to select start date after end date
+  // Scenario: I want to generate analysis with the smallest start date available
   // *********************************************************
-  When(/^I select start date to yesterday/, () => {
-    // FIXME reuse the code to generate yesterday date
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    this.page.openStartDate();
-    browser.pause(1000);
-
-    this.page.selectDateForStartDatePicker(yesterday);
-    browser.pause(1000);
-  });
-
-  When(/^I select end date to yesterday/, () => {
-    // FIXME reuse the code to generate yesterday date
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    this.page.openEndDate();
-    browser.pause(1000);
-
-    this.page.selectDateForEndDatePicker(yesterday);
-    browser.pause(1000);
-  });
-
-  Then(/^I cannot select start date to today/, () => {
-    const today = new Date();
-
-    this.page.openStartDate();
-    browser.pause(1000);
-
-    expect(this.page.getStartDatePickerDayButtonOfDate(today).isEnabled()).to.equal(false);
-
-    // to not conflict with next steps
-    this.page.closeStartDatePicker();
-    browser.pause(1000);
-  });
-
-  // *********************************************************
-  // Scenario: I want to generate Analysis with the smallest start date available
-  // *********************************************************
-  When(/^I Select start date equals to today less 100 years/, () => {
+  When(/^I select start date equals to smallest date possible/, () => {
     const oneHundredYearsAgo = new Date();
     oneHundredYearsAgo.setFullYear(oneHundredYearsAgo.getFullYear() - 100);
 
@@ -261,7 +300,7 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);
   });
 
-  When(/^I Select valid end date/, () => {
+  When(/^I select valid end date/, () => {
     const today = new Date();
 
     this.page.openEndDate();
@@ -271,9 +310,9 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   // *********************************************************
-  // Scenario: I cannot be able to generate Analysis with start date smaller than today less 100
+  // Scenario: I cannot be able to generate analysis with start date smaller than possible smallest date
   // *********************************************************
-  Then(/^I cannot select start date equals to today less 100 years and 1 day/, () => {
+  Then(/^I cannot select start date smaller than the smallest date possible/, () => {
     const oneHundredYearsAgoLessOneDay = new Date();
     oneHundredYearsAgoLessOneDay.setFullYear(oneHundredYearsAgoLessOneDay.getFullYear() - 100);
     oneHundredYearsAgoLessOneDay.setDate(oneHundredYearsAgoLessOneDay.getDate() - 1);

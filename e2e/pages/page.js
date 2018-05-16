@@ -4,7 +4,7 @@ module.exports = class Page {
   }
 
   get dataSetSelect() {
-    return browser.element('.data-sets-container select');
+    return browser.element('#data-sets-container select');
   }
 
   get organisationUnitTreeView() {
@@ -15,8 +15,16 @@ module.exports = class Page {
     return browser.element('input[id=start-date]');
   }
 
+  get startDate() {
+    return new Date(this.startDateInput.getValue());
+  }
+
   get endDateInput() {
     return browser.element('input[id=end-date]');
+  }
+
+  get endDate() {
+    return new Date(this.endDateInput.getValue());
   }
 
   get startButton() {
@@ -27,8 +35,34 @@ module.exports = class Page {
     return browser.element('#results-table');
   }
 
+  get resultsTableRows() {
+    return browser.elements('#results-table > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr').value;
+  }
+
   get snackBarMessageElement() {
     return browser.element('#feedback-snackbar > div > div > div > span > div > div');
+  }
+
+  get downloadAsPdfButton() {
+    return browser.element('a.export-pdf-action');
+  }
+
+  get downloadAsXlsButton() {
+    return browser.element('a.export-xls-action');
+  }
+
+  get downloadAsCsvButton() {
+    return browser.element('a.export-csv-action');
+  }
+
+  isOrganisationUnitSelected() {
+    const checkboxes = this.organisationUnitTreeView.elements('.tree-view input[type=checkbox]').value;
+    for( let currentCheckbox of checkboxes ) {
+      if( currentCheckbox.isSelected() ) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /* Start Date auxiliar methods */
@@ -201,16 +235,6 @@ module.exports = class Page {
 
   getOneOrgUnitTreeFromTreeByIndex( index ) {
     return this.organisationUnitTreeView.elements('div[role=button]').value[index].element('<input>');
-  }
-
-  getPrintingActionByText( text ) {
-    const buttons = browser.elements('.print-action-link').value;
-    for( let currentButton of buttons ) {
-      if( currentButton.getText().toLowerCase() === text.toLowerCase() ) {
-        return currentButton;
-      }
-    }
-    return null;
   }
 
   getResultsTableHeaderByText( text ) {
