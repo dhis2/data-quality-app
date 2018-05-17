@@ -24,6 +24,26 @@ class ValidationRuleAnalysis extends Page {
     return browser.element('#persist-results-option');
   }
 
+  get validationRulesDetailsDialog() {
+    return browser.element('.validation-rules-details-dialog');
+  }
+
+  get resultsRowAtDetailsDialog() {
+    return browser.element('.validation-rules-details-dialog .results-row');
+  }
+
+  get leftSideRowAtDetailsDialog() {
+    return browser.element('.validation-rules-details-dialog .left-side-row');
+  }
+
+  get rightSideRowAtDetailsDialog() {
+    return browser.element('.validation-rules-details-dialog .right-side-row');
+  }
+
+  get closeButtonAtDetailsDialog() {
+    return browser.element('.validation-rules-details-dialog button.close-action');
+  }
+
   openValidationRuleGroupDropdown() {
     this.validationRuleGroup.click();
   }
@@ -41,6 +61,11 @@ class ValidationRuleAnalysis extends Page {
 
   fillFormWithNoResults() {
     this.getOneOrgUnitTreeFromTreeByIndex(0).click();
+  }
+
+  openValidationRuleDetailsByIndex(index) {
+    browser.elements('.validation-rules-show-details-action').value[index].click();
+    browser.pause(15000);
   }
 }
 

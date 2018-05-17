@@ -392,4 +392,31 @@ defineSupportCode(({ Given, When, Then }) => {
     this.page.closeStartDatePicker();
     browser.pause(1000);
   });
+
+  // *********************************************************
+  // Scenario: I want to see Validation result analysis item details
+  // *********************************************************
+  When(/^I click icon Details/, () => {
+    this.page.openValidationRuleDetailsByIndex(0);
+  });
+
+  When(/^I can see a pop up/, () => {
+    expect(this.page.validationRulesDetailsDialog.isVisible()).to.equal(true);
+  });
+
+  When(/^I see a section with validation result details for selected item/, () => {
+    expect(this.page.resultsRowAtDetailsDialog.isVisible()).to.equal(true);
+  });
+
+  When(/^I see a section with left side for selected item/, () => {
+    expect(this.page.leftSideRowAtDetailsDialog.isVisible()).to.equal(true);
+  });
+
+  When(/^I see a section with right side for selected item/, () => {
+    expect(this.page.rightSideRowAtDetailsDialog.isVisible()).to.equal(true);
+  });
+
+  When(/^I can click in close button for selected item/, () => {
+    expect(this.page.closeButtonAtDetailsDialog.isVisible()).to.equal(true);
+  });
 });
