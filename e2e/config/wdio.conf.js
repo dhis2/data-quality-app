@@ -16,6 +16,7 @@ exports.config = {
     './e2e/features/minMaxOutlierAnalysis.feature',
     './e2e/features/stdDevOutlierAnalysis.feature',
     './e2e/features/followUpAnalysis.feature',
+    './e2e/features/validationRuleAnalysis.feature',
   ],
   // Patterns to exclude.
   exclude: [

@@ -48,6 +48,12 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);
   });
 
+  When(/^I open Validation Rule Analysis page$/, () => {
+    this.page = require('../pages/validationRuleAnalysis.page');
+    this.page.open();
+    browser.pause(1000);
+  });
+
   // *********************************************************
   // Scenario: I want to see all items in the page
   // *********************************************************
@@ -83,8 +89,24 @@ defineSupportCode(({ Given, When, Then }) => {
     expect(this.page.startButton.isVisible()).to.equal(true);
   });
 
+  Then(/validation rule group selection is displayed$/, () => {
+    expect(this.page.validationRuleGroup.isVisible()).to.equal(true);
+  });
+
+  Then(/send notifications option is displayed$/, () => {
+    expect(this.page.sendNotificationsOption.isVisible()).to.equal(true);
+  });
+
+  Then(/persist new results option is displayed$/, () => {
+    expect(this.page.persistResultsOption.isVisible()).to.equal(true);
+  });
+
   Then(/a data set selection is displayed$/, () => {
     expect(this.page.dataSetDropdown.isVisible()).to.equal(true);
+  });
+
+  Then(/^a start validation rule analysis option is displayed/, () => {
+    expect(this.page.startButton.isVisible()).to.equal(true);
   });
 
   // *********************************************************
@@ -119,6 +141,10 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);                                                      // to make sure date picker closes
   });
 
+  When(/^I select validation rule group with results/, () => {
+    this.page.selectValidationGroupWithResults();
+  });
+
   When(/^I start min max min-max analysis/, () => {
     this.page.startButton.click();
     browser.pause(60000);                         // time for task to process
@@ -130,6 +156,11 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   When(/^I start followup analysis/, () => {
+    this.page.startButton.click();
+    browser.pause(60000);                         // time for task to process
+  });
+
+  When(/^I start validation rule analysis/, () => {
     this.page.startButton.click();
     browser.pause(60000);                         // time for task to process
   });
@@ -196,6 +227,10 @@ defineSupportCode(({ Given, When, Then }) => {
     expect(this.page.startButton.isEnabled()).to.equal(false);
   });
 
+  Then(/^the start validation rule analysis Button is not active/, () => {
+    expect(this.page.startButton.isEnabled()).to.equal(false);
+  });
+
   // *********************************************************
   // Scenario: I want to not start min-max analysis without parent organisation Unit
   // *********************************************************
@@ -213,6 +248,11 @@ defineSupportCode(({ Given, When, Then }) => {
   Then(/^a no results message is displayed/, () => {
     expect(this.page.snackBarMessageElement.isVisible()).to.equal(true);
     expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
+  });
+
+  Then(/^a validation passed successfully message is displayed/, () => {
+    expect(this.page.snackBarMessageElement.isVisible()).to.equal(true);
+    expect(this.page.snackBarMessageElement.getText()).to.equal('Validation passed successfully');
   });
 
   // *********************************************************
