@@ -24,31 +24,31 @@ Feature: Follow-Up analysis
     And action to download as CSV is displayed
     And a table with results is displayed
     And the unfollow option is displayed
-#
-#  Scenario:  I want to see Comment
-#    When I select parent organisation with results
-#    And I select data set with results
-#    And I select valid time range to get results
-#    And I start the analysis
-#    And I select a comment
-#    Then the comment is displayed
-#
-#  Scenario:  I want to unfollow results
-#    When I select parent organisation with results
-#    And I select data set with results
-#    And I select valid time range to get results
-#    And I start the analysis
-#    And I select results to unfollow
-#    And I choose to unfollow them
-#    Then the unfollowed items are removed from the list
-#
-#  Scenario: I want to validate data set changes
-#    When I select parent organisation unit
-#    And I select a data set
-#    And I select another parent organisation
-#    Then the data set option selected is reverted to all data sets
-#	And the available data set list is updated
-#
+
+  Scenario:  I want to see Comment
+    When I select parent organisation with results
+    And I select data set with results
+    And I select valid time range to get results
+    And I start followup analysis
+    And I select a comment
+    Then the comment is displayed
+
+  Scenario:  I want to unfollow results
+    When I select parent organisation with results
+    And I select data set with results
+    And I select valid time range to get results
+    And I start followup analysis
+    And I select results to unfollow
+    And I choose to unfollow them
+    Then the unfollowed items are removed from the list
+
+  Scenario: I want to validate data set changes
+    When I select parent organisation with results
+    And I select data set with results
+    And I select another parent organisation
+    Then the data set option selected is reverted to all data sets
+	And the available data set list is updated
+
   Scenario: I want to not start the analysis without parent organisation unit
     And I select data set with results
     And I select valid time range to get results
@@ -83,4 +83,3 @@ Feature: Follow-Up analysis
 
   Scenario: I cannot be able to generate analysis with start date smaller than possible smallest date
     Then I cannot select start date smaller than the smallest date possible
-	

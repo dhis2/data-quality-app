@@ -181,7 +181,9 @@ class FollowUpAnalysisTable extends Component {
                     open={this.state.showComment}
                     onRequestClose={this.closeCommentDialog}
                 >
-                    {this.state.comment}
+                    <div id={'comment-content'}>
+                        {this.state.comment}
+                    </div>
                 </Dialog>
                 <div className={cssPageStyles.cardHeader}>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />

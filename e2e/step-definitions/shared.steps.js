@@ -5,6 +5,9 @@ const dhis2Page = require('../pages/dhis2.page.js');
 const home = require('../pages/home.page');
 
 defineSupportCode(({ Given, When, Then }) => {
+
+  let totalElements = 0;
+
   Given(/^that I am logged in to the Sierra Leone DHIS2$/, () => {
     dhis2Page.open();
     if (!dhis2Page.isLoggedIn()) {
@@ -157,7 +160,7 @@ defineSupportCode(({ Given, When, Then }) => {
 
   When(/^I start followup analysis/, () => {
     this.page.startButton.click();
-    browser.pause(60000);                         // time for task to process
+    browser.waitForVisible('#results-table');
   });
 
   When(/^I start validation rule analysis/, () => {
@@ -418,5 +421,61 @@ defineSupportCode(({ Given, When, Then }) => {
 
   When(/^I can click in close button for selected item/, () => {
     expect(this.page.closeButtonAtDetailsDialog.isVisible()).to.equal(true);
+  });
+
+  // *********************************************************
+  // Scenario: Follow-Up Analysis - I want to see Comment
+  // *********************************************************
+  When(/^I select a comment/, () => {
+    this.page.existingComments[0].click();
+  });
+
+  When(/^the comment is displayed/, () => {
+    expect(this.page.existsCommentHeader).to.equal(true);
+    expect(this.page.existsCommentInfo).to.equal(true);
+  });
+
+  // *********************************************************
+  // Scenario: Follow-Up Analysis - I want to unfollow results
+  // *********************************************************
+  When(/^I select results to unfollow/, () => {
+    this.page.getUnfollowCheckboxeByIndex(0).click();
+  });
+
+  When(/^I choose to unfollow them/, () => {
+    totalElements = this.page.totalElements;
+    this.page.unfollowButton.click();
+  });
+
+  When(/^the unfollowed items are removed from the list/, () => {
+    expect(totalElements - 1).to.equal(this.page.totalElements);
+  });
+
+  // *********************************************************
+  // Scenario: Follow-Up Analysis - I want to validate data set changes
+  // *********************************************************
+  When(/^I select another parent organisation/, () => {
+    // Get actual data set size
+    this.page.dataSetElement.click();
+    browser.waitForVisible('div[role=presentation]');
+    totalElements = this.page.dataSetSize;
+    this.page.getDataSetOptionByIndex(2).click();
+    // wait dataSet close
+    browser.pause(5000);
+
+    this.page.getOneOrgUnitTreeFromTreeByIndex(1).click();
+    expect(this.page.isOrganisationUnitSelected()).to.equal(true);
+    browser.pause(5000);
+  });
+
+  When(/^the data set option selected is reverted to all data sets/, () => {
+      expect(this.page.dataSetText).to.equal('[All Data Sets]');
+  });
+
+  When(/^the available data set list is updated/, () => {
+      // Get actual data set size
+      this.page.dataSetElement.click();
+      browser.waitForVisible('div[role=presentation]');
+      expect(totalElements).to.not.equal(this.page.dataSetSize);
   });
 });
