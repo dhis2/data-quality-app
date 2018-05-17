@@ -8,7 +8,7 @@ Feature: Std Dev Outlier Analysis
 
   Scenario: I want to see all items in the page
     Then a column with list of data set is displayed
-    And a column with Parent organisation unit selection is displayed
+    And a column with parent organisation unit selection is displayed
     And a start date selection is displayed
     And an end date selection is displayed
     And a standard deviation is displayed

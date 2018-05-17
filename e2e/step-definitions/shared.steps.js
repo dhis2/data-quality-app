@@ -42,6 +42,12 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(1000);
   });
 
+  When(/^I open Follow-Up analysis page$/, () => {
+    this.page = require('../pages/followUpAnalysis.page');
+    this.page.open();
+    browser.pause(1000);
+  });
+
   // *********************************************************
   // Scenario: I want to see all items in the page
   // *********************************************************
@@ -49,7 +55,7 @@ defineSupportCode(({ Given, When, Then }) => {
     expect(this.page.dataSetSelect.isVisible()).to.equal(true);
   });
 
-  Then(/^a column with Parent organisation unit selection is displayed$/, () => {
+  Then(/^a column with parent organisation unit selection is displayed$/, () => {
     expect(this.page.organisationUnitTreeView.isVisible()).to.equal(true);
   });
 
@@ -73,16 +79,25 @@ defineSupportCode(({ Given, When, Then }) => {
     expect(this.page.startButton.isVisible()).to.equal(true);
   });
 
+  Then(/^a start followup analysis option is displayed/, () => {
+    expect(this.page.startButton.isVisible()).to.equal(true);
+  });
+
+  Then(/a data set selection is displayed$/, () => {
+    expect(this.page.dataSetDropdown.isVisible()).to.equal(true);
+  });
+
   // *********************************************************
   // Scenario: I want to start min-max analysis and check results
   // *********************************************************
   When(/^I select data set with results/, () => {
-    this.page.getDataSetOptionByIndex(1).click();
+    this.page.selectDataSetWithResults();
   });
 
   When(/^I select parent organisation with results/, () => {
     this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
     expect(this.page.isOrganisationUnitSelected()).to.equal(true);
+    browser.pause(5000);                                              // time for data sets to refresh
   });
 
   When(/^I select valid standard deviation to get results/, () => {
@@ -114,6 +129,11 @@ defineSupportCode(({ Given, When, Then }) => {
     browser.pause(60000);                         // time for task to process
   });
 
+  When(/^I start followup analysis/, () => {
+    this.page.startButton.click();
+    browser.pause(60000);                         // time for task to process
+  });
+
   Then(/^a new page is displayed/, () => {
     expect(this.page.resultsTable.isVisible()).to.equal(true);
   });
@@ -132,6 +152,10 @@ defineSupportCode(({ Given, When, Then }) => {
 
   Then(/^a table with results is displayed/, () => {
     expect(this.page.resultsTableRows.length > 0).to.equal(true);
+  });
+
+  Then(/^the unfollow option is displayed/, () => {
+    expect(this.page.unfollowButton.isVisible()).to.equal(true);
   });
 
   // *********************************************************
@@ -168,6 +192,10 @@ defineSupportCode(({ Given, When, Then }) => {
     expect(this.page.startButton.isEnabled()).to.equal(false);
   });
 
+  Then(/^start button to generate followup analysis is not active/, () => {
+    expect(this.page.startButton.isEnabled()).to.equal(false);
+  });
+
   // *********************************************************
   // Scenario: I want to not start min-max analysis without parent organisation Unit
   // *********************************************************
@@ -179,9 +207,7 @@ defineSupportCode(({ Given, When, Then }) => {
   // Scenario: I want to see a no results message after start min-max analysis
   // *********************************************************
   When(/^I fill form with data to retrieve no results/, () => {
-    this.page.getDataSetOptionByIndex(0).click();
-    this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
-    // rest of the form at default values
+    this.page.fillFormWithNoResults();
   });
 
   Then(/^a no results message is displayed/, () => {

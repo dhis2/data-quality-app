@@ -248,20 +248,18 @@ class MinMaxOutlierAnalysis extends Page {
                                     maxDate={this.state.endDate}
                                     value={this.state.startDate}
                                 />
-                                <div id="end-date-test">
-                                    <DatePicker
-                                        id="end-date"
-                                        textFieldStyle={jsPageStyles.inputForm}
-                                        floatingLabelText={
-                                            translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
-                                        }
-                                        onChange={this.endDateOnChange}
-                                        defaultDate={new Date()}
-                                        minDate={this.state.startDate}
-                                        maxDate={new Date()}
-                                        value={this.state.endDate}
-                                    />
-                                </div>
+                                <DatePicker
+                                    id="end-date"
+                                    textFieldStyle={jsPageStyles.inputForm}
+                                    floatingLabelText={
+                                        translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
+                                    }
+                                    onChange={this.endDateOnChange}
+                                    defaultDate={new Date()}
+                                    minDate={this.state.startDate}
+                                    maxDate={new Date()}
+                                    value={this.state.endDate}
+                                />
                             </div>
                         </div>
                         <RaisedButton

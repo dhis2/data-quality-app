@@ -252,11 +252,14 @@ class FollowUpAnalysis extends Page {
                                 />
                             </div>
                             <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                <DatasetsForOrganisationUnitSelect
-                                    organisationUnitId={this.state.organisationUnitId}
-                                    onChange={this.dataSetOnChange}
-                                />
+                                <div id="data-sets-container">
+                                    <DatasetsForOrganisationUnitSelect
+                                        organisationUnitId={this.state.organisationUnitId}
+                                        onChange={this.dataSetOnChange}
+                                    />
+                                </div>
                                 <DatePicker
+                                    id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.followUpAnalysis.form.startDate)}
                                     onChange={this.startDateOnChange}
@@ -265,6 +268,7 @@ class FollowUpAnalysis extends Page {
                                     value={this.state.startDate}
                                 />
                                 <DatePicker
+                                    id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={translator(i18nKeys.followUpAnalysis.form.endDate)}
                                     onChange={this.endDateOnChange}
@@ -276,6 +280,7 @@ class FollowUpAnalysis extends Page {
                             </div>
                         </div>
                         <RaisedButton
+                            id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
                             label={translator(i18nKeys.followUpAnalysis.actionButtonFollow)}
@@ -284,7 +289,7 @@ class FollowUpAnalysis extends Page {
                         />
                     </CardText>
                     {/* TABLE */}
-                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
                         <FollowUpAnalysisTable
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}

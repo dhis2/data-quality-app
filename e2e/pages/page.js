@@ -7,6 +7,10 @@ module.exports = class Page {
     return browser.element('#data-sets-container select');
   }
 
+  get dataSetDropdown() {
+    return browser.element('#data-sets-container');
+  }
+
   get organisationUnitTreeView() {
     return browser.element('.tree-view');
   }
@@ -53,6 +57,10 @@ module.exports = class Page {
 
   get downloadAsCsvButton() {
     return browser.element('a.export-csv-action');
+  }
+
+  openDataSetDropdown() {
+    this.dataSetDropdown.click();
   }
 
   isOrganisationUnitSelected() {
@@ -245,5 +253,15 @@ module.exports = class Page {
       }
     }
     return null;
+  }
+
+  selectDataSetWithResults() {
+    this.getDataSetOptionByIndex(1).click();
+  }
+
+  fillFormWithNoResults() {
+    this.getOneOrgUnitTreeFromTreeByIndex(0).click();
+    this.getDataSetOptionByIndex(0).click();
+    // rest of the form at default values
   }
 };
