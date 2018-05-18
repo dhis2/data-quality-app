@@ -5,84 +5,79 @@ Feature: Std Dev Outlier Analysis
   Background:
     Given that I am logged in to the Sierra Leone DHIS2
     When I open Std Dev Outlier Analysis page
-	
-	Scenario: I want to see all items in the page
-	Then A column with list of Data Set is displayed 
-	And A column with Parent organization unit selection checkboxes
-	And A start date selection
-	And An end date selection
-	And Number of Standard deviations
-    And Start button
-	
-	
-	Scenario: I want to start Analysis and check results
-	When I select Data set with results
-	And Select Parent Organisation with results
-	And Select valid time range to get results
-	And Click Start
-	Then New page is displayed
-	And Download as PDF is displayed
-	And Download as XLS is displayed
-	And Download as CSV is displayed
-	And There is a table with column Data Element
-	And There is a table with column Organisation Unit
-	And There is a table with column Period
-	And There is a table with column Validation Rule
-	And There is a table with column Value
-	And There is a table with column Operator
-	And There is a table with column Value
-	And There is a table with column Details with icon in each line
-	
-	Scenario: I want to not start Analysis without data set
-	When I do not select Data set
-	And Select Parent Organisation
-	And Select valid time range
-	Then Start Button is not active
-	
-	Scenario: I want to not start Analysis without Parent
-	When I select Data set
-	And I do not Select Parent Organisation
-	And Select valid time range
-	Then Start Button is not active	
-	
-	Scenario: I want to see No results message after start analysis
-	When I fill form with data to retrieve no results
-	And Click Start 
-	Then No results message is displayed
-		
-	Scenario: I cannot be able to generate Analysis with future start date
-	Then I cannot select start date greater than today
-	And  I cannot select end date greater than today
-	
-   Scenario: I cannot be able to generate Analysis with start date after future end date
-	When I select start date
-	Then I cannot select end date smaller than start date
-	
-   Scenario: I cannot be able to select invalid dates for Analysis
-	When I select start date
-	And I select end date greater than start date
-	Then I cannot select start date greater than end date
-		
-   Scenario: I want to generate Analysis with same start and end date
-    When I Check Parent organization unit
-    And I Select start date
-    And I Select end date equals to start date
-    And Click Start
-    Then The Analysis is generated
-	
-   Scenario: I want to generate Analysis with today start and end date
-    When I fill the form
-    And I Select today start date
-    And I Select today end date
-    And Click Start
-    Then The Analysis is generated
-	
-   Scenario: I want to generate Analysis with smaller start date available
-    When I fill the form
-    And I Select start date equals to today less 100 years
-    And I Select valid end date
-    And Click Start
-    Then The Analysis is generated	
-	
-   Scenario:  I cannot be able to generate Analysis with start date smaller than today less 100
-    Then User cannot select start date equals to today less 100 years and 1 day
+
+  Scenario: I want to see all items in the page
+    Then a column with list of data set is displayed
+    And a column with parent organisation unit selection is displayed
+    And a start date selection is displayed
+    And an end date selection is displayed
+    And a standard deviation is displayed
+    And a start std dev outlier analysis option is displayed
+
+  Scenario: I want to start std dev outlier analysis and check results
+    When I select data set with results
+    And I select parent organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And I start std dev outlier analysis
+    Then a new page is displayed
+    And action to download as PDF is displayed
+    And action to download as XLS is displayed
+    And action to download as CSV is displayed
+    And a table with results is displayed
+
+  Scenario: I want to start std dev outlier analysis with multiple data set
+    When I select multiple data set with results
+    And I select parent organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And I start std dev outlier analysis
+    Then a new page is displayed
+    And action to download as PDF is displayed
+    And action to download as XLS is displayed
+    And action to download as CSV is displayed
+    And a table with results is displayed
+
+  Scenario: I want to not start std dev outlier analysis without data set
+    When I select parent organisation with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And no data set is selected
+    Then the start std dev outlier analysis button is not active
+
+  Scenario: I want to not start std dev outlier analysis without parent organisation Unit
+    When I select data set with results
+    And I select valid time range to get results
+    And I select valid standard deviation to get results
+    And no parent organisation unit is selected
+    Then the start std dev outlier analysis button is not active
+
+  Scenario: I want to see the no results message after start std dev outlier analysis
+    When I fill form with data to retrieve no results
+    And I start std dev outlier analysis
+    Then a no results message is displayed
+
+  Scenario: I cannot be able to generate analysis with future start date
+    Then I cannot select the start date greater than today
+    And  I cannot select the end date greater than today
+
+  Scenario: I cannot be able to generate analysis with start date after future end date
+    When I select start date to past date
+    And I select end date to date after the start date
+    Then I cannot select the start date after the end date
+
+  Scenario: I cannot be able to generate analysis with end date before start date
+    When I select valid start date
+    Then I cannot select end date date previous than the start date
+
+  Scenario: I want to generate analysis with the smallest start date available
+    When I select data set with results
+    And I select parent organisation with results
+    And I select start date equals to smallest date possible
+    And I select valid end date
+    And I select valid standard deviation to get results
+    And I start std dev outlier analysis
+    Then a new page is displayed
+
+  Scenario: I cannot be able to generate analysis with start date smaller than possible smallest date
+    Then I cannot select start date smaller than the smallest date possible

@@ -224,7 +224,7 @@ class MinMaxOutlierAnalysis extends Page {
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
-                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                            <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
                                     {translator(i18nKeys.minMaxOutlierAnalysis.form.dataSet)}
                                 </div>
@@ -238,6 +238,7 @@ class MinMaxOutlierAnalysis extends Page {
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <DatePicker
+                                    id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.minMaxOutlierAnalysis.form.startDate)
@@ -248,6 +249,7 @@ class MinMaxOutlierAnalysis extends Page {
                                     value={this.state.startDate}
                                 />
                                 <DatePicker
+                                    id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.minMaxOutlierAnalysis.form.endDate)
@@ -261,6 +263,7 @@ class MinMaxOutlierAnalysis extends Page {
                             </div>
                         </div>
                         <RaisedButton
+                            id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
                             label={translator(i18nKeys.minMaxOutlierAnalysis.actionButton)}
@@ -269,7 +272,7 @@ class MinMaxOutlierAnalysis extends Page {
                         />
                     </CardText>
                     {/* TABLE */}
-                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
                         <OutlierAnalyisTable
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}

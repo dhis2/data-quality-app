@@ -219,6 +219,7 @@ class ValidationRulesAnalysis extends Page {
                             </div>
                             <div className={classNames('col-md-6', cssPageStyles.section)}>
                                 <DatePicker
+                                    id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.validationRulesAnalysis.form.startDate)
@@ -229,6 +230,7 @@ class ValidationRulesAnalysis extends Page {
                                     maxDate={this.state.endDate}
                                 />
                                 <DatePicker
+                                    id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.validationRulesAnalysis.form.endDate)
@@ -239,25 +241,32 @@ class ValidationRulesAnalysis extends Page {
                                     minDate={this.state.startDate}
                                     maxDate={new Date()}
                                 />
-                                <ValidationRuleGroupsSelect
-                                    style={jsPageStyles.inputForm}
-                                    onChange={this.validationRuleGroupOnChange}
-                                />
-                                <Checkbox
-                                    label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
-                                    labelPosition="left"
-                                    checked={this.state.sendNotifications}
-                                    onCheck={this.updateSendNotifications}
-                                />
-                                <Checkbox
-                                    label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
-                                    labelPosition="left"
-                                    checked={this.state.persistNewResults}
-                                    onCheck={this.updatePersistNewResults}
-                                />
+                                <div id="validation-rule-groups">
+                                    <ValidationRuleGroupsSelect
+                                        style={jsPageStyles.inputForm}
+                                        onChange={this.validationRuleGroupOnChange}
+                                    />
+                                </div>
+                                <div id="send-notifications-option">
+                                    <Checkbox
+                                        label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
+                                        labelPosition="left"
+                                        checked={this.state.sendNotifications}
+                                        onCheck={this.updateSendNotifications}
+                                    />
+                                </div>
+                                <div id="persist-results-option">
+                                    <Checkbox
+                                        label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
+                                        labelPosition="left"
+                                        checked={this.state.persistNewResults}
+                                        onCheck={this.updatePersistNewResults}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <RaisedButton
+                            id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
                             primary
@@ -265,7 +274,7 @@ class ValidationRulesAnalysis extends Page {
                             onClick={this.validate}
                         />
                     </CardText>
-                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
                         <ValidationRulesAnalysisTable elements={this.state.elements} />
                     </CardText>
                 </Card>

@@ -111,7 +111,9 @@ class App extends PureComponent {
                       />
                   </div>
               </div>
-              {feedbackElement}
+              <div id="feedback-snackbar">
+                  {feedbackElement}
+              </div>
           </div>
       );
   }

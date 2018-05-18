@@ -95,6 +95,7 @@ class ValidationRulesDetails extends Page {
         // Details Actions
         const dialogActions = [
             <FlatButton
+                className="close-action"
                 key={`FB${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                 label={translator(i18nKeys.validationRulesAnalysis.details.close)}
                 primary={Boolean(true)}
@@ -103,7 +104,7 @@ class ValidationRulesDetails extends Page {
         ];
 
         const result = (
-            <div className={classNames('row', styles.sectionBox)}>
+            <div className={classNames('row', 'results-row', styles.sectionBox)}>
                 <div className={classNames('col-xs-12', styles.sectionTitle)}>
                     {translator(i18nKeys.validationRulesAnalysis.details.resultSectionTitle)}
                 </div>
@@ -136,9 +137,9 @@ class ValidationRulesDetails extends Page {
             </div>
         );
 
-        const buildSection = (side, elements) =>
+        const buildSection = (side, elements, classNameRow) =>
             (
-                <div className={classNames('row', styles.sectionBox)}>
+                <div className={classNames('row', classNameRow, styles.sectionBox)}>
                     <div className={classNames('col-xs-12', styles.sectionTitle)}>
                         {side}
                     </div>
@@ -171,13 +172,14 @@ class ValidationRulesDetails extends Page {
             <div>
                 <FontIcon
                     key={`FI|${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
-                    className={'material-icons'}
+                    className={'validation-rules-show-details-action material-icons'}
                     style={jsPageStyles.cursorStyle}
                     onClick={this.loadDetails}
                 >
                     info
                 </FontIcon>
                 <Dialog
+                    className="validation-rules-details-dialog"
                     key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     autoScrollBodyContent={Boolean(true)}
                     title={translator(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
@@ -194,6 +196,7 @@ class ValidationRulesDetails extends Page {
                             buildSection(
                                 translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
                                 this.state.expression.leftSide,
+                                'left-side-row',
                             ) : (
                                 showNoData(translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle))
                             )
@@ -204,6 +207,7 @@ class ValidationRulesDetails extends Page {
                             buildSection(
                                 translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
                                 this.state.expression.rightSide,
+                                'right-side-row',
                             ) : (
                                 showNoData(translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle))
                             )

@@ -181,7 +181,9 @@ class FollowUpAnalysisTable extends Component {
                     open={this.state.showComment}
                     onRequestClose={this.closeCommentDialog}
                 >
-                    {this.state.comment}
+                    <div id={'comment-content'}>
+                        {this.state.comment}
+                    </div>
                 </Dialog>
                 <div className={cssPageStyles.cardHeader}>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
@@ -228,6 +230,7 @@ class FollowUpAnalysisTable extends Component {
                 </Table>
                 <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.spaceBetween)}>
                     <RaisedButton
+                        id="unfollow-action"
                         primary
                         disabled={this.props.loading || !oneChecked}
                         label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}

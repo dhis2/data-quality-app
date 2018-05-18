@@ -236,7 +236,7 @@ class StdDevOutlierAnalysis extends Page {
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
-                            <div className={classNames('col-md-4', cssPageStyles.section)}>
+                            <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
                                     {translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
                                 </div>
@@ -250,6 +250,7 @@ class StdDevOutlierAnalysis extends Page {
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <DatePicker
+                                    id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)
@@ -260,6 +261,7 @@ class StdDevOutlierAnalysis extends Page {
                                     value={this.state.startDate}
                                 />
                                 <DatePicker
+                                    id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)
@@ -271,6 +273,7 @@ class StdDevOutlierAnalysis extends Page {
                                     value={this.state.endDate}
                                 />
                                 <SelectField
+                                    id="standard-deviation"
                                     style={jsPageStyles.inputForm}
                                     floatingLabelText={
                                         translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
@@ -286,11 +289,12 @@ class StdDevOutlierAnalysis extends Page {
                                     <MenuItem value={3.5} primaryText="3.5" />
                                     <MenuItem value={4} primaryText="4.0" />
                                     <MenuItem value={4.5} primaryText="4.5" />
-                                    <MenuItem value={5} primaryText="5" />
+                                    <MenuItem value={5} primaryText="5.0" />
                                 </SelectField>
                             </div>
                         </div>
                         <RaisedButton
+                            id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
                             label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
@@ -299,7 +303,7 @@ class StdDevOutlierAnalysis extends Page {
                         />
                     </CardText>
                     {/* TABLE */}
-                    <CardText style={{ display: this.state.showTable ? 'block' : 'none' }}>
+                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
                         <OutlierAnalyisTable
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}
