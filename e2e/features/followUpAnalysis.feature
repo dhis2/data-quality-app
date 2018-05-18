@@ -30,6 +30,7 @@ Feature: Follow-Up analysis
     And I select data set with results
     And I select valid time range to get results
     And I start followup analysis
+    Then a new page is displayed
     And I select a comment
     Then the comment is displayed
 
@@ -38,6 +39,7 @@ Feature: Follow-Up analysis
     And I select data set with results
     And I select valid time range to get results
     And I start followup analysis
+    Then a new page is displayed
     And I select results to unfollow
     And I choose to unfollow them
     Then the unfollowed items are removed from the list
@@ -47,7 +49,7 @@ Feature: Follow-Up analysis
     And I select data set with results
     And I select another parent organisation
     Then the data set option selected is reverted to all data sets
-	And the available data set list is updated
+    And the available data set list is updated
 
   Scenario: I want to not start the analysis without parent organisation unit
     And I select data set with results

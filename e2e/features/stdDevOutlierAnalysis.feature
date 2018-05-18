@@ -21,7 +21,7 @@ Feature: Std Dev Outlier Analysis
     And I select valid standard deviation to get results
     And I start std dev outlier analysis
     Then a new page is displayed
-	And action to download as PDF is displayed
+    And action to download as PDF is displayed
     And action to download as XLS is displayed
     And action to download as CSV is displayed
     And a table with results is displayed
@@ -42,14 +42,14 @@ Feature: Std Dev Outlier Analysis
     When I select parent organisation with results
     And I select valid time range to get results
     And I select valid standard deviation to get results
-	And no data set is selected
+    And no data set is selected
     Then the start std dev outlier analysis button is not active
 
   Scenario: I want to not start std dev outlier analysis without parent organisation Unit
     When I select data set with results
     And I select valid time range to get results
     And I select valid standard deviation to get results
-	And no parent organisation unit is selected
+    And no parent organisation unit is selected
     Then the start std dev outlier analysis button is not active
 
   Scenario: I want to see the no results message after start std dev outlier analysis
@@ -57,15 +57,15 @@ Feature: Std Dev Outlier Analysis
     And I start std dev outlier analysis
     Then a no results message is displayed
 
-   Scenario: I cannot be able to generate analysis with future start date
+  Scenario: I cannot be able to generate analysis with future start date
     Then I cannot select the start date greater than today
     And  I cannot select the end date greater than today
 
   Scenario: I cannot be able to generate analysis with start date after future end date
     When I select start date to past date
-	And I select end date to date after the start date
+    And I select end date to date after the start date
     Then I cannot select the start date after the end date
-	
+
   Scenario: I cannot be able to generate analysis with end date before start date
     When I select valid start date
     Then I cannot select end date date previous than the start date

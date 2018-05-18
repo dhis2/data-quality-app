@@ -11,8 +11,8 @@ Feature: Side Menu
     Then the side menu "<item>" is selected
     And the new section is opened with "<header>"
     Examples:
-      | item                     | header                    |
-      | Validation Rule Analysis | Validation Rule Analysis  |
-      | Std Dev Outlier Analysis | Std Dev Outlier Analysis  |
-      | Min-Max Outlier Analysis | Min-Max Outlier Analysis  |
-      | Follow-Up Analysis       | Follow-Up Analysis        |
+      | item                     | header                   |
+      | Validation Rule Analysis | Validation Rule Analysis |
+      | Std Dev Outlier Analysis | Std Dev Outlier Analysis |
+      | Min-Max Outlier Analysis | Min-Max Outlier Analysis |
+      | Follow-Up Analysis       | Follow-Up Analysis       |
