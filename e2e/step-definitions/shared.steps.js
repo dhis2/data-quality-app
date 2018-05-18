@@ -68,27 +68,27 @@ defineSupportCode(({Given, When, Then}) => {
         this.page.organisationUnitTreeView.waitForVisible(5000);
     });
 
-    Then(/^a start date selection is displayed/, () => {
+    Then(/^a start date selection is displayed$/, () => {
         this.page.startDateInput.waitForVisible(5000);
     });
 
-    Then(/^an end date selection is displayed/, () => {
+    Then(/^an end date selection is displayed$/, () => {
         this.page.endDateInput.waitForVisible(5000);
     });
 
-    Then(/^a standard deviation is displayed/, () => {
+    Then(/^a standard deviation is displayed$/, () => {
         this.page.standardDevDropdown.waitForVisible(5000);
     });
 
-    Then(/^a start min-max analysis option is displayed/, () => {
+    Then(/^a start min-max analysis option is displayed$/, () => {
         this.page.startButton.waitForVisible(5000);
     });
 
-    Then(/^a start std dev outlier analysis option is displayed/, () => {
+    Then(/^a start std dev outlier analysis option is displayed$/, () => {
         this.page.startButton.waitForVisible(5000);
     });
 
-    Then(/^a start followup analysis option is displayed/, () => {
+    Then(/^a start followup analysis option is displayed$/, () => {
         this.page.startButton.waitForVisible(5000);
     });
 
@@ -108,31 +108,31 @@ defineSupportCode(({Given, When, Then}) => {
         this.page.dataSetDropdown.waitForVisible(5000);
     });
 
-    Then(/^a start validation rule analysis option is displayed/, () => {
+    Then(/^a start validation rule analysis option is displayed$/, () => {
         this.page.startButton.waitForVisible(5000);
     });
 
     // *********************************************************
     // Scenario: I want to start min-max analysis and check results
     // *********************************************************
-    When(/^I select data set with results/, () => {
+    When(/^I select data set with results$/, () => {
         this.page.selectDataSetWithResults();
     });
 
-    When(/^I select parent organisation with results/, () => {
+    When(/^I select parent organisation with results$/, () => {
         this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
         expect(this.page.isOrganisationUnitSelected()).to.equal(true);
         browser.pause(5000);                                              // time for data sets to refresh
     });
 
-    When(/^I select valid standard deviation to get results/, () => {
+    When(/^I select valid standard deviation to get results$/, () => {
         this.page.openStandardDevDropdown();
         browser.pause(1000);
         this.page.getStandardDevOptionByText('3.0').click();
         browser.pause(1000);
     });
 
-    When(/^I select valid time range to get results/, () => {
+    When(/^I select valid time range to get results$/, () => {
         const today = new Date();
         this.page.openStartDate();
         browser.pause(1000);                                                      // to make sure buttons are available
@@ -144,54 +144,54 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);                                                      // to make sure date picker closes
     });
 
-    When(/^I select validation rule group with results/, () => {
+    When(/^I select validation rule group with results$/, () => {
         this.page.selectValidationGroupWithResults();
     });
 
-    When(/^I start min max min-max analysis/, () => {
+    When(/^I start min max min-max analysis$/, () => {
         this.page.startButton.click();
     });
 
-    When(/^I start std dev outlier analysis/, () => {
+    When(/^I start std dev outlier analysis$/, () => {
         this.page.startButton.click();
     });
 
-    When(/^I start followup analysis/, () => {
+    When(/^I start followup analysis$/, () => {
         this.page.startButton.click();
     });
 
-    When(/^I start validation rule analysis/, () => {
+    When(/^I start validation rule analysis$/, () => {
         this.page.startButton.click();
     });
 
-    Then(/^a new page is displayed/, () => {
+    Then(/^a new page is displayed$/, () => {
         this.page.resultsTable.waitForVisible(60000);
     });
 
-    Then(/^action to download as PDF is displayed/, () => {
+    Then(/^action to download as PDF is displayed$/, () => {
         this.page.downloadAsPdfButton.waitForVisible(5000);
     });
 
-    Then(/^action to download as XLS is displayed/, () => {
+    Then(/^action to download as XLS is displayed$/, () => {
         this.page.downloadAsXlsButton.waitForVisible(5000);
     });
 
-    Then(/^action to download as CSV is displayed/, () => {
+    Then(/^action to download as CSV is displayed$/, () => {
         this.page.downloadAsCsvButton.waitForVisible(5000);
     });
 
-    Then(/^a table with results is displayed/, () => {
+    Then(/^a table with results is displayed$/, () => {
         expect(this.page.resultsTableRows.length > 0).to.equal(true);
     });
 
-    Then(/^the unfollow option is displayed/, () => {
+    Then(/^the unfollow option is displayed$/, () => {
         this.page.unfollowButton.waitForVisible(5000);
     });
 
     // *********************************************************
     // Scenario: I want to start min-max analysis with multiple data set
     // *********************************************************
-    When(/^I select multiple data set with results/, () => {
+    When(/^I select multiple data set with results$/, () => {
         this.page.getDataSetOptionByIndex(1).click();
         browser.keys(['Shift']);                                    // shift down
         this.page.getDataSetOptionByIndex(2).click();
@@ -210,46 +210,46 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I want to not start min-max analysis without data set
     // *********************************************************
-    When(/^no data set is selected/, () => {
+    When(/^no data set is selected$/, () => {
         expect(this.page.dataSetSelect.getValue()).to.equal('');
     });
 
-    Then(/^start button to generate min-max analysis is not active/, () => {
+    Then(/^start button to generate min-max analysis is not active$/, () => {
         expect(this.page.startButton.isEnabled()).to.equal(false);
     });
 
-    Then(/^the start std dev outlier analysis button is not active/, () => {
+    Then(/^the start std dev outlier analysis button is not active$/, () => {
         expect(this.page.startButton.isEnabled()).to.equal(false);
     });
 
-    Then(/^start button to generate followup analysis is not active/, () => {
+    Then(/^start button to generate followup analysis is not active$/, () => {
         expect(this.page.startButton.isEnabled()).to.equal(false);
     });
 
-    Then(/^the start validation rule analysis Button is not active/, () => {
+    Then(/^the start validation rule analysis Button is not active$/, () => {
         expect(this.page.startButton.isEnabled()).to.equal(false);
     });
 
     // *********************************************************
     // Scenario: I want to not start min-max analysis without parent organisation Unit
     // *********************************************************
-    When(/^no parent organisation unit is selected/, () => {
+    When(/^no parent organisation unit is selected$/, () => {
         expect(this.page.isOrganisationUnitSelected()).to.equal(false);
     });
 
     // *********************************************************
     // Scenario: I want to see a no results message after start min-max analysis
     // *********************************************************
-    When(/^I fill form with data to retrieve no results/, () => {
+    When(/^I fill form with data to retrieve no results$/, () => {
         this.page.fillFormWithNoResults();
     });
 
-    Then(/^a no results message is displayed/, () => {
+    Then(/^a no results message is displayed$/, () => {
         this.page.snackBarMessageElement.waitForVisible(60000);
         expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
     });
 
-    Then(/^a validation passed successfully message is displayed/, () => {
+    Then(/^a validation passed successfully message is displayed$/, () => {
         this.page.snackBarMessageElement.waitForVisible(60000);
         expect(this.page.snackBarMessageElement.getText()).to.equal('Validation passed successfully');
     });
@@ -257,7 +257,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I cannot be able to generate analysis with future start date
     // *********************************************************
-    Then(/^I cannot select the start date greater than today/, () => {
+    Then(/^I cannot select the start date greater than today$/, () => {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -271,7 +271,7 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    Then(/^I cannot select the end date greater than today/, () => {
+    Then(/^I cannot select the end date greater than today$/, () => {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
 
@@ -288,7 +288,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I cannot be able to generate analysis with start date after future end date
     // *********************************************************
-    When(/^I select start date to past date/, () => {
+    When(/^I select start date to past date$/, () => {
         const oneYearAgo = new Date();
         oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
@@ -299,7 +299,7 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    When(/^I select end date to date after the start date/, () => {
+    When(/^I select end date to date after the start date$/, () => {
         const endDate = this.page.startDate;
         endDate.setDate(endDate.getDate() + 1);
 
@@ -310,7 +310,7 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    Then(/^I cannot select the start date after the end date/, () => {
+    Then(/^I cannot select the start date after the end date$/, () => {
         const startDate = this.page.endDate;
         startDate.setDate(startDate.getDate() + 1);
 
@@ -327,7 +327,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I cannot be able to generate analysis with end date before start date
     // *********************************************************
-    When(/^I select valid start date/, () => {
+    When(/^I select valid start date$/, () => {
         const today = new Date();
 
         this.page.openStartDate();
@@ -337,7 +337,7 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    Then(/^I cannot select end date date previous than the start date/, () => {
+    Then(/^I cannot select end date date previous than the start date$/, () => {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
 
@@ -354,7 +354,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I want to generate analysis with the smallest start date available
     // *********************************************************
-    When(/^I select start date equals to smallest date possible/, () => {
+    When(/^I select start date equals to smallest date possible$/, () => {
         const oneHundredYearsAgo = new Date();
         oneHundredYearsAgo.setFullYear(oneHundredYearsAgo.getFullYear() - 100);
 
@@ -365,7 +365,7 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    When(/^I select valid end date/, () => {
+    When(/^I select valid end date$/, () => {
         const today = new Date();
 
         this.page.openEndDate();
@@ -377,7 +377,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I cannot be able to generate analysis with start date smaller than possible smallest date
     // *********************************************************
-    Then(/^I cannot select start date smaller than the smallest date possible/, () => {
+    Then(/^I cannot select start date smaller than the smallest date possible$/, () => {
         const oneHundredYearsAgoLessOneDay = new Date();
         oneHundredYearsAgoLessOneDay.setFullYear(oneHundredYearsAgoLessOneDay.getFullYear() - 100);
         oneHundredYearsAgoLessOneDay.setDate(oneHundredYearsAgoLessOneDay.getDate() - 1);
@@ -395,38 +395,39 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I want to see Validation result analysis item details
     // *********************************************************
-    When(/^I click icon Details/, () => {
+    When(/^I click icon Details$/, () => {
         this.page.openValidationRuleDetailsByIndex(0);
+        browser.pause(15000);
     });
 
-    When(/^I can see a pop up/, () => {
-        this.page.validationRulesDetailsDialog.waitForVisible(5000);
+    When(/^I can see a pop up$/, () => {
+        expect(this.page.validationRulesDetailsDialog.isVisible()).to.equal(true);
     });
 
-    When(/^I see a section with validation result details for selected item/, () => {
-        this.page.resultsRowAtDetailsDialog.waitForVisible(5000);
+    When(/^I see a section with validation result details for selected item$/, () => {
+        expect(this.page.resultsRowAtDetailsDialog.isVisible()).to.equal(true);
     });
 
-    When(/^I see a section with left side for selected item/, () => {
-        this.page.leftSideRowAtDetailsDialog.waitForVisible(5000);
+    When(/^I see a section with left side for selected item$/, () => {
+        expect(this.page.leftSideRowAtDetailsDialog.isVisible()).to.equal(true);
     });
 
-    When(/^I see a section with right side for selected item/, () => {
-        this.page.rightSideRowAtDetailsDialog.waitForVisible(5000);
+    When(/^I see a section with right side for selected item$/, () => {
+        expect(this.page.rightSideRowAtDetailsDialog.isVisible()).to.equal(true);
     });
 
-    When(/^I can click in close button for selected item/, () => {
-        this.page.closeButtonAtDetailsDialog.waitForVisible(5000);
+    When(/^I can click in close button for selected item$/, () => {
+        expect(this.page.closeButtonAtDetailsDialog.isVisible()).to.equal(true);
     });
 
     // *********************************************************
     // Scenario: Follow-Up Analysis - I want to see Comment
     // *********************************************************
-    When(/^I select a comment/, () => {
+    When(/^I select a comment$/, () => {
         this.page.existingComments[0].click();
     });
 
-    When(/^the comment is displayed/, () => {
+    When(/^the comment is displayed$/, () => {
         expect(this.page.existsCommentHeader).to.equal(true);
         expect(this.page.existsCommentInfo).to.equal(true);
     });
@@ -434,23 +435,23 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: Follow-Up Analysis - I want to unfollow results
     // *********************************************************
-    When(/^I select results to unfollow/, () => {
+    When(/^I select results to unfollow$/, () => {
         this.page.getUnfollowCheckboxeByIndex(0).click();
     });
 
-    When(/^I choose to unfollow them/, () => {
+    When(/^I choose to unfollow them$/, () => {
         totalElements = this.page.totalElements;
         this.page.unfollowButton.click();
     });
 
-    When(/^the unfollowed items are removed from the list/, () => {
+    When(/^the unfollowed items are removed from the list$/, () => {
         expect(totalElements - 1).to.equal(this.page.totalElements);
     });
 
     // *********************************************************
     // Scenario: Follow-Up Analysis - I want to validate data set changes
     // *********************************************************
-    When(/^I select another parent organisation/, () => {
+    When(/^I select another parent organisation$/, () => {
         // Get actual data set size
         this.page.dataSetElement.click();
         browser.waitForVisible('div[role=presentation]');
@@ -464,11 +465,11 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(5000);
     });
 
-    When(/^the data set option selected is reverted to all data sets/, () => {
+    When(/^the data set option selected is reverted to all data sets$/, () => {
         expect(this.page.dataSetText).to.equal('[All Data Sets]');
     });
 
-    When(/^the available data set list is updated/, () => {
+    When(/^the available data set list is updated$/, () => {
         // Get actual data set size
         this.page.dataSetElement.click();
         browser.waitForVisible('div[role=presentation]');
