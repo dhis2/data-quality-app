@@ -1,15 +1,8 @@
 const Page = require('./page');
 
-class Home extends Page {
-    constructor() {
-        super();
-    }
-
-    /**
-     * ACTIONS
-     */
+class Home {
     open() {
-        super.open();
+        browser.url('/');
     }
 
     isSectionOptionVisible(section) {

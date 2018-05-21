@@ -1,15 +1,10 @@
-const Page = require('./page');
-
-class MinMaxValueAnalysis extends Page {
-    constructor() {
-        super();
+class MinMaxValueAnalysis {
+    open() {
+        browser.url('/#/min-max-outlier-analysis');
     }
 
-    /**
-     * ACTIONS
-     */
-    open() {
-        super.open('#/min-max-outlier-analysis');
+    get startButton() {
+        return browser.element('button[id=start-analysis-button]');
     }
 }
 

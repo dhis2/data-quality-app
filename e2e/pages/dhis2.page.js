@@ -1,13 +1,4 @@
-const Page = require('./page');
-
-class DHIS2Page extends Page {
-    constructor() {
-        super();
-    }
-
-    /**
-     * ACTIONS
-     */
+class DHIS2Page {
     open() {
         browser.url(process.env.DHIS2_BASE_URL || 'http://localhost:8080/');
     }

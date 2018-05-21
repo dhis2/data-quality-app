@@ -3,10 +3,9 @@ const {defineSupportCode} = require('cucumber');
 
 const dhis2Page = require('../pages/dhis2.page.js');
 const home = require('../pages/home.page');
+const page = require('../pages/page');
 
 defineSupportCode(({Given, When, Then}) => {
-
-    let totalElements = 0;
 
     Given(/^that I am logged in to the Sierra Leone DHIS2$/, () => {
         dhis2Page.open();
@@ -30,174 +29,85 @@ defineSupportCode(({Given, When, Then}) => {
         expect(browser.element('h1').getText().includes(header)).to.equal(true);
     });
 
-    // *********************************************************
-    // Background:
-    // *********************************************************
-    When(/^I open Min-Max Outlier Analysis page$/, () => {
-        this.page = require('../pages/minMaxOutlierAnalysis.page');
-        this.page.open();
-        browser.pause(1000);
-    });
-
-    When(/^I open Std Dev Outlier Analysis page$/, () => {
-        this.page = require('../pages/stdDevOutlierAnalysis.page');
-        this.page.open();
-        browser.pause(1000);
-    });
-
-    When(/^I open Follow-Up analysis page$/, () => {
-        this.page = require('../pages/followUpAnalysis.page');
-        this.page.open();
-        browser.pause(1000);
-    });
-
-    When(/^I open Validation Rule Analysis page$/, () => {
-        this.page = require('../pages/validationRuleAnalysis.page');
-        this.page.open();
-        browser.pause(1000);
-    });
 
     // *********************************************************
     // Scenario: I want to see all items in the page
     // *********************************************************
     Then(/a column with list of data set is displayed$/, () => {
-        this.page.dataSetSelect.waitForVisible(5000);
+        page.dataSetSelect.waitForVisible(5000);
     });
 
     Then(/^a column with parent organisation unit selection is displayed$/, () => {
-        this.page.organisationUnitTreeView.waitForVisible(5000);
+        page.organisationUnitTreeView.waitForVisible(5000);
     });
 
     Then(/^a start date selection is displayed$/, () => {
-        this.page.startDateInput.waitForVisible(5000);
+        page.startDateInput.waitForVisible(5000);
     });
 
     Then(/^an end date selection is displayed$/, () => {
-        this.page.endDateInput.waitForVisible(5000);
+        page.endDateInput.waitForVisible(5000);
     });
 
-    Then(/^a standard deviation is displayed$/, () => {
-        this.page.standardDevDropdown.waitForVisible(5000);
-    });
-
-    Then(/^a start min-max analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/^a start std dev outlier analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/^a start followup analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/validation rule group selection is displayed$/, () => {
-        this.page.validationRuleGroup.waitForVisible(5000);
-    });
-
-    Then(/send notifications option is displayed$/, () => {
-        this.page.sendNotificationsOption.waitForVisible(5000);
-    });
-
-    Then(/persist new results option is displayed$/, () => {
-        this.page.persistResultsOption.waitForVisible(5000);
-    });
-
-    Then(/a data set selection is displayed$/, () => {
-        this.page.dataSetDropdown.waitForVisible(5000);
-    });
-
-    Then(/^a start validation rule analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
+    Then(/^a data set selection is displayed$/, () => {
+        page.dataSetDropdown.waitForVisible(5000);
     });
 
     // *********************************************************
     // Scenario: I want to start min-max analysis and check results
     // *********************************************************
     When(/^I select data set with results$/, () => {
-        this.page.selectDataSetWithResults();
+        page.selectDataSetWithResults();
     });
 
     When(/^I select parent organisation with results$/, () => {
-        this.page.getOneOrgUnitTreeFromTreeByIndex(0).click();
-        expect(this.page.isOrganisationUnitSelected()).to.equal(true);
+        page.getOneOrgUnitTreeFromTreeByIndex(0).click();
+        expect(page.isOrganisationUnitSelected()).to.equal(true);
         browser.pause(5000);                                              // time for data sets to refresh
-    });
-
-    When(/^I select valid standard deviation to get results$/, () => {
-        this.page.openStandardDevDropdown();
-        browser.pause(1000);
-        this.page.getStandardDevOptionByText('3.0').click();
-        browser.pause(1000);
     });
 
     When(/^I select valid time range to get results$/, () => {
         const today = new Date();
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);                                                      // to make sure buttons are available
-        this.page.openStartDateYearsPicker();
+        page.openStartDateYearsPicker();
         browser.pause(1000);                                                      // to make sure buttons are available
-        this.page.getStartDateYearButton(today.getFullYear() - 3).click();        // 3 years behind
+        page.getStartDateYearButton(today.getFullYear() - 3).click();        // 3 years behind
         browser.pause(1000);                                                      // to make sure buttons are available
-        this.page.confirmStartDatePicker();
+        page.confirmStartDatePicker();
         browser.pause(1000);                                                      // to make sure date picker closes
     });
 
-    When(/^I select validation rule group with results$/, () => {
-        this.page.selectValidationGroupWithResults();
-    });
-
-    When(/^I start min max min-max analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start std dev outlier analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start followup analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start validation rule analysis$/, () => {
-        this.page.startButton.click();
-    });
-
     Then(/^a new page is displayed$/, () => {
-        this.page.resultsTable.waitForVisible(60000);
+        page.resultsTable.waitForVisible(60000);
     });
 
     Then(/^action to download as PDF is displayed$/, () => {
-        this.page.downloadAsPdfButton.waitForVisible(5000);
+        page.downloadAsPdfButton.waitForVisible(5000);
     });
 
     Then(/^action to download as XLS is displayed$/, () => {
-        this.page.downloadAsXlsButton.waitForVisible(5000);
+        page.downloadAsXlsButton.waitForVisible(5000);
     });
 
     Then(/^action to download as CSV is displayed$/, () => {
-        this.page.downloadAsCsvButton.waitForVisible(5000);
+        page.downloadAsCsvButton.waitForVisible(5000);
     });
 
     Then(/^a table with results is displayed$/, () => {
-        expect(this.page.resultsTableRows.length > 0).to.equal(true);
-    });
-
-    Then(/^the unfollow option is displayed$/, () => {
-        this.page.unfollowButton.waitForVisible(5000);
+        expect(page.resultsTableRows.length > 0).to.equal(true);
     });
 
     // *********************************************************
     // Scenario: I want to start min-max analysis with multiple data set
     // *********************************************************
     When(/^I select multiple data set with results$/, () => {
-        this.page.getDataSetOptionByIndex(1).click();
+        page.getDataSetOptionByIndex(1).click();
         browser.keys(['Shift']);                                    // shift down
-        this.page.getDataSetOptionByIndex(2).click();
+        page.getDataSetOptionByIndex(2).click();
         browser.keys(['Shift']);                                    // shift up
         let selectedOptionsCount = 0;
-        const options = this.page.dataSetSelect.elements('<option>').value;
+        const options = page.dataSetSelect.elements('<option>').value;
         for (let currentOption of options) {
             let backgroundColor = currentOption.getCssProperty('background-color').value;
             if (backgroundColor === 'rgba(0,105,217,1)') {
@@ -211,47 +121,31 @@ defineSupportCode(({Given, When, Then}) => {
     // Scenario: I want to not start min-max analysis without data set
     // *********************************************************
     When(/^no data set is selected$/, () => {
-        expect(this.page.dataSetSelect.getValue()).to.equal('');
-    });
-
-    Then(/^start button to generate min-max analysis is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^the start std dev outlier analysis button is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^start button to generate followup analysis is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^the start validation rule analysis Button is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
+        expect(page.dataSetSelect.getValue()).to.equal('');
     });
 
     // *********************************************************
     // Scenario: I want to not start min-max analysis without parent organisation Unit
     // *********************************************************
     When(/^no parent organisation unit is selected$/, () => {
-        expect(this.page.isOrganisationUnitSelected()).to.equal(false);
+        expect(page.isOrganisationUnitSelected()).to.equal(false);
     });
 
     // *********************************************************
     // Scenario: I want to see a no results message after start min-max analysis
     // *********************************************************
     When(/^I fill form with data to retrieve no results$/, () => {
-        this.page.fillFormWithNoResults();
+        page.fillFormWithNoResults();
     });
 
     Then(/^a no results message is displayed$/, () => {
-        this.page.snackBarMessageElement.waitForVisible(60000);
-        expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
+        page.snackBarMessageElement.waitForVisible(60000);
+        expect(page.snackBarMessageElement.getText()).to.equal('No values found');
     });
 
     Then(/^a validation passed successfully message is displayed$/, () => {
-        this.page.snackBarMessageElement.waitForVisible(60000);
-        expect(this.page.snackBarMessageElement.getText()).to.equal('Validation passed successfully');
+        page.snackBarMessageElement.waitForVisible(60000);
+        expect(page.snackBarMessageElement.getText()).to.equal('Validation passed successfully');
     });
 
     // *********************************************************
@@ -261,13 +155,13 @@ defineSupportCode(({Given, When, Then}) => {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        expect(this.page.getStartDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
+        expect(page.getStartDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
 
         // to not conflict with next steps
-        this.page.closeStartDatePicker();
+        page.closeStartDatePicker();
         browser.pause(1000);
     });
 
@@ -275,13 +169,13 @@ defineSupportCode(({Given, When, Then}) => {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
 
-        this.page.openEndDate();
+        page.openEndDate();
         browser.pause(1000);
 
-        expect(this.page.getEndDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
+        expect(page.getEndDatePickerDayButtonOfDate(tomorrow).isEnabled()).to.equal(false);
 
         // to not conflict with next steps
-        this.page.closeEndDatePicker();
+        page.closeEndDatePicker();
         browser.pause(1000);
     });
 
@@ -292,35 +186,35 @@ defineSupportCode(({Given, When, Then}) => {
         const oneYearAgo = new Date();
         oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        this.page.selectDateForStartDatePicker(oneYearAgo);
+        page.selectDateForStartDatePicker(oneYearAgo);
         browser.pause(1000);
     });
 
     When(/^I select end date to date after the start date$/, () => {
-        const endDate = this.page.startDate;
+        const endDate = page.startDate;
         endDate.setDate(endDate.getDate() + 1);
 
-        this.page.openEndDate();
+        page.openEndDate();
         browser.pause(1000);
 
-        this.page.selectDateForEndDatePicker(endDate);
+        page.selectDateForEndDatePicker(endDate);
         browser.pause(1000);
     });
 
     Then(/^I cannot select the start date after the end date$/, () => {
-        const startDate = this.page.endDate;
+        const startDate = page.endDate;
         startDate.setDate(startDate.getDate() + 1);
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        expect(this.page.getStartDatePickerDayButtonOfDate(startDate).isEnabled()).to.equal(false);
+        expect(page.getStartDatePickerDayButtonOfDate(startDate).isEnabled()).to.equal(false);
 
         // to not conflict with next steps
-        this.page.closeStartDatePicker();
+        page.closeStartDatePicker();
         browser.pause(1000);
     });
 
@@ -330,10 +224,10 @@ defineSupportCode(({Given, When, Then}) => {
     When(/^I select valid start date$/, () => {
         const today = new Date();
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        this.page.selectDateForStartDatePicker(today);
+        page.selectDateForStartDatePicker(today);
         browser.pause(1000);
     });
 
@@ -341,13 +235,13 @@ defineSupportCode(({Given, When, Then}) => {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
 
-        this.page.openEndDate();
+        page.openEndDate();
         browser.pause(1000);
 
-        expect(this.page.getEndDatePickerDayButtonOfDate(yesterday).isEnabled()).to.equal(false);
+        expect(page.getEndDatePickerDayButtonOfDate(yesterday).isEnabled()).to.equal(false);
 
         // to not conflict with next steps
-        this.page.closeEndDatePicker();
+        page.closeEndDatePicker();
         browser.pause(1000);
     });
 
@@ -358,20 +252,20 @@ defineSupportCode(({Given, When, Then}) => {
         const oneHundredYearsAgo = new Date();
         oneHundredYearsAgo.setFullYear(oneHundredYearsAgo.getFullYear() - 100);
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        this.page.selectDateForStartDatePicker(oneHundredYearsAgo);
+        page.selectDateForStartDatePicker(oneHundredYearsAgo);
         browser.pause(1000);
     });
 
     When(/^I select valid end date$/, () => {
         const today = new Date();
 
-        this.page.openEndDate();
+        page.openEndDate();
         browser.pause(1000);
 
-        this.page.selectDateForEndDatePicker(today);
+        page.selectDateForEndDatePicker(today);
     });
 
     // *********************************************************
@@ -382,97 +276,14 @@ defineSupportCode(({Given, When, Then}) => {
         oneHundredYearsAgoLessOneDay.setFullYear(oneHundredYearsAgoLessOneDay.getFullYear() - 100);
         oneHundredYearsAgoLessOneDay.setDate(oneHundredYearsAgoLessOneDay.getDate() - 1);
 
-        this.page.openStartDate();
+        page.openStartDate();
         browser.pause(1000);
 
-        expect(this.page.getStartDatePickerDayButtonOfDate(oneHundredYearsAgoLessOneDay).isEnabled()).to.equal(false);
+        expect(page.getStartDatePickerDayButtonOfDate(oneHundredYearsAgoLessOneDay).isEnabled()).to.equal(false);
 
         // to not conflict with next steps
-        this.page.closeStartDatePicker();
+        page.closeStartDatePicker();
         browser.pause(1000);
     });
 
-    // *********************************************************
-    // Scenario: I want to see Validation result analysis item details
-    // *********************************************************
-    When(/^I click icon Details$/, () => {
-        this.page.openValidationRuleDetailsByIndex(0);
-        browser.pause(15000);
-    });
-
-    When(/^I can see a pop up$/, () => {
-        expect(this.page.validationRulesDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with validation result details for selected item$/, () => {
-        expect(this.page.resultsRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with left side for selected item$/, () => {
-        expect(this.page.leftSideRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with right side for selected item$/, () => {
-        expect(this.page.rightSideRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I can click in close button for selected item$/, () => {
-        expect(this.page.closeButtonAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to see Comment
-    // *********************************************************
-    When(/^I select a comment$/, () => {
-        this.page.existingComments[0].click();
-    });
-
-    When(/^the comment is displayed$/, () => {
-        expect(this.page.existsCommentHeader).to.equal(true);
-        expect(this.page.existsCommentInfo).to.equal(true);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to unfollow results
-    // *********************************************************
-    When(/^I select results to unfollow$/, () => {
-        this.page.getUnfollowCheckboxeByIndex(0).click();
-    });
-
-    When(/^I choose to unfollow them$/, () => {
-        totalElements = this.page.totalElements;
-        this.page.unfollowButton.click();
-    });
-
-    When(/^the unfollowed items are removed from the list$/, () => {
-        expect(totalElements - 1).to.equal(this.page.totalElements);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to validate data set changes
-    // *********************************************************
-    When(/^I select another parent organisation$/, () => {
-        // Get actual data set size
-        this.page.dataSetElement.click();
-        browser.waitForVisible('div[role=presentation]');
-        totalElements = this.page.dataSetSize;
-        this.page.getDataSetOptionByIndex(2).click();
-        // wait dataSet close
-        browser.pause(5000);
-
-        this.page.getOneOrgUnitTreeFromTreeByIndex(1).click();
-        expect(this.page.isOrganisationUnitSelected()).to.equal(true);
-        browser.pause(5000);
-    });
-
-    When(/^the data set option selected is reverted to all data sets$/, () => {
-        expect(this.page.dataSetText).to.equal('[All Data Sets]');
-    });
-
-    When(/^the available data set list is updated$/, () => {
-        // Get actual data set size
-        this.page.dataSetElement.click();
-        browser.waitForVisible('div[role=presentation]');
-        expect(totalElements).to.not.equal(this.page.dataSetSize);
-    });
 });

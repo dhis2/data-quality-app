@@ -1,15 +1,10 @@
-const Page = require('./page');
-
-class FollowUpAnalysis extends Page {
-    constructor() {
-        super();
+class FollowUpAnalysis {
+    open() {
+        browser.url('/#/follow-up-analysis');
     }
 
-    /**
-     * ACTIONS
-     */
-    open() {
-        super.open('#/follow-up-analysis');
+    get startButton() {
+        return browser.element('button[id=start-analysis-button]');
     }
 
     getDataSetOptionByIndex(index) {

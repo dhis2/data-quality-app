@@ -1,15 +1,10 @@
-const Page = require('./page');
-
-class ValidationRuleAnalysis extends Page {
-    constructor() {
-        super();
+class ValidationRuleAnalysis {
+    open() {
+        browser.url('#/validation-rules-analysis');
     }
 
-    /**
-     * ACTIONS
-     */
-    open() {
-        super.open('#/validation-rules-analysis');
+    get startButton() {
+        return browser.element('button[id=start-analysis-button]');
     }
 
     get validationRuleGroup() {

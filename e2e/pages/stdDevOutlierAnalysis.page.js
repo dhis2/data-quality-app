@@ -1,15 +1,10 @@
-const Page = require('./page');
-
-class StdDevValueAnalysis extends Page {
-    constructor() {
-        super();
+class StdDevValueAnalysis {
+    open() {
+        browser.url('#/std-dev-outlier-analysis');
     }
 
-    /**
-     * ACTIONS
-     */
-    open() {
-        super.open('#/std-dev-outlier-analysis');
+    get startButton() {
+        return browser.element('button[id=start-analysis-button]');
     }
 
     get standardDevDropdown() {
