@@ -4,7 +4,7 @@ const steps = [
     require('./followUpAnalysis.steps'),
     require('./minMaxOutlierAnalysis.steps'),
     require('./stdDevOutlierAnalysis.steps'),
-    require('./validationRuleAnalysis.page'),
+    require('./validationRuleAnalysis.steps'),
     require('./help.steps'),
     require('./sideMenu.steps'),
 ];
