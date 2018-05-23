@@ -1,10 +1,8 @@
-class FollowUpAnalysis {
-    open() {
-        browser.url('/#/follow-up-analysis');
-    }
+const Page = require('./page');
 
-    get startButton() {
-        return browser.element('button[id=start-analysis-button]');
+class FollowUpAnalysis extends Page {
+    open() {
+        super.open('#/follow-up-analysis');
     }
 
     getDataSetOptionByIndex(index) {

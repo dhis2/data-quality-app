@@ -5,14 +5,6 @@ const validationRuleAnalysis = require('../pages/validationRuleAnalysis.page');
 
 defineSupportCode(({ Given, When, Then }) => {
 
-    // *********************************************************
-    // Background:
-    // *********************************************************
-    When(/^I open Validation Rule Analysis page$/, () => {
-        validationRuleAnalysis.open();
-        browser.pause(1000);
-    });
-
     Then(/^a start validation rule analysis option is displayed$/, () => {
         validationRuleAnalysis.startButton.waitForVisible(5000);
     });

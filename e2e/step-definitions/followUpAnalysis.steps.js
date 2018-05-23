@@ -8,14 +8,6 @@ defineSupportCode(({ Given, When, Then }) => {
     let totalElements;
 
     // *********************************************************
-    // Background:
-    // *********************************************************
-    When(/^I open Follow-Up analysis page$/, () => {
-        followUpAnalysis.open();
-        browser.pause(1000);
-    });
-
-    // *********************************************************
     // Scenario: I want to see Comment
     // *********************************************************
     When(/^I select a comment$/, () => {
@@ -37,6 +29,7 @@ defineSupportCode(({ Given, When, Then }) => {
     Then(/^I choose to unfollow them$/, () => {
         totalElements = followUpAnalysis.totalElements;
         followUpAnalysis.unfollowButton.click();
+        browser.pause(5000);
     });
 
     Then(/^the unfollowed items are removed from the list$/, () => {

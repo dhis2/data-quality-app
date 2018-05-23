@@ -1,6 +1,10 @@
-class Page {
+module.exports = class Page {
+    open(path = '') {
+        browser.url(`/${path}`);
+    }
+
     get dataSetSelect() {
-        return browser.element('#data-sets-container');
+        return browser.element('#data-sets-container select');
     }
 
     get dataSetDropdown() {
@@ -25,6 +29,10 @@ class Page {
 
     get endDate() {
         return new Date(this.endDateInput.getValue());
+    }
+
+    get startButton() {
+        return browser.element('button[id=start-analysis-button]');
     }
 
     get resultsTable() {
@@ -256,6 +264,4 @@ class Page {
         this.getDataSetOptionByIndex(0).click();
         // rest of the form at default values
     }
-}
-
-module.exports = new Page();
+};

@@ -5,14 +5,6 @@ const stdDevOutlierAnalysis = require('../pages/stdDevOutlierAnalysis.page');
 
 defineSupportCode(({ Given, When, Then }) => {
 
-    // *********************************************************
-    // Background:
-    // *********************************************************
-    When(/^I open Std Dev Outlier Analysis page$/, () => {
-        stdDevOutlierAnalysis.open();
-        browser.pause(1000);
-    });
-
     Then(/^a standard deviation is displayed$/, () => {
         stdDevOutlierAnalysis.standardDevDropdown.waitForVisible(5000);
     });

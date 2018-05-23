@@ -1,10 +1,8 @@
-class ValidationRuleAnalysis {
-    open() {
-        browser.url('#/validation-rules-analysis');
-    }
+const Page = require('./page');
 
-    get startButton() {
-        return browser.element('button[id=start-analysis-button]');
+class ValidationRuleAnalysis extends Page {
+    open() {
+        super.open('#/validation-rules-analysis');
     }
 
     get validationRuleGroup() {

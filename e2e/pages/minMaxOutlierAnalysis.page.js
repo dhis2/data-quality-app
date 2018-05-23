@@ -1,10 +1,8 @@
-class MinMaxValueAnalysis {
-    open() {
-        browser.url('/#/min-max-outlier-analysis');
-    }
+const Page = require('./page');
 
-    get startButton() {
-        return browser.element('button[id=start-analysis-button]');
+class MinMaxValueAnalysis extends Page {
+    open() {
+        super.open('#/min-max-outlier-analysis');
     }
 }
 

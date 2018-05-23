@@ -6,14 +6,6 @@ const minMaxOutlierAnalysis = require('../pages/minMaxOutlierAnalysis.page');
 defineSupportCode(({ Given, When, Then }) => {
 
     // *********************************************************
-    // Background:
-    // *********************************************************
-    When(/^I open Min-Max Outlier Analysis page$/, () => {
-        minMaxOutlierAnalysis.open();
-        browser.pause(1000);
-    });
-
-    // *********************************************************
     // Scenario: I want to see all items in the page
     // *********************************************************
     Then(/^a start min-max analysis option is displayed$/, () => {

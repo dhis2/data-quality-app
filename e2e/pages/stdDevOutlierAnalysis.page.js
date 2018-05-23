@@ -1,10 +1,8 @@
-class StdDevValueAnalysis {
-    open() {
-        browser.url('#/std-dev-outlier-analysis');
-    }
+const Page = require('./page');
 
-    get startButton() {
-        return browser.element('button[id=start-analysis-button]');
+class StdDevValueAnalysis extends Page {
+    open() {
+        super.open('#/std-dev-outlier-analysis');
     }
 
     get standardDevDropdown() {
