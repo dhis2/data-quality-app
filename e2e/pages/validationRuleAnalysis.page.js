@@ -1,13 +1,6 @@
 const Page = require('./page');
 
 class ValidationRuleAnalysis extends Page {
-    constructor() {
-        super();
-    }
-
-    /**
-     * ACTIONS
-     */
     open() {
         super.open('#/validation-rules-analysis');
     }

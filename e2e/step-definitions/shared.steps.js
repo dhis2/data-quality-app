@@ -6,8 +6,6 @@ const home = require('../pages/home.page');
 
 defineSupportCode(({Given, When, Then}) => {
 
-    let totalElements = 0;
-
     Given(/^that I am logged in to the Sierra Leone DHIS2$/, () => {
         dhis2Page.open();
         if (!dhis2Page.isLoggedIn()) {
@@ -76,40 +74,8 @@ defineSupportCode(({Given, When, Then}) => {
         this.page.endDateInput.waitForVisible(5000);
     });
 
-    Then(/^a standard deviation is displayed$/, () => {
-        this.page.standardDevDropdown.waitForVisible(5000);
-    });
-
-    Then(/^a start min-max analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/^a start std dev outlier analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/^a start followup analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
-    });
-
-    Then(/validation rule group selection is displayed$/, () => {
-        this.page.validationRuleGroup.waitForVisible(5000);
-    });
-
-    Then(/send notifications option is displayed$/, () => {
-        this.page.sendNotificationsOption.waitForVisible(5000);
-    });
-
-    Then(/persist new results option is displayed$/, () => {
-        this.page.persistResultsOption.waitForVisible(5000);
-    });
-
-    Then(/a data set selection is displayed$/, () => {
+    Then(/^a data set selection is displayed$/, () => {
         this.page.dataSetDropdown.waitForVisible(5000);
-    });
-
-    Then(/^a start validation rule analysis option is displayed$/, () => {
-        this.page.startButton.waitForVisible(5000);
     });
 
     // *********************************************************
@@ -125,13 +91,6 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(5000);                                              // time for data sets to refresh
     });
 
-    When(/^I select valid standard deviation to get results$/, () => {
-        this.page.openStandardDevDropdown();
-        browser.pause(1000);
-        this.page.getStandardDevOptionByText('3.0').click();
-        browser.pause(1000);
-    });
-
     When(/^I select valid time range to get results$/, () => {
         const today = new Date();
         this.page.openStartDate();
@@ -144,28 +103,8 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);                                                      // to make sure date picker closes
     });
 
-    When(/^I select validation rule group with results$/, () => {
-        this.page.selectValidationGroupWithResults();
-    });
-
-    When(/^I start min max min-max analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start std dev outlier analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start followup analysis$/, () => {
-        this.page.startButton.click();
-    });
-
-    When(/^I start validation rule analysis$/, () => {
-        this.page.startButton.click();
-    });
-
     Then(/^a new page is displayed$/, () => {
-        this.page.resultsTable.waitForVisible(60000);
+        this.page.resultsTable.waitForVisible(80000);
     });
 
     Then(/^action to download as PDF is displayed$/, () => {
@@ -184,10 +123,6 @@ defineSupportCode(({Given, When, Then}) => {
         expect(this.page.resultsTableRows.length > 0).to.equal(true);
     });
 
-    Then(/^the unfollow option is displayed$/, () => {
-        this.page.unfollowButton.waitForVisible(5000);
-    });
-
     // *********************************************************
     // Scenario: I want to start min-max analysis with multiple data set
     // *********************************************************
@@ -200,7 +135,7 @@ defineSupportCode(({Given, When, Then}) => {
         const options = this.page.dataSetSelect.elements('<option>').value;
         for (let currentOption of options) {
             let backgroundColor = currentOption.getCssProperty('background-color').value;
-            if (backgroundColor === 'rgba(0,105,217,1)') {
+            if (backgroundColor === 'rgba(0,105,217,1)' || backgroundColor === 'rgba(30,144,255,1)') {
                 selectedOptionsCount++;
             }
         }
@@ -214,22 +149,6 @@ defineSupportCode(({Given, When, Then}) => {
         expect(this.page.dataSetSelect.getValue()).to.equal('');
     });
 
-    Then(/^start button to generate min-max analysis is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^the start std dev outlier analysis button is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^start button to generate followup analysis is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
-    Then(/^the start validation rule analysis Button is not active$/, () => {
-        expect(this.page.startButton.isEnabled()).to.equal(false);
-    });
-
     // *********************************************************
     // Scenario: I want to not start min-max analysis without parent organisation Unit
     // *********************************************************
@@ -240,10 +159,6 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Scenario: I want to see a no results message after start min-max analysis
     // *********************************************************
-    When(/^I fill form with data to retrieve no results$/, () => {
-        this.page.fillFormWithNoResults();
-    });
-
     Then(/^a no results message is displayed$/, () => {
         this.page.snackBarMessageElement.waitForVisible(60000);
         expect(this.page.snackBarMessageElement.getText()).to.equal('No values found');
@@ -392,87 +307,8 @@ defineSupportCode(({Given, When, Then}) => {
         browser.pause(1000);
     });
 
-    // *********************************************************
-    // Scenario: I want to see Validation result analysis item details
-    // *********************************************************
-    When(/^I click icon Details$/, () => {
-        this.page.openValidationRuleDetailsByIndex(0);
-        browser.pause(15000);
+    When(/^I fill form with data to retrieve no results$/, () => {
+        this.page.fillFormWithNoResults();
     });
 
-    When(/^I can see a pop up$/, () => {
-        expect(this.page.validationRulesDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with validation result details for selected item$/, () => {
-        expect(this.page.resultsRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with left side for selected item$/, () => {
-        expect(this.page.leftSideRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I see a section with right side for selected item$/, () => {
-        expect(this.page.rightSideRowAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    When(/^I can click in close button for selected item$/, () => {
-        expect(this.page.closeButtonAtDetailsDialog.isVisible()).to.equal(true);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to see Comment
-    // *********************************************************
-    When(/^I select a comment$/, () => {
-        this.page.existingComments[0].click();
-    });
-
-    When(/^the comment is displayed$/, () => {
-        expect(this.page.existsCommentHeader).to.equal(true);
-        expect(this.page.existsCommentInfo).to.equal(true);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to unfollow results
-    // *********************************************************
-    When(/^I select results to unfollow$/, () => {
-        this.page.getUnfollowCheckboxeByIndex(0).click();
-    });
-
-    When(/^I choose to unfollow them$/, () => {
-        totalElements = this.page.totalElements;
-        this.page.unfollowButton.click();
-    });
-
-    When(/^the unfollowed items are removed from the list$/, () => {
-        expect(totalElements - 1).to.equal(this.page.totalElements);
-    });
-
-    // *********************************************************
-    // Scenario: Follow-Up Analysis - I want to validate data set changes
-    // *********************************************************
-    When(/^I select another parent organisation$/, () => {
-        // Get actual data set size
-        this.page.dataSetElement.click();
-        browser.waitForVisible('div[role=presentation]');
-        totalElements = this.page.dataSetSize;
-        this.page.getDataSetOptionByIndex(2).click();
-        // wait dataSet close
-        browser.pause(5000);
-
-        this.page.getOneOrgUnitTreeFromTreeByIndex(1).click();
-        expect(this.page.isOrganisationUnitSelected()).to.equal(true);
-        browser.pause(5000);
-    });
-
-    When(/^the data set option selected is reverted to all data sets$/, () => {
-        expect(this.page.dataSetText).to.equal('[All Data Sets]');
-    });
-
-    When(/^the available data set list is updated$/, () => {
-        // Get actual data set size
-        this.page.dataSetElement.click();
-        browser.waitForVisible('div[role=presentation]');
-        expect(totalElements).to.not.equal(this.page.dataSetSize);
-    });
 });

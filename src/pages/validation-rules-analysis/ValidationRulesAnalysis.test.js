@@ -86,11 +86,11 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     });
 
     it('Should render a Checkbox to choose "Send notifications".', () => {
-        expect(wrapper.find(Checkbox).at(0).props().label).toBe(i18nKeys.validationRulesAnalysis.form.sendNotifications);
+        expect(wrapper.find(Checkbox).at(0).props().label).toBe(i18nKeys.validationRulesAnalysis.form.notification);
     });
 
     it('Should render a Checkbox to choose "Persist new results".', () => {
-        expect(wrapper.find(Checkbox).at(1).props().label).toBe(i18nKeys.validationRulesAnalysis.form.persistNewResults);
+        expect(wrapper.find(Checkbox).at(1).props().label).toBe(i18nKeys.validationRulesAnalysis.form.persist);
     });
 
     it('Should render a disabled "Validate" button.', () => {
@@ -195,22 +195,22 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'updateSendNotifications').and.callThrough();
         const wrapper = ownShallow();
         wrapper.setState({
-            sendNotifications: null,
+            notification: null,
         });
         wrapper.find(Checkbox).at(0).simulate('check', null, true);
         expect(spy).toHaveBeenCalledWith(null, true);
-        expect(wrapper.state('sendNotifications')).toBeTruthy();
+        expect(wrapper.state('notification')).toBeTruthy();
     });
 
     it('Should call updatePersistNewResults when "Persist new results" checkbox change.', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'updatePersistNewResults').and.callThrough();
         const wrapper = ownShallow();
         wrapper.setState({
-            persistNewResults: null,
+            persist: null,
         });
         wrapper.find(Checkbox).at(1).simulate('check', null, true);
         expect(spy).toHaveBeenCalledWith(null, true);
-        expect(wrapper.state('persistNewResults')).toBeTruthy();
+        expect(wrapper.state('persist')).toBeTruthy();
     });
 
     it('Should call validate function when Validate button is clicked.', () => {

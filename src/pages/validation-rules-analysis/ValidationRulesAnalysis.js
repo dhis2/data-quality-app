@@ -48,8 +48,8 @@ class ValidationRulesAnalysis extends Page {
             endDate: new Date(),
             organisationUnitId: null,
             validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,
-            sendNotifications: false,
-            persistNewResults: false,
+            notification: false,
+            persist: false,
             elements: [],
             loading: false,
         };
@@ -105,8 +105,8 @@ class ValidationRulesAnalysis extends Page {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
                 organisationUnitId: this.state.organisationUnitId,
-                notification: this.state.sendNotifications,
-                persist: this.state.persistNewResults,
+                notification: this.state.notification,
+                persist: this.state.persist,
             };
 
             if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
@@ -165,11 +165,11 @@ class ValidationRulesAnalysis extends Page {
     }
 
     updateSendNotifications(event, checked) {
-        this.setState({ sendNotifications: checked });
+        this.setState({ notification: checked });
     }
 
     updatePersistNewResults(event, checked) {
-        this.setState({ persistNewResults: checked });
+        this.setState({ persist: checked });
     }
 
     showAlertBar() {
@@ -249,17 +249,17 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="send-notifications-option">
                                     <Checkbox
-                                        label={translator(i18nKeys.validationRulesAnalysis.form.sendNotifications)}
+                                        label={translator(i18nKeys.validationRulesAnalysis.form.notification)}
                                         labelPosition="left"
-                                        checked={this.state.sendNotifications}
+                                        checked={this.state.notification}
                                         onCheck={this.updateSendNotifications}
                                     />
                                 </div>
                                 <div id="persist-results-option">
                                     <Checkbox
-                                        label={translator(i18nKeys.validationRulesAnalysis.form.persistNewResults)}
+                                        label={translator(i18nKeys.validationRulesAnalysis.form.persist)}
                                         labelPosition="left"
-                                        checked={this.state.persistNewResults}
+                                        checked={this.state.persist}
                                         onCheck={this.updatePersistNewResults}
                                     />
                                 </div>

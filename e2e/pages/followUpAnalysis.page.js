@@ -1,13 +1,6 @@
 const Page = require('./page');
 
 class FollowUpAnalysis extends Page {
-    constructor() {
-        super();
-    }
-
-    /**
-     * ACTIONS
-     */
     open() {
         super.open('#/follow-up-analysis');
     }

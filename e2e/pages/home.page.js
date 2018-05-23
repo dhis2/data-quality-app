@@ -1,13 +1,6 @@
 const Page = require('./page');
 
 class Home extends Page {
-    constructor() {
-        super();
-    }
-
-    /**
-     * ACTIONS
-     */
     open() {
         super.open();
     }
