@@ -90,8 +90,8 @@ export const i18nKeys = {
             endDate: 'End Date',
             organisationUnit: 'Parent organisation unit',
             validationRuleGroup: 'Validation Rule Group',
-            sendNotifications: 'Send Notifications',
-            persistNewResults: 'Persist new results',
+            notification: 'Send Notifications',
+            persist: 'Persist new results',
         },
         tableHeaderColumn: {
             organisationUnit: 'Organisation Unit',
