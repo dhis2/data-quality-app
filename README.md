@@ -1,6 +1,6 @@
 # DHIS2 Data Quality App
 
-[![Build Status](https://travis-ci.org/dhis2/data-administration-app.svg?branch=master)](https://travis-ci.org/dhis2/data-administration-app)
+[![Build Status](https://travis-ci.org/dhis2/data-quality-app.svg?branch=master)](https://travis-ci.org/dhis2/data-quality-app)
 
 ### Pre-requisites
 * DHIS2 instance;
@@ -16,27 +16,12 @@
     REACT_APP_DHIS2_API_VERSION=29
     ```
 * add `http://localhost:3000` url to your DHIS2 CORS whitelist. (This can be done in the settings app);
-* Update the proxy for your dhis2 instance at package.json. If your DHIS2 instance is at `http://localhost:3000`:
-    ```json
-    {
-      "proxy": {
-        "..": {
-          "target": "http://localhost:8080"
-        }
-    }
-    ```
+
 * Execute the following commands:
     ```sh
     yarn install
     yarn start
-    ```
-    
-    Due to a problem on Mac with lib node-gyp. It is possible you will need to execute the following command first:
-        
-     ```sh
-     yarn global add node-gyp
-     ```
-         
+    ```  
     
 * On the browser you are using login on DHIS2 instance you are using;
 * Open your browser at `http://localhost:3000`;
