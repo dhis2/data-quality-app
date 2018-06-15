@@ -142,10 +142,10 @@ class FollowUpAnalysisTable extends Component {
                         <FormattedNumber value={element.min} />
                     </TableRowColumn>
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.max} />
+                        <FormattedNumber value={element.value} />
                     </TableRowColumn>
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.value} />
+                        <FormattedNumber value={element.max} />
                     </TableRowColumn>
                     <TableRowColumn className={cssPageStyles.centerFlex}>
                         <span className={cssPageStyles.checkboxWrapper}>
