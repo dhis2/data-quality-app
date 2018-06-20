@@ -9,17 +9,19 @@ import {
 import FormattedNumber from '../../components/formatters/FormattedNumber';
 import DownloadAs from '../../components/download-as/DownloadAs';
 
+/* i18n */
+import i18n from '../../locales';
+import { i18nKeys } from '../../i18n';
+
 // helpers
 import { apiConf } from '../../server.conf';
-import { i18nKeys } from '../../i18n';
 
 // styles
 import cssPageStyles from '../../pages/Page.css';
 import jsPageStyles from '../../pages/PageStyles';
 import styles from './OutlierAnalysisTable.css';
 
-const OutlierAnalyisTable = (props, context) => {
-    const translator = context.translator;
+const OutlierAnalyisTable = (props) => {
     const elements = props.elements;
     const parentToggleCheckbox = props.toggleCheckbox;
 
@@ -72,25 +74,25 @@ const OutlierAnalyisTable = (props, context) => {
                 >
                     <TableRow>
                         <TableHeaderColumn>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.center}>
-                            {translator(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
+                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
                         </TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
@@ -139,7 +141,6 @@ OutlierAnalyisTable.propTypes = {
 };
 
 OutlierAnalyisTable.contextTypes = {
-    translator: PropTypes.func,
     d2: PropTypes.object,
 };
 

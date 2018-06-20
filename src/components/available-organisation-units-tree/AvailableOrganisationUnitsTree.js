@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 
-// i18n
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 import styles from './AvailableOrganisationUnitsTree.css';
@@ -11,7 +12,6 @@ import styles from './AvailableOrganisationUnitsTree.css';
 class AvailableOrganisationUnitsTree extends PureComponent {
   static contextTypes = {
       d2: PropTypes.object,
-      translator: PropTypes.func,
   }
 
   static propTypes = {
@@ -62,7 +62,6 @@ class AvailableOrganisationUnitsTree extends PureComponent {
   }
 
   render() {
-      const translator = this.context.translator;
       if (this.state.rootWithMembers) {
           return (
               <div className={styles.tree}>
@@ -77,7 +76,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
           );
       }
 
-      return <span>{translator(i18nKeys.availableOrganisationUnitsTree.updatingMessage)}</span>;
+      return <span>{i18n.t(i18nKeys.availableOrganisationUnitsTree.updatingMessage)}</span>;
   }
 }
 

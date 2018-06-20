@@ -25,7 +25,6 @@ const pageComponentShallow = () => {
       {
         context: {
           updateAppState: jest.fn(),
-          translator: jest.fn(),
           d2: {
             Api: {
               getApi: jest.fn(),

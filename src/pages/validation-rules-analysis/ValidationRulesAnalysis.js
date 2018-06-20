@@ -21,7 +21,8 @@ import AvailableOrganisationUnitsTree from
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
 
-// i18n
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 // styles
@@ -98,7 +99,6 @@ class ValidationRulesAnalysis extends Page {
 
     validate() {
         const api = this.context.d2.Api.getApi();
-        const translator = this.context.translator;
 
         if (this.isFormValid()) {
             const request = {
@@ -128,7 +128,7 @@ class ValidationRulesAnalysis extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator(i18nKeys.messages.validationSuccess),
+                            message: i18n.t(i18nKeys.messages.validationSuccess),
                         },
                     };
                     this.context.updateAppState({
@@ -189,8 +189,6 @@ class ValidationRulesAnalysis extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
-
         return (
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
@@ -202,7 +200,7 @@ class ValidationRulesAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {translator(i18nKeys.validationRulesAnalysis.header)}
+                    {i18n.t(i18nKeys.validationRulesAnalysis.header)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -213,7 +211,7 @@ class ValidationRulesAnalysis extends Page {
                         <div className="row">
                             <div className={classNames('col-md-6', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {translator(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
+                                    {i18n.t(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
                                 </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
@@ -222,7 +220,7 @@ class ValidationRulesAnalysis extends Page {
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        translator(i18nKeys.validationRulesAnalysis.form.startDate)
+                                        i18n.t(i18nKeys.validationRulesAnalysis.form.startDate)
                                     }
                                     onChange={this.startDateOnChange}
                                     value={this.state.startDate}
@@ -233,7 +231,7 @@ class ValidationRulesAnalysis extends Page {
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        translator(i18nKeys.validationRulesAnalysis.form.endDate)
+                                        i18n.t(i18nKeys.validationRulesAnalysis.form.endDate)
                                     }
                                     onChange={this.endDateOnChange}
                                     value={this.state.endDate}
@@ -249,7 +247,7 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="send-notifications-option">
                                     <Checkbox
-                                        label={translator(i18nKeys.validationRulesAnalysis.form.notification)}
+                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.notification)}
                                         labelPosition="left"
                                         checked={this.state.notification}
                                         onCheck={this.updateSendNotifications}
@@ -257,7 +255,7 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="persist-results-option">
                                     <Checkbox
-                                        label={translator(i18nKeys.validationRulesAnalysis.form.persist)}
+                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.persist)}
                                         labelPosition="left"
                                         checked={this.state.persist}
                                         onCheck={this.updatePersistNewResults}
@@ -268,7 +266,7 @@ class ValidationRulesAnalysis extends Page {
                         <RaisedButton
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
-                            label={translator(i18nKeys.validationRulesAnalysis.actionButton)}
+                            label={i18n.t(i18nKeys.validationRulesAnalysis.actionButton)}
                             primary
                             disabled={this.isActionDisabled()}
                             onClick={this.validate}

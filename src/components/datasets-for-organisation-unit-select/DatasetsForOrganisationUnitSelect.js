@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 export const ALL_DATA_SETS_OPTION_ID = -1;
@@ -16,7 +18,6 @@ export const ALL_DATA_SETS_OPTION = {
 class DatasetsForOrganisationUnitSelect extends PureComponent {
   static contextTypes = {
       d2: PropTypes.object,
-      translator: PropTypes.func,
   }
 
   static propTypes = {
@@ -42,9 +43,8 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
   // FIXME study the lifecycle and https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
   componentWillReceiveProps(nextProps) {
       const d2 = this.context.d2;
-      const translator = this.context.translator;
       const translatedAllDataSetsOption = ALL_DATA_SETS_OPTION;
-      translatedAllDataSetsOption.displayName = translator(ALL_DATA_SETS_OPTION.displayName);
+      translatedAllDataSetsOption.displayName = i18n.t(ALL_DATA_SETS_OPTION.displayName);
       if (this.props.organisationUnitId !== nextProps.organisationUnitId) {
           this.setState({
               dataSets: [ALL_DATA_SETS_OPTION],
@@ -73,11 +73,10 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
   }
 
   render() {
-      const translator = this.context.translator;
       return (
           <SelectField
               floatingLabelText={
-                  translator(i18nKeys.datasetsForOrganisationUnitSelect.dataSetLabel)
+                  i18n.t(i18nKeys.datasetsForOrganisationUnitSelect.dataSetLabel)
               }
               onChange={this.onChange}
               value={this.state.selected}

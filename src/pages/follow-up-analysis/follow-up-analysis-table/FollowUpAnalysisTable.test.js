@@ -106,9 +106,6 @@ const ownShallow = () => {
             loading={false}
         />,
         {
-            context: {
-                translator: (key) => key,
-            },
             disableLifecycleMethods: true
         }
     );

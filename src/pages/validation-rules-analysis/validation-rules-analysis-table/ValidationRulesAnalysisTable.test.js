@@ -46,9 +46,6 @@ const ownShallow = () => {
             elements={rulesElements}
         />,
         {
-            context: {
-                translator: (key) => key,
-            },
             disableLifecycleMethods: true
         }
     );

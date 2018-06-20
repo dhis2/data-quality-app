@@ -7,9 +7,12 @@ import {
     TableRowColumn, IconButton, Dialog, FlatButton,
 } from 'material-ui';
 
+/* i18n */
+import i18n from '../../../locales';
+import { i18nKeys } from '../../../i18n';
+
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import DownloadAs from '../../../components/download-as/DownloadAs';
-import { i18nKeys } from '../../../i18n';
 
 // styles
 import cssPageStyles from '../../Page.css';
@@ -27,7 +30,6 @@ class FollowUpAnalysisTable extends Component {
     }
 
     static contextTypes = {
-        translator: PropTypes.func,
         d2: PropTypes.object,
     }
 
@@ -110,7 +112,6 @@ class FollowUpAnalysisTable extends Component {
     }
 
     render() {
-        const translator = this.context.translator;
         let oneChecked = false;
 
         const commentDialogActions = [
@@ -199,28 +200,28 @@ class FollowUpAnalysisTable extends Component {
                     >
                         <TableRow>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {translator(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}
+                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}
                             </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
@@ -233,7 +234,7 @@ class FollowUpAnalysisTable extends Component {
                         id="unfollow-action"
                         primary
                         disabled={this.props.loading || !oneChecked}
-                        label={translator(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
+                        label={i18n.t(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
                         onClick={this.unfollow}
                     />
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />

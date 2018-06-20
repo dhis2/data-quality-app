@@ -11,7 +11,10 @@ import DownloadAs from '../../../components/download-as/DownloadAs';
 import cssPageStyles from '../../Page.css';
 import styles from './ValidationRulesAnalysisTable.css';
 
+/* i18n */
+import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
+
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
 import { apiConf } from '../../../server.conf';
 
@@ -20,12 +23,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
         elements: PropTypes.array.isRequired,
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-    }
-
     render() {
-        const translator = this.context.translator;
         const elements = this.props.elements;
 
         // Table Rows
@@ -70,28 +68,28 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     >
                         <TableRow>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.organisationUnit)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.organisationUnit)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.period)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.period)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.importance)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.importance)}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.validationRule)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.validationRule)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.operator)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.operator)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {translator(i18nKeys.validationRulesAnalysis.tableHeaderColumn.details)}
+                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.details)}
                             </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>

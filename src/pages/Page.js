@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
-// i18n
+/* i18n */
+import i18n from '../locales';
 import { i18nKeys } from '../i18n';
 
 class Page extends Component {
@@ -15,7 +16,6 @@ class Page extends Component {
       d2: PropTypes.object,
       currentSection: PropTypes.string,
       updateAppState: PropTypes.func,
-      translator: PropTypes.func,
   }
 
   componentWillMount() {
@@ -41,7 +41,7 @@ class Page extends Component {
       if (this.isPageMounted()) {
           const messageError = error && error.message ?
               error.message :
-              this.context.translator(i18nKeys.messages.unexpectedAnalysisError);
+              i18n.t(i18nKeys.messages.unexpectedAnalysisError);
 
           this.context.updateAppState({
               showSnackbar: true,
