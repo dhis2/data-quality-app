@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 export const ALL_VALIDATION_RULE_GROUPS_ID = -1;
@@ -25,7 +27,6 @@ class ValidationRuleGroupsSelect extends PureComponent {
 
     static contextTypes = {
         d2: PropTypes.object,
-        translator: PropTypes.func,
     }
 
     constructor() {
@@ -41,9 +42,8 @@ class ValidationRuleGroupsSelect extends PureComponent {
 
     componentDidMount() {
         const d2 = this.context.d2;
-        const translator = this.context.translator;
         const translatedAllValidationRulesOption = ALL_VALIDATION_RULE_GROUPS_OPTION;
-        translatedAllValidationRulesOption.displayName = translator(ALL_VALIDATION_RULE_GROUPS_OPTION.displayName);
+        translatedAllValidationRulesOption.displayName = i18n.t(ALL_VALIDATION_RULE_GROUPS_OPTION.displayName);
         d2.models.validationRuleGroup.list({
             paging: false,
             fields: 'id,displayName',
@@ -66,12 +66,11 @@ class ValidationRuleGroupsSelect extends PureComponent {
     }
 
     render() {
-        const translator = this.context.translator;
         return (
             <SelectField
                 style={this.props.style}
                 floatingLabelText={
-                    translator(i18nKeys.validationRuleGroupsSelect.validationRuleGroupLabel)
+                    i18n.t(i18nKeys.validationRuleGroupsSelect.validationRuleGroupLabel)
                 }
                 onChange={this.onChange}
                 value={this.state.selected}

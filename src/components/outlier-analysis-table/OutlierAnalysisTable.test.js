@@ -103,9 +103,6 @@ const ownShallow = () => {
             toggleCheckbox={jest.fn()}
         />,
         {
-            context: {
-                translator: (key) => key,
-            },
             disableLifecycleMethods: true
         }
     );

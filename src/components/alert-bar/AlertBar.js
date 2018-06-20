@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
 
 import styles from './AlertBar.css';
+
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 class AlertBar extends PureComponent {
@@ -10,16 +13,11 @@ class AlertBar extends PureComponent {
         show: PropTypes.bool.isRequired,
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-    }
-
     render() {
-        const translator = this.context.translator;
         return (
             <Paper>
                 <div className={styles.alertBar} style={{ display: this.props.show ? 'flex' : 'none' }}>
-                    {translator(i18nKeys.moreThan500)}
+                    {i18n.t(i18nKeys.moreThan500)}
                 </div>
             </Paper>
         );

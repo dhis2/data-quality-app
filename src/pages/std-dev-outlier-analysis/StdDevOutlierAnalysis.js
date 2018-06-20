@@ -20,7 +20,8 @@ import PageHelper from '../../components/page-helper/PageHelper';
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 
-// i18n
+/* i18n */
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 // helpers
@@ -85,7 +86,6 @@ class StdDevOutlierAnalysis extends Page {
     }
 
     start() {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.context.updateAppState({
@@ -110,7 +110,7 @@ class StdDevOutlierAnalysis extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator(i18nKeys.messages.noValuesFound),
+                            message: i18n.t(i18nKeys.messages.noValuesFound),
                         },
                     };
 
@@ -157,7 +157,6 @@ class StdDevOutlierAnalysis extends Page {
     }
 
     toggleCheckbox(element) {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
@@ -179,7 +178,7 @@ class StdDevOutlierAnalysis extends Page {
                             showSnackbar: true,
                             snackbarConf: {
                                 type: SUCCESS,
-                                message: translator(
+                                message: i18n.t(
                                     currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
                             },
                             pageState: {
@@ -214,7 +213,6 @@ class StdDevOutlierAnalysis extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
         return (
             <div>
                 <h1 className={cssPageStyles.pageHeader}>
@@ -226,7 +224,7 @@ class StdDevOutlierAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {translator(i18nKeys.stdDevOutlierAnalysis.header)}
+                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.header)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -238,13 +236,13 @@ class StdDevOutlierAnalysis extends Page {
                         <div className="row">
                             <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {translator(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
+                                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
                                 </div>
                                 <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {translator(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
+                                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
                                 </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
@@ -253,7 +251,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        translator(i18nKeys.stdDevOutlierAnalysis.form.startDate)
+                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.startDate)
                                     }
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
@@ -264,7 +262,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        translator(i18nKeys.stdDevOutlierAnalysis.form.endDate)
+                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.endDate)
                                     }
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
@@ -276,7 +274,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="standard-deviation"
                                     style={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        translator(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
+                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
                                     }
                                     onChange={this.standardDeviationOnChange}
                                     value={this.state.standardDeviation}
@@ -297,7 +295,7 @@ class StdDevOutlierAnalysis extends Page {
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
-                            label={translator(i18nKeys.stdDevOutlierAnalysis.actionButton)}
+                            label={i18n.t(i18nKeys.stdDevOutlierAnalysis.actionButton)}
                             onClick={this.start}
                             disabled={this.isActionDisabled()}
                         />

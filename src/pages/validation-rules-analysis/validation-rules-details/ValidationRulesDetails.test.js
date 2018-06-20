@@ -87,7 +87,6 @@ const ownShallow = () => {
         {
             context: {
                 updateAppState: jest.fn(),
-                translator: (key) => key,
                 d2: {
                     Api: {
                         getApi: jest.fn().mockReturnValue({

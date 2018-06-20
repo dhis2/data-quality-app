@@ -4,7 +4,8 @@ import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
 import classNames from 'classnames';
 
-// i18n
+/* i18n */
+import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
 
 import Page from '../../Page';
@@ -90,14 +91,12 @@ class ValidationRulesDetails extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
-
         // Details Actions
         const dialogActions = [
             <FlatButton
                 className="close-action"
                 key={`FB${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
-                label={translator(i18nKeys.validationRulesAnalysis.details.close)}
+                label={i18n.t(i18nKeys.validationRulesAnalysis.details.close)}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
             />,
@@ -106,19 +105,19 @@ class ValidationRulesDetails extends Page {
         const result = (
             <div className={classNames('row', 'results-row', styles.sectionBox)}>
                 <div className={classNames('col-xs-12', styles.sectionTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.resultSectionTitle)}
+                    {i18n.t(i18nKeys.validationRulesAnalysis.details.resultSectionTitle)}
                 </div>
                 <div className={classNames('col-xs-12', styles.sectionSubTitle)}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.rule.subTitle)}
+                    {i18n.t(i18nKeys.validationRulesAnalysis.details.rule.subTitle)}
                 </div>
                 <div className={'col-xs-3'}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.rule.nameLabel)}
+                    {i18n.t(i18nKeys.validationRulesAnalysis.details.rule.nameLabel)}
                 </div>
                 <div className={'col-xs-9'}>
                     {this.state.rule.displayName}
                 </div>
                 <div className={'col-xs-3'}>
-                    {translator(i18nKeys.validationRulesAnalysis.details.rule.descriptionLabel)}
+                    {i18n.t(i18nKeys.validationRulesAnalysis.details.rule.descriptionLabel)}
                 </div>
                 <div className={'col-xs-9'}>
                     {this.state.rule.displayDescription}
@@ -132,7 +131,7 @@ class ValidationRulesDetails extends Page {
                     {side}
                 </div>
                 <div className={classNames('col-xs-12', cssPageStyles.center)}>
-                    <div className={styles.noData}>{translator(i18nKeys.validationRulesAnalysis.details.noData)}</div>
+                    <div className={styles.noData}>{i18n.t(i18nKeys.validationRulesAnalysis.details.noData)}</div>
                 </div>
             </div>
         );
@@ -144,10 +143,10 @@ class ValidationRulesDetails extends Page {
                         {side}
                     </div>
                     <div className={classNames('col-xs-10', styles.sectionSubTitle)}>
-                        {translator(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
+                        {i18n.t(i18nKeys.validationRulesAnalysis.details.dataElementLabel)}
                     </div>
                     <div className={classNames('col-xs-2', styles.sectionSubTitle, cssPageStyles.right)}>
-                        {translator(i18nKeys.validationRulesAnalysis.details.valueLabel)}
+                        {i18n.t(i18nKeys.validationRulesAnalysis.details.valueLabel)}
                     </div>
                     {
                         elements.map(element =>
@@ -182,7 +181,7 @@ class ValidationRulesDetails extends Page {
                     className="validation-rules-details-dialog"
                     key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     autoScrollBodyContent={Boolean(true)}
-                    title={translator(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
+                    title={i18n.t(i18nKeys.validationRulesAnalysis.details.dialogTitle)}
                     actions={dialogActions}
                     modal={Boolean(true)}
                     open={this.state.openDetails}
@@ -194,22 +193,22 @@ class ValidationRulesDetails extends Page {
                     {
                         this.state.expression.leftSide && this.state.expression.leftSide.length > 0 ?
                             buildSection(
-                                translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
+                                i18n.t(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle),
                                 this.state.expression.leftSide,
                                 'left-side-row',
                             ) : (
-                                showNoData(translator(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle))
+                                showNoData(i18n.t(i18nKeys.validationRulesAnalysis.details.leftSideSectionTitle))
                             )
                     }
                     {/* Right Side */}
                     {
                         this.state.expression.rightSide && this.state.expression.rightSide.length > 0 ?
                             buildSection(
-                                translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
+                                i18n.t(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle),
                                 this.state.expression.rightSide,
                                 'right-side-row',
                             ) : (
-                                showNoData(translator(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle))
+                                showNoData(i18n.t(i18nKeys.validationRulesAnalysis.details.rightSideSectionTitle))
                             )
                     }
                 </Dialog>

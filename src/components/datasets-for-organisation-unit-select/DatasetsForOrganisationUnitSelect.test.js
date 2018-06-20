@@ -18,7 +18,6 @@ const ownShallow = () => {
         disableLifecycleMethods: true,
         context: {
           d2: {},
-          translator: (key) => key,
         }
       }
   );
