@@ -2,10 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import HeaderBar from '@dhis2/d2-ui-header-bar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
-import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
-import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
 import './custom-css/D2UISidebarOverrides.css';
@@ -19,8 +17,6 @@ import styles from './App.css';
 // App configs
 import { sections } from './pages/sections.conf';
 
-const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
-
 class App extends PureComponent {
   static childContextTypes = {
       showSnackbar: PropTypes.bool,
@@ -30,6 +26,10 @@ class App extends PureComponent {
       }),
       currentSection: PropTypes.string,
       updateAppState: PropTypes.func,
+  };
+
+  static contextTypes = {
+      d2: PropTypes.object,
   };
 
   constructor(props) {
@@ -93,7 +93,7 @@ class App extends PureComponent {
 
       return (
           <div>
-              <HeaderBar />
+              <HeaderBar d2={this.context.d2} />
               <Sidebar
                   sections={translatedSections}
                   currentSection={this.state.currentSection}
