@@ -1,14 +1,21 @@
+/* React */
 import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-// Material UI
+/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import Checkbox from 'material-ui/Checkbox';
 import { FontIcon, IconButton } from 'material-ui';
+import classNames from 'classnames';
 
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+import { SUCCESS, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
 
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';
@@ -39,6 +46,10 @@ class ValidationRulesAnalysis extends Page {
         'elements',
         'showTable',
     ];
+
+    static propTypes = {
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
 
     constructor() {
         super();
@@ -113,10 +124,9 @@ class ValidationRulesAnalysis extends Page {
                 request.validationRuleGroupId = this.state.validationRuleGroupId;
             }
 
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
@@ -131,13 +141,12 @@ class ValidationRulesAnalysis extends Page {
                             message: i18n.t(i18nKeys.messages.validationSuccess),
                         },
                     };
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
@@ -281,4 +290,11 @@ class ValidationRulesAnalysis extends Page {
     }
 }
 
-export default ValidationRulesAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(ValidationRulesAnalysis);

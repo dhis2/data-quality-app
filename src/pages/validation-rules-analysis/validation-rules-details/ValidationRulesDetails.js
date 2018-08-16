@@ -16,13 +16,8 @@ import styles from './ValidationRulesDetails.css';
 
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import { apiConf } from '../../../server.conf';
-import ValidationRulesAnalysis from '../ValidationRulesAnalysis';
 
 class ValidationRulesDetails extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-    ];
-
     static propTypes = {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
@@ -44,20 +39,6 @@ class ValidationRulesDetails extends Page {
 
         this.loadDetails = this.loadDetails.bind(this);
         this.handleClose = this.handleClose.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     loadDetails() {
