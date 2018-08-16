@@ -10,12 +10,12 @@ import Checkbox from 'material-ui/Checkbox';
 import { FontIcon, IconButton } from 'material-ui';
 import classNames from 'classnames';
 
-import { SUCCESS, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 /* Redux */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from '../../reducers/feedback';
+
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';

@@ -9,12 +9,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import classNames from 'classnames';
 
-import { SUCCESS, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 /* Redux */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from '../../reducers/feedback';
+
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from

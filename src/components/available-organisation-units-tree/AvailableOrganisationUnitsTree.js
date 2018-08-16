@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
+/* d2-ui components */
+import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree';
 
 /* i18n */
 import i18n from '../../locales';

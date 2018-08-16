@@ -2,16 +2,17 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+/* d2-ui */
+import D2UIApp from '@dhis2/d2-ui-app';
 import HeaderBar from '@dhis2/d2-ui-header-bar';
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
-import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
-import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+import { Sidebar, FeedbackSnackbar, CircularProgress } from '@dhis2/d2-ui-core';
 
 /* Redux */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from './reducers/feedback';
+
+import { LOADING } from './helpers/feedbackSnackBarTypes';
 
 import i18n from './locales';
 
@@ -25,11 +26,13 @@ import { sections } from './pages/sections.conf';
 
 class App extends PureComponent {
     static childContextTypes = {
+        d2: PropTypes.object.isRequired,
         currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
     };
 
     static propTypes = {
+        d2: PropTypes.object.isRequired,
         showSnackbar: PropTypes.bool.isRequired,
         snackbarConf: PropTypes.shape({
             type: PropTypes.string,
@@ -38,10 +41,6 @@ class App extends PureComponent {
             onActionClick: PropTypes.func,
         }).isRequired,
         updateFeedbackState: PropTypes.func.isRequired,
-    };
-
-    static contextTypes = {
-        d2: PropTypes.object,
     };
 
     constructor(props) {
@@ -56,6 +55,7 @@ class App extends PureComponent {
 
     getChildContext() {
         return {
+            d2: this.props.d2,
             currentSection: this.state.currentSection,
             updateAppState: this.updateAppState,
         };
@@ -104,8 +104,8 @@ class App extends PureComponent {
             );
 
         return (
-            <div>
-                <HeaderBar d2={this.context.d2} />
+            <D2UIApp>
+                <HeaderBar d2={this.props.d2} />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
@@ -121,7 +121,7 @@ class App extends PureComponent {
                 <div id="feedback-snackbar">
                     {feedbackElement}
                 </div>
-            </div>
+            </D2UIApp>
         );
     }
 }
