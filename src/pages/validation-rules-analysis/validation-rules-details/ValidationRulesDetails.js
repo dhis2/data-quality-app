@@ -1,14 +1,14 @@
-import React from 'react';
+/* React */
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
+/* Material UI */
+import { Dialog, FlatButton, FontIcon } from 'material-ui';
 import classNames from 'classnames';
 
 /* i18n */
 import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
-
-import Page from '../../Page';
 
 import jsPageStyles from '../../PageStyles';
 import cssPageStyles from '../../Page.css';
@@ -17,7 +17,7 @@ import styles from './ValidationRulesDetails.css';
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import { apiConf } from '../../../server.conf';
 
-class ValidationRulesDetails extends Page {
+class ValidationRulesDetails extends PureComponent {
     static propTypes = {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
@@ -62,7 +62,7 @@ class ValidationRulesDetails extends Page {
                 });
                 this.setState({ openDetails: true, rule, expression });
             }).catch(() => {
-                this.manageError();
+                // TODO
             });
         }
     }

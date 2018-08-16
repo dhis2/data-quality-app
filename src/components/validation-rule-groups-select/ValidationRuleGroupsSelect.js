@@ -51,7 +51,9 @@ class ValidationRuleGroupsSelect extends PureComponent {
             this.setState({
                 validationRuleGroups: [translatedAllValidationRulesOption, ...validationRuleGroupsResponse.toArray()],
             });
-        }).catch(() => { this.manageError(); });
+        }).catch(() => {
+            // TODO
+        });
     }
 
     onChange(event, index, value) {
