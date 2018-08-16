@@ -1,14 +1,20 @@
+/* React */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// Material UI
+/* Material UI */
 import { FontIcon, IconButton } from 'material-ui';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
-
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
+
+import { SUCCESS, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
 
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from
@@ -41,7 +47,11 @@ class FollowUpAnalysis extends Page {
         'dataSetId',
         'elements',
         'loading',
-    ]
+    ];
+
+    static propTypes = {
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
 
     constructor() {
         super();
@@ -85,10 +95,9 @@ class FollowUpAnalysis extends Page {
     getFollowUpList() {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             const request = {
@@ -115,13 +124,11 @@ class FollowUpAnalysis extends Page {
                         },
                     };
 
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
@@ -166,10 +173,9 @@ class FollowUpAnalysis extends Page {
 
     unfollow(unfollowups) {
         const api = this.context.d2.Api.getApi();
-        this.context.updateAppState({
-            pageState: {
-                loading: true,
-            },
+        this.setState({ loading: true });
+        this.props.updateFeedbackState(true, {
+            type: LOADING,
         });
 
         api.post(apiConf.endpoints.markDataValue, {
@@ -188,16 +194,14 @@ class FollowUpAnalysis extends Page {
                     return true;
                 });
 
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: i18n.t(i18nKeys.messages.unfollow),
-                    },
-                    pageState: {
-                        loading: false,
-                        elements,
-                    },
+                this.props.updateFeedbackState(true, {
+                    type: SUCCESS,
+                    message: i18n.t(i18nKeys.messages.unfollow),
+                });
+
+                this.setState({
+                    loading: false,
+                    elements,
                 });
             }
         }).catch(() => { this.manageError(); });
@@ -301,4 +305,11 @@ class FollowUpAnalysis extends Page {
     }
 }
 
-export default FollowUpAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(FollowUpAnalysis);
