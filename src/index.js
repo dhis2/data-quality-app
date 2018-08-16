@@ -1,7 +1,7 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 /* d2 */
 import { init, getManifest, getUserSettings } from 'd2/lib/d2';
@@ -11,7 +11,8 @@ import log from 'loglevel';
 
 /* Redux */
 import { Provider } from 'react-redux';
-import store from './store';
+import { ConnectedRouter } from 'react-router-redux';
+import store, { history } from './store';
 
 /* i18n */
 import { configI18n } from './configI18n';
@@ -56,11 +57,11 @@ getManifest('manifest.webapp').then((manifest) => {
         .then(() => {
             ReactDOM.render(
                 <Provider store={store}>
-                    <HashRouter>
+                    <ConnectedRouter history={history}>
                         <AppComponent
                             d2={d2Instance}
                         />
-                    </HashRouter>
+                    </ConnectedRouter>
                 </Provider>,
                 document.getElementById('app'),
             );
