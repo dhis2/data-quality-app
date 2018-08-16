@@ -1,7 +1,6 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
 
 /* d2 */
 import { init, getManifest, getUserSettings } from 'd2/lib/d2';
@@ -21,8 +20,6 @@ import './index.css';
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
-
-const AppComponent = withRouter(App);
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
@@ -58,7 +55,7 @@ getManifest('manifest.webapp').then((manifest) => {
             ReactDOM.render(
                 <Provider store={store}>
                     <ConnectedRouter history={history}>
-                        <AppComponent
+                        <App
                             d2={d2Instance}
                         />
                     </ConnectedRouter>
