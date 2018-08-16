@@ -6,12 +6,18 @@ import HeaderBar from '@dhis2/d2-ui-header-bar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
-import './custom-css/D2UISidebarOverrides.css';
+import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from './reducers/feedback';
 
 import i18n from './locales';
 
 import AppRouter from './components/app-router/AppRouter';
 
+import './custom-css/D2UISidebarOverrides.css';
 import styles from './App.css';
 
 // App configs
@@ -19,13 +25,18 @@ import { sections } from './pages/sections.conf';
 
 class App extends PureComponent {
   static childContextTypes = {
-      showSnackbar: PropTypes.bool,
+      currentSection: PropTypes.string,
+      updateAppState: PropTypes.func,
+  };
+
+  static propTypes = {
+      showSnackbar: PropTypes.bool.isRequired,
       snackbarConf: PropTypes.shape({
           type: PropTypes.string,
           message: PropTypes.string,
-      }),
-      currentSection: PropTypes.string,
-      updateAppState: PropTypes.func,
+          action: PropTypes.string,
+          onActionClick: PropTypes.func,
+      }).isRequired,
   };
 
   static contextTypes = {
@@ -36,12 +47,6 @@ class App extends PureComponent {
       super(props);
 
       this.state = {
-          currentSection: '',
-          showSnackbar: false,
-          snackbarConf: {
-              type: '',
-              message: '',
-          },
           pageState: {},
       };
 
@@ -50,8 +55,6 @@ class App extends PureComponent {
 
   getChildContext() {
       return {
-          showSnackbar: this.state.showSnackbar,
-          snackbarConf: this.state.snackbarConf,
           currentSection: this.state.currentSection,
           updateAppState: this.updateAppState,
       };
@@ -79,15 +82,15 @@ class App extends PureComponent {
           },
       ));
 
-      const feedbackElement = this.state.pageState.loading ?
+      const feedbackElement = this.props.snackbarConf.type === LOADING ?
           (
               <div className={styles.centered}>
                   <CircularProgress />
               </div>
           ) : (
               <FeedbackSnackbar
-                  show={this.state.showSnackbar}
-                  conf={this.state.snackbarConf}
+                  show={this.props.showSnackbar}
+                  conf={this.props.snackbarConf}
               />
           );
 
@@ -114,4 +117,16 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+const mapStateToProps = ({ feedback }) => ({
+    showSnackbar: feedback.showSnackbar,
+    snackbarConf: { ...feedback.snackbarConf },
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(App);

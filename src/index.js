@@ -10,6 +10,10 @@ import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 // logging
 import log from 'loglevel';
 
+/* Redux */
+import { Provider } from 'react-redux';
+import store from './store';
+
 /* i18n */
 import { configI18n } from './configI18n';
 
@@ -39,21 +43,23 @@ getManifest('manifest.webapp').then((manifest) => {
           : `${process.env.REACT_APP_DHIS2_BASE_URL}/api${api}`;
 
     ReactDOM.render(
-        <D2UIApp
-            muiTheme={appTheme}
-            initConfig={{
-                baseUrl,
-                schemas: [
-                    'organisationUnit',
-                    'dataSet',
-                    'validationRuleGroup',
-                ],
-            }}
-        >
-            <HashRouter>
-                <AppComponent />
-            </HashRouter>
-        </D2UIApp>,
+        <Provider store={store}>
+            <D2UIApp
+                muiTheme={appTheme}
+                initConfig={{
+                    baseUrl,
+                    schemas: [
+                        'organisationUnit',
+                        'dataSet',
+                        'validationRuleGroup',
+                    ],
+                }}
+            >
+                <HashRouter>
+                    <AppComponent />
+                </HashRouter>
+            </D2UIApp>
+        </Provider>,
         document.getElementById('app'),
     );
 }).then(getUserSettings).then(configurations);
