@@ -1,14 +1,20 @@
+/* React */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// Material UI
+/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import { FontIcon, IconButton } from 'material-ui';
-
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
+
+import { SUCCESS, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
 
 import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
@@ -41,6 +47,10 @@ class MinMaxOutlierAnalysis extends Page {
         'elements',
         'loading',
     ];
+
+    static propTypes = {
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
 
     constructor() {
         super();
@@ -82,10 +92,9 @@ class MinMaxOutlierAnalysis extends Page {
     start() {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             api.post(apiConf.endpoints.minMaxOutliersAnalysis, {
@@ -107,13 +116,11 @@ class MinMaxOutlierAnalysis extends Page {
                         },
                     };
 
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
@@ -151,11 +158,11 @@ class MinMaxOutlierAnalysis extends Page {
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
-                this.context.updateAppState({
-                    pageState: {
-                        loading: true,
-                    },
+                this.setState({ loading: true });
+                this.props.updateFeedbackState(true, {
+                    type: LOADING,
                 });
+
                 api.post(apiConf.endpoints.markDataValue, {
                     followups: [OutlierAnalyisTable.convertElementToToggleFollowupRequest(currentElement)],
                 }).then(() => {
@@ -163,17 +170,15 @@ class MinMaxOutlierAnalysis extends Page {
                         currentElement.marked = !currentElement.marked;
                         elements[i] = currentElement;
 
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: i18n.t(
-                                    currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
-                            },
-                            pageState: {
-                                elements,
-                                loading: false,
-                            },
+                        this.props.updateFeedbackState(true, {
+                            type: SUCCESS,
+                            message: i18n.t(
+                                currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
+                        });
+
+                        this.setState({
+                            loading: false,
+                            elements,
                         });
                     }
                 }).catch(() => { this.manageError(); });
@@ -282,4 +287,11 @@ class MinMaxOutlierAnalysis extends Page {
     }
 }
 
-export default MinMaxOutlierAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(MinMaxOutlierAnalysis);

@@ -24,97 +24,106 @@ import styles from './App.css';
 import { sections } from './pages/sections.conf';
 
 class App extends PureComponent {
-  static childContextTypes = {
-      currentSection: PropTypes.string,
-      updateAppState: PropTypes.func,
-  };
+    static childContextTypes = {
+        currentSection: PropTypes.string,
+        updateAppState: PropTypes.func,
+    };
 
-  static propTypes = {
-      showSnackbar: PropTypes.bool.isRequired,
-      snackbarConf: PropTypes.shape({
-          type: PropTypes.string,
-          message: PropTypes.string,
-          action: PropTypes.string,
-          onActionClick: PropTypes.func,
-      }).isRequired,
-  };
+    static propTypes = {
+        showSnackbar: PropTypes.bool.isRequired,
+        snackbarConf: PropTypes.shape({
+            type: PropTypes.string,
+            message: PropTypes.string,
+            action: PropTypes.string,
+            onActionClick: PropTypes.func,
+        }).isRequired,
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
 
-  static contextTypes = {
-      d2: PropTypes.object,
-  };
+    static contextTypes = {
+        d2: PropTypes.object,
+    };
 
-  constructor(props) {
-      super(props);
+    constructor(props) {
+        super(props);
 
-      this.state = {
-          pageState: {},
-      };
+        this.state = {
+            pageState: {},
+        };
 
-      this.updateAppState = this.updateAppState.bind(this);
-  }
+        this.updateAppState = this.updateAppState.bind(this);
+    }
 
-  getChildContext() {
-      return {
-          currentSection: this.state.currentSection,
-          updateAppState: this.updateAppState,
-      };
-  }
+    getChildContext() {
+        return {
+            currentSection: this.state.currentSection,
+            updateAppState: this.updateAppState,
+        };
+    }
 
-  updateAppState(appState) {
-      if (appState.currentSection
-        && !appState.pageState
-        && this.state.currentSection !== appState.currentSection) {
-      // clear page state because we are updating page
-          this.setState({ ...appState, pageState: {}, showSnackbar: false });
-      } else {
-          this.setState(appState);
-      }
-  }
+    onFeedbackSnackbarClose = () => {
+        this.props.updateFeedbackState(false, {
+            type: '',
+            message: '',
+        });
+    };
 
-  render() {
-      const nonOnChangeSection = () => null;
-      const translatedSections = sections.map(section => Object.assign(
-          section,
-          {
-              icon: section.info.icon,
-              label: i18n.t(section.info.label),
-              containerElement: <Link to={section.path} />,
-          },
-      ));
+    updateAppState(appState) {
+        if (appState.currentSection
+            && !appState.pageState
+            && this.state.currentSection !== appState.currentSection) {
+            // clear page state because we are updating page
+            this.setState({ ...appState, pageState: {}, showSnackbar: false });
+        } else {
+            this.setState(appState);
+        }
+    }
 
-      const feedbackElement = this.props.snackbarConf.type === LOADING ?
-          (
-              <div className={styles.centered}>
-                  <CircularProgress />
-              </div>
-          ) : (
-              <FeedbackSnackbar
-                  show={this.props.showSnackbar}
-                  conf={this.props.snackbarConf}
-              />
-          );
+    render() {
+        const nonOnChangeSection = () => null;
+        const translatedSections = sections.map(section => Object.assign(
+            section,
+            {
+                icon: section.info.icon,
+                label: i18n.t(section.info.label),
+                containerElement: <Link to={section.path} />,
+            },
+        ));
 
-      return (
-          <div>
-              <HeaderBar d2={this.context.d2} />
-              <Sidebar
-                  sections={translatedSections}
-                  currentSection={this.state.currentSection}
-                  onChangeSection={nonOnChangeSection}
-              />
-              <div className={styles.contentWrapper}>
-                  <div className={styles.contentArea}>
-                      <AppRouter
-                          pageState={this.state.pageState}
-                      />
-                  </div>
-              </div>
-              <div id="feedback-snackbar">
-                  {feedbackElement}
-              </div>
-          </div>
-      );
-  }
+        const feedbackElement = this.props.snackbarConf.type === LOADING ?
+            (
+                <div className={styles.centered}>
+                    <CircularProgress />
+                </div>
+            ) : (
+                <FeedbackSnackbar
+                    onClose={this.onFeedbackSnackbarClose}
+                    show={this.props.showSnackbar}
+                    conf={this.props.snackbarConf}
+                />
+            );
+
+        return (
+            <div>
+                <HeaderBar d2={this.context.d2} />
+                <Sidebar
+                    sections={translatedSections}
+                    currentSection={this.state.currentSection}
+                    onChangeSection={nonOnChangeSection}
+                />
+                <div className={styles.contentWrapper}>
+                    <div className={styles.contentArea}>
+                        <AppRouter
+                            pageState={this.state.pageState}
+                        />
+                    </div>
+                </div>
+                <div id="feedback-snackbar">
+                    {feedbackElement}
+                </div>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = ({ feedback }) => ({
