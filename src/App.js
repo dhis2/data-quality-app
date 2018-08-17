@@ -27,8 +27,6 @@ import { sections } from './pages/sections.conf';
 class App extends PureComponent {
     static childContextTypes = {
         d2: PropTypes.object.isRequired,
-        currentSection: PropTypes.string,
-        updateAppState: PropTypes.func,
     };
 
     static propTypes = {
@@ -41,23 +39,12 @@ class App extends PureComponent {
             onActionClick: PropTypes.func,
         }).isRequired,
         updateFeedbackState: PropTypes.func.isRequired,
+        currentLocationPath: PropTypes.string.isRequired,
     };
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            pageState: {},
-        };
-
-        this.updateAppState = this.updateAppState.bind(this);
-    }
 
     getChildContext() {
         return {
             d2: this.props.d2,
-            currentSection: this.state.currentSection,
-            updateAppState: this.updateAppState,
         };
     }
 
@@ -68,16 +55,10 @@ class App extends PureComponent {
         });
     };
 
-    updateAppState(appState) {
-        if (appState.currentSection
-            && !appState.pageState
-            && this.state.currentSection !== appState.currentSection) {
-            // clear page state because we are updating page
-            this.setState({ ...appState, pageState: {}, showSnackbar: false });
-        } else {
-            this.setState(appState);
-        }
-    }
+    getCurrentSectionKey = () => {
+        const currentSection = sections.find(section => section.path === this.props.currentLocationPath);
+        return currentSection ? currentSection.key : null;
+    };
 
     render() {
         const nonOnChangeSection = () => null;
@@ -108,14 +89,12 @@ class App extends PureComponent {
                 <HeaderBar d2={this.props.d2} />
                 <Sidebar
                     sections={translatedSections}
-                    currentSection={this.state.currentSection}
+                    currentSection={this.getCurrentSectionKey()}
                     onChangeSection={nonOnChangeSection}
                 />
                 <div className={styles.contentWrapper}>
                     <div className={styles.contentArea}>
-                        <AppRouter
-                            pageState={this.state.pageState}
-                        />
+                        <AppRouter />
                     </div>
                 </div>
                 <div id="feedback-snackbar">
@@ -126,9 +105,10 @@ class App extends PureComponent {
     }
 }
 
-const mapStateToProps = ({ feedback }) => ({
+const mapStateToProps = ({ feedback, router }) => ({
     showSnackbar: feedback.showSnackbar,
     snackbarConf: { ...feedback.snackbarConf },
+    currentLocationPath: router.location && router.location.pathname ? router.location.pathname : '',
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

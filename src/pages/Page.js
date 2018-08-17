@@ -9,25 +9,15 @@ import { i18nKeys } from '../i18n';
 
 class Page extends Component {
   static propTypes = {
-      sectionKey: PropTypes.string.isRequired,
       updateFeedbackState: PropTypes.func.isRequired,
   };
 
   static contextTypes = {
       d2: PropTypes.object,
-      currentSection: PropTypes.string,
-      updateAppState: PropTypes.func,
   };
 
   componentWillMount() {
       this.pageMounted = true;
-
-      // update section on side bar
-      if (this.context.currentSection !== this.props.sectionKey) {
-          this.context.updateAppState({
-              currentSection: this.props.sectionKey,
-          });
-      }
   }
 
   componentWillUnmount() {

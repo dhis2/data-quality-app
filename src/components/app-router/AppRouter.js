@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -9,15 +8,12 @@ import NoMatch from './NoMatch';
 // App configs
 import { sections } from '../../pages/sections.conf';
 
-const AppRouter = ({ pageState }) => {
+const AppRouter = () => {
     const routes = sections.map((section) => {
         const routeRender = () => {
             const Page = section.component;
             return (
-                <Page
-                    sectionKey={section.key}
-                    {...pageState}
-                />
+                <Page />
             );
         };
         return (
@@ -47,14 +43,6 @@ const AppRouter = ({ pageState }) => {
             </Switch>
         </main>
     );
-};
-
-AppRouter.propTypes = {
-    pageState: PropTypes.object,
-};
-
-AppRouter.defaultProps = {
-    pageState: {},
 };
 
 export default AppRouter;
