@@ -131,87 +131,81 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
 });
 
 describe('Test <ValidationRulesAnalysis /> actions:', () => {
+    let wrapper;
+    beforeEach(() => {
+        wrapper = ownShallow();
+    });
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'organisationUnitOnChange').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             organisationUnitId: null,
         });
         wrapper.find(AvailableOrganisationUnitsTree).simulate('change', 'TestOrganisationUnitId');
-        expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId');
         expect(wrapper.state('organisationUnitId')).toBe('TestOrganisationUnitId');
     });
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'startDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testStartDate = new Date();
         wrapper.setState({
             startDate: null,
         });
         wrapper.find(DatePicker).at(0).simulate('change', null, testStartDate);
-        expect(spy).toHaveBeenCalledWith(null, testStartDate);
         expect(wrapper.state('startDate')).toMatchObject(testStartDate);
     });
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'endDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testEndDate = new Date();
         wrapper.setState({
             endDate: null,
         });
         wrapper.find(DatePicker).at(1).simulate('change', null, testEndDate);
-        expect(spy).toHaveBeenCalledWith(null, testEndDate);
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
     it('Should call validationRuleGroupOnChange function when ValidationRuleGroupsSelect changes.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'validationRuleGroupOnChange').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             validationRuleGroupId: null,
         });
         wrapper.find(ValidationRuleGroupsSelect).at(0).simulate('change', null, null, 'TestValidationRuleGroupId');
-        expect(spy).toHaveBeenCalledWith(null, null, 'TestValidationRuleGroupId');
         expect(wrapper.state('validationRuleGroupId')).toBe('TestValidationRuleGroupId');
     });
 
     it('Should call updateSendNotifications when "Send notifications" checkbox change.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updateSendNotifications').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             notification: null,
         });
         wrapper.find(Checkbox).at(0).simulate('check', null, true);
-        expect(spy).toHaveBeenCalledWith(null, true);
         expect(wrapper.state('notification')).toBeTruthy();
     });
 
     it('Should call updatePersistNewResults when "Persist new results" checkbox change.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'updatePersistNewResults').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             persist: null,
         });
         wrapper.find(Checkbox).at(1).simulate('check', null, true);
-        expect(spy).toHaveBeenCalledWith(null, true);
         expect(wrapper.state('persist')).toBeTruthy();
     });
 
     it('Should call validate function when Validate button is clicked.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'validate');
-        const wrapper = ownShallow();
-        wrapper.find(RaisedButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        wrapper.instance().validate = jest.fn();
+        wrapper.setState({
+            organisationUnitId: 'TestOrganisationUnitId',
+            startDate: new Date(),
+            endDate: new Date(),
+        });
+        wrapper.find("#start-analysis-button").simulate('click');
+        expect(wrapper.instance().validate).toHaveBeenCalled();
     });
 
     it('Calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'back');
-        const wrapper = ownShallow();
+        wrapper.instance().back = jest.fn();
+        const elements = ['one', 'two', 'three'];
+        wrapper.setState({
+            elements,
+            showTable: elements && elements.length > 0,
+        });
         wrapper.find(IconButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        expect(wrapper.instance().back).toHaveBeenCalled();
     });
 
     it('Update state when back button is clicked', () => {

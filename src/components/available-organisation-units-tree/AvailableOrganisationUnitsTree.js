@@ -30,8 +30,6 @@ class AvailableOrganisationUnitsTree extends PureComponent {
           selected: [],
           rootWithMember: null,
       };
-
-      this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
   }
 
   componentDidMount() {
@@ -50,7 +48,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
       }
   }
 
-  handleOrgUnitClick(event, orgUnit) {
+  handleOrgUnitClick = (event, orgUnit) => {
       if (!this.state.selected.includes(orgUnit.path)) {
           this.setState({ selected: [orgUnit.path] });
           if (this.props.onChange) {
@@ -60,7 +58,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
               this.props.onChange(selectedOrganisationUnitId);
           }
       }
-  }
+  };
 
   render() {
       if (this.state.rootWithMembers) {

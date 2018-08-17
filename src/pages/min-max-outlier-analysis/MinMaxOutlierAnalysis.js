@@ -13,8 +13,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from '../../reducers/feedback';
 
-import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
-
+/* Components */
 import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
@@ -27,12 +26,13 @@ import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// helpers
+/* helpers */
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
-// styles
+/* styles */
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
@@ -49,18 +49,9 @@ export default class MinMaxOutlierAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-        this.start = this.start.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
-        this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
-        this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
-    start() {
+    start = () => {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.setState({ loading: true });
@@ -96,34 +87,34 @@ export default class MinMaxOutlierAnalysis extends Page {
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitOnChange(organisationUnitId) {
+    organisationUnitOnChange = (organisationUnitId) => {
         this.setState({ organisationUnitId });
-    }
+    };
 
-    dataSetsOnChange(event) {
+    dataSetsOnChange = (event) => {
         const dataSetIds = [];
         const selectedOptions = event.target.selectedOptions;
         for (let i = 0; i < selectedOptions.length; i++) {
             dataSetIds.push(selectedOptions[i].value);
         }
         this.setState({ dataSetIds });
-    }
+    };
 
-    toggleCheckbox(element) {
+    toggleCheckbox = (element) => {
         const api = this.context.d2.Api.getApi();
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
@@ -156,7 +147,7 @@ export default class MinMaxOutlierAnalysis extends Page {
                 break;
             }
         }
-    }
+    };
 
     isFormValid() {
         return this.state.startDate &&

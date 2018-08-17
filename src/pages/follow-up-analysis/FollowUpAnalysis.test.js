@@ -137,75 +137,75 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
 describe('Test <FollowUpAnalysis /> actions:', () => {
 
+    let wrapper;
+    beforeEach(() => {
+        wrapper = ownShallow();
+    });
+
     it('Should call organisationUnitChanged function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'organisationUnitChanged').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             organisationUnitId: null,
         });
         wrapper.find(AvailableOrganisationUnitsTree).simulate('change', 'TestOrganisationUnitId');
-        expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId');
         expect(wrapper.state('organisationUnitId')).toBe('TestOrganisationUnitId');
     });
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'startDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testStartDate = new Date();
         wrapper.setState({
             startDate: null,
         });
         wrapper.find(DatePicker).at(0).simulate('change', null, testStartDate);
-        expect(spy).toHaveBeenCalledWith(null, testStartDate);
         expect(wrapper.state('startDate')).toMatchObject(testStartDate);
     });
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'endDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testEndDate = new Date();
         wrapper.setState({
             endDate: null,
         });
         wrapper.find(DatePicker).at(1).simulate('change', null, testEndDate);
-        expect(spy).toHaveBeenCalledWith(null, testEndDate);
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
     it('Should call dataSetOnChange function when DatasetsForOrganisationUnitSelect changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'dataSetOnChange').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             dataSetId: null,
         });
         wrapper.find(DatasetsForOrganisationUnitSelect).at(0).simulate('change', null, null, 'TestDataSetId');
-        expect(spy).toHaveBeenCalledWith(null, null, 'TestDataSetId');
         expect(wrapper.state('dataSetId')).toBe('TestDataSetId');
     });
 
     it('Followup Analysis calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'back');
-        const wrapper = ownShallow();
+        wrapper.instance().back = jest.fn();
+        const elements = ['one', 'two', 'three'];
+        wrapper.setState({
+            elements,
+            showTable: elements && elements.length > 0,
+        });
         wrapper.find(IconButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        expect(wrapper.instance().back).toHaveBeenCalled();
     });
 
     it('Followup Analysis calls getFollowUpList method when RaisedButton is clicked', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'getFollowUpList');
-        const wrapper = ownShallow();
-        wrapper.find(RaisedButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        wrapper.instance().getFollowUpList = jest.fn();
+        wrapper.setState({
+            organisationUnitId: 'TestOrganisationUnitId',
+            startDate: new Date(),
+            endDate: new Date(),
+            dataSetId: ALL_DATA_SETS_OPTION_ID,
+        });
+        wrapper.find("#start-analysis-button").simulate('click');
+        expect(wrapper.instance().getFollowUpList).toHaveBeenCalled();
     });
 
-    it('Standard Dev Outlier Analysis update state when back button is clicked', () => {
-        const wrapper = ownShallow();
+    it('Followup Analysis update state when back button is clicked', () => {
         wrapper.setState({showTable: true});
         wrapper.find(IconButton).simulate('click');
-        expect(wrapper.state('showTable')).toBe(false);
+        expect(wrapper.state('showTable')).toBeFalsy();
     });
 
     it('Should change element marked state when toggleCheckbox is called.', () => {
-        const wrapper = ownShallow();
         wrapper.setState({
             elements: [
                 {

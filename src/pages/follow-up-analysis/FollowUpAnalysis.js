@@ -13,8 +13,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from '../../reducers/feedback';
 
-import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
-
+/* Components */
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
@@ -28,12 +27,13 @@ import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// helpers
+/* helpers */
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
-// styles
+/* styles */
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
@@ -50,19 +50,9 @@ export default class FollowUpAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-        this.getFollowUpList = this.getFollowUpList.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitChanged = this.organisationUnitChanged.bind(this);
-        this.dataSetOnChange = this.dataSetOnChange.bind(this);
-        this.toggleCheckbox = this.toggleCheckbox.bind(this);
-        this.unfollow = this.unfollow.bind(this);
     }
 
-    getFollowUpList() {
+    getFollowUpList = () => {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
             this.setState({ loading: true });
@@ -103,32 +93,32 @@ export default class FollowUpAnalysis extends Page {
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitChanged(organisationUnitId) {
+    organisationUnitChanged = (organisationUnitId) => {
         this.setState({
             organisationUnitId,
             dataSetId: ALL_DATA_SETS_OPTION_ID,
         });
-    }
+    };
 
-    dataSetOnChange(event, index, value) {
+    dataSetOnChange = (event, index, value) => {
         this.setState({ dataSetId: value });
-    }
+    };
 
-    toggleCheckbox(element) {
+    toggleCheckbox = (element) => {
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
@@ -139,9 +129,9 @@ export default class FollowUpAnalysis extends Page {
                 break;
             }
         }
-    }
+    };
 
-    unfollow(unfollowups) {
+    unfollow = (unfollowups) => {
         const api = this.context.d2.Api.getApi();
         this.setState({ loading: true });
         this.props.updateFeedbackState(true, {
@@ -174,8 +164,10 @@ export default class FollowUpAnalysis extends Page {
                     elements,
                 });
             }
-        }).catch(() => { this.manageError(); });
-    }
+        }).catch(() => {
+            this.manageError();
+        });
+    };
 
     isFormValid() {
         return this.state.startDate &&

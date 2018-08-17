@@ -14,8 +14,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateFeedbackState } from '../../reducers/feedback';
 
-import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
-
+/* Components */
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import ValidationRuleGroupsSelect, {
@@ -25,19 +24,21 @@ import ValidationRuleGroupsSelect, {
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import { getDocsKeyForSection } from '../sections.conf';
 
 /* i18n */
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// styles
+/* helpers */
+import { apiConf } from '../../server.conf';
+import { convertDateToApiDateFormat } from '../../helpers/dates';
+import { getDocsKeyForSection } from '../sections.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
+
+/* styles */
 import jsPageStyles from '../PageStyles';
 import cssPageStyles from '../Page.css';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
-
-import { apiConf } from '../../server.conf';
-import { convertDateToApiDateFormat } from '../../helpers/dates';
 
 export default class ValidationRulesAnalysis extends Page {
     constructor() {
@@ -54,16 +55,6 @@ export default class ValidationRulesAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-        this.validate = this.validate.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
-        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
-        this.updateSendNotifications = this.updateSendNotifications.bind(this);
-        this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
     }
 
     static generateElementKey = e =>
@@ -83,7 +74,7 @@ export default class ValidationRulesAnalysis extends Page {
         rightValue: e.rightSideValue,
     });
 
-    validate() {
+    validate = () => {
         const api = this.context.d2.Api.getApi();
 
         if (this.isFormValid()) {
@@ -126,35 +117,35 @@ export default class ValidationRulesAnalysis extends Page {
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitOnChange(organisationUnitId) {
+    organisationUnitOnChange = (organisationUnitId) => {
         this.setState({ organisationUnitId });
-    }
+    };
 
-    validationRuleGroupOnChange(event, index, value) {
+    validationRuleGroupOnChange = (event, index, value) => {
         this.setState({ validationRuleGroupId: value });
-    }
+    };
 
-    updateSendNotifications(event, checked) {
+    updateSendNotifications = (event, checked) => {
         this.setState({ notification: checked });
-    }
+    };
 
-    updatePersistNewResults(event, checked) {
+    updatePersistNewResults = (event, checked) => {
         this.setState({ persist: checked });
-    }
+    };
 
     showAlertBar() {
         return this.state.showTable &&

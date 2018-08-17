@@ -157,9 +157,12 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
 describe('Test <StdDevOutlierAnalysis /> actions:', () => {
 
+    let wrapper;
+    beforeEach(() => {
+        wrapper = ownShallow();
+    });
+
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'dataSetsOnChange').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             dataSetIds: [],
         });
@@ -169,81 +172,73 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
                     selectedOptions: [{value: 'id1'}, {value: 'id2'}],
                 }
             });
-        expect(spy).toHaveBeenCalledWith({
-            target: {
-                selectedOptions: [{value: 'id1'}, {value: 'id2'}],
-            }
-        });
         expect(wrapper.state('dataSetIds')).toMatchObject(['id1', 'id2']);
     });
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'organisationUnitOnChange').and.callThrough();
-        const wrapper = ownShallow();
         wrapper.setState({
             organisationUnitId: null,
         });
         wrapper.find(AvailableOrganisationUnitsTree).simulate('change', 'TestOrganisationUnitId');
-        expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId');
         expect(wrapper.state('organisationUnitId')).toBe('TestOrganisationUnitId');
     });
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'startDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testStartDate = new Date();
         wrapper.setState({
             startDate: null,
         });
         wrapper.find(DatePicker).at(0).simulate('change', null, testStartDate);
-        expect(spy).toHaveBeenCalledWith(null, testStartDate);
         expect(wrapper.state('startDate')).toMatchObject(testStartDate);
     });
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'endDateOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testEndDate = new Date();
         wrapper.setState({
             endDate: null,
         });
         wrapper.find(DatePicker).at(1).simulate('change', null, testEndDate);
-        expect(spy).toHaveBeenCalledWith(null, testEndDate);
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
     it('Should call standardDeviationOnChange function when Standard Deviation SelectField changes.', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'standardDeviationOnChange').and.callThrough();
-        const wrapper = ownShallow();
         const testStandardDeviation = 4.0;
         wrapper.setState({
             standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });
         wrapper.find(SelectField).at(0).simulate('change', null, null, testStandardDeviation);
-        expect(spy).toHaveBeenCalledWith(null, null, testStandardDeviation);
         expect(wrapper.state('standardDeviation')).toBe(testStandardDeviation);
     });
 
 
     it('Should call back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'back');
-        const wrapper = ownShallow();
+        wrapper.instance().back = jest.fn();
+        const elements = ['one', 'two', 'three'];
+        wrapper.setState({
+            elements,
+            showTable: elements && elements.length > 0,
+        });
         wrapper.find(IconButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        expect(wrapper.instance().back).toHaveBeenCalled();
     });
 
     it('Standard Dev Outlier Analysis calls start method when RaisedButton is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'start');
-        const wrapper = ownShallow();
-        wrapper.find(RaisedButton).simulate('click');
-        expect(spy).toHaveBeenCalled();
+        wrapper.instance().start = jest.fn();
+        wrapper.setState({
+            loading: false,
+            endDate: new Date(),
+            startDate: new Date(),
+            organisationUnitId: 'TestOrganisationUnitId',
+            dataSetIds: ['id1', 'id2', 'id3'],
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
+        });
+        wrapper.find("#start-analysis-button").simulate('click');
+        expect(wrapper.instance().start).toHaveBeenCalled();
     });
 
     it('Should update state when back button is clicked', () => {
-        const wrapper = ownShallow();
         wrapper.setState({showTable: true});
         wrapper.find(IconButton).simulate('click');
         expect(wrapper.state('showTable')).toBe(false);
     });
-
 });
