@@ -1,6 +1,5 @@
 /* React */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 /* Material UI */
 import { FontIcon, IconButton } from 'material-ui';
@@ -48,10 +47,6 @@ class FollowUpAnalysis extends Page {
         'elements',
         'loading',
     ];
-
-    static propTypes = {
-        updateFeedbackState: PropTypes.func.isRequired,
-    };
 
     constructor() {
         super();

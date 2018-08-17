@@ -10,6 +10,7 @@ import { i18nKeys } from '../i18n';
 class Page extends Component {
   static propTypes = {
       sectionKey: PropTypes.string.isRequired,
+      updateFeedbackState: PropTypes.func.isRequired,
   }
 
   static contextTypes = {
@@ -43,15 +44,9 @@ class Page extends Component {
               error.message :
               i18n.t(i18nKeys.messages.unexpectedAnalysisError);
 
-          this.context.updateAppState({
-              showSnackbar: true,
-              snackbarConf: {
-                  type: ERROR,
-                  message: messageError,
-              },
-              pageState: {
-                  loading: false,
-              },
+          this.props.updateFeedbackState(true, {
+              type: ERROR,
+              message: messageError,
           });
       }
   }

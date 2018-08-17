@@ -1,6 +1,5 @@
 /* React */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 /* Material UI */
 import { Card, CardText } from 'material-ui/Card';
@@ -46,10 +45,6 @@ class ValidationRulesAnalysis extends Page {
         'elements',
         'showTable',
     ];
-
-    static propTypes = {
-        updateFeedbackState: PropTypes.func.isRequired,
-    };
 
     constructor() {
         super();
