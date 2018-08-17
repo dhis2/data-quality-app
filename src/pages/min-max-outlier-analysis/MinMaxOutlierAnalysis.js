@@ -36,7 +36,7 @@ import { apiConf } from '../../server.conf';
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
-class MinMaxOutlierAnalysis extends Page {
+export default class MinMaxOutlierAnalysis extends Page {
     constructor() {
         super();
 
@@ -262,7 +262,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     updateFeedbackState,
 }, dispatch);
 
-export default connect(
+export const ConnectedMinMaxOutlierAnalysis = connect(
     null,
     mapDispatchToProps,
 )(MinMaxOutlierAnalysis);

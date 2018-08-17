@@ -1,8 +1,8 @@
 // Components
-import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis';
-import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis';
-import MinMaxOutlierAnalysis from './min-max-outlier-analysis/MinMaxOutlierAnalysis';
-import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis';
+import { ConnnectedValidationRulesAnalysis } from './validation-rules-analysis/ValidationRulesAnalysis';
+import { ConnectedStdDevOutlierAnalysis } from './std-dev-outlier-analysis/StdDevOutlierAnalysis';
+import { ConnectedMinMaxOutlierAnalysis } from './min-max-outlier-analysis/MinMaxOutlierAnalysis';
+import { ConnectedFollowUpAnalysis } from './follow-up-analysis/FollowUpAnalysis';
 
 // i18n
 import { i18nKeys } from '../i18n';
@@ -16,7 +16,7 @@ export const sections = [
     {
         key: VALIDATION_RULES_ANALYSIS_SECTION_KEY,
         path: '/validation-rules-analysis',
-        component: ValidationRulesAnalysis,
+        component: ConnnectedValidationRulesAnalysis,
         info: {
             label: i18nKeys.validationRulesAnalysis.homeLabel,
             icon: 'done_all',
@@ -28,7 +28,7 @@ export const sections = [
     {
         key: STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
         path: '/std-dev-outlier-analysis',
-        component: StdDevOutlierAnalysis,
+        component: ConnectedStdDevOutlierAnalysis,
         info: {
             label: i18nKeys.stdDevOutlierAnalysis.homeLabel,
             icon: 'show_chart',
@@ -40,7 +40,7 @@ export const sections = [
     {
         key: MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY,
         path: '/min-max-outlier-analysis',
-        component: MinMaxOutlierAnalysis,
+        component: ConnectedMinMaxOutlierAnalysis,
         info: {
             label: i18nKeys.minMaxOutlierAnalysis.homeLabel,
             icon: 'compare_arrows',
@@ -52,7 +52,7 @@ export const sections = [
     {
         key: FOLLOW_UP_ANALYSIS_SECTION_KEY,
         path: '/follow-up-analysis',
-        component: FollowUpAnalysis,
+        component: ConnectedFollowUpAnalysis,
         info: {
             label: i18nKeys.followUpAnalysis.homeLabel,
             icon: 'description',

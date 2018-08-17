@@ -39,7 +39,7 @@ import ValidationRulesAnalysisTable from './validation-rules-analysis-table/Vali
 import { apiConf } from '../../server.conf';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 
-class ValidationRulesAnalysis extends Page {
+export default class ValidationRulesAnalysis extends Page {
     constructor() {
         super();
 
@@ -269,7 +269,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     updateFeedbackState,
 }, dispatch);
 
-export default connect(
+export const ConnnectedValidationRulesAnalysis = connect(
     null,
     mapDispatchToProps,
 )(ValidationRulesAnalysis);

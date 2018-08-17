@@ -1,56 +1,40 @@
 /* eslint-disable */
 /* React and Enzyme */
 import React from 'react';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
 /* Material UI */
-import { RaisedButton, IconButton } from 'material-ui';
+import {RaisedButton, IconButton} from 'material-ui';
 import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 
-/* React components */
+/* Components */
 import StdDevOutlierAnalysis, {DEFAULT_STANDARD_DEVIATION} from './StdDevOutlierAnalysis';
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from "../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree";
-
-/* helpers */
-import { i18nKeys } from '../../i18n';
-
-import {
-    sections,
-    STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
-} from '../sections.conf';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import PageHelper from '../../components/page-helper/PageHelper';
 
-let pageInfo = {};
-for(let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    if (section.key === STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY) {
-        pageInfo = section.info;
-        break;
-    }
-}
+/* helpers */
+import {STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY} from '../sections.conf';
+import {i18nKeys} from '../../i18n';
+
+jest.mock('@dhis2/d2-ui-org-unit-tree', () => ({
+    OrgUnitTree: ('OrgUnitTree'),
+}));
 
 const ownShallow = () => {
     return shallow(
         <StdDevOutlierAnalysis
             sectionKey={STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY}
-            pageInfo={pageInfo}
+            updateFeedbackState={jest.fn()}
         />,
         {
-            context: {
-                updateAppState: jest.fn(),
-            },
             disableLifecycleMethods: true
         }
     );
 };
-
-/* Mocks */
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
 describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
@@ -60,10 +44,10 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     });
 
     it('Renders without crashing', () => {
-      ownShallow();
+        ownShallow();
     });
 
-    it('Should show correct title.', () =>{
+    it('Should show correct title.', () => {
         expect(wrapper.find('h1')).toHaveLength(1);
         expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.stdDevOutlierAnalysis.header}<PageHelper />`);
     });
@@ -180,14 +164,14 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
             dataSetIds: [],
         });
         wrapper.find(AvailableDatasetsSelect)
-            .simulate('change',{
+            .simulate('change', {
                 target: {
-                    selectedOptions: [{ value:'id1' }, { value:'id2' }],
+                    selectedOptions: [{value: 'id1'}, {value: 'id2'}],
                 }
             });
         expect(spy).toHaveBeenCalledWith({
             target: {
-                selectedOptions: [{ value:'id1' }, { value:'id2' }],
+                selectedOptions: [{value: 'id1'}, {value: 'id2'}],
             }
         });
         expect(wrapper.state('dataSetIds')).toMatchObject(['id1', 'id2']);
@@ -207,7 +191,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
         const spy = spyOn(StdDevOutlierAnalysis.prototype, 'startDateOnChange').and.callThrough();
         const wrapper = ownShallow();
-        const testStartDate  = new Date();
+        const testStartDate = new Date();
         wrapper.setState({
             startDate: null,
         });
@@ -219,7 +203,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
         const spy = spyOn(StdDevOutlierAnalysis.prototype, 'endDateOnChange').and.callThrough();
         const wrapper = ownShallow();
-        const testEndDate  = new Date();
+        const testEndDate = new Date();
         wrapper.setState({
             endDate: null,
         });
@@ -231,7 +215,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     it('Should call standardDeviationOnChange function when Standard Deviation SelectField changes.', () => {
         const spy = spyOn(StdDevOutlierAnalysis.prototype, 'standardDeviationOnChange').and.callThrough();
         const wrapper = ownShallow();
-        const testStandardDeviation  = 4.0;
+        const testStandardDeviation = 4.0;
         wrapper.setState({
             standardDeviation: DEFAULT_STANDARD_DEVIATION,
         });

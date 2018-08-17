@@ -13,7 +13,7 @@ const AppRouter = () => {
         const routeRender = () => {
             const Page = section.component;
             return (
-                <Page />
+                <Page sectionKey={section.key} />
             );
         };
         return (

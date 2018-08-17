@@ -15,7 +15,7 @@ import styles from './ValidationRulesAnalysisTable.css';
 import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
 
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
+import { ConnectValidationRulesDetails } from '../validation-rules-details/ValidationRulesDetails';
 import { apiConf } from '../../../server.conf';
 
 class ValidationRulesAnalysisTable extends PureComponent {
@@ -43,7 +43,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     <FormattedNumber value={element.rightValue} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.center}>
-                    <ValidationRulesDetails
+                    <ConnectValidationRulesDetails
                         validationRuleId={element.validationRuleId}
                         periodId={element.periodId}
                         organisationUnitId={element.organisationUnitId}

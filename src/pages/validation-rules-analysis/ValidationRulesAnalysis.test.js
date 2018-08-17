@@ -1,45 +1,33 @@
 /* eslint-disable */
 import React from 'react';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
+/* Material UI */
+import {Checkbox, DatePicker, IconButton, RaisedButton} from 'material-ui';
+
+/* Components */
 import ValidationRulesAnalysis from './ValidationRulesAnalysis';
-
-/* helpers */
-import { i18nKeys } from '../../i18n';
-
-import {
-    sections,
-    VALIDATION_RULES_ANALYSIS_SECTION_KEY,
-} from '../sections.conf';
-import { Checkbox, DatePicker, IconButton, RaisedButton } from 'material-ui';
 import ValidationRuleGroupsSelect from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import PageHelper from '../../components/page-helper/PageHelper';
 
-let pageInfo = {};
-for(let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    if (section.key === VALIDATION_RULES_ANALYSIS_SECTION_KEY) {
-        pageInfo = section.info;
-        break;
-    }
-}
+/* helpers */
+import {VALIDATION_RULES_ANALYSIS_SECTION_KEY} from '../sections.conf';
+import {i18nKeys} from '../../i18n';
 
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('@dhis2/d2-ui-org-unit-tree', () => ({
+    OrgUnitTree: ('OrgUnitTree'),
+}));
 
 const ownShallow = () => {
     return shallow(
         <ValidationRulesAnalysis
             sectionKey={VALIDATION_RULES_ANALYSIS_SECTION_KEY}
-            pageInfo={pageInfo}
+            updateFeedbackState={jest.fn()}
         />,
         {
-            context: {
-                updateAppState: jest.fn(),
-            },
             disableLifecycleMethods: true
         }
     );
@@ -158,7 +146,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'startDateOnChange').and.callThrough();
         const wrapper = ownShallow();
-        const testStartDate  = new Date();
+        const testStartDate = new Date();
         wrapper.setState({
             startDate: null,
         });
@@ -170,7 +158,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
         const spy = spyOn(ValidationRulesAnalysis.prototype, 'endDateOnChange').and.callThrough();
         const wrapper = ownShallow();
-        const testEndDate  = new Date();
+        const testEndDate = new Date();
         wrapper.setState({
             endDate: null,
         });
@@ -228,7 +216,7 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
 
     it('Update state when back button is clicked', () => {
         const wrapper = ownShallow();
-        wrapper.setState({ showTable: true });
+        wrapper.setState({showTable: true});
         wrapper.find(IconButton).simulate('click');
         expect(wrapper.state('showTable')).toBe(false);
     });

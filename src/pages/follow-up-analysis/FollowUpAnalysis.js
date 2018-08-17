@@ -37,7 +37,7 @@ import { apiConf } from '../../server.conf';
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
-class FollowUpAnalysis extends Page {
+export default class FollowUpAnalysis extends Page {
     constructor() {
         super();
 
@@ -279,7 +279,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     updateFeedbackState,
 }, dispatch);
 
-export default connect(
+export const ConnectedFollowUpAnalysis = connect(
     null,
     mapDispatchToProps,
 )(FollowUpAnalysis);

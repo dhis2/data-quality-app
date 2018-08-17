@@ -40,7 +40,7 @@ import jsPageStyles from '../PageStyles';
 
 export const DEFAULT_STANDARD_DEVIATION = 3.0;
 
-class StdDevOutlierAnalysis extends Page {
+export default class StdDevOutlierAnalysis extends Page {
     constructor() {
         super();
 
@@ -292,7 +292,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     updateFeedbackState,
 }, dispatch);
 
-export default connect(
+export const ConnectedStdDevOutlierAnalysis = connect(
     null,
     mapDispatchToProps,
 )(StdDevOutlierAnalysis);

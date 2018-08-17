@@ -1,14 +1,15 @@
 /* eslint-disable */
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
 import ValidationRulesAnalysisTable from '../validation-rules-analysis-table/ValidationRulesAnalysisTable';
-import { MuiThemeProvider, TableRow, TableRowColumn } from 'material-ui';
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
+import {TableRow, TableRowColumn} from 'material-ui';
+import {ConnectValidationRulesDetails} from '../validation-rules-details/ValidationRulesDetails';
 import DownloadAs from '../../../components/download-as/DownloadAs';
 
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('@dhis2/d2-ui-org-unit-tree', () => ({
+    OrgUnitTree: ('OrgUnitTree'),
+}));
 
 const rulesElements = [
     {
@@ -71,7 +72,7 @@ describe('Test <ValidationRulesAnalysisTable /> rendering:', () => {
     });
 
     it('Should render "ValidationRulesDetails" for each row.', () => {
-        expect(wrapper.find(ValidationRulesDetails).length).toBe(2);
+        expect(wrapper.find(ConnectValidationRulesDetails).length).toBe(2);
     });
 
     it('Render "DownloadAs" component.', () => {

@@ -24,7 +24,7 @@ import styles from './ValidationRulesDetails.css';
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import { apiConf } from '../../../server.conf';
 
-class ValidationRulesDetails extends PureComponent {
+export default class ValidationRulesDetails extends PureComponent {
     static propTypes = {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
@@ -210,7 +210,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     updateFeedbackState,
 }, dispatch);
 
-export default connect(
+export const ConnectValidationRulesDetails = connect(
     null,
     mapDispatchToProps,
 )(ValidationRulesDetails);

@@ -1,15 +1,16 @@
 /* eslint-disable */
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
-import { Dialog, FlatButton, FontIcon } from 'material-ui';
+import {Dialog, FlatButton, FontIcon} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import ValidationRulesDetails from './ValidationRulesDetails';
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('@dhis2/d2-ui-org-unit-tree', () => ({
+    OrgUnitTree: ('OrgUnitTree'),
+}));
 
 const rule = {
     lastUpdated: '2014-03-04T01:43:47.165',
@@ -30,7 +31,7 @@ const rule = {
     skipFormValidation: false,
     favorite: false,
     access: {
-    read: true,
+        read: true,
         update: true,
         externalize: false,
         delete: true,
@@ -38,13 +39,13 @@ const rule = {
         manage: true,
     },
     leftSide: {
-    expression: '#{GCGfEY82Wz6.Prlt0C1RF0s}',
+        expression: '#{GCGfEY82Wz6.Prlt0C1RF0s}',
         description: 'At Measles, slept under LLITN last night, <1 year Fixed',
         missingValueStrategy: 'SKIP_IF_ANY_VALUE_MISSING',
         slidingWindow: false,
     },
     rightSide: {
-    expression: '#{YtbsuPPo010.Prlt0C1RF0s}',
+        expression: '#{YtbsuPPo010.Prlt0C1RF0s}',
         description: 'Measles, <1 year Fixed[34.292]',
         missingValueStrategy: 'SKIP_IF_ANY_VALUE_MISSING',
         slidingWindow: false,
@@ -83,15 +84,15 @@ const ownShallow = () => {
             organisationUnitId={'organisationUnitId'}
             periodId={'periodId'}
             validationRuleId={'validationRuleId'}
+            updateFeedbackState={jest.fn()}
         />,
         {
             context: {
-                updateAppState: jest.fn(),
                 d2: {
                     Api: {
                         getApi: jest.fn().mockReturnValue({
-                                get: jest.fn(),
-                            }),
+                            get: jest.fn(),
+                        }),
                     },
                 },
             },
@@ -150,21 +151,21 @@ describe('Test <ValidationRulesDetails /> rendering:', () => {
     });
 
     it('Firt section should show rule "Summary".', () => {
-        wrapper.setState({ rule, expression });
+        wrapper.setState({rule, expression});
         expect(wrapper.find('.row').at(0).children().at(3).text()).toBe('Measles, Slept under LLITN last' +
             ' night, <1 year Fixed');
         expect(wrapper.find('.row').at(0).children().at(5).text()).toBe('Question asked at Measles');
     });
 
     it('Second section should show "Left Side" information.', () => {
-        wrapper.setState({ rule, expression });
+        wrapper.setState({rule, expression});
         expect(wrapper.find('.row').at(1).children().at(3).text()).toBe('Q_Slept under LLIN last night Measles' +
             ' Fixed, <1y<FormattedNumber />');
         expect(wrapper.find('.row').at(1).children().find(FormattedNumber).props().value).toBe(6);
     });
 
     it('Third section should show "Right Side" information.', () => {
-        wrapper.setState({ rule, expression });
+        wrapper.setState({rule, expression});
         expect(wrapper.find('.row').at(3).children().at(3).text()).toBe('Measles doses given Fixed,' +
             ' <1y<FormattedNumber />');
         expect(wrapper.find('.row').at(3).children().find(FormattedNumber).props().value).toBe(1);
