@@ -6,6 +6,13 @@ import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 import classNames from 'classnames';
 
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../../reducers/feedback';
+
+import { LOADING } from '../../../helpers/feedbackSnackBarTypes';
+
 /* i18n */
 import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
@@ -22,7 +29,12 @@ class ValidationRulesDetails extends PureComponent {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
         organisationUnitId: PropTypes.string.isRequired,
-    }
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
+
+    static contextTypes = {
+        d2: PropTypes.object,
+    };
 
     constructor() {
         super();
@@ -49,17 +61,13 @@ class ValidationRulesDetails extends PureComponent {
                 `?validationRuleId=${this.props.validationRuleId}` +
                 `&periodId=${this.props.periodId}` +
                 `&organisationUnitId=${this.props.organisationUnitId}`;
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
+
             Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
-                this.context.updateAppState({
-                    pageState: {
-                        loading: false,
-                    },
-                });
+                this.props.updateFeedbackState(false);
                 this.setState({ openDetails: true, rule, expression });
             }).catch(() => {
                 // TODO
@@ -198,4 +206,11 @@ class ValidationRulesDetails extends PureComponent {
     }
 }
 
-export default ValidationRulesDetails;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(ValidationRulesDetails);

@@ -41,17 +41,6 @@ import jsPageStyles from '../PageStyles';
 export const DEFAULT_STANDARD_DEVIATION = 3.0;
 
 class StdDevOutlierAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitId',
-        'dataSetIds',
-        'elements',
-        'standardDeviation',
-        'loading',
-    ];
-
     constructor() {
         super();
 
@@ -74,20 +63,6 @@ class StdDevOutlierAnalysis extends Page {
         this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
         this.standardDeviationOnChange = this.standardDeviationOnChange.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && StdDevOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     start() {

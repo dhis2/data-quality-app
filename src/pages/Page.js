@@ -11,13 +11,13 @@ class Page extends Component {
   static propTypes = {
       sectionKey: PropTypes.string.isRequired,
       updateFeedbackState: PropTypes.func.isRequired,
-  }
+  };
 
   static contextTypes = {
       d2: PropTypes.object,
       currentSection: PropTypes.string,
       updateAppState: PropTypes.func,
-  }
+  };
 
   componentWillMount() {
       this.pageMounted = true;

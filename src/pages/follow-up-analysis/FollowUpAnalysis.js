@@ -38,16 +38,6 @@ import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
 class FollowUpAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitId',
-        'dataSetId',
-        'elements',
-        'loading',
-    ];
-
     constructor() {
         super();
 
@@ -61,7 +51,6 @@ class FollowUpAnalysis extends Page {
             loading: false,
         };
 
-
         this.getFollowUpList = this.getFollowUpList.bind(this);
         this.back = this.back.bind(this);
 
@@ -71,20 +60,6 @@ class FollowUpAnalysis extends Page {
         this.dataSetOnChange = this.dataSetOnChange.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
         this.unfollow = this.unfollow.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && FollowUpAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     getFollowUpList() {

@@ -40,12 +40,6 @@ import { apiConf } from '../../server.conf';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 
 class ValidationRulesAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-        'elements',
-        'showTable',
-    ];
-
     constructor() {
         super();
 
@@ -70,20 +64,6 @@ class ValidationRulesAnalysis extends Page {
         this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
         this.updateSendNotifications = this.updateSendNotifications.bind(this);
         this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     static generateElementKey = e =>

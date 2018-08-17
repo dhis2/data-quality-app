@@ -37,16 +37,6 @@ import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
 class MinMaxOutlierAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitId',
-        'dataSetIds',
-        'elements',
-        'loading',
-    ];
-
     constructor() {
         super();
 
@@ -68,20 +58,6 @@ class MinMaxOutlierAnalysis extends Page {
         this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
         this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && MinMaxOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     start() {
