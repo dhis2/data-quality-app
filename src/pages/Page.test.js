@@ -57,8 +57,8 @@ it('Page component calls page constructor', () => {
     expect(Page).toHaveBeenCalledTimes(1);
 });
 
-it('componentWillMount was called after render', () => {
-    const spy = spyOn(Page.prototype, 'componentWillMount');
+it('componentDidMount was called after render', () => {
+    const spy = spyOn(Page.prototype, 'componentDidMount');
     pageComponentShallow();
     expect(spy).toHaveBeenCalled();
 });

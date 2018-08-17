@@ -16,12 +16,13 @@ class Page extends Component {
       d2: PropTypes.object,
   };
 
-  componentWillMount() {
+  componentDidMount() {
       this.pageMounted = true;
   }
 
   componentWillUnmount() {
       this.pageMounted = false;
+      this.props.updateFeedbackState(false);
   }
 
   isPageMounted() {
