@@ -36,11 +36,8 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
           dataSets: [ALL_DATA_SETS_OPTION],
           selected: ALL_DATA_SETS_OPTION.id,
       };
-
-      this.onChange = this.onChange.bind(this);
   }
 
-  // FIXME study the lifecycle and https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
   componentWillReceiveProps(nextProps) {
       const d2 = this.context.d2;
       const translatedAllDataSetsOption = ALL_DATA_SETS_OPTION;
@@ -57,11 +54,13 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
               this.setState({
                   dataSets: [translatedAllDataSetsOption, ...dataSetsResponse.dataSets.toArray()],
               });
-          }).catch(() => { this.manageError(); });
+          }).catch(() => {
+              // TODO
+          });
       }
   }
 
-  onChange(event, index, value) {
+  onChange = (event, index, value) => {
       this.setState({
           selected: value,
           selectedName: value === ALL_DATA_SETS_OPTION_ID ?
@@ -70,7 +69,7 @@ class DatasetsForOrganisationUnitSelect extends PureComponent {
       });
 
       this.props.onChange(event, index, value);
-  }
+  };
 
   render() {
       return (

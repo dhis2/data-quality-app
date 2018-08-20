@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+import { ERROR } from '../helpers/feedbackSnackBarTypes';
 
 /* i18n */
 import i18n from '../locales';
@@ -9,28 +9,20 @@ import { i18nKeys } from '../i18n';
 
 class Page extends Component {
   static propTypes = {
-      sectionKey: PropTypes.string.isRequired,
-  }
+      updateFeedbackState: PropTypes.func.isRequired,
+  };
 
   static contextTypes = {
       d2: PropTypes.object,
-      currentSection: PropTypes.string,
-      updateAppState: PropTypes.func,
-  }
+  };
 
-  componentWillMount() {
+  componentDidMount() {
       this.pageMounted = true;
-
-      // update section on side bar
-      if (this.context.currentSection !== this.props.sectionKey) {
-          this.context.updateAppState({
-              currentSection: this.props.sectionKey,
-          });
-      }
   }
 
   componentWillUnmount() {
       this.pageMounted = false;
+      this.props.updateFeedbackState(false);
   }
 
   isPageMounted() {
@@ -43,15 +35,9 @@ class Page extends Component {
               error.message :
               i18n.t(i18nKeys.messages.unexpectedAnalysisError);
 
-          this.context.updateAppState({
-              showSnackbar: true,
-              snackbarConf: {
-                  type: ERROR,
-                  message: messageError,
-              },
-              pageState: {
-                  loading: false,
-              },
+          this.props.updateFeedbackState(true, {
+              type: ERROR,
+              message: messageError,
           });
       }
   }

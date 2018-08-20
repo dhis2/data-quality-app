@@ -1,12 +1,13 @@
 /* eslint-disable */
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import FollowUpAnalysisTable from './FollowUpAnalysisTable';
-import { Checkbox, Dialog, IconButton, MuiThemeProvider, RaisedButton, TableRow, TableRowColumn } from 'material-ui';
+import {Checkbox, Dialog, IconButton, MuiThemeProvider, RaisedButton, TableRow, TableRowColumn} from 'material-ui';
 import DownloadAs from '../../../components/download-as/DownloadAs';
 
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('@dhis2/d2-ui-org-unit-tree', () => ({
+    OrgUnitTree: ('OrgUnitTree'),
+}));
 
 const response = [
     {
@@ -213,10 +214,10 @@ describe('Test <FollowUpAnalysisTable /> actions:', () => {
     it('Should correctly generateElementKey.', () => {
         const element = FollowUpAnalysisTable.generateElementKey(response[0]);
         const responseElement = response[0];
-        expect(element).toBe(`${responseElement.attributeOptionComboId}-`+
-            `${responseElement.categoryOptionComboId}-`+
-            `${responseElement.periodId}-`+
-            `${responseElement.sourceId}-`+
+        expect(element).toBe(`${responseElement.attributeOptionComboId}-` +
+            `${responseElement.categoryOptionComboId}-` +
+            `${responseElement.periodId}-` +
+            `${responseElement.sourceId}-` +
             `${responseElement.dataElementId}`);
     });
 

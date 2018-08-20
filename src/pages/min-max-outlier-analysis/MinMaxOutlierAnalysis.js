@@ -1,15 +1,19 @@
+/* React */
 import React from 'react';
 
-// Material UI
+/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import { FontIcon, IconButton } from 'material-ui';
-
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
 
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
+
+/* Components */
 import Page from '../Page';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
@@ -22,26 +26,17 @@ import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// helpers
+/* helpers */
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
-// styles
+/* styles */
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
-class MinMaxOutlierAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitId',
-        'dataSetIds',
-        'elements',
-        'loading',
-    ];
-
+export default class MinMaxOutlierAnalysis extends Page {
     constructor() {
         super();
 
@@ -54,38 +49,14 @@ class MinMaxOutlierAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-        this.start = this.start.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
-        this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
-        this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && MinMaxOutlierAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
-    }
-
-    start() {
+    start = () => {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             api.post(apiConf.endpoints.minMaxOutliersAnalysis, {
@@ -107,55 +78,53 @@ class MinMaxOutlierAnalysis extends Page {
                         },
                     };
 
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitOnChange(organisationUnitId) {
+    organisationUnitOnChange = (organisationUnitId) => {
         this.setState({ organisationUnitId });
-    }
+    };
 
-    dataSetsOnChange(event) {
+    dataSetsOnChange = (event) => {
         const dataSetIds = [];
         const selectedOptions = event.target.selectedOptions;
         for (let i = 0; i < selectedOptions.length; i++) {
             dataSetIds.push(selectedOptions[i].value);
         }
         this.setState({ dataSetIds });
-    }
+    };
 
-    toggleCheckbox(element) {
+    toggleCheckbox = (element) => {
         const api = this.context.d2.Api.getApi();
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
             if (currentElement.key === element.key) {
-                this.context.updateAppState({
-                    pageState: {
-                        loading: true,
-                    },
+                this.setState({ loading: true });
+                this.props.updateFeedbackState(true, {
+                    type: LOADING,
                 });
+
                 api.post(apiConf.endpoints.markDataValue, {
                     followups: [OutlierAnalyisTable.convertElementToToggleFollowupRequest(currentElement)],
                 }).then(() => {
@@ -163,24 +132,22 @@ class MinMaxOutlierAnalysis extends Page {
                         currentElement.marked = !currentElement.marked;
                         elements[i] = currentElement;
 
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: i18n.t(
-                                    currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
-                            },
-                            pageState: {
-                                elements,
-                                loading: false,
-                            },
+                        this.props.updateFeedbackState(true, {
+                            type: SUCCESS,
+                            message: i18n.t(
+                                currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
+                        });
+
+                        this.setState({
+                            loading: false,
+                            elements,
                         });
                     }
                 }).catch(() => { this.manageError(); });
                 break;
             }
         }
-    }
+    };
 
     isFormValid() {
         return this.state.startDate &&
@@ -282,4 +249,11 @@ class MinMaxOutlierAnalysis extends Page {
     }
 }
 
-export default MinMaxOutlierAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export const ConnectedMinMaxOutlierAnalysis = connect(
+    null,
+    mapDispatchToProps,
+)(MinMaxOutlierAnalysis);

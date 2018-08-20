@@ -1,15 +1,20 @@
+/* React */
 import React from 'react';
-import classNames from 'classnames';
 
-// Material UI
+/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import Checkbox from 'material-ui/Checkbox';
 import { FontIcon, IconButton } from 'material-ui';
+import classNames from 'classnames';
 
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
 
+/* Components */
 import Page from '../Page';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import ValidationRuleGroupsSelect, {
@@ -19,27 +24,23 @@ import ValidationRuleGroupsSelect, {
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
 import PageHelper from '../../components/page-helper/PageHelper';
-import { getDocsKeyForSection } from '../sections.conf';
 
 /* i18n */
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// styles
+/* helpers */
+import { apiConf } from '../../server.conf';
+import { convertDateToApiDateFormat } from '../../helpers/dates';
+import { getDocsKeyForSection } from '../sections.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
+
+/* styles */
 import jsPageStyles from '../PageStyles';
 import cssPageStyles from '../Page.css';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
 
-import { apiConf } from '../../server.conf';
-import { convertDateToApiDateFormat } from '../../helpers/dates';
-
-class ValidationRulesAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-        'elements',
-        'showTable',
-    ];
-
+export default class ValidationRulesAnalysis extends Page {
     constructor() {
         super();
 
@@ -54,30 +55,6 @@ class ValidationRulesAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-        this.validate = this.validate.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
-        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
-        this.updateSendNotifications = this.updateSendNotifications.bind(this);
-        this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
     }
 
     static generateElementKey = e =>
@@ -97,7 +74,7 @@ class ValidationRulesAnalysis extends Page {
         rightValue: e.rightSideValue,
     });
 
-    validate() {
+    validate = () => {
         const api = this.context.d2.Api.getApi();
 
         if (this.isFormValid()) {
@@ -113,10 +90,9 @@ class ValidationRulesAnalysis extends Page {
                 request.validationRuleGroupId = this.state.validationRuleGroupId;
             }
 
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
@@ -131,46 +107,45 @@ class ValidationRulesAnalysis extends Page {
                             message: i18n.t(i18nKeys.messages.validationSuccess),
                         },
                     };
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitOnChange(organisationUnitId) {
+    organisationUnitOnChange = (organisationUnitId) => {
         this.setState({ organisationUnitId });
-    }
+    };
 
-    validationRuleGroupOnChange(event, index, value) {
+    validationRuleGroupOnChange = (event, index, value) => {
         this.setState({ validationRuleGroupId: value });
-    }
+    };
 
-    updateSendNotifications(event, checked) {
+    updateSendNotifications = (event, checked) => {
         this.setState({ notification: checked });
-    }
+    };
 
-    updatePersistNewResults(event, checked) {
+    updatePersistNewResults = (event, checked) => {
         this.setState({ persist: checked });
-    }
+    };
 
     showAlertBar() {
         return this.state.showTable &&
@@ -281,4 +256,11 @@ class ValidationRulesAnalysis extends Page {
     }
 }
 
-export default ValidationRulesAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export const ConnnectedValidationRulesAnalysis = connect(
+    null,
+    mapDispatchToProps,
+)(ValidationRulesAnalysis);

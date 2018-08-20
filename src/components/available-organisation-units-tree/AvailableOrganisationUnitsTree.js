@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
+/* d2-ui components */
+import { OrgUnitTree } from '@dhis2/d2-ui-org-unit-tree';
 
 /* i18n */
 import i18n from '../../locales';
@@ -29,8 +30,6 @@ class AvailableOrganisationUnitsTree extends PureComponent {
           selected: [],
           rootWithMember: null,
       };
-
-      this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +48,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
       }
   }
 
-  handleOrgUnitClick(event, orgUnit) {
+  handleOrgUnitClick = (event, orgUnit) => {
       if (!this.state.selected.includes(orgUnit.path)) {
           this.setState({ selected: [orgUnit.path] });
           if (this.props.onChange) {
@@ -59,7 +58,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
               this.props.onChange(selectedOrganisationUnitId);
           }
       }
-  }
+  };
 
   render() {
       if (this.state.rootWithMembers) {

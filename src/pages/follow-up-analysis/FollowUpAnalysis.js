@@ -1,15 +1,19 @@
+/* React */
 import React from 'react';
 
-// Material UI
+/* Material UI */
 import { FontIcon, IconButton } from 'material-ui';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
-
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
 
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../reducers/feedback';
+
+/* Components */
 import Page from '../Page';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
@@ -23,26 +27,17 @@ import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
-// helpers
+/* helpers */
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
+import { LOADING, SUCCESS } from '../../helpers/feedbackSnackBarTypes';
 
-// styles
+/* styles */
 import cssPageStyles from '../Page.css';
 import jsPageStyles from '../PageStyles';
 
-class FollowUpAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitId',
-        'dataSetId',
-        'elements',
-        'loading',
-    ]
-
+export default class FollowUpAnalysis extends Page {
     constructor() {
         super();
 
@@ -55,40 +50,14 @@ class FollowUpAnalysis extends Page {
             elements: [],
             loading: false,
         };
-
-
-        this.getFollowUpList = this.getFollowUpList.bind(this);
-        this.back = this.back.bind(this);
-
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitChanged = this.organisationUnitChanged.bind(this);
-        this.dataSetOnChange = this.dataSetOnChange.bind(this);
-        this.toggleCheckbox = this.toggleCheckbox.bind(this);
-        this.unfollow = this.unfollow.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && FollowUpAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
-    }
-
-    getFollowUpList() {
+    getFollowUpList = () => {
         const api = this.context.d2.Api.getApi();
         if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+            this.setState({ loading: true });
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
 
             const request = {
@@ -115,43 +84,41 @@ class FollowUpAnalysis extends Page {
                         },
                     };
 
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
+                    this.props.updateFeedbackState(feedback.showSnackbar, { ...feedback.snackbarConf });
+                    this.setState({
+                        loading: false,
+                        elements,
+                        showTable: elements && elements.length > 0,
                     });
                 }
             }).catch(() => { this.manageError(); });
         }
-    }
+    };
 
-    back() {
+    back = () => {
         this.setState({ showTable: false });
-    }
+    };
 
-    startDateOnChange(event, date) {
+    startDateOnChange = (event, date) => {
         this.setState({ startDate: new Date(date) });
-    }
+    };
 
-    endDateOnChange(event, date) {
+    endDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) });
-    }
+    };
 
-    organisationUnitChanged(organisationUnitId) {
+    organisationUnitChanged = (organisationUnitId) => {
         this.setState({
             organisationUnitId,
             dataSetId: ALL_DATA_SETS_OPTION_ID,
         });
-    }
+    };
 
-    dataSetOnChange(event, index, value) {
+    dataSetOnChange = (event, index, value) => {
         this.setState({ dataSetId: value });
-    }
+    };
 
-    toggleCheckbox(element) {
+    toggleCheckbox = (element) => {
         const elements = this.state.elements;
         for (let i = 0; i < elements.length; i++) {
             const currentElement = elements[i];
@@ -162,14 +129,13 @@ class FollowUpAnalysis extends Page {
                 break;
             }
         }
-    }
+    };
 
-    unfollow(unfollowups) {
+    unfollow = (unfollowups) => {
         const api = this.context.d2.Api.getApi();
-        this.context.updateAppState({
-            pageState: {
-                loading: true,
-            },
+        this.setState({ loading: true });
+        this.props.updateFeedbackState(true, {
+            type: LOADING,
         });
 
         api.post(apiConf.endpoints.markDataValue, {
@@ -188,20 +154,20 @@ class FollowUpAnalysis extends Page {
                     return true;
                 });
 
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: i18n.t(i18nKeys.messages.unfollow),
-                    },
-                    pageState: {
-                        loading: false,
-                        elements,
-                    },
+                this.props.updateFeedbackState(true, {
+                    type: SUCCESS,
+                    message: i18n.t(i18nKeys.messages.unfollow),
+                });
+
+                this.setState({
+                    loading: false,
+                    elements,
                 });
             }
-        }).catch(() => { this.manageError(); });
-    }
+        }).catch(() => {
+            this.manageError();
+        });
+    };
 
     isFormValid() {
         return this.state.startDate &&
@@ -301,4 +267,11 @@ class FollowUpAnalysis extends Page {
     }
 }
 
-export default FollowUpAnalysis;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export const ConnectedFollowUpAnalysis = connect(
+    null,
+    mapDispatchToProps,
+)(FollowUpAnalysis);

@@ -1,25 +1,25 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, withRouter } from 'react-router-dom';
 
-// D2
-import { getManifest, getUserSettings } from 'd2/lib/d2';
-import D2UIApp from 'd2-ui/lib/app/D2UIApp';
+/* d2 */
+import { init, getManifest, getUserSettings } from 'd2/lib/d2';
 
 // logging
 import log from 'loglevel';
+
+/* Redux */
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import store, { history } from './store';
 
 /* i18n */
 import { configI18n } from './configI18n';
 
 import './index.css';
 import App from './App';
-import appTheme from './theme';
 
 import registerServiceWorker from './registerServiceWorker';
-
-const AppComponent = withRouter(App);
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
@@ -30,32 +30,39 @@ const configurations = (userSettings) => {
     configI18n(userSettings);
 };
 
-// init d2
-getManifest('manifest.webapp').then((manifest) => {
-    const api = process.env.REACT_APP_DHIS2_API_VERSION ? `/${process.env.REACT_APP_DHIS2_API_VERSION}` : '/';
-    const baseUrl =
-      process.env.NODE_ENV === 'production'
-          ? `${manifest.getBaseUrl()}/api/${manifest.dhis2.apiVersion}`
-          : `${process.env.REACT_APP_DHIS2_BASE_URL}/api${api}`;
+/* init d2 */
+let d2Instance;
 
-    ReactDOM.render(
-        <D2UIApp
-            muiTheme={appTheme}
-            initConfig={{
-                baseUrl,
-                schemas: [
-                    'organisationUnit',
-                    'dataSet',
-                    'validationRuleGroup',
-                ],
-            }}
-        >
-            <HashRouter>
-                <AppComponent />
-            </HashRouter>
-        </D2UIApp>,
-        document.getElementById('app'),
-    );
-}).then(getUserSettings).then(configurations);
+getManifest('manifest.webapp').then((manifest) => {
+    const baseUrl =
+        process.env.NODE_ENV === 'production'
+            ? `${manifest.getBaseUrl()}/api/${manifest.dhis2.apiVersion}`
+            : `${process.env.REACT_APP_DHIS2_BASE_URL}/api/${manifest.dhis2.apiVersion}`;
+
+    // init d2 with configs
+    init({
+        baseUrl,
+        schemas: [
+            'organisationUnit',
+            'dataSet',
+            'validationRuleGroup',
+        ],
+    })
+        .then((d2) => { d2Instance = d2; })
+        .then(getUserSettings)
+        .then(configurations)
+        .then(() => {
+            ReactDOM.render(
+                <Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <App
+                            d2={d2Instance}
+                        />
+                    </ConnectedRouter>
+                </Provider>,
+                document.getElementById('app'),
+            );
+        });
+});
 
 registerServiceWorker();

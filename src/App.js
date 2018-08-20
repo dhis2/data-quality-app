@@ -2,116 +2,120 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+/* d2-ui */
+import D2UIApp from '@dhis2/d2-ui-app';
 import HeaderBar from '@dhis2/d2-ui-header-bar';
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
-import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
-import './custom-css/D2UISidebarOverrides.css';
+import { Sidebar, FeedbackSnackbar, CircularProgress } from '@dhis2/d2-ui-core';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from './reducers/feedback';
+
+import { LOADING } from './helpers/feedbackSnackBarTypes';
 
 import i18n from './locales';
 
 import AppRouter from './components/app-router/AppRouter';
 
+import './custom-css/D2UISidebarOverrides.css';
 import styles from './App.css';
 
 // App configs
 import { sections } from './pages/sections.conf';
 
 class App extends PureComponent {
-  static childContextTypes = {
-      showSnackbar: PropTypes.bool,
-      snackbarConf: PropTypes.shape({
-          type: PropTypes.string,
-          message: PropTypes.string,
-      }),
-      currentSection: PropTypes.string,
-      updateAppState: PropTypes.func,
-  };
+    static childContextTypes = {
+        d2: PropTypes.object.isRequired,
+    };
 
-  static contextTypes = {
-      d2: PropTypes.object,
-  };
+    static propTypes = {
+        d2: PropTypes.object.isRequired,
+        showSnackbar: PropTypes.bool.isRequired,
+        snackbarConf: PropTypes.shape({
+            type: PropTypes.string,
+            message: PropTypes.string,
+            action: PropTypes.string,
+            onActionClick: PropTypes.func,
+        }).isRequired,
+        updateFeedbackState: PropTypes.func.isRequired,
+        currentLocationPath: PropTypes.string.isRequired,
+    };
 
-  constructor(props) {
-      super(props);
+    getChildContext() {
+        return {
+            d2: this.props.d2,
+        };
+    }
 
-      this.state = {
-          currentSection: '',
-          showSnackbar: false,
-          snackbarConf: {
-              type: '',
-              message: '',
-          },
-          pageState: {},
-      };
+    onFeedbackSnackbarClose = () => {
+        this.props.updateFeedbackState(false, {
+            type: '',
+            message: '',
+        });
+    };
 
-      this.updateAppState = this.updateAppState.bind(this);
-  }
+    getCurrentSectionKey = () => {
+        const currentSection = sections.find(section => section.path === this.props.currentLocationPath);
+        return currentSection ? currentSection.key : null;
+    };
 
-  getChildContext() {
-      return {
-          showSnackbar: this.state.showSnackbar,
-          snackbarConf: this.state.snackbarConf,
-          currentSection: this.state.currentSection,
-          updateAppState: this.updateAppState,
-      };
-  }
+    render() {
+        const nonOnChangeSection = () => null;
+        const translatedSections = sections.map(section => Object.assign(
+            section,
+            {
+                icon: section.info.icon,
+                label: i18n.t(section.info.label),
+                containerElement: <Link to={section.path} />,
+            },
+        ));
 
-  updateAppState(appState) {
-      if (appState.currentSection
-        && !appState.pageState
-        && this.state.currentSection !== appState.currentSection) {
-      // clear page state because we are updating page
-          this.setState({ ...appState, pageState: {}, showSnackbar: false });
-      } else {
-          this.setState(appState);
-      }
-  }
+        const feedbackElement = this.props.snackbarConf.type === LOADING ?
+            (
+                <div className={styles.centered}>
+                    <CircularProgress />
+                </div>
+            ) : (
+                <FeedbackSnackbar
+                    onClose={this.onFeedbackSnackbarClose}
+                    show={this.props.showSnackbar}
+                    conf={this.props.snackbarConf}
+                />
+            );
 
-  render() {
-      const nonOnChangeSection = () => null;
-      const translatedSections = sections.map(section => Object.assign(
-          section,
-          {
-              icon: section.info.icon,
-              label: i18n.t(section.info.label),
-              containerElement: <Link to={section.path} />,
-          },
-      ));
-
-      const feedbackElement = this.state.pageState.loading ?
-          (
-              <div className={styles.centered}>
-                  <CircularProgress />
-              </div>
-          ) : (
-              <FeedbackSnackbar
-                  show={this.state.showSnackbar}
-                  conf={this.state.snackbarConf}
-              />
-          );
-
-      return (
-          <div>
-              <HeaderBar d2={this.context.d2} />
-              <Sidebar
-                  sections={translatedSections}
-                  currentSection={this.state.currentSection}
-                  onChangeSection={nonOnChangeSection}
-              />
-              <div className={styles.contentWrapper}>
-                  <div className={styles.contentArea}>
-                      <AppRouter
-                          pageState={this.state.pageState}
-                      />
-                  </div>
-              </div>
-              <div id="feedback-snackbar">
-                  {feedbackElement}
-              </div>
-          </div>
-      );
-  }
+        return (
+            <D2UIApp>
+                <HeaderBar d2={this.props.d2} />
+                <Sidebar
+                    sections={translatedSections}
+                    currentSection={this.getCurrentSectionKey()}
+                    onChangeSection={nonOnChangeSection}
+                />
+                <div className={styles.contentWrapper}>
+                    <div className={styles.contentArea}>
+                        <AppRouter />
+                    </div>
+                </div>
+                <div id="feedback-snackbar">
+                    {feedbackElement}
+                </div>
+            </D2UIApp>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = ({ feedback, router }) => ({
+    showSnackbar: feedback.showSnackbar,
+    snackbarConf: { ...feedback.snackbarConf },
+    currentLocationPath: router.location && router.location.pathname ? router.location.pathname : '',
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(App);

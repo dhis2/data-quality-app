@@ -36,8 +36,6 @@ class ValidationRuleGroupsSelect extends PureComponent {
             validationRuleGroups: [ALL_VALIDATION_RULE_GROUPS_OPTION],
             selected: ALL_VALIDATION_RULE_GROUPS_ID,
         };
-
-        this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount() {
@@ -51,10 +49,12 @@ class ValidationRuleGroupsSelect extends PureComponent {
             this.setState({
                 validationRuleGroups: [translatedAllValidationRulesOption, ...validationRuleGroupsResponse.toArray()],
             });
-        }).catch(() => { this.manageError(); });
+        }).catch(() => {
+            // TODO
+        });
     }
 
-    onChange(event, index, value) {
+    onChange = (event, index, value) => {
         this.setState({
             selected: value,
             selectedName: value === ALL_VALIDATION_RULE_GROUPS_ID ?
@@ -63,7 +63,7 @@ class ValidationRuleGroupsSelect extends PureComponent {
         });
 
         this.props.onChange(event, index, value);
-    }
+    };
 
     render() {
         return (

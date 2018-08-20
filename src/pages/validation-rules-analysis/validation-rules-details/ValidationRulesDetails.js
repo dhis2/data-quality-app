@@ -1,14 +1,21 @@
-import React from 'react';
+/* React */
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
+/* Material UI */
+import { Dialog, FlatButton, FontIcon } from 'material-ui';
 import classNames from 'classnames';
+
+/* Redux */
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateFeedbackState } from '../../../reducers/feedback';
+
+import { LOADING } from '../../../helpers/feedbackSnackBarTypes';
 
 /* i18n */
 import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
-
-import Page from '../../Page';
 
 import jsPageStyles from '../../PageStyles';
 import cssPageStyles from '../../Page.css';
@@ -16,18 +23,18 @@ import styles from './ValidationRulesDetails.css';
 
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import { apiConf } from '../../../server.conf';
-import ValidationRulesAnalysis from '../ValidationRulesAnalysis';
 
-class ValidationRulesDetails extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-    ];
-
+export default class ValidationRulesDetails extends PureComponent {
     static propTypes = {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
         organisationUnitId: PropTypes.string.isRequired,
-    }
+        updateFeedbackState: PropTypes.func.isRequired,
+    };
+
+    static contextTypes = {
+        d2: PropTypes.object,
+    };
 
     constructor() {
         super();
@@ -46,20 +53,6 @@ class ValidationRulesDetails extends Page {
         this.handleClose = this.handleClose.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        const nextState = {};
-
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
-            }
-        });
-
-        if (nextState !== {}) {
-            this.setState(nextState);
-        }
-    }
-
     loadDetails() {
         if (!this.state.loading) {
             const api = this.context.d2.Api.getApi();
@@ -68,20 +61,16 @@ class ValidationRulesDetails extends Page {
                 `?validationRuleId=${this.props.validationRuleId}` +
                 `&periodId=${this.props.periodId}` +
                 `&organisationUnitId=${this.props.organisationUnitId}`;
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+
+            this.props.updateFeedbackState(true, {
+                type: LOADING,
             });
+
             Promise.all([api.get(requestRule), api.get(requestExpression)]).then(([rule, expression]) => {
-                this.context.updateAppState({
-                    pageState: {
-                        loading: false,
-                    },
-                });
+                this.props.updateFeedbackState(false);
                 this.setState({ openDetails: true, rule, expression });
             }).catch(() => {
-                this.manageError();
+                // TODO
             });
         }
     }
@@ -217,4 +206,11 @@ class ValidationRulesDetails extends Page {
     }
 }
 
-export default ValidationRulesDetails;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    updateFeedbackState,
+}, dispatch);
+
+export const ConnectValidationRulesDetails = connect(
+    null,
+    mapDispatchToProps,
+)(ValidationRulesDetails);
