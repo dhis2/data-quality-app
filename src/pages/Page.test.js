@@ -23,10 +23,12 @@ const notPageComponentShallow = () => {
 
 const pageComponentShallow = () => {
     return shallow(
-        <ValidationRulesAnalysis sectionKey={VALIDATION_RULES_ANALYSIS_SECTION_KEY}/>,
+        <ValidationRulesAnalysis
+            sectionKey={VALIDATION_RULES_ANALYSIS_SECTION_KEY}
+            updateFeedbackState={jest.fn()}
+        />,
         {
             context: {
-                updateAppState: jest.fn(),
                 d2: {
                     Api: {
                         getApi: jest.fn(),
