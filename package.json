@@ -84,7 +84,7 @@
     "validate": "yarn list",
     "lint": "yarn localize && eslint src/",
     "deploy": "deploy-build",
-    "coverage": "yarn test -- --coverage",
+    "coverage": "yarn test --coverage",
     "extract-pot": "node scripts/pot-extractor.js",
     "refresh-translations-template": "yarn extract-pot -- -o en.pot && git add ./i18n/en.pot"
   },
