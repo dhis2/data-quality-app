@@ -86,7 +86,7 @@
     "deploy": "deploy-build",
     "coverage": "yarn test --coverage",
     "extract-pot": "node scripts/pot-extractor.js",
-    "refresh-translations-template": "yarn extract-pot -- -o en.pot && git add ./i18n/en.pot"
+    "refresh-translations-template": "yarn extract-pot -o en.pot && git add ./i18n/en.pot"
   },
   "pre-commit": [
     "lint",
