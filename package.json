@@ -1,9 +1,10 @@
 {
-  "name": "dhis2-data-quality-app",
-  "version": "1.0.0-beta.1",
+  "name": "data-quality-app",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@dhis2/d2-i18n-generate": "^1.0.19",
+    "@dhis2/deploy-build": "^1.0.4",
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
@@ -76,13 +77,13 @@
   "scripts": {
     "manifest": "d2-manifest package.json ./public/manifest.webapp",
     "start": "yarn manifest && yarn localize && node scripts/start.js",
-    "build": "yarn manifest && yarn localize && node scripts/build.js",
+    "build": "yarn manifest && yarn localize && node scripts/build.js && cp ./package.json ./build/package.json",
     "localize": "d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/",
     "test": "node scripts/test.js --env=jsdom",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
     "validate": "yarn list",
     "lint": "yarn localize && eslint src/",
-    "deploy": "yarn run build && mvn clean deploy",
+    "deploy": "deploy-build",
     "coverage": "yarn test -- --coverage",
     "extract-pot": "node scripts/pot-extractor.js",
     "refresh-translations-template": "yarn extract-pot -- -o en.pot && git add ./i18n/en.pot"
@@ -90,7 +91,6 @@
   "pre-commit": [
     "lint",
     "validate",
-    "test",
     "refresh-translations-template"
   ],
   "manifest.webapp": {
