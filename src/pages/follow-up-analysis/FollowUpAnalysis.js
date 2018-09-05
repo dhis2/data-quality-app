@@ -11,10 +11,9 @@ import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 import classNames from 'classnames';
 
 import Page from '../Page';
+import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from
     '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
-import DatasetsForOrganisationUnitSelect, { ALL_DATA_SETS_OPTION_ID } from
-    '../../components/datasets-for-organisation-unit-select/DatasetsForOrganisationUnitSelect';
 import PageHelper from '../../components/page-helper/PageHelper';
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
@@ -38,7 +37,7 @@ class FollowUpAnalysis extends Page {
         'startDate',
         'endDate',
         'organisationUnitId',
-        'dataSetId',
+        'dataSetIds',
         'elements',
         'loading',
     ]
@@ -51,7 +50,7 @@ class FollowUpAnalysis extends Page {
             startDate: new Date(),
             endDate: new Date(),
             organisationUnitId: null,
-            dataSetId: ALL_DATA_SETS_OPTION_ID,
+            dataSetIds: [],
             elements: [],
             loading: false,
         };
@@ -62,8 +61,8 @@ class FollowUpAnalysis extends Page {
 
         this.startDateOnChange = this.startDateOnChange.bind(this);
         this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitChanged = this.organisationUnitChanged.bind(this);
-        this.dataSetOnChange = this.dataSetOnChange.bind(this);
+        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
+        this.dataSetsOnChange = this.dataSetsOnChange.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
         this.unfollow = this.unfollow.bind(this);
     }
@@ -94,12 +93,9 @@ class FollowUpAnalysis extends Page {
             const request = {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
-                organisationUnitId: this.state.organisationUnitId,
+                ou: this.state.organisationUnitId,
+                ds: this.state.dataSetIds,
             };
-
-            if (this.state.dataSetId !== ALL_DATA_SETS_OPTION_ID) {
-                request.dataSetId = this.state.dataSetId;
-            }
 
             api.post(apiConf.endpoints.folloupAnalysis, request).then((response) => {
                 if (this.isPageMounted()) {
@@ -140,15 +136,17 @@ class FollowUpAnalysis extends Page {
         this.setState({ endDate: new Date(date) });
     }
 
-    organisationUnitChanged(organisationUnitId) {
-        this.setState({
-            organisationUnitId,
-            dataSetId: ALL_DATA_SETS_OPTION_ID,
-        });
+    organisationUnitOnChange(organisationUnitId) {
+        this.setState({ organisationUnitId });
     }
 
-    dataSetOnChange(event, index, value) {
-        this.setState({ dataSetId: value });
+    dataSetsOnChange(event) {
+        const dataSetIds = [];
+        const selectedOptions = event.target.selectedOptions;
+        for (let i = 0; i < selectedOptions.length; i++) {
+            dataSetIds.push(selectedOptions[i].value);
+        }
+        this.setState({ dataSetIds });
     }
 
     toggleCheckbox(element) {
@@ -206,7 +204,9 @@ class FollowUpAnalysis extends Page {
     isFormValid() {
         return this.state.startDate &&
             this.state.endDate &&
-            this.state.organisationUnitId;
+            this.state.organisationUnitId &&
+            this.state.dataSetIds &&
+            this.state.dataSetIds.length > 0;
     }
 
     isActionDisabled() {
@@ -241,25 +241,25 @@ class FollowUpAnalysis extends Page {
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
                     <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
                         <div className="row">
-                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                            <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
+                                <div className={cssPageStyles.formLabel}>
+                                    {i18n.t(i18nKeys.followUpAnalysis.form.dataSet)}
+                                </div>
+                                <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
+                            </div>
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t(i18nKeys.followUpAnalysis.form.organisationUnit)}
                                 </div>
-                                <AvailableOrganisationUnitsTree
-                                    onChange={this.organisationUnitChanged}
-                                />
+                                <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
-                            <div className={classNames('col-md-6', cssPageStyles.section)}>
-                                <div id="data-sets-container">
-                                    <DatasetsForOrganisationUnitSelect
-                                        organisationUnitId={this.state.organisationUnitId}
-                                        onChange={this.dataSetOnChange}
-                                    />
-                                </div>
+                            <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t(i18nKeys.followUpAnalysis.form.startDate)}
+                                    floatingLabelText={
+                                        i18n.t(i18nKeys.followUpAnalysis.form.startDate)
+                                    }
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
                                     maxDate={this.state.endDate}
@@ -268,7 +268,9 @@ class FollowUpAnalysis extends Page {
                                 <DatePicker
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t(i18nKeys.followUpAnalysis.form.endDate)}
+                                    floatingLabelText={
+                                        i18n.t(i18nKeys.followUpAnalysis.form.endDate)
+                                    }
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
                                     minDate={this.state.startDate}

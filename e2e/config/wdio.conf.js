@@ -10,13 +10,13 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './e2e/features/home.feature',
-        './e2e/features/help.feature',
-        './e2e/features/sideMenu.feature',
-        './e2e/features/minMaxOutlierAnalysis.feature',
-        './e2e/features/stdDevOutlierAnalysis.feature',
+        //'./e2e/features/home.feature',
+        //'./e2e/features/help.feature',
+        //'./e2e/features/sideMenu.feature',
+        //'./e2e/features/minMaxOutlierAnalysis.feature',
+        //'./e2e/features/stdDevOutlierAnalysis.feature',
         './e2e/features/followUpAnalysis.feature',
-        './e2e/features/validationRuleAnalysis.feature',
+        //'./e2e/features/validationRuleAnalysis.feature',
     ],
     // Patterns to exclude.
     exclude: [

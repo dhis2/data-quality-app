@@ -7,15 +7,15 @@ Feature: Follow-Up analysis
     When I open Follow-Up analysis page
 
   Scenario:  I want to see all items in the page
-    Then a column with parent organisation unit selection is displayed
-    And a data set selection is displayed
+    Then a column with list of data set is displayed
+    And a column with parent organisation unit selection is displayed
     And a start date selection is displayed
     And an end date selection is displayed
     And a start followup analysis option is displayed
 
   Scenario:  I want to see result analysis
-    When I select parent organisation with results
-    And I select data set with results
+    When I select data set with results
+    And I select parent organisation with results
     And I select valid time range to get results
     And I start followup analysis
     Then a new page is displayed
@@ -24,6 +24,17 @@ Feature: Follow-Up analysis
     And action to download as CSV is displayed
     And a table with results is displayed
     And the unfollow option is displayed
+
+  Scenario: I want to start followup analysis with multiple data set
+    When I select multiple data set with results
+    And I select parent organisation with results
+    And I select valid time range to get results
+    And I start followup analysis
+    Then a new page is displayed
+    And action to download as PDF is displayed
+    And action to download as XLS is displayed
+    And action to download as CSV is displayed
+    And a table with results is displayed
 
   Scenario:  I want to see Comment
     When I select parent organisation with results
@@ -44,15 +55,14 @@ Feature: Follow-Up analysis
     And I choose to unfollow them
     Then the unfollowed items are removed from the list
 
-  Scenario: I want to validate data set changes
+  Scenario: I want to not start the analysis without data set
     When I select parent organisation with results
-    And I select data set with results
-    And I select another parent organisation
-    Then the data set option selected is reverted to all data sets
-    And the available data set list is updated
+    And I select valid time range to get results
+    And no data set is selected
+    Then start button to generate followup analysis is not active
 
   Scenario: I want to not start the analysis without parent organisation unit
-    And I select data set with results
+    When I select data set with results
     And I select valid time range to get results
     And no parent organisation unit is selected
     Then start button to generate followup analysis is not active

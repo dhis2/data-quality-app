@@ -5,33 +5,9 @@ class FollowUpAnalysis extends Page {
         super.open('#/follow-up-analysis');
     }
 
-    getDataSetOptionByIndex(index) {
-        return browser.elements('body > div:nth-child(7) > div > div > div > div').value[index];
-    }
-
-    selectDataSetWithResults() {
-        this.openDataSetDropdown();
-        browser.pause(1000);
-        this.getDataSetOptionByIndex(0).click();
-        browser.pause(1000);
-    }
-
-    fillFormWithNoResults() {
-        this.getOneOrgUnitTreeFromTreeByIndex(0).click();
-        browser.pause(5000);                                              // time for data sets to refresh
-        this.openDataSetDropdown();
-        browser.pause(1000);
-        this.getDataSetOptionByIndex(1).click();
-        browser.pause(1000);
-    }
-
     getUnfollowCheckboxeByIndex(index) {
         const checkboxes = browser.elements('span[class^=Page__checkboxWrapper').value;
         return checkboxes[index];
-    }
-
-    getDataSetOptionByIndex(index) {
-        return browser.element('div[role=presentation]').elements('span[role=menuitem]').value[index];
     }
 
     get totalElements() {
