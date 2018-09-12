@@ -22,6 +22,7 @@ export const i18nKeys = {
             organisationUnit: 'Parent organisation unit',
             startDate: 'Start Date',
             endDate: 'End Date',
+            dataSet: 'Data Set',
         },
         tableHeaderColumn: {
             dataElement: 'Data Element',

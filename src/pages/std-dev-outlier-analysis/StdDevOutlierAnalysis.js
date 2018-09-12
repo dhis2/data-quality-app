@@ -97,8 +97,8 @@ class StdDevOutlierAnalysis extends Page {
             api.post(apiConf.endpoints.standardDeviationOutliersAnalysis, {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
-                organisationUnitId: this.state.organisationUnitId,
-                dataSetIds: this.state.dataSetIds,
+                ou: this.state.organisationUnitId,
+                ds: this.state.dataSetIds,
                 standardDeviation: this.state.standardDeviation,
             }).then((response) => {
                 if (this.isPageMounted()) {

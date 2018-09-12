@@ -14,17 +14,16 @@ import FollowUpAnalysis from './FollowUpAnalysis';
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
 import AvailableOrganisationUnitsTree from
         '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
-import DatasetsForOrganisationUnitSelect, { ALL_DATA_SETS_OPTION_ID } from
-        '../../components/datasets-for-organisation-unit-select/DatasetsForOrganisationUnitSelect';
+import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 
 import {
     sections,
     FOLLOW_UP_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
 
-
 /* helpers */
 import { i18nKeys } from '../../i18n';
+import MinMaxOutlierAnalysis from '../min-max-outlier-analysis/MinMaxOutlierAnalysis';
 
 let pageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -81,19 +80,21 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
         expect(wrapper.find(PageHelper)).toHaveLength(1);
     });
 
+    it('Should render an "AvailableDatasetsSelect" component.', () => {
+        expect(wrapper.find(AvailableDatasetsSelect)).toHaveLength(1);
+    });
+
     it('Should render an "AvailableOrganisationUnitsTree" component.', () => {
         expect(wrapper.find(AvailableOrganisationUnitsTree)).toHaveLength(1);
     });
 
-    it('Should render an "DatasetsForOrganisationUnitSelect" component.', () => {
-        expect(wrapper.find(DatasetsForOrganisationUnitSelect)).toHaveLength(1);
-    });
-
     it('Renders a "Start Date" - DatePicker.', () => {
+        expect(wrapper.find(DatePicker).length).toBe(2);
         expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.startDate);
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
+        expect(wrapper.find(DatePicker).length).toBe(2);
         expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.endDate);
     });
 
@@ -123,12 +124,25 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
         expect(wrapper.state('showTable')).toBeTruthy();
     });
 
+    it('Renders a disabled "Start" RaisedButton when loading info.', () => {
+        wrapper.setState({
+            loading: true,
+            endDate: new Date(),
+            startDate: new Date(),
+            organisationUnitId: 'TestOrganisationUnitId',
+            dataSetIds: ['id1', 'id2', 'id3'],
+        });
+        expect(wrapper.find(RaisedButton)).toHaveLength(1);
+        expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
+        expect(wrapper.instance().isActionDisabled()).toBeTruthy();
+    });
+
     it('Followup Analysis renders a disabled "Follow Up" RaisedButton', () => {
         wrapper.setState({
-            organisationUnitId: null,
-            startDate: null,
             endDate: null,
-            dataSetId: ALL_DATA_SETS_OPTION_ID,
+            startDate: null,
+            organisationUnitId: null,
+            dataSetIds: null,
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy();
@@ -137,10 +151,11 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
     it('Should render an active "Follow Up" RaisedButton when selected filters.', () => {
         wrapper.setState({
-            organisationUnitId: 'TestOrganisationUnitId',
-            startDate: new Date(),
+            loading: false,
             endDate: new Date(),
-            dataSetId: ALL_DATA_SETS_OPTION_ID,
+            startDate: new Date(),
+            organisationUnitId: 'TestOrganisationUnitId',
+            dataSetIds: ['id1', 'id2', 'id3'],
         });
         expect(wrapper.find(RaisedButton)).toHaveLength(1);
         expect(wrapper.find(RaisedButton).props().disabled).toBeFalsy();
@@ -151,8 +166,28 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
 describe('Test <FollowUpAnalysis /> actions:', () => {
 
-    it('Should call organisationUnitChanged function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'organisationUnitChanged').and.callThrough();
+    it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
+        const spy = spyOn(FollowUpAnalysis.prototype, 'dataSetsOnChange').and.callThrough();
+        const wrapper = ownShallow();
+        wrapper.setState({
+            dataSetIds: [],
+        });
+        wrapper.find(AvailableDatasetsSelect)
+            .simulate('change',{
+                target: {
+                    selectedOptions: [{ value:'id1' }, { value:'id2' }],
+                }
+            });
+        expect(spy).toHaveBeenCalledWith({
+            target: {
+                selectedOptions: [{ value:'id1' }, { value:'id2' }],
+            }
+        });
+        expect(wrapper.state('dataSetIds')).toMatchObject(['id1', 'id2']);
+    });
+
+    it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
+        const spy = spyOn(FollowUpAnalysis.prototype, 'organisationUnitOnChange').and.callThrough();
         const wrapper = ownShallow();
         wrapper.setState({
             organisationUnitId: null,
@@ -186,17 +221,6 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
         expect(wrapper.state('endDate')).toMatchObject(testEndDate);
     });
 
-    it('Should call dataSetOnChange function when DatasetsForOrganisationUnitSelect changes.', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'dataSetOnChange').and.callThrough();
-        const wrapper = ownShallow();
-        wrapper.setState({
-            dataSetId: null,
-        });
-        wrapper.find(DatasetsForOrganisationUnitSelect).at(0).simulate('change', null, null, 'TestDataSetId');
-        expect(spy).toHaveBeenCalledWith(null, null, 'TestDataSetId');
-        expect(wrapper.state('dataSetId')).toBe('TestDataSetId');
-    });
-
     it('Followup Analysis calls back method when IconButton (back) is clicked', () => {
         const spy = spyOn(FollowUpAnalysis.prototype, 'back');
         const wrapper = ownShallow();
@@ -211,7 +235,7 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
         expect(spy).toHaveBeenCalled();
     });
 
-    it('Standard Dev Outlier Analysis update state when back button is clicked', () => {
+    it('Followup Analysis update state when back button is clicked', () => {
         const wrapper = ownShallow();
         wrapper.setState({ showTable: true });
         wrapper.find(IconButton).simulate('click');

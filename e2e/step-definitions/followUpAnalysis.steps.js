@@ -53,17 +53,6 @@ defineSupportCode(({ Given, When, Then }) => {
         browser.pause(5000);
     });
 
-    Then(/^the data set option selected is reverted to all data sets$/, () => {
-        expect(followUpAnalysis.dataSetText).to.equal('[All Data Sets]');
-    });
-
-    Then(/^the available data set list is updated$/, () => {
-        // Get actual data set size
-        followUpAnalysis.dataSetElement.click();
-        browser.waitForVisible('div[role=presentation]');
-        expect(totalElements).to.not.equal(followUpAnalysis.dataSetSize);
-    });
-
     Then(/^a start followup analysis option is displayed$/, () => {
         followUpAnalysis.startButton.waitForVisible(5000);
     });

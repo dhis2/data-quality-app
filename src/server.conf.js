@@ -1,14 +1,14 @@
 export const apiConf = {
     endpoints: {
-        validationRulesAnalysis: '/analysis/validationRules',
-        validationRulesExpression: '/analysis/validationRulesExpression',
-        validationRulesReport: '/analysis/validationRules/report',
+        validationRulesAnalysis: '/dataAnalysis/validationRules',
+        validationRulesExpression: '/dataAnalysis/validationRulesExpression',
+        validationRulesReport: '/dataAnalysis/validationRules/report',
         validationRules: '/validationRules',
-        minMaxOutliersAnalysis: '/analysis/minMaxOutlier',
-        standardDeviationOutliersAnalysis: '/analysis/stdDevOutlier',
-        folloupAnalysis: '/analysis/followup',
-        markDataValue: '/analysis/followup/mark',
-        reportAnalysis: '/analysis/report',
+        minMaxOutliersAnalysis: '/dataAnalysis/minMaxOutlier',
+        standardDeviationOutliersAnalysis: '/dataAnalysis/stdDevOutlier',
+        folloupAnalysis: '/dataAnalysis/followup',
+        markDataValue: '/dataAnalysis/followup/mark',
+        reportAnalysis: '/dataAnalysis/report',
     },
     results: {
         analysis: {

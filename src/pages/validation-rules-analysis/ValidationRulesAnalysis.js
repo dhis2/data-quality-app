@@ -104,13 +104,13 @@ class ValidationRulesAnalysis extends Page {
             const request = {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
-                organisationUnitId: this.state.organisationUnitId,
+                ou: this.state.organisationUnitId,
                 notification: this.state.notification,
                 persist: this.state.persist,
             };
 
             if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
-                request.validationRuleGroupId = this.state.validationRuleGroupId;
+                request.vrg = this.state.validationRuleGroupId;
             }
 
             this.context.updateAppState({

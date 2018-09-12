@@ -91,8 +91,8 @@ class MinMaxOutlierAnalysis extends Page {
             api.post(apiConf.endpoints.minMaxOutliersAnalysis, {
                 startDate: convertDateToApiDateFormat(this.state.startDate),
                 endDate: convertDateToApiDateFormat(this.state.endDate),
-                organisationUnitId: this.state.organisationUnitId,
-                dataSetIds: this.state.dataSetIds,
+                ou: this.state.organisationUnitId,
+                ds: this.state.dataSetIds,
             }).then((response) => {
                 if (this.isPageMounted()) {
                     const elements = response.map(OutlierAnalyisTable.convertElementFromApiResponse);
