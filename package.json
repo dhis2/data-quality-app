@@ -4,7 +4,6 @@
   "private": true,
   "devDependencies": {
     "@dhis2/d2-i18n-generate": "^1.0.19",
-    "@dhis2/deploy-build": "^1.0.4",
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
@@ -83,7 +82,6 @@
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
     "validate": "yarn list",
     "lint": "yarn localize && eslint src/",
-    "deploy": "deploy-build",
     "coverage": "yarn test --coverage",
     "extract-pot": "node scripts/pot-extractor.js",
     "refresh-translations-template": "yarn extract-pot -o en.pot && git add ./i18n/en.pot"
