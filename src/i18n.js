@@ -134,6 +134,10 @@ export const i18nKeys = {
         unmarked: 'Unmarked',
         unfollow: 'Unfollow done',
     },
+    d2UiComponents: {
+        app_search_placeholder: 'Search apps',
+        manage_my_apps: 'Manage my apps',
+    },
 };
 
 export default i18nKeys;
