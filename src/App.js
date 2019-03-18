@@ -1,7 +1,8 @@
+import 'typeface-roboto'; // eslint-disable-line
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import 'typeface-roboto'; // eslint-disable-line
 
 import HeaderBar from '@dhis2/d2-ui-header-bar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
