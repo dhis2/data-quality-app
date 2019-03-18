@@ -1,4 +1,5 @@
 import 'typeface-roboto'; // eslint-disable-line
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';

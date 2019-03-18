@@ -52,6 +52,7 @@
     "import-export": "^1.0.1",
     "jest": "20.0.4",
     "loglevel": "^1.6.0",
+    "material-design-icons-iconfont": "^4.0.5",
     "material-ui": "^0.20.0",
     "npm": "^5.10.0",
     "object-assign": "4.1.1",
