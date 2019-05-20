@@ -5,7 +5,7 @@ import { GridTile } from 'material-ui/GridList';
 import FontIcon from 'material-ui/FontIcon';
 import classNames from 'classnames';
 import i18n from '../../../locales';
-import styles from './GridSection.css';
+import styles from './GridSection.module.css';
 
 class GridSection extends PureComponent {
   static propTypes = {

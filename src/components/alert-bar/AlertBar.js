@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
-import styles from './AlertBar.css';
+import styles from './AlertBar.module.css';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 

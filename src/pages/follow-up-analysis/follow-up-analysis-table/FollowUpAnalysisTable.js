@@ -9,9 +9,9 @@ import i18n from '../../../locales';
 import { i18nKeys } from '../../../i18n';
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import DownloadAs from '../../../components/download-as/DownloadAs';
-import cssPageStyles from '../../Page.css';
+import cssPageStyles from '../../Page.module.css';
 import jsPageStyles from '../../PageStyles';
-import styles from './FollowUpAnalysisTable.css';
+import styles from './FollowUpAnalysisTable.module.css';
 import { apiConf } from '../../../server.conf';
 
 class FollowUpAnalysisTable extends Component {

@@ -19,7 +19,7 @@ import { getDocsKeyForSection } from '../sections.conf';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 import jsPageStyles from '../PageStyles';
-import cssPageStyles from '../Page.css';
+import cssPageStyles from '../Page.module.css';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
 import { apiConf } from '../../server.conf';
 import { convertDateToApiDateFormat } from '../../helpers/dates';

@@ -10,7 +10,7 @@ import './custom-css/D2UISidebarOverrides.css';
 import i18n from './locales';
 import { injectTranslationsToD2 } from './configI18n';
 import AppRouter from './components/app-router/AppRouter';
-import styles from './App.css';
+import styles from './App.module.css';
 import { sections } from './pages/sections.conf';
 
 class App extends PureComponent {

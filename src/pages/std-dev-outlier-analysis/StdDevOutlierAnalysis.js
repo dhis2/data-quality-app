@@ -19,7 +19,7 @@ import { i18nKeys } from '../../i18n';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
-import cssPageStyles from '../Page.css';
+import cssPageStyles from '../Page.module.css';
 import jsPageStyles from '../PageStyles';
 
 export const DEFAULT_STANDARD_DEVIATION = 3.0;

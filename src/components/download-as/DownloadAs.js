@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-import styles from './DownloadAs.css';
+import styles from './DownloadAs.module.css';
 
 class DownloadAs extends PureComponent {
     static contextTypes = {

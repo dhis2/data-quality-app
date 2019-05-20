@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-import styles from './AvailableOrganisationUnitsTree.css';
+import styles from './AvailableOrganisationUnitsTree.module.css';
 
 class AvailableOrganisationUnitsTree extends PureComponent {
   static contextTypes = {

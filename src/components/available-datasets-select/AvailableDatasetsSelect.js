@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import styles from './AvailableDatasetsSelect.css';
+import styles from './AvailableDatasetsSelect.module.css';
 
 class AvailableDatasetsSelect extends PureComponent {
   static contextTypes = {

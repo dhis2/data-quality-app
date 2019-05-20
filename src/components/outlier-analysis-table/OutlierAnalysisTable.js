@@ -9,9 +9,9 @@ import DownloadAs from '../../components/download-as/DownloadAs';
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 import { apiConf } from '../../server.conf';
-import cssPageStyles from '../../pages/Page.css';
+import cssPageStyles from '../../pages/Page.module.css';
 import jsPageStyles from '../../pages/PageStyles';
-import styles from './OutlierAnalysisTable.css';
+import styles from './OutlierAnalysisTable.module.css';
 
 const OutlierAnalyisTable = (props) => {
     const elements = props.elements;
