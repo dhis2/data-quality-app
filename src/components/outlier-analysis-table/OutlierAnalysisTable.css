@@ -1,7 +1,0 @@
-.outlierAnalysisTable
-    td:nth-child(4),
-    td:nth-child(5),
-    td:nth-child(6)
-    {
-        overflow: visible !important;
-    }
