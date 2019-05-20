@@ -1,5 +1,4 @@
 import 'typeface-roboto';
-import './custom-css/D2UISidebarOverrides.css';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -7,6 +6,7 @@ import HeaderBar from '@dhis2/d2-ui-header-bar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
+import './custom-css/D2UISidebarOverrides.css';
 import i18n from './locales';
 import { injectTranslationsToD2 } from './configI18n';
 import AppRouter from './components/app-router/AppRouter';
