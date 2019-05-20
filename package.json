@@ -1,20 +1,35 @@
 {
-  "name": "new-data-quality-app",
-  "version": "0.1.0",
+  "name": "data-quality-app",
+  "version": "31.0.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prestart": "npm run localize",
+    "pretest": "npm run localize",
+    "prebuild": "npm run localize",
+    "localize": "d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-ui-header-bar": "^1.1.7",
+    "classnames": "^2.2.5",
+    "d2-ui": "^29.0.18",
+    "d2": "^28.3.0",
+    "loglevel": "^1.6.0",
+    "material-ui": "^0.20.0",
+    "prop-types": "^15.6.0",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "3.0.1",
+    "react": "^16.8.6",
+    "rxjs": "^5.5.7",
+    "typeface-roboto": "^0.0.54"
+  },
+  "devDependencies": {
+    "@dhis2/d2-i18n-generate": "^1.0.19"
   },
   "browserslist": {
     "production": [
