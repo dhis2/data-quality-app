@@ -16,20 +16,23 @@
     "@dhis2/d2-i18n": "^1.0.3",
     "@dhis2/d2-ui-header-bar": "^1.1.7",
     "classnames": "^2.2.5",
-    "d2-ui": "^29.0.18",
     "d2": "^28.3.0",
+    "d2-ui": "^29.0.18",
     "loglevel": "^1.6.0",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
+    "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "3.0.1",
-    "react": "^16.8.6",
     "rxjs": "^5.5.7",
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
-    "@dhis2/d2-i18n-generate": "^1.0.19"
+    "@dhis2/d2-i18n-generate": "^1.0.19",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "jest-enzyme": "^7.0.2"
   },
   "browserslist": {
     "production": [
