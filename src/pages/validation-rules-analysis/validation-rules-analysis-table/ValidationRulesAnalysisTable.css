@@ -1,0 +1,12 @@
+.validationTable
+    td:nth-child(3),
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(7)
+    {
+        overflow: visible !important;
+    }
+
+.operator {
+    font-size: 16px !important;
+}
