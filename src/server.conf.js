@@ -15,6 +15,6 @@ export const apiConf = {
             limit: 500,
         },
     },
-};
+}
 
-export default apiConf;
+export default apiConf

@@ -1,36 +1,34 @@
 /* eslint-disable */
-import React from 'react';
-import { shallow } from 'enzyme';
-import { Link } from "react-router-dom";
-import { GridTile } from "material-ui/GridList/index";
-import GridSection from './GridSection';
-import { sections } from "../../sections.conf";
+import React from 'react'
+import { shallow } from 'enzyme'
+import { Link } from 'react-router-dom'
+import { GridTile } from 'material-ui/GridList/index'
+import GridSection from './GridSection'
+import { sections } from '../../sections.conf'
 
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
+jest.mock(
+    'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes',
+    () => 'FeedbackSnackbarTypes'
+)
 
-const section = sections[0];
+const section = sections[0]
 const ownShallow = () => {
-  return shallow(
-      <GridSection
-          section={section}
-      />,
-      {
-        disableLifecycleMethods: true
-      }
-  );
-};
+    return shallow(<GridSection section={section} />, {
+        disableLifecycleMethods: true,
+    })
+}
 
 it('GridSection renders without crashing', () => {
-  ownShallow();
-});
+    ownShallow()
+})
 
 it('GridSection renders a Link', () => {
-  const wrapper = ownShallow();
-  expect(wrapper.find(Link)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    expect(wrapper.find(Link)).toHaveLength(1)
+})
 
 it('GridSection renders a GridTile', () => {
-  const wrapper = ownShallow();
-  expect(wrapper.find(GridTile)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    expect(wrapper.find(GridTile)).toHaveLength(1)
+})

@@ -1,12 +1,12 @@
-import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis';
-import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis';
-import MinMaxOutlierAnalysis from './min-max-outlier-analysis/MinMaxOutlierAnalysis';
-import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis';
+import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
+import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis'
+import MinMaxOutlierAnalysis from './min-max-outlier-analysis/MinMaxOutlierAnalysis'
+import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
 
-export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis';
-export const STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY = 'stdDevOutlierAnalysis';
-export const MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY = 'minMaxOutlierAnalysis';
-export const FOLLOW_UP_ANALYSIS_SECTION_KEY = 'followUpAnalysis';
+export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'
+export const STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY = 'stdDevOutlierAnalysis'
+export const MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY = 'minMaxOutlierAnalysis'
+export const FOLLOW_UP_ANALYSIS_SECTION_KEY = 'followUpAnalysis'
 
 export const sections = [
     {
@@ -16,7 +16,8 @@ export const sections = [
         info: {
             label: 'Validation Rule Analysis',
             icon: 'done_all',
-            description: 'Run validation rules in order to unveil anomalies and errors in the data in the database.',
+            description:
+                'Run validation rules in order to unveil anomalies and errors in the data in the database.',
             actionText: 'Run Validation',
             docs: 'validation_rule_analysis',
         },
@@ -28,7 +29,8 @@ export const sections = [
         info: {
             label: 'Std Dev Outlier Analysis',
             icon: 'show_chart',
-            description: 'Analyze potential outlier values based on standard deviations. Outlier values can be examined and marked for follow-up.',
+            description:
+                'Analyze potential outlier values based on standard deviations. Outlier values can be examined and marked for follow-up.',
             actionText: 'Analyze',
             docs: 'standard_deviation_analysis',
         },
@@ -40,7 +42,8 @@ export const sections = [
         info: {
             label: 'Min-Max Outlier Analysis',
             icon: 'compare_arrows',
-            description: 'Analyze potential outlier values based on min and max values. Outlier values can be examined and marked for follow-up.',
+            description:
+                'Analyze potential outlier values based on min and max values. Outlier values can be examined and marked for follow-up.',
             actionText: 'Analyze',
             docs: 'min_max_analysis',
         },
@@ -52,22 +55,23 @@ export const sections = [
         info: {
             label: 'Follow-Up Analysis',
             icon: 'description',
-            description: 'View or edit data values marked for further follow-up during data entry or analysis.',
+            description:
+                'View or edit data values marked for further follow-up during data entry or analysis.',
             actionText: 'View Data Values',
             docs: 'follow_up_analysis',
         },
     },
-];
+]
 
-export const getDocsKeyForSection = (sectionKey) => {
+export const getDocsKeyForSection = sectionKey => {
     for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
+        const section = sections[i]
         if (section.key === sectionKey) {
-            return section.info.docs;
+            return section.info.docs
         }
     }
 
-    return '';
-};
+    return ''
+}
 
-export default sections;
+export default sections

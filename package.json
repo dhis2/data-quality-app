@@ -10,6 +10,7 @@
     "prestart": "npm run localize",
     "pretest": "npm run localize",
     "prebuild": "npm run localize",
+    "lint:style": "d2-style js check --all",
     "localize": "d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/"
   },
   "dependencies": {
@@ -29,21 +30,17 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "@dhis2/cli-style": "^3.2.2",
     "@dhis2/d2-i18n-generate": "^1.0.19",
+    "husky": "^2.3.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "jest-enzyme": "^7.0.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "husky": {
+    "hooks": {
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "d2-style js apply"
+    }
   }
 }

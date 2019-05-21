@@ -1,13 +1,16 @@
 /* eslint-disable */
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import ValidationRulesAnalysisTable from '../validation-rules-analysis-table/ValidationRulesAnalysisTable';
-import { MuiThemeProvider, TableRow, TableRowColumn } from 'material-ui';
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
-import DownloadAs from '../../../components/download-as/DownloadAs';
+import React from 'react'
+import { mount, shallow } from 'enzyme'
+import ValidationRulesAnalysisTable from '../validation-rules-analysis-table/ValidationRulesAnalysisTable'
+import { MuiThemeProvider, TableRow, TableRowColumn } from 'material-ui'
+import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
+import DownloadAs from '../../../components/download-as/DownloadAs'
 
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock(
+    'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes',
+    () => 'FeedbackSnackbarTypes'
+)
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 
 const rulesElements = [
     {
@@ -34,47 +37,44 @@ const rulesElements = [
         periodId: '201702',
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSS',
-        organisationUnitId: 'OrgUnitkgh54Xb9LSS'
+        organisationUnitId: 'OrgUnitkgh54Xb9LSS',
     },
 ]
 
-
 const ownShallow = () => {
-    return shallow(
-        <ValidationRulesAnalysisTable
-            elements={rulesElements}
-        />,
-        {
-            disableLifecycleMethods: true
-        }
-    );
-};
+    return shallow(<ValidationRulesAnalysisTable elements={rulesElements} />, {
+        disableLifecycleMethods: true,
+    })
+}
 
 describe('Test <ValidationRulesAnalysisTable /> rendering:', () => {
-
-    let wrapper;
+    let wrapper
     beforeEach(() => {
-        wrapper = ownShallow();
-    });
+        wrapper = ownShallow()
+    })
 
     it('ValidationRulesAnalysisTable renders without crashing.', () => {
-        ownShallow();
-    });
+        ownShallow()
+    })
 
     it('Should render correct number of rows.', () => {
-        expect(wrapper.find(TableRow).length).toBe(3); // Two elements plus header row
-    });
+        expect(wrapper.find(TableRow).length).toBe(3) // Two elements plus header row
+    })
 
     it('Should render correct number of columns.', () => {
-        expect(wrapper.find(TableRow).at(1).find(TableRowColumn).length).toBe(8); // First row after header
-    });
+        expect(
+            wrapper
+                .find(TableRow)
+                .at(1)
+                .find(TableRowColumn).length
+        ).toBe(8) // First row after header
+    })
 
     it('Should render "ValidationRulesDetails" for each row.', () => {
-        expect(wrapper.find(ValidationRulesDetails).length).toBe(2);
-    });
+        expect(wrapper.find(ValidationRulesDetails).length).toBe(2)
+    })
 
     it('Render "DownloadAs" component.', () => {
-        expect(wrapper.find(DownloadAs).length).toBe(2);
-    });
-
-});
+        expect(wrapper.find(DownloadAs).length).toBe(2)
+    })
+})

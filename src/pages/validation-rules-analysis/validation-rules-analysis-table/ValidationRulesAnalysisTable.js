@@ -1,14 +1,21 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui';
-import FormattedNumber from '../../../components/formatters/FormattedNumber';
-import DownloadAs from '../../../components/download-as/DownloadAs';
-import cssPageStyles from '../../Page.module.css';
-import styles from './ValidationRulesAnalysisTable.module.css';
-import i18n from '../../../locales';
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
-import { apiConf } from '../../../server.conf';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn,
+} from 'material-ui'
+import FormattedNumber from '../../../components/formatters/FormattedNumber'
+import DownloadAs from '../../../components/download-as/DownloadAs'
+import cssPageStyles from '../../Page.module.css'
+import styles from './ValidationRulesAnalysisTable.module.css'
+import i18n from '../../../locales'
+import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
+import { apiConf } from '../../../server.conf'
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
@@ -16,7 +23,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
     }
 
     render() {
-        const elements = this.props.elements;
+        const elements = this.props.elements
 
         // Table Rows
         const rows = elements.map(element => (
@@ -42,16 +49,21 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     />
                 </TableRowColumn>
             </TableRow>
-        ));
+        ))
 
         return (
             <div>
                 <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
+                    <DownloadAs
+                        endpoint={apiConf.endpoints.validationRulesReport}
+                    />
                 </div>
                 <Table
                     selectable={false}
-                    className={classNames(cssPageStyles.appTable, styles.validationTable)}
+                    className={classNames(
+                        cssPageStyles.appTable,
+                        styles.validationTable
+                    )}
                 >
                     <TableHeader
                         displaySelectAll={false}
@@ -89,12 +101,19 @@ class ValidationRulesAnalysisTable extends PureComponent {
                         {rows}
                     </TableBody>
                 </Table>
-                <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
-                    <DownloadAs endpoint={apiConf.endpoints.validationRulesReport} />
+                <div
+                    className={classNames(
+                        cssPageStyles.cardFooter,
+                        cssPageStyles.end
+                    )}
+                >
+                    <DownloadAs
+                        endpoint={apiConf.endpoints.validationRulesReport}
+                    />
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default ValidationRulesAnalysisTable;
+export default ValidationRulesAnalysisTable
