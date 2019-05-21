@@ -7,7 +7,6 @@ import {
 import FormattedNumber from '../../components/formatters/FormattedNumber';
 import DownloadAs from '../../components/download-as/DownloadAs';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import { apiConf } from '../../server.conf';
 import cssPageStyles from '../../pages/Page.module.css';
 import jsPageStyles from '../../pages/PageStyles';
@@ -66,25 +65,25 @@ const OutlierAnalyisTable = (props) => {
                 >
                     <TableRow>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
+                            {i18n.t('Data Element')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
+                            {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
+                            {i18n.t('Period')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
+                            {i18n.t('Min')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
+                            {i18n.t('Value')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
+                            {i18n.t('Max')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.center}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
+                            {i18n.t('Mark')}
                         </TableHeaderColumn>
                     </TableRow>
                 </TableHeader>

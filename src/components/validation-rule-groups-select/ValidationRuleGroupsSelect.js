@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 
 export const ALL_VALIDATION_RULE_GROUPS_ID = -1;
 export const ALL_VALIDATION_RULE_GROUPS_OPTION = {
     id: ALL_VALIDATION_RULE_GROUPS_ID,
-    displayName: i18nKeys.validationRuleGroupsSelect.allValidationRulesOption,
+    displayName: '[All Validation Rules]',
 };
 
 class ValidationRuleGroupsSelect extends PureComponent {
@@ -54,7 +53,7 @@ class ValidationRuleGroupsSelect extends PureComponent {
         this.setState({
             selected: value,
             selectedName: value === ALL_VALIDATION_RULE_GROUPS_ID ?
-                i18nKeys.validationRuleGroupsSelect.allValidationRulesOption :
+                '[All Validation Rules]' :
                 this.state.validationRuleGroups[index].displayName,
         });
 
@@ -66,7 +65,7 @@ class ValidationRuleGroupsSelect extends PureComponent {
             <SelectField
                 style={this.props.style}
                 floatingLabelText={
-                    i18n.t(i18nKeys.validationRuleGroupsSelect.validationRuleGroupLabel)
+                    i18n.t('Validation Rule Group')
                 }
                 onChange={this.onChange}
                 value={this.state.selected}

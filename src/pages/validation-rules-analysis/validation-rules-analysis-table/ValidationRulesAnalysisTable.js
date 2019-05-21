@@ -7,7 +7,6 @@ import DownloadAs from '../../../components/download-as/DownloadAs';
 import cssPageStyles from '../../Page.module.css';
 import styles from './ValidationRulesAnalysisTable.module.css';
 import i18n from '../../../locales';
-import { i18nKeys } from '../../../i18n';
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails';
 import { apiConf } from '../../../server.conf';
 
@@ -61,28 +60,28 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     >
                         <TableRow>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.organisationUnit)}
+                                {i18n.t('Organisation Unit')}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.period)}
+                                {i18n.t('Period')}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.importance)}
+                                {i18n.t('Importance')}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.validationRule)}
+                                {i18n.t('Validation Rule')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
+                                {i18n.t('Value')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.operator)}
+                                {i18n.t('Operator')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.value)}
+                                {i18n.t('Value')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {i18n.t(i18nKeys.validationRulesAnalysis.tableHeaderColumn.details)}
+                                {i18n.t('Details')}
                             </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>

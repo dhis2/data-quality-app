@@ -2,7 +2,6 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 import i18n from '../locales';
-import { i18nKeys } from '../i18n';
 
 class Page extends Component {
   static propTypes = {
@@ -38,7 +37,7 @@ class Page extends Component {
       if (this.isPageMounted()) {
           const messageError = error && error.message ?
               error.message :
-              i18n.t(i18nKeys.messages.unexpectedAnalysisError);
+              i18n.t('An unexpected error happened during analysis');
 
           this.context.updateAppState({
               showSnackbar: true,

@@ -15,7 +15,6 @@ import PageHelper from '../../components/page-helper/PageHelper';
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
@@ -99,7 +98,7 @@ class StdDevOutlierAnalysis extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: i18n.t(i18nKeys.messages.noValuesFound),
+                            message: i18n.t('No values found'),
                         },
                     };
 
@@ -168,7 +167,7 @@ class StdDevOutlierAnalysis extends Page {
                             snackbarConf: {
                                 type: SUCCESS,
                                 message: i18n.t(
-                                    currentElement.marked ? i18nKeys.messages.marked : i18nKeys.messages.unmarked),
+                                    currentElement.marked ? 'Marked' : 'Unmarked'),
                             },
                             pageState: {
                                 elements,
@@ -213,7 +212,7 @@ class StdDevOutlierAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.header)}
+                    {i18n.t('Std Dev Outlier Analysis')}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -225,13 +224,13 @@ class StdDevOutlierAnalysis extends Page {
                         <div className="row">
                             <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.form.dataSet)}
+                                    {i18n.t('Data Set')}
                                 </div>
                                 <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.stdDevOutlierAnalysis.form.organisationUnit)}
+                                    {i18n.t('Parent organisation unit')}
                                 </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
@@ -240,7 +239,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.startDate)
+                                        i18n.t('Start Date')
                                     }
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
@@ -251,7 +250,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.endDate)
+                                        i18n.t('End Date')
                                     }
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
@@ -263,7 +262,7 @@ class StdDevOutlierAnalysis extends Page {
                                     id="standard-deviation"
                                     style={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.stdDevOutlierAnalysis.form.standardDeviations)
+                                        i18n.t('Select number of standard deviations')
                                     }
                                     onChange={this.standardDeviationOnChange}
                                     value={this.state.standardDeviation}
@@ -284,7 +283,7 @@ class StdDevOutlierAnalysis extends Page {
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
-                            label={i18n.t(i18nKeys.stdDevOutlierAnalysis.actionButton)}
+                            label={i18n.t('start')}
                             onClick={this.start}
                             disabled={this.isActionDisabled()}
                         />

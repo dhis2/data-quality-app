@@ -8,7 +8,6 @@ import StdDevOutlierAnalysis, {DEFAULT_STANDARD_DEVIATION} from './StdDevOutlier
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable';
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect';
 import AvailableOrganisationUnitsTree from "../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree";
-import { i18nKeys } from '../../i18n';
 import {
     sections,
     STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
@@ -57,7 +56,7 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.stdDevOutlierAnalysis.header}<PageHelper />`);
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />Std Dev Outlier Analysis<PageHelper />`);
     });
 
     it('Renders an IconButton', () => {
@@ -82,12 +81,12 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
     it('Renders a "Start Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.startDate);
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.stdDevOutlierAnalysis.form.endDate);
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
     });
 
     it('Renders a "SelectField" to choose Standard Deviation.', () => {

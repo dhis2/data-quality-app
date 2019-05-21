@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Paper } from 'material-ui';
 import styles from './AlertBar.module.css';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 
 class AlertBar extends PureComponent {
     static propTypes = {
@@ -14,7 +13,7 @@ class AlertBar extends PureComponent {
         return (
             <Paper>
                 <div className={styles.alertBar} style={{ display: this.props.show ? 'flex' : 'none' }}>
-                    {i18n.t(i18nKeys.moreThan500)}
+                    {i18n.t('More than 500 values found, please narrow the search to see all')}
                 </div>
             </Paper>
         );

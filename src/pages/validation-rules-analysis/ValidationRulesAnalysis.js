@@ -17,7 +17,6 @@ import AvailableOrganisationUnitsTree from
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import jsPageStyles from '../PageStyles';
 import cssPageStyles from '../Page.module.css';
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
@@ -119,7 +118,7 @@ class ValidationRulesAnalysis extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: i18n.t(i18nKeys.messages.validationSuccess),
+                            message: i18n.t('Validation passed successfully'),
                         },
                     };
                     this.context.updateAppState({
@@ -191,7 +190,7 @@ class ValidationRulesAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t(i18nKeys.validationRulesAnalysis.header)}
+                    {i18n.t('Validation Rule Analysis')}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -202,7 +201,7 @@ class ValidationRulesAnalysis extends Page {
                         <div className="row">
                             <div className={classNames('col-md-6', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
+                                    {i18n.t('Parent organisation unit')}
                                 </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
@@ -211,7 +210,7 @@ class ValidationRulesAnalysis extends Page {
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.validationRulesAnalysis.form.startDate)
+                                        i18n.t('Start Date')
                                     }
                                     onChange={this.startDateOnChange}
                                     value={this.state.startDate}
@@ -222,7 +221,7 @@ class ValidationRulesAnalysis extends Page {
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.validationRulesAnalysis.form.endDate)
+                                        i18n.t('End Date')
                                     }
                                     onChange={this.endDateOnChange}
                                     value={this.state.endDate}
@@ -238,7 +237,7 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="send-notifications-option">
                                     <Checkbox
-                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.notification)}
+                                        label={i18n.t('Send Notifications')}
                                         labelPosition="left"
                                         checked={this.state.notification}
                                         onCheck={this.updateSendNotifications}
@@ -246,7 +245,7 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="persist-results-option">
                                     <Checkbox
-                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.persist)}
+                                        label={i18n.t('Persist new results')}
                                         labelPosition="left"
                                         checked={this.state.persist}
                                         onCheck={this.updatePersistNewResults}
@@ -257,7 +256,7 @@ class ValidationRulesAnalysis extends Page {
                         <RaisedButton
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
-                            label={i18n.t(i18nKeys.validationRulesAnalysis.actionButton)}
+                            label={i18n.t('validate')}
                             primary
                             disabled={this.isActionDisabled()}
                             onClick={this.validate}

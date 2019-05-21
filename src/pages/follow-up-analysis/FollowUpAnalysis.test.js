@@ -14,7 +14,6 @@ import {
     sections,
     FOLLOW_UP_ANALYSIS_SECTION_KEY,
 } from '../sections.conf';
-import { i18nKeys } from '../../i18n';
 import MinMaxOutlierAnalysis from '../min-max-outlier-analysis/MinMaxOutlierAnalysis';
 
 let pageInfo = {};
@@ -57,7 +56,7 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
     it('Should show correct title.', () =>{
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.followUpAnalysis.header}<PageHelper />`);
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />Follow-Up Analysis<PageHelper />`);
     });
 
     it('Followup Analysis renders an IconButton', () => {
@@ -82,12 +81,12 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
     it('Renders a "Start Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.startDate);
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2);
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.followUpAnalysis.form.endDate);
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
     });
 
     it('Should not render a "FollowUpAnalysisTable" component when has no elements.' , () => {

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import styles from './AvailableOrganisationUnitsTree.module.css';
 
 class AvailableOrganisationUnitsTree extends PureComponent {
@@ -72,7 +71,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
           );
       }
 
-      return <span>{i18n.t(i18nKeys.availableOrganisationUnitsTree.updatingMessage)}</span>;
+      return <span>{i18n.t('Updating Organisation Units Tree...')}</span>;
   }
 }
 

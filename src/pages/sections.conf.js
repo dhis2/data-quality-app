@@ -2,7 +2,6 @@ import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRules
 import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis';
 import MinMaxOutlierAnalysis from './min-max-outlier-analysis/MinMaxOutlierAnalysis';
 import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis';
-import { i18nKeys } from '../i18n';
 
 export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis';
 export const STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY = 'stdDevOutlierAnalysis';
@@ -15,10 +14,10 @@ export const sections = [
         path: '/validation-rules-analysis',
         component: ValidationRulesAnalysis,
         info: {
-            label: i18nKeys.validationRulesAnalysis.homeLabel,
+            label: 'Validation Rule Analysis',
             icon: 'done_all',
-            description: i18nKeys.validationRulesAnalysis.description,
-            actionText: i18nKeys.validationRulesAnalysis.homeAction,
+            description: 'Run validation rules in order to unveil anomalies and errors in the data in the database.',
+            actionText: 'Run Validation',
             docs: 'validation_rule_analysis',
         },
     },
@@ -27,10 +26,10 @@ export const sections = [
         path: '/std-dev-outlier-analysis',
         component: StdDevOutlierAnalysis,
         info: {
-            label: i18nKeys.stdDevOutlierAnalysis.homeLabel,
+            label: 'Std Dev Outlier Analysis',
             icon: 'show_chart',
-            description: i18nKeys.stdDevOutlierAnalysis.description,
-            actionText: i18nKeys.stdDevOutlierAnalysis.homeAction,
+            description: 'Analyze potential outlier values based on standard deviations. Outlier values can be examined and marked for follow-up.',
+            actionText: 'Analyze',
             docs: 'standard_deviation_analysis',
         },
     },
@@ -39,10 +38,10 @@ export const sections = [
         path: '/min-max-outlier-analysis',
         component: MinMaxOutlierAnalysis,
         info: {
-            label: i18nKeys.minMaxOutlierAnalysis.homeLabel,
+            label: 'Min-Max Outlier Analysis',
             icon: 'compare_arrows',
-            description: i18nKeys.minMaxOutlierAnalysis.description,
-            actionText: i18nKeys.minMaxOutlierAnalysis.homeAction,
+            description: 'Analyze potential outlier values based on min and max values. Outlier values can be examined and marked for follow-up.',
+            actionText: 'Analyze',
             docs: 'min_max_analysis',
         },
     },
@@ -51,10 +50,10 @@ export const sections = [
         path: '/follow-up-analysis',
         component: FollowUpAnalysis,
         info: {
-            label: i18nKeys.followUpAnalysis.homeLabel,
+            label: 'Follow-Up Analysis',
             icon: 'description',
-            description: i18nKeys.followUpAnalysis.description,
-            actionText: i18nKeys.followUpAnalysis.homeAction,
+            description: 'View or edit data values marked for further follow-up during data entry or analysis.',
+            actionText: 'View Data Values',
             docs: 'follow_up_analysis',
         },
     },

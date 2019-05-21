@@ -2,7 +2,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ValidationRulesAnalysis from './ValidationRulesAnalysis';
-import { i18nKeys } from '../../i18n';
 import {
     sections,
     VALIDATION_RULES_ANALYSIS_SECTION_KEY,
@@ -53,7 +52,7 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
 
     it('Should show correct title.', () => {
         expect(wrapper.find('h1')).toHaveLength(1);
-        expect(wrapper.find('h1').text()).toBe(`<IconButton />${i18nKeys.validationRulesAnalysis.header}<PageHelper />`);
+        expect(wrapper.find('h1').text()).toBe(`<IconButton />Validation Rule Analysis<PageHelper />`);
     });
 
     it('Should have an "AlertBar" component.', () => {
@@ -69,11 +68,11 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     });
 
     it('Renders a "Start Date" - DatePicker.', () => {
-        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe(i18nKeys.validationRulesAnalysis.form.startDate);
+        expect(wrapper.find(DatePicker).at(0).props().floatingLabelText).toBe('Start Date');
     });
 
     it('Renders a "End Date" - DatePicker.', () => {
-        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe(i18nKeys.validationRulesAnalysis.form.endDate);
+        expect(wrapper.find(DatePicker).at(1).props().floatingLabelText).toBe('End Date');
     });
 
     it('Should render a "Validation Rule Group" - Select.', () => {
@@ -81,11 +80,11 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     });
 
     it('Should render a Checkbox to choose "Send notifications".', () => {
-        expect(wrapper.find(Checkbox).at(0).props().label).toBe(i18nKeys.validationRulesAnalysis.form.notification);
+        expect(wrapper.find(Checkbox).at(0).props().label).toBe('Send Notifications');
     });
 
     it('Should render a Checkbox to choose "Persist new results".', () => {
-        expect(wrapper.find(Checkbox).at(1).props().label).toBe(i18nKeys.validationRulesAnalysis.form.persist);
+        expect(wrapper.find(Checkbox).at(1).props().label).toBe('Persist new results');
     });
 
     it('Should render a disabled "Validate" button.', () => {

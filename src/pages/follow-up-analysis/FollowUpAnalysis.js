@@ -13,7 +13,6 @@ import PageHelper from '../../components/page-helper/PageHelper';
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable';
 import AlertBar from '../../components/alert-bar/AlertBar';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import { convertDateToApiDateFormat } from '../../helpers/dates';
 import { getDocsKeyForSection } from '../sections.conf';
 import { apiConf } from '../../server.conf';
@@ -96,7 +95,7 @@ class FollowUpAnalysis extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: i18n.t(i18nKeys.messages.noValuesFound),
+                            message: i18n.t('No values found'),
                         },
                     };
 
@@ -179,7 +178,7 @@ class FollowUpAnalysis extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: i18n.t(i18nKeys.messages.unfollow),
+                        message: i18n.t('Unfollow done'),
                     },
                     pageState: {
                         loading: false,
@@ -220,7 +219,7 @@ class FollowUpAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    <span>{i18n.t(i18nKeys.followUpAnalysis.header)}</span>
+                    <span>{i18n.t('Follow-Up Analysis')}</span>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -232,13 +231,13 @@ class FollowUpAnalysis extends Page {
                         <div className="row">
                             <div id="data-sets-container" className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.followUpAnalysis.form.dataSet)}
+                                    {i18n.t('Data Set')}
                                 </div>
                                 <AvailableDatasetsSelect onChange={this.dataSetsOnChange} />
                             </div>
                             <div className={classNames('col-md-4', cssPageStyles.section)}>
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.followUpAnalysis.form.organisationUnit)}
+                                    {i18n.t('Parent organisation unit')}
                                 </div>
                                 <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
                             </div>
@@ -247,7 +246,7 @@ class FollowUpAnalysis extends Page {
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.followUpAnalysis.form.startDate)
+                                        i18n.t('Start Date')
                                     }
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
@@ -258,7 +257,7 @@ class FollowUpAnalysis extends Page {
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
                                     floatingLabelText={
-                                        i18n.t(i18nKeys.followUpAnalysis.form.endDate)
+                                        i18n.t('End Date')
                                     }
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
@@ -272,7 +271,7 @@ class FollowUpAnalysis extends Page {
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
-                            label={i18n.t(i18nKeys.followUpAnalysis.actionButtonFollow)}
+                            label={i18n.t('follow up')}
                             onClick={this.getFollowUpList}
                             disabled={this.isActionDisabled()}
                         />

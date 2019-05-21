@@ -6,7 +6,6 @@ import {
     TableRowColumn, IconButton, Dialog, FlatButton,
 } from 'material-ui';
 import i18n from '../../../locales';
-import { i18nKeys } from '../../../i18n';
 import FormattedNumber from '../../../components/formatters/FormattedNumber';
 import DownloadAs from '../../../components/download-as/DownloadAs';
 import cssPageStyles from '../../Page.module.css';
@@ -109,7 +108,7 @@ class FollowUpAnalysisTable extends Component {
 
         const commentDialogActions = [
             <FlatButton
-                label={i18nKeys.followUpAnalysis.commentModal.close}
+                label={i18n.t('Close')}
                 primary
                 onClick={this.closeCommentDialog}
             />,
@@ -169,7 +168,7 @@ class FollowUpAnalysisTable extends Component {
         return (
             <div>
                 <Dialog
-                    title={i18nKeys.followUpAnalysis.commentModal.title}
+                    title={i18n.t('Comment')}
                     actions={commentDialogActions}
                     modal={false}
                     open={this.state.showComment}
@@ -193,28 +192,28 @@ class FollowUpAnalysisTable extends Component {
                     >
                         <TableRow>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.dataElement)}
+                                {i18n.t('Data Element')}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.organisationUnit)}
+                                {i18n.t('Organisation Unit')}
                             </TableHeaderColumn>
                             <TableHeaderColumn>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.period)}
+                                {i18n.t('Period')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.min)}
+                                {i18n.t('Min')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.value)}
+                                {i18n.t('Value')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.max)}
+                                {i18n.t('Max')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.unfollow)}
+                                {i18n.t('Unfollow')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
-                                {i18n.t(i18nKeys.followUpAnalysis.tableHeaderColumn.comment)}
+                                {i18n.t('Comment')}
                             </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
@@ -227,7 +226,7 @@ class FollowUpAnalysisTable extends Component {
                         id="unfollow-action"
                         primary
                         disabled={this.props.loading || !oneChecked}
-                        label={i18n.t(i18nKeys.followUpAnalysis.actionButtonUnfollow)}
+                        label={i18n.t('unfollow')}
                         onClick={this.unfollow}
                     />
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />

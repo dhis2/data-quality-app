@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
 import styles from './DownloadAs.module.css';
 
 class DownloadAs extends PureComponent {
@@ -24,7 +23,7 @@ class DownloadAs extends PureComponent {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    {i18n.t(i18nKeys.downloadAs.pdf)}
+                    {i18n.t('DOWNLOAD AS PDF')}
                 </a>
                 <a
                     className="export-xls-action"
@@ -32,7 +31,7 @@ class DownloadAs extends PureComponent {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    {i18n.t(i18nKeys.downloadAs.xls)}
+                    {i18n.t('DOWNLOAD AS XLS')}
                 </a>
                 <a
                     className="export-csv-action"
@@ -40,7 +39,7 @@ class DownloadAs extends PureComponent {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    {i18n.t(i18nKeys.downloadAs.csv)}
+                    {i18n.t('DOWNLOAD AS CSV')}
                 </a>
             </div>
         );
