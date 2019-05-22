@@ -1,35 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import {
-    Checkbox, Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,
-} from 'material-ui';
+    Checkbox,
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn,
+} from 'material-ui'
+import FormattedNumber from '../../components/formatters/FormattedNumber'
+import DownloadAs from '../../components/download-as/DownloadAs'
+import i18n from '../../locales'
+import { apiConf } from '../../server.conf'
+import cssPageStyles from '../../pages/Page.module.css'
+import jsPageStyles from '../../pages/PageStyles'
+import styles from './OutlierAnalysisTable.module.css'
 
-import FormattedNumber from '../../components/formatters/FormattedNumber';
-import DownloadAs from '../../components/download-as/DownloadAs';
-
-/* i18n */
-import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
-
-// helpers
-import { apiConf } from '../../server.conf';
-
-// styles
-import cssPageStyles from '../../pages/Page.css';
-import jsPageStyles from '../../pages/PageStyles';
-import styles from './OutlierAnalysisTable.css';
-
-const OutlierAnalyisTable = (props) => {
-    const elements = props.elements;
-    const parentToggleCheckbox = props.toggleCheckbox;
+const OutlierAnalyisTable = props => {
+    const elements = props.elements
+    const parentToggleCheckbox = props.toggleCheckbox
 
     // Table Rows
-    const rows = elements.map((element) => {
-        const updateCheckbox = (() => {
-            parentToggleCheckbox(element);
-        });
+    const rows = elements.map(element => {
+        const updateCheckbox = () => {
+            parentToggleCheckbox(element)
+        }
 
         return (
             <TableRow key={element.key}>
@@ -55,8 +52,8 @@ const OutlierAnalyisTable = (props) => {
                     </span>
                 </TableRowColumn>
             </TableRow>
-        );
-    });
+        )
+    })
 
     return (
         <div>
@@ -65,7 +62,10 @@ const OutlierAnalyisTable = (props) => {
             </div>
             <Table
                 selectable={false}
-                className={classNames(cssPageStyles.appTable, styles.outlierAnalysisTable)}
+                className={classNames(
+                    cssPageStyles.appTable,
+                    styles.outlierAnalysisTable
+                )}
             >
                 <TableHeader
                     displaySelectAll={false}
@@ -74,25 +74,25 @@ const OutlierAnalyisTable = (props) => {
                 >
                     <TableRow>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.dataElement)}
+                            {i18n.t('Data Element')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.organisationUnit)}
+                            {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.period)}
+                            {i18n.t('Period')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.min)}
+                            {i18n.t('Min')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.value)}
+                            {i18n.t('Value')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.max)}
+                            {i18n.t('Max')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.center}>
-                            {i18n.t(i18nKeys.outlierAnalysisTable.tableHeaderColumn.mark)}
+                            {i18n.t('Mark')}
                         </TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
@@ -100,15 +100,22 @@ const OutlierAnalyisTable = (props) => {
                     {rows}
                 </TableBody>
             </Table>
-            <div className={classNames(cssPageStyles.cardFooter, cssPageStyles.end)}>
+            <div
+                className={classNames(
+                    cssPageStyles.cardFooter,
+                    cssPageStyles.end
+                )}
+            >
                 <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
             </div>
         </div>
-    );
-};
+    )
+}
 
 OutlierAnalyisTable.generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`;
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${
+        e.sourceId
+    }-${e.dataElementId}`
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     key: OutlierAnalyisTable.generateElementKey(e),
@@ -124,7 +131,7 @@ OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     max: e.max,
     value: Number.parseFloat(e.value),
     marked: e.followup,
-});
+})
 
 OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
     dataElementId: e.dataElementId,
@@ -133,15 +140,15 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
     categoryOptionComboId: e.categoryOptionComboId,
     attributeOptionComboId: e.attributeOptionComboId,
     followup: !e.marked,
-});
+})
 
 OutlierAnalyisTable.propTypes = {
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
-};
+}
 
 OutlierAnalyisTable.contextTypes = {
     d2: PropTypes.object,
-};
+}
 
-export default OutlierAnalyisTable;
+export default OutlierAnalyisTable

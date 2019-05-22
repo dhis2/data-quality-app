@@ -1,47 +1,31 @@
-import React from 'react';
-import classNames from 'classnames';
-
-// Material UI
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
-import DatePicker from 'material-ui/DatePicker';
-import Checkbox from 'material-ui/Checkbox';
-import { FontIcon, IconButton } from 'material-ui';
-
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
-import Page from '../Page';
-import AlertBar from '../../components/alert-bar/AlertBar';
+import React from 'react'
+import classNames from 'classnames'
+import { Card, CardText } from 'material-ui/Card'
+import RaisedButton from 'material-ui/RaisedButton'
+import DatePicker from 'material-ui/DatePicker'
+import Checkbox from 'material-ui/Checkbox'
+import { FontIcon, IconButton } from 'material-ui'
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
+import Page from '../Page'
+import AlertBar from '../../components/alert-bar/AlertBar'
 import ValidationRuleGroupsSelect, {
     ALL_VALIDATION_RULE_GROUPS_ID,
-} from
-    '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect';
-import AvailableOrganisationUnitsTree from
-    '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree';
-import PageHelper from '../../components/page-helper/PageHelper';
-import { getDocsKeyForSection } from '../sections.conf';
-
-/* i18n */
-import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
-
-// styles
-import jsPageStyles from '../PageStyles';
-import cssPageStyles from '../Page.css';
-import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable';
-
-import { apiConf } from '../../server.conf';
-import { convertDateToApiDateFormat } from '../../helpers/dates';
+} from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
+import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
+import PageHelper from '../../components/page-helper/PageHelper'
+import { getDocsKeyForSection } from '../sections.conf'
+import i18n from '../../locales'
+import jsPageStyles from '../PageStyles'
+import cssPageStyles from '../Page.module.css'
+import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
+import { apiConf } from '../../server.conf'
+import { convertDateToApiDateFormat } from '../../helpers/dates'
 
 class ValidationRulesAnalysis extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-        'elements',
-        'showTable',
-    ];
+    static STATE_PROPERTIES = ['loading', 'elements', 'showTable']
 
     constructor() {
-        super();
+        super()
 
         this.state = {
             showTable: false,
@@ -53,35 +37,40 @@ class ValidationRulesAnalysis extends Page {
             persist: false,
             elements: [],
             loading: false,
-        };
+        }
 
-        this.validate = this.validate.bind(this);
-        this.back = this.back.bind(this);
+        this.validate = this.validate.bind(this)
+        this.back = this.back.bind(this)
 
-        this.startDateOnChange = this.startDateOnChange.bind(this);
-        this.endDateOnChange = this.endDateOnChange.bind(this);
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this);
-        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(this);
-        this.updateSendNotifications = this.updateSendNotifications.bind(this);
-        this.updatePersistNewResults = this.updatePersistNewResults.bind(this);
+        this.startDateOnChange = this.startDateOnChange.bind(this)
+        this.endDateOnChange = this.endDateOnChange.bind(this)
+        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
+        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(
+            this
+        )
+        this.updateSendNotifications = this.updateSendNotifications.bind(this)
+        this.updatePersistNewResults = this.updatePersistNewResults.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
-        const nextState = {};
+        const nextState = {}
 
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
+        Object.keys(nextProps).forEach(property => {
+            if (
+                nextProps.hasOwnProperty(property) &&
+                ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)
+            ) {
+                nextState[property] = nextProps[property]
             }
-        });
+        })
 
         if (nextState !== {}) {
-            this.setState(nextState);
+            this.setState(nextState)
         }
     }
 
     static generateElementKey = e =>
-        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}`;
+        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}`
 
     static convertElementFromApiResponse = e => ({
         key: ValidationRulesAnalysis.generateElementKey(e),
@@ -95,10 +84,10 @@ class ValidationRulesAnalysis extends Page {
         leftValue: e.leftSideValue,
         operator: e.operator,
         rightValue: e.rightSideValue,
-    });
+    })
 
     validate() {
-        const api = this.context.d2.Api.getApi();
+        const api = this.context.d2.Api.getApi()
 
         if (this.isFormValid()) {
             const request = {
@@ -107,85 +96,103 @@ class ValidationRulesAnalysis extends Page {
                 ou: this.state.organisationUnitId,
                 notification: this.state.notification,
                 persist: this.state.persist,
-            };
+            }
 
-            if (this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
-                request.vrg = this.state.validationRuleGroupId;
+            if (
+                this.state.validationRuleGroupId !==
+                ALL_VALIDATION_RULE_GROUPS_ID
+            ) {
+                request.vrg = this.state.validationRuleGroupId
             }
 
             this.context.updateAppState({
                 pageState: {
                     loading: true,
                 },
-            });
+            })
 
-            api.post(apiConf.endpoints.validationRulesAnalysis, { ...request }).then((response) => {
-                if (this.isPageMounted()) {
-                    const elements = response.map(ValidationRulesAnalysis.convertElementFromApiResponse);
-                    const feedback = elements && elements.length > 0 ? {
-                        showSnackbar: false,
-                    } : {
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: i18n.t(i18nKeys.messages.validationSuccess),
-                        },
-                    };
-                    this.context.updateAppState({
-                        ...feedback,
-                        pageState: {
-                            loading: false,
-                            elements,
-                            showTable: elements && elements.length > 0,
-                        },
-                    });
-                }
-            }).catch(() => { this.manageError(); });
+            api.post(apiConf.endpoints.validationRulesAnalysis, { ...request })
+                .then(response => {
+                    if (this.isPageMounted()) {
+                        const elements = response.map(
+                            ValidationRulesAnalysis.convertElementFromApiResponse
+                        )
+                        const feedback =
+                            elements && elements.length > 0
+                                ? {
+                                      showSnackbar: false,
+                                  }
+                                : {
+                                      showSnackbar: true,
+                                      snackbarConf: {
+                                          type: SUCCESS,
+                                          message: i18n.t(
+                                              'Validation passed successfully'
+                                          ),
+                                      },
+                                  }
+                        this.context.updateAppState({
+                            ...feedback,
+                            pageState: {
+                                loading: false,
+                                elements,
+                                showTable: elements && elements.length > 0,
+                            },
+                        })
+                    }
+                })
+                .catch(() => {
+                    this.manageError()
+                })
         }
     }
 
     back() {
-        this.setState({ showTable: false });
+        this.setState({ showTable: false })
     }
 
     startDateOnChange(event, date) {
-        this.setState({ startDate: new Date(date) });
+        this.setState({ startDate: new Date(date) })
     }
 
     endDateOnChange(event, date) {
-        this.setState({ endDate: new Date(date) });
+        this.setState({ endDate: new Date(date) })
     }
 
     organisationUnitOnChange(organisationUnitId) {
-        this.setState({ organisationUnitId });
+        this.setState({ organisationUnitId })
     }
 
     validationRuleGroupOnChange(event, index, value) {
-        this.setState({ validationRuleGroupId: value });
+        this.setState({ validationRuleGroupId: value })
     }
 
     updateSendNotifications(event, checked) {
-        this.setState({ notification: checked });
+        this.setState({ notification: checked })
     }
 
     updatePersistNewResults(event, checked) {
-        this.setState({ persist: checked });
+        this.setState({ persist: checked })
     }
 
     showAlertBar() {
-        return this.state.showTable &&
+        return (
+            this.state.showTable &&
             this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit;
+            this.state.elements.length >= apiConf.results.analysis.limit
+        )
     }
 
     isFormValid() {
-        return this.state.startDate &&
+        return (
+            this.state.startDate &&
             this.state.endDate &&
-            this.state.organisationUnitId;
+            this.state.organisationUnitId
+        )
     }
 
     isActionDisabled() {
-        return !this.isFormValid() || this.state.loading;
+        return !this.isFormValid() || this.state.loading
     }
 
     render() {
@@ -194,34 +201,52 @@ class ValidationRulesAnalysis extends Page {
                 <h1 className={cssPageStyles.pageHeader}>
                     <IconButton
                         onClick={this.back}
-                        style={{ display: this.state.showTable ? 'inline' : 'none' }}
+                        style={{
+                            display: this.state.showTable ? 'inline' : 'none',
+                        }}
                     >
                         <FontIcon className={'material-icons'}>
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t(i18nKeys.validationRulesAnalysis.header)}
+                    {i18n.t('Validation Rule Analysis')}
                     <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                        sectionDocsKey={getDocsKeyForSection(
+                            this.props.sectionKey
+                        )}
                     />
                 </h1>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
-                    <CardText style={{ display: !this.state.showTable ? 'block' : 'none' }}>
+                    <CardText
+                        style={{
+                            display: !this.state.showTable ? 'block' : 'none',
+                        }}
+                    >
                         <div className="row">
-                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                            <div
+                                className={classNames(
+                                    'col-md-6',
+                                    cssPageStyles.section
+                                )}
+                            >
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t(i18nKeys.validationRulesAnalysis.form.organisationUnit)}
+                                    {i18n.t('Parent organisation unit')}
                                 </div>
-                                <AvailableOrganisationUnitsTree onChange={this.organisationUnitOnChange} />
+                                <AvailableOrganisationUnitsTree
+                                    onChange={this.organisationUnitOnChange}
+                                />
                             </div>
-                            <div className={classNames('col-md-6', cssPageStyles.section)}>
+                            <div
+                                className={classNames(
+                                    'col-md-6',
+                                    cssPageStyles.section
+                                )}
+                            >
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={
-                                        i18n.t(i18nKeys.validationRulesAnalysis.form.startDate)
-                                    }
+                                    floatingLabelText={i18n.t('Start Date')}
                                     onChange={this.startDateOnChange}
                                     value={this.state.startDate}
                                     defaultDate={new Date()}
@@ -230,9 +255,7 @@ class ValidationRulesAnalysis extends Page {
                                 <DatePicker
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={
-                                        i18n.t(i18nKeys.validationRulesAnalysis.form.endDate)
-                                    }
+                                    floatingLabelText={i18n.t('End Date')}
                                     onChange={this.endDateOnChange}
                                     value={this.state.endDate}
                                     defaultDate={new Date()}
@@ -242,12 +265,14 @@ class ValidationRulesAnalysis extends Page {
                                 <div id="validation-rule-groups">
                                     <ValidationRuleGroupsSelect
                                         style={jsPageStyles.inputForm}
-                                        onChange={this.validationRuleGroupOnChange}
+                                        onChange={
+                                            this.validationRuleGroupOnChange
+                                        }
                                     />
                                 </div>
                                 <div id="send-notifications-option">
                                     <Checkbox
-                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.notification)}
+                                        label={i18n.t('Send Notifications')}
                                         labelPosition="left"
                                         checked={this.state.notification}
                                         onCheck={this.updateSendNotifications}
@@ -255,7 +280,7 @@ class ValidationRulesAnalysis extends Page {
                                 </div>
                                 <div id="persist-results-option">
                                     <Checkbox
-                                        label={i18n.t(i18nKeys.validationRulesAnalysis.form.persist)}
+                                        label={i18n.t('Persist new results')}
                                         labelPosition="left"
                                         checked={this.state.persist}
                                         onCheck={this.updatePersistNewResults}
@@ -266,19 +291,26 @@ class ValidationRulesAnalysis extends Page {
                         <RaisedButton
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
-                            label={i18n.t(i18nKeys.validationRulesAnalysis.actionButton)}
+                            label={i18n.t('validate')}
                             primary
                             disabled={this.isActionDisabled()}
                             onClick={this.validate}
                         />
                     </CardText>
-                    <CardText id="results-table" style={{ display: this.state.showTable ? 'block' : 'none' }}>
-                        <ValidationRulesAnalysisTable elements={this.state.elements} />
+                    <CardText
+                        id="results-table"
+                        style={{
+                            display: this.state.showTable ? 'block' : 'none',
+                        }}
+                    >
+                        <ValidationRulesAnalysisTable
+                            elements={this.state.elements}
+                        />
                     </CardText>
                 </Card>
             </div>
-        );
+        )
     }
 }
 
-export default ValidationRulesAnalysis;
+export default ValidationRulesAnalysis

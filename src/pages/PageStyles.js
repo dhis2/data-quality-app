@@ -8,6 +8,6 @@ const pageStyles = {
     cursorStyle: {
         cursor: 'pointer',
     },
-};
+}
 
-export default pageStyles;
+export default pageStyles
