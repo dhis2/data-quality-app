@@ -14,7 +14,7 @@ class DownloadAs extends PureComponent {
 
     render() {
         const api = this.context.d2.Api.getApi()
-        const timestamp = new Date().getTime() // To clear cache
+        const timestamp = Date.now()
         return (
             <div className={styles.downloadAs}>
                 <a
@@ -22,8 +22,7 @@ class DownloadAs extends PureComponent {
                     href={`${api.baseUrl}${
                         this.props.endpoint
                     }.pdf?t=${timestamp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                 >
                     {i18n.t('DOWNLOAD AS PDF')}
                 </a>
@@ -32,8 +31,7 @@ class DownloadAs extends PureComponent {
                     href={`${api.baseUrl}${
                         this.props.endpoint
                     }.xls?t=${timestamp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                 >
                     {i18n.t('DOWNLOAD AS XLS')}
                 </a>
@@ -42,8 +40,7 @@ class DownloadAs extends PureComponent {
                     href={`${api.baseUrl}${
                         this.props.endpoint
                     }.csv?t=${timestamp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                 >
                     {i18n.t('DOWNLOAD AS CSV')}
                 </a>
