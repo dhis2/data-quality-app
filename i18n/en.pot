@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-09-07T11:51:32.799Z\n"
-"PO-Revision-Date: 2018-09-07T11:51:32.799Z\n"
+"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"PO-Revision-Date: 2019-03-18T07:23:57.498Z\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -203,4 +203,37 @@ msgid "Unmarked"
 msgstr ""
 
 msgid "Unfollow done"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Search apps"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "About DHIS 2"
+msgstr ""
+
+msgid "Manage my apps"
+msgstr ""
+
+msgid "No results found"
+msgstr ""
+
+msgid "Interpretations"
+msgstr ""
+
+msgid "Messages"
 msgstr ""

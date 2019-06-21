@@ -1,3 +1,5 @@
+import 'typeface-roboto'; // eslint-disable-line
+
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -8,7 +10,9 @@ import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
 import './custom-css/D2UISidebarOverrides.css';
 
+/* i18n */
 import i18n from './locales';
+import { injectTranslationsToD2 } from './configI18n';
 
 import AppRouter from './components/app-router/AppRouter';
 
@@ -32,8 +36,10 @@ class App extends PureComponent {
       d2: PropTypes.object,
   };
 
-  constructor(props) {
+  constructor(props, context) {
       super(props);
+
+      injectTranslationsToD2(context.d2);
 
       this.state = {
           currentSection: '',

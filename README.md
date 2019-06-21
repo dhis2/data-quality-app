@@ -1,6 +1,6 @@
 # DHIS2 Data Quality App
 
-[![Build Status](https://travis-ci.org/dhis2/data-quality-app.svg?branch=master)](https://travis-ci.org/dhis2/data-quality-app)
+[![Build Status](https://travis-ci.com/dhis2/data-quality-app.svg?branch=master)](https://travis-ci.com/dhis2/data-quality-app)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fdata-quality-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fdata-quality-app?ref=badge_shield)
 
 ### Pre-requisites
