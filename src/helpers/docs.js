@@ -1,5 +1,5 @@
-export const DOCS_LINK = 'https://docs.dhis2.org';
-export const DOCS_TOOLTIP_LABEL = 'Open user guide';
+export const DOCS_LINK = 'https://docs.dhis2.org'
+export const DOCS_TOOLTIP_LABEL = 'Open user guide'
 
 /**
  * Returns the "version" of the documentation that corresponds with the current dhis2 version.

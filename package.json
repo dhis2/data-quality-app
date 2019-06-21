@@ -10,12 +10,12 @@
     "prestart": "npm run localize",
     "pretest": "npm run localize",
     "prebuild": "npm run localize",
-    "lint:style": "d2-style js check --all",
+    "lint:style": "d2-style validate js",
     "localize": "d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/"
   },
   "dependencies": {
-    "@dhis2/d2-i18n": "^1.0.3",
-    "@dhis2/d2-ui-header-bar": "^1.1.7",
+    "@dhis2/d2-i18n": "1.0.3",
+    "@dhis2/d2-ui-header-bar": "1.1.7",
     "classnames": "^2.2.5",
     "d2": "^28.3.0",
     "d2-ui": "^29.0.18",
@@ -30,8 +30,8 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
-    "@dhis2/cli-style": "^3.2.2",
-    "@dhis2/d2-i18n-generate": "^1.0.19",
+    "@dhis2/cli-style": "3.2.2",
+    "@dhis2/d2-i18n-generate": "1.0.19",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "husky": "^2.3.0",
@@ -40,7 +40,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "d2-style commit check",
-      "pre-commit": "d2-style js apply"
+      "pre-commit": "d2-style validate js package --fix"
     }
   },
   "greenkeeper": {
