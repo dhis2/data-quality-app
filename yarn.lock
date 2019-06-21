@@ -1063,7 +1063,7 @@
     update-notifier "^3.0.0"
     yargs "^13.1.0"
 
-"@dhis2/cli-style@^3.2.2":
+"@dhis2/cli-style@^3.3.4":
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/@dhis2/cli-style/-/cli-style-3.3.4.tgz#9dc7588e37268e1e0e74d89a2ec494bdaf40d236"
   integrity sha512-HdGRQHb/EBreP5v4FZjrYRJGvOJmjxQwAgEaNsA8ZJe33AuPE4NOQTKVwbcnvn4CU1cVtB7vk29xbw2RHE+HFw==
@@ -1083,10 +1083,10 @@
     semver "^6.1.1"
     yargs "^13.1.0"
 
-"@dhis2/d2-i18n-generate@^1.0.19":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-generate/-/d2-i18n-generate-1.1.1.tgz#e800fa39e85a71c23040b6378de1c9439f69fef7"
-  integrity sha512-akKFdEot0d38Yq51WlnflKYuQYMAYvHxDnQuOy3GVUDpmavnQec3wxQNdXbwy6FH9UUHO3kAJhlYL+slxEI+LQ==
+"@dhis2/d2-i18n-generate@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-generate/-/d2-i18n-generate-1.0.19.tgz#263bce81d7cd0f58d33fcce9703481046f3c8e93"
+  integrity sha512-zkUr7WNk9mVhrc4uvwRzmAgLgKKPfhgEcGVycJ9LQBqZ1zR8EIU9LfGB5Zl3OGEX8/BpAxyXuCOdfeU6LhwP5A==
   dependencies:
     argparse "^1.0.10"
     handlebars "^4.0.11"
@@ -1094,14 +1094,14 @@
     moment "^2.22.1"
     rimraf "^2.6.2"
 
-"@dhis2/d2-i18n@^1.0.3":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n/-/d2-i18n-1.0.4.tgz#8fbd113f56699b9832a401e1cb8f54d75bc36b9a"
-  integrity sha512-xI2j69q3bwlb374JOAs3wpo47V4BqDAz4h1PfGLVhdORPLAuz0CkKuwesfpW2eunDSHiKpMbOg7goTip/5ROew==
+"@dhis2/d2-i18n@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n/-/d2-i18n-1.0.3.tgz#2d309bc1f6cf85433056f573cbcc410d791415a1"
+  integrity sha512-1ziGuJ3Wpl/kEHGg5yOMaobATo8bdrBBqc2KgMwXVwRlt4rZIcQSmgYHZZWQaf5O//+870UW1VDHjvpVSES52A==
   dependencies:
     i18next "^10.3"
 
-"@dhis2/d2-ui-app@^1.0.11":
+"@dhis2/d2-ui-app@^1.0.8":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-app/-/d2-ui-app-1.0.11.tgz#23264a59625d27318297d15cc457fa6acaa32eb4"
   integrity sha512-EF6VBa7Y3y63gUBrgKZU9FBVVcFr3uSF3xw8HCvlQkaxQBm/xYAAXZYV0HJczePx/z8pAMn9dDD7ngmzqt+Ugg==
@@ -1111,7 +1111,7 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-core@^1.3.5":
+"@dhis2/d2-ui-core@^1.3.2", "@dhis2/d2-ui-core@^1.3.5":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-1.4.0.tgz#123d071e507c862f2c0c316ff0bda052a676c262"
   integrity sha512-J2NeaHXhYUzz7CGsIN4s6o+zOknKXrEG25Wk1XiSX9aO9shh8CTU++lzQJIgezF/UWHx2VDTwn171DTJI2ckJw==
@@ -1121,13 +1121,13 @@
     lodash "^4.17.10"
     material-ui "^0.20.0"
 
-"@dhis2/d2-ui-header-bar@^1.1.7":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-header-bar/-/d2-ui-header-bar-1.1.10.tgz#40ab8e8ef7bb1feb30049083daaf79f12d5b63a7"
-  integrity sha512-df5mqi95YfZAOR+4zvmNfvS/pOEmDkZos1vFQ7uCYXwlzu/oKeuP/65yBLYcLSaYIb4kjxO700uKV0A3wucr9Q==
+"@dhis2/d2-ui-header-bar@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-header-bar/-/d2-ui-header-bar-1.1.7.tgz#44be557ba6b52e6e331183896a6c94188b304cc9"
+  integrity sha512-6kes84/Yc4uv3blHEooSUweg1pHW43jWd4vatw5CL2+0Qrypmc+UYsOgq3oijE1va1Sk9BPD8PEdXKprfGE+rA==
   dependencies:
-    "@dhis2/d2-ui-app" "^1.0.11"
-    "@dhis2/d2-ui-core" "^1.3.5"
+    "@dhis2/d2-ui-app" "^1.0.8"
+    "@dhis2/d2-ui-core" "^1.3.2"
     babel-runtime "^6.26.0"
     d2 "^29.1.3"
     d2-utilizr "^0.2.15"
