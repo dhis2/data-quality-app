@@ -34,7 +34,7 @@
     "@dhis2/d2-i18n-generate": "^1.0.19",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
-    "husky": "^2.3.0",
+    "husky": "^3.0.0",
     "jest-enzyme": "^7.0.2"
   },
   "husky": {
