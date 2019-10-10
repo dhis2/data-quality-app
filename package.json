@@ -20,6 +20,7 @@
     "d2": "^28.3.0",
     "d2-ui": "^29.0.18",
     "loglevel": "^1.6.0",
+    "material-design-icons-iconfont": "^5.0.1",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
