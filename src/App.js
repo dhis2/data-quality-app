@@ -1,3 +1,5 @@
+import 'typeface-roboto'
+import 'material-design-icons-iconfont'
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
