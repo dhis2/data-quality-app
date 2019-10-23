@@ -1,0 +1,224 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-10-23T10:18:10.164Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "Data Set"
+msgstr "Ficha"
+
+msgid "[All Data Sets]"
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr "Análise do Acompanhamento"
+
+msgid "View Data Values"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Ver ou editar valores de dados marcados para posterior acompanhamento "
+"durante a entrada de dados ou análise."
+
+msgid "follow up"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr "Unidade organizacional pai"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "Unidade organizacional"
+
+msgid "Period"
+msgstr "Período"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Max"
+msgstr "Máx"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Comment"
+msgstr "Comentário"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"Mais de 500 valores encontrados, corrija as violações ou restrinja a "
+"pesquisa para ver todos"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Análise de Discrepâncias de Min-Max"
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"Analisar potenciais valores discrepantes com base em valores mínimo e "
+"máximo. Valores discrepantes podem ser examinados e marcados para "
+"acompanhamento."
+
+msgid "start"
+msgstr ""
+
+msgid "Mark"
+msgstr "Marcar"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Análise de Discrepâncias de Desvio Padrão"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"Analisar potenciais valores discrepantes com base em desvios-padrão. Valores"
+" discrepantes podem ser examinados e marcados para acompanhamento."
+
+msgid "Select number of standard deviations"
+msgstr "Seleccione o número de desvios-padrão"
+
+msgid "Validation Rule Analysis"
+msgstr "Analise das regras de validação"
+
+msgid "Run Validation"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Executar as regras de validação, a fim de revelar anomalias e erros nos "
+"dados existentes na base de dados."
+
+msgid "validate"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "Importance"
+msgstr "Importância"
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Operator"
+msgstr "Operador"
+
+msgid "Details"
+msgstr "Detalhes"
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "no data available"
+msgstr ""
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Performing request"
+msgstr ""
+
+msgid "Performing analysis"
+msgstr ""
+
+msgid "Analysis done"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr "Validado com sucesso"
+
+msgid "No values found"
+msgstr "Nenhum valor encontrado"
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "Marked"
+msgstr ""
+
+msgid "Unmarked"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
