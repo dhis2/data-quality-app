@@ -1,0 +1,255 @@
+# Translators:
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Memperbarui Pohon Unit Organisasi.."
+
+msgid "Data Set"
+msgstr "Data Set"
+
+msgid "[All Data Sets]"
+msgstr "[All Data Sets]"
+
+msgid "DOWNLOAD AS PDF"
+msgstr "UNDUH SEBAGAI PDF"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "UNDUH SEBAGAI XLS"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "UNDUH SEBAGAI CSV"
+
+msgid "Follow-Up Analysis"
+msgstr "Analisis Tindak Lanjut"
+
+msgid "View Data Values"
+msgstr "Lihat Nilai Data"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Lihat atau edit nilai data yang ditandai untuk tindak lanjut selama entry "
+"data atau analisis."
+
+msgid "follow up"
+msgstr "tindak lanjuti"
+
+msgid "unfollow"
+msgstr "berhenti mengikuti"
+
+msgid "Parent organisation unit"
+msgstr "Unit organisasi induk"
+
+msgid "Start Date"
+msgstr "Tanggal Mulai"
+
+msgid "End Date"
+msgstr "Tanggal Selesai"
+
+msgid "Data Element"
+msgstr "Data Elemen"
+
+msgid "Organisation Unit"
+msgstr "Unit Organisasi"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Nilai"
+
+msgid "Max"
+msgstr "Maks"
+
+msgid "Unfollow"
+msgstr "Berhenti Ikuti"
+
+msgid "Comment"
+msgstr "Komentar"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"Lebih dari 500 nilai ditemukan, persempit pencarian untuk melihat semuanya"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Analisis Outlier Min-Maks"
+
+msgid "Analyze"
+msgstr "Analisis"
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"Analisis kemungkinan nilai outlier berdasarkan nilai min dan maks. Nilai "
+"outlier dapat diperiksa dan ditandai untuk tindak lanjut."
+
+msgid "start"
+msgstr "mulai"
+
+msgid "Mark"
+msgstr "Tandai"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Analisis Outlier Dev Std"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"Analisis kemungkinan nilai outlier berdasarkan deviasi standar. Nilai "
+"outlier dapat diperiksa dan ditandai untuk tindak lanjut."
+
+msgid "Select number of standard deviations"
+msgstr "Pilih jumlah deviasi standar"
+
+msgid "Validation Rule Analysis"
+msgstr "Analisis Aturan Validasi"
+
+msgid "Run Validation"
+msgstr "Jalankan Validasi"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Jalankan aturan validasi untuk menampilkan anomali dan kesalahan data dalam "
+"basis data."
+
+msgid "validate"
+msgstr "validasi"
+
+msgid "Validation Rule Group"
+msgstr "Grup Aturan Validasi"
+
+msgid "Send Notifications"
+msgstr "Kirim Notifikasi"
+
+msgid "Persist new results"
+msgstr "Gunakan hasil baru"
+
+msgid "Importance"
+msgstr "Kepentingan"
+
+msgid "Validation Rule"
+msgstr "Aturan validasi"
+
+msgid "Operator"
+msgstr "Operator"
+
+msgid "Details"
+msgstr "Rincian"
+
+msgid "Validation Details"
+msgstr "Rincian Validasi"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "RINCIAN HASIL VALIDASI"
+
+msgid "VALIDATION RULE"
+msgstr "ATURAN VALIDASI"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "LEFT SIDE"
+msgstr "SISI KIRI"
+
+msgid "RIGHT SIDE"
+msgstr "SISI KANAN"
+
+msgid "DATA ELEMENT"
+msgstr "DATA ELEMEN"
+
+msgid "VALUE"
+msgstr "NILAI"
+
+msgid "no data available"
+msgstr "tidak ada data"
+
+msgid "[All Validation Rules]"
+msgstr "[All Validation Rules]"
+
+msgid "Performing request"
+msgstr "Menjalankan permintaan"
+
+msgid "Performing analysis"
+msgstr "Menjalankan analisis"
+
+msgid "Analysis done"
+msgstr "Analisis selesai"
+
+msgid "Validation passed successfully"
+msgstr "Lulus validasi"
+
+msgid "No values found"
+msgstr "Tidak ada nilai ditemukan"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Terjadi kesalahan tak terduga selama analisis"
+
+msgid "Marked"
+msgstr "Ditandai"
+
+msgid "Unmarked"
+msgstr "Batal menandai"
+
+msgid "Unfollow done"
+msgstr "Berhenti mengikuti"
+
+msgid "Settings"
+msgstr "Setting"
+
+msgid "Search apps"
+msgstr "Cari app"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Account"
+msgstr "Akun"
+
+msgid "Help"
+msgstr "Bantuan"
+
+msgid "Log out"
+msgstr "Keluar"
+
+msgid "About DHIS 2"
+msgstr "Tentang DHIS2"
+
+msgid "Manage my apps"
+msgstr "Kelola app saya"
+
+msgid "No results found"
+msgstr "Tidak ada hasil ditemukan"
+
+msgid "Interpretations"
+msgstr "Interpretasi"
+
+msgid "Messages"
+msgstr "Pesan"
