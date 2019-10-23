@@ -1,0 +1,255 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "Data Set"
+msgstr "ڈیٹا سیٹ"
+
+msgid "[All Data Sets]"
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr "فالو اپ تجزیہ"
+
+msgid "View Data Values"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"اعداد و شمار کے اندراج یا تجزیہ کے دوران مزید پیروی کے لئے نشان زد کردہ "
+"اعداد و شمار کی قدر دیکھیں یا ترمیم کریں."
+
+msgid "follow up"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr "والدین تنظیم یونٹ"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "Period"
+msgstr "مدت"
+
+msgid "Min"
+msgstr "کم سے کم"
+
+msgid "Value"
+msgstr "قدر"
+
+msgid "Max"
+msgstr "زیادہ سے زیادہ"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Comment"
+msgstr "تبصرا"
+
+msgid "Close"
+msgstr "بند"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"500 سے زائد قدر مل گئے ہیں، براہ کرم سب کو دیکھنے کے لئے تلاش کو محدود کریں"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "کم سے زیادہ آؤٹ لک تجزیہ"
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"مائن اور زیادہ سے زیادہ اقدار پر مبنی ممکنہ اضافی اقدار کا تجزیہ کریں. پہلے "
+"سے ہی اقدار کی جانچ پڑتال کی جاسکتی ہے اور اس کی پیروی کی جا سکتی ہے."
+
+msgid "start"
+msgstr ""
+
+msgid "Mark"
+msgstr "مارک"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "اسٹڈی ڈیو آؤٹ شدہ تجزیہ"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"معیاری انحرافات پر مبنی ممکنہ اضافی اقدار کا تجزیہ کریں. پہلے سے ہی اقدار کی"
+" جانچ پڑتال کی جاسکتی ہے اور اس کی پیروی کی جا سکتی ہے."
+
+msgid "Select number of standard deviations"
+msgstr "معیاری انحراف کی تعداد منتخب کریں"
+
+msgid "Validation Rule Analysis"
+msgstr "توثیق کے اصول تجزیہ"
+
+msgid "Run Validation"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"ڈیٹا بیس میں اعداد و شمار میں انملیوں اور غلطیوں کو بے نقاب کرنے کے لئے "
+"توثیق کے قوانین کو چلائیں."
+
+msgid "validate"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "Importance"
+msgstr "اہمیت"
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Operator"
+msgstr "آپریٹر"
+
+msgid "Details"
+msgstr "تفصیلات"
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Description"
+msgstr "تفصیلات"
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "no data available"
+msgstr ""
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Performing request"
+msgstr ""
+
+msgid "Performing analysis"
+msgstr ""
+
+msgid "Analysis done"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr " توثیق کامیاب ہوگئی"
+
+msgid "No values found"
+msgstr "کوئی قدر نہیں ملا"
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "Marked"
+msgstr ""
+
+msgid "Unmarked"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Settings"
+msgstr "ترتیب"
+
+msgid "Search apps"
+msgstr "ایپس تلاش کریں"
+
+msgid "Profile"
+msgstr "پرفائل"
+
+msgid "Account"
+msgstr "اکاؤنٹ"
+
+msgid "Help"
+msgstr "مدد"
+
+msgid "Log out"
+msgstr "لاگ آؤٹ"
+
+msgid "About DHIS 2"
+msgstr "ڈی.آئی.ایچ.ایس کے متعلق"
+
+msgid "Manage my apps"
+msgstr "ایپ کی میجنمنٹ"
+
+msgid "No results found"
+msgstr "کوئی نتیجہ نہیں ملا"
+
+msgid "Interpretations"
+msgstr "تشریحات"
+
+msgid "Messages"
+msgstr "پیغامات"
