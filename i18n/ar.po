@@ -1,19 +1,19 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06T12:53:09.832Z\n"
-"PO-Revision-Date: 2018-04-09 23:27+0000\n"
-"Last-Translator: Translator 2 <tr2@emata.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ar\n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-09-07T11:51:32.799Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1523316428.802098\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "جار تحديث شجرة الوحدات التنظيمية..."
@@ -71,7 +71,7 @@ msgid "Period"
 msgstr "الفترة الزمنية"
 
 msgid "Min"
-msgstr "اﻷدنى"
+msgstr "الأدنى"
 
 msgid "Value"
 msgstr "القيمة"
@@ -89,7 +89,8 @@ msgid "Close"
 msgstr "إغلاق"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr "تم العثور على أكثر من 500 قيمة، الرجاء تضييق نطاق البحث لمشاهدة الجميع"
+msgstr ""
+"تم العثور على أكثر من 500 قيمة، الرجاء تضييق نطاق البحث لمشاهدة الجميع"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "تحليل القيم الدنيا-العليا للقيم المتطرفة"
@@ -98,8 +99,8 @@ msgid "Analyze"
 msgstr "تحليل"
 
 msgid ""
-"Analyze potential outlier values based on min and max values. Outlier "
-"values can be examined and marked for follow-up."
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
 msgstr ""
 "تحليل القيم المتطرفة المحتملة اعتماداً على القيم الدنيا والعليا. من الممكن "
 "فحص القيم المتطرفة ووضع علامة عليها للمتابعة."
@@ -186,6 +187,9 @@ msgstr "عنصر البيانات"
 
 msgid "VALUE"
 msgstr "القيمة"
+
+msgid "no data available"
+msgstr ""
 
 msgid "[All Validation Rules]"
 msgstr "[جميع قواعد التحقق]"
