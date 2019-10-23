@@ -1,16 +1,19 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
-"PO-Revision-Date: 2019-04-08 01:41-0400\n"
-"Last-Translator: Pootle <pootle@translate.dhis2.net>\n"
-"Language-Team: Russian\n"
 "Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Обновление дерева организационных единиц ..."
@@ -50,7 +53,7 @@ msgid "unfollow"
 msgstr "не отслеживать"
 
 msgid "Parent organisation unit"
-msgstr "Родительская организационная единица"
+msgstr "Родительская организация"
 
 msgid "Start Date"
 msgstr "Дата начала"
@@ -62,19 +65,19 @@ msgid "Data Element"
 msgstr "Элемент данных"
 
 msgid "Organisation Unit"
-msgstr "Организационная единица"
+msgstr "Организация"
 
 msgid "Period"
 msgstr "Период"
 
 msgid "Min"
-msgstr "Мин"
+msgstr "Min"
 
 msgid "Value"
 msgstr "Значение"
 
 msgid "Max"
-msgstr "Макс"
+msgstr "Max"
 
 msgid "Unfollow"
 msgstr "Не отслеживать"
@@ -97,8 +100,8 @@ msgid "Analyze"
 msgstr "Анализировать"
 
 msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values "
-"can be examined and marked for follow-up."
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
 msgstr ""
 "Анализировать потенциальные значения-выбросы на основе минимального и "
 "максимального значений. Значения выбросов могут быть изучены и отмечены для "
@@ -118,8 +121,8 @@ msgid ""
 "values can be examined and marked for follow-up."
 msgstr ""
 "Анализировать потенциальные значения-выбросы на основе стандартного "
-"отклонения. Значения выбросов могут быть изучены и отмечены для последующего "
-"отслеживания."
+"отклонения. Значения выбросов могут быть изучены и отмечены для последующего"
+" отслеживания."
 
 msgid "Select number of standard deviations"
 msgstr "Выберите количество стандартных отклонений"
@@ -148,16 +151,16 @@ msgid "Persist new results"
 msgstr "Сохранять новые результаты"
 
 msgid "Importance"
-msgstr "Значимость"
+msgstr "Importance"
 
 msgid "Validation Rule"
 msgstr "Правило проверки"
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Операция"
 
 msgid "Details"
-msgstr "Подробности"
+msgstr "Детали"
 
 msgid "Validation Details"
 msgstr "Детали проверки"
@@ -223,7 +226,7 @@ msgid "Settings"
 msgstr "Настройки"
 
 msgid "Search apps"
-msgstr "Поиск приложений"
+msgstr "Search apps"
 
 msgid "Profile"
 msgstr "Профиль"
@@ -241,10 +244,10 @@ msgid "About DHIS 2"
 msgstr "О DHIS 2"
 
 msgid "Manage my apps"
-msgstr "Управление моими приложениями"
+msgstr "Manage my apps"
 
 msgid "No results found"
-msgstr "Результаты не найдены"
+msgstr "No results found"
 
 msgid "Interpretations"
 msgstr "Интерпретации"
