@@ -1,18 +1,19 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06 08:18+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sv\n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-10-23T10:18:10.164Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.2.5\n"
-"X-Pootle-Path: /sv/data-quality-app/sv.po\n"
-"X-Pootle-Revision: 29703\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -68,13 +69,13 @@ msgid "Period"
 msgstr "Period"
 
 msgid "Min"
-msgstr "Min"
+msgstr "min"
 
 msgid "Value"
 msgstr "Värde"
 
 msgid "Max"
-msgstr "Max"
+msgstr "max"
 
 msgid "Unfollow"
 msgstr "Sluta följa"
@@ -83,7 +84,7 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Close"
-msgstr "Stäng"
+msgstr "Stänga"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
@@ -95,8 +96,8 @@ msgid "Analyze"
 msgstr "Analysera"
 
 msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values "
-"can be examined and marked for follow-up."
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
 msgstr ""
 
 msgid "start"
@@ -149,7 +150,7 @@ msgid "Operator"
 msgstr "Operatör"
 
 msgid "Details"
-msgstr "Detaljer"
+msgstr "detaljer"
 
 msgid "Validation Details"
 msgstr "Validering Detaljer"
@@ -177,6 +178,9 @@ msgstr "DATAELEMENT"
 
 msgid "VALUE"
 msgstr "VÄRDE"
+
+msgid "no data available"
+msgstr ""
 
 msgid "[All Validation Rules]"
 msgstr "[Alla valideringsregler]"
