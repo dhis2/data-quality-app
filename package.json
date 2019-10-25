@@ -86,11 +86,6 @@
     "extract-pot": "node scripts/pot-extractor.js",
     "refresh-translations-template": "yarn extract-pot -o en.pot && git add ./i18n/en.pot"
   },
-  "pre-commit": [
-    "lint",
-    "validate",
-    "refresh-translations-template"
-  ],
   "manifest.webapp": {
     "name": "DHIS2 Data Quality App",
     "description": "DHIS2 Data Quality App",
