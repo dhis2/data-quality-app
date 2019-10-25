@@ -11,7 +11,8 @@
     "pretest": "npm run localize",
     "prebuild": "npm run localize",
     "lint:style": "d2-style js check --all",
-    "localize": "d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/"
+    "localize": "yarn extract-pot && d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/",
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.6",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@dhis2/cli-style": "^3.2.2",
+    "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
