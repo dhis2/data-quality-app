@@ -3,7 +3,7 @@ import 'material-design-icons-iconfont'
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import HeaderBar from '@dhis2/d2-ui-header-bar'
+import { HeaderBar } from '@dhis2/ui-widgets'
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
@@ -92,7 +92,7 @@ class App extends PureComponent {
 
         return (
             <div>
-                <HeaderBar d2={this.context.d2} />
+                <HeaderBar appName={i18n.t('Data Quality')} />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
