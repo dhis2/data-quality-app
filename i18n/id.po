@@ -1,13 +1,14 @@
 # Translators:
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2018-10-23T10:18:10.164Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,10 +20,10 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Memperbarui Pohon Unit Organisasi.."
 
 msgid "Data Set"
-msgstr "Data Set"
+msgstr ""
 
 msgid "[All Data Sets]"
-msgstr "[All Data Sets]"
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "UNDUH SEBAGAI PDF"
@@ -71,7 +72,7 @@ msgid "Period"
 msgstr "Periode"
 
 msgid "Min"
-msgstr "Min"
+msgstr ""
 
 msgid "Value"
 msgstr "Nilai"
@@ -192,7 +193,7 @@ msgid "no data available"
 msgstr "tidak ada data"
 
 msgid "[All Validation Rules]"
-msgstr "[All Validation Rules]"
+msgstr ""
 
 msgid "Performing request"
 msgstr "Menjalankan permintaan"
