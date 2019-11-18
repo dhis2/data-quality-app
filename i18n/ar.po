@@ -245,7 +245,7 @@ msgid "Manage my apps"
 msgstr "إدارة تطبيقاتي"
 
 msgid "No results found"
-msgstr "No results found"
+msgstr ""
 
 msgid "Interpretations"
 msgstr "التفسيرات"
