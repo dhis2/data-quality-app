@@ -1,13 +1,13 @@
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Parent organisation unit"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -69,13 +69,13 @@ msgid "Period"
 msgstr "အချိန်ကာလ"
 
 msgid "Min"
-msgstr "Min"
+msgstr "အနည်းဆုံး"
 
 msgid "Value"
 msgstr "တန်ဖိုး"
 
 msgid "Max"
-msgstr "Max"
+msgstr "အများဆုံး"
 
 msgid "Unfollow"
 msgstr ""
@@ -218,7 +218,7 @@ msgid "Settings"
 msgstr "တည်ဆောက်ထားသည့်အနေအထား"
 
 msgid "Search apps"
-msgstr "Search apps"
+msgstr ""
 
 msgid "Profile"
 msgstr "အတ္ထုပ္ပတ္တိအကျဉ်း"
@@ -236,10 +236,10 @@ msgid "About DHIS 2"
 msgstr "DHIS 2 အကြောင်း"
 
 msgid "Manage my apps"
-msgstr "Manage my apps"
+msgstr ""
 
 msgid "No results found"
-msgstr "No results found"
+msgstr ""
 
 msgid "Interpretations"
 msgstr "Interpretations"
