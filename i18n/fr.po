@@ -1,14 +1,14 @@
 # Translators:
 # mrwine <matthieu@pinard.no>, 2019
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -176,7 +176,7 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 msgid "LEFT SIDE"
 msgstr ""
@@ -254,4 +254,4 @@ msgid "Interpretations"
 msgstr "interprétations"
 
 msgid "Messages"
-msgstr "Messages"
+msgstr ""
