@@ -1,0 +1,221 @@
+# Translators:
+# phil_dhis2, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-09-07T11:51:32.799Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
+"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "Data Set"
+msgstr "مجموعه اطلاعات"
+
+msgid "[All Data Sets]"
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr "پیگیری تحلیل"
+
+msgid "View Data Values"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"مشاهده یا ویرایش ارزش ها دیتا مشخص شده برای بیشتر پیگیری در هنگام ورود "
+"اطلاعات و یا تجزیه و تحلیل"
+
+msgid "follow up"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr "سطح بالا واحد سازمان"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "واحد سازمان"
+
+msgid "Period"
+msgstr "دوره"
+
+msgid "Min"
+msgstr "کوچکتر"
+
+msgid "Value"
+msgstr "ارزش"
+
+msgid "Max"
+msgstr "بزرگتر"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Comment"
+msgstr "نظر"
+
+msgid "Close"
+msgstr "بستن"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"بیشتر از 500 ارزش پیدا شد، لطفآ جستجوی را باریک سازید تا همه را بیبینید"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "کوچکتر-بزرگتر Outlier Analysis"
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"تجزیه و تحلیل ارزش پرت بالقوه بر اساس کوچکتر و بزرگتر ارزش. ارزش پرت می توان"
+" بررسی و مشخص شده برای پیگیری"
+
+msgid "start"
+msgstr ""
+
+msgid "Mark"
+msgstr "مارک"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Std Dev Outlier Analysis"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"تجزیه و تحلیل ارزش پرت بالقوه بر اساس انحراف استاندارد. ارزش پرت می توان "
+"بررسی و مشخص شده برای پیگیری."
+
+msgid "Select number of standard deviations"
+msgstr "عدد Standard Deviation را انتخاب کنید"
+
+msgid "Validation Rule Analysis"
+msgstr "تحلیل قانون اعتبار سنجی"
+
+msgid "Run Validation"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"اجرای قوانین اعتبار سنجی به منظور پرده ناهنجاری و خطاهای موجود در دیتا در "
+"دیتابیس."
+
+msgid "validate"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "Importance"
+msgstr "وارد"
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Operator"
+msgstr "اپریتر"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Description"
+msgstr "شرح"
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "no data available"
+msgstr ""
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Performing request"
+msgstr ""
+
+msgid "Performing analysis"
+msgstr ""
+
+msgid "Analysis done"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr "دستور سنجی موفقانه انجام یافت"
+
+msgid "No values found"
+msgstr "هیچ ارزش پیدا نشد"
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "Marked"
+msgstr ""
+
+msgid "Unmarked"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
