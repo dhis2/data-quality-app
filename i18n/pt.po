@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"POT-Creation-Date: 2019-10-25T13:13:14.528Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -14,13 +14,12 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Updating Organisation Units Tree..."
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
+"Mais de 500 valores encontrados, corrija as violações ou restrinja a "
+"pesquisa para ver todos"
 
-msgid "Data Set"
-msgstr "Ficha"
-
-msgid "[All Data Sets]"
+msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
@@ -30,34 +29,6 @@ msgid "DOWNLOAD AS XLS"
 msgstr ""
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
-
-msgid "Follow-Up Analysis"
-msgstr "Análise do Acompanhamento"
-
-msgid "View Data Values"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Ver ou editar valores de dados marcados para posterior acompanhamento "
-"durante a entrada de dados ou análise."
-
-msgid "follow up"
-msgstr ""
-
-msgid "unfollow"
-msgstr ""
-
-msgid "Parent organisation unit"
-msgstr "Unidade organizacional pai"
-
-msgid "Start Date"
-msgstr ""
-
-msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
@@ -78,76 +49,76 @@ msgstr "Valor"
 msgid "Max"
 msgstr "Máximo"
 
-msgid "Unfollow"
+msgid "Mark"
+msgstr "Marcar"
+
+msgid "Validation Rule Group"
 msgstr ""
 
-msgid "Comment"
-msgstr "Comentário"
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr "Nenhum valor encontrado"
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr "Análise do Acompanhamento"
+
+msgid "Data Set"
+msgstr "Ficha"
+
+msgid "Parent organisation unit"
+msgstr "Unidade organizacional pai"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
 
 msgid "Close"
 msgstr "fFechar"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "Comment"
+msgstr "Comentário"
+
+msgid "Unfollow"
 msgstr ""
-"Mais de 500 valores encontrados, corrija as violações ou restrinja a "
-"pesquisa para ver todos"
+
+msgid "unfollow"
+msgstr ""
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Análise de Discrepâncias de Min-Max"
 
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values"
-" can be examined and marked for follow-up."
-msgstr ""
-"Analisar potenciais valores discrepantes com base em valores mínimo e "
-"máximo. Valores discrepantes podem ser examinados e marcados para "
-"acompanhamento."
-
 msgid "start"
 msgstr ""
-
-msgid "Mark"
-msgstr "Marcar"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Análise de Discrepâncias de Desvio Padrão"
 
-msgid ""
-"Analyze potential outlier values based on standard deviations. Outlier "
-"values can be examined and marked for follow-up."
-msgstr ""
-"Analisar potenciais valores discrepantes com base em desvios-padrão. Valores"
-" discrepantes podem ser examinados e marcados para acompanhamento."
-
 msgid "Select number of standard deviations"
 msgstr "Seleccione o número de desvios-padrão"
 
+msgid "Validation passed successfully"
+msgstr "Validado com sucesso"
+
 msgid "Validation Rule Analysis"
 msgstr "Analise das regras de validação"
-
-msgid "Run Validation"
-msgstr ""
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Executar as regras de validação, a fim de revelar anomalias e erros nos "
-"dados existentes na base de dados."
-
-msgid "validate"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr ""
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
 msgstr ""
 
 msgid "Importance"
@@ -162,9 +133,6 @@ msgstr "Operador"
 msgid "Details"
 msgstr "Detalhes"
 
-msgid "Validation Details"
-msgstr ""
-
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
 
@@ -177,10 +145,7 @@ msgstr "Nome"
 msgid "Description"
 msgstr "Descrição"
 
-msgid "LEFT SIDE"
-msgstr ""
-
-msgid "RIGHT SIDE"
+msgid "no data available"
 msgstr ""
 
 msgid "DATA ELEMENT"
@@ -189,68 +154,11 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
-msgid "no data available"
+msgid "Validation Details"
 msgstr ""
 
-msgid "[All Validation Rules]"
+msgid "LEFT SIDE"
 msgstr ""
 
-msgid "Performing request"
+msgid "RIGHT SIDE"
 msgstr ""
-
-msgid "Performing analysis"
-msgstr ""
-
-msgid "Analysis done"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "Validado com sucesso"
-
-msgid "No values found"
-msgstr "Nenhum valor encontrado"
-
-msgid "An unexpected error happened during analysis"
-msgstr ""
-
-msgid "Marked"
-msgstr ""
-
-msgid "Unmarked"
-msgstr ""
-
-msgid "Unfollow done"
-msgstr ""
-
-msgid "Settings"
-msgstr "Configurações"
-
-msgid "Search apps"
-msgstr "Pesquisar aplicações"
-
-msgid "Profile"
-msgstr "Perfil"
-
-msgid "Account"
-msgstr "Conta"
-
-msgid "Help"
-msgstr "Ajuda"
-
-msgid "Log out"
-msgstr "Sair"
-
-msgid "About DHIS 2"
-msgstr "Sobre DHIS 2"
-
-msgid "Manage my apps"
-msgstr ""
-
-msgid "No results found"
-msgstr ""
-
-msgid "Interpretations"
-msgstr "Interpretações"
-
-msgid "Messages"
-msgstr "Mensagens"
