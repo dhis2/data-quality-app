@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"POT-Creation-Date: 2019-10-25T13:13:14.528Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -15,13 +15,10 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
+
 msgid "Updating Organisation Units Tree..."
-msgstr ""
-
-msgid "Data Set"
-msgstr ""
-
-msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
@@ -32,32 +29,6 @@ msgstr "LADDA NED SOM XLS"
 
 msgid "DOWNLOAD AS CSV"
 msgstr "LADDA NED SOM CSV"
-
-msgid "Follow-Up Analysis"
-msgstr "Uppföljningsanalys"
-
-msgid "View Data Values"
-msgstr "Visa datavärden"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-
-msgid "follow up"
-msgstr "Följ upp"
-
-msgid "unfollow"
-msgstr "sluta följa"
-
-msgid "Parent organisation unit"
-msgstr ""
-
-msgid "Start Date"
-msgstr "Start datum"
-
-msgid "End Date"
-msgstr "Slutdatum"
 
 msgid "Data Element"
 msgstr "Data element"
@@ -77,68 +48,77 @@ msgstr "Värde"
 msgid "Max"
 msgstr ""
 
-msgid "Unfollow"
-msgstr "Sluta följa"
+msgid "Mark"
+msgstr "Markera"
 
-msgid "Comment"
-msgstr "Kommentar"
+msgid "Validation Rule Group"
+msgstr "Valideringsregelngrupp"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Ett oväntat fel inträffade under analysen"
+
+msgid "No values found"
+msgstr "Inga värden hittades"
+
+msgid "Unfollow done"
+msgstr "Sluta följa utförd"
+
+msgid "Follow-Up Analysis"
+msgstr "Uppföljningsanalys"
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr ""
+
+msgid "Start Date"
+msgstr "Start datum"
+
+msgid "End Date"
+msgstr "Slutdatum"
+
+msgid "follow up"
+msgstr "Följ upp"
 
 msgid "Close"
 msgstr "Stäng"
 
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Unfollow"
+msgstr "Sluta följa"
+
+msgid "unfollow"
+msgstr "sluta följa"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Min-max outlier analysis"
 
-msgid "Analyze"
-msgstr "Analysera"
-
-msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values"
-" can be examined and marked for follow-up."
-msgstr ""
-
 msgid "start"
 msgstr ""
-
-msgid "Mark"
-msgstr "Markera"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Standardavvikelse outlier analys"
 
-msgid ""
-"Analyze potential outlier values based on standard deviations. Outlier "
-"values can be examined and marked for follow-up."
-msgstr ""
-
 msgid "Select number of standard deviations"
 msgstr "Välj antal standardavvikelser"
 
+msgid "Validation passed successfully"
+msgstr "Validering godkänd"
+
 msgid "Validation Rule Analysis"
 msgstr "Valideringsregeln analys"
-
-msgid "Run Validation"
-msgstr "Kör validering"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-
-msgid "validate"
-msgstr "validera"
-
-msgid "Validation Rule Group"
-msgstr "Valideringsregelngrupp"
 
 msgid "Send Notifications"
 msgstr "Skicka notifieringar"
 
 msgid "Persist new results"
 msgstr "Spara nya resultater"
+
+msgid "validate"
+msgstr "validera"
 
 msgid "Importance"
 msgstr "Viktighet"
@@ -152,9 +132,6 @@ msgstr "Operatör"
 msgid "Details"
 msgstr "Detaljer"
 
-msgid "Validation Details"
-msgstr "Validering Detaljer"
-
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr "Valideringsregler Detaljer"
 
@@ -167,11 +144,8 @@ msgstr "Namn"
 msgid "Description"
 msgstr "Beskrivning"
 
-msgid "LEFT SIDE"
-msgstr "VÄNSTER SIDA"
-
-msgid "RIGHT SIDE"
-msgstr "HÖGRE SIDA"
+msgid "no data available"
+msgstr ""
 
 msgid "DATA ELEMENT"
 msgstr "DATAELEMENT"
@@ -179,68 +153,11 @@ msgstr "DATAELEMENT"
 msgid "VALUE"
 msgstr "VÄRDE"
 
-msgid "no data available"
-msgstr ""
+msgid "Validation Details"
+msgstr "Validering Detaljer"
 
-msgid "[All Validation Rules]"
-msgstr "[Alla valideringsregler]"
+msgid "LEFT SIDE"
+msgstr "VÄNSTER SIDA"
 
-msgid "Performing request"
-msgstr "Utför begäran"
-
-msgid "Performing analysis"
-msgstr "Utför analys"
-
-msgid "Analysis done"
-msgstr "Analys slutförts"
-
-msgid "Validation passed successfully"
-msgstr "Validering godkänd"
-
-msgid "No values found"
-msgstr "Inga värden hittades"
-
-msgid "An unexpected error happened during analysis"
-msgstr "Ett oväntat fel inträffade under analysen"
-
-msgid "Marked"
-msgstr "Markerad"
-
-msgid "Unmarked"
-msgstr "Avmarkerad"
-
-msgid "Unfollow done"
-msgstr "Sluta följa utförd"
-
-msgid "Settings"
-msgstr "Inställningar"
-
-msgid "Search apps"
-msgstr "Sök appar"
-
-msgid "Profile"
-msgstr "Profil"
-
-msgid "Account"
-msgstr "Konto"
-
-msgid "Help"
-msgstr "Hjälp"
-
-msgid "Log out"
-msgstr "Logga ut"
-
-msgid "About DHIS 2"
-msgstr "Om DHIS 2"
-
-msgid "Manage my apps"
-msgstr "Hantera mina appar"
-
-msgid "No results found"
-msgstr "Inga resultat hittades"
-
-msgid "Interpretations"
-msgstr "Tolkningar"
-
-msgid "Messages"
-msgstr "Meddelanden"
+msgid "RIGHT SIDE"
+msgstr "HÖGRE SIDA"
