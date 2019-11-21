@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"POT-Creation-Date: 2019-10-25T12:28:15.046Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -15,13 +15,11 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Updating Organisation Units Tree..."
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
+"Tìm thấy hơn 500 giá trị, xin vui lòng cung cấp thêm thông tin tìm kiếm."
 
-msgid "Data Set"
-msgstr "Biểu nhập"
-
-msgid "[All Data Sets]"
+msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
@@ -31,34 +29,6 @@ msgid "DOWNLOAD AS XLS"
 msgstr ""
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
-
-msgid "Follow-Up Analysis"
-msgstr "Phân Tích Theo Dõi"
-
-msgid "View Data Values"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Xem hoặc Sửa giá trị dữ liệu đã đánh dấu để theo dõi trong khi nhập hoặc "
-"phân tích dữ liệu."
-
-msgid "follow up"
-msgstr ""
-
-msgid "unfollow"
-msgstr ""
-
-msgid "Parent organisation unit"
-msgstr "Đơn vị cha"
-
-msgid "Start Date"
-msgstr ""
-
-msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
@@ -79,72 +49,76 @@ msgstr "Giá trị"
 msgid "Max"
 msgstr "Lớn nhất"
 
-msgid "Unfollow"
+msgid "Mark"
+msgstr "Đánh dấu"
+
+msgid "Validation Rule Group"
 msgstr ""
 
-msgid "Comment"
-msgstr "Bình luận"
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr "Không tìm thấy giá trị"
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr "Phân Tích Theo Dõi"
+
+msgid "Data Set"
+msgstr "Biểu nhập"
+
+msgid "Parent organisation unit"
+msgstr "Đơn vị cha"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
 
 msgid "Close"
 msgstr "Đóng lại"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "Comment"
+msgstr "Bình luận"
+
+msgid "Unfollow"
 msgstr ""
-"Tìm thấy hơn 500 giá trị, xin vui lòng cung cấp thêm thông tin tìm kiếm."
+
+msgid "unfollow"
+msgstr ""
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Phân Tích Ngoài Giới Hạn Lớn-Nhỏ"
 
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values"
-" can be examined and marked for follow-up."
-msgstr ""
-"Phân tích giá trị ngoại lệ dựa trên giá trị lớn nhất và nhỏ nhất. Giá trị "
-"ngoại lệ có thể được kiểm tra và đánh dấu để theo dõi."
-
 msgid "start"
 msgstr ""
-
-msgid "Mark"
-msgstr "Đánh dấu"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Phân Tích Ngoài Độ Lệch Chuẩn"
 
-msgid ""
-"Analyze potential outlier values based on standard deviations. Outlier "
-"values can be examined and marked for follow-up."
-msgstr ""
-"Phân tích dữ liệu ngoại lệ dựa trên độ lệch chuẩn. Giá trị ngoại lệ có thể "
-"được kiểm tra và đánh dấu để theo dõi."
-
 msgid "Select number of standard deviations"
 msgstr "Chọn độ lệch chuẩn"
 
+msgid "Validation passed successfully"
+msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
+
 msgid "Validation Rule Analysis"
 msgstr "Phân Tích Tính Hợp Lệ"
-
-msgid "Run Validation"
-msgstr ""
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr "Chạy luật hợp lệ trước để tìm ra bất thường và lỗi trong dữ liệu."
-
-msgid "validate"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr ""
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
 msgstr ""
 
 msgid "Importance"
@@ -159,9 +133,6 @@ msgstr "Toán tử"
 msgid "Details"
 msgstr "Chi tiết"
 
-msgid "Validation Details"
-msgstr ""
-
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
 
@@ -174,10 +145,7 @@ msgstr "Tên tài khoản"
 msgid "Description"
 msgstr "Miêu tả"
 
-msgid "LEFT SIDE"
-msgstr ""
-
-msgid "RIGHT SIDE"
+msgid "no data available"
 msgstr ""
 
 msgid "DATA ELEMENT"
@@ -186,68 +154,11 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
-msgid "no data available"
+msgid "Validation Details"
 msgstr ""
 
-msgid "[All Validation Rules]"
+msgid "LEFT SIDE"
 msgstr ""
 
-msgid "Performing request"
+msgid "RIGHT SIDE"
 msgstr ""
-
-msgid "Performing analysis"
-msgstr ""
-
-msgid "Analysis done"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
-
-msgid "No values found"
-msgstr "Không tìm thấy giá trị"
-
-msgid "An unexpected error happened during analysis"
-msgstr ""
-
-msgid "Marked"
-msgstr ""
-
-msgid "Unmarked"
-msgstr ""
-
-msgid "Unfollow done"
-msgstr ""
-
-msgid "Settings"
-msgstr "Các thiết lập"
-
-msgid "Search apps"
-msgstr "Tìm kiếm ứng dụng"
-
-msgid "Profile"
-msgstr "Hồ sơ"
-
-msgid "Account"
-msgstr "Tài khoản"
-
-msgid "Help"
-msgstr "Giúp đỡ"
-
-msgid "Log out"
-msgstr "Đăng xuất"
-
-msgid "About DHIS 2"
-msgstr "Giới thiệu về DHIS 2"
-
-msgid "Manage my apps"
-msgstr "Quản lý ứng dụng của tôi"
-
-msgid "No results found"
-msgstr "Không tìm thấy kết quả nào"
-
-msgid "Interpretations"
-msgstr "Diễn giải báo cáo"
-
-msgid "Messages"
-msgstr "Tin nhắn"
