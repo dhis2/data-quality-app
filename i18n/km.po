@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T07:23:57.498Z\n"
+"POT-Creation-Date: 2019-10-25T12:28:15.046Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
@@ -14,13 +14,10 @@ msgstr ""
 "Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Updating Organisation Units Tree..."
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 
-msgid "Data Set"
-msgstr "ទិន្នន័យឈុត"
-
-msgid "[All Data Sets]"
+msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
@@ -30,32 +27,6 @@ msgid "DOWNLOAD AS XLS"
 msgstr ""
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
-
-msgid "Follow-Up Analysis"
-msgstr ""
-
-msgid "View Data Values"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-
-msgid "follow up"
-msgstr ""
-
-msgid "unfollow"
-msgstr ""
-
-msgid "Parent organisation unit"
-msgstr ""
-
-msgid "Start Date"
-msgstr ""
-
-msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
@@ -76,67 +47,76 @@ msgstr "តម្លៃ"
 msgid "Max"
 msgstr "អតិបរមា"
 
-msgid "Unfollow"
+msgid "Mark"
 msgstr ""
 
-msgid "Comment"
-msgstr "មតិយោបល់"
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr ""
+
+msgid "Data Set"
+msgstr "ទិន្នន័យឈុត"
+
+msgid "Parent organisation unit"
+msgstr ""
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
 
 msgid "Close"
 msgstr "បិទ"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "Comment"
+msgstr "មតិយោបល់"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "unfollow"
 msgstr ""
 
 msgid "Min-Max Outlier Analysis"
 msgstr ""
 
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on min and max values. Outlier values"
-" can be examined and marked for follow-up."
-msgstr ""
-
 msgid "start"
-msgstr ""
-
-msgid "Mark"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
 msgstr ""
 
-msgid ""
-"Analyze potential outlier values based on standard deviations. Outlier "
-"values can be examined and marked for follow-up."
-msgstr ""
-
 msgid "Select number of standard deviations"
 msgstr ""
 
+msgid "Validation passed successfully"
+msgstr ""
+
 msgid "Validation Rule Analysis"
-msgstr ""
-
-msgid "Run Validation"
-msgstr ""
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-
-msgid "validate"
-msgstr ""
-
-msgid "Validation Rule Group"
 msgstr ""
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
 msgstr ""
 
 msgid "Importance"
@@ -151,9 +131,6 @@ msgstr "សញ្ញា​​​ប្រមាណ​វិធី"
 msgid "Details"
 msgstr "លម្អិត"
 
-msgid "Validation Details"
-msgstr ""
-
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
 
@@ -166,10 +143,7 @@ msgstr "ឈ្មោះ"
 msgid "Description"
 msgstr "ការ​ពិពណ៌នា"
 
-msgid "LEFT SIDE"
-msgstr ""
-
-msgid "RIGHT SIDE"
+msgid "no data available"
 msgstr ""
 
 msgid "DATA ELEMENT"
@@ -178,68 +152,11 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
-msgid "no data available"
+msgid "Validation Details"
 msgstr ""
 
-msgid "[All Validation Rules]"
+msgid "LEFT SIDE"
 msgstr ""
 
-msgid "Performing request"
+msgid "RIGHT SIDE"
 msgstr ""
-
-msgid "Performing analysis"
-msgstr ""
-
-msgid "Analysis done"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr ""
-
-msgid "No values found"
-msgstr ""
-
-msgid "An unexpected error happened during analysis"
-msgstr ""
-
-msgid "Marked"
-msgstr ""
-
-msgid "Unmarked"
-msgstr ""
-
-msgid "Unfollow done"
-msgstr ""
-
-msgid "Settings"
-msgstr "ការ​កំណត់"
-
-msgid "Search apps"
-msgstr ""
-
-msgid "Profile"
-msgstr "ជីវប្រវត្តិ"
-
-msgid "Account"
-msgstr "គណនី"
-
-msgid "Help"
-msgstr "ជំនួយ​"
-
-msgid "Log out"
-msgstr "ចេញពីគណនី"
-
-msgid "About DHIS 2"
-msgstr ""
-
-msgid "Manage my apps"
-msgstr ""
-
-msgid "No results found"
-msgstr ""
-
-msgid "Interpretations"
-msgstr "កន្លែងសន្ទនារ"
-
-msgid "Messages"
-msgstr "សារ"
