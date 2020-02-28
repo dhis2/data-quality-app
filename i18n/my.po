@@ -1,14 +1,13 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Aung Kyi Min <AungKyi.Min@savethechildren.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +42,7 @@ msgid "Organisation Unit"
 msgstr "အဖွဲ့အစည်းယူနစ်"
 
 msgid "Period"
-msgstr "ကာလ/ပိုင်းခြား"
+msgstr "အချိန်ကာလ"
 
 msgid "Min"
 msgstr "အနည်းဆုံး"
@@ -73,10 +72,10 @@ msgid "Follow-Up Analysis"
 msgstr "Follow-up Analysis"
 
 msgid "Data Set"
-msgstr "Data set"
+msgstr "Data အစု"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Parent organisation unit"
 
 msgid "Start Date"
 msgstr ""
@@ -88,7 +87,7 @@ msgid "follow up"
 msgstr ""
 
 msgid "Close"
-msgstr "ပိတ်မည်"
+msgstr "ပိတ်သည်"
 
 msgid "Comment"
 msgstr "မှတ်ချက်"
@@ -133,7 +132,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "ကိုင်တွယ်သူ"
+msgstr "စုစည်းစီမံသူ"
 
 msgid "Details"
 msgstr "အသေးစိတ်များ"
