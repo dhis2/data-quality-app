@@ -1,15 +1,14 @@
 # Translators:
-# mrwine <matthieu@pinard.no>, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Bram Piot <bram.piot@gmail.com>, 2019
-# phil_dhis2, 2019
+# mrwine <matthieu@pinard.no>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -137,7 +136,7 @@ msgid "Operator"
 msgstr "Opérateur"
 
 msgid "Details"
-msgstr "Détails"
+msgstr "Details"
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -149,7 +148,7 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "no data available"
 msgstr ""
