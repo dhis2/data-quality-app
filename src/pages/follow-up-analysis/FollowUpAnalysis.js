@@ -309,7 +309,6 @@ class FollowUpAnalysis extends Page {
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
                                     minDate={this.state.startDate}
-                                    maxDate={new Date()}
                                     value={this.state.endDate}
                                 />
                             </div>
