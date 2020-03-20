@@ -260,7 +260,6 @@ class ValidationRulesAnalysis extends Page {
                                     value={this.state.endDate}
                                     defaultDate={new Date()}
                                     minDate={this.state.startDate}
-                                    maxDate={new Date()}
                                 />
                                 <div id="validation-rule-groups">
                                     <ValidationRuleGroupsSelect
