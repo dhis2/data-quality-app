@@ -144,7 +144,7 @@ msgid "validate"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Groupe de règles de validation"
 
 msgid "Send Notifications"
 msgstr ""
@@ -156,7 +156,7 @@ msgid "Importance"
 msgstr "Importance"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Règle de validation"
 
 msgid "Operator"
 msgstr "Opérateur"
@@ -177,7 +177,7 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "LEFT SIDE"
 msgstr ""
