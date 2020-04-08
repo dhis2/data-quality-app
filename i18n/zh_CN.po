@@ -234,7 +234,7 @@ msgid "About DHIS 2"
 msgstr "关于"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "管理我的应用"
 
 msgid "No results found"
 msgstr ""
