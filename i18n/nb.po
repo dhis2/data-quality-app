@@ -1,0 +1,166 @@
+# Translators:
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data Quality"
+msgstr ""
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Data Element"
+msgstr "Dataelementer"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Min"
+msgstr ""
+
+msgid "Value"
+msgstr "Verdi"
+
+msgid "Max"
+msgstr ""
+
+msgid "Mark"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregel gruppe"
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr ""
+
+msgid "Data Set"
+msgstr "Datasett"
+
+msgid "Parent organisation unit"
+msgstr ""
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
+
+msgid "Close"
+msgstr "Lukk"
+
+msgid "Comment"
+msgstr ""
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Min-Max Outlier Analysis"
+msgstr ""
+
+msgid "start"
+msgstr ""
+
+msgid "Std Dev Outlier Analysis"
+msgstr ""
+
+msgid "Select number of standard deviations"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr ""
+
+msgid "Validation Rule Analysis"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
+msgstr ""
+
+msgid "Importance"
+msgstr ""
+
+msgid "Validation Rule"
+msgstr "Valideringsregel"
+
+msgid "Operator"
+msgstr ""
+
+msgid "Details"
+msgstr "Detaljer"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "no data available"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
