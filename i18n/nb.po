@@ -147,7 +147,7 @@ msgid "Validation Rule"
 msgstr "Valideringsregel"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 msgid "Details"
 msgstr "Detaljer"
@@ -234,7 +234,7 @@ msgid "About DHIS 2"
 msgstr "Om DHIS 2"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "Administrer applikasjonene mine"
 
 msgid "No results found"
 msgstr ""
