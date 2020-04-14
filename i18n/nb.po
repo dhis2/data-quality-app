@@ -147,7 +147,7 @@ msgid "Validation Rule"
 msgstr "Valideringsregel"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 msgid "Details"
 msgstr "Detaljer"
