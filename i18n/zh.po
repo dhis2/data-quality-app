@@ -24,16 +24,16 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "下载为PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "下载为XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "下载为CSV"
 
 msgid "Data Element"
 msgstr "数据元"
@@ -60,13 +60,13 @@ msgid "Validation Rule Group"
 msgstr "验证规则组"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "分析中发生意外错误"
 
 msgid "No values found"
 msgstr "无值被找到"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "取消后续完成"
 
 msgid "Follow-Up Analysis"
 msgstr "后续分析"
@@ -78,13 +78,13 @@ msgid "Parent organisation unit"
 msgstr "上级组织机构"
 
 msgid "Start Date"
-msgstr ""
+msgstr "开始日期"
 
 msgid "End Date"
-msgstr ""
+msgstr "结束日期"
 
 msgid "follow up"
-msgstr ""
+msgstr "后续跟进"
 
 msgid "Close"
 msgstr "关闭"
@@ -93,16 +93,16 @@ msgid "Comment"
 msgstr "评论"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "取消后续跟踪"
 
 msgid "unfollow"
-msgstr ""
+msgstr "取消后续跟踪"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "最小-最大值孤立分析"
 
 msgid "start"
-msgstr ""
+msgstr "开始"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "标准差孤立分析"
@@ -117,13 +117,13 @@ msgid "Validation Rule Analysis"
 msgstr "验证规则分析"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "发送通知"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "持久化新的结果"
 
 msgid "validate"
-msgstr ""
+msgstr "验证"
 
 msgid "Importance"
 msgstr "重要性"
@@ -138,10 +138,10 @@ msgid "Details"
 msgstr "详情"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "验证结果详情"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "验证规则"
 
 msgid "Name"
 msgstr "名称"
@@ -150,19 +150,19 @@ msgid "Description"
 msgstr "描述"
 
 msgid "no data available"
-msgstr ""
+msgstr "没有可用数据"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "数据元"
 
 msgid "VALUE"
-msgstr ""
+msgstr "值"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "有效性验证详情"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "左边"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "右边"
