@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr ""
+msgstr "Datakvalitet"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
