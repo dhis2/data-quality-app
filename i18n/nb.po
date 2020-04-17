@@ -132,7 +132,7 @@ msgid "validate"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Valideringsregel gruppe"
+msgstr "Valideringsregelgruppe"
 
 msgid "Send Notifications"
 msgstr ""
