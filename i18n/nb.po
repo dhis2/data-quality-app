@@ -52,7 +52,7 @@ msgid "Mark"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Valideringsregel gruppe"
+msgstr "Valideringsregelgruppe"
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
