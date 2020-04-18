@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "Data Set"
 msgstr "数据集"
@@ -27,13 +27,13 @@ msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "下载为PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "下载为XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "下载为CSV"
 
 msgid "Follow-Up Analysis"
 msgstr "后续分析"
@@ -47,19 +47,19 @@ msgid ""
 msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
 
 msgid "follow up"
-msgstr ""
+msgstr "后续跟进"
 
 msgid "unfollow"
-msgstr ""
+msgstr "取消后续跟踪"
 
 msgid "Parent organisation unit"
 msgstr "上级组织机构"
 
 msgid "Start Date"
-msgstr ""
+msgstr "开始日期"
 
 msgid "End Date"
-msgstr ""
+msgstr "结束日期"
 
 msgid "Data Element"
 msgstr "数据元"
@@ -80,7 +80,7 @@ msgid "Max"
 msgstr "最大"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "取消后续跟踪"
 
 msgid "Comment"
 msgstr "评论"
@@ -103,7 +103,7 @@ msgid ""
 msgstr "基于最小和最大值分析异常值。异常值能被后续检查和标记"
 
 msgid "start"
-msgstr ""
+msgstr "开始"
 
 msgid "Mark"
 msgstr "标记"
@@ -131,16 +131,16 @@ msgid ""
 msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
 
 msgid "validate"
-msgstr ""
+msgstr "验证"
 
 msgid "Validation Rule Group"
 msgstr "验证规则组"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "发送通知"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "持久化新的结果"
 
 msgid "Importance"
 msgstr "重要性"
@@ -155,13 +155,13 @@ msgid "Details"
 msgstr "详情"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "有效性验证详情"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "验证结果详情"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "验证规则"
 
 msgid "Name"
 msgstr "名称"
@@ -170,19 +170,19 @@ msgid "Description"
 msgstr "描述"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "左边"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "右边"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "数据元"
 
 msgid "VALUE"
-msgstr ""
+msgstr "值"
 
 msgid "no data available"
-msgstr ""
+msgstr "没有可用数据"
 
 msgid "[All Validation Rules]"
 msgstr ""
@@ -203,7 +203,7 @@ msgid "No values found"
 msgstr "无值被找到"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "分析中发生意外错误"
 
 msgid "Marked"
 msgstr ""
@@ -212,7 +212,7 @@ msgid "Unmarked"
 msgstr ""
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "取消后续完成"
 
 msgid "Settings"
 msgstr "设置"
@@ -236,7 +236,7 @@ msgid "About DHIS 2"
 msgstr "关于综合卫生信息管理平台"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "管理我的应用"
 
 msgid "No results found"
 msgstr "没有发现"
