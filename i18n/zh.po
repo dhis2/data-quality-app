@@ -24,7 +24,7 @@ msgid "Data Set"
 msgstr "数据集"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "【所有数据集】"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "下载为PDF"
@@ -39,7 +39,7 @@ msgid "Follow-Up Analysis"
 msgstr "后续分析"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "查看数据值"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -95,7 +95,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr "最小-最大值孤立分析"
 
 msgid "Analyze"
-msgstr ""
+msgstr "分析"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -123,7 +123,7 @@ msgid "Validation Rule Analysis"
 msgstr "验证规则分析"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "运行有效性验证"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -185,16 +185,16 @@ msgid "no data available"
 msgstr "没有可用数据"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "【所有验证规则】"
 
 msgid "Performing request"
-msgstr ""
+msgstr "执行请求"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "执行分析"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "分析完成"
 
 msgid "Validation passed successfully"
 msgstr "验证已成功"
@@ -206,10 +206,10 @@ msgid "An unexpected error happened during analysis"
 msgstr "分析中发生意外错误"
 
 msgid "Marked"
-msgstr ""
+msgstr "已标记"
 
 msgid "Unmarked"
-msgstr ""
+msgstr "未标记"
 
 msgid "Unfollow done"
 msgstr "取消后续完成"
