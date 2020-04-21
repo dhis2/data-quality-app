@@ -1,0 +1,166 @@
+# Translators:
+# 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"PO-Revision-Date: 2020-02-28 15:06+0000\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Quality"
+msgstr ""
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Data Element"
+msgstr "数据元"
+
+msgid "Organisation Unit"
+msgstr "组织机构"
+
+msgid "Period"
+msgstr "期间"
+
+msgid "Min"
+msgstr "最小"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Max"
+msgstr "最大"
+
+msgid "Mark"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "验证规则组"
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr ""
+
+msgid "Data Set"
+msgstr "数据集"
+
+msgid "Parent organisation unit"
+msgstr "上级组织机构"
+
+msgid "Start Date"
+msgstr "开始日期"
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Comment"
+msgstr ""
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Min-Max Outlier Analysis"
+msgstr ""
+
+msgid "start"
+msgstr ""
+
+msgid "Std Dev Outlier Analysis"
+msgstr ""
+
+msgid "Select number of standard deviations"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr ""
+
+msgid "Validation Rule Analysis"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
+msgstr ""
+
+msgid "Importance"
+msgstr ""
+
+msgid "Validation Rule"
+msgstr "验证规则"
+
+msgid "Operator"
+msgstr ""
+
+msgid "Details"
+msgstr "详情"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "no data available"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
