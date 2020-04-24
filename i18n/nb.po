@@ -1,3 +1,4 @@
+# 
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
@@ -34,7 +35,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Oppfølgingsanalyse"
 
 msgid "View Data Values"
 msgstr ""
@@ -118,7 +119,7 @@ msgid "Select number of standard deviations"
 msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Valideringsregel analyse"
 
 msgid "Run Validation"
 msgstr ""
@@ -195,7 +196,7 @@ msgid "Analysis done"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Validering ble gjennomført"
 
 msgid "No values found"
 msgstr "Ingen verdier funnet"
