@@ -1,3 +1,4 @@
+# 
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
@@ -64,7 +65,7 @@ msgid "Unfollow done"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Oppfølgingsanalyse"
 
 msgid "Data Set"
 msgstr "Datasett"
@@ -106,10 +107,10 @@ msgid "Select number of standard deviations"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Validering ble gjennomført"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Valideringsregel analyse"
 
 msgid "Send Notifications"
 msgstr ""
