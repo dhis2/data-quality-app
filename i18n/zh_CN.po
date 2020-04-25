@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
+msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -50,7 +50,7 @@ msgid "Max"
 msgstr "最大"
 
 msgid "Mark"
-msgstr ""
+msgstr "标记"
 
 msgid "Validation Rule Group"
 msgstr "验证规则组"
@@ -59,13 +59,13 @@ msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "No values found"
-msgstr ""
+msgstr "无值被找到"
 
 msgid "Unfollow done"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "后续分析"
 
 msgid "Data Set"
 msgstr "数据集"
@@ -86,7 +86,7 @@ msgid "Close"
 msgstr "关闭"
 
 msgid "Comment"
-msgstr ""
+msgstr "评论"
 
 msgid "Unfollow"
 msgstr ""
@@ -95,22 +95,22 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "最小-最大值孤立分析"
 
 msgid "start"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "标准差孤立分析"
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "选择标准差编号"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "验证已成功"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "验证规则分析"
 
 msgid "Send Notifications"
 msgstr ""
@@ -122,13 +122,13 @@ msgid "validate"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "重要性"
 
 msgid "Validation Rule"
 msgstr "验证规则"
 
 msgid "Operator"
-msgstr ""
+msgstr "操作符"
 
 msgid "Details"
 msgstr "详情"
