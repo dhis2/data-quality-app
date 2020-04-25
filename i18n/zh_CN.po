@@ -35,7 +35,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "后续分析"
 
 msgid "View Data Values"
 msgstr ""
@@ -43,7 +43,7 @@ msgstr ""
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
-msgstr ""
+msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
 
 msgid "follow up"
 msgstr ""
@@ -82,16 +82,16 @@ msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "评论"
 
 msgid "Close"
 msgstr "关闭"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
+msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "最小-最大值孤立分析"
 
 msgid "Analyze"
 msgstr ""
@@ -99,27 +99,27 @@ msgstr ""
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
-msgstr ""
+msgstr "基于最小和最大值分析异常值。异常值能被后续检查和标记"
 
 msgid "start"
 msgstr ""
 
 msgid "Mark"
-msgstr ""
+msgstr "标记"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "标准差孤立分析"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
-msgstr ""
+msgstr "基于标准差分析潜在的异常值。异常值能被后续检查和标记。"
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "选择标准差编号"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "验证规则分析"
 
 msgid "Run Validation"
 msgstr ""
@@ -127,7 +127,7 @@ msgstr ""
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
 
 msgid "validate"
 msgstr ""
@@ -142,13 +142,13 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "重要性"
 
 msgid "Validation Rule"
 msgstr "验证规则"
 
 msgid "Operator"
-msgstr ""
+msgstr "操作符"
 
 msgid "Details"
 msgstr "详情"
@@ -196,10 +196,10 @@ msgid "Analysis done"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "验证已成功"
 
 msgid "No values found"
-msgstr ""
+msgstr "无值被找到"
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "Manage my apps"
 msgstr "管理我的应用"
 
 msgid "No results found"
-msgstr ""
+msgstr "没有发现"
 
 msgid "Interpretations"
 msgstr "注释"
