@@ -95,16 +95,16 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "min-max tidligere analyse"
 
 msgid "start"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Std avvik tidl. analyse"
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "Velg antall standardavvik"
 
 msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"
