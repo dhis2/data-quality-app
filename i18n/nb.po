@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,16 +23,16 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "LAST NED SOM PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "LAST NED SOM XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "LAST NED SOM CSV"
 
 msgid "Data Element"
 msgstr "Dataelementer"
@@ -59,13 +59,13 @@ msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "En uventet feil oppsto under analysen"
 
 msgid "No values found"
 msgstr "Ingen verdier funnet"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Sluttet å følge"
 
 msgid "Follow-Up Analysis"
 msgstr "Oppfølgingsanalyse"
@@ -77,13 +77,13 @@ msgid "Parent organisation unit"
 msgstr "Overordnet organisasjonsenhet"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Startdato"
 
 msgid "End Date"
-msgstr ""
+msgstr "Sluttdato"
 
 msgid "follow up"
-msgstr ""
+msgstr "oppfølging"
 
 msgid "Close"
 msgstr "Lukk"
@@ -92,16 +92,16 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Slutt å følge"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Slutt å følge"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "min-max tidligere analyse"
 
 msgid "start"
-msgstr ""
+msgstr "start"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Std avvik tidl. analyse"
@@ -116,13 +116,13 @@ msgid "Validation Rule Analysis"
 msgstr "Valideringsregel analyse"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Send varslinger"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Vedvar nye resultater"
 
 msgid "validate"
-msgstr ""
+msgstr "Valider"
 
 msgid "Importance"
 msgstr "Viktighet"
@@ -137,10 +137,10 @@ msgid "Details"
 msgstr "Detaljer"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "VALIDERINGSRESULTATER DETALJER"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "VALIDERINGSREGEL"
 
 msgid "Name"
 msgstr "Navn"
@@ -149,19 +149,19 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 msgid "no data available"
-msgstr ""
+msgstr "ingen data tilgjengelig"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATAELEMENTER"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VERDI"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Valideringsdetaljer"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "VENSTRE SIDE"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "HØYRE SIDE"
