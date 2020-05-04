@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-24T14:06:47.222Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "Data Set"
 msgstr "Datasett"
@@ -26,13 +26,13 @@ msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "LAST NED SOM PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "LAST NED SOM XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "LAST NED SOM CSV"
 
 msgid "Follow-Up Analysis"
 msgstr "Oppfølgingsanalyse"
@@ -48,19 +48,19 @@ msgstr ""
 "dataregistrering eller analyse."
 
 msgid "follow up"
-msgstr ""
+msgstr "oppfølging"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Slutt å følge"
 
 msgid "Parent organisation unit"
 msgstr "Overordnet organisasjonsenhet"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Startdato"
 
 msgid "End Date"
-msgstr ""
+msgstr "Sluttdato"
 
 msgid "Data Element"
 msgstr "Dataelementer"
@@ -81,7 +81,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Slutt å følge"
 
 msgid "Comment"
 msgstr "Kommentar"
@@ -106,7 +106,7 @@ msgstr ""
 "Tidligere verdier kan undersøkes og merkes for oppfølging."
 
 msgid "start"
-msgstr ""
+msgstr "start"
 
 msgid "Mark"
 msgstr "Merk"
@@ -136,16 +136,16 @@ msgid ""
 msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
 
 msgid "validate"
-msgstr ""
+msgstr "Valider"
 
 msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Send varslinger"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Vedvar nye resultater"
 
 msgid "Importance"
 msgstr "Viktighet"
@@ -160,13 +160,13 @@ msgid "Details"
 msgstr "Detaljer"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Valideringsdetaljer"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "VALIDERINGSRESULTATER DETALJER"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "VALIDERINGSREGEL"
 
 msgid "Name"
 msgstr "Navn"
@@ -175,19 +175,19 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "VENSTRE SIDE"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "HØYRE SIDE"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATAELEMENTER"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VERDI"
 
 msgid "no data available"
-msgstr ""
+msgstr "ingen data tilgjengelig"
 
 msgid "[All Validation Rules]"
 msgstr ""
@@ -208,7 +208,7 @@ msgid "No values found"
 msgstr "Ingen verdier funnet"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "En uventet feil oppsto under analysen"
 
 msgid "Marked"
 msgstr ""
@@ -217,4 +217,4 @@ msgid "Unmarked"
 msgstr ""
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Sluttet å følge"
