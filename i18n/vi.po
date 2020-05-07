@@ -25,16 +25,16 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Cập nhật cây đơn vị"
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "Tải dưới dạng PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "Tải xuống dưới dạng XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "Tải xuống dưới dạng CSV"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "Organisation Unit"
 msgstr "Đơn vị"
@@ -55,16 +55,16 @@ msgid "Mark"
 msgstr "Đánh dấu"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Nhóm luật hợp lệ"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Xảy ra sự cố khi phân tích"
 
 msgid "No values found"
 msgstr "Không tìm thấy giá trị"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Đã hủy theo dõi"
 
 msgid "Follow-Up Analysis"
 msgstr "Phân Tích Theo Dõi"
@@ -76,13 +76,13 @@ msgid "Parent organisation unit"
 msgstr "Đơn vị cha"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Ngày bắt đầu"
 
 msgid "End Date"
-msgstr ""
+msgstr "Ngày kết thúc"
 
 msgid "follow up"
-msgstr ""
+msgstr "Theo dõi"
 
 msgid "Close"
 msgstr "Đóng lại"
@@ -91,16 +91,16 @@ msgid "Comment"
 msgstr "Bình luận"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Bỏ theo dõi"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Bỏ theo dõi"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Phân Tích Ngoài Giới Hạn Lớn-Nhỏ"
 
 msgid "start"
-msgstr ""
+msgstr "Bắt đầu"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Phân Tích Ngoài Độ Lệch Chuẩn"
@@ -115,19 +115,19 @@ msgid "Validation Rule Analysis"
 msgstr "Phân Tích Tính Hợp Lệ"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Gửi thông báo"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Giữ kết quả mới"
 
 msgid "validate"
-msgstr ""
+msgstr "Xác nhận"
 
 msgid "Importance"
 msgstr "Quan trọng"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Operator"
 msgstr "Toán tử"
@@ -136,10 +136,10 @@ msgid "Details"
 msgstr "Chi tiết"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "Chi tiết kết quả hợp lệ"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Name"
 msgstr "Tên tài khoản"
@@ -148,19 +148,19 @@ msgid "Description"
 msgstr "Miêu tả"
 
 msgid "no data available"
-msgstr ""
+msgstr "Không có sẵn dữ liệu"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "VALUE"
-msgstr ""
+msgstr "Giá trị"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Chi tiết xác nhận"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "Vế trái"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "Vế phải"
