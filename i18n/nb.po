@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T10:27:59.258Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgid "Data Set"
 msgstr "Datasett"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Alle datasett]"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "LAST NED SOM PDF"
@@ -38,7 +38,7 @@ msgid "Follow-Up Analysis"
 msgstr "Oppfølgingsanalyse"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Vis dataverdier"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -96,7 +96,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr "min-max tidligere analyse"
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyser"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -128,7 +128,7 @@ msgid "Validation Rule Analysis"
 msgstr "Valideringsregel analyse"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Kjør validering"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -190,16 +190,16 @@ msgid "no data available"
 msgstr "ingen data tilgjengelig"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Alle valideringsregler]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Utfører forespørsel"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Utfører analyse"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Analyse utført"
 
 msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"
