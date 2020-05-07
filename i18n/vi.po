@@ -27,13 +27,13 @@ msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "Tải dưới dạng PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "Tải xuống dưới dạng XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "Tải xuống dưới dạng CSV"
 
 msgid "Follow-Up Analysis"
 msgstr "Phân Tích Theo Dõi"
@@ -49,22 +49,22 @@ msgstr ""
 "phân tích dữ liệu."
 
 msgid "follow up"
-msgstr ""
+msgstr "Theo dõi"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Bỏ theo dõi"
 
 msgid "Parent organisation unit"
 msgstr "Đơn vị cha"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Ngày bắt đầu"
 
 msgid "End Date"
-msgstr ""
+msgstr "Ngày kết thúc"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "Organisation Unit"
 msgstr "Đơn vị"
@@ -82,7 +82,7 @@ msgid "Max"
 msgstr "Lớn nhất"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Bỏ theo dõi"
 
 msgid "Comment"
 msgstr "Bình luận"
@@ -108,7 +108,7 @@ msgstr ""
 "ngoại lệ có thể được kiểm tra và đánh dấu để theo dõi."
 
 msgid "start"
-msgstr ""
+msgstr "Bắt đầu"
 
 msgid "Mark"
 msgstr "Đánh dấu"
@@ -138,22 +138,22 @@ msgid ""
 msgstr "Chạy luật hợp lệ trước để tìm ra bất thường và lỗi trong dữ liệu."
 
 msgid "validate"
-msgstr ""
+msgstr "Xác nhận"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Nhóm luật hợp lệ"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Gửi thông báo"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Giữ kết quả mới"
 
 msgid "Importance"
 msgstr "Quan trọng"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Operator"
 msgstr "Toán tử"
@@ -162,13 +162,13 @@ msgid "Details"
 msgstr "Chi tiết"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Chi tiết xác nhận"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "Chi tiết kết quả hợp lệ"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Name"
 msgstr "Tên tài khoản"
@@ -177,19 +177,19 @@ msgid "Description"
 msgstr "Miêu tả"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "Vế trái"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "Vế phải"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "VALUE"
-msgstr ""
+msgstr "Giá trị"
 
 msgid "no data available"
-msgstr ""
+msgstr "Không có sẵn dữ liệu"
 
 msgid "[All Validation Rules]"
 msgstr ""
@@ -210,7 +210,7 @@ msgid "No values found"
 msgstr "Không tìm thấy giá trị"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Xảy ra sự cố khi phân tích"
 
 msgid "Marked"
 msgstr ""
@@ -219,7 +219,7 @@ msgid "Unmarked"
 msgstr ""
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Đã hủy theo dõi"
 
 msgid "Settings"
 msgstr "Các thiết lập"
