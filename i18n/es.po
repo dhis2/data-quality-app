@@ -64,7 +64,7 @@ msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Elemento de datos"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
@@ -144,7 +144,7 @@ msgid "validate"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grupo de Reglas de Validación"
 
 msgid "Send Notifications"
 msgstr ""
@@ -156,7 +156,7 @@ msgid "Importance"
 msgstr ""
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Regla de Validación"
 
 msgid "Operator"
 msgstr "Operador"
