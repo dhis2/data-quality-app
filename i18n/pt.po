@@ -3,13 +3,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Ge Joao <gsimango@saudigitus.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Elemento de dados"
 
 msgid "Organisation Unit"
 msgstr "Unidade organizacional"
@@ -59,7 +60,7 @@ msgid "Mark"
 msgstr "Marcar"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grupo de Regras de Validação"
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
@@ -131,7 +132,7 @@ msgid "Importance"
 msgstr "Importância"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Regra de validação"
 
 msgid "Operator"
 msgstr "Operador"

@@ -38,7 +38,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Elemento de datos"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
@@ -59,7 +59,7 @@ msgid "Mark"
 msgstr "Marcar"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grupo de Reglas de Validación"
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "Importance"
 msgstr ""
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Regla de Validación"
 
 msgid "Operator"
 msgstr "Operador"
