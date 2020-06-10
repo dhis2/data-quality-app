@@ -27,7 +27,7 @@ msgstr ""
 "pesquisa para ver todos"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Atualizando a árvore das unidades da organizacionais..."
 
 msgid "DOWNLOAD AS PDF"
 msgstr ""
