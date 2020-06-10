@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Atualizando a árvore das unidades da organizacionais..."
 
 msgid "Data Set"
 msgstr "Ficha"
