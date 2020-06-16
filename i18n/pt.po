@@ -25,22 +25,22 @@ msgid "Data Set"
 msgstr "Ficha"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Todos os conjuntos de dados]"
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "BAIXAR  PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "BAIXAR  XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "BAIXAR  CSV"
 
 msgid "Follow-Up Analysis"
 msgstr "Análise do Acompanhamento"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Exibir valores de dados"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -50,10 +50,10 @@ msgstr ""
 "durante a entrada de dados ou análise."
 
 msgid "follow up"
-msgstr ""
+msgstr "Acompanhamento"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Deixar de seguir "
 
 msgid "Parent organisation unit"
 msgstr "Unidade organizacional pai"
@@ -62,7 +62,7 @@ msgid "Start Date"
 msgstr "Data de Início"
 
 msgid "End Date"
-msgstr ""
+msgstr "Fim da data "
 
 msgid "Data Element"
 msgstr "Elemento de dados"
@@ -83,7 +83,7 @@ msgid "Max"
 msgstr "Máx"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Deixar de seguir"
 
 msgid "Comment"
 msgstr "Comentário"
@@ -100,7 +100,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr "Análise de Discrepâncias de Min-Max"
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analisar"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -111,7 +111,7 @@ msgstr ""
 "acompanhamento."
 
 msgid "start"
-msgstr ""
+msgstr "Inicio "
 
 msgid "Mark"
 msgstr "Marcar"
@@ -133,7 +133,7 @@ msgid "Validation Rule Analysis"
 msgstr "Analise das regras de validação"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Executar validação"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -143,16 +143,16 @@ msgstr ""
 "dados existentes na base de dados."
 
 msgid "validate"
-msgstr ""
+msgstr "Validade "
 
 msgid "Validation Rule Group"
 msgstr "Grupo de Regras de Validação"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Enviar notificação "
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Persistir novos resultados"
 
 msgid "Importance"
 msgstr "Importância"
@@ -167,13 +167,13 @@ msgid "Details"
 msgstr "Detalhes"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Detalhes da validação "
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr " DETALHES  DE VALIDAÇÃO DOS  RESULTADOS"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "REGRAS DE VALIDAÇÃO"
 
 msgid "Name"
 msgstr "Nome"
@@ -182,25 +182,25 @@ msgid "Description"
 msgstr "Descrição"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "LADO ESQUERDO"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "LADO DIREITO "
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "Elemento de dado"
 
 msgid "VALUE"
-msgstr ""
+msgstr "Valor "
 
 msgid "no data available"
-msgstr ""
+msgstr "dados não disponíveis"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Todas regras de validação]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Executando solicitação"
 
 msgid "Performing analysis"
 msgstr ""
@@ -215,7 +215,7 @@ msgid "No values found"
 msgstr "Nenhum valor encontrado"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Ocorreu um erro inesperado durante a análise"
 
 msgid "Marked"
 msgstr ""
@@ -224,4 +224,4 @@ msgid "Unmarked"
 msgstr ""
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Deixar de seguir "
