@@ -30,13 +30,13 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Atualizando a árvore das unidades da organizacionais..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "BAIXAR  PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "BAIXAR  XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "BAIXAR  CSV"
 
 msgid "Data Element"
 msgstr "Elemento de dados"
@@ -63,13 +63,13 @@ msgid "Validation Rule Group"
 msgstr "Grupo de Regras de Validação"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Ocorreu um erro inesperado durante a análise"
 
 msgid "No values found"
 msgstr "Nenhum valor encontrado"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Deixar de seguir "
 
 msgid "Follow-Up Analysis"
 msgstr "Análise do Acompanhamento"
@@ -84,10 +84,10 @@ msgid "Start Date"
 msgstr "Data de Início"
 
 msgid "End Date"
-msgstr ""
+msgstr "Fim da data "
 
 msgid "follow up"
-msgstr ""
+msgstr "Acompanhamento"
 
 msgid "Close"
 msgstr "Fechar"
@@ -96,16 +96,16 @@ msgid "Comment"
 msgstr "Comentário"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Deixar de seguir"
 
 msgid "unfollow"
-msgstr ""
+msgstr "Deixar de seguir "
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Análise de Discrepâncias de Min-Max"
 
 msgid "start"
-msgstr ""
+msgstr "Inicio "
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Análise de Discrepâncias de Desvio Padrão"
@@ -120,13 +120,13 @@ msgid "Validation Rule Analysis"
 msgstr "Analise das regras de validação"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Enviar notificação "
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Persistir novos resultados"
 
 msgid "validate"
-msgstr ""
+msgstr "Validade "
 
 msgid "Importance"
 msgstr "Importância"
@@ -141,10 +141,10 @@ msgid "Details"
 msgstr "Detalhes"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr " DETALHES  DE VALIDAÇÃO DOS  RESULTADOS"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "REGRAS DE VALIDAÇÃO"
 
 msgid "Name"
 msgstr "Nome"
@@ -153,19 +153,19 @@ msgid "Description"
 msgstr "Descrição"
 
 msgid "no data available"
-msgstr ""
+msgstr "dados não disponíveis"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "Elemento de dado"
 
 msgid "VALUE"
-msgstr ""
+msgstr "Valor "
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Detalhes da validação "
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "LADO ESQUERDO"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "LADO DIREITO "
