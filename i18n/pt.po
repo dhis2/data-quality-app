@@ -203,10 +203,10 @@ msgid "Performing request"
 msgstr "Executando solicitação"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Realizando análise"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Análise realizada"
 
 msgid "Validation passed successfully"
 msgstr "Validado com sucesso"
@@ -218,10 +218,10 @@ msgid "An unexpected error happened during analysis"
 msgstr "Ocorreu um erro inesperado durante a análise"
 
 msgid "Marked"
-msgstr ""
+msgstr "Marcada "
 
 msgid "Unmarked"
-msgstr ""
+msgstr "Não marcada "
 
 msgid "Unfollow done"
 msgstr "Deixar de seguir "
