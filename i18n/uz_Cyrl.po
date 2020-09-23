@@ -51,7 +51,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Юқори ташкилот бўлими"
 
 msgid "Start Date"
 msgstr ""
