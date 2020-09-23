@@ -1,0 +1,166 @@
+# 
+# Translators:
+# Ibatov <ibatovk@who.int>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Quality"
+msgstr ""
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
+
+msgid "DOWNLOAD AS PDF"
+msgstr ""
+
+msgid "DOWNLOAD AS XLS"
+msgstr ""
+
+msgid "DOWNLOAD AS CSV"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "Ташкилий бирлик"
+
+msgid "Period"
+msgstr ""
+
+msgid "Min"
+msgstr "Минимум"
+
+msgid "Value"
+msgstr "Қиймат"
+
+msgid "Max"
+msgstr "Максимум"
+
+msgid "Mark"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "An unexpected error happened during analysis"
+msgstr ""
+
+msgid "No values found"
+msgstr ""
+
+msgid "Unfollow done"
+msgstr ""
+
+msgid "Follow-Up Analysis"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr "Юқори ташкилот бўлими"
+
+msgid "Start Date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "follow up"
+msgstr ""
+
+msgid "Close"
+msgstr "Ёпиқ"
+
+msgid "Comment"
+msgstr ""
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Min-Max Outlier Analysis"
+msgstr ""
+
+msgid "start"
+msgstr ""
+
+msgid "Std Dev Outlier Analysis"
+msgstr ""
+
+msgid "Select number of standard deviations"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr ""
+
+msgid "Validation Rule Analysis"
+msgstr ""
+
+msgid "Send Notifications"
+msgstr ""
+
+msgid "Persist new results"
+msgstr ""
+
+msgid "validate"
+msgstr ""
+
+msgid "Importance"
+msgstr ""
+
+msgid "Validation Rule"
+msgstr ""
+
+msgid "Operator"
+msgstr ""
+
+msgid "Details"
+msgstr "Тафсилотлари"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr ""
+
+msgid "VALIDATION RULE"
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "no data available"
+msgstr ""
+
+msgid "DATA ELEMENT"
+msgstr ""
+
+msgid "VALUE"
+msgstr ""
+
+msgid "Validation Details"
+msgstr ""
+
+msgid "LEFT SIDE"
+msgstr ""
+
+msgid "RIGHT SIDE"
+msgstr ""
