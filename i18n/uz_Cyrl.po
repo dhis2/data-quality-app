@@ -81,7 +81,7 @@ msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Изоҳ"
 
 msgid "Close"
 msgstr "Ёпиқ"
