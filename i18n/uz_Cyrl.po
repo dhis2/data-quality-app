@@ -54,10 +54,10 @@ msgid "Parent organisation unit"
 msgstr "Юқори ташкилот бўлими"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Бошланиш санаси"
 
 msgid "End Date"
-msgstr ""
+msgstr "Якунланиш санаси"
 
 msgid "Data Element"
 msgstr ""
