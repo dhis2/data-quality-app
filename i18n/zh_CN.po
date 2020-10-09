@@ -20,7 +20,7 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "DOWNLOAD AS PDF"
 msgstr ""
