@@ -37,7 +37,7 @@ msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
 
 msgid "Period"
-msgstr ""
+msgstr "давр"
 
 msgid "Min"
 msgstr "Минимум"
