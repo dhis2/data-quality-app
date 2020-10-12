@@ -1,22 +1,24 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
+"Language: ckb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr ""
+msgstr "جوري داتا"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -37,19 +39,19 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Period"
-msgstr ""
+msgstr "ماوة"
 
 msgid "Min"
-msgstr "Min"
+msgstr "کەمترین"
 
 msgid "Value"
-msgstr ""
+msgstr "بةها"
 
 msgid "Max"
-msgstr "Max"
+msgstr "زیاترین"
 
 msgid "Mark"
 msgstr ""
@@ -85,10 +87,10 @@ msgid "follow up"
 msgstr ""
 
 msgid "Close"
-msgstr "Close"
+msgstr "داخستن"
 
 msgid "Comment"
-msgstr "Comment"
+msgstr "تيبيني"
 
 msgid "Unfollow"
 msgstr ""
@@ -130,10 +132,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "Operator"
+msgstr ""
 
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -142,10 +144,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
