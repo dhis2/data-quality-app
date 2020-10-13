@@ -70,7 +70,7 @@ msgid "Follow-Up Analysis"
 msgstr ""
 
 msgid "Data Set"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "Parent organisation unit"
 msgstr "Юқори ташкилот бўлими"
