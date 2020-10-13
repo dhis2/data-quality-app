@@ -19,7 +19,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
 
 msgid "Data Set"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "[All Data Sets]"
 msgstr ""
