@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Quality"
-msgstr ""
+msgstr "Маълумотлар сифати"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -130,7 +130,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Оператор"
 
 msgid "Details"
 msgstr "Тафсилотлари"
