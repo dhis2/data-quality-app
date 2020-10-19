@@ -147,7 +147,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Оператор"
 
 msgid "Details"
 msgstr "Тафсилотлари"
