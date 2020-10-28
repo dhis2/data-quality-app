@@ -37,13 +37,13 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organizační jednotka"
 
 msgid "Period"
 msgstr ""
 
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 msgid "Value"
 msgstr "Hodnota"
@@ -70,7 +70,7 @@ msgid "Follow-Up Analysis"
 msgstr ""
 
 msgid "Data Set"
-msgstr ""
+msgstr "Datová sada"
 
 msgid "Parent organisation unit"
 msgstr ""
@@ -88,7 +88,7 @@ msgid "Close"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 msgid "Unfollow"
 msgstr ""
@@ -130,7 +130,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Operátor"
 
 msgid "Details"
 msgstr ""
