@@ -19,7 +19,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "Data Set"
-msgstr ""
+msgstr "Datová sada"
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -63,13 +63,13 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organizační jednotka"
 
 msgid "Period"
 msgstr ""
 
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 msgid "Value"
 msgstr "Hodnota"
@@ -81,7 +81,7 @@ msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 msgid "Close"
 msgstr ""
@@ -147,7 +147,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Operátor"
 
 msgid "Details"
 msgstr ""
