@@ -1,29 +1,28 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# Jiří Podhorecký, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: Jiří Podhorecký, 2020\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Data Quality"
 msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
+msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr "更新机构树"
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr ""
@@ -35,49 +34,49 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Data Element"
-msgstr "数据元"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "组织机构"
+msgstr ""
 
 msgid "Period"
-msgstr "期间"
+msgstr ""
 
 msgid "Min"
-msgstr "最小"
+msgstr ""
 
 msgid "Value"
-msgstr "值"
+msgstr "Hodnota"
 
 msgid "Max"
-msgstr "最大"
+msgstr "Max"
 
 msgid "Mark"
-msgstr "标记"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "验证规则组"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "No values found"
-msgstr "无值被找到"
+msgstr ""
 
 msgid "Unfollow done"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "后续分析"
+msgstr ""
 
 msgid "Data Set"
-msgstr "数据集"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "上级组织机构"
+msgstr ""
 
 msgid "Start Date"
-msgstr "开始日期"
+msgstr ""
 
 msgid "End Date"
 msgstr ""
@@ -86,10 +85,10 @@ msgid "follow up"
 msgstr ""
 
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 msgid "Comment"
-msgstr "评论"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
@@ -98,22 +97,22 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Min-Max Outlier Analysis"
-msgstr "最小-最大值孤立分析"
+msgstr ""
 
 msgid "start"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "标准差孤立分析"
+msgstr ""
 
 msgid "Select number of standard deviations"
-msgstr "选择标准差编号"
+msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "验证已成功"
+msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr "验证规则分析"
+msgstr ""
 
 msgid "Send Notifications"
 msgstr ""
@@ -125,16 +124,16 @@ msgid "validate"
 msgstr ""
 
 msgid "Importance"
-msgstr "重要性"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "验证规则"
+msgstr ""
 
 msgid "Operator"
-msgstr "操作符"
+msgstr ""
 
 msgid "Details"
-msgstr "详情"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -143,10 +142,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 msgid "Description"
-msgstr "描述"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
