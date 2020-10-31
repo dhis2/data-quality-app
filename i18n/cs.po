@@ -37,7 +37,7 @@ msgid "Organisation Unit"
 msgstr "Organizační jednotka"
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Min"
 msgstr "Min"
@@ -130,7 +130,7 @@ msgid "Operator"
 msgstr "Operátor"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
