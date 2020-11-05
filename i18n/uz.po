@@ -17,21 +17,23 @@ msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
+"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
+"натижани кўриш учун"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "PDF СИФАТИДА ЮКЛАШ"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "XLS СИФАТИДА ЮКЛАШ"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "CSV СИФАТИДА ЮКЛАШ"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Маълумотлар элементи"
 
 msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
@@ -49,22 +51,22 @@ msgid "Max"
 msgstr "Максимум"
 
 msgid "Mark"
-msgstr ""
+msgstr "Белги"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Текширув гуруҳи қоидалари"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Таҳлил жараёнида нимадир нотўғри кетди"
 
 msgid "No values found"
-msgstr ""
+msgstr "Қиймат топилмади"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Бекор қилиш бажарилди"
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Аналитикани кузатиш"
 
 msgid "Data Set"
 msgstr "Маълумотлар тўплами"
@@ -79,7 +81,7 @@ msgid "End Date"
 msgstr "Якунланиш санаси"
 
 msgid "follow up"
-msgstr ""
+msgstr "кузатиш"
 
 msgid "Close"
 msgstr "Ёпиқ"
@@ -88,43 +90,43 @@ msgid "Comment"
 msgstr "Изоҳ"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Бекор қилиш"
 
 msgid "unfollow"
-msgstr ""
+msgstr "бекор қилиш"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "Минимал-Максимал чекиниш Аналитикаси"
 
 msgid "start"
-msgstr ""
+msgstr "бошлаш"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Ўртача квадратик оғиш Аналитикаси"
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "Стандарт оғишлар сонини аниқланг"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Тасдиқлаш Маваффақиятли Ўтди"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Тасдиқлаш Қоидаси Аналитикаси"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Билдиришнома Юбориш"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Доимий янги натижалар"
 
 msgid "validate"
-msgstr ""
+msgstr "тасдиқлаш"
 
 msgid "Importance"
-msgstr ""
+msgstr "Аҳамиятли"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Тасдиқлаш Қоидаси"
 
 msgid "Operator"
 msgstr "Оператор"
@@ -133,10 +135,10 @@ msgid "Details"
 msgstr "Тафсилотлари"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "ТЕКШИРУВ ДЕТАЛЛАРИ НАТИЖАСИ"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "ТЕКШИРУВ ҚОИДАСИ"
 
 msgid "Name"
 msgstr "Исми"
@@ -145,19 +147,19 @@ msgid "Description"
 msgstr "Тавсиф"
 
 msgid "no data available"
-msgstr ""
+msgstr "маълумотлар мавжуд эмас"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "МАЪЛУМОТЛАР ЭЛЕМЕНТИ"
 
 msgid "VALUE"
-msgstr ""
+msgstr "ҚИЙМАТ"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Тасдиқланган деталлар"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "ЧАП ТОМОН"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "ЎНГ ТОМОН"
