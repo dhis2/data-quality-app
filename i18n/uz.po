@@ -22,33 +22,35 @@ msgid "Data Set"
 msgstr "Маълумотлар тўплами"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Барча маълумотлар тўпламлари]"
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "PDF СИФАТИДА ЮКЛАШ"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "XLS СИФАТИДА ЮКЛАШ"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "CSV СИФАТИДА ЮКЛАШ"
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Аналитикани кузатиш"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Маълумотлар қийматини кўрсатиш"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Маълумотларни киритиш ёки таҳлил қилиш пайтида кейинги кузатув учун "
+"белгиланган маълумотлар қийматини кўриш ёки таҳрирлаш."
 
 msgid "follow up"
-msgstr ""
+msgstr "кузатиш"
 
 msgid "unfollow"
-msgstr ""
+msgstr "бекор қилиш"
 
 msgid "Parent organisation unit"
 msgstr "Юқори ташкилот бўлими"
@@ -60,7 +62,7 @@ msgid "End Date"
 msgstr "Якунланиш санаси"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Маълумотлар элементи"
 
 msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
@@ -78,7 +80,7 @@ msgid "Max"
 msgstr "Максимум"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Бекор қилиш"
 
 msgid "Comment"
 msgstr "Изоҳ"
@@ -88,63 +90,73 @@ msgstr "Ёпиқ"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
+"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
+"натижани кўриш учун"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "Минимал-Максимал чекиниш Аналитикаси"
 
 msgid "Analyze"
-msgstr ""
+msgstr "Аналитика/Таҳлил"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Минимал ва максимал қийматлар асосида потенциал юқори кўрсатгичларни таҳлил "
+"қилинг. Ортиқча қийматларни текшириш ва уларни текшириш учун белгилаш "
+"мумкин."
 
 msgid "start"
-msgstr ""
+msgstr "бошлаш"
 
 msgid "Mark"
-msgstr ""
+msgstr "Белги"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Ўртача квадратик оғиш Аналитикаси"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"Мумкин бўлган чекланишлар қийматларини стандарт оғишлар асосида таҳлил "
+"қилинг. Ортиқча қийматларни текшириш ва уларни текшириш учун белгилаш "
+"мумкин."
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "Стандарт оғишлар сонини аниқланг"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Тасдиқлаш Қоидаси Аналитикаси"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Тасдиқлашни ишга туширинг"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Маълумотлар базасидаги маълумотлардаги аномалиялар ва хатоликларни аниқлаш "
+"учун тасдиқлаш қоидаларини ишга туширинг."
 
 msgid "validate"
-msgstr ""
+msgstr "тасдиқлаш"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Текширув гуруҳи қоидалари"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Билдиришнома Юбориш"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Доимий янги натижалар"
 
 msgid "Importance"
-msgstr ""
+msgstr "Аҳамиятли"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Тасдиқлаш Қоидаси"
 
 msgid "Operator"
 msgstr "Оператор"
@@ -153,13 +165,13 @@ msgid "Details"
 msgstr "Тафсилотлари"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Тасдиқланган деталлар"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "ТЕКШИРУВ ДЕТАЛЛАРИ НАТИЖАСИ"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "ТЕКШИРУВ ҚОИДАСИ"
 
 msgid "Name"
 msgstr "Исми"
@@ -168,49 +180,49 @@ msgid "Description"
 msgstr "Тавсиф"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "ЧАП ТОМОН"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "ЎНГ ТОМОН"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "МАЪЛУМОТЛАР ЭЛЕМЕНТИ"
 
 msgid "VALUE"
-msgstr ""
+msgstr "ҚИЙМАТ"
 
 msgid "no data available"
-msgstr ""
+msgstr "маълумотлар мавжуд эмас"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Барча тасдиқлаш қоидалари]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Сўров бажарилмоқда"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Таҳлилни амалга ошириш"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Таҳлил бажарилди"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Тасдиқлаш Маваффақиятли Ўтди"
 
 msgid "No values found"
-msgstr ""
+msgstr "Қиймат топилмади"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Таҳлил жараёнида нимадир нотўғри кетди"
 
 msgid "Marked"
-msgstr ""
+msgstr "Белгиланган"
 
 msgid "Unmarked"
-msgstr ""
+msgstr "Белгиланмаган"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Бекор қилиш бажарилди"
 
 msgid "Settings"
 msgstr "Созламалар"
