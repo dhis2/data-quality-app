@@ -75,6 +75,7 @@ class ValidationRulesAnalysis extends Page {
     static convertElementFromApiResponse = e => ({
         key: ValidationRulesAnalysis.generateElementKey(e),
         validationRuleId: e.validationRuleId,
+        attributeOptionCombo: e.attributeOptionComboDisplayName,
         organisation: e.organisationUnitDisplayName,
         organisationUnitId: e.organisationUnitId,
         period: e.periodDisplayName,

@@ -25,10 +25,19 @@ class ValidationRulesAnalysisTable extends PureComponent {
     render() {
         const elements = this.props.elements
 
+        const shouldDisplayAttributeOptionCombo = elements.some(
+            e => e.attributeOptionCombo !== 'default'
+        )
+
         // Table Rows
         const rows = elements.map(element => (
             <TableRow key={element.key}>
                 <TableRowColumn>{element.organisation}</TableRowColumn>
+                {shouldDisplayAttributeOptionCombo && (
+                    <TableRowColumn>
+                        {element.attributeOptionCombo}
+                    </TableRowColumn>
+                )}
                 <TableRowColumn>{element.period}</TableRowColumn>
                 <TableRowColumn>{element.importance}</TableRowColumn>
                 <TableRowColumn>{element.validationRule}</TableRowColumn>
@@ -74,6 +83,11 @@ class ValidationRulesAnalysisTable extends PureComponent {
                             <TableHeaderColumn>
                                 {i18n.t('Organisation Unit')}
                             </TableHeaderColumn>
+                            {shouldDisplayAttributeOptionCombo && (
+                                <TableHeaderColumn>
+                                    {i18n.t('Attribute Option Combination')}
+                                </TableHeaderColumn>
+                            )}
                             <TableHeaderColumn>
                                 {i18n.t('Period')}
                             </TableHeaderColumn>
