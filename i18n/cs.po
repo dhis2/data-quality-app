@@ -51,13 +51,13 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Nadřazená organizační jednotka"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "End Date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Data Element"
 msgstr ""
