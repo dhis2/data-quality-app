@@ -19,7 +19,7 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "DOWNLOAD AS PDF"
 msgstr ""
