@@ -85,7 +85,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                             </TableHeaderColumn>
                             {shouldDisplayAttributeOptionCombo && (
                                 <TableHeaderColumn>
-                                    {i18n.t('Attribute Option Combination')}
+                                    {i18n.t('Attr. Opt. Combo')}
                                 </TableHeaderColumn>
                             )}
                             <TableHeaderColumn>
