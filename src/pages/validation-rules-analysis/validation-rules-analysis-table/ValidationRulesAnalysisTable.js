@@ -32,22 +32,39 @@ class ValidationRulesAnalysisTable extends PureComponent {
         // Table Rows
         const rows = elements.map(element => (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.organisation}</TableRowColumn>
+                <TableRowColumn title={element.organisation}>
+                    {element.organisation}
+                </TableRowColumn>
                 {shouldDisplayAttributeOptionCombo && (
-                    <TableRowColumn>
+                    <TableRowColumn title={element.attributeOptionCombo}>
                         {element.attributeOptionCombo}
                     </TableRowColumn>
                 )}
-                <TableRowColumn>{element.period}</TableRowColumn>
-                <TableRowColumn>{element.importance}</TableRowColumn>
-                <TableRowColumn>{element.validationRule}</TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
+                <TableRowColumn title={element.period}>
+                    {element.period}
+                </TableRowColumn>
+                <TableRowColumn title={element.importance}>
+                    {element.importance}
+                </TableRowColumn>
+                <TableRowColumn title={element.validationRule}>
+                    {element.validationRule}
+                </TableRowColumn>
+                <TableRowColumn
+                    className={cssPageStyles.right}
+                    title={element.leftValue}
+                >
                     <FormattedNumber value={element.leftValue} />
                 </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
+                <TableRowColumn
+                    className={cssPageStyles.right}
+                    title={element.operator}
+                >
                     <span className={styles.operator}>{element.operator}</span>
                 </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
+                <TableRowColumn
+                    className={cssPageStyles.right}
+                    title={element.rightValue}
+                >
                     <FormattedNumber value={element.rightValue} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.center}>
@@ -80,33 +97,53 @@ class ValidationRulesAnalysisTable extends PureComponent {
                         enableSelectAll={false}
                     >
                         <TableRow>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn
+                                title={i18n.t('Organisation Unit')}
+                            >
                                 {i18n.t('Organisation Unit')}
                             </TableHeaderColumn>
                             {shouldDisplayAttributeOptionCombo && (
-                                <TableHeaderColumn>
+                                <TableHeaderColumn
+                                    title={i18n.t(
+                                        'Attribute Option Combination'
+                                    )}
+                                >
                                     {i18n.t('Attr. Opt. Combo')}
                                 </TableHeaderColumn>
                             )}
-                            <TableHeaderColumn>
+                            <TableHeaderColumn title={i18n.t('Period')}>
                                 {i18n.t('Period')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn title={i18n.t('Importance')}>
                                 {i18n.t('Importance')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn>
+                            <TableHeaderColumn
+                                title={i18n.t('Validation Rule')}
+                            >
                                 {i18n.t('Validation Rule')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.right}
+                                title={i18n.t('Value')}
+                            >
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.right}
+                                title={i18n.t('Operator')}
+                            >
                                 {i18n.t('Operator')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.right}
+                                title={i18n.t('Value')}
+                            >
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.center}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.center}
+                                title={i18n.t('Details')}
+                            >
                                 {i18n.t('Details')}
                             </TableHeaderColumn>
                         </TableRow>
