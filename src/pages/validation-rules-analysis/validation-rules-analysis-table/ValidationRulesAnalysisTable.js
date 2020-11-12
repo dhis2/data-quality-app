@@ -26,7 +26,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
         const elements = this.props.elements
 
         const shouldDisplayAttributeOptionCombo = elements.some(
-            e => e.attributeOptionCombo !== 'default'
+            e => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
         )
 
         // Table Rows
@@ -56,7 +56,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
                     <FormattedNumber value={element.leftValue} />
                 </TableRowColumn>
                 <TableRowColumn
-                    className={cssPageStyles.right}
+                    className={classNames(cssPageStyles.right, styles.smallTd)}
                     title={element.operator}
                 >
                     <span className={styles.operator}>{element.operator}</span>
@@ -129,7 +129,10 @@ class ValidationRulesAnalysisTable extends PureComponent {
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
                             <TableHeaderColumn
-                                className={cssPageStyles.right}
+                                className={classNames(
+                                    cssPageStyles.right,
+                                    styles.smallTd
+                                )}
                                 title={i18n.t('Operator')}
                             >
                                 {i18n.t('Operator')}
