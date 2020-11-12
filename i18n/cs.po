@@ -16,22 +16,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
+msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "STÁHNOUT JAKO PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "STÁHNOUT JAKO XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "STÁHNOUT JAKO CSV"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Datový prvek"
 
 msgid "Organisation Unit"
 msgstr "Organizační jednotka"
@@ -49,22 +49,22 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Mark"
-msgstr ""
+msgstr "Označit"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Skupina pravidel ověření"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Během analýzy došlo k neočekávané chybě"
 
 msgid "No values found"
-msgstr ""
+msgstr "Nenalezeny žádné hodnoty"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Provedeno ukončení sledování"
 
 msgid "Follow-Up Analysis"
-msgstr ""
+msgstr "Následná analýza"
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -79,7 +79,7 @@ msgid "End Date"
 msgstr "Datum ukončení"
 
 msgid "follow up"
-msgstr ""
+msgstr "následovat"
 
 msgid "Close"
 msgstr "Zavřít"
@@ -88,43 +88,43 @@ msgid "Comment"
 msgstr "Komentář"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Zrušit sledování"
 
 msgid "unfollow"
-msgstr ""
+msgstr "přestat sledovat"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "Alalýza krajních Min-Max hodnot"
 
 msgid "start"
-msgstr ""
+msgstr "Start"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Analýza standardní odchylky krajních hodnot"
 
 msgid "Select number of standard deviations"
-msgstr ""
+msgstr "Vybrat počet směrodatných odchylek"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Ověření proběhlo úspěšně"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Analýza ověřovacích pravidel"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Odeslat oznámení"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Zachovat nové výsledky"
 
 msgid "validate"
-msgstr ""
+msgstr "ověřit"
 
 msgid "Importance"
-msgstr ""
+msgstr "Důležitost"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Pravidlo ověření"
 
 msgid "Operator"
 msgstr "Operátor"
@@ -133,10 +133,10 @@ msgid "Details"
 msgstr "Detaily"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "PODROBNOSTI O VÝSLEDKU OVĚŘENÍ"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "OVĚŘOVACÍ PRAVIDLO"
 
 msgid "Name"
 msgstr "Název"
@@ -145,19 +145,19 @@ msgid "Description"
 msgstr "Popis"
 
 msgid "no data available"
-msgstr ""
+msgstr "údaje nejsou k dispozici"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATOVÝ PRVEK"
 
 msgid "VALUE"
-msgstr ""
+msgstr "HODNOTA"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Podrobnosti ověření"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "LEVÁ STRANA"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "PRAVÁ STRANA"
