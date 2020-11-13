@@ -34,7 +34,7 @@ class ValidationRulesAnalysisTable extends PureComponent {
         const rows = elements.map(element => (
             <TableRow key={element.key}>
                 <TableRowColumn title={element.organisation}>
-                    {element.organisation}
+                    <TableCellContent>{element.organisation}</TableCellContent>
                 </TableRowColumn>
                 {shouldDisplayAttributeOptionCombo && (
                     <TableRowColumn title={element.attributeOptionCombo}>

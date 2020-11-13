@@ -25,7 +25,6 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSE',
         organisationUnitId: 'OrgUnitkgh54Xb9LSE',
-        //attributeOptionCombo: 'default'
     },
     {
         key: 'ktwo',
@@ -39,7 +38,6 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSS',
         organisationUnitId: 'OrgUnitkgh54Xb9LSS',
-        //attributeOptionCombo: 'default'
     },
 ]
 
