@@ -16,6 +16,7 @@ import styles from './ValidationRulesAnalysisTable.module.css'
 import i18n from '../../../locales'
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
 import { apiConf } from '../../../server.conf'
+import TableCellContent from '../../../components/table/TableCellContent'
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
@@ -37,42 +38,45 @@ class ValidationRulesAnalysisTable extends PureComponent {
                 </TableRowColumn>
                 {shouldDisplayAttributeOptionCombo && (
                     <TableRowColumn title={element.attributeOptionCombo}>
-                        {element.attributeOptionCombo}
+                        <TableCellContent size="wide">
+                            {element.attributeOptionCombo}
+                        </TableCellContent>
                     </TableRowColumn>
                 )}
                 <TableRowColumn title={element.period}>
-                    {element.period}
+                    <TableCellContent>{element.period}</TableCellContent>
                 </TableRowColumn>
                 <TableRowColumn title={element.importance}>
-                    {element.importance}
+                    <TableCellContent>{element.importance}</TableCellContent>
                 </TableRowColumn>
                 <TableRowColumn title={element.validationRule}>
-                    {element.validationRule}
+                    <TableCellContent size={'medium'}>
+                        {element.validationRule}
+                    </TableCellContent>
                 </TableRowColumn>
-                <TableRowColumn
-                    className={cssPageStyles.right}
-                    title={element.leftValue}
-                >
-                    <FormattedNumber value={element.leftValue} />
+                <TableRowColumn title={element.leftValue}>
+                    <TableCellContent>
+                        <FormattedNumber value={element.leftValue} />
+                    </TableCellContent>
                 </TableRowColumn>
-                <TableRowColumn
-                    className={classNames(cssPageStyles.right, styles.smallTd)}
-                    title={element.operator}
-                >
-                    <span className={styles.operator}>{element.operator}</span>
+                <TableRowColumn title={element.operator}>
+                    <TableCellContent className={styles.operator}>
+                        {element.operator}
+                    </TableCellContent>
                 </TableRowColumn>
-                <TableRowColumn
-                    className={cssPageStyles.right}
-                    title={element.rightValue}
-                >
-                    <FormattedNumber value={element.rightValue} />
+                <TableRowColumn title={element.rightValue}>
+                    <TableCellContent>
+                        <FormattedNumber value={element.rightValue} />
+                    </TableCellContent>
                 </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.center}>
-                    <ValidationRulesDetails
-                        validationRuleId={element.validationRuleId}
-                        periodId={element.periodId}
-                        organisationUnitId={element.organisationUnitId}
-                    />
+                <TableRowColumn>
+                    <TableCellContent>
+                        <ValidationRulesDetails
+                            validationRuleId={element.validationRuleId}
+                            periodId={element.periodId}
+                            organisationUnitId={element.organisationUnitId}
+                        />
+                    </TableCellContent>
                 </TableRowColumn>
             </TableRow>
         ))
@@ -90,6 +94,8 @@ class ValidationRulesAnalysisTable extends PureComponent {
                         cssPageStyles.appTable,
                         styles.validationTable
                     )}
+                    fixedHeader={false}
+                    bodyStyle={{ overflowX: 'auto' }}
                 >
                     <TableHeader
                         displaySelectAll={false}
@@ -122,31 +128,16 @@ class ValidationRulesAnalysisTable extends PureComponent {
                             >
                                 {i18n.t('Validation Rule')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn
-                                className={cssPageStyles.right}
-                                title={i18n.t('Value')}
-                            >
+                            <TableHeaderColumn title={i18n.t('Value')}>
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn
-                                className={classNames(
-                                    cssPageStyles.right,
-                                    styles.smallTd
-                                )}
-                                title={i18n.t('Operator')}
-                            >
+                            <TableHeaderColumn title={i18n.t('Operator')}>
                                 {i18n.t('Operator')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn
-                                className={cssPageStyles.right}
-                                title={i18n.t('Value')}
-                            >
+                            <TableHeaderColumn title={i18n.t('Value')}>
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn
-                                className={cssPageStyles.center}
-                                title={i18n.t('Details')}
-                            >
+                            <TableHeaderColumn title={i18n.t('Details')}>
                                 {i18n.t('Details')}
                             </TableHeaderColumn>
                         </TableRow>
