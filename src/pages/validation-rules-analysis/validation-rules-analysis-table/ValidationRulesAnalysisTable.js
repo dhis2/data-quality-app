@@ -75,6 +75,9 @@ class ValidationRulesAnalysisTable extends PureComponent {
                             validationRuleId={element.validationRuleId}
                             periodId={element.periodId}
                             organisationUnitId={element.organisationUnitId}
+                            attributeOptionComboId={
+                                element.attributeOptionComboId
+                            }
                         />
                     </TableCellContent>
                 </TableRowColumn>
