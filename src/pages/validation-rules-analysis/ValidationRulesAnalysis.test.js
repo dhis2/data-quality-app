@@ -43,6 +43,10 @@ const ownShallow = () => {
     )
 }
 
+beforeEach(() => {
+    jest.restoreAllMocks()
+})
+
 describe('Test <ValidationRulesAnalysis /> rendering:', () => {
     let wrapper
     beforeEach(() => {
@@ -173,10 +177,10 @@ describe('Test <ValidationRulesAnalysis /> rendering:', () => {
 
 describe('Test <ValidationRulesAnalysis /> actions:', () => {
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'organisationUnitOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             organisationUnitId: null,
@@ -191,10 +195,10 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'startDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testStartDate = new Date()
         wrapper.setState({
@@ -209,10 +213,10 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'endDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testEndDate = new Date()
         wrapper.setState({
@@ -227,10 +231,10 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call validationRuleGroupOnChange function when ValidationRuleGroupsSelect changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'validationRuleGroupOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             validationRuleGroupId: null,
@@ -250,10 +254,10 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call updateSendNotifications when "Send notifications" checkbox change.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'updateSendNotifications'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             notification: null,
@@ -267,10 +271,10 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call updatePersistNewResults when "Persist new results" checkbox change.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             ValidationRulesAnalysis.prototype,
             'updatePersistNewResults'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             persist: null,
@@ -284,14 +288,16 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
     })
 
     it('Should call validate function when Validate button is clicked.', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'validate')
+        const spy = jest
+            .spyOn(ValidationRulesAnalysis.prototype, 'validate')
+            .mockReturnValue(true)
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
     it('Calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(ValidationRulesAnalysis.prototype, 'back')
+        const spy = jest.spyOn(ValidationRulesAnalysis.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
@@ -299,8 +305,12 @@ describe('Test <ValidationRulesAnalysis /> actions:', () => {
 
     it('Update state when back button is clicked', () => {
         const wrapper = ownShallow()
+        expect(wrapper.state('showTable')).toBe(false)
+        const instance = wrapper.instance()
+        const spy = jest.spyOn(instance, 'back')
         wrapper.setState({ showTable: true })
         wrapper.find(IconButton).simulate('click')
+        expect(spy).toHaveBeenCalled()
         expect(wrapper.state('showTable')).toBe(false)
     })
 })

@@ -48,6 +48,10 @@ jest.mock(
     () => 'FeedbackSnackbarTypes'
 )
 
+beforeEach(() => {
+    jest.restoreAllMocks()
+})
+
 describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     let wrapper
     beforeEach(() => {
@@ -189,10 +193,10 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
 
 describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             StdDevOutlierAnalysis.prototype,
             'dataSetsOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             dataSetIds: [],
@@ -211,10 +215,10 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             StdDevOutlierAnalysis.prototype,
             'organisationUnitOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             organisationUnitId: null,
@@ -229,10 +233,10 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             StdDevOutlierAnalysis.prototype,
             'startDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testStartDate = new Date()
         wrapper.setState({
@@ -247,10 +251,10 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             StdDevOutlierAnalysis.prototype,
             'endDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testEndDate = new Date()
         wrapper.setState({
@@ -265,10 +269,10 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call standardDeviationOnChange function when Standard Deviation SelectField changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             StdDevOutlierAnalysis.prototype,
             'standardDeviationOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testStandardDeviation = 4.0
         wrapper.setState({
@@ -283,14 +287,16 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'back')
+        const spy = jest.spyOn(StdDevOutlierAnalysis.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
     it('Standard Dev Outlier Analysis calls start method when RaisedButton is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'start')
+        const spy = jest
+            .spyOn(StdDevOutlierAnalysis.prototype, 'start')
+            .mockReturnValue()
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()

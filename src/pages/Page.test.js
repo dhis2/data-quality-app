@@ -57,13 +57,13 @@ it('Page component calls page constructor', () => {
 })
 
 it('componentWillMount was called after render', () => {
-    const spy = spyOn(Page.prototype, 'componentWillMount')
+    const spy = jest.spyOn(Page.prototype, 'componentWillMount')
     pageComponentShallow()
     expect(spy).toHaveBeenCalled()
 })
 
 it('componentWillUnmount was called after unmount', () => {
-    const spy = spyOn(Page.prototype, 'componentWillUnmount')
+    const spy = jest.spyOn(Page.prototype, 'componentWillUnmount')
     const wrapper = pageComponentShallow()
     wrapper.unmount()
     expect(spy).toHaveBeenCalled()

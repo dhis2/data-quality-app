@@ -45,6 +45,10 @@ jest.mock(
     () => 'FeedbackSnackbarTypes'
 )
 
+beforeEach(() => {
+    jest.restoreAllMocks()
+})
+
 describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     let wrapper
     beforeEach(() => {
@@ -179,10 +183,10 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
 
 describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             MinMaxOutlierAnalysis.prototype,
             'dataSetsOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             dataSetIds: [],
@@ -201,10 +205,10 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             MinMaxOutlierAnalysis.prototype,
             'organisationUnitOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             organisationUnitId: null,
@@ -219,10 +223,10 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             MinMaxOutlierAnalysis.prototype,
             'startDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testStartDate = new Date()
         wrapper.setState({
@@ -237,10 +241,10 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             MinMaxOutlierAnalysis.prototype,
             'endDateOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         const testEndDate = new Date()
         wrapper.setState({
@@ -255,14 +259,16 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
     })
 
     it('Min Max Outlier Analysis calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'back')
+        const spy = jest.spyOn(MinMaxOutlierAnalysis.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
     it('Min Max Outlier Analysis calls start method when RaisedButton is clicked', () => {
-        const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'start')
+        const spy = jest
+            .spyOn(MinMaxOutlierAnalysis.prototype, 'start')
+            .mockReturnValue()
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()

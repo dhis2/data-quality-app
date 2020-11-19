@@ -42,6 +42,10 @@ jest.mock(
 )
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 
+beforeEach(() => {
+    jest.restoreAllMocks()
+})
+
 describe('Test <FollowUpAnalysis /> rendering:', () => {
     let wrapper
     beforeEach(() => {
@@ -176,10 +180,7 @@ describe('Test <FollowUpAnalysis /> rendering:', () => {
 
 describe('Test <FollowUpAnalysis /> actions:', () => {
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
-        const spy = spyOn(
-            FollowUpAnalysis.prototype,
-            'dataSetsOnChange'
-        ).and.callThrough()
+        const spy = jest.spyOn(FollowUpAnalysis.prototype, 'dataSetsOnChange')
         const wrapper = ownShallow()
         wrapper.setState({
             dataSetIds: [],
@@ -198,10 +199,10 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
     })
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
-        const spy = spyOn(
+        const spy = jest.spyOn(
             FollowUpAnalysis.prototype,
             'organisationUnitOnChange'
-        ).and.callThrough()
+        )
         const wrapper = ownShallow()
         wrapper.setState({
             organisationUnitId: null,
@@ -216,10 +217,7 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
     })
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
-        const spy = spyOn(
-            FollowUpAnalysis.prototype,
-            'startDateOnChange'
-        ).and.callThrough()
+        const spy = jest.spyOn(FollowUpAnalysis.prototype, 'startDateOnChange')
         const wrapper = ownShallow()
         const testStartDate = new Date()
         wrapper.setState({
@@ -234,10 +232,7 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
     })
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
-        const spy = spyOn(
-            FollowUpAnalysis.prototype,
-            'endDateOnChange'
-        ).and.callThrough()
+        const spy = jest.spyOn(FollowUpAnalysis.prototype, 'endDateOnChange')
         const wrapper = ownShallow()
         const testEndDate = new Date()
         wrapper.setState({
@@ -252,14 +247,16 @@ describe('Test <FollowUpAnalysis /> actions:', () => {
     })
 
     it('Followup Analysis calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'back')
+        const spy = jest.spyOn(FollowUpAnalysis.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
     it('Followup Analysis calls getFollowUpList method when RaisedButton is clicked', () => {
-        const spy = spyOn(FollowUpAnalysis.prototype, 'getFollowUpList')
+        const spy = jest
+            .spyOn(FollowUpAnalysis.prototype, 'getFollowUpList')
+            .mockReturnValue()
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()

@@ -232,7 +232,7 @@ describe('Test <ValidationRulesDetails /> rendering:', () => {
 
 describe('Test <ValidationRulesDetails /> actions:', () => {
     it('FontIcon "info" icon should call "loadDetails".', () => {
-        const spy = spyOn(ValidationRulesDetails.prototype, 'loadDetails')
+        const spy = jest.spyOn(ValidationRulesDetails.prototype, 'loadDetails')
         const localWrapper = ownShallow()
         const detailsIcon = localWrapper.find(FontIcon)
         detailsIcon.simulate('click')
@@ -240,10 +240,7 @@ describe('Test <ValidationRulesDetails /> actions:', () => {
     })
 
     it('Dialog close button should call handleClose and update state.', () => {
-        const spy = spyOn(
-            ValidationRulesDetails.prototype,
-            'handleClose'
-        ).and.callThrough()
+        const spy = jest.spyOn(ValidationRulesDetails.prototype, 'handleClose')
         const localWrapper = ownShallow()
         const dialog = localWrapper.find(Dialog)
         const actionsWrapper = mount(

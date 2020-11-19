@@ -184,7 +184,10 @@ describe('Test <FollowUpAnalysisTable /> rendering:', () => {
 
 describe('Test <FollowUpAnalysisTable /> actions:', () => {
     it('Should call updateCheckbox method when checkbox is checked/unchecked.', () => {
-        const spy = spyOn(FollowUpAnalysisTable.prototype, 'updateCheckbox')
+        const spy = jest.spyOn(
+            FollowUpAnalysisTable.prototype,
+            'updateCheckbox'
+        )
         const wrapper = ownShallow()
         wrapper
             .find(Checkbox)
@@ -194,10 +197,7 @@ describe('Test <FollowUpAnalysisTable /> actions:', () => {
     })
 
     it('Should call showComment method and update state when comment icon is clicked.', () => {
-        const spy = spyOn(
-            FollowUpAnalysisTable.prototype,
-            'showComment'
-        ).and.callThrough()
+        const spy = jest.spyOn(FollowUpAnalysisTable.prototype, 'showComment')
         const wrapper = ownShallow()
         wrapper.setState({
             showComment: false,
@@ -223,7 +223,7 @@ describe('Test <FollowUpAnalysisTable /> actions:', () => {
     })
 
     it('Should call unfollow method when "Unfollow" button is clicked.', () => {
-        const spy = spyOn(FollowUpAnalysisTable.prototype, 'unfollow')
+        const spy = jest.spyOn(FollowUpAnalysisTable.prototype, 'unfollow')
         const wrapper = ownShallow()
         wrapper
             .find(RaisedButton)
