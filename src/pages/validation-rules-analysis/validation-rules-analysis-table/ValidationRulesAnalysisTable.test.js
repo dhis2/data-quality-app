@@ -25,6 +25,8 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSE',
         organisationUnitId: 'OrgUnitkgh54Xb9LSE',
+        attributeOptionCombo: 'default',
+        attributeOptionComboId: 'HllvX50cXC0',
     },
     {
         key: 'ktwo',
@@ -38,6 +40,8 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSS',
         organisationUnitId: 'OrgUnitkgh54Xb9LSS',
+        attributeOptionCombo: 'default',
+        attributeOptionComboId: 'HllvX50cXC0',
     },
 ]
 
@@ -122,12 +126,13 @@ describe('Test <ValidationRulesAnalysisTable /> rendering:', () => {
         expect(wrapper.find(DownloadAs).length).toBe(2)
     })
 
-    it('Should render attribute option combo column if not default', () => {
+    it('Should render attribute option combo column if attribute opt. combo other than default is present', () => {
         expect(
             withAttrOptCombos()
                 .find(TableRow)
-                .at(1)
-                .find(TableRowColumn).length
-        ).toBe(9) // First row after header
+                .at(0)
+                .childAt(1)
+                .prop('title')
+        ).toBe('Attribute Option Combination')
     })
 })
