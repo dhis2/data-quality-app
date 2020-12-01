@@ -10,7 +10,7 @@
     "prestart": "npm run localize",
     "pretest": "npm run localize",
     "prebuild": "npm run localize",
-    "lint:style": "d2-style js check --all",
+    "lint": "d2-style js check --all",
     "localize": "yarn extract-pot && d2-i18n-generate -n data-quality-app -p ./i18n/ -o ./src/locales/",
     "extract-pot": "d2-i18n-extract -p src/ -o i18n/"
   },
