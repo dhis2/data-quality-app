@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dhis2/data-quality-app/compare/v1.0.0...v1.1.0) (2020-12-02)
+
+
+### Features
+
+* **validation:** display attribute-option-combos ([#603](https://github.com/dhis2/data-quality-app/issues/603)) ([0527273](https://github.com/dhis2/data-quality-app/commit/052727377b898c48beb6638049890f6557c2cbd7))
+
 # 1.0.0 (2020-12-02)
 
 
