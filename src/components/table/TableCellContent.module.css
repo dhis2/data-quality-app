@@ -1,0 +1,24 @@
+.tableCellContent {
+    max-height: 64px;
+    margin: 5px 0 5px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+
+.tableCellContent-narrow {
+    max-width: 50px;
+}
+
+.tableCellContent-medium {
+    max-width: 150px;
+}
+
+.tableCellContent-wide {
+    max-width: 250px;
+}

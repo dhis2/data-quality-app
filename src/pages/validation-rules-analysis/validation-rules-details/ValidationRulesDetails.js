@@ -18,6 +18,7 @@ class ValidationRulesDetails extends Page {
         validationRuleId: PropTypes.string.isRequired,
         periodId: PropTypes.string.isRequired,
         organisationUnitId: PropTypes.string.isRequired,
+        attributeOptionComboId: PropTypes.string.isRequired,
     }
 
     constructor() {
@@ -64,7 +65,8 @@ class ValidationRulesDetails extends Page {
                 `${apiConf.endpoints.validationRulesExpression}` +
                 `?validationRuleId=${this.props.validationRuleId}` +
                 `&periodId=${this.props.periodId}` +
-                `&organisationUnitId=${this.props.organisationUnitId}`
+                `&organisationUnitId=${this.props.organisationUnitId}` +
+                `&attributeOptionComboId=${this.props.attributeOptionComboId}`
             this.context.updateAppState({
                 pageState: {
                     loading: true,

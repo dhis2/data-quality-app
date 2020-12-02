@@ -25,6 +25,8 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSE',
         organisationUnitId: 'OrgUnitkgh54Xb9LSE',
+        attributeOptionCombo: 'default',
+        attributeOptionComboId: 'HllvX50cXC0',
     },
     {
         key: 'ktwo',
@@ -38,6 +40,42 @@ const rulesElements = [
         validationRule: 'Malaria outbrek',
         validationRuleId: 'kgh54Xb9LSS',
         organisationUnitId: 'OrgUnitkgh54Xb9LSS',
+        attributeOptionCombo: 'default',
+        attributeOptionComboId: 'HllvX50cXC0',
+    },
+]
+
+const rulesElementsWithAttrOptCombos = [
+    {
+        attributeOptionCombo: 'default',
+        attributeOptionComboId: 'HllvX50cXC0',
+        importance: 'MEDIUM',
+        key: 'SxwKDzs5Rlb-202010-rZxk3S0qN63-HllvX50cXC0',
+        leftValue: 11,
+        operator: '==',
+        organisation: 'Bo Govt. Hosp.',
+        organisationUnitId: 'rZxk3S0qN63',
+        period: 'October 2020',
+        periodId: '202010',
+        rightValue: 5,
+        validationRule: 'ART stage 1 = stage 2',
+        validationRuleId: 'SxwKDzs5Rlb',
+    },
+    {
+        key: 'SxwKDzs5Rlb-202010-DiszpKrYNg8-vp1qSLVMSc3',
+        validationRuleId: 'SxwKDzs5Rlb',
+        attributeOptionCombo:
+            'African Medical and Research Foundation, Provide access to basic education',
+        attributeOptionComboId: 'vp1qSLVMSc3',
+        organisation: 'Ngelehun CHC',
+        organisationUnitId: 'DiszpKrYNg8',
+        period: 'October 2020',
+        periodId: '202010',
+        importance: 'MEDIUM',
+        validationRule: 'ART stage 1 = stage 2',
+        leftValue: 23,
+        operator: '==',
+        rightValue: 0,
     },
 ]
 
@@ -47,6 +85,16 @@ const ownShallow = () => {
     })
 }
 
+const withAttrOptCombos = () => {
+    return shallow(
+        <ValidationRulesAnalysisTable
+            elements={rulesElementsWithAttrOptCombos}
+        />,
+        {
+            disableLifecycleMethods: true,
+        }
+    )
+}
 describe('Test <ValidationRulesAnalysisTable /> rendering:', () => {
     let wrapper
     beforeEach(() => {
@@ -76,5 +124,15 @@ describe('Test <ValidationRulesAnalysisTable /> rendering:', () => {
 
     it('Render "DownloadAs" component.', () => {
         expect(wrapper.find(DownloadAs).length).toBe(2)
+    })
+
+    it('Should render attribute option combo column if attribute opt. combo other than default is present', () => {
+        expect(
+            withAttrOptCombos()
+                .find(TableRow)
+                .at(0)
+                .childAt(1)
+                .prop('title')
+        ).toBe('Attribute Option Combination')
     })
 })

@@ -90,6 +90,7 @@ const ownShallow = () => {
             organisationUnitId={'organisationUnitId'}
             periodId={'periodId'}
             validationRuleId={'validationRuleId'}
+            attributeOptionComboId={'HllvX50qcXC0'}
         />,
         {
             context: {
