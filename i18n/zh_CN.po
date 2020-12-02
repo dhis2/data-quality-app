@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"POT-Creation-Date: 2020-11-12T12:20:04.534Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -122,6 +122,12 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "validate"
+msgstr ""
+
+msgid "Attribute Option Combination"
+msgstr ""
+
+msgid "Attr. Opt. Combo"
 msgstr ""
 
 msgid "Importance"
