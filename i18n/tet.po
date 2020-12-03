@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"POT-Creation-Date: 2020-11-12T12:20:04.534Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
@@ -122,6 +122,12 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "validate"
+msgstr ""
+
+msgid "Attribute Option Combination"
+msgstr ""
+
+msgid "Attr. Opt. Combo"
 msgstr ""
 
 msgid "Importance"
