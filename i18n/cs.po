@@ -124,10 +124,10 @@ msgid "validate"
 msgstr "ověřit"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Kombinace možností atributů"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Attr. Opt. Combo"
 
 msgid "Importance"
 msgstr "Důležitost"

@@ -126,10 +126,10 @@ msgid "validate"
 msgstr "тасдиқлаш"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Атрибут вариантлари комбинацияси"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Атрибут вариантлари комбинацияси"
 
 msgid "Importance"
 msgstr "Аҳамиятли"
