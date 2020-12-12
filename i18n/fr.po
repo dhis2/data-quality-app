@@ -64,7 +64,7 @@ msgid "Start Date"
 msgstr "Date de début"
 
 msgid "End Date"
-msgstr ""
+msgstr "Date de fin"
 
 msgid "Data Element"
 msgstr "Élément de donnée"
