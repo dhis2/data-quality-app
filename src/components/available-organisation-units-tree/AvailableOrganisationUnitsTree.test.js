@@ -25,8 +25,18 @@ it('AvailableOrganisationUnitsTree does not render OrgUnitTree', () => {
     expect(wrapper.find(OrgUnitTree)).toHaveLength(0)
 })
 
+it('AvailableOrganisationUnitsTree render no access message when no user-org units', () => {
+    const wrapper = ownShallow()
+    wrapper.setState({ rootsWithMembers: [] })
+    expect(
+        wrapper
+            .children()
+            .contains('You do not have access to any organisation units.')
+    ).toBe(true)
+})
+
 it('AvailableOrganisationUnitsTree does render OrgUnitTree', () => {
     const wrapper = ownShallow()
-    wrapper.setState({ rootWithMembers: {} })
+    wrapper.setState({ rootsWithMembers: [{ id: 'someId' }] })
     expect(wrapper.find(OrgUnitTree)).toHaveLength(1)
 })
