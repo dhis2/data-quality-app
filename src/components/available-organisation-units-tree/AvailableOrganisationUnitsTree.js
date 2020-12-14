@@ -22,32 +22,49 @@ class AvailableOrganisationUnitsTree extends PureComponent {
 
         this.state = {
             selected: [],
-            rootWithMember: null,
+            rootsWithMembers: null,
         }
 
         this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this)
+        this.loadAvailableOrgUnits = this.loadAvailableOrgUnits.bind(this)
     }
 
     componentDidMount() {
-        const d2 = this.context.d2
-        if (this.state.rootWithMember == null) {
-            d2.models.organisationUnits
-                .list({
-                    paging: false,
-                    level: 1,
-                    fields:
-                        'id,displayName,path,children::isNotEmpty,memberCount',
-                })
+        if (this.state.rootsWithMembers === null) {
+            this.loadAvailableOrgUnits()
                 .then(organisationUnitsResponse => {
                     const organisationUnits = organisationUnitsResponse.toArray()
                     this.setState({
-                        rootWithMembers: organisationUnits[0],
+                        rootsWithMembers: organisationUnits,
                     })
                 })
                 .catch(() => {
                     this.manageError()
                 })
         }
+    }
+
+    async loadAvailableOrgUnits() {
+        const d2 = this.context.d2
+
+        const orgUnits = await d2.currentUser.getDataViewOrganisationUnits({
+            fields: 'id,displayName,path,children::isNotEmpty,memberCount',
+            paging: false,
+        })
+
+        if (!orgUnits.size && d2.currentUser.authorities.has('ALL')) {
+            // if special all-authority we have access to all orgunits
+            return d2.models.organisationUnits.list({
+                paging: false,
+                level: 1,
+                fields: 'id,displayName,path,children::isNotEmpty,memberCount',
+            })
+        }
+
+        return d2.currentUser.getDataViewOrganisationUnits({
+            paging: false,
+            fields: 'id,displayName,path,children::isNotEmpty,memberCount',
+        })
     }
 
     handleOrgUnitClick(event, orgUnit) {
@@ -65,23 +82,34 @@ class AvailableOrganisationUnitsTree extends PureComponent {
     }
 
     render() {
-        if (this.state.rootWithMembers) {
+        if (!this.state.rootsWithMembers) {
+            return <span>{i18n.t('Updating Organisation Units Tree...')}</span>
+        }
+
+        if (this.state.rootsWithMembers.length < 1) {
             return (
-                <div className={styles.tree}>
-                    <OrgUnitTree
-                        hideMemberCount={Boolean(true)}
-                        root={this.state.rootWithMembers}
-                        selected={this.state.selected}
-                        initiallyExpanded={[
-                            `/${this.state.rootWithMembers.id}`,
-                        ]}
-                        onSelectClick={this.handleOrgUnitClick}
-                    />
-                </div>
+                <p>
+                    {i18n.t(
+                        'You do not have access to any organisation units.'
+                    )}
+                </p>
             )
         }
 
-        return <span>{i18n.t('Updating Organisation Units Tree...')}</span>
+        return (
+            <div className={styles.tree}>
+                {this.state.rootsWithMembers.map(rootOrgUnit => (
+                    <OrgUnitTree
+                        key={rootOrgUnit.id}
+                        hideMemberCount={Boolean(true)}
+                        root={rootOrgUnit}
+                        selected={this.state.selected}
+                        initiallyExpanded={[`/${rootOrgUnit.id}`]}
+                        onSelectClick={this.handleOrgUnitClick}
+                    />
+                ))}
+            </div>
+        )
     }
 }
 
