@@ -61,10 +61,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
             })
         }
 
-        return d2.currentUser.getDataViewOrganisationUnits({
-            paging: false,
-            fields: 'id,displayName,path,children::isNotEmpty,memberCount',
-        })
+        return orgUnits
     }
 
     handleOrgUnitClick(event, orgUnit) {
