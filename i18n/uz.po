@@ -1,0 +1,168 @@
+# 
+# Translators:
+# Ibatov <ibatovk@who.int>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Quality"
+msgstr "Маълумотлар сифати"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
+"натижани кўриш учун"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Муассасалар дарахти (шажараси) янгиланмоқда..."
+
+msgid "DOWNLOAD AS PDF"
+msgstr "PDF СИФАТИДА ЮКЛАШ"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "XLS СИФАТИДА ЮКЛАШ"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "CSV СИФАТИДА ЮКЛАШ"
+
+msgid "Data Element"
+msgstr "Маълумотлар элементи"
+
+msgid "Organisation Unit"
+msgstr "Ташкилий Бўлим"
+
+msgid "Period"
+msgstr "Давр"
+
+msgid "Min"
+msgstr "Минимум"
+
+msgid "Value"
+msgstr "Қиймат"
+
+msgid "Max"
+msgstr "Максимум"
+
+msgid "Mark"
+msgstr "Белги"
+
+msgid "Validation Rule Group"
+msgstr "Текширув гуруҳи қоидалари"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Таҳлил жараёнида кутилмаган хатолик юз берди"
+
+msgid "No values found"
+msgstr "Қиймат топилмади"
+
+msgid "Unfollow done"
+msgstr "Бекор қилиш бажарилди"
+
+msgid "Follow-Up Analysis"
+msgstr "Аналитикани кузатиш"
+
+msgid "Data Set"
+msgstr "Маълумотлар тўплами"
+
+msgid "Parent organisation unit"
+msgstr "Юқори ташкилот бўлими"
+
+msgid "Start Date"
+msgstr "Бошланиш санаси"
+
+msgid "End Date"
+msgstr "Якунланиш Сана"
+
+msgid "follow up"
+msgstr "кузатиш"
+
+msgid "Close"
+msgstr "Ёпиш"
+
+msgid "Comment"
+msgstr "Изоҳ"
+
+msgid "Unfollow"
+msgstr "Бекор қилиш"
+
+msgid "unfollow"
+msgstr "бекор қилиш"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Минимал-Максимал чекиниш Аналитикаси"
+
+msgid "start"
+msgstr "бошлаш"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Ўртача квадратик оғиш чекинишлари Аналитикаси"
+
+msgid "Select number of standard deviations"
+msgstr "Стандарт оғишлар сонини аниқланг"
+
+msgid "Validation passed successfully"
+msgstr "Тасдиқлаш Маваффақиятли Ўтди"
+
+msgid "Validation Rule Analysis"
+msgstr "Тасдиқлаш Қоидаси Аналитикаси"
+
+msgid "Send Notifications"
+msgstr "Билдиришнома Юбориш"
+
+msgid "Persist new results"
+msgstr "Доимий янги натижалар"
+
+msgid "validate"
+msgstr "тасдиқлаш"
+
+msgid "Importance"
+msgstr "Аҳамиятли"
+
+msgid "Validation Rule"
+msgstr "Тасдиқлаш Қоидаси"
+
+msgid "Operator"
+msgstr "Оператор"
+
+msgid "Details"
+msgstr "Тафсилотлари"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "ТЕКШИРУВ ДЕТАЛЛАРИ НАТИЖАСИ"
+
+msgid "VALIDATION RULE"
+msgstr "ТЕКШИРУВ ҚОИДАСИ"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "no data available"
+msgstr "маълумотлар мавжуд эмас"
+
+msgid "DATA ELEMENT"
+msgstr "МАЪЛУМОТЛАР ЭЛЕМЕНТИ"
+
+msgid "VALUE"
+msgstr "ҚИЙМАТ"
+
+msgid "Validation Details"
+msgstr "Текширув деталлари"
+
+msgid "LEFT SIDE"
+msgstr "ЧАП ТОМОН"
+
+msgid "RIGHT SIDE"
+msgstr "ЎНГ ТОМОН"

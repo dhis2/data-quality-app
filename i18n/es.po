@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,7 @@ msgid "Data Set"
 msgstr "Set de Datos"
 
 msgid "Parent organisation unit"
-msgstr "Unidad organizativa padre"
+msgstr "Padre de la unidad organizativa"
 
 msgid "Start Date"
 msgstr "Fecha de inicio"

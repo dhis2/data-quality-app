@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgid "Period"
 msgstr "الفترة الزمنية"
 
 msgid "Min"
-msgstr "اﻷدنى"
+msgstr "الأدنى"
 
 msgid "Value"
 msgstr "القيمة"
@@ -58,7 +58,7 @@ msgid "Mark"
 msgstr "وضع علامة"
 
 msgid "Validation Rule Group"
-msgstr "مجموعة قواعد التحقق"
+msgstr "مجموعة قواعد التحقق من الصحة"
 
 msgid "An unexpected error happened during analysis"
 msgstr "حدث خطأ غير متوقع أثناء التحليل"
@@ -130,7 +130,7 @@ msgid "Importance"
 msgstr "الأهمية"
 
 msgid "Validation Rule"
-msgstr "قاعدة التحقق"
+msgstr "قاعدة تحقق من الصحة"
 
 msgid "Operator"
 msgstr "العامل"
@@ -145,7 +145,7 @@ msgid "VALIDATION RULE"
 msgstr "قاعدة التحقق"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
 msgid "Description"
 msgstr "الوصف"
