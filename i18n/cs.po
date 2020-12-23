@@ -1,0 +1,166 @@
+# 
+# Translators:
+# trendspotter, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
+"Last-Translator: trendspotter, 2020\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "Data Quality"
+msgstr "Kvalita dat"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Aktualizace stromu Organizačních jednotek ..."
+
+msgid "DOWNLOAD AS PDF"
+msgstr "STÁHNOUT JAKO PDF"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "STÁHNOUT JAKO XLS"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "STÁHNOUT JAKO CSV"
+
+msgid "Data Element"
+msgstr "Datový prvek"
+
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Hodnota"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Mark"
+msgstr "Označit"
+
+msgid "Validation Rule Group"
+msgstr "Skupina pravidel ověření"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Během analýzy došlo k neočekávané chybě"
+
+msgid "No values found"
+msgstr "Nenalezeny žádné hodnoty"
+
+msgid "Unfollow done"
+msgstr "Provedeno ukončení sledování"
+
+msgid "Follow-Up Analysis"
+msgstr "Následná analýza"
+
+msgid "Data Set"
+msgstr "Datová sada"
+
+msgid "Parent organisation unit"
+msgstr "Nadřazená organizační jednotka"
+
+msgid "Start Date"
+msgstr "Datum začátku"
+
+msgid "End Date"
+msgstr "Datum ukončení"
+
+msgid "follow up"
+msgstr "následovat"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Comment"
+msgstr "Komentář"
+
+msgid "Unfollow"
+msgstr "Zrušit sledování"
+
+msgid "unfollow"
+msgstr "přestat sledovat"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Alalýza krajních Min-Max hodnot"
+
+msgid "start"
+msgstr "Start"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Analýza standardní odchylky krajních hodnot"
+
+msgid "Select number of standard deviations"
+msgstr "Vybrat počet směrodatných odchylek"
+
+msgid "Validation passed successfully"
+msgstr "Ověření proběhlo úspěšně"
+
+msgid "Validation Rule Analysis"
+msgstr "Analýza ověřovacích pravidel"
+
+msgid "Send Notifications"
+msgstr "Odeslat oznámení"
+
+msgid "Persist new results"
+msgstr "Zachovat nové výsledky"
+
+msgid "validate"
+msgstr "ověřit"
+
+msgid "Importance"
+msgstr "Důležitost"
+
+msgid "Validation Rule"
+msgstr "Pravidlo ověření"
+
+msgid "Operator"
+msgstr "Operátor"
+
+msgid "Details"
+msgstr "Detaily"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "PODROBNOSTI O VÝSLEDKU OVĚŘENÍ"
+
+msgid "VALIDATION RULE"
+msgstr "OVĚŘOVACÍ PRAVIDLO"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "no data available"
+msgstr "údaje nejsou k dispozici"
+
+msgid "DATA ELEMENT"
+msgstr "DATOVÝ PRVEK"
+
+msgid "VALUE"
+msgstr "HODNOTA"
+
+msgid "Validation Details"
+msgstr "Podrobnosti ověření"
+
+msgid "LEFT SIDE"
+msgstr "LEVÁ STRANA"
+
+msgid "RIGHT SIDE"
+msgstr "PRAVÁ STRANA"

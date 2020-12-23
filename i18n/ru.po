@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,19 +40,19 @@ msgid "Data Element"
 msgstr "Элемент данных"
 
 msgid "Organisation Unit"
-msgstr "Организационная единица"
+msgstr "Организация"
 
 msgid "Period"
 msgstr "Период"
 
 msgid "Min"
-msgstr "Мин"
+msgstr "Минимум"
 
 msgid "Value"
 msgstr "Значение"
 
 msgid "Max"
-msgstr "Макс"
+msgstr "Максимум"
 
 msgid "Mark"
 msgstr "Отметить"
@@ -76,7 +76,7 @@ msgid "Data Set"
 msgstr "Набор данных"
 
 msgid "Parent organisation unit"
-msgstr "Родительская организационная единица"
+msgstr "Родительская организация"
 
 msgid "Start Date"
 msgstr "Дата начала"
@@ -100,7 +100,7 @@ msgid "unfollow"
 msgstr "не отслеживать"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "Анализ выбросов Min-Max "
+msgstr "Анализ выбросов Min-Max"
 
 msgid "start"
 msgstr "Начало"
@@ -133,10 +133,10 @@ msgid "Validation Rule"
 msgstr "Правило проверки"
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Операция"
 
 msgid "Details"
-msgstr "Подробности"
+msgstr "Детали"
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr "ПОДРОБНОСТИ РЕЗУЛЬТАТОВ ПРОВЕРКИ"

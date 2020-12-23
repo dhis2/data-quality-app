@@ -2,27 +2,26 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
 "PO-Revision-Date: 2020-12-22 22:15+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: my\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ckb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr "အချက်အလက်၏အရည်အသွေး"
+msgstr "جوري داتا"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"More than 500 values found, please fix the violations or narrow the search "
-"to see all"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -40,19 +39,19 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Period"
-msgstr "အချိန်ကာလ"
+msgstr "ماوة"
 
 msgid "Min"
-msgstr "အနည်းဆုံး"
+msgstr "کەمترین"
 
 msgid "Value"
-msgstr "တန်ဖိုး"
+msgstr "بةها"
 
 msgid "Max"
-msgstr "အများဆုံး"
+msgstr "زیاترین"
 
 msgid "Mark"
 msgstr ""
@@ -70,13 +69,13 @@ msgid "Unfollow done"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Follow-up Analysis"
+msgstr ""
 
 msgid "Data Set"
-msgstr "Data အစု"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Parent organisation unit"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -88,10 +87,10 @@ msgid "follow up"
 msgstr ""
 
 msgid "Close"
-msgstr "ပိတ်သည်"
+msgstr "داخستن"
 
 msgid "Comment"
-msgstr "မှတ်ချက်"
+msgstr "تيبيني"
 
 msgid "Unfollow"
 msgstr ""
@@ -112,7 +111,7 @@ msgid "Select number of standard deviations"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Validation passed successfully"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr ""
@@ -133,10 +132,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "စုစည်းစီမံသူ"
+msgstr ""
 
 msgid "Details"
-msgstr "အသေးစိတ်များ"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -145,10 +144,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "အမည်"
+msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
