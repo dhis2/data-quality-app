@@ -127,10 +127,10 @@ msgid "validate"
 msgstr "Xác nhận"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Kết hợp tùy chọn thuộc tính"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Kết hợp tùy chọn thuộc tính"
 
 msgid "Importance"
 msgstr "Quan trọng"
