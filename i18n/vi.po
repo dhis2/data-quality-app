@@ -24,7 +24,7 @@ msgid "Data Set"
 msgstr "Biểu nhập"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Tất cả các tập dữ liệu]"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "Tải dưới dạng PDF"
@@ -39,7 +39,7 @@ msgid "Follow-Up Analysis"
 msgstr "Phân Tích Theo Dõi"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Xem giá trị dữ liệu"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -98,7 +98,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr "Phân Tích Ngoài Giới Hạn Lớn-Nhỏ"
 
 msgid "Analyze"
-msgstr ""
+msgstr "Phân tích"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -130,7 +130,7 @@ msgid "Validation Rule Analysis"
 msgstr "Phân Tích Tính Hợp Lệ"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Chạy xác thực"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -192,16 +192,16 @@ msgid "no data available"
 msgstr "Không có sẵn dữ liệu"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Tất cả các quy tắc xác thực]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Thực hiện yêu cầu"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Thực hiện phân tích"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Phân tích xong"
 
 msgid "Validation passed successfully"
 msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
@@ -213,10 +213,10 @@ msgid "An unexpected error happened during analysis"
 msgstr "Xảy ra sự cố khi phân tích"
 
 msgid "Marked"
-msgstr ""
+msgstr "Đã đánh dấu"
 
 msgid "Unmarked"
-msgstr ""
+msgstr "Bỏ đánh dấu"
 
 msgid "Unfollow done"
 msgstr "Đã hủy theo dõi"
