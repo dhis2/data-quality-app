@@ -47,7 +47,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
     async loadAvailableOrgUnits() {
         const d2 = this.context.d2
 
-        const orgUnits = await d2.currentUser.getDataViewOrganisationUnits({
+        const orgUnits = await d2.currentUser.getOrganisationUnits({
             fields: 'id,displayName,path,children::isNotEmpty,memberCount',
             paging: false,
         })
