@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '../../locales'
+import i18n from '@dhis2/d2-i18n'
 import styles from './DownloadAs.module.css'
 
 class DownloadAs extends PureComponent {

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
-import i18n from '../../locales'
+import i18n from '@dhis2/d2-i18n'
 
 export const ALL_VALIDATION_RULE_GROUPS_ID = -1
 export const ALL_VALIDATION_RULE_GROUPS_OPTION = {

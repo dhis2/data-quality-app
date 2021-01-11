@@ -15,7 +15,7 @@ import {
     Dialog,
     FlatButton,
 } from 'material-ui'
-import i18n from '../../../locales'
+import i18n from '@dhis2/d2-i18n'
 import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import DownloadAs from '../../../components/download-as/DownloadAs'
 import cssPageStyles from '../../Page.module.css'

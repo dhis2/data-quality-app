@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import i18n from '../locales'
+import i18n from '@dhis2/d2-i18n'
 
 class Page extends Component {
     static propTypes = {
