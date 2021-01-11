@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { GridTile } from 'material-ui/GridList'
 import FontIcon from 'material-ui/FontIcon'
 import classNames from 'classnames'
-import i18n from '../../../locales'
+import i18n from '@dhis2/d2-i18n'
 import styles from './GridSection.module.css'
 
 class GridSection extends PureComponent {

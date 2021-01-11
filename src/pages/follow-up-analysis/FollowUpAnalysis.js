@@ -11,7 +11,7 @@ import AvailableOrganisationUnitsTree from '../../components/available-organisat
 import PageHelper from '../../components/page-helper/PageHelper'
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
 import AlertBar from '../../components/alert-bar/AlertBar'
-import i18n from '../../locales'
+import i18n from '@dhis2/d2-i18n'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'

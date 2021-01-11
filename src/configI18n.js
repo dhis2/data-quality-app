@@ -1,4 +1,5 @@
-import i18n from './locales'
+import i18n from '@dhis2/d2-i18n'
+import moment from 'moment'
 
 const isLangRTL = code => {
     const langs = ['ar', 'fa', 'ur']
@@ -16,8 +17,8 @@ export const configI18n = userSettings => {
     if (isLangRTL(lang)) {
         document.body.setAttribute('dir', 'rtl')
     }
-
     i18n.changeLanguage(lang)
+    moment.locale(lang)
 }
 
 export const injectTranslationsToD2 = d2 => {

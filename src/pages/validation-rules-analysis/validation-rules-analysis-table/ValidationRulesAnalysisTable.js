@@ -13,7 +13,7 @@ import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import DownloadAs from '../../../components/download-as/DownloadAs'
 import cssPageStyles from '../../Page.module.css'
 import styles from './ValidationRulesAnalysisTable.module.css'
-import i18n from '../../../locales'
+import i18n from '@dhis2/d2-i18n'
 import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
 import { apiConf } from '../../../server.conf'
 
