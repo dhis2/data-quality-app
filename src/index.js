@@ -52,4 +52,4 @@ getUserSettings().then(userSettings => {
     configI18n(userSettings)
 })
 
-serviceWorker.register()
+serviceWorker.unregister()
