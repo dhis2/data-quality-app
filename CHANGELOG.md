@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/dhis2/data-quality-app/compare/v1.1.6...v1.1.7) (2021-01-11)
+
+
+### Bug Fixes
+
+* unregister service worker ([44161f3](https://github.com/dhis2/data-quality-app/commit/44161f34d0bd635525951b26e0c7d2303b7cc0d0))
+
 ## [1.1.6](https://github.com/dhis2/data-quality-app/compare/v1.1.5...v1.1.6) (2021-01-08)
 
 
