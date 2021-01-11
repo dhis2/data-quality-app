@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/dhis2/data-quality-app/compare/v1.1.7...v1.1.8) (2021-01-11)
+
+
+### Bug Fixes
+
+* **i18n:** make sure locales are set before rendering the app ([4601c19](https://github.com/dhis2/data-quality-app/commit/4601c19ef5f379ca54482c1735bb1dff42bb47dd))
+
 ## [1.1.7](https://github.com/dhis2/data-quality-app/compare/v1.1.6...v1.1.7) (2021-01-11)
 
 
