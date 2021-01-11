@@ -87,7 +87,7 @@ class App extends PureComponent {
 
         return (
             <div>
-                <HeaderBar d2={this.context.d2} />
+                <HeaderBar d2={this.props.d2} />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}

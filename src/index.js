@@ -8,9 +8,6 @@ import './index.css'
 import App from './App'
 import appTheme from './theme'
 import * as serviceWorker from './serviceWorker'
-
-import { Provider } from '@dhis2/app-runtime'
-import { CssReset } from '@dhis2/ui-core'
 import { MuiThemeProvider } from 'material-ui/styles'
 
 log.setLevel(
@@ -23,23 +20,15 @@ const baseUrl = `${process.env.REACT_APP_DHIS2_BASE_URL}/api/${
 }`
 const schemas = ['organisationUnit', 'dataSet', 'validationRuleGroup']
 
-const config = {
-    baseUrl: process.env.REACT_APP_DHIS2_BASE_URL,
-    apiVersion: process.env.REACT_APP_DHIS2_API_VERSION,
-}
-
 const render = d2 =>
     ReactDOM.render(
-        <Provider config={config}>
-            <MuiThemeProvider muiTheme={appTheme}>
-                <div>
-                    <CssReset />
-                    <HashRouter>
-                        <AppComponent d2={d2} />
-                    </HashRouter>
-                </div>
-            </MuiThemeProvider>
-        </Provider>,
+        <MuiThemeProvider muiTheme={appTheme}>
+            <div>
+                <HashRouter>
+                    <AppComponent d2={d2} />
+                </HashRouter>
+            </div>
+        </MuiThemeProvider>,
         document.getElementById('root')
     )
 
