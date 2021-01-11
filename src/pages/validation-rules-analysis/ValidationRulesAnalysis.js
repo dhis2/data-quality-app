@@ -14,7 +14,7 @@ import ValidationRuleGroupsSelect, {
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
 import PageHelper from '../../components/page-helper/PageHelper'
 import { getDocsKeyForSection } from '../sections.conf'
-import i18n from '../../locales'
+import i18n from '@dhis2/d2-i18n'
 import jsPageStyles from '../PageStyles'
 import cssPageStyles from '../Page.module.css'
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
