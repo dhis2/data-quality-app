@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/data-quality-app/compare/v1.1.9...v1.2.0) (2021-01-15)
+
+
+### Features
+
+* **orgunit-select:** only show user-assigned orgunits ([#631](https://github.com/dhis2/data-quality-app/issues/631)) ([333aadb](https://github.com/dhis2/data-quality-app/commit/333aadb4f92bfd12e4e7391eee5804e0fb06e19b))
+
 ## [1.1.9](https://github.com/dhis2/data-quality-app/compare/v1.1.8...v1.1.9) (2021-01-14)
 
 
