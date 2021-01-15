@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T12:20:04.534Z\n"
+"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -26,6 +26,9 @@ msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看
 
 msgid "Updating Organisation Units Tree..."
 msgstr "更新机构树"
+
+msgid "You do not have access to any organisation units."
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "下载为PDF"
