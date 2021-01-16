@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T12:20:04.534Z\n"
+"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -26,6 +26,9 @@ msgstr ""
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Cập nhật cây đơn vị"
+
+msgid "You do not have access to any organisation units."
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "Tải xuống dưới dạng PDF"
