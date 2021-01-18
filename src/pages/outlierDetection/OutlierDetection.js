@@ -282,7 +282,7 @@ class OutlierDetection extends Page {
                                     {i18n.t('Organisation units')}
                                 </div>
                                 <AvailableOrganisationUnitsTree
-                                    multiple
+                                    multiselect
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
