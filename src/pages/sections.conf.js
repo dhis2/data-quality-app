@@ -1,11 +1,9 @@
 import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
 import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis'
-import MinMaxOutlierAnalysis from './min-max-outlier-analysis/MinMaxOutlierAnalysis'
 import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
 
 export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'
 export const STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY = 'stdDevOutlierAnalysis'
-export const MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY = 'minMaxOutlierAnalysis'
 export const FOLLOW_UP_ANALYSIS_SECTION_KEY = 'followUpAnalysis'
 
 export const sections = [
@@ -33,19 +31,6 @@ export const sections = [
                 'Analyze potential outlier values based on standard deviations. Outlier values can be examined and marked for follow-up.',
             actionText: 'Analyze',
             docs: 'standard_deviation_analysis',
-        },
-    },
-    {
-        key: MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY,
-        path: '/min-max-outlier-analysis',
-        component: MinMaxOutlierAnalysis,
-        info: {
-            label: 'Min-Max Outlier Analysis',
-            icon: 'compare_arrows',
-            description:
-                'Analyze potential outlier values based on min and max values. Outlier values can be examined and marked for follow-up.',
-            actionText: 'Analyze',
-            docs: 'min_max_analysis',
         },
     },
     {
