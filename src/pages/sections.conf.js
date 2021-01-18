@@ -1,9 +1,9 @@
 import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
-import StdDevOutlierAnalysis from './std-dev-outlier-analysis/StdDevOutlierAnalysis'
+import OutlierDetection from './outlierDetection/OutlierDetection'
 import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
 
 export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'
-export const STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY = 'stdDevOutlierAnalysis'
+export const OUTLIER_DETECTION_SECTION_KEY = 'outlierDetection'
 export const FOLLOW_UP_ANALYSIS_SECTION_KEY = 'followUpAnalysis'
 
 export const sections = [
@@ -21,9 +21,9 @@ export const sections = [
         },
     },
     {
-        key: STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
-        path: '/std-dev-outlier-analysis',
-        component: StdDevOutlierAnalysis,
+        key: OUTLIER_DETECTION_SECTION_KEY,
+        path: '/outlier-detection',
+        component: OutlierDetection,
         info: {
             label: 'Std Dev Outlier Analysis',
             icon: 'show_chart',

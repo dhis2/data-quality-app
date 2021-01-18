@@ -4,23 +4,20 @@ import { shallow } from 'enzyme'
 import { RaisedButton, IconButton } from 'material-ui'
 import DatePicker from 'material-ui/DatePicker'
 import SelectField from 'material-ui/SelectField'
-import StdDevOutlierAnalysis, {
+import OutlierDetection, {
     DEFAULT_STANDARD_DEVIATION,
-} from './StdDevOutlierAnalysis'
+} from './OutlierDetection'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import {
-    sections,
-    STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY,
-} from '../sections.conf'
+import { sections, OUTLIER_DETECTION_SECTION_KEY } from '../sections.conf'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import PageHelper from '../../components/page-helper/PageHelper'
 
 let pageInfo = {}
 for (let i = 0; i < sections.length; i++) {
     const section = sections[i]
-    if (section.key === STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY) {
+    if (section.key === OUTLIER_DETECTION_SECTION_KEY) {
         pageInfo = section.info
         break
     }
@@ -28,8 +25,8 @@ for (let i = 0; i < sections.length; i++) {
 
 const ownShallow = () => {
     return shallow(
-        <StdDevOutlierAnalysis
-            sectionKey={STD_DEV_OUTLIER_ANALYSIS_SECTION_KEY}
+        <OutlierDetection
+            sectionKey={OUTLIER_DETECTION_SECTION_KEY}
             pageInfo={pageInfo}
         />,
         {
@@ -48,7 +45,7 @@ jest.mock(
     () => 'FeedbackSnackbarTypes'
 )
 
-describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
+describe('Test <OutlierDetection /> rendering:', () => {
     let wrapper
     beforeEach(() => {
         wrapper = ownShallow()
@@ -187,10 +184,10 @@ describe('Test <StdDevOutlierAnalysis /> rendering:', () => {
     })
 })
 
-describe('Test <StdDevOutlierAnalysis /> actions:', () => {
+describe('Test <OutlierDetection /> actions:', () => {
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
         const spy = spyOn(
-            StdDevOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'dataSetsOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -212,7 +209,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
         const spy = spyOn(
-            StdDevOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'organisationUnitOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -230,7 +227,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
         const spy = spyOn(
-            StdDevOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'startDateOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -248,7 +245,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
         const spy = spyOn(
-            StdDevOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'endDateOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -266,7 +263,7 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
 
     it('Should call standardDeviationOnChange function when Standard Deviation SelectField changes.', () => {
         const spy = spyOn(
-            StdDevOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'standardDeviationOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -283,14 +280,14 @@ describe('Test <StdDevOutlierAnalysis /> actions:', () => {
     })
 
     it('Should call back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'back')
+        const spy = spyOn(OutlierDetection.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
     it('Standard Dev Outlier Analysis calls start method when RaisedButton is clicked', () => {
-        const spy = spyOn(StdDevOutlierAnalysis.prototype, 'start')
+        const spy = spyOn(OutlierDetection.prototype, 'start')
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()

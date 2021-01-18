@@ -22,7 +22,7 @@ import jsPageStyles from '../PageStyles'
 
 export const DEFAULT_STANDARD_DEVIATION = 3.0
 
-class StdDevOutlierAnalysis extends Page {
+class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
         'startDate',
@@ -66,7 +66,7 @@ class StdDevOutlierAnalysis extends Page {
         Object.keys(nextProps).forEach(property => {
             if (
                 nextProps.hasOwnProperty(property) &&
-                StdDevOutlierAnalysis.STATE_PROPERTIES.includes(property)
+                OutlierDetection.STATE_PROPERTIES.includes(property)
             ) {
                 nextState[property] = nextProps[property]
             }
@@ -279,9 +279,10 @@ class StdDevOutlierAnalysis extends Page {
                                 )}
                             >
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Parent organisation unit')}
+                                    {i18n.t('Organisation units')}
                                 </div>
                                 <AvailableOrganisationUnitsTree
+                                    multiple
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
@@ -357,4 +358,4 @@ class StdDevOutlierAnalysis extends Page {
     }
 }
 
-export default StdDevOutlierAnalysis
+export default OutlierDetection
