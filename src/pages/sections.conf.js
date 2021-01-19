@@ -1,5 +1,5 @@
 import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
-import OutlierDetection from './outlierDetection/OutlierDetection'
+import OutlierDetection from './outlier-detection/OutlierDetection'
 import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
 
 export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'

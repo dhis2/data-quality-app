@@ -20,17 +20,17 @@ import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 
-export const DEFAULT_STANDARD_DEVIATION = 3.0
+export const DEFAULT_THRESHOLD = 3.0
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
         'startDate',
         'endDate',
-        'organisationUnitId',
+        'organisationUnitIds',
         'dataSetIds',
         'elements',
-        'standardDeviation',
+        'threshold',
         'loading',
     ]
 
@@ -41,11 +41,11 @@ class OutlierDetection extends Page {
             showTable: false,
             startDate: new Date(),
             endDate: new Date(),
-            organisationUnitId: null,
+            organisationUnitIds: [],
             dataSetIds: [],
             elements: [],
             algorithm: 'Z_SCORE',
-            standardDeviation: DEFAULT_STANDARD_DEVIATION,
+            threshold: DEFAULT_THRESHOLD,
         }
 
         this.start = this.start.bind(this)
@@ -55,9 +55,7 @@ class OutlierDetection extends Page {
         this.endDateOnChange = this.endDateOnChange.bind(this)
         this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
         this.dataSetsOnChange = this.dataSetsOnChange.bind(this)
-        this.standardDeviationOnChange = this.standardDeviationOnChange.bind(
-            this
-        )
+        this.thresholdOnChange = this.thresholdOnChange.bind(this)
         this.algorithmOnChange = this.algorithmOnChange.bind(this)
         this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
@@ -88,18 +86,30 @@ class OutlierDetection extends Page {
                 },
             })
 
-            api.post(apiConf.endpoints.standardDeviationOutliersAnalysis, {
-                startDate: convertDateToApiDateFormat(this.state.startDate),
-                endDate: convertDateToApiDateFormat(this.state.endDate),
-                ou: this.state.organisationUnitId,
-                ds: this.state.dataSetIds,
-                standardDeviation: this.state.standardDeviation,
-            })
+            api.get(
+                [
+                    apiConf.endpoints.outlierDetection,
+                    this.createQueryString(),
+                ].join('?')
+            )
                 .then(response => {
                     if (this.isPageMounted()) {
-                        const elements = response.map(
+                        const elements = response.outlierValues.map(
                             OutlierAnalyisTable.convertElementFromApiResponse
                         )
+                        // console.log(elements)
+                        const uniqueKeys = new Set()
+                        const duplicates = []
+
+                        for (const el of elements) {
+                            if (uniqueKeys.has(el.key)) {
+                                duplicates.push(el)
+                            } else {
+                                uniqueKeys.add(el.key)
+                            }
+                        }
+
+                        console.log(duplicates)
 
                         const feedback =
                             elements && elements.length > 0
@@ -124,10 +134,27 @@ class OutlierDetection extends Page {
                         })
                     }
                 })
-                .catch(() => {
-                    this.manageError()
+                .catch(error => {
+                    console.error(error)
+                    this.manageError(error)
                 })
         }
+    }
+
+    createQueryString() {
+        const querySegments = [
+            ...this.state.dataSetIds.map(id => `ds=${id}`),
+            ...this.state.organisationUnitIds.map(id => `ou=${id}`),
+            `startDate=${convertDateToApiDateFormat(this.state.startDate)}`,
+            `endDate=${convertDateToApiDateFormat(this.state.endDate)}`,
+            `algorithm=${this.state.algorithm}`,
+        ]
+
+        if (this.state.algorithm === 'Z_SCORE') {
+            querySegments.push(`threshold=${this.state.threshold}`)
+        }
+
+        return querySegments.join('&')
     }
 
     back() {
@@ -142,8 +169,8 @@ class OutlierDetection extends Page {
         this.setState({ endDate: new Date(date) })
     }
 
-    organisationUnitOnChange(organisationUnitId) {
-        this.setState({ organisationUnitId })
+    organisationUnitOnChange(organisationUnitIds) {
+        this.setState({ organisationUnitIds })
     }
 
     dataSetsOnChange(event) {
@@ -155,8 +182,8 @@ class OutlierDetection extends Page {
         this.setState({ dataSetIds })
     }
 
-    standardDeviationOnChange(event, index, value) {
-        this.setState({ standardDeviation: value })
+    thresholdOnChange(event, index, value) {
+        this.setState({ threshold: value })
     }
 
     algorithmOnChange(event, index, value) {
@@ -215,8 +242,9 @@ class OutlierDetection extends Page {
         return (
             this.state.startDate &&
             this.state.endDate &&
-            this.state.organisationUnitId &&
-            this.state.standardDeviation &&
+            this.state.organisationUnitIds &&
+            this.state.organisationUnitIds.length > 0 &&
+            this.state.threshold &&
             this.state.dataSetIds &&
             this.state.dataSetIds.length > 0
         )
@@ -336,13 +364,9 @@ class OutlierDetection extends Page {
                                     <SelectField
                                         id="standard-deviation"
                                         style={jsPageStyles.inputForm}
-                                        floatingLabelText={i18n.t(
-                                            'Select number of standard deviations'
-                                        )}
-                                        onChange={
-                                            this.standardDeviationOnChange
-                                        }
-                                        value={this.state.standardDeviation}
+                                        floatingLabelText={i18n.t('Threshold')}
+                                        onChange={this.thresholdOnChange}
+                                        value={this.state.threshold}
                                     >
                                         <MenuItem
                                             value={1.0}

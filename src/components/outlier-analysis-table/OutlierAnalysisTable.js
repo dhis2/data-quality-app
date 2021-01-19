@@ -118,19 +118,50 @@ OutlierAnalyisTable.generateElementKey = e =>
     }-${e.dataElementId}`
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    key: OutlierAnalyisTable.generateElementKey(e),
-    attributeOptionComboId: e.attributeOptionComboId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    periodId: e.periodId,
-    organisationUnitId: e.sourceId,
-    dataElementId: e.dataElementId,
-    dataElement: e.dataElementName,
-    organisation: e.sourceName,
-    period: e.period.name,
-    min: e.min,
-    max: e.max,
-    value: Number.parseFloat(e.value),
-    marked: e.followup,
+    // key: OutlierAnalyisTable.generateElementKey(e),
+    // attributeOptionComboId: e.attributeOptionComboId,
+    // categoryOptionComboId: e.categoryOptionComboId,
+    // periodId: e.periodId,
+    // organisationUnitId: e.sourceId,
+    // dataElementId: e.dataElementId,
+    // dataElement: e.dataElementName,
+    // organisation: e.sourceName,
+    // period: e.period.name,
+    // min: e.min,
+    // max: e.max,
+    // value: Number.parseFloat(e.value),
+    // marked: ,
+
+    // Data Element	deName (cocName) (aocName)
+    // Period	pe
+    // Org Unit	ouName
+    // Min	lowerBound
+    // Value	value
+    // Max	upperBound
+    // Z-Score	zScore
+    // Mean	mean
+    // Std Dev	stdDev
+    // Deviation	absDev
+    // Mark	<checkbox>
+
+    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}`,
+    absDev: twoDecimals(e.absDev),
+    aoc: e.aoc,
+    aocName: e.aocName,
+    coc: e.coc,
+    cocName: e.cocName,
+    de: e.de,
+    deName: e.deName,
+    lowerBound: twoDecimals(e.lowerBound),
+    mean: twoDecimals(e.mean),
+    ou: e.ou,
+    ouName: e.ouName,
+    pe: e.pe,
+    stdDev: twoDecimals(e.stdDev),
+    upperBound: twoDecimals(e.upperBound),
+    value: e.value,
+    zScore: twoDecimals(e.zScore),
+    marked: false,
 })
 
 OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
@@ -149,6 +180,10 @@ OutlierAnalyisTable.propTypes = {
 
 OutlierAnalyisTable.contextTypes = {
     d2: PropTypes.object,
+}
+
+function twoDecimals(num) {
+    return Math.round((num + Number.EPSILON) * 100) / 100
 }
 
 export default OutlierAnalyisTable

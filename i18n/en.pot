@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-19T09:40:10.372Z\n"
-"PO-Revision-Date: 2021-01-19T09:40:10.372Z\n"
+"POT-Creation-Date: 2021-01-19T10:54:58.401Z\n"
+"PO-Revision-Date: 2021-01-19T10:54:58.401Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -98,7 +98,10 @@ msgstr ""
 msgid "Organisation units"
 msgstr ""
 
-msgid "Select number of standard deviations"
+msgid "Algorithm"
+msgstr ""
+
+msgid "Threshold"
 msgstr ""
 
 msgid "start"
