@@ -44,6 +44,7 @@ class OutlierDetection extends Page {
             organisationUnitId: null,
             dataSetIds: [],
             elements: [],
+            algorithm: 'Z_SCORE',
             standardDeviation: DEFAULT_STANDARD_DEVIATION,
         }
 
@@ -57,6 +58,7 @@ class OutlierDetection extends Page {
         this.standardDeviationOnChange = this.standardDeviationOnChange.bind(
             this
         )
+        this.algorithmOnChange = this.algorithmOnChange.bind(this)
         this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
@@ -155,6 +157,10 @@ class OutlierDetection extends Page {
 
     standardDeviationOnChange(event, index, value) {
         this.setState({ standardDeviation: value })
+    }
+
+    algorithmOnChange(event, index, value) {
+        this.setState({ algorithm: value })
     }
 
     toggleCheckbox(element) {
@@ -311,24 +317,62 @@ class OutlierDetection extends Page {
                                     value={this.state.endDate}
                                 />
                                 <SelectField
-                                    id="standard-deviation"
+                                    id="algorithm"
                                     style={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t(
-                                        'Select number of standard deviations'
-                                    )}
-                                    onChange={this.standardDeviationOnChange}
-                                    value={this.state.standardDeviation}
+                                    floatingLabelText={i18n.t('Algorithm')}
+                                    onChange={this.algorithmOnChange}
+                                    value={this.state.algorithm}
                                 >
-                                    <MenuItem value={1.0} primaryText="1.0" />
-                                    <MenuItem value={1.5} primaryText="1.5" />
-                                    <MenuItem value={2.0} primaryText="2.0" />
-                                    <MenuItem value={2.5} primaryText="2.5" />
-                                    <MenuItem value={3} primaryText="3.0" />
-                                    <MenuItem value={3.5} primaryText="3.5" />
-                                    <MenuItem value={4} primaryText="4.0" />
-                                    <MenuItem value={4.5} primaryText="4.5" />
-                                    <MenuItem value={5} primaryText="5.0" />
+                                    <MenuItem
+                                        value="Z_SCORE"
+                                        primaryText="Z-score"
+                                    />
+                                    <MenuItem
+                                        value="MIN_MAX"
+                                        primaryText="Min-max values"
+                                    />
                                 </SelectField>
+                                {this.state.algorithm === 'Z_SCORE' && (
+                                    <SelectField
+                                        id="standard-deviation"
+                                        style={jsPageStyles.inputForm}
+                                        floatingLabelText={i18n.t(
+                                            'Select number of standard deviations'
+                                        )}
+                                        onChange={
+                                            this.standardDeviationOnChange
+                                        }
+                                        value={this.state.standardDeviation}
+                                    >
+                                        <MenuItem
+                                            value={1.0}
+                                            primaryText="1.0"
+                                        />
+                                        <MenuItem
+                                            value={1.5}
+                                            primaryText="1.5"
+                                        />
+                                        <MenuItem
+                                            value={2.0}
+                                            primaryText="2.0"
+                                        />
+                                        <MenuItem
+                                            value={2.5}
+                                            primaryText="2.5"
+                                        />
+                                        <MenuItem value={3} primaryText="3.0" />
+                                        <MenuItem
+                                            value={3.5}
+                                            primaryText="3.5"
+                                        />
+                                        <MenuItem value={4} primaryText="4.0" />
+                                        <MenuItem
+                                            value={4.5}
+                                            primaryText="4.5"
+                                        />
+                                        <MenuItem value={5} primaryText="5.0" />
+                                    </SelectField>
+                                )}
                             </div>
                         </div>
                         <RaisedButton
