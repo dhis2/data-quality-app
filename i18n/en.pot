@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
-"PO-Revision-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-19T09:40:10.372Z\n"
+"PO-Revision-Date: 2021-01-19T09:40:10.372Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -92,16 +92,16 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Min-Max Outlier Analysis"
-msgstr ""
-
-msgid "start"
-msgstr ""
-
 msgid "Std Dev Outlier Analysis"
 msgstr ""
 
+msgid "Organisation units"
+msgstr ""
+
 msgid "Select number of standard deviations"
+msgstr ""
+
+msgid "start"
 msgstr ""
 
 msgid "Validation passed successfully"
