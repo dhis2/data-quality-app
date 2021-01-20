@@ -32,6 +32,7 @@ class OutlierDetection extends Page {
         'elements',
         'threshold',
         'loading',
+        'csvQueryStr',
     ]
 
     constructor() {
@@ -46,6 +47,7 @@ class OutlierDetection extends Page {
             elements: [],
             algorithm: 'Z_SCORE',
             threshold: DEFAULT_THRESHOLD,
+            csvQueryStr: null,
         }
 
         this.start = this.start.bind(this)
@@ -86,17 +88,19 @@ class OutlierDetection extends Page {
                 },
             })
 
-            api.get(
-                [
-                    apiConf.endpoints.outlierDetection,
-                    this.createQueryString(),
-                ].join('?')
-            )
+            const endpoint = apiConf.endpoints.outlierDetection
+            const csvQueryStr = this.createQueryString()
+
+            api.get(`${endpoint}?${csvQueryStr}`)
                 .then(response => {
                     if (this.isPageMounted()) {
                         const elements = response.outlierValues.map(
                             OutlierAnalyisTable.convertElementFromApiResponse
                         )
+
+                        const withFollowUp = elements.filter(e => e.followUp)
+
+                        console.log('withFollowUp', withFollowUp)
 
                         const feedback =
                             elements && elements.length > 0
@@ -117,12 +121,12 @@ class OutlierDetection extends Page {
                                 loading: false,
                                 elements,
                                 showTable: elements && elements.length > 0,
+                                csvQueryStr,
                             },
                         })
                     }
                 })
                 .catch(error => {
-                    console.error(error)
                     this.manageError(error)
                 })
         }
@@ -145,7 +149,7 @@ class OutlierDetection extends Page {
     }
 
     back() {
-        this.setState({ showTable: false })
+        this.setState({ showTable: false, csvQueryStr: null })
     }
 
     startDateOnChange(event, date) {
@@ -396,18 +400,16 @@ class OutlierDetection extends Page {
                         />
                     </CardText>
                     {/* TABLE */}
-                    <CardText
-                        id="results-table"
-                        style={{
-                            display: this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
-                        <OutlierAnalyisTable
-                            algorithm={this.state.algorithm}
-                            elements={this.state.elements}
-                            toggleCheckbox={this.toggleCheckbox}
-                        />
-                    </CardText>
+                    {this.state.showTable && this.state.csvQueryStr && (
+                        <CardText id="results-table">
+                            <OutlierAnalyisTable
+                                algorithm={this.state.algorithm}
+                                csvQueryStr={this.state.csvQueryStr}
+                                elements={this.state.elements}
+                                toggleCheckbox={this.toggleCheckbox}
+                            />
+                        </CardText>
+                    )}
                 </Card>
             </div>
         )

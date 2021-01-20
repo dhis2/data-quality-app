@@ -18,8 +18,21 @@ import cssPageStyles from '../../pages/Page.module.css'
 import jsPageStyles from '../../pages/PageStyles'
 import styles from './OutlierAnalysisTable.module.css'
 
-const OutlierAnalyisTable = ({ elements, toggleCheckbox, algorithm }) => {
+const OutlierAnalyisTable = ({
+    csvQueryStr,
+    elements,
+    toggleCheckbox,
+    algorithm,
+}) => {
     const isZScoreAlgorithm = algorithm === 'Z_SCORE'
+
+    const downloadLink = (
+        <DownloadAs
+            fileTypes={['csv']}
+            endpoint={apiConf.endpoints.outlierDetection}
+            queryStr={csvQueryStr}
+        />
+    )
 
     // Table Rows
     const rows = elements.map(element => {
@@ -74,9 +87,7 @@ const OutlierAnalyisTable = ({ elements, toggleCheckbox, algorithm }) => {
 
     return (
         <div>
-            <div className={cssPageStyles.cardHeader}>
-                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
-            </div>
+            <div className={cssPageStyles.cardHeader}>{downloadLink}</div>
             <Table
                 selectable={false}
                 className={classNames(
@@ -142,7 +153,7 @@ const OutlierAnalyisTable = ({ elements, toggleCheckbox, algorithm }) => {
                     cssPageStyles.end
                 )}
             >
-                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
+                {downloadLink}
             </div>
         </div>
     )
@@ -172,6 +183,7 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
 
 OutlierAnalyisTable.propTypes = {
     algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
+    csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
 }
