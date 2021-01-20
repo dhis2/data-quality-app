@@ -97,19 +97,6 @@ class OutlierDetection extends Page {
                         const elements = response.outlierValues.map(
                             OutlierAnalyisTable.convertElementFromApiResponse
                         )
-                        // console.log(elements)
-                        const uniqueKeys = new Set()
-                        const duplicates = []
-
-                        for (const el of elements) {
-                            if (uniqueKeys.has(el.key)) {
-                                duplicates.push(el)
-                            } else {
-                                uniqueKeys.add(el.key)
-                            }
-                        }
-
-                        console.log(duplicates)
 
                         const feedback =
                             elements && elements.length > 0
@@ -416,6 +403,7 @@ class OutlierDetection extends Page {
                         }}
                     >
                         <OutlierAnalyisTable
+                            algorithm={this.state.algorithm}
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}
                         />

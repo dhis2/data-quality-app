@@ -18,29 +18,46 @@ import cssPageStyles from '../../pages/Page.module.css'
 import jsPageStyles from '../../pages/PageStyles'
 import styles from './OutlierAnalysisTable.module.css'
 
-const OutlierAnalyisTable = props => {
-    const elements = props.elements
-    const parentToggleCheckbox = props.toggleCheckbox
+const OutlierAnalyisTable = ({ elements, toggleCheckbox, algorithm }) => {
+    const isZScoreAlgorithm = algorithm === 'Z_SCORE'
 
     // Table Rows
     const rows = elements.map(element => {
         const updateCheckbox = () => {
-            parentToggleCheckbox(element)
+            toggleCheckbox(element)
         }
 
         return (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.dataElement}</TableRowColumn>
-                <TableRowColumn>{element.organisation}</TableRowColumn>
-                <TableRowColumn>{element.period}</TableRowColumn>
+                <TableRowColumn>{element.deName}</TableRowColumn>
+                <TableRowColumn>{element.pe}</TableRowColumn>
+                <TableRowColumn>{element.ouName}</TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.min} />
+                    <FormattedNumber value={element.lowerBound} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.value} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.max} />
+                    <FormattedNumber value={element.upperBound} />
+                </TableRowColumn>
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber value={element.zScore} />
+                    </TableRowColumn>
+                )}
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber value={element.mean} />
+                    </TableRowColumn>
+                )}
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber value={element.stdDev} />
+                    </TableRowColumn>
+                )}
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber value={element.absDev} />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.centerFlex}>
                     <span className={cssPageStyles.checkboxWrapper}>
@@ -77,10 +94,10 @@ const OutlierAnalyisTable = props => {
                             {i18n.t('Data Element')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t('Organisation Unit')}
+                            {i18n.t('Period')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t('Period')}
+                            {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
                             {i18n.t('Min')}
@@ -91,6 +108,25 @@ const OutlierAnalyisTable = props => {
                         <TableHeaderColumn className={cssPageStyles.right}>
                             {i18n.t('Max')}
                         </TableHeaderColumn>
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Z-Score')}
+                            </TableHeaderColumn>
+                        )}
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Mean')}
+                            </TableHeaderColumn>
+                        )}
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Std Dev')}
+                            </TableHeaderColumn>
+                        )}
+                        <TableHeaderColumn className={cssPageStyles.right}>
+                            {i18n.t('Deviation')}
+                        </TableHeaderColumn>
+
                         <TableHeaderColumn className={cssPageStyles.center}>
                             {i18n.t('Mark')}
                         </TableHeaderColumn>
@@ -117,51 +153,12 @@ OutlierAnalyisTable.generateElementKey = e =>
         e.sourceId
     }-${e.dataElementId}`
 
-OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    // key: OutlierAnalyisTable.generateElementKey(e),
-    // attributeOptionComboId: e.attributeOptionComboId,
-    // categoryOptionComboId: e.categoryOptionComboId,
-    // periodId: e.periodId,
-    // organisationUnitId: e.sourceId,
-    // dataElementId: e.dataElementId,
-    // dataElement: e.dataElementName,
-    // organisation: e.sourceName,
-    // period: e.period.name,
-    // min: e.min,
-    // max: e.max,
-    // value: Number.parseFloat(e.value),
-    // marked: ,
-
-    // Data Element	deName (cocName) (aocName)
-    // Period	pe
-    // Org Unit	ouName
-    // Min	lowerBound
-    // Value	value
-    // Max	upperBound
-    // Z-Score	zScore
-    // Mean	mean
-    // Std Dev	stdDev
-    // Deviation	absDev
-    // Mark	<checkbox>
-
-    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}`,
-    absDev: twoDecimals(e.absDev),
-    aoc: e.aoc,
-    aocName: e.aocName,
-    coc: e.coc,
-    cocName: e.cocName,
-    de: e.de,
-    deName: e.deName,
-    lowerBound: twoDecimals(e.lowerBound),
-    mean: twoDecimals(e.mean),
-    ou: e.ou,
-    ouName: e.ouName,
-    pe: e.pe,
-    stdDev: twoDecimals(e.stdDev),
-    upperBound: twoDecimals(e.upperBound),
-    value: e.value,
-    zScore: twoDecimals(e.zScore),
+OutlierAnalyisTable.convertElementFromApiResponse = (e, index) => ({
+    // TODO: Once sourceId is also returned from the API, use this to craft a truly unique ID
+    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${index}`,
+    // TODO: We should be able to read this value from the API response as well
     marked: false,
+    ...e,
 })
 
 OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
@@ -174,16 +171,13 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
 })
 
 OutlierAnalyisTable.propTypes = {
+    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
 }
 
 OutlierAnalyisTable.contextTypes = {
     d2: PropTypes.object,
-}
-
-function twoDecimals(num) {
-    return Math.round((num + Number.EPSILON) * 100) / 100
 }
 
 export default OutlierAnalyisTable

@@ -1,7 +1,16 @@
-.outlierAnalysisTable
-    td:nth-child(4),
-    td:nth-child(5),
-    td:nth-child(6)
-    {
-        overflow: visible !important;
-    }
+.outlierAnalysisTable td:nth-child(4),
+td:nth-child(5),
+td:nth-child(6) {
+    overflow: visible !important;
+}
+
+.outlierAnalysisTable th,
+.outlierAnalysisTable td {
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+}
+
+.outlierAnalysisTable th:first-child,
+.outlierAnalysisTable td:first-child {
+    width: 20%;
+}
