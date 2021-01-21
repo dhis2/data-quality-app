@@ -85,15 +85,23 @@ class App extends PureComponent {
             />
         )
 
+        const hideSidebar =
+            this.state.pageState && this.state.pageState.showTable
+        const contentWrapperClassName = hideSidebar
+            ? styles.contentWrapperNoMargin
+            : styles.contentWrapper
+
         return (
             <div>
                 <HeaderBar appName={i18n.t('Data Quality')} />
-                <Sidebar
-                    sections={translatedSections}
-                    currentSection={this.state.currentSection}
-                    onChangeSection={nonOnChangeSection}
-                />
-                <div className={styles.contentWrapper}>
+                {!hideSidebar && (
+                    <Sidebar
+                        sections={translatedSections}
+                        currentSection={this.state.currentSection}
+                        onChangeSection={nonOnChangeSection}
+                    />
+                )}
+                <div className={contentWrapperClassName}>
                     <div className={styles.contentArea}>
                         <AppRouter pageState={this.state.pageState} />
                     </div>

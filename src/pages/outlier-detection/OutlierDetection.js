@@ -150,6 +150,9 @@ class OutlierDetection extends Page {
 
     back() {
         this.setState({ showTable: false, csvQueryStr: null })
+        this.context.updateAppState({
+            pageState: { showTable: false },
+        })
     }
 
     startDateOnChange(event, date) {

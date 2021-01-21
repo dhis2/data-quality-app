@@ -7,13 +7,18 @@
     max-width: 1400px;
 }
 
+.contentWrapperNoMargin {
+    margin-left: 0;
+    max-width: 1695px;
+}
+
 .leftBar {
-  width: 295px;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  margin-top: 3rem;
+    width: 295px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    margin-top: 3rem;
 }
 
 .centered {
