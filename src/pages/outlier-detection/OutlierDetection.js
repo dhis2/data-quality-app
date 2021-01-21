@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import DatePicker from 'material-ui/DatePicker'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
+import FlatButton from 'material-ui/FlatButton'
 import { FontIcon, IconButton } from 'material-ui'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import classNames from 'classnames'
@@ -20,7 +21,10 @@ import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 
+export const Z_SCORE = 'Z_SCORE'
 export const DEFAULT_THRESHOLD = 3.0
+export const DEFAULT_ALGORITHM = Z_SCORE
+export const DEFAULT_MAX_RESULTS = 500
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -33,6 +37,10 @@ class OutlierDetection extends Page {
         'threshold',
         'loading',
         'csvQueryStr',
+        'showAdvancedZScoreFields',
+        'dataStartDate',
+        'dataEndDate',
+        'maxResults',
     ]
 
     constructor() {
@@ -45,9 +53,13 @@ class OutlierDetection extends Page {
             organisationUnitIds: [],
             dataSetIds: [],
             elements: [],
-            algorithm: 'Z_SCORE',
+            algorithm: DEFAULT_ALGORITHM,
             threshold: DEFAULT_THRESHOLD,
             csvQueryStr: null,
+            showAdvancedZScoreFields: false,
+            dataStartDate: null,
+            dataEndDate: null,
+            maxResults: DEFAULT_MAX_RESULTS,
         }
 
         this.start = this.start.bind(this)
@@ -59,6 +71,13 @@ class OutlierDetection extends Page {
         this.dataSetsOnChange = this.dataSetsOnChange.bind(this)
         this.thresholdOnChange = this.thresholdOnChange.bind(this)
         this.algorithmOnChange = this.algorithmOnChange.bind(this)
+        this.dataStartDateOnChange = this.dataStartDateOnChange.bind(this)
+        this.dataEndDateOnChange = this.dataEndDateOnChange.bind(this)
+        this.maxResultsOnChange = this.maxResultsOnChange.bind(this)
+
+        this.toggleShowAdvancedZScoreFields = this.toggleShowAdvancedZScoreFields.bind(
+            this
+        )
         this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
@@ -98,10 +117,6 @@ class OutlierDetection extends Page {
                             OutlierAnalyisTable.convertElementFromApiResponse
                         )
 
-                        const withFollowUp = elements.filter(e => e.followUp)
-
-                        console.log('withFollowUp', withFollowUp)
-
                         const feedback =
                             elements && elements.length > 0
                                 ? {
@@ -133,16 +148,34 @@ class OutlierDetection extends Page {
     }
 
     createQueryString() {
+        const isZScoreAlgorithm = this.state.algorithm === Z_SCORE
         const querySegments = [
             ...this.state.dataSetIds.map(id => `ds=${id}`),
             ...this.state.organisationUnitIds.map(id => `ou=${id}`),
             `startDate=${convertDateToApiDateFormat(this.state.startDate)}`,
             `endDate=${convertDateToApiDateFormat(this.state.endDate)}`,
             `algorithm=${this.state.algorithm}`,
+            `maxResults=${this.state.maxResults}`,
         ]
 
-        if (this.state.algorithm === 'Z_SCORE') {
+        if (isZScoreAlgorithm) {
             querySegments.push(`threshold=${this.state.threshold}`)
+        }
+
+        if (isZScoreAlgorithm && this.state.dataStartDate) {
+            querySegments.push(
+                `dataStartDate=${convertDateToApiDateFormat(
+                    this.state.dataStartDate
+                )}`
+            )
+        }
+
+        if (isZScoreAlgorithm && this.state.dataEndDate) {
+            querySegments.push(
+                `dataEndDate=${convertDateToApiDateFormat(
+                    this.state.dataEndDate
+                )}`
+            )
         }
 
         return querySegments.join('&')
@@ -161,6 +194,36 @@ class OutlierDetection extends Page {
 
     endDateOnChange(event, date) {
         this.setState({ endDate: new Date(date) })
+    }
+
+    dataStartDateOnChange(event, date) {
+        this.setState({ dataStartDate: new Date(date) })
+    }
+
+    dataEndDateOnChange(event, date) {
+        this.setState({ dataEndDate: new Date(date) })
+    }
+
+    maxResultsOnChange(event, index, value) {
+        this.setState({ maxResults: value })
+    }
+
+    toggleShowAdvancedZScoreFields(event, index, value) {
+        const shouldShow = !this.state.showAdvancedZScoreFields
+
+        if (shouldShow) {
+            this.setState({
+                showAdvancedZScoreFields: true,
+            })
+        } else {
+            this.setState({
+                showAdvancedZScoreFields: false,
+                // Also reset advanced fields
+                dataStartDate: null,
+                dataEndDate: null,
+                maxResults: DEFAULT_MAX_RESULTS,
+            })
+        }
     }
 
     organisationUnitOnChange(organisationUnitIds) {
@@ -224,8 +287,8 @@ class OutlierDetection extends Page {
                             })
                         }
                     })
-                    .catch(() => {
-                        this.manageError()
+                    .catch(error => {
+                        this.manageError(error)
                     })
                 break
             }
@@ -253,6 +316,66 @@ class OutlierDetection extends Page {
             this.state.showTable &&
             this.state.elements &&
             this.state.elements.length >= apiConf.results.analysis.limit
+        )
+    }
+
+    renderThresholdField() {
+        return (
+            <SelectField
+                id="threshold"
+                style={jsPageStyles.inputForm}
+                floatingLabelText={i18n.t('Threshold')}
+                onChange={this.thresholdOnChange}
+                value={this.state.threshold}
+            >
+                <MenuItem value={1.0} primaryText="1.0" />
+                <MenuItem value={1.5} primaryText="1.5" />
+                <MenuItem value={2.0} primaryText="2.0" />
+                <MenuItem value={2.5} primaryText="2.5" />
+                <MenuItem value={3} primaryText="3.0" />
+                <MenuItem value={3.5} primaryText="3.5" />
+                <MenuItem value={4} primaryText="4.0" />
+                <MenuItem value={4.5} primaryText="4.5" />
+                <MenuItem value={5} primaryText="5.0" />
+            </SelectField>
+        )
+    }
+
+    renderZScoreFields() {
+        const { showAdvancedZScoreFields } = this.state
+        const buttonLabel = showAdvancedZScoreFields
+            ? i18n.t('Hide advanced fields')
+            : i18n.t('Show advanced fields')
+
+        return (
+            <>
+                <FlatButton
+                    fullWidth
+                    label={buttonLabel}
+                    onClick={this.toggleShowAdvancedZScoreFields}
+                    style={{ marginTop: '12px' }}
+                />
+                {showAdvancedZScoreFields && (
+                    <>
+                        <DatePicker
+                            id="data-start-date"
+                            textFieldStyle={jsPageStyles.inputForm}
+                            floatingLabelText={i18n.t('Data Start Date')}
+                            onChange={this.dataStartDateOnChange}
+                            maxDate={this.state.dataEndDate}
+                            value={this.state.dataStartDate}
+                        />
+                        <DatePicker
+                            id="data-end-date"
+                            textFieldStyle={jsPageStyles.inputForm}
+                            floatingLabelText={i18n.t('Data End Date')}
+                            onChange={this.dataEndDateOnChange}
+                            minDate={this.state.dataStartDate}
+                            value={this.state.dataEndDate}
+                        />
+                    </>
+                )}
+            </>
         )
     }
 
@@ -354,43 +477,21 @@ class OutlierDetection extends Page {
                                         primaryText="Min-max values"
                                     />
                                 </SelectField>
-                                {this.state.algorithm === 'Z_SCORE' && (
-                                    <SelectField
-                                        id="standard-deviation"
-                                        style={jsPageStyles.inputForm}
-                                        floatingLabelText={i18n.t('Threshold')}
-                                        onChange={this.thresholdOnChange}
-                                        value={this.state.threshold}
-                                    >
-                                        <MenuItem
-                                            value={1.0}
-                                            primaryText="1.0"
-                                        />
-                                        <MenuItem
-                                            value={1.5}
-                                            primaryText="1.5"
-                                        />
-                                        <MenuItem
-                                            value={2.0}
-                                            primaryText="2.0"
-                                        />
-                                        <MenuItem
-                                            value={2.5}
-                                            primaryText="2.5"
-                                        />
-                                        <MenuItem value={3} primaryText="3.0" />
-                                        <MenuItem
-                                            value={3.5}
-                                            primaryText="3.5"
-                                        />
-                                        <MenuItem value={4} primaryText="4.0" />
-                                        <MenuItem
-                                            value={4.5}
-                                            primaryText="4.5"
-                                        />
-                                        <MenuItem value={5} primaryText="5.0" />
-                                    </SelectField>
-                                )}
+                                {this.state.algorithm === Z_SCORE &&
+                                    this.renderThresholdField()}
+                                <SelectField
+                                    id="max-results"
+                                    style={jsPageStyles.inputForm}
+                                    floatingLabelText={i18n.t('Max results')}
+                                    onChange={this.maxResultsOnChange}
+                                    value={this.state.maxResults}
+                                >
+                                    <MenuItem value={100} primaryText="100" />
+                                    <MenuItem value={200} primaryText="200" />
+                                    <MenuItem value={500} primaryText="500" />
+                                </SelectField>
+                                {this.state.algorithm === Z_SCORE &&
+                                    this.renderZScoreFields()}
                             </div>
                         </div>
                         <RaisedButton
