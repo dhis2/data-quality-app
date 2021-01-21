@@ -25,12 +25,12 @@ export const sections = [
         path: '/outlier-detection',
         component: OutlierDetection,
         info: {
-            label: 'Std Dev Outlier Analysis',
+            label: 'Outlier detection',
             icon: 'show_chart',
             description:
-                'Analyze potential outlier values based on standard deviations. Outlier values can be examined and marked for follow-up.',
+                'Analyze potential outlier values based on standard deviations or min-max values. Outlier values can be examined and marked for follow-up.',
             actionText: 'Analyze',
-            docs: 'standard_deviation_analysis',
+            docs: 'outlier_detection',
         },
     },
     {

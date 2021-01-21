@@ -267,7 +267,7 @@ class OutlierDetection extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t('Std Dev Outlier Analysis')}
+                    {i18n.t('Outlier Detection')}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
                             this.props.sectionKey
