@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-19T10:54:58.401Z\n"
-"PO-Revision-Date: 2021-01-19T10:54:58.401Z\n"
+"POT-Creation-Date: 2021-01-21T09:28:04.617Z\n"
+"PO-Revision-Date: 2021-01-21T09:28:04.617Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -32,10 +32,10 @@ msgstr ""
 msgid "Data Element"
 msgstr ""
 
-msgid "Organisation Unit"
+msgid "Period"
 msgstr ""
 
-msgid "Period"
+msgid "Organisation Unit"
 msgstr ""
 
 msgid "Min"
@@ -45,6 +45,18 @@ msgid "Value"
 msgstr ""
 
 msgid "Max"
+msgstr ""
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Deviation"
 msgstr ""
 
 msgid "Mark"

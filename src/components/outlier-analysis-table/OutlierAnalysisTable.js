@@ -42,7 +42,7 @@ const OutlierAnalyisTable = ({
 
         return (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.deName}</TableRowColumn>
+                <TableRowColumn>{element.displayName}</TableRowColumn>
                 <TableRowColumn>{element.pe}</TableRowColumn>
                 <TableRowColumn>{element.ouName}</TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
@@ -56,17 +56,26 @@ const OutlierAnalyisTable = ({
                 </TableRowColumn>
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.zScore} />
+                        <FormattedNumber
+                            value={element.zScore}
+                            maximumFractionDigits={2}
+                        />
                     </TableRowColumn>
                 )}
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.mean} />
+                        <FormattedNumber
+                            value={element.mean}
+                            maximumFractionDigits={2}
+                        />
                     </TableRowColumn>
                 )}
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.stdDev} />
+                        <FormattedNumber
+                            value={element.stdDev}
+                            maximumFractionDigits={2}
+                        />
                     </TableRowColumn>
                 )}
                 <TableRowColumn className={cssPageStyles.right}>
@@ -164,21 +173,19 @@ OutlierAnalyisTable.generateElementKey = e =>
         e.sourceId
     }-${e.dataElementId}`
 
-OutlierAnalyisTable.convertElementFromApiResponse = (e, index) => ({
-    // TODO: Once sourceId is also returned from the API, use this to craft a truly unique ID
-    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${index}`,
-    // TODO: We should be able to read this value from the API response as well
-    marked: false,
+OutlierAnalyisTable.convertElementFromApiResponse = e => ({
+    displayName: getDisplayName(e),
+    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${e.ou}`,
+    marked: e.followUp,
     ...e,
 })
 
 OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
-    dataElementId: e.dataElementId,
-    periodId: e.periodId,
-    organisationUnitId: e.organisationUnitId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    attributeOptionComboId: e.attributeOptionComboId,
-    followup: !e.marked,
+    dataElement: e.de,
+    period: e.pe,
+    orgUnit: e.ou,
+    categoryOptionCombo: e.coc,
+    attributeOptionCombo: e.aoc,
 })
 
 OutlierAnalyisTable.propTypes = {
@@ -190,6 +197,23 @@ OutlierAnalyisTable.propTypes = {
 
 OutlierAnalyisTable.contextTypes = {
     d2: PropTypes.object,
+}
+
+function getDisplayName(e) {
+    let str = e.deName
+
+    // In the context of a dataElement, the default COC or AOC means "none".
+    // The "default" string is not localised, and probably won't ever be.
+    // That is why the conditions below should work in the foreseeable future.
+    if (e.cocName !== 'default') {
+        str += ` (${e.cocName})`
+    }
+
+    if (e.aocName !== 'default') {
+        str += ` (${e.aocName})`
+    }
+
+    return str
 }
 
 export default OutlierAnalyisTable

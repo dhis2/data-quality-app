@@ -192,13 +192,13 @@ class OutlierDetection extends Page {
                         loading: true,
                     },
                 })
-                api.post(apiConf.endpoints.markDataValue, {
-                    followups: [
-                        OutlierAnalyisTable.convertElementToToggleFollowupRequest(
-                            currentElement
-                        ),
-                    ],
-                })
+                const apiCall = currentElement.marked ? api.delete : api.post
+                apiCall(
+                    apiConf.endpoints.markDataValue,
+                    OutlierAnalyisTable.convertElementToToggleFollowupRequest(
+                        currentElement
+                    )
+                )
                     .then(() => {
                         if (this.isPageMounted()) {
                             currentElement.marked = !currentElement.marked
