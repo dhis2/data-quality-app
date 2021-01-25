@@ -221,7 +221,6 @@ class OutlierDetection extends Page {
                 // Also reset advanced fields
                 dataStartDate: null,
                 dataEndDate: null,
-                maxResults: DEFAULT_MAX_RESULTS,
             })
         }
     }
