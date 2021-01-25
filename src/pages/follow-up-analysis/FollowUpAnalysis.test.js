@@ -10,7 +10,6 @@ import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTa
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
 import { sections, FOLLOW_UP_ANALYSIS_SECTION_KEY } from '../sections.conf'
-import MinMaxOutlierAnalysis from '../min-max-outlier-analysis/MinMaxOutlierAnalysis'
 
 let pageInfo = {}
 for (let i = 0; i < sections.length; i++) {
