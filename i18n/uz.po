@@ -86,7 +86,7 @@ msgid "Comment"
 msgstr "Изоҳ"
 
 msgid "Close"
-msgstr "Ёпмоқ"
+msgstr "Ёпиш"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
