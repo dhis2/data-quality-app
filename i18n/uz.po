@@ -90,7 +90,7 @@ msgid "follow up"
 msgstr "кузатиш"
 
 msgid "Close"
-msgstr "Ёпмоқ"
+msgstr "Ёпиш"
 
 msgid "Comment"
 msgstr "Изоҳ"
