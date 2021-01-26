@@ -81,12 +81,11 @@ class AvailableOrganisationUnitsTree extends PureComponent {
         this.props.onChange && this.props.onChange(id)
     }
 
-    handleOrgUnitClickMulti(event, orgUnit) {
+    handleOrgUnitClickMulti(event, { path }) {
         const { selected } = this.state
-        const { path } = orgUnit
         const paths = selected.includes(path)
             ? selected.filter(selectedPath => selectedPath !== path)
-            : [...this.state.selected, orgUnit.path]
+            : [...this.state.selected, path]
 
         this.setState({ selected: paths })
         this.props.onChange &&
