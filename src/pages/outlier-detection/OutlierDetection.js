@@ -27,6 +27,12 @@ export const DEFAULT_ALGORITHM = Z_SCORE
 export const DEFAULT_MAX_RESULTS = 500
 export const DEFAULT_SORT_BY = Z_SCORE
 
+const threeMonthsAgo = () => {
+    const date = new Date()
+    date.setMonth(date.getMonth() - 3)
+    return date
+}
+
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -50,7 +56,7 @@ class OutlierDetection extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitIds: [],
             dataSetIds: [],
