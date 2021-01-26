@@ -46,40 +46,46 @@ const OutlierAnalyisTable = ({
                 <TableRowColumn>{element.pe}</TableRowColumn>
                 <TableRowColumn>{element.ouName}</TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.value} />
+                    <FormattedNumber
+                        value={element.value}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber
-                            value={element.zScore}
-                            maximumFractionDigits={2}
-                        />
+                        <FormattedNumber value={element.zScore} />
                     </TableRowColumn>
                 )}
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.absDev} />
+                    <FormattedNumber
+                        value={element.absDev}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber
-                            value={element.stdDev}
-                            maximumFractionDigits={2}
-                        />
+                        <FormattedNumber value={element.stdDev} />
                     </TableRowColumn>
                 )}
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber
                             value={element.mean}
-                            maximumFractionDigits={2}
+                            minimumFractionDigits={0}
                         />
                     </TableRowColumn>
                 )}
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.lowerBound} />
+                    <FormattedNumber
+                        value={element.lowerBound}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.upperBound} />
+                    <FormattedNumber
+                        value={element.upperBound}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
                 {/* <TableRowColumn className={cssPageStyles.centerFlex}>
                     <span className={cssPageStyles.checkboxWrapper}>
