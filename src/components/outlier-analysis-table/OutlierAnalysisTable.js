@@ -46,18 +46,23 @@ const OutlierAnalyisTable = ({
                 <TableRowColumn>{element.pe}</TableRowColumn>
                 <TableRowColumn>{element.ouName}</TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.lowerBound} />
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber value={element.value} />
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.upperBound} />
                 </TableRowColumn>
                 {isZScoreAlgorithm && (
                     <TableRowColumn className={cssPageStyles.right}>
                         <FormattedNumber
                             value={element.zScore}
+                            maximumFractionDigits={2}
+                        />
+                    </TableRowColumn>
+                )}
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber value={element.absDev} />
+                </TableRowColumn>
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber
+                            value={element.stdDev}
                             maximumFractionDigits={2}
                         />
                     </TableRowColumn>
@@ -70,16 +75,11 @@ const OutlierAnalyisTable = ({
                         />
                     </TableRowColumn>
                 )}
-                {isZScoreAlgorithm && (
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber
-                            value={element.stdDev}
-                            maximumFractionDigits={2}
-                        />
-                    </TableRowColumn>
-                )}
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.absDev} />
+                    <FormattedNumber value={element.lowerBound} />
+                </TableRowColumn>
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber value={element.upperBound} />
                 </TableRowColumn>
                 {/* <TableRowColumn className={cssPageStyles.centerFlex}>
                     <span className={cssPageStyles.checkboxWrapper}>
@@ -120,17 +120,19 @@ const OutlierAnalyisTable = ({
                             {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t('Min')}
-                        </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.right}>
                             {i18n.t('Value')}
-                        </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t('Max')}
                         </TableHeaderColumn>
                         {isZScoreAlgorithm && (
                             <TableHeaderColumn className={cssPageStyles.right}>
                                 {i18n.t('Z-Score')}
+                            </TableHeaderColumn>
+                        )}
+                        <TableHeaderColumn className={cssPageStyles.right}>
+                            {i18n.t('Deviation')}
+                        </TableHeaderColumn>
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Std Dev')}
                             </TableHeaderColumn>
                         )}
                         {isZScoreAlgorithm && (
@@ -138,15 +140,12 @@ const OutlierAnalyisTable = ({
                                 {i18n.t('Mean')}
                             </TableHeaderColumn>
                         )}
-                        {isZScoreAlgorithm && (
-                            <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t('Std Dev')}
-                            </TableHeaderColumn>
-                        )}
                         <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t('Deviation')}
+                            {i18n.t('Min')}
                         </TableHeaderColumn>
-
+                        <TableHeaderColumn className={cssPageStyles.right}>
+                            {i18n.t('Max')}
+                        </TableHeaderColumn>
                         {/* <TableHeaderColumn className={cssPageStyles.center}>
                             {i18n.t('Mark')}
                         </TableHeaderColumn> */}
