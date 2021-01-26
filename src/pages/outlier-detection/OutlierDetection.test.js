@@ -135,7 +135,6 @@ describe('Test <OutlierDetection /> rendering:', () => {
         })
         expect(wrapper.find(IconButton)).toHaveLength(1)
         expect(wrapper.find(IconButton).props().style.display).toBe('inline')
-        console.log(wrapper.find(OutlierAnalyisTable))
 
         expect(wrapper.find(OutlierAnalyisTable)).toHaveLength(1)
         // expect(
