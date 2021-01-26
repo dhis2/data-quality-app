@@ -22,6 +22,8 @@ class DownloadAs extends PureComponent {
         const { baseUrl } = this.context.d2.Api.getApi()
         const { endpoint, fileTypes } = this.props
         const timestamp = Date.now()
+        // The new outlierDetection endpoint produces the correct report
+        // based on query params, but older endpoints only take a timestamp
         const queryStr = this.props.queryStr || `t=${timestamp}`
 
         return fileTypes.reduce((acc, type) => {
