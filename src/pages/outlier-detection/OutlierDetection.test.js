@@ -104,15 +104,15 @@ describe('Test <OutlierDetection /> rendering:', () => {
         ).toBe('End Date')
     })
 
-    it('Renders a an input to choose to choose Algorithm.', () => {
+    it('Renders an input to choose Algorithm.', () => {
         expect(wrapper.find('#algorithm').length).toBe(1)
     })
 
-    it('Renders a an input to choose to choose Threshold.', () => {
+    it('Renders an input to choose Threshold.', () => {
         expect(wrapper.find('#threshold').length).toBe(1)
     })
 
-    it('Renders a an input to choose to choose Max Results.', () => {
+    it('Renders an input to choose Max Results.', () => {
         expect(wrapper.find('#max-results').length).toBe(1)
     })
 
