@@ -25,6 +25,7 @@ export const Z_SCORE = 'Z_SCORE'
 export const DEFAULT_THRESHOLD = 3.0
 export const DEFAULT_ALGORITHM = Z_SCORE
 export const DEFAULT_MAX_RESULTS = 500
+export const DEFAULT_SORT_BY = Z_SCORE
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -41,6 +42,7 @@ class OutlierDetection extends Page {
         'dataStartDate',
         'dataEndDate',
         'maxResults',
+        'sortBy',
     ]
 
     constructor() {
@@ -60,6 +62,7 @@ class OutlierDetection extends Page {
             dataStartDate: null,
             dataEndDate: null,
             maxResults: DEFAULT_MAX_RESULTS,
+            sortBy: DEFAULT_SORT_BY,
         }
 
         this.start = this.start.bind(this)
@@ -74,6 +77,7 @@ class OutlierDetection extends Page {
         this.dataStartDateOnChange = this.dataStartDateOnChange.bind(this)
         this.dataEndDateOnChange = this.dataEndDateOnChange.bind(this)
         this.maxResultsOnChange = this.maxResultsOnChange.bind(this)
+        this.sortByOnChange = this.sortByOnChange.bind(this)
 
         this.toggleShowAdvancedZScoreFields = this.toggleShowAdvancedZScoreFields.bind(
             this
@@ -156,6 +160,7 @@ class OutlierDetection extends Page {
             `endDate=${convertDateToApiDateFormat(this.state.endDate)}`,
             `algorithm=${this.state.algorithm}`,
             `maxResults=${this.state.maxResults}`,
+            `sortBy=${this.state.sortBy}`,
         ]
 
         if (isZScoreAlgorithm) {
@@ -208,6 +213,10 @@ class OutlierDetection extends Page {
         this.setState({ maxResults: value })
     }
 
+    sortByOnChange(event, index, value) {
+        this.setState({ sortBy: value })
+    }
+
     toggleShowAdvancedZScoreFields(event, index, value) {
         const shouldShow = !this.state.showAdvancedZScoreFields
 
@@ -221,6 +230,7 @@ class OutlierDetection extends Page {
                 // Also reset advanced fields
                 dataStartDate: null,
                 dataEndDate: null,
+                sortBy: DEFAULT_SORT_BY,
             })
         }
     }
@@ -372,6 +382,19 @@ class OutlierDetection extends Page {
                             minDate={this.state.dataStartDate}
                             value={this.state.dataEndDate}
                         />
+                        <SelectField
+                            id="sort-by"
+                            style={jsPageStyles.inputForm}
+                            floatingLabelText={i18n.t('Sort by')}
+                            onChange={this.sortByOnChange}
+                            value={this.state.sortBy}
+                        >
+                            <MenuItem value={Z_SCORE} primaryText="Z-score" />
+                            <MenuItem
+                                value="MEAN_ABS_DEV"
+                                primaryText="Absolute Deviation from Mean"
+                            />
+                        </SelectField>
                     </>
                 )}
             </>
@@ -468,7 +491,7 @@ class OutlierDetection extends Page {
                                     value={this.state.algorithm}
                                 >
                                     <MenuItem
-                                        value="Z_SCORE"
+                                        value={Z_SCORE}
                                         primaryText="Z-score"
                                     />
                                     <MenuItem

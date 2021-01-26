@@ -1,6 +1,6 @@
 .section {
     min-height: 280px;
-    max-height: 525px;
+    max-height: 598px;
 }
 
 .mainButton {
@@ -60,7 +60,7 @@
     justify-content: space-between;
 }
 
-.end{
+.end {
     justify-content: flex-end;
 }
 
