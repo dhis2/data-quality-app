@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -40,17 +40,29 @@ msgstr "LAST NED SOM CSV"
 msgid "Data Element"
 msgstr "Dataelementer"
 
-msgid "Organisation Unit"
-msgstr "Organisasjonsenhet"
-
 msgid "Period"
 msgstr "Periode"
 
-msgid "Min"
-msgstr "Min"
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
 
 msgid "Value"
 msgstr "Verdi"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Min"
 
 msgid "Max"
 msgstr "Max"
@@ -100,17 +112,38 @@ msgstr "Slutt å følge"
 msgid "unfollow"
 msgstr "Slutt å følge"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "min-max tidligere analyse"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "start"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Std avvik tidl. analyse"
-
-msgid "Select number of standard deviations"
-msgstr "Velg antall standardavvik"
 
 msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"

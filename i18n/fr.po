@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -47,17 +47,29 @@ msgstr ""
 msgid "Data Element"
 msgstr "Élément de donnée"
 
-msgid "Organisation Unit"
-msgstr "Unité d'organisation"
-
 msgid "Period"
 msgstr "Période"
 
-msgid "Min"
-msgstr "Min"
+msgid "Organisation Unit"
+msgstr "Unité d'organisation"
 
 msgid "Value"
 msgstr "Valeur"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Min"
 
 msgid "Max"
 msgstr "Max"
@@ -107,17 +119,38 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Min-Max Outlier Analysis"
-msgstr "Analyse Min-Max des valeurs aberrantes"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr ""
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Analyse des des valeurs aberrantes basée sur l'écart type"
-
-msgid "Select number of standard deviations"
-msgstr "Sélectionner un nombre d'écart type"
 
 msgid "Validation passed successfully"
 msgstr "Succès de la validation"

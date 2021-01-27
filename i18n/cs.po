@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Jiří Podhorecký, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -39,17 +39,29 @@ msgstr "STÁHNOUT JAKO CSV"
 msgid "Data Element"
 msgstr "Datový prvek"
 
-msgid "Organisation Unit"
-msgstr "Organizační jednotka"
-
 msgid "Period"
 msgstr "Období"
 
-msgid "Min"
-msgstr "Min"
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
 
 msgid "Value"
 msgstr "Hodnota"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Min"
 
 msgid "Max"
 msgstr "Max"
@@ -99,17 +111,38 @@ msgstr "Zrušit sledování"
 msgid "unfollow"
 msgstr "přestat sledovat"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "Alalýza krajních Min-Max hodnot"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "Start"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Analýza standardní odchylky krajních hodnot"
-
-msgid "Select number of standard deviations"
-msgstr "Vybrat počet směrodatných odchylek"
 
 msgid "Validation passed successfully"
 msgstr "Ověření proběhlo úspěšně"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -42,17 +42,29 @@ msgstr "Tải xuống dưới dạng CSV"
 msgid "Data Element"
 msgstr "Phần tử dữ liệu"
 
-msgid "Organisation Unit"
-msgstr "Đơn vị"
-
 msgid "Period"
 msgstr "Thời điểm"
 
-msgid "Min"
-msgstr "Nhỏ nhất"
+msgid "Organisation Unit"
+msgstr "Đơn vị"
 
 msgid "Value"
 msgstr "Giá trị"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Nhỏ nhất"
 
 msgid "Max"
 msgstr "Lớn nhất"
@@ -102,17 +114,38 @@ msgstr "Bỏ theo dõi"
 msgid "unfollow"
 msgstr "Bỏ theo dõi"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "Phân Tích Ngoài Giới Hạn Lớn-Nhỏ"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "Bắt đầu"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Phân Tích Ngoài Độ Lệch Chuẩn"
-
-msgid "Select number of standard deviations"
-msgstr "Chọn độ lệch chuẩn"
 
 msgid "Validation passed successfully"
 msgstr "Kiểm tra hợp lệ THÀNH CÔNG"

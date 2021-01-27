@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -42,17 +42,29 @@ msgstr ""
 msgid "Data Element"
 msgstr ""
 
-msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
-
 msgid "Period"
 msgstr "ໄລຍະ ເວລາ"
 
-msgid "Min"
-msgstr "ຄ່າຕໍ່າສຸດ"
+msgid "Organisation Unit"
+msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "Value"
 msgstr "ຄ່າ"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "ຄ່າຕໍ່າສຸດ"
 
 msgid "Max"
 msgstr "ຄ່າໃຫ່ຍສຸດ"
@@ -102,17 +114,38 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Min-Max Outlier Analysis"
-msgstr "​ການ​ວິ​ໄຈ​ຄ່າ​ສູງ ແລະ ຄ່າ​ຕໍ່​ສຸດ"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr ""
-
-msgid "Std Dev Outlier Analysis"
-msgstr "​​ຫົວ​ໜ່ວຍມາດ​ຕະ​ຖານ​ການ​ວິ​ໄຈ​ຄວາມ​ຫລຸດ​ລື່ນ"
-
-msgid "Select number of standard deviations"
-msgstr "Select number of standard deviations"
 
 msgid "Validation passed successfully"
 msgstr "Validation passed successfully"

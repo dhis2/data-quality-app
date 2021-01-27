@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -42,17 +42,29 @@ msgstr "СКАЧАТЬ КАК CSV"
 msgid "Data Element"
 msgstr "Элемент данных"
 
-msgid "Organisation Unit"
-msgstr "Организационная единица"
-
 msgid "Period"
 msgstr "Период"
 
-msgid "Min"
-msgstr "Мин"
+msgid "Organisation Unit"
+msgstr "Организационная единица"
 
 msgid "Value"
 msgstr "Значение"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Мин"
 
 msgid "Max"
 msgstr "Макс"
@@ -102,17 +114,38 @@ msgstr "Не отслеживать"
 msgid "unfollow"
 msgstr "не отслеживать"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "Анализ выбросов Min-Max "
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "Начало"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Анализ выбросов по стандартному отклонению"
-
-msgid "Select number of standard deviations"
-msgstr "Выберите количество стандартных отклонений"
 
 msgid "Validation passed successfully"
 msgstr "Проверка прошла успешно"
