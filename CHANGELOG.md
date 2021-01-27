@@ -1,3 +1,28 @@
+# [1.3.0](https://github.com/dhis2/data-quality-app/compare/v1.2.3...v1.3.0) (2021-01-27)
+
+
+### Bug Fixes
+
+* **outlier-detection:** set default start date to three months ago ([e3ba7ea](https://github.com/dhis2/data-quality-app/commit/e3ba7ea6fead1b0b7b93a9152b327016c000d300))
+* improve outlier analysis table column order ([fe5c05d](https://github.com/dhis2/data-quality-app/commit/fe5c05df0f5ed8757ecbdc5eb4ab93cc7806e560))
+* tweak decimal places for outlier detection table columns ([e02ee68](https://github.com/dhis2/data-quality-app/commit/e02ee686dc3ea26759835dc3dd6ea60f62cc5edb))
+* **outlier-detection:** adjust follow-up endpoint and table formatting ([a9bf261](https://github.com/dhis2/data-quality-app/commit/a9bf261a4449740ea1d77853ac70f842565ff55a))
+* **outlier-detection:** do not reset maxResults in onHide advancedFields ([f0d08b8](https://github.com/dhis2/data-quality-app/commit/f0d08b882eceef247a55fabbbc2b1758db098f67))
+* **outlier-detection:** update sidebar and section header text ([cc5e6d8](https://github.com/dhis2/data-quality-app/commit/cc5e6d877f04412fd20ecb16a555d7fd7e1edb75))
+* **outlier-detections:** disable all follow-up functionality ([260e28a](https://github.com/dhis2/data-quality-app/commit/260e28a749482d7336e29156fa1d213bba449cd0))
+* adjust outlier detection table to new endpoint ([fa98bcd](https://github.com/dhis2/data-quality-app/commit/fa98bcdd8992b14d206ff519bcdcb43809b21dbb))
+* implement cvs-only download for outlier detection endpoint ([1c83bf1](https://github.com/dhis2/data-quality-app/commit/1c83bf1a095416f49960158424d767b7564ac470))
+* **outlier-detection:** switch to new endpoint WIP ([5958c9d](https://github.com/dhis2/data-quality-app/commit/5958c9db5cf1a81ae77089ba4b3561c2f4b1b3cb))
+
+
+### Features
+
+* **outlier-detection:** add additional fields ([7c5cab3](https://github.com/dhis2/data-quality-app/commit/7c5cab357a603e46179be00bdc8d25e545f9b8fd))
+* **outlier-detection:** add algorithm and make std dev conditional ([690df98](https://github.com/dhis2/data-quality-app/commit/690df98404b6372a40201fd75d3b23b929ce1413))
+* **outlier-detection:** add sortBy field ([1905db4](https://github.com/dhis2/data-quality-app/commit/1905db4b73622bc4d3e81d12397b5a1dc66aed63))
+* hide sidebar when showing tabular data ([4a15900](https://github.com/dhis2/data-quality-app/commit/4a15900993f1eb612678ecf0e9a1b7df08822a17))
+* **outlier-detection:** add support for multiple orgUnit selection ([b5c592f](https://github.com/dhis2/data-quality-app/commit/b5c592fe7ed338d4ac2c0351c8745bc5fbf87acd))
+
 ## [1.2.3](https://github.com/dhis2/data-quality-app/compare/v1.2.2...v1.2.3) (2021-01-26)
 
 
