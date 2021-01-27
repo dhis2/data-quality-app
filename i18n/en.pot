@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
-"PO-Revision-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
+"PO-Revision-Date: 2021-01-26T20:57:27.525Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -32,16 +32,28 @@ msgstr ""
 msgid "Data Element"
 msgstr ""
 
-msgid "Organisation Unit"
-msgstr ""
-
 msgid "Period"
 msgstr ""
 
-msgid "Min"
+msgid "Organisation Unit"
 msgstr ""
 
 msgid "Value"
+msgstr ""
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
 msgstr ""
 
 msgid "Max"
@@ -92,16 +104,37 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Min-Max Outlier Analysis"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
 msgstr ""
 
 msgid "start"
-msgstr ""
-
-msgid "Std Dev Outlier Analysis"
-msgstr ""
-
-msgid "Select number of standard deviations"
 msgstr ""
 
 msgid "Validation passed successfully"

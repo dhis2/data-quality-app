@@ -4,10 +4,9 @@ export const apiConf = {
         validationRulesExpression: '/dataAnalysis/validationRulesExpression',
         validationRulesReport: '/dataAnalysis/validationRules/report',
         validationRules: '/validationRules',
-        minMaxOutliersAnalysis: '/dataAnalysis/minMaxOutlier',
-        standardDeviationOutliersAnalysis: '/dataAnalysis/stdDevOutlier',
+        outlierDetection: '/outlierDetection',
         folloupAnalysis: '/dataAnalysis/followup',
-        markDataValue: '/dataAnalysis/followup/mark',
+        markDataValue: '/followUp/dataValue',
         reportAnalysis: '/dataAnalysis/report',
     },
     results: {

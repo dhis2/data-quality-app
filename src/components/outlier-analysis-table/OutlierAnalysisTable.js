@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import {
-    Checkbox,
+    // Checkbox,
     Table,
     TableBody,
     TableHeader,
@@ -15,34 +15,79 @@ import DownloadAs from '../../components/download-as/DownloadAs'
 import i18n from '@dhis2/d2-i18n'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../../pages/Page.module.css'
-import jsPageStyles from '../../pages/PageStyles'
+// import jsPageStyles from '../../pages/PageStyles'
 import styles from './OutlierAnalysisTable.module.css'
 
-const OutlierAnalyisTable = props => {
-    const elements = props.elements
-    const parentToggleCheckbox = props.toggleCheckbox
+const OutlierAnalyisTable = ({
+    csvQueryStr,
+    elements,
+    // toggleCheckbox,
+    algorithm,
+}) => {
+    const isZScoreAlgorithm = algorithm === 'Z_SCORE'
+
+    const downloadLink = (
+        <DownloadAs
+            fileTypes={['csv']}
+            endpoint={apiConf.endpoints.outlierDetection}
+            queryStr={csvQueryStr}
+        />
+    )
 
     // Table Rows
     const rows = elements.map(element => {
-        const updateCheckbox = () => {
-            parentToggleCheckbox(element)
-        }
+        // const updateCheckbox = () => {
+        //     toggleCheckbox(element)
+        // }
 
         return (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.dataElement}</TableRowColumn>
-                <TableRowColumn>{element.organisation}</TableRowColumn>
-                <TableRowColumn>{element.period}</TableRowColumn>
+                <TableRowColumn>{element.displayName}</TableRowColumn>
+                <TableRowColumn>{element.pe}</TableRowColumn>
+                <TableRowColumn>{element.ouName}</TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.min} />
+                    <FormattedNumber
+                        value={element.value}
+                        minimumFractionDigits={0}
+                    />
+                </TableRowColumn>
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber value={element.zScore} />
+                    </TableRowColumn>
+                )}
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber
+                        value={element.absDev}
+                        minimumFractionDigits={0}
+                    />
+                </TableRowColumn>
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber value={element.stdDev} />
+                    </TableRowColumn>
+                )}
+                {isZScoreAlgorithm && (
+                    <TableRowColumn className={cssPageStyles.right}>
+                        <FormattedNumber
+                            value={element.mean}
+                            minimumFractionDigits={0}
+                        />
+                    </TableRowColumn>
+                )}
+                <TableRowColumn className={cssPageStyles.right}>
+                    <FormattedNumber
+                        value={element.lowerBound}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.value} />
+                    <FormattedNumber
+                        value={element.upperBound}
+                        minimumFractionDigits={0}
+                    />
                 </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber value={element.max} />
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.centerFlex}>
+                {/* <TableRowColumn className={cssPageStyles.centerFlex}>
                     <span className={cssPageStyles.checkboxWrapper}>
                         <Checkbox
                             checked={element.marked}
@@ -50,16 +95,14 @@ const OutlierAnalyisTable = props => {
                             iconStyle={jsPageStyles.iconColor}
                         />
                     </span>
-                </TableRowColumn>
+                </TableRowColumn> */}
             </TableRow>
         )
     })
 
     return (
         <div>
-            <div className={cssPageStyles.cardHeader}>
-                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
-            </div>
+            <div className={cssPageStyles.cardHeader}>{downloadLink}</div>
             <Table
                 selectable={false}
                 className={classNames(
@@ -77,23 +120,41 @@ const OutlierAnalyisTable = props => {
                             {i18n.t('Data Element')}
                         </TableHeaderColumn>
                         <TableHeaderColumn>
-                            {i18n.t('Organisation Unit')}
-                        </TableHeaderColumn>
-                        <TableHeaderColumn>
                             {i18n.t('Period')}
                         </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.right}>
-                            {i18n.t('Min')}
+                        <TableHeaderColumn>
+                            {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
                             {i18n.t('Value')}
                         </TableHeaderColumn>
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Z-Score')}
+                            </TableHeaderColumn>
+                        )}
+                        <TableHeaderColumn className={cssPageStyles.right}>
+                            {i18n.t('Deviation')}
+                        </TableHeaderColumn>
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Std Dev')}
+                            </TableHeaderColumn>
+                        )}
+                        {isZScoreAlgorithm && (
+                            <TableHeaderColumn className={cssPageStyles.right}>
+                                {i18n.t('Mean')}
+                            </TableHeaderColumn>
+                        )}
+                        <TableHeaderColumn className={cssPageStyles.right}>
+                            {i18n.t('Min')}
+                        </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.right}>
                             {i18n.t('Max')}
                         </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.center}>
+                        {/* <TableHeaderColumn className={cssPageStyles.center}>
                             {i18n.t('Mark')}
-                        </TableHeaderColumn>
+                        </TableHeaderColumn> */}
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
@@ -106,7 +167,7 @@ const OutlierAnalyisTable = props => {
                     cssPageStyles.end
                 )}
             >
-                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
+                {downloadLink}
             </div>
         </div>
     )
@@ -118,37 +179,46 @@ OutlierAnalyisTable.generateElementKey = e =>
     }-${e.dataElementId}`
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    key: OutlierAnalyisTable.generateElementKey(e),
-    attributeOptionComboId: e.attributeOptionComboId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    periodId: e.periodId,
-    organisationUnitId: e.sourceId,
-    dataElementId: e.dataElementId,
-    dataElement: e.dataElementName,
-    organisation: e.sourceName,
-    period: e.period.name,
-    min: e.min,
-    max: e.max,
-    value: Number.parseFloat(e.value),
-    marked: e.followup,
+    displayName: getDisplayName(e),
+    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${e.ou}`,
+    marked: e.followUp,
+    ...e,
 })
 
-OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
-    dataElementId: e.dataElementId,
-    periodId: e.periodId,
-    organisationUnitId: e.organisationUnitId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    attributeOptionComboId: e.attributeOptionComboId,
-    followup: !e.marked,
-})
+// OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
+//     dataElement: e.de,
+//     period: e.pe,
+//     orgUnit: e.ou,
+//     categoryOptionCombo: e.coc,
+//     attributeOptionCombo: e.aoc,
+// })
 
 OutlierAnalyisTable.propTypes = {
+    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
+    csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
-    toggleCheckbox: PropTypes.func.isRequired,
+    // toggleCheckbox: PropTypes.func.isRequired,
 }
 
 OutlierAnalyisTable.contextTypes = {
     d2: PropTypes.object,
+}
+
+function getDisplayName(e) {
+    let str = e.deName
+
+    // In the context of a dataElement, the default COC or AOC means "none".
+    // The "default" string is not localised, and probably won't ever be.
+    // That is why the conditions below should work in the foreseeable future.
+    if (e.cocName !== 'default') {
+        str += ` (${e.cocName})`
+    }
+
+    if (e.aocName !== 'default') {
+        str += ` (${e.aocName})`
+    }
+
+    return str
 }
 
 export default OutlierAnalyisTable

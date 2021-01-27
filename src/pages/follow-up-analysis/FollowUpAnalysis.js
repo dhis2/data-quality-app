@@ -124,6 +124,9 @@ class FollowUpAnalysis extends Page {
 
     back() {
         this.setState({ showTable: false })
+        this.context.updateAppState({
+            pageState: { showTable: false },
+        })
     }
 
     startDateOnChange(event, date) {

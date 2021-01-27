@@ -13,63 +13,42 @@ jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 
 const response = [
     {
-        dataElementId: 360075,
-        periodId: 475192,
-        sourceId: 642,
-        categoryOptionComboId: 4,
-        attributeOptionComboId: 4,
-        value: '499',
-        followup: false,
-        min: -300,
-        max: 460,
-        dataElementName: 'Stock PHU dispensed OPV',
-        period: {
-            code: '201801',
-            name: 'January 2018',
-            externalAccess: false,
-            displayName: 'January 2018',
-            shortName: '201801',
-            displayShortName: '201801',
-            dimensionItemType: 'PERIOD',
-            periodType: 'Monthly',
-            startDate: '2018-01-01T00:00:00.000',
-            endDate: '2018-01-31T00:00:00.000',
-            dimensionItem: '201801',
-            favorite: false,
-            id: '201801',
-        },
-        sourceName: 'Kaniya MCHP',
-        categoryOptionComboName: 'default',
+        absDev: 7512.666666666667,
+        aoc: 'HllvX50cXC0',
+        aocName: 'default',
+        coc: 'HllvX50cXC0',
+        cocName: 'default',
+        de: 'p1MDHOT6ENy',
+        deName: 'Stock PHU dispensed  BCG',
+        followUp: false,
+        lowerBound: -6093.141742038514,
+        mean: 702.3333333333334,
+        ou: 'ApLCxUmnT6q',
+        ouName: 'Maborie MCHP',
+        pe: '202010',
+        stdDev: 2265.1583584572822,
+        upperBound: 7497.80840870518,
+        value: 8215,
+        zScore: 3.31661874262216,
     },
     {
-        dataElementId: 360075,
-        periodId: 1149704,
-        sourceId: 642,
-        categoryOptionComboId: 4,
-        attributeOptionComboId: 4,
-        value: '499',
-        comment: '',
-        followup: false,
-        min: -300,
-        max: 460,
-        dataElementName: 'Stock PHU dispensed OPV',
-        period: {
-            code: '201701',
-            name: 'January 2017',
-            externalAccess: false,
-            displayName: 'January 2017',
-            shortName: '201701',
-            displayShortName: '201701',
-            dimensionItemType: 'PERIOD',
-            periodType: 'Monthly',
-            startDate: '2017-01-01T00:00:00.000',
-            endDate: '2017-01-31T00:00:00.000',
-            dimensionItem: '201701',
-            favorite: false,
-            id: '201701',
-        },
-        sourceName: 'Kaniya MCHP',
-        categoryOptionComboName: 'default',
+        absDev: 5538.909090909091,
+        aoc: 'HllvX50cXC0',
+        aocName: 'default',
+        coc: 'pq2XI5kz2BY',
+        cocName: 'Fixed',
+        de: 'rbkr8PL0rwM',
+        deName: 'Iron Folate given at ANC 3rd',
+        followUp: false,
+        lowerBound: -4454.381991130682,
+        mean: 887.0909090909091,
+        ou: 'el8sgzyHuEe',
+        ouName: 'Rosint Buya MCHP',
+        pe: '202010',
+        stdDev: 1780.4909667405302,
+        upperBound: 6228.5638093125,
+        value: 6426,
+        zScore: 3.1108886225067116,
     },
 ]
 
@@ -78,19 +57,26 @@ const testElements = response.map(
 )
 
 const expectedElementFormat = {
-    attributeOptionComboId: 4,
-    categoryOptionComboId: 4,
-    dataElement: 'Stock PHU dispensed OPV',
-    dataElementId: 360075,
-    key: '4-4-475192-642-360075',
+    absDev: 7512.666666666667,
+    aoc: 'HllvX50cXC0',
+    aocName: 'default',
+    coc: 'HllvX50cXC0',
+    cocName: 'default',
+    de: 'p1MDHOT6ENy',
+    deName: 'Stock PHU dispensed  BCG',
+    displayName: 'Stock PHU dispensed  BCG',
+    followUp: false,
+    key: 'HllvX50cXC0-HllvX50cXC0-p1MDHOT6ENy-202010-ApLCxUmnT6q',
+    lowerBound: -6093.141742038514,
     marked: false,
-    max: 460,
-    min: -300,
-    organisation: 'Kaniya MCHP',
-    organisationUnitId: 642,
-    period: 'January 2018',
-    periodId: 475192,
-    value: 499,
+    mean: 702.3333333333334,
+    ou: 'ApLCxUmnT6q',
+    ouName: 'Maborie MCHP',
+    pe: '202010',
+    stdDev: 2265.1583584572822,
+    upperBound: 7497.80840870518,
+    value: 8215,
+    zScore: 3.31661874262216,
 }
 
 const expectedToggleFollowupRequest = {
@@ -107,6 +93,7 @@ const ownShallow = () => {
         <OutlierAnalysisTable
             elements={testElements}
             toggleCheckbox={jest.fn()}
+            csvQueryStr="ds=1&ds=2&ou=1&ou=2"
         />,
         {
             disableLifecycleMethods: true,
@@ -137,9 +124,9 @@ describe('Test <OutlierAnalysisTable /> rendering:', () => {
         ).toBe(7) // First row after header
     })
 
-    it('Should render a Mark "Checkbox" for each element.', () => {
-        expect(wrapper.find(Checkbox).length).toBe(2)
-    })
+    // it('Should render a Mark "Checkbox" for each element.', () => {
+    //     expect(wrapper.find(Checkbox).length).toBe(2)
+    // })
 
     it('Render "DownloadAs" components.', () => {
         expect(wrapper.find(DownloadAs).length).toBe(2)
@@ -154,12 +141,12 @@ describe('Test <OutlierAnalysisTable /> actions:', () => {
         expect(element).toEqual(expectedElementFormat)
     })
 
-    it('Should correctly convert elements to Mark request.', () => {
-        const element = OutlierAnalysisTable.convertElementToToggleFollowupRequest(
-            testElements[0]
-        )
-        expect(element).toEqual(expectedToggleFollowupRequest)
-    })
+    // it('Should correctly convert elements to Mark request.', () => {
+    //     const element = OutlierAnalysisTable.convertElementToToggleFollowupRequest(
+    //         testElements[0]
+    //     )
+    //     expect(element).toEqual(expectedToggleFollowupRequest)
+    // })
 
     it('Should correctly generateElementKey.', () => {
         const element = OutlierAnalysisTable.generateElementKey(response[0])

@@ -11,10 +11,12 @@ class AvailableOrganisationUnitsTree extends PureComponent {
 
     static propTypes = {
         onChange: PropTypes.func,
+        multiselect: PropTypes.bool,
     }
 
     static defaultProps = {
         onChange: null,
+        multiselect: false,
     }
 
     constructor() {
@@ -25,7 +27,9 @@ class AvailableOrganisationUnitsTree extends PureComponent {
             rootsWithMembers: null,
         }
 
-        this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this)
+        this.getOrgUnitIdFromPath = this.getOrgUnitIdFromPath.bind(this)
+        this.handleOrgUnitClickSingle = this.handleOrgUnitClickSingle.bind(this)
+        this.handleOrgUnitClickMulti = this.handleOrgUnitClickMulti.bind(this)
         this.loadAvailableOrgUnits = this.loadAvailableOrgUnits.bind(this)
     }
 
@@ -64,18 +68,28 @@ class AvailableOrganisationUnitsTree extends PureComponent {
         return orgUnits
     }
 
-    handleOrgUnitClick(event, orgUnit) {
-        if (!this.state.selected.includes(orgUnit.path)) {
-            this.setState({ selected: [orgUnit.path] })
-            if (this.props.onChange) {
-                const selectedOrganisationUnitSplitted = orgUnit.path.split('/')
-                const selectedOrganisationUnitId =
-                    selectedOrganisationUnitSplitted[
-                        selectedOrganisationUnitSplitted.length - 1
-                    ]
-                this.props.onChange(selectedOrganisationUnitId)
-            }
+    getOrgUnitIdFromPath(path) {
+        return path.split('/').pop()
+    }
+
+    handleOrgUnitClickSingle(event, orgUnit) {
+        if (this.state.selected.includes(orgUnit.path)) {
+            return
         }
+        const id = this.getOrgUnitIdFromPath(orgUnit.path)
+        this.setState({ selected: [orgUnit.path] })
+        this.props.onChange && this.props.onChange(id)
+    }
+
+    handleOrgUnitClickMulti(event, { path }) {
+        const { selected } = this.state
+        const paths = selected.includes(path)
+            ? selected.filter(selectedPath => selectedPath !== path)
+            : [...this.state.selected, path]
+
+        this.setState({ selected: paths })
+        this.props.onChange &&
+            this.props.onChange(paths.map(this.getOrgUnitIdFromPath))
     }
 
     render() {
@@ -93,6 +107,10 @@ class AvailableOrganisationUnitsTree extends PureComponent {
             )
         }
 
+        const onSelectClick = this.props.multiselect
+            ? this.handleOrgUnitClickMulti
+            : this.handleOrgUnitClickSingle
+
         return (
             <div className={styles.tree}>
                 {this.state.rootsWithMembers.map(rootOrgUnit => (
@@ -102,7 +120,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
                         root={rootOrgUnit}
                         selected={this.state.selected}
                         initiallyExpanded={[`/${rootOrgUnit.id}`]}
-                        onSelectClick={this.handleOrgUnitClick}
+                        onSelectClick={onSelectClick}
                     />
                 ))}
             </div>

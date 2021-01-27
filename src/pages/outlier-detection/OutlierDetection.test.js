@@ -3,21 +3,23 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { RaisedButton, IconButton } from 'material-ui'
 import DatePicker from 'material-ui/DatePicker'
-import MinMaxOutlierAnalysis from './MinMaxOutlierAnalysis'
+import SelectField from 'material-ui/SelectField'
+import OutlierDetection, {
+    DEFAULT_ALGORITHM,
+    DEFAULT_STANDARD_DEVIATION,
+    DEFAULT_THRESHOLD,
+} from './OutlierDetection'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import {
-    sections,
-    MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY,
-} from '../sections.conf'
+import { sections, OUTLIER_DETECTION_SECTION_KEY } from '../sections.conf'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import PageHelper from '../../components/page-helper/PageHelper'
 
 let pageInfo = {}
 for (let i = 0; i < sections.length; i++) {
     const section = sections[i]
-    if (section.key === MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY) {
+    if (section.key === OUTLIER_DETECTION_SECTION_KEY) {
         pageInfo = section.info
         break
     }
@@ -25,8 +27,8 @@ for (let i = 0; i < sections.length; i++) {
 
 const ownShallow = () => {
     return shallow(
-        <MinMaxOutlierAnalysis
-            sectionKey={MIN_MAX_OUTLIER_ANALYSIS_SECTION_KEY}
+        <OutlierDetection
+            sectionKey={OUTLIER_DETECTION_SECTION_KEY}
             pageInfo={pageInfo}
         />,
         {
@@ -45,24 +47,24 @@ jest.mock(
     () => 'FeedbackSnackbarTypes'
 )
 
-describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
+describe('Test <OutlierDetection /> rendering:', () => {
     let wrapper
     beforeEach(() => {
         wrapper = ownShallow()
     })
 
-    it('Min Max Outlier Analysis renders without crashing', () => {
+    it('Renders without crashing', () => {
         ownShallow()
     })
 
     it('Should show correct title.', () => {
         expect(wrapper.find('h1')).toHaveLength(1)
         expect(wrapper.find('h1').text()).toBe(
-            `<IconButton />Min-Max Outlier Analysis<PageHelper />`
+            `<IconButton />Outlier Detection<PageHelper />`
         )
     })
 
-    it('Min Max Outlier Analysis renders an IconButton', () => {
+    it('Renders an IconButton', () => {
         expect(wrapper.find(IconButton)).toHaveLength(1)
     })
 
@@ -102,40 +104,46 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
         ).toBe('End Date')
     })
 
-    it('Should not render a OutlierAnalyisTable when has no elements.', () => {
+    it('Renders an input to choose Algorithm.', () => {
+        expect(wrapper.find('#algorithm').length).toBe(1)
+    })
+
+    it('Renders an input to choose Threshold.', () => {
+        expect(wrapper.find('#threshold').length).toBe(1)
+    })
+
+    it('Renders an input to choose Max Results.', () => {
+        expect(wrapper.find('#max-results').length).toBe(1)
+    })
+
+    it('Should not render a OutlierAnalysisTable when has no elements.', () => {
         const elements = []
         wrapper.setState({
             elements,
             showTable: elements && elements.length > 0,
         })
-        expect(wrapper.find(IconButton)).toHaveLength(1)
-        expect(wrapper.find(IconButton).props().style.display).toBe('none')
-        expect(wrapper.find(OutlierAnalyisTable)).toHaveLength(1)
-        expect(
-            wrapper
-                .find(OutlierAnalyisTable)
-                .parent()
-                .props().style.display
-        ).toBe('none')
+        expect(wrapper.find(OutlierAnalyisTable)).toHaveLength(0)
         expect(wrapper.state('showTable')).toBeFalsy()
     })
 
-    it('Should show "OutlierAnalyisTable" component and back icon when has elements.', () => {
+    it('Should show "OutlierAnalysisTable" component and back icon when has elements.', () => {
         const elements = ['one', 'two', 'three']
         wrapper.setState({
             elements,
             showTable: elements && elements.length > 0,
+            csvQueryStr: 'test',
         })
         expect(wrapper.find(IconButton)).toHaveLength(1)
         expect(wrapper.find(IconButton).props().style.display).toBe('inline')
+
         expect(wrapper.find(OutlierAnalyisTable)).toHaveLength(1)
-        expect(
-            wrapper
-                .find(OutlierAnalyisTable)
-                .parent()
-                .props().style.display
-        ).toBe('block')
-        expect(wrapper.state('showTable')).toBeTruthy()
+        // expect(
+        //     wrapper
+        //         .find(OutlierAnalyisTable)
+        //         .parent()
+        //         .props().style.display
+        // ).toBe('block')
+        // expect(wrapper.state('showTable')).toBeTruthy()
     })
 
     it('Renders a disabled "Start" RaisedButton when loading info.', () => {
@@ -145,6 +153,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
             startDate: new Date(),
             organisationUnitId: 'TestOrganisationUnitId',
             dataSetIds: ['id1', 'id2', 'id3'],
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         })
         expect(wrapper.find(RaisedButton)).toHaveLength(1)
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy()
@@ -157,6 +166,7 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
             startDate: null,
             organisationUnitId: null,
             dataSetIds: null,
+            standardDeviation: DEFAULT_STANDARD_DEVIATION,
         })
         expect(wrapper.find(RaisedButton)).toHaveLength(1)
         expect(wrapper.find(RaisedButton).props().disabled).toBeTruthy()
@@ -168,8 +178,10 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
             loading: false,
             endDate: new Date(),
             startDate: new Date(),
-            organisationUnitId: 'TestOrganisationUnitId',
+            organisationUnitIds: ['id1'],
             dataSetIds: ['id1', 'id2', 'id3'],
+            alghortim: DEFAULT_ALGORITHM,
+            threshold: DEFAULT_THRESHOLD,
         })
         expect(wrapper.find(RaisedButton)).toHaveLength(1)
         expect(wrapper.find(RaisedButton).props().disabled).toBeFalsy()
@@ -177,10 +189,10 @@ describe('Test <MinMaxOutlierAnalysis /> rendering:', () => {
     })
 })
 
-describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
+describe('Test <OutlierDetection /> actions:', () => {
     it('Should call dataSetsOnChange function when Available Datasets Select changes.', () => {
         const spy = spyOn(
-            MinMaxOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'dataSetsOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -202,25 +214,26 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
 
     it('Should call organisationUnitOnChange function when Available Organisation Units Tree changes.', () => {
         const spy = spyOn(
-            MinMaxOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'organisationUnitOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
         wrapper.setState({
-            organisationUnitId: null,
+            organisationUnitIds: [],
         })
+        const testOrganisationUnitIds = ['ID_TEST']
         wrapper
             .find(AvailableOrganisationUnitsTree)
-            .simulate('change', 'TestOrganisationUnitId')
-        expect(spy).toHaveBeenCalledWith('TestOrganisationUnitId')
-        expect(wrapper.state('organisationUnitId')).toBe(
-            'TestOrganisationUnitId'
+            .simulate('change', testOrganisationUnitIds)
+        expect(spy).toHaveBeenCalledWith(testOrganisationUnitIds)
+        expect(wrapper.state('organisationUnitIds')).toBe(
+            testOrganisationUnitIds
         )
     })
 
     it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
         const spy = spyOn(
-            MinMaxOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'startDateOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -238,7 +251,7 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
 
     it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
         const spy = spyOn(
-            MinMaxOutlierAnalysis.prototype,
+            OutlierDetection.prototype,
             'endDateOnChange'
         ).and.callThrough()
         const wrapper = ownShallow()
@@ -254,21 +267,36 @@ describe('Test <MinMaxOutlierAnalysis /> actions:', () => {
         expect(wrapper.state('endDate')).toMatchObject(testEndDate)
     })
 
-    it('Min Max Outlier Analysis calls back method when IconButton (back) is clicked', () => {
-        const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'back')
+    it('Should call thresholdOnChange function when Threshold SelectField changes.', () => {
+        const spy = spyOn(
+            OutlierDetection.prototype,
+            'thresholdOnChange'
+        ).and.callThrough()
+        const wrapper = ownShallow()
+        const testThreshold = 4.0
+        wrapper.setState({
+            threshold: DEFAULT_THRESHOLD,
+        })
+        wrapper.find('#threshold').simulate('change', null, null, testThreshold)
+        expect(spy).toHaveBeenCalledWith(null, null, testThreshold)
+        expect(wrapper.state('threshold')).toBe(testThreshold)
+    })
+
+    it('Should call back method when IconButton (back) is clicked', () => {
+        const spy = spyOn(OutlierDetection.prototype, 'back')
         const wrapper = ownShallow()
         wrapper.find(IconButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
-    it('Min Max Outlier Analysis calls start method when RaisedButton is clicked', () => {
-        const spy = spyOn(MinMaxOutlierAnalysis.prototype, 'start')
+    it('Standard Dev Outlier Analysis calls start method when RaisedButton is clicked', () => {
+        const spy = spyOn(OutlierDetection.prototype, 'start')
         const wrapper = ownShallow()
         wrapper.find(RaisedButton).simulate('click')
         expect(spy).toHaveBeenCalled()
     })
 
-    it('Min Max Outlier Analysis update state when back button is clicked', () => {
+    it('Should update state when back button is clicked', () => {
         const wrapper = ownShallow()
         wrapper.setState({ showTable: true })
         wrapper.find(IconButton).simulate('click')
