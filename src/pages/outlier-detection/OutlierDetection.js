@@ -88,7 +88,7 @@ class OutlierDetection extends Page {
         this.toggleShowAdvancedZScoreFields = this.toggleShowAdvancedZScoreFields.bind(
             this
         )
-        // this.toggleCheckbox = this.toggleCheckbox.bind(this)
+        this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -262,53 +262,55 @@ class OutlierDetection extends Page {
         this.setState({ algorithm: value })
     }
 
-    // toggleCheckbox(element) {
-    //     const api = this.context.d2.Api.getApi()
-    //     const elements = this.state.elements
-    //     for (let i = 0; i < elements.length; i++) {
-    //         const currentElement = elements[i]
-    //         if (currentElement.key === element.key) {
-    //             this.context.updateAppState({
-    //                 pageState: {
-    //                     loading: true,
-    //                 },
-    //             })
-    //             const apiCall = currentElement.marked ? api.delete : api.post
-    //             apiCall(
-    //                 apiConf.endpoints.markDataValue,
-    //                 OutlierAnalyisTable.convertElementToToggleFollowupRequest(
-    //                     currentElement
-    //                 )
-    //             )
-    //                 .then(() => {
-    //                     if (this.isPageMounted()) {
-    //                         currentElement.marked = !currentElement.marked
-    //                         elements[i] = currentElement
+    toggleCheckbox(element) {
+        const api = this.context.d2.Api.getApi()
+        const elements = this.state.elements
+        for (let i = 0; i < elements.length; i++) {
+            const currentElement = elements[i]
+            if (currentElement.key === element.key) {
+                this.context.updateAppState({
+                    pageState: {
+                        loading: true,
+                        elements,
+                        showTable: elements && elements.length > 0,
+                    },
+                })
+                const method = currentElement.marked ? 'DELETE' : 'POST'
+                const url = api.baseUrl + apiConf.endpoints.markDataValue
+                const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
+                    currentElement
+                )
+                api.request(method, url, JSON.stringify(data))
+                    .then(() => {
+                        if (this.isPageMounted()) {
+                            currentElement.marked = !currentElement.marked
+                            elements[i] = currentElement
 
-    //                         this.context.updateAppState({
-    //                             showSnackbar: true,
-    //                             snackbarConf: {
-    //                                 type: SUCCESS,
-    //                                 message: i18n.t(
-    //                                     currentElement.marked
-    //                                         ? 'Marked'
-    //                                         : 'Unmarked'
-    //                                 ),
-    //                             },
-    //                             pageState: {
-    //                                 elements,
-    //                                 loading: false,
-    //                             },
-    //                         })
-    //                     }
-    //                 })
-    //                 .catch(error => {
-    //                     this.manageError(error)
-    //                 })
-    //             break
-    //         }
-    //     }
-    // }
+                            this.context.updateAppState({
+                                showSnackbar: true,
+                                snackbarConf: {
+                                    type: SUCCESS,
+                                    message: i18n.t(
+                                        currentElement.marked
+                                            ? 'Marked'
+                                            : 'Unmarked'
+                                    ),
+                                },
+                                pageState: {
+                                    elements,
+                                    loading: false,
+                                    showTable: elements && elements.length > 0,
+                                },
+                            })
+                        }
+                    })
+                    .catch(error => {
+                        this.manageError(error)
+                    })
+                break
+            }
+        }
+    }
 
     isFormValid() {
         return (
@@ -538,7 +540,7 @@ class OutlierDetection extends Page {
                                 algorithm={this.state.algorithm}
                                 csvQueryStr={this.state.csvQueryStr}
                                 elements={this.state.elements}
-                                // toggleCheckbox={this.toggleCheckbox}
+                                toggleCheckbox={this.toggleCheckbox}
                             />
                         </CardText>
                     )}
