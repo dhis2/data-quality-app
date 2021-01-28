@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
 # Hamza Assada <7amza.it@gmail.com>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr ""
+msgstr "الانحراف المعياري"
 
 msgid "Mean"
 msgstr ""
@@ -130,13 +130,13 @@ msgid "Data End Date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "الفرز حسب"
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "الوحدات التنظيمية"
 
 msgid "Algorithm"
 msgstr ""
