@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -42,17 +42,29 @@ msgstr "تنزيل كملف CSV"
 msgid "Data Element"
 msgstr "عنصر البيانات"
 
-msgid "Organisation Unit"
-msgstr "الوحدة التنظيمية"
-
 msgid "Period"
 msgstr "الفترة الزمنية"
 
-msgid "Min"
-msgstr "اﻷدنى"
+msgid "Organisation Unit"
+msgstr "الوحدة التنظيمية"
 
 msgid "Value"
 msgstr "القيمة"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "اﻷدنى"
 
 msgid "Max"
 msgstr "الأعلى"
@@ -102,17 +114,38 @@ msgstr "إلغاء المتابعة"
 msgid "unfollow"
 msgstr "إلغاء المتابعة"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "تحليل القيم الدنيا-العليا للقيم المتطرفة"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "بدء"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "تحليل القيم المتطرفة - الانحراف المعياري"
-
-msgid "Select number of standard deviations"
-msgstr "تحديد عدد الانحرافات المعيارية"
 
 msgid "Validation passed successfully"
 msgstr "تم اجتياز التحقق بنجاح"

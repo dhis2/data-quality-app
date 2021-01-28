@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -41,17 +41,29 @@ msgstr "CSV СИФАТИДА ЮКЛАШ"
 msgid "Data Element"
 msgstr "Маълумотлар элементи"
 
-msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
-
 msgid "Period"
 msgstr "давр"
 
-msgid "Min"
-msgstr "Минимум"
+msgid "Organisation Unit"
+msgstr "Ташкилий бирлик"
 
 msgid "Value"
 msgstr "Қиймат"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "Минимум"
 
 msgid "Max"
 msgstr "Максимум"
@@ -101,17 +113,38 @@ msgstr "Бекор қилиш"
 msgid "unfollow"
 msgstr "бекор қилиш"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "Минимал-Максимал чекиниш Аналитикаси"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "бошлаш"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "Ўртача квадратик оғиш чекинишлари Аналитикаси"
-
-msgid "Select number of standard deviations"
-msgstr "Стандарт оғишлар сонини аниқланг"
 
 msgid "Validation passed successfully"
 msgstr "Тасдиқлаш Маваффақиятли Ўтди"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-14T13:13:39.539Z\n"
+"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -42,17 +42,29 @@ msgstr "下载为CSV"
 msgid "Data Element"
 msgstr "数据元"
 
-msgid "Organisation Unit"
-msgstr "组织机构"
-
 msgid "Period"
 msgstr "周期"
 
-msgid "Min"
-msgstr "最小"
+msgid "Organisation Unit"
+msgstr "组织机构"
 
 msgid "Value"
 msgstr "值"
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Min"
+msgstr "最小"
 
 msgid "Max"
 msgstr "最大"
@@ -102,17 +114,38 @@ msgstr "取消后续跟踪"
 msgid "unfollow"
 msgstr "取消后续跟踪"
 
-msgid "Min-Max Outlier Analysis"
-msgstr "最小-最大值孤立分析"
+msgid "Threshold"
+msgstr ""
+
+msgid "Hide advanced fields"
+msgstr ""
+
+msgid "Show advanced fields"
+msgstr ""
+
+msgid "Data Start Date"
+msgstr ""
+
+msgid "Data End Date"
+msgstr ""
+
+msgid "Sort by"
+msgstr ""
+
+msgid "Outlier Detection"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
 
 msgid "start"
 msgstr "开始"
-
-msgid "Std Dev Outlier Analysis"
-msgstr "标准差孤立分析"
-
-msgid "Select number of standard deviations"
-msgstr "选择标准差编号"
 
 msgid "Validation passed successfully"
 msgstr "验证已成功"
