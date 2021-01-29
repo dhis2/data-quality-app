@@ -128,13 +128,13 @@ msgid "Data End Date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "排序"
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "组织机构"
 
 msgid "Algorithm"
 msgstr ""

@@ -57,7 +57,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr ""
+msgstr "Стандарт оғиш"
 
 msgid "Mean"
 msgstr ""
@@ -129,13 +129,13 @@ msgid "Data End Date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "Саралаш тури"
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Ташкилий бўлимлар"
 
 msgid "Algorithm"
 msgstr ""

@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
-# 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "更新机构树"
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "您无权访问任何组织单位。"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "下载为PDF"
@@ -52,16 +52,16 @@ msgid "Value"
 msgstr "值"
 
 msgid "Z-Score"
-msgstr ""
+msgstr "Z分数"
 
 msgid "Deviation"
-msgstr ""
+msgstr "偏差"
 
 msgid "Std Dev"
-msgstr ""
+msgstr "标准差"
 
 msgid "Mean"
-msgstr ""
+msgstr "平均 "
 
 msgid "Min"
 msgstr "最小"
@@ -115,34 +115,34 @@ msgid "unfollow"
 msgstr "取消后续跟踪"
 
 msgid "Threshold"
-msgstr ""
+msgstr "阈"
 
 msgid "Hide advanced fields"
-msgstr ""
+msgstr "隐藏高级字段"
 
 msgid "Show advanced fields"
-msgstr ""
+msgstr "显示高级字段"
 
 msgid "Data Start Date"
-msgstr ""
+msgstr "数据开始日期"
 
 msgid "Data End Date"
-msgstr ""
+msgstr "数据结束日期"
 
 msgid "Sort by"
-msgstr ""
+msgstr "排序"
 
 msgid "Outlier Detection"
-msgstr ""
+msgstr "离群值检测"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "组织机构"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "算法"
 
 msgid "Max results"
-msgstr ""
+msgstr "最大结果"
 
 msgid "start"
 msgstr "开始"
