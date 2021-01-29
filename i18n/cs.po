@@ -25,7 +25,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "Nemáte přístup k žádným organizačním jednotkám."
 
 msgid "DOWNLOAD AS PDF"
 msgstr "STÁHNOUT JAKO PDF"
@@ -49,16 +49,16 @@ msgid "Value"
 msgstr "Hodnota"
 
 msgid "Z-Score"
-msgstr ""
+msgstr "Z-skóre"
 
 msgid "Deviation"
-msgstr ""
+msgstr "Odchylka"
 
 msgid "Std Dev"
 msgstr "Standardní odchylka"
 
 msgid "Mean"
-msgstr ""
+msgstr "Střední"
 
 msgid "Min"
 msgstr "Min"
@@ -112,34 +112,34 @@ msgid "unfollow"
 msgstr "přestat sledovat"
 
 msgid "Threshold"
-msgstr ""
+msgstr "Práh"
 
 msgid "Hide advanced fields"
-msgstr ""
+msgstr "Skrýt pokročilá pole"
 
 msgid "Show advanced fields"
-msgstr ""
+msgstr "Zobrazit pokročilá pole"
 
 msgid "Data Start Date"
-msgstr ""
+msgstr "Datum zahájení dat"
 
 msgid "Data End Date"
-msgstr ""
+msgstr "Datum ukončení dat"
 
 msgid "Sort by"
 msgstr "Seřazeno podle"
 
 msgid "Outlier Detection"
-msgstr ""
+msgstr "Detekce odlehlých hodnot"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmus"
 
 msgid "Max results"
-msgstr ""
+msgstr "Max. Počet výsledků"
 
 msgid "start"
 msgstr "Start"
