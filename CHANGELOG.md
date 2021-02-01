@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/dhis2/data-quality-app/compare/v1.3.4...v1.3.5) (2021-02-01)
+
+
+### Bug Fixes
+
+* **sections:** fix missing translations ([196ae1c](https://github.com/dhis2/data-quality-app/commit/196ae1c17e553af523cc42e1cd49f458bb5cc154))
+
 ## [1.3.4](https://github.com/dhis2/data-quality-app/compare/v1.3.3...v1.3.4) (2021-02-01)
 
 
