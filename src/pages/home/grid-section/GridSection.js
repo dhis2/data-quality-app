@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { GridTile } from 'material-ui/GridList'
 import FontIcon from 'material-ui/FontIcon'
 import classNames from 'classnames'
-import i18n from '@dhis2/d2-i18n'
 import styles from './GridSection.module.css'
 
 class GridSection extends PureComponent {
@@ -35,7 +34,7 @@ class GridSection extends PureComponent {
                                 styles.gridTitleDescription
                             )}
                         >
-                            {this.props.section.info.label}
+                            {this.props.section.info.label()}
                         </span>
                         <FontIcon
                             className={classNames(
@@ -54,7 +53,7 @@ class GridSection extends PureComponent {
                             styles.gridDescription
                         )}
                     >
-                        {i18n.t(this.props.section.info.description)}
+                        {this.props.section.info.description()}
                     </span>
                     <span
                         className={classNames(
@@ -63,7 +62,7 @@ class GridSection extends PureComponent {
                             styles.gridActionText
                         )}
                     >
-                        {i18n.t(this.props.section.info.actionText)}
+                        {this.props.section.info.actionText()}
                     </span>
                 </GridTile>
             </Link>
