@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-26T20:57:27.525Z\n"
+"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -146,11 +146,38 @@ msgstr ""
 msgid "start"
 msgstr ""
 
-msgid "Validation passed successfully"
-msgstr " توثیق کامیاب ہوگئی"
-
 msgid "Validation Rule Analysis"
 msgstr "توثیق کے اصول تجزیہ"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr " توثیق کامیاب ہوگئی"
 
 msgid "Send Notifications"
 msgstr ""
