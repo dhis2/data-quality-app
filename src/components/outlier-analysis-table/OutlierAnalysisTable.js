@@ -191,6 +191,7 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
     orgUnit: e.ou,
     categoryOptionCombo: e.coc || null,
     attributeOptionCombo: e.aoc || null,
+    followup: !e.marked,
 })
 
 OutlierAnalyisTable.propTypes = {

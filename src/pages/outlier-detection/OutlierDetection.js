@@ -275,12 +275,10 @@ class OutlierDetection extends Page {
                         showTable: elements && elements.length > 0,
                     },
                 })
-                const method = currentElement.marked ? 'DELETE' : 'POST'
-                const url = api.baseUrl + apiConf.endpoints.markDataValue
                 const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
                     currentElement
                 )
-                api.request(method, url, JSON.stringify(data))
+                api.update(apiConf.endpoints.markDataValue, data)
                     .then(() => {
                         if (this.isPageMounted()) {
                             currentElement.marked = !currentElement.marked
