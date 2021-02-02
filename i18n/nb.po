@@ -151,10 +151,10 @@ msgstr "Valideringsregel analyse"
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Kjør validering"
 
 msgid "Outlier detection"
 msgstr ""
@@ -165,15 +165,17 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyser"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Vis eller rediger dataverdier merket for videre oppfølging under "
+"dataregistrering eller analyse."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Vis dataverdier"
 
 msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"

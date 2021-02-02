@@ -156,9 +156,11 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Executar as regras de validação, a fim de revelar anomalias e erros nos "
+"dados existentes na base de dados."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Executar validação"
 
 msgid "Outlier detection"
 msgstr ""
@@ -169,15 +171,17 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analisar"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Ver ou editar valores de dados marcados para posterior acompanhamento "
+"durante a entrada de dados ou análise."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Exibir valores de dados"
 
 msgid "Validation passed successfully"
 msgstr "Validado com sucesso"
