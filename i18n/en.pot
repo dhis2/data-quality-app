@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
-"PO-Revision-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-03T09:37:45.957Z\n"
+"PO-Revision-Date: 2021-02-03T09:37:45.957Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -107,16 +107,16 @@ msgstr ""
 msgid "Threshold"
 msgstr ""
 
-msgid "Hide advanced fields"
+msgid "Hide advanced options"
 msgstr ""
 
-msgid "Show advanced fields"
+msgid "Show advanced options"
 msgstr ""
 
-msgid "Data Start Date"
+msgid "Data start date"
 msgstr ""
 
-msgid "Data End Date"
+msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
@@ -125,7 +125,16 @@ msgstr ""
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
+msgstr ""
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
 msgstr ""
 
 msgid "Algorithm"
@@ -134,7 +143,7 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "start"
+msgid "Start"
 msgstr ""
 
 msgid "Validation Rule Analysis"
