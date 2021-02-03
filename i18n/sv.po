@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
 # phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-10-25T12:28:15.046Z\n"
+"POT-Creation-Date: 2021-02-01T13:17:19.942Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,17 +100,46 @@ msgstr "Min-max outlier analysis"
 msgid "start"
 msgstr ""
 
+msgid "Validation Rule Analysis"
+msgstr "Valideringsregeln analys"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr "Kör validering"
+
 msgid "Std Dev Outlier Analysis"
 msgstr "Standardavvikelse outlier analys"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Analysera"
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr "Visa datavärden"
 
 msgid "Select number of standard deviations"
 msgstr "Välj antal standardavvikelser"
 
 msgid "Validation passed successfully"
 msgstr "Validering godkänd"
-
-msgid "Validation Rule Analysis"
-msgstr "Valideringsregeln analys"
 
 msgid "Send Notifications"
 msgstr "Skicka notifieringar"

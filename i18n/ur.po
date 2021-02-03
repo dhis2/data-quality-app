@@ -1,14 +1,14 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-10-25T12:28:15.046Z\n"
+"POT-Creation-Date: 2021-02-01T13:17:19.942Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,17 +101,54 @@ msgstr "کم سے زیادہ آؤٹ لک تجزیہ"
 msgid "start"
 msgstr ""
 
+msgid "Validation Rule Analysis"
+msgstr "توثیق کے اصول تجزیہ"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"ڈیٹا بیس میں اعداد و شمار میں انملیوں اور غلطیوں کو بے نقاب کرنے کے لئے "
+"توثیق کے قوانین کو چلائیں."
+
+msgid "Run Validation"
+msgstr ""
+
 msgid "Std Dev Outlier Analysis"
 msgstr "اسٹڈی ڈیو آؤٹ شدہ تجزیہ"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"معیاری انحرافات پر مبنی ممکنہ اضافی اقدار کا تجزیہ کریں. پہلے سے ہی اقدار کی"
+" جانچ پڑتال کی جاسکتی ہے اور اس کی پیروی کی جا سکتی ہے."
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"مائن اور زیادہ سے زیادہ اقدار پر مبنی ممکنہ اضافی اقدار کا تجزیہ کریں. پہلے "
+"سے ہی اقدار کی جانچ پڑتال کی جاسکتی ہے اور اس کی پیروی کی جا سکتی ہے."
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"اعداد و شمار کے اندراج یا تجزیہ کے دوران مزید پیروی کے لئے نشان زد کردہ "
+"اعداد و شمار کی قدر دیکھیں یا ترمیم کریں."
+
+msgid "View Data Values"
+msgstr ""
 
 msgid "Select number of standard deviations"
 msgstr "معیاری انحراف کی تعداد منتخب کریں"
 
 msgid "Validation passed successfully"
 msgstr " توثیق کامیاب ہوگئی"
-
-msgid "Validation Rule Analysis"
-msgstr "توثیق کے اصول تجزیہ"
 
 msgid "Send Notifications"
 msgstr ""
