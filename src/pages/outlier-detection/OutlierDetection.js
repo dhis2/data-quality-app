@@ -359,8 +359,8 @@ class OutlierDetection extends Page {
     renderZScoreFields() {
         const { showAdvancedZScoreFields } = this.state
         const buttonLabel = showAdvancedZScoreFields
-            ? i18n.t('Hide advanced fields')
-            : i18n.t('Show advanced fields')
+            ? i18n.t('Hide advanced options')
+            : i18n.t('Show advanced options')
 
         return (
             <>
@@ -375,7 +375,7 @@ class OutlierDetection extends Page {
                         <DatePicker
                             id="data-start-date"
                             textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data Start Date')}
+                            floatingLabelText={i18n.t('Data start date')}
                             onChange={this.dataStartDateOnChange}
                             maxDate={this.state.dataEndDate}
                             value={this.state.dataStartDate}
@@ -383,7 +383,7 @@ class OutlierDetection extends Page {
                         <DatePicker
                             id="data-end-date"
                             textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data End Date')}
+                            floatingLabelText={i18n.t('Data end date')}
                             onChange={this.dataEndDateOnChange}
                             minDate={this.state.dataStartDate}
                             value={this.state.dataEndDate}
@@ -445,7 +445,7 @@ class OutlierDetection extends Page {
                                 )}
                             >
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data Set')}
+                                    {i18n.t('Data set')}
                                 </div>
                                 <AvailableDatasetsSelect
                                     onChange={this.dataSetsOnChange}
@@ -474,7 +474,7 @@ class OutlierDetection extends Page {
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Start Date')}
+                                    floatingLabelText={i18n.t('Start date')}
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
                                     maxDate={this.state.endDate}
@@ -483,7 +483,7 @@ class OutlierDetection extends Page {
                                 <DatePicker
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('End Date')}
+                                    floatingLabelText={i18n.t('End date')}
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
                                     minDate={this.state.startDate}
@@ -526,7 +526,7 @@ class OutlierDetection extends Page {
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
-                            label={i18n.t('start')}
+                            label={i18n.t('Start')}
                             onClick={this.start}
                             disabled={this.isActionDisabled()}
                         />
