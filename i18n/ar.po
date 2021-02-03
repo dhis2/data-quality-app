@@ -154,9 +154,11 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"تشغيل قواعد التحقق من أجل الكشف عن الحالات الشاذة و أخطاء البيانات في قاعدة "
+"البيانات."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "تشغيل التحقق"
 
 msgid "Outlier detection"
 msgstr ""
@@ -167,15 +169,17 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "تحليل"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"عرض أو تعديل قيم البيانات التي تم وضع علامة متابعة لاحقة عليها خلال إدخال "
+"البيانات أو التحليل."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "عرض قيم البيانات"
 
 msgid "Validation passed successfully"
 msgstr "تم اجتياز التحقق بنجاح"

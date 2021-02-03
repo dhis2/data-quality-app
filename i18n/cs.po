@@ -151,9 +151,11 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Spusťte ověřovací pravidla, abyste odhalili anomálie a chyby v datech v "
+"databázi."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Spustit ověření"
 
 msgid "Outlier detection"
 msgstr ""
@@ -164,15 +166,17 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyzovat"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Zobrazte nebo upravte hodnoty dat označené pro další sledování během "
+"zadávání nebo analýzy dat."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Zobrazit datové hodnoty"
 
 msgid "Validation passed successfully"
 msgstr "Ověření proběhlo úspěšně"
