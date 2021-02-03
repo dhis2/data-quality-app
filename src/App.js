@@ -8,7 +8,6 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
 import './custom-css/D2UISidebarOverrides.css'
-import i18n from './locales'
 import AppRouter from './components/app-router/AppRouter'
 import styles from './App.module.css'
 import { sections } from './pages/sections.conf'
@@ -69,7 +68,7 @@ class App extends PureComponent {
         const translatedSections = sections.map(section =>
             Object.assign(section, {
                 icon: section.info.icon,
-                label: i18n.t(section.info.label),
+                label: section.info.label(),
                 containerElement: <Link to={section.path} />,
             })
         )
