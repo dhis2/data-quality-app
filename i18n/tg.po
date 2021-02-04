@@ -1,14 +1,14 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-12-22 22:15+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,6 +112,8 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Қоидаҳои санҷиши эътиборро кор фармуда, аномалияҳо ва хатогиҳои иттилоот ва "
+"пойгоҳи иттилоотиро ошкор намоед."
 
 msgid "Run Validation"
 msgstr ""
@@ -123,6 +125,9 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии тамоилҳои стандартӣ таҳлил "
+"кунед. Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  "
+"карда шаванд."
 
 msgid "Analyze"
 msgstr ""
@@ -131,11 +136,16 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии қиматҳои мин-макс таҳлил кунед. "
+"Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  карда "
+"шаванд."
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Қиматҳои иттилоотро, ки барои пайгирӣ ҳангоми вуруди иттилоот ё таҳлил  қайд"
+" карда шудаанд, бинед ва таҳрир кунед."
 
 msgid "View Data Values"
 msgstr ""
