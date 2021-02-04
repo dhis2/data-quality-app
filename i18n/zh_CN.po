@@ -1,14 +1,14 @@
 # 
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:17:19.942Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,7 +106,7 @@ msgstr "验证规则分析"
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
 
 msgid "Run Validation"
 msgstr ""
@@ -117,7 +117,7 @@ msgstr "标准差孤立分析"
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
-msgstr ""
+msgstr "基于标准差分析潜在的异常值。异常值能被后续检查和标记。"
 
 msgid "Analyze"
 msgstr ""
@@ -125,12 +125,12 @@ msgstr ""
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
-msgstr ""
+msgstr "基于最小和最大值分析异常值。异常值能被后续检查和标记"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
-msgstr ""
+msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
 
 msgid "View Data Values"
 msgstr ""
