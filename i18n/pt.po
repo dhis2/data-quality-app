@@ -1,16 +1,16 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# Ge Joao <gsimango@saudigitus.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Ge Joao <gsimango@saudigitus.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,9 +114,11 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Executar as regras de validação, a fim de revelar anomalias e erros nos "
+"dados existentes na base de dados."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Executar validação"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Análise de Discrepâncias de Desvio Padrão"
@@ -125,22 +127,29 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"Analisar potenciais valores discrepantes com base em desvios-padrão. Valores"
+" discrepantes podem ser examinados e marcados para acompanhamento."
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analisar"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analisar potenciais valores discrepantes com base em valores mínimo e "
+"máximo. Valores discrepantes podem ser examinados e marcados para "
+"acompanhamento."
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Ver ou editar valores de dados marcados para posterior acompanhamento "
+"durante a entrada de dados ou análise."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Exibir valores de dados"
 
 msgid "Select number of standard deviations"
 msgstr "Seleccione o número de desvios-padrão"
