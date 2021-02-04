@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -105,17 +105,46 @@ msgstr "Анализ выбросов Min-Max"
 msgid "start"
 msgstr "Начало"
 
+msgid "Validation Rule Analysis"
+msgstr "Анализ по правилам валидации"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr ""
+
 msgid "Std Dev Outlier Analysis"
 msgstr "Анализ выбросов по стандартному отклонению"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr ""
 
 msgid "Select number of standard deviations"
 msgstr "Выберите количество стандартных отклонений"
 
 msgid "Validation passed successfully"
 msgstr "Проверка прошла успешно"
-
-msgid "Validation Rule Analysis"
-msgstr "Анализ по правилам валидации"
 
 msgid "Send Notifications"
 msgstr "Отправка уведомлений"
