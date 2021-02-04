@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-11-01T13:41:47.279Z\n"
+"POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-12-22 22:15+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -106,17 +106,46 @@ msgstr "Análisis por máximos y mínimos"
 msgid "start"
 msgstr ""
 
+msgid "Validation Rule Analysis"
+msgstr "Análisis por reglas de validación"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr ""
+
 msgid "Std Dev Outlier Analysis"
 msgstr "Análisis por desviación estandar"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr ""
 
 msgid "Select number of standard deviations"
 msgstr "Seleccione el número de desviaciones estandar"
 
 msgid "Validation passed successfully"
 msgstr "Validado correctamente"
-
-msgid "Validation Rule Analysis"
-msgstr "Análisis por reglas de validación"
 
 msgid "Send Notifications"
 msgstr ""
