@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
 # Hamza Assada <7amza.it@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:17:19.942Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,9 +109,11 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"تشغيل قواعد التحقق من أجل الكشف عن الحالات الشاذة و أخطاء البيانات في قاعدة "
+"البيانات."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "تشغيل التحقق"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "تحليل القيم المتطرفة - الانحراف المعياري"
@@ -120,22 +122,28 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"تحليل القيم المتطرفة المحتملة اعتماداً على الانحرافات المعيارية. من الممكن "
+"فحص القيم المتطرفة ووضع علامة عليها للمتابعة."
 
 msgid "Analyze"
-msgstr ""
+msgstr "تحليل"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"تحليل القيم المتطرفة المحتملة اعتماداً على القيم الدنيا والعليا. من الممكن "
+"فحص القيم المتطرفة ووضع علامة عليها للمتابعة."
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"عرض أو تعديل قيم البيانات التي تم وضع علامة متابعة لاحقة عليها خلال إدخال "
+"البيانات أو التحليل."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "عرض قيم البيانات"
 
 msgid "Select number of standard deviations"
 msgstr "تحديد عدد الانحرافات المعيارية"

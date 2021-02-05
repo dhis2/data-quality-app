@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:17:19.942Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,6 +110,8 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Ejecutar las reglas de validación para detectar anomalías y errores en los "
+"datos de la base de datos."
 
 msgid "Run Validation"
 msgstr ""
@@ -121,6 +123,8 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"Analizar los posibles valores atípicos basándose ​​en su desviación "
+"estándar. Los valores atípicos se pueden examinar y marcar para seguimiento."
 
 msgid "Analyze"
 msgstr ""
@@ -129,11 +133,15 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analizar los posibles valores atípicos en base a los valores mínimos y "
+"máximos. Los valores atípicos se pueden examinar y marcar para seguimiento."
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Ver o editar valores de los datos marcados para seguimiento durante la "
+"entrada de datos o análisis."
 
 msgid "View Data Values"
 msgstr ""
