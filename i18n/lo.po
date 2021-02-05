@@ -1,14 +1,14 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,6 +112,8 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
+" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
 
 msgid "Run Validation"
 msgstr ""
@@ -123,6 +125,8 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"​ວິ​ໄຈ​ເບີ່ງ​ທ່າ​ອ່ຽງ​ຂອງ​ມູນ​ຄ່າ​ຕ່າງໆ​ທີ່​ອາດ​ຈະ​ເກີນກວ່າ​ມາດ​ຕະ​ຖານ. "
+"ຄ່າ​ທີ່​ເກີນກວ່າ​ສາ​ມາດກວດ​ກາ​ເບີ່ງ ແລະ ໝາຍ​ໃວ້​ເພື່ອ​ຕິດ​ຕາມ"
 
 msgid "Analyze"
 msgstr ""
@@ -131,11 +135,14 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"​ວິ​ໄຈ​ເບີ່ງ​ທ່າ​ອ່ຽງ​ມູນ​ຄ່າ​ທີ່​ເກີນ​ອີງ​ໃສ່​ຫລັກ​ການຂອງ​ຄ່າ​ສູງ​ສຸດ ແລະ "
+"ຄ່າ​ຕ່ຳ​ສຸດ. ຄ່າ​ທີ່​ເກີນ​ສາ​ມາດກວດ​ກາ​ເບີ່ງ​ແລະ ໝາຍ​ໃວ້​ເພື່ອ​ຕິດ​ຕາມ"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
 
 msgid "View Data Values"
 msgstr ""

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,10 +109,10 @@ msgstr "Valideringsregel analyse"
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Kjør validering"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Std avvik tidl. analyse"
@@ -121,22 +121,28 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
+"Analyser potensielle tidligere verdier basert på standardavvik. Tidligere "
+"verdier kan undersøkes og merkes for oppfølging."
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyser"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analyser potensielle tidligere verdier basert på min- og maksverdier. "
+"Tidligere verdier kan undersøkes og merkes for oppfølging."
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Vis eller rediger dataverdier merket for videre oppfølging under "
+"dataregistrering eller analyse."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Vis dataverdier"
 
 msgid "Select number of standard deviations"
 msgstr "Velg antall standardavvik"
