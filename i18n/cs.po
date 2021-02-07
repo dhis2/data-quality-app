@@ -158,12 +158,15 @@ msgid "Run Validation"
 msgstr "Spustit ověření"
 
 msgid "Outlier detection"
-msgstr ""
+msgstr "Detekce odlehlých hodnot"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
 msgstr ""
+"Analyzujte potenciální odlehlé hodnoty na základě standardních odchylek nebo"
+" hodnot min-max. Odlehlé hodnoty lze prozkoumat a označit pro následné "
+"sledování."
 
 msgid "Analyze"
 msgstr "Analyzovat"
