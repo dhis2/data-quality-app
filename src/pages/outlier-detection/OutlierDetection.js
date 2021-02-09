@@ -267,8 +267,10 @@ class OutlierDetection extends Page {
 
     toggleCheckbox(element) {
         const api = this.context.d2.Api.getApi()
-        const elements = this.state.elements
-        const currentElement = elements.find(({ key }) => key === element.key)
+        const currentElementIndex = this.state.elements.findIndex(
+            ({ key }) => key === element.key
+        )
+        const currentElement = this.state.elements[currentElementIndex]
 
         if (!currentElement) {
             return
@@ -277,7 +279,7 @@ class OutlierDetection extends Page {
         this.context.updateAppState({
             pageState: {
                 loading: true,
-                elements,
+                elements: this.state.elements,
                 showTable: true,
             },
         })
@@ -287,7 +289,15 @@ class OutlierDetection extends Page {
         api.update(apiConf.endpoints.markDataValue, data)
             .then(() => {
                 if (this.isPageMounted()) {
-                    currentElement.marked = !currentElement.marked
+                    const updatedElement = {
+                        ...currentElement,
+                        marked: !currentElement.marked,
+                    }
+                    const elements = [
+                        ...this.state.elements.slice(0, currentElementIndex),
+                        updatedElement,
+                        ...this.state.elements.slice(currentElementIndex + 1),
+                    ]
 
                     this.context.updateAppState({
                         showSnackbar: true,
