@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-09T11:47:52.042Z\n"
-"PO-Revision-Date: 2021-02-09T11:47:52.042Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"PO-Revision-Date: 2021-02-09T12:09:22.622Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Max"
 msgstr ""
 
-msgid "Mark"
+msgid "Follow-up"
 msgstr ""
 
 msgid "Validation Rule Group"
@@ -104,10 +104,10 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked"
+msgid "Marked for follow-up"
 msgstr ""
 
-msgid "Unmarked"
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Threshold"

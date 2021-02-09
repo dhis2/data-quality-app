@@ -153,7 +153,7 @@ const OutlierAnalyisTable = ({
                             {i18n.t('Max')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.center}>
-                            {i18n.t('Mark')}
+                            {i18n.t('Follow-up')}
                         </TableHeaderColumn>
                     </TableRow>
                 </TableHeader>

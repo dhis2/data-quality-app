@@ -33,6 +33,9 @@ const threeMonthsAgo = () => {
     return date
 }
 
+const getMarkedForFollowUpSuccesMessage = marked =>
+    marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
+
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -290,9 +293,9 @@ class OutlierDetection extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: currentElement.marked
-                                ? i18n.t('Marked')
-                                : i18n.t('Unmarked'),
+                            message: getMarkedForFollowUpSuccesMessage(
+                                currentElement.marked
+                            ),
                         },
                         pageState: {
                             elements,
