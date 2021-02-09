@@ -34,7 +34,7 @@ const threeMonthsAgo = () => {
 }
 
 const getMarkedForFollowUpSuccesMessage = marked =>
-    marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
+    marked ? i18n.t('Unmarked for follow-up') : i18n.t('Marked for follow-up')
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
