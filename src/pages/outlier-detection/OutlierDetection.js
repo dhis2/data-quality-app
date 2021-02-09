@@ -272,7 +272,7 @@ class OutlierDetection extends Page {
                     pageState: {
                         loading: true,
                         elements,
-                        showTable: elements && elements.length > 0,
+                        showTable: true,
                     },
                 })
                 const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
@@ -297,7 +297,7 @@ class OutlierDetection extends Page {
                                 pageState: {
                                     elements,
                                     loading: false,
-                                    showTable: elements && elements.length > 0,
+                                    showTable: true,
                                 },
                             })
                         }
