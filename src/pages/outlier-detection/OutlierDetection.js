@@ -265,47 +265,46 @@ class OutlierDetection extends Page {
     toggleCheckbox(element) {
         const api = this.context.d2.Api.getApi()
         const elements = this.state.elements
-        for (let i = 0; i < elements.length; i++) {
-            const currentElement = elements[i]
-            if (currentElement.key === element.key) {
-                this.context.updateAppState({
-                    pageState: {
-                        loading: true,
-                        elements,
-                        showTable: true,
-                    },
-                })
-                const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
-                    currentElement
-                )
-                api.update(apiConf.endpoints.markDataValue, data)
-                    .then(() => {
-                        if (this.isPageMounted()) {
-                            currentElement.marked = !currentElement.marked
-                            elements[i] = currentElement
+        const currentElement = elements.find(({ key }) => key === element.key)
 
-                            this.context.updateAppState({
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: SUCCESS,
-                                    message: currentElement.marked
-                                        ? i18n.t('Marked')
-                                        : i18n.t('Unmarked'),
-                                },
-                                pageState: {
-                                    elements,
-                                    loading: false,
-                                    showTable: true,
-                                },
-                            })
-                        }
-                    })
-                    .catch(error => {
-                        this.manageError(error)
-                    })
-                break
-            }
+        if (!currentElement) {
+            return
         }
+
+        this.context.updateAppState({
+            pageState: {
+                loading: true,
+                elements,
+                showTable: true,
+            },
+        })
+        const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
+            currentElement
+        )
+        api.update(apiConf.endpoints.markDataValue, data)
+            .then(() => {
+                if (this.isPageMounted()) {
+                    currentElement.marked = !currentElement.marked
+
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: currentElement.marked
+                                ? i18n.t('Marked')
+                                : i18n.t('Unmarked'),
+                        },
+                        pageState: {
+                            elements,
+                            loading: false,
+                            showTable: true,
+                        },
+                    })
+                }
+            })
+            .catch(error => {
+                this.manageError(error)
+            })
     }
 
     isFormValid() {
