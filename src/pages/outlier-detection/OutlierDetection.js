@@ -288,11 +288,9 @@ class OutlierDetection extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: i18n.t(
-                                        currentElement.marked
-                                            ? 'Marked'
-                                            : 'Unmarked'
-                                    ),
+                                    message: currentElement.marked
+                                        ? i18n.t('Marked')
+                                        : i18n.t('Unmarked'),
                                 },
                                 pageState: {
                                     elements,

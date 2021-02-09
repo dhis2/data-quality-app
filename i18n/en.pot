@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-03T09:37:45.957Z\n"
-"PO-Revision-Date: 2021-02-03T09:37:45.957Z\n"
+"POT-Creation-Date: 2021-02-09T11:47:52.042Z\n"
+"PO-Revision-Date: 2021-02-09T11:47:52.042Z\n"
 
 msgid "Data Quality"
 msgstr ""
@@ -102,6 +102,12 @@ msgid "Unfollow"
 msgstr ""
 
 msgid "unfollow"
+msgstr ""
+
+msgid "Marked"
+msgstr ""
+
+msgid "Unmarked"
 msgstr ""
 
 msgid "Threshold"
