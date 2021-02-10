@@ -84,24 +84,24 @@ describe('Test <OutlierDetection /> rendering:', () => {
         expect(wrapper.find(AvailableOrganisationUnitsTree)).toHaveLength(1)
     })
 
-    it('Renders a "Start Date" - DatePicker.', () => {
+    it('Renders a "Start date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2)
         expect(
             wrapper
                 .find(DatePicker)
                 .at(0)
                 .props().floatingLabelText
-        ).toBe('Start Date')
+        ).toBe('Start date')
     })
 
-    it('Renders a "End Date" - DatePicker.', () => {
+    it('Renders a "End date" - DatePicker.', () => {
         expect(wrapper.find(DatePicker).length).toBe(2)
         expect(
             wrapper
                 .find(DatePicker)
                 .at(1)
                 .props().floatingLabelText
-        ).toBe('End Date')
+        ).toBe('End date')
     })
 
     it('Renders an input to choose Algorithm.', () => {
@@ -231,7 +231,7 @@ describe('Test <OutlierDetection /> actions:', () => {
         )
     })
 
-    it('Should call startDateOnChange function when Start Date DatePicker changes.', () => {
+    it('Should call startDateOnChange function when Start date DatePicker changes.', () => {
         const spy = spyOn(
             OutlierDetection.prototype,
             'startDateOnChange'
@@ -249,7 +249,7 @@ describe('Test <OutlierDetection /> actions:', () => {
         expect(wrapper.state('startDate')).toMatchObject(testStartDate)
     })
 
-    it('Should call endDateOnChange function when End Date DatePicker changes.', () => {
+    it('Should call endDateOnChange function when End date DatePicker changes.', () => {
         const spy = spyOn(
             OutlierDetection.prototype,
             'endDateOnChange'
