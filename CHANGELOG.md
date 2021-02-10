@@ -1,3 +1,22 @@
+# [1.4.0](https://github.com/dhis2/data-quality-app/compare/v1.3.8...v1.4.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* adjust i18n strings in failing test ([f58d006](https://github.com/dhis2/data-quality-app/commit/f58d006e17a4370be5379b4c8271d67721ac3a9e))
+* **outlier-detection:** adjust calls to i18n.t and produce .pot files ([7ac3f28](https://github.com/dhis2/data-quality-app/commit/7ac3f2844a67489eef639d35484804f2aeb0cc9e))
+* **outlier-detection:** adjust confirmation msg logic to make more sense ([4e6175c](https://github.com/dhis2/data-quality-app/commit/4e6175ce868f62e2d4d75e5d08575aa5b0b98035))
+* **outlier-detection:** adjust follow-up code to new endpoint behaviour ([9767657](https://github.com/dhis2/data-quality-app/commit/97676577c7d6d4f5becf276e54d5585062bdcad0))
+* **outlier-detection:** switch marked/unmarked messages around ([eb0ac91](https://github.com/dhis2/data-quality-app/commit/eb0ac9161b019fdc8dfd0a32b88236f67f02eb18))
+* **outlier-detection:** unconditionally show table when appropriate ([8353aee](https://github.com/dhis2/data-quality-app/commit/8353aee8aacf5d138c1de0fedc72c5b0dcd35bde))
+* allow tables to have a max-width of 100% for readability ([8764d55](https://github.com/dhis2/data-quality-app/commit/8764d55f286d8b17b794baece0b31aa87a1ebd82))
+* **outlier-detection:** use sentence-case and tweak texts (input Lars) ([929006c](https://github.com/dhis2/data-quality-app/commit/929006c7358f96018a611aad8705e13b3a1bbe4b))
+
+
+### Features
+
+* **outlier-detection:** mark data values for follow-up ([6114222](https://github.com/dhis2/data-quality-app/commit/6114222676edcf02d9d39c865ae53f81ee5ef946))
+
 ## [1.3.8](https://github.com/dhis2/data-quality-app/compare/v1.3.7...v1.3.8) (2021-02-07)
 
 
