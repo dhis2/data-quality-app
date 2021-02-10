@@ -20,7 +20,7 @@ const response = [
         cocName: 'default',
         de: 'p1MDHOT6ENy',
         deName: 'Stock PHU dispensed  BCG',
-        followUp: false,
+        followup: false,
         lowerBound: -6093.141742038514,
         mean: 702.3333333333334,
         ou: 'ApLCxUmnT6q',
@@ -39,7 +39,7 @@ const response = [
         cocName: 'Fixed',
         de: 'rbkr8PL0rwM',
         deName: 'Iron Folate given at ANC 3rd',
-        followUp: false,
+        followup: false,
         lowerBound: -4454.381991130682,
         mean: 887.0909090909091,
         ou: 'el8sgzyHuEe',
@@ -65,7 +65,7 @@ const expectedElementFormat = {
     de: 'p1MDHOT6ENy',
     deName: 'Stock PHU dispensed  BCG',
     displayName: 'Stock PHU dispensed  BCG',
-    followUp: false,
+    followup: false,
     key: 'HllvX50cXC0-HllvX50cXC0-p1MDHOT6ENy-202010-ApLCxUmnT6q',
     lowerBound: -6093.141742038514,
     marked: false,
@@ -121,7 +121,7 @@ describe('Test <OutlierAnalysisTable /> rendering:', () => {
                 .find(TableRow)
                 .at(1)
                 .find(TableRowColumn).length
-        ).toBe(7) // First row after header
+        ).toBe(8) // First row after header
     })
 
     // it('Should render a Mark "Checkbox" for each element.', () => {

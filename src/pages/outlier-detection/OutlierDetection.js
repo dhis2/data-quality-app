@@ -33,6 +33,9 @@ const threeMonthsAgo = () => {
     return date
 }
 
+const getMarkedForFollowUpSuccesMessage = marked =>
+    marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
+
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -88,7 +91,7 @@ class OutlierDetection extends Page {
         this.toggleShowAdvancedZScoreFields = this.toggleShowAdvancedZScoreFields.bind(
             this
         )
-        // this.toggleCheckbox = this.toggleCheckbox.bind(this)
+        this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -262,53 +265,60 @@ class OutlierDetection extends Page {
         this.setState({ algorithm: value })
     }
 
-    // toggleCheckbox(element) {
-    //     const api = this.context.d2.Api.getApi()
-    //     const elements = this.state.elements
-    //     for (let i = 0; i < elements.length; i++) {
-    //         const currentElement = elements[i]
-    //         if (currentElement.key === element.key) {
-    //             this.context.updateAppState({
-    //                 pageState: {
-    //                     loading: true,
-    //                 },
-    //             })
-    //             const apiCall = currentElement.marked ? api.delete : api.post
-    //             apiCall(
-    //                 apiConf.endpoints.markDataValue,
-    //                 OutlierAnalyisTable.convertElementToToggleFollowupRequest(
-    //                     currentElement
-    //                 )
-    //             )
-    //                 .then(() => {
-    //                     if (this.isPageMounted()) {
-    //                         currentElement.marked = !currentElement.marked
-    //                         elements[i] = currentElement
+    toggleCheckbox(element) {
+        const api = this.context.d2.Api.getApi()
+        const currentElementIndex = this.state.elements.findIndex(
+            ({ key }) => key === element.key
+        )
+        const currentElement = this.state.elements[currentElementIndex]
 
-    //                         this.context.updateAppState({
-    //                             showSnackbar: true,
-    //                             snackbarConf: {
-    //                                 type: SUCCESS,
-    //                                 message: i18n.t(
-    //                                     currentElement.marked
-    //                                         ? 'Marked'
-    //                                         : 'Unmarked'
-    //                                 ),
-    //                             },
-    //                             pageState: {
-    //                                 elements,
-    //                                 loading: false,
-    //                             },
-    //                         })
-    //                     }
-    //                 })
-    //                 .catch(error => {
-    //                     this.manageError(error)
-    //                 })
-    //             break
-    //         }
-    //     }
-    // }
+        if (!currentElement) {
+            return
+        }
+
+        this.context.updateAppState({
+            pageState: {
+                loading: true,
+                elements: this.state.elements,
+                showTable: true,
+            },
+        })
+        const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
+            currentElement
+        )
+        api.update(apiConf.endpoints.markDataValue, data)
+            .then(() => {
+                if (this.isPageMounted()) {
+                    const updatedElement = {
+                        ...currentElement,
+                        marked: !currentElement.marked,
+                    }
+                    const elements = [
+                        ...this.state.elements.slice(0, currentElementIndex),
+                        updatedElement,
+                        ...this.state.elements.slice(currentElementIndex + 1),
+                    ]
+
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: getMarkedForFollowUpSuccesMessage(
+                                updatedElement.marked
+                            ),
+                        },
+                        pageState: {
+                            elements,
+                            loading: false,
+                            showTable: true,
+                        },
+                    })
+                }
+            })
+            .catch(error => {
+                this.manageError(error)
+            })
+    }
 
     isFormValid() {
         return (
@@ -359,8 +369,8 @@ class OutlierDetection extends Page {
     renderZScoreFields() {
         const { showAdvancedZScoreFields } = this.state
         const buttonLabel = showAdvancedZScoreFields
-            ? i18n.t('Hide advanced fields')
-            : i18n.t('Show advanced fields')
+            ? i18n.t('Hide advanced options')
+            : i18n.t('Show advanced options')
 
         return (
             <>
@@ -375,7 +385,7 @@ class OutlierDetection extends Page {
                         <DatePicker
                             id="data-start-date"
                             textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data Start Date')}
+                            floatingLabelText={i18n.t('Data start date')}
                             onChange={this.dataStartDateOnChange}
                             maxDate={this.state.dataEndDate}
                             value={this.state.dataStartDate}
@@ -383,7 +393,7 @@ class OutlierDetection extends Page {
                         <DatePicker
                             id="data-end-date"
                             textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data End Date')}
+                            floatingLabelText={i18n.t('Data end date')}
                             onChange={this.dataEndDateOnChange}
                             minDate={this.state.dataStartDate}
                             value={this.state.dataEndDate}
@@ -445,7 +455,7 @@ class OutlierDetection extends Page {
                                 )}
                             >
                                 <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data Set')}
+                                    {i18n.t('Data set')}
                                 </div>
                                 <AvailableDatasetsSelect
                                     onChange={this.dataSetsOnChange}
@@ -474,7 +484,7 @@ class OutlierDetection extends Page {
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Start Date')}
+                                    floatingLabelText={i18n.t('Start date')}
                                     onChange={this.startDateOnChange}
                                     defaultDate={new Date()}
                                     maxDate={this.state.endDate}
@@ -483,7 +493,7 @@ class OutlierDetection extends Page {
                                 <DatePicker
                                     id="end-date"
                                     textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('End Date')}
+                                    floatingLabelText={i18n.t('End date')}
                                     onChange={this.endDateOnChange}
                                     defaultDate={new Date()}
                                     minDate={this.state.startDate}
@@ -526,7 +536,7 @@ class OutlierDetection extends Page {
                             id="start-analysis-button"
                             className={cssPageStyles.mainButton}
                             primary
-                            label={i18n.t('start')}
+                            label={i18n.t('Start')}
                             onClick={this.start}
                             disabled={this.isActionDisabled()}
                         />
@@ -538,7 +548,7 @@ class OutlierDetection extends Page {
                                 algorithm={this.state.algorithm}
                                 csvQueryStr={this.state.csvQueryStr}
                                 elements={this.state.elements}
-                                // toggleCheckbox={this.toggleCheckbox}
+                                toggleCheckbox={this.toggleCheckbox}
                             />
                         </CardText>
                     )}
