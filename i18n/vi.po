@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -69,8 +69,8 @@ msgstr "Nhỏ nhất"
 msgid "Max"
 msgstr "Lớn nhất"
 
-msgid "Mark"
-msgstr "Đánh dấu"
+msgid "Follow-up"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Nhóm luật hợp lệ"
@@ -114,19 +114,25 @@ msgstr "Bỏ theo dõi"
 msgid "unfollow"
 msgstr "Bỏ theo dõi"
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
 msgid "Threshold"
 msgstr ""
 
-msgid "Hide advanced fields"
+msgid "Hide advanced options"
 msgstr ""
 
-msgid "Show advanced fields"
+msgid "Show advanced options"
 msgstr ""
 
-msgid "Data Start Date"
+msgid "Data start date"
 msgstr ""
 
-msgid "Data End Date"
+msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
@@ -135,8 +141,17 @@ msgstr "Sắp xếp theo"
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
 msgstr "Đơn vị"
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -144,8 +159,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "start"
-msgstr "Bắt đầu"
+msgid "Start"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Phân Tích Tính Hợp Lệ"

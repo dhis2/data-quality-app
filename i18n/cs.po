@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Jiří Podhorecký, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -66,8 +66,8 @@ msgstr "Min"
 msgid "Max"
 msgstr "Max"
 
-msgid "Mark"
-msgstr "Označit"
+msgid "Follow-up"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Skupina pravidel ověření"
@@ -111,20 +111,26 @@ msgstr "Zrušit sledování"
 msgid "unfollow"
 msgstr "přestat sledovat"
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
 msgid "Threshold"
 msgstr "Práh"
 
-msgid "Hide advanced fields"
-msgstr "Skrýt pokročilá pole"
+msgid "Hide advanced options"
+msgstr ""
 
-msgid "Show advanced fields"
-msgstr "Zobrazit pokročilá pole"
+msgid "Show advanced options"
+msgstr ""
 
-msgid "Data Start Date"
-msgstr "Datum zahájení dat"
+msgid "Data start date"
+msgstr ""
 
-msgid "Data End Date"
-msgstr "Datum ukončení dat"
+msgid "Data end date"
+msgstr ""
 
 msgid "Sort by"
 msgstr "Seřazeno podle"
@@ -132,8 +138,17 @@ msgstr "Seřazeno podle"
 msgid "Outlier Detection"
 msgstr "Detekce odlehlých hodnot"
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
 msgstr "Organizační jednotky"
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
 
 msgid "Algorithm"
 msgstr "Algoritmus"
@@ -141,8 +156,8 @@ msgstr "Algoritmus"
 msgid "Max results"
 msgstr "Max. Počet výsledků"
 
-msgid "start"
-msgstr "Start"
+msgid "Start"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analýza ověřovacích pravidel"
