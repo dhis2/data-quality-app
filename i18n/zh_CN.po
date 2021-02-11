@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -67,8 +67,8 @@ msgstr "最小"
 msgid "Max"
 msgstr "最大"
 
-msgid "Mark"
-msgstr "标记"
+msgid "Follow-up"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "验证规则组"
@@ -112,19 +112,25 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
 msgid "Threshold"
 msgstr ""
 
-msgid "Hide advanced fields"
+msgid "Hide advanced options"
 msgstr ""
 
-msgid "Show advanced fields"
+msgid "Show advanced options"
 msgstr ""
 
-msgid "Data Start Date"
+msgid "Data start date"
 msgstr ""
 
-msgid "Data End Date"
+msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
@@ -133,8 +139,17 @@ msgstr "排序"
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
 msgstr "组织机构"
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -142,7 +157,7 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "start"
+msgid "Start"
 msgstr ""
 
 msgid "Validation Rule Analysis"

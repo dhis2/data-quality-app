@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -74,8 +74,8 @@ msgstr "Min"
 msgid "Max"
 msgstr "Max"
 
-msgid "Mark"
-msgstr "Marquer"
+msgid "Follow-up"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
@@ -119,19 +119,25 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
 msgid "Threshold"
 msgstr ""
 
-msgid "Hide advanced fields"
+msgid "Hide advanced options"
 msgstr ""
 
-msgid "Show advanced fields"
+msgid "Show advanced options"
 msgstr ""
 
-msgid "Data Start Date"
+msgid "Data start date"
 msgstr ""
 
-msgid "Data End Date"
+msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
@@ -140,8 +146,17 @@ msgstr "Trier par"
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
 msgstr "Unités d'organisation"
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -149,7 +164,7 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "start"
+msgid "Start"
 msgstr ""
 
 msgid "Validation Rule Analysis"

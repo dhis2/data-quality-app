@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T08:36:31.937Z\n"
+"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -71,8 +71,8 @@ msgstr "Mínimo"
 msgid "Max"
 msgstr "Máximo"
 
-msgid "Mark"
-msgstr "Marcar"
+msgid "Follow-up"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Grupo de Regras de Validação"
@@ -116,19 +116,25 @@ msgstr "Deixar de seguir"
 msgid "unfollow"
 msgstr "Deixar de seguir "
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
 msgid "Threshold"
 msgstr ""
 
-msgid "Hide advanced fields"
+msgid "Hide advanced options"
 msgstr ""
 
-msgid "Show advanced fields"
+msgid "Show advanced options"
 msgstr ""
 
-msgid "Data Start Date"
+msgid "Data start date"
 msgstr ""
 
-msgid "Data End Date"
+msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
@@ -137,8 +143,17 @@ msgstr "Ordenar por"
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation units"
 msgstr "Unidades organizacionais"
+
+msgid "Start date"
+msgstr ""
+
+msgid "End date"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -146,8 +161,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "start"
-msgstr "Inicio "
+msgid "Start"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analise das regras de validação"
