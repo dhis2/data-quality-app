@@ -67,7 +67,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Následovat"
 
 msgid "Validation Rule Group"
 msgstr "Skupina pravidel ověření"
@@ -112,7 +112,7 @@ msgid "unfollow"
 msgstr "přestat sledovat"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Označeno pro další sledování"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -121,10 +121,10 @@ msgid "Threshold"
 msgstr "Práh"
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "Skrýt pokročilé možnosti"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "Zobrazit pokročilé možnosti"
 
 msgid "Data start date"
 msgstr ""
@@ -139,16 +139,16 @@ msgid "Outlier Detection"
 msgstr "Detekce odlehlých hodnot"
 
 msgid "Data set"
-msgstr ""
+msgstr "Datová sada"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
 
 msgid "Start date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "End date"
-msgstr ""
+msgstr "Datum ukončení"
 
 msgid "Algorithm"
 msgstr "Algoritmus"
@@ -157,7 +157,7 @@ msgid "Max results"
 msgstr "Max. Počet výsledků"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "Validation Rule Analysis"
 msgstr "Analýza ověřovacích pravidel"

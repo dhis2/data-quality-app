@@ -70,7 +70,7 @@ msgid "Max"
 msgstr "ຄ່າໃຫ່ຍສຸດ"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "ຕິດຕາມ"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -124,10 +124,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "Hide advanced options"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "Show advanced options"
 
 msgid "Data start date"
 msgstr ""
@@ -142,16 +142,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set\\:"
 
 msgid "Organisation units"
 msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
 
 msgid "Start date"
-msgstr ""
+msgstr "ວັນທີເລີ່ມຕົ້ນ"
 
 msgid "End date"
-msgstr ""
+msgstr "ວັນທີສຸດທ້າຍ"
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "Validation Rule Analysis"
 msgstr "ກວດສອບຂໍ້ມູນ"

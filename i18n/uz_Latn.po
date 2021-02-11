@@ -69,7 +69,7 @@ msgid "Max"
 msgstr "Maksimum"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Kuzatish"
 
 msgid "Validation Rule Group"
 msgstr "Tekshiruv guruhi qoidalari"
@@ -114,7 +114,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Kuzatuv uchun belgilangan"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -141,16 +141,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "Organisation units"
 msgstr "Tashkiliy birliklar"
 
 msgid "Start date"
-msgstr ""
+msgstr "Boshlanish sanasi"
 
 msgid "End date"
-msgstr ""
+msgstr "Yakunlanish sanasi"
 
 msgid "Algorithm"
 msgstr ""
@@ -159,7 +159,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Boshlash"
 
 msgid "Validation Rule Analysis"
 msgstr "Tasdiqlash Qoidasi Аnalitikasi"

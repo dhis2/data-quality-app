@@ -70,7 +70,7 @@ msgid "Max"
 msgstr "Макс"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Пайгирӣ кардан"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -142,16 +142,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Маҷмӯи иттилоот"
 
 msgid "Organisation units"
 msgstr "воҳидҳои сохторӣ"
 
 msgid "Start date"
-msgstr ""
+msgstr "Санаи оғоз"
 
 msgid "End date"
-msgstr ""
+msgstr "Санаи анҷом"
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Оғоз"
 
 msgid "Validation Rule Analysis"
 msgstr "Таҳлили қоидаи санҷиши эътибор"

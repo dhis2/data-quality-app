@@ -123,10 +123,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "اعلی درجے کی اختیارات چھپائیں"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "اعلی درجے کی اختیارات دکھائیں"
 
 msgid "Data start date"
 msgstr ""
@@ -141,16 +141,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "ڈیٹا سیٹ"
 
 msgid "Organisation units"
 msgstr "تنظیمی یونٹس"
 
 msgid "Start date"
-msgstr ""
+msgstr "تاریخ آغاز"
 
 msgid "End date"
-msgstr ""
+msgstr "آخری تاریخ"
 
 msgid "Algorithm"
 msgstr ""
@@ -159,7 +159,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "شروع کریں"
 
 msgid "Validation Rule Analysis"
 msgstr "توثیق کے اصول تجزیہ"

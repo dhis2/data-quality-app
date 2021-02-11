@@ -70,7 +70,7 @@ msgid "Max"
 msgstr "Макс"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Дальнейшие действия"
 
 msgid "Validation Rule Group"
 msgstr "Группа правил проверки"
@@ -124,10 +124,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "Скрыть дополнительные опции"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "Показать дополнительные опции"
 
 msgid "Data start date"
 msgstr ""
@@ -142,16 +142,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Набор данных"
 
 msgid "Organisation units"
 msgstr "Организационные единицы"
 
 msgid "Start date"
-msgstr ""
+msgstr "Дата начала"
 
 msgid "End date"
-msgstr ""
+msgstr "Дата окончания"
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Начать"
 
 msgid "Validation Rule Analysis"
 msgstr "Анализ по правилам валидации"

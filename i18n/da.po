@@ -139,16 +139,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "Organisation units"
 msgstr "Organisation units"
 
 msgid "Start date"
-msgstr ""
+msgstr "Start date"
 
 msgid "End date"
-msgstr ""
+msgstr "End date"
 
 msgid "Algorithm"
 msgstr ""
