@@ -68,7 +68,7 @@ msgid "Max"
 msgstr "بزرگتر"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "تعقیب کردن"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -122,10 +122,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "پنهان کردن گزینه های بیشتر"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "نمایش گزینه های بیشتر"
 
 msgid "Data start date"
 msgstr ""
@@ -140,16 +140,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "د مالوماتو (ډاټا) ټولګه"
 
 msgid "Organisation units"
 msgstr "واحد های سازمان"
 
 msgid "Start date"
-msgstr ""
+msgstr "تاریخ شروع"
 
 msgid "End date"
-msgstr ""
+msgstr "تاریخ اتمام"
 
 msgid "Algorithm"
 msgstr ""
@@ -158,7 +158,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "شروع"
 
 msgid "Validation Rule Analysis"
 msgstr "تحلیل قانون اعتبار سنجی"

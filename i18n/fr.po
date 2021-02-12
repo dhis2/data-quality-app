@@ -75,7 +75,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Suivi"
 
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
@@ -147,16 +147,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Ensemble de données"
 
 msgid "Organisation units"
 msgstr "Unités d'organisation"
 
 msgid "Start date"
-msgstr ""
+msgstr "Date de début"
 
 msgid "End date"
-msgstr ""
+msgstr "Date de fin"
 
 msgid "Algorithm"
 msgstr ""
@@ -165,7 +165,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Démarrer"
 
 msgid "Validation Rule Analysis"
 msgstr "Analyse de règle de validation"

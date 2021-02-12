@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2019
+# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -68,7 +68,7 @@ msgid "Max"
 msgstr "អតិបរមា"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "តាមដាន"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -140,16 +140,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "Organisation units"
 msgstr "Organisation units"
 
 msgid "Start date"
-msgstr ""
+msgstr "កាលបរិច្ឆេទ​ចាប់ផ្ដើម​"
 
 msgid "End date"
-msgstr ""
+msgstr "កាល​បរិច្ឆេទ​បញ្ចប់​"
 
 msgid "Algorithm"
 msgstr ""

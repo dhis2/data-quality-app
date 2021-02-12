@@ -68,7 +68,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Segimentu"
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -140,16 +140,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Pakote dadus"
 
 msgid "Organisation units"
 msgstr "Unidade organizasional"
 
 msgid "Start date"
-msgstr ""
+msgstr "Data hahú"
 
 msgid "End date"
-msgstr ""
+msgstr "Data remata"
 
 msgid "Algorithm"
 msgstr ""

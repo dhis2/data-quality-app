@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2019
 # KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,10 +147,10 @@ msgid "Organisation units"
 msgstr "يةكةي ريكخراو"
 
 msgid "Start date"
-msgstr ""
+msgstr "دةستبيكردني داتا"
 
 msgid "End date"
-msgstr ""
+msgstr "تةواو كردني داتا"
 
 msgid "Algorithm"
 msgstr ""

@@ -72,7 +72,7 @@ msgid "Max"
 msgstr "Máximo"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Seguimento"
 
 msgid "Validation Rule Group"
 msgstr "Grupo de Regras de Validação"
@@ -117,7 +117,7 @@ msgid "unfollow"
 msgstr "Deixar de seguir "
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Marcado para acompanhamento"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -126,10 +126,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "Ocultar opções avançadas"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "Mostrar opções avançadas"
 
 msgid "Data start date"
 msgstr ""
@@ -144,16 +144,16 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Ficha"
 
 msgid "Organisation units"
 msgstr "Unidades organizacionais"
 
 msgid "Start date"
-msgstr ""
+msgstr "Data Início"
 
 msgid "End date"
-msgstr ""
+msgstr "Data Final"
 
 msgid "Algorithm"
 msgstr ""
@@ -162,7 +162,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Inicio"
 
 msgid "Validation Rule Analysis"
 msgstr "Analise das regras de validação"
