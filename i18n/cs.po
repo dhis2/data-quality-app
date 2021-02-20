@@ -115,7 +115,7 @@ msgid "Marked for follow-up"
 msgstr "Označeno pro další sledování"
 
 msgid "Unmarked for follow-up"
-msgstr ""
+msgstr "Neoznačeno pro další sledování"
 
 msgid "Threshold"
 msgstr "Práh"
@@ -127,10 +127,10 @@ msgid "Show advanced options"
 msgstr "Zobrazit pokročilé možnosti"
 
 msgid "Data start date"
-msgstr ""
+msgstr "Datum zahájení dat"
 
 msgid "Data end date"
-msgstr ""
+msgstr "Datum ukončení dat"
 
 msgid "Sort by"
 msgstr "Seřazeno podle"
