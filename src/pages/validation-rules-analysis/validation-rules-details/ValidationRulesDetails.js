@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Dialog, FlatButton, FontIcon } from 'material-ui'
-import classNames from 'classnames'
 import i18n from '@dhis2/d2-i18n'
-import Page from '../../Page'
-import jsPageStyles from '../../PageStyles'
-import cssPageStyles from '../../Page.module.css'
-import styles from './ValidationRulesDetails.module.css'
+import classNames from 'classnames'
+import { Dialog, FlatButton, FontIcon } from 'material-ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import { apiConf } from '../../../server.conf'
+import Page from '../../Page'
+import cssPageStyles from '../../Page.module.css'
+import jsPageStyles from '../../PageStyles'
 import ValidationRulesAnalysis from '../ValidationRulesAnalysis'
+import styles from './ValidationRulesDetails.module.css'
 
 class ValidationRulesDetails extends Page {
     static STATE_PROPERTIES = ['loading']
@@ -38,7 +38,7 @@ class ValidationRulesDetails extends Page {
         this.handleClose = this.handleClose.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
@@ -58,9 +58,7 @@ class ValidationRulesDetails extends Page {
     loadDetails() {
         if (!this.state.loading) {
             const api = this.context.d2.Api.getApi()
-            const requestRule = `${apiConf.endpoints.validationRules}/${
-                this.props.validationRuleId
-            }`
+            const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`
             const requestExpression =
                 `${apiConf.endpoints.validationRulesExpression}` +
                 `?validationRuleId=${this.props.validationRuleId}` +
@@ -96,9 +94,7 @@ class ValidationRulesDetails extends Page {
         const dialogActions = [
             <FlatButton
                 className="close-action"
-                key={`FB${this.props.organisationUnitId}-${
-                    this.props.periodId
-                }-${this.props.validationRuleId}`}
+                key={`FB${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                 label={i18n.t('Close')}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
@@ -185,9 +181,7 @@ class ValidationRulesDetails extends Page {
         return (
             <div>
                 <FontIcon
-                    key={`FI|${this.props.organisationUnitId}-${
-                        this.props.periodId
-                    }-${this.props.validationRuleId}`}
+                    key={`FI|${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     className={
                         'validation-rules-show-details-action material-icons'
                     }
@@ -198,9 +192,7 @@ class ValidationRulesDetails extends Page {
                 </FontIcon>
                 <Dialog
                     className="validation-rules-details-dialog"
-                    key={`D${this.props.organisationUnitId}-${
-                        this.props.periodId
-                    }-${this.props.validationRuleId}`}
+                    key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                     autoScrollBodyContent={Boolean(true)}
                     title={i18n.t('Validation Details')}
                     actions={dialogActions}

@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styles from './TableCellContent.module.css'
 import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './TableCellContent.module.css'
 
 const TableCellContent = props => (
     <div

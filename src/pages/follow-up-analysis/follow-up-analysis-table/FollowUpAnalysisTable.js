@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
     Checkbox,
@@ -15,13 +14,14 @@ import {
     Dialog,
     FlatButton,
 } from 'material-ui'
-import i18n from '@dhis2/d2-i18n'
-import FormattedNumber from '../../../components/formatters/FormattedNumber'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import DownloadAs from '../../../components/download-as/DownloadAs'
+import FormattedNumber from '../../../components/formatters/FormattedNumber'
+import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles'
 import styles from './FollowUpAnalysisTable.module.css'
-import { apiConf } from '../../../server.conf'
 
 class FollowUpAnalysisTable extends Component {
     static propTypes = {
@@ -36,9 +36,7 @@ class FollowUpAnalysisTable extends Component {
     }
 
     static generateElementKey = e =>
-        `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${
-            e.sourceId
-        }-${e.dataElementId}`
+        `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
 
     static convertElementFromApiResponse = e => ({
         key: FollowUpAnalysisTable.generateElementKey(e),

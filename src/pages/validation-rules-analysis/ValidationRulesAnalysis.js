@@ -1,25 +1,25 @@
-import React from 'react'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
-import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import DatePicker from 'material-ui/DatePicker'
-import Checkbox from 'material-ui/Checkbox'
-import { FontIcon, IconButton } from 'material-ui'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import Page from '../Page'
+import { FontIcon, IconButton } from 'material-ui'
+import { Card, CardText } from 'material-ui/Card'
+import Checkbox from 'material-ui/Checkbox'
+import DatePicker from 'material-ui/DatePicker'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
+import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
+import PageHelper from '../../components/page-helper/PageHelper'
 import ValidationRuleGroupsSelect, {
     ALL_VALIDATION_RULE_GROUPS_ID,
 } from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
-import i18n from '@dhis2/d2-i18n'
-import jsPageStyles from '../PageStyles'
-import cssPageStyles from '../Page.module.css'
-import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
-import { apiConf } from '../../server.conf'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import { apiConf } from '../../server.conf'
+import Page from '../Page'
+import cssPageStyles from '../Page.module.css'
+import jsPageStyles from '../PageStyles'
+import { getDocsKeyForSection } from '../sections.conf'
+import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
 
 class ValidationRulesAnalysis extends Page {
     static STATE_PROPERTIES = ['loading', 'elements', 'showTable']
@@ -52,7 +52,7 @@ class ValidationRulesAnalysis extends Page {
         this.updatePersistNewResults = this.updatePersistNewResults.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
@@ -70,9 +70,7 @@ class ValidationRulesAnalysis extends Page {
     }
 
     static generateElementKey = e =>
-        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${
-            e.attributeOptionComboId
-        }`
+        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${e.attributeOptionComboId}`
 
     static convertElementFromApiResponse = e => ({
         key: ValidationRulesAnalysis.generateElementKey(e),

@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
-import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
-import OutlierDetection from './outlier-detection/OutlierDetection'
 import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
+import OutlierDetection from './outlier-detection/OutlierDetection'
+import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
 
 export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'
 export const OUTLIER_DETECTION_SECTION_KEY = 'outlierDetection'

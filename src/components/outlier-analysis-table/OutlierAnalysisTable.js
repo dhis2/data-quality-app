@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
     Checkbox,
@@ -10,12 +9,13 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui'
-import FormattedNumber from '../../components/formatters/FormattedNumber'
+import PropTypes from 'prop-types'
+import React from 'react'
 import DownloadAs from '../../components/download-as/DownloadAs'
-import i18n from '@dhis2/d2-i18n'
-import { apiConf } from '../../server.conf'
+import FormattedNumber from '../../components/formatters/FormattedNumber'
 import cssPageStyles from '../../pages/Page.module.css'
 import jsPageStyles from '../../pages/PageStyles'
+import { apiConf } from '../../server.conf'
 import styles from './OutlierAnalysisTable.module.css'
 
 const OutlierAnalyisTable = ({
@@ -174,9 +174,7 @@ const OutlierAnalyisTable = ({
 }
 
 OutlierAnalyisTable.generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${
-        e.sourceId
-    }-${e.dataElementId}`
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     displayName: getDisplayName(e),

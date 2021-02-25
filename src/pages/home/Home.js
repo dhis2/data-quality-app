@@ -1,8 +1,8 @@
-import React from 'react'
 import classNames from 'classnames'
+import React from 'react'
+import { sections } from '../sections.conf'
 import GridSection from './grid-section/GridSection'
 import styles from './Home.module.css'
-import { sections } from '../sections.conf'
 
 const Home = () => {
     const gridElements = sections.map(section => (

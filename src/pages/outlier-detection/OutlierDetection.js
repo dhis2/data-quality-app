@@ -1,25 +1,25 @@
-import React from 'react'
-import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import DatePicker from 'material-ui/DatePicker'
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
-import FlatButton from 'material-ui/FlatButton'
-import { FontIcon, IconButton } from 'material-ui'
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
-import Page from '../Page'
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
+import { FontIcon, IconButton } from 'material-ui'
+import { Card, CardText } from 'material-ui/Card'
+import DatePicker from 'material-ui/DatePicker'
+import FlatButton from 'material-ui/FlatButton'
+import MenuItem from 'material-ui/MenuItem'
+import RaisedButton from 'material-ui/RaisedButton'
+import SelectField from 'material-ui/SelectField'
+import React from 'react'
+import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import PageHelper from '../../components/page-helper/PageHelper'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
-import AlertBar from '../../components/alert-bar/AlertBar'
-import i18n from '@dhis2/d2-i18n'
+import PageHelper from '../../components/page-helper/PageHelper'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
-import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'
+import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import { getDocsKeyForSection } from '../sections.conf'
 
 export const Z_SCORE = 'Z_SCORE'
 export const DEFAULT_THRESHOLD = 3.0
@@ -94,7 +94,7 @@ class OutlierDetection extends Page {
         this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {

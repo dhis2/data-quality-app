@@ -1,22 +1,22 @@
-import React from 'react'
+import i18n from '@dhis2/d2-i18n'
+import classNames from 'classnames'
+import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
 import DatePicker from 'material-ui/DatePicker'
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import classNames from 'classnames'
-import Page from '../Page'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
+import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
 import PageHelper from '../../components/page-helper/PageHelper'
-import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
-import AlertBar from '../../components/alert-bar/AlertBar'
-import i18n from '@dhis2/d2-i18n'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
-import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'
+import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import { getDocsKeyForSection } from '../sections.conf'
+import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
 
 class FollowUpAnalysis extends Page {
     static STATE_PROPERTIES = [
@@ -53,7 +53,7 @@ class FollowUpAnalysis extends Page {
         this.unfollow = this.unfollow.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {

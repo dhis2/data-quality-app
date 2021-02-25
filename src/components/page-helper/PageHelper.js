@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { IconButton } from 'material-ui'
 import i18n from '@dhis2/d2-i18n'
+import { IconButton } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import {
     getDocsVersion,
     DOCS_LINK,

@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
 import i18n from '@dhis2/d2-i18n'
+import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import styles from './AvailableOrganisationUnitsTree.module.css'
 
 class AvailableOrganisationUnitsTree extends PureComponent {
