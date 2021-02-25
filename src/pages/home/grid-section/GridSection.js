@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import FontIcon from 'material-ui/FontIcon'
-import { GridTile } from 'material-ui/GridList'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
+import { Card } from '@dhis2/ui'
 import { Link } from 'react-router-dom'
 import styles from './GridSection.module.css'
 
@@ -23,19 +23,16 @@ class GridSection extends PureComponent {
     render() {
         return (
             <Link className="link" to={this.props.section.path}>
-                <GridTile
-                    key={this.props.section.key}
-                    className={classNames('section', styles.gridElement)}
-                >
+                <Card className={classNames('section', styles.gridElement)}>
                     <div className={classNames('row', styles.gridTitleBar)}>
-                        <span
+                        <h2
                             className={classNames(
                                 'section-title',
                                 styles.gridTitleDescription
                             )}
                         >
                             {this.props.section.info.label()}
-                        </span>
+                        </h2>
                         <FontIcon
                             className={classNames(
                                 'material-icons',
@@ -64,7 +61,7 @@ class GridSection extends PureComponent {
                     >
                         {this.props.section.info.actionText()}
                     </span>
-                </GridTile>
+                </Card>
             </Link>
         )
     }

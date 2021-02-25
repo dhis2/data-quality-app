@@ -3,7 +3,7 @@ import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
 import DatePicker from 'material-ui/DatePicker'
-import RaisedButton from 'material-ui/RaisedButton'
+import { Button } from '@dhis2/ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
@@ -88,17 +88,17 @@ class FollowUpAnalysis extends Page {
                         )
 
                         const feedback =
-                            elements && elements.length > 0
-                                ? {
-                                      showSnackbar: false,
-                                  }
-                                : {
-                                      showSnackbar: true,
-                                      snackbarConf: {
-                                          type: SUCCESS,
-                                          message: i18n.t('No values found'),
-                                      },
-                                  }
+                              elements && elements.length > 0
+                              ? {
+                                  showSnackbar: false,
+                              }
+                              : {
+                                  showSnackbar: true,
+                                  snackbarConf: {
+                                      type: SUCCESS,
+                                      message: i18n.t('No values found'),
+                                  },
+                              }
 
                         this.context.updateAppState({
                             ...feedback,
@@ -208,10 +208,10 @@ class FollowUpAnalysis extends Page {
     isFormValid() {
         return (
             this.state.startDate &&
-            this.state.endDate &&
-            this.state.organisationUnitId &&
-            this.state.dataSetIds &&
-            this.state.dataSetIds.length > 0
+                this.state.endDate &&
+                this.state.organisationUnitId &&
+                this.state.dataSetIds &&
+                this.state.dataSetIds.length > 0
         )
     }
 
@@ -222,8 +222,8 @@ class FollowUpAnalysis extends Page {
     showAlertBar() {
         return (
             this.state.showTable &&
-            this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit
+                this.state.elements &&
+                this.state.elements.length >= apiConf.results.analysis.limit
         )
     }
 
@@ -257,15 +257,17 @@ class FollowUpAnalysis extends Page {
                         }}
                     >
                         <div className="row">
-                            <div id="data-sets-container" className="col-md-4">
-                                <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data Set')}
+                            <div className="col-sm-12 col-md-4">
+                                <div>
+                                    <h3 className={cssPageStyles.formLabel}>
+                                        {i18n.t('Data Set')}
+                                    </h3>
+                                    <AvailableDatasetsSelect
+                                        onChange={this.dataSetsOnChange}
+                                    />
                                 </div>
-                                <AvailableDatasetsSelect
-                                    onChange={this.dataSetsOnChange}
-                                />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-12 col-md-4">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
                                 </div>
@@ -273,7 +275,7 @@ class FollowUpAnalysis extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-12 col-md-4">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
@@ -294,14 +296,14 @@ class FollowUpAnalysis extends Page {
                                 />
                             </div>
                         </div>
-                        <RaisedButton
-                            id="start-analysis-button"
-                            className={cssPageStyles.mainButton}
+                        <Button
                             primary
-                            label={i18n.t('follow up')}
+                            className={cssPageStyles.mainButton}
                             onClick={this.getFollowUpList}
                             disabled={this.isActionDisabled()}
-                        />
+                        >
+                            {i18n.t('Follow up')}
+                        </Button>
                     </CardText>
                     {/* TABLE */}
                     <CardText

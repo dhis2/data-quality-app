@@ -3,9 +3,8 @@ import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
 import DatePicker from 'material-ui/DatePicker'
-import FlatButton from 'material-ui/FlatButton'
 import MenuItem from 'material-ui/MenuItem'
-import RaisedButton from 'material-ui/RaisedButton'
+import { Button } from '@dhis2/ui'
 import SelectField from 'material-ui/SelectField'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
@@ -19,6 +18,7 @@ import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 import { getDocsKeyForSection } from '../sections.conf'
+import styles from './OutlierDetection.module.css'
 
 export const Z_SCORE = 'Z_SCORE'
 export const DEFAULT_THRESHOLD = 3.0
@@ -33,7 +33,7 @@ const threeMonthsAgo = () => {
 }
 
 const getMarkedForFollowUpSuccesMessage = marked =>
-    marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
+      marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -120,17 +120,17 @@ class OutlierDetection extends Page {
                         )
 
                         const feedback =
-                            elements && elements.length > 0
-                                ? {
-                                      showSnackbar: false,
-                                  }
-                                : {
-                                      showSnackbar: true,
-                                      snackbarConf: {
-                                          type: SUCCESS,
-                                          message: i18n.t('No values found'),
-                                      },
-                                  }
+                              elements && elements.length > 0
+                              ? {
+                                  showSnackbar: false,
+                              }
+                              : {
+                                  showSnackbar: true,
+                                  snackbarConf: {
+                                      type: SUCCESS,
+                                      message: i18n.t('No values found'),
+                                  },
+                              }
 
                         this.context.updateAppState({
                             ...feedback,
@@ -312,12 +312,12 @@ class OutlierDetection extends Page {
     isFormValid() {
         return (
             this.state.startDate &&
-            this.state.endDate &&
-            this.state.organisationUnitIds &&
-            this.state.organisationUnitIds.length > 0 &&
-            this.state.threshold &&
-            this.state.dataSetIds &&
-            this.state.dataSetIds.length > 0
+                this.state.endDate &&
+                this.state.organisationUnitIds &&
+                this.state.organisationUnitIds.length > 0 &&
+                this.state.threshold &&
+                this.state.dataSetIds &&
+                this.state.dataSetIds.length > 0
         )
     }
 
@@ -328,8 +328,8 @@ class OutlierDetection extends Page {
     showAlertBar() {
         return (
             this.state.showTable &&
-            this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit
+                this.state.elements &&
+                this.state.elements.length >= apiConf.results.analysis.limit
         )
     }
 
@@ -358,17 +358,19 @@ class OutlierDetection extends Page {
     renderZScoreFields() {
         const { showAdvancedZScoreFields } = this.state
         const buttonLabel = showAdvancedZScoreFields
-            ? i18n.t('Hide advanced options')
-            : i18n.t('Show advanced options')
+              ? i18n.t('Hide advanced options')
+              : i18n.t('Show advanced options')
 
         return (
             <>
-                <FlatButton
-                    fullWidth
-                    label={buttonLabel}
+                <Button
+                    small
+                    secondary
+                    className={styles.toggleBtn}
                     onClick={this.toggleShowAdvancedZScoreFields}
-                    style={{ marginTop: '12px' }}
-                />
+                >
+                    {buttonLabel}
+                </Button>
                 {showAdvancedZScoreFields && (
                     <>
                         <DatePicker
@@ -436,15 +438,17 @@ class OutlierDetection extends Page {
                         }}
                     >
                         <div className="row">
-                            <div id="data-sets-container" className="col-md-4">
-                                <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data set')}
+                            <div className="col-sm-12 col-md-4">
+                                <div>
+                                    <h3 className={cssPageStyles.formLabel}>
+                                        {i18n.t('Data set')}
+                                    </h3>
+                                    <AvailableDatasetsSelect
+                                        onChange={this.dataSetsOnChange}
+                                    />
                                 </div>
-                                <AvailableDatasetsSelect
-                                    onChange={this.dataSetsOnChange}
-                                />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-12 col-md-4">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Organisation units')}
                                 </div>
@@ -453,7 +457,7 @@ class OutlierDetection extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-12 col-md-4">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
@@ -489,7 +493,7 @@ class OutlierDetection extends Page {
                                     />
                                 </SelectField>
                                 {this.state.algorithm === Z_SCORE &&
-                                    this.renderThresholdField()}
+                                 this.renderThresholdField()}
                                 <SelectField
                                     id="max-results"
                                     style={jsPageStyles.inputForm}
@@ -502,17 +506,17 @@ class OutlierDetection extends Page {
                                     <MenuItem value={500} primaryText="500" />
                                 </SelectField>
                                 {this.state.algorithm === Z_SCORE &&
-                                    this.renderZScoreFields()}
+                                 this.renderZScoreFields()}
                             </div>
                         </div>
-                        <RaisedButton
-                            id="start-analysis-button"
-                            className={cssPageStyles.mainButton}
+                        <Button
                             primary
-                            label={i18n.t('Start')}
+                            className={cssPageStyles.mainButton}
                             onClick={this.start}
                             disabled={this.isActionDisabled()}
-                        />
+                        >
+                            {i18n.t('Start')}
+                        </Button>
                     </CardText>
                     {/* TABLE */}
                     {this.state.showTable && this.state.csvQueryStr && (

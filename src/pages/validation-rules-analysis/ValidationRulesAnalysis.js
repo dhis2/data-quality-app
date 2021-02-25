@@ -2,9 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
-import Checkbox from 'material-ui/Checkbox'
 import DatePicker from 'material-ui/DatePicker'
-import RaisedButton from 'material-ui/RaisedButton'
+import { Button, Checkbox } from '@dhis2/ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
@@ -47,8 +46,6 @@ class ValidationRulesAnalysis extends Page {
         this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(
             this
         )
-        this.updateSendNotifications = this.updateSendNotifications.bind(this)
-        this.updatePersistNewResults = this.updatePersistNewResults.bind(this)
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -166,11 +163,11 @@ class ValidationRulesAnalysis extends Page {
         this.setState({ validationRuleGroupId: value })
     }
 
-    updateSendNotifications(event, checked) {
+    updateSendNotifications = ({ checked } ) => {
         this.setState({ notification: checked })
     }
 
-    updatePersistNewResults(event, checked) {
+    updatePersistNewResults = ({ checked }) => {
         this.setState({ persist: checked })
     }
 
@@ -223,7 +220,7 @@ class ValidationRulesAnalysis extends Page {
                         }}
                     >
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-sm-12 col-md-6">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
                                 </div>
@@ -231,7 +228,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-sm-12 col-md-6">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
@@ -261,29 +258,27 @@ class ValidationRulesAnalysis extends Page {
                                 <div id="send-notifications-option">
                                     <Checkbox
                                         label={i18n.t('Send Notifications')}
-                                        labelPosition="left"
                                         checked={this.state.notification}
-                                        onCheck={this.updateSendNotifications}
+                                        onChange={this.updateSendNotifications}
                                     />
                                 </div>
                                 <div id="persist-results-option">
                                     <Checkbox
                                         label={i18n.t('Persist new results')}
-                                        labelPosition="left"
                                         checked={this.state.persist}
-                                        onCheck={this.updatePersistNewResults}
+                                        onChange={this.updatePersistNewResults}
                                     />
                                 </div>
                             </div>
                         </div>
-                        <RaisedButton
-                            id="start-analysis-button"
-                            className={cssPageStyles.mainButton}
-                            label={i18n.t('validate')}
+                        <Button
                             primary
+                            className={cssPageStyles.mainButton}
                             disabled={this.isActionDisabled()}
                             onClick={this.validate}
-                        />
+                        >
+                            {i18n.t('Validate')}
+                        </Button>
                     </CardText>
                     <CardText
                         id="results-table"

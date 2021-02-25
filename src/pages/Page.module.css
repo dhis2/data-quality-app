@@ -1,5 +1,8 @@
 .mainButton {
-    margin-top: 48px;
+    min-width: 100px;
+    margin-top: 36px;
+    /* align with grid padding */
+    margin-left: 0.5em;
 }
 
 .appTable th {
@@ -10,7 +13,7 @@
 }
 
 .appTable tr {
-    color: #000000 !important;
+    color: black !important;
     border-bottom: 1px solid #e0e0e0 !important;
 }
 

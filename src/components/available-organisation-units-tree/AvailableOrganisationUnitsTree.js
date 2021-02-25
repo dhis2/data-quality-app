@@ -17,11 +17,9 @@ const query = {
     },
 }
 
-const noop = () => {}
-
 const AvailableOrganisationUnitsTree = ({
     multiselect = false,
-    onChange = noop,
+    onChange
 }) => {
     const { loading, data, error } = useDataQuery(query)
     const [selected, setSelected] = useState([])

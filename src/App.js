@@ -6,6 +6,7 @@ import { HashRouter } from 'react-router-dom'
 import 'material-design-icons-iconfont'
 import App from './components/app/App'
 import appTheme from './theme'
+import './grid.css'
 import './locales'
 
 const AppWrapper = () => {
@@ -16,12 +17,14 @@ const AppWrapper = () => {
     }
 
     return (
-        <MuiThemeProvider muiTheme={appTheme}>
+        <>
             <CssVariables spacers colors />
-            <HashRouter>
-                <App d2={d2} />
-            </HashRouter>
-        </MuiThemeProvider>
+            <MuiThemeProvider muiTheme={appTheme}>
+                <HashRouter>
+                    <App d2={d2} />
+                </HashRouter>
+            </MuiThemeProvider>
+        </>
     )
 }
 
