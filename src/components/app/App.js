@@ -9,6 +9,8 @@ import { sections } from '../../pages/sections.conf'
 import AppRouter from '../app-router/AppRouter'
 import styles from './App.module.css'
 
+const noop = () => null
+
 class App extends PureComponent {
     static childContextTypes = {
         d2: PropTypes.object,
@@ -59,47 +61,32 @@ class App extends PureComponent {
     }
 
     render() {
-        const nonOnChangeSection = () => null
         const translatedSections = sections.map(section =>
-            Object.assign(section, {
+            ({
+                ...section,
                 icon: section.info.icon,
                 label: section.info.label(),
                 containerElement: <Link to={section.path} />,
             })
         )
 
-        const feedbackElement = this.state.pageState.loading ? (
-            <div className={styles.centered}>
-                <CircularProgress />
-            </div>
-        ) : (
-            <FeedbackSnackbar
-                show={this.state.showSnackbar}
-                conf={this.state.snackbarConf}
-            />
-        )
-
         const hideSidebar =
             this.state.pageState && this.state.pageState.showTable
-        const contentWrapperClassName = hideSidebar
-            ? styles.contentWrapperNoMargin
-            : styles.contentWrapper
 
         return (
-            <div>
+            <div className={styles.container}>
                 {!hideSidebar && (
                     <Sidebar
                         sections={translatedSections}
                         currentSection={this.state.currentSection}
-                        onChangeSection={nonOnChangeSection}
+                        onChangeSection={noop}
                     />
                 )}
-                <div className={contentWrapperClassName}>
+                <div>
                     <div className={styles.contentArea}>
                         <AppRouter pageState={this.state.pageState} />
                     </div>
                 </div>
-                <div id="feedback-snackbar">{feedbackElement}</div>
             </div>
         )
     }

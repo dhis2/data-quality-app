@@ -1,15 +1,9 @@
+.container {
+    display: flex;
+}
+
 .contentArea {
     padding: 0px 20px 20px 20px;
-}
-
-.contentWrapper {
-    margin-left: 295px;
-    max-width: 1400px;
-}
-
-.contentWrapperNoMargin {
-    margin-left: 0;
-    max-width: 100%;
 }
 
 .leftBar {
