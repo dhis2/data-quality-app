@@ -87,11 +87,6 @@ class OutlierDetection extends Page {
         this.dataEndDateOnChange = this.dataEndDateOnChange.bind(this)
         this.maxResultsOnChange = this.maxResultsOnChange.bind(this)
         this.sortByOnChange = this.sortByOnChange.bind(this)
-
-        this.toggleShowAdvancedZScoreFields = this.toggleShowAdvancedZScoreFields.bind(
-            this
-        )
-        this.toggleCheckbox = this.toggleCheckbox.bind(this)
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -106,9 +101,7 @@ class OutlierDetection extends Page {
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     start() {
@@ -226,7 +219,7 @@ class OutlierDetection extends Page {
         this.setState({ sortBy: value })
     }
 
-    toggleShowAdvancedZScoreFields(event, index, value) {
+    toggleShowAdvancedZScoreFields = () => {
         const shouldShow = !this.state.showAdvancedZScoreFields
 
         if (shouldShow) {
@@ -265,7 +258,7 @@ class OutlierDetection extends Page {
         this.setState({ algorithm: value })
     }
 
-    toggleCheckbox(element) {
+    toggleCheckbox = element => {
         const api = this.context.d2.Api.getApi()
         const currentElementIndex = this.state.elements.findIndex(
             ({ key }) => key === element.key

@@ -116,7 +116,7 @@ class AvailableOrganisationUnitsTree extends PureComponent {
                 {this.state.rootsWithMembers.map(rootOrgUnit => (
                     <OrgUnitTree
                         key={rootOrgUnit.id}
-                        hideMemberCount={Boolean(true)}
+                        hideMemberCount={true}
                         root={rootOrgUnit}
                         selected={this.state.selected}
                         initiallyExpanded={[`/${rootOrgUnit.id}`]}

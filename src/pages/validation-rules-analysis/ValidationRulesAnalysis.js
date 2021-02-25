@@ -64,9 +64,7 @@ class ValidationRulesAnalysis extends Page {
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     static generateElementKey = e =>

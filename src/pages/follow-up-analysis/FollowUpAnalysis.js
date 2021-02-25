@@ -65,9 +65,7 @@ class FollowUpAnalysis extends Page {
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     getFollowUpList() {

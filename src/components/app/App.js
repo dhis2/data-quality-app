@@ -9,23 +9,15 @@ import { sections } from '../../pages/sections.conf'
 import AppRouter from '../app-router/AppRouter'
 import styles from './App.module.css'
 
-// TODO: Fix imports
-
-// TODO: Remove
-import './custom-css/D2UISidebarOverrides.css'
-import 'material-design-icons-iconfont'
-
-import i18n from './locales'
-
 class App extends PureComponent {
     static childContextTypes = {
         d2: PropTypes.object,
+        currentSection: PropTypes.string,
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
             type: PropTypes.string,
             message: PropTypes.string,
         }),
-        currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
     }
 
@@ -111,6 +103,10 @@ class App extends PureComponent {
             </div>
         )
     }
+}
+
+App.propTypes = {
+    d2: PropTypes.object,
 }
 
 export default withRouter(App)

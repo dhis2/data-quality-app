@@ -42,17 +42,12 @@ class ValidationRulesDetails extends Page {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)
-            ) {
+            if (ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     loadDetails() {
@@ -96,7 +91,7 @@ class ValidationRulesDetails extends Page {
                 className="close-action"
                 key={`FB${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
                 label={i18n.t('Close')}
-                primary={Boolean(true)}
+                primary={true}
                 onClick={this.handleClose}
             />,
         ]
@@ -193,10 +188,10 @@ class ValidationRulesDetails extends Page {
                 <Dialog
                     className="validation-rules-details-dialog"
                     key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
-                    autoScrollBodyContent={Boolean(true)}
+                    autoScrollBodyContent={true}
                     title={i18n.t('Validation Details')}
                     actions={dialogActions}
-                    modal={Boolean(true)}
+                    modal={true}
                     open={this.state.openDetails}
                     onRequestClose={this.handleClose}
                 >
