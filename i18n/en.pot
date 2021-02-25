@@ -5,13 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-25T17:02:28.174Z\n"
-"PO-Revision-Date: 2021-02-25T17:02:28.174Z\n"
+"POT-Creation-Date: 2021-02-25T18:10:13.344Z\n"
+"PO-Revision-Date: 2021-02-25T18:10:13.344Z\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 
-msgid "Updating Organisation Units Tree..."
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."

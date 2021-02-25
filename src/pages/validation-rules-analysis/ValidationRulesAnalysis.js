@@ -224,12 +224,7 @@ class ValidationRulesAnalysis extends Page {
                         }}
                     >
                         <div className="row">
-                            <div
-                                className={classNames(
-                                    'col-md-6',
-                                    cssPageStyles.section
-                                )}
-                            >
+                            <div className="col-md-6">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
                                 </div>
@@ -237,12 +232,7 @@ class ValidationRulesAnalysis extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div
-                                className={classNames(
-                                    'col-md-6',
-                                    cssPageStyles.section
-                                )}
-                            >
+                            <div className="col-md-6">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}

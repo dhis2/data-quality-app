@@ -260,10 +260,7 @@ class FollowUpAnalysis extends Page {
                         <div className="row">
                             <div
                                 id="data-sets-container"
-                                className={classNames(
-                                    'col-md-4',
-                                    cssPageStyles.section
-                                )}
+                                className="col-md-4"
                             >
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Data Set')}
@@ -272,12 +269,7 @@ class FollowUpAnalysis extends Page {
                                     onChange={this.dataSetsOnChange}
                                 />
                             </div>
-                            <div
-                                className={classNames(
-                                    'col-md-4',
-                                    cssPageStyles.section
-                                )}
-                            >
+                            <div className="col-md-4">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
                                 </div>
@@ -285,12 +277,7 @@ class FollowUpAnalysis extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div
-                                className={classNames(
-                                    'col-md-4',
-                                    cssPageStyles.section
-                                )}
-                            >
+                            <div className="col-md-4">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
