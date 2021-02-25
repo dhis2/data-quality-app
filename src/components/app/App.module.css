@@ -1,23 +1,11 @@
 .container {
     display: flex;
+    min-height: 100%;
 }
 
 .contentArea {
+    flex: 1;
+    max-width: 1000px;
+    margin-left: 1em;
     padding: 0px 20px 20px 20px;
-}
-
-.leftBar {
-    width: 295px;
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    margin-top: 3rem;
-}
-
-.centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }

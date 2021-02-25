@@ -50,8 +50,8 @@ class App extends PureComponent {
     updateAppState = appState => {
         if (
             appState.currentSection &&
-            !appState.pageState &&
-            this.state.currentSection !== appState.currentSection
+                !appState.pageState &&
+                this.state.currentSection !== appState.currentSection
         ) {
             // clear page state because we are updating page
             this.setState({ ...appState, pageState: {}, showSnackbar: false })
@@ -71,7 +71,7 @@ class App extends PureComponent {
         )
 
         const hideSidebar =
-            this.state.pageState && this.state.pageState.showTable
+              this.state.pageState && this.state.pageState.showTable
 
         return (
             <div className={styles.container}>
@@ -82,10 +82,8 @@ class App extends PureComponent {
                         onChangeSection={noop}
                     />
                 )}
-                <div>
-                    <div className={styles.contentArea}>
-                        <AppRouter pageState={this.state.pageState} />
-                    </div>
+                <div className={styles.contentArea}>
+                    <AppRouter pageState={this.state.pageState} />
                 </div>
             </div>
         )
