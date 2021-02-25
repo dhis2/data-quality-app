@@ -268,9 +268,9 @@ class FollowUpAnalysis extends Page {
                                 </div>
                             </div>
                             <div className="col-sm-12 col-md-4">
-                                <div className={cssPageStyles.formLabel}>
+                                <h3 className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
-                                </div>
+                                </h3>
                                 <AvailableOrganisationUnitsTree
                                     onChange={this.organisationUnitOnChange}
                                 />

@@ -63,11 +63,13 @@
 }
 
 .formLabel {
+    margin-top: 0;
+    margin-bottom: 5px;
     font-family: Roboto;
     font-size: 14px;
+    font-weight: 500;
     text-align: left;
-    color: #757575;
-    margin-bottom: 5px;
+    color: var(--colors-grey600);
 }
 
 .checkboxWrapper {

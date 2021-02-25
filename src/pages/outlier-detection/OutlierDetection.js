@@ -449,9 +449,9 @@ class OutlierDetection extends Page {
                                 </div>
                             </div>
                             <div className="col-sm-12 col-md-4">
-                                <div className={cssPageStyles.formLabel}>
+                                <h3 className={cssPageStyles.formLabel}>
                                     {i18n.t('Organisation units')}
-                                </div>
+                                </h3>
                                 <AvailableOrganisationUnitsTree
                                     multiselect
                                     onChange={this.organisationUnitOnChange}
