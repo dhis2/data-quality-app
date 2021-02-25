@@ -22,36 +22,38 @@ class GridSection extends PureComponent {
 
     render() {
         return (
-            <Link className="link" to={this.props.section.path}>
+            <Link className={styles.link} to={this.props.section.path}>
                 <Card className={classNames('section', styles.gridElement)}>
-                    <div className={classNames('row', styles.gridTitleBar)}>
-                        <h2
+                    <div>
+                        <div className={classNames('row', styles.gridTitleBar)}>
+                            <h2
+                                className={classNames(
+                                    'section-title',
+                                    styles.gridTitleDescription
+                                )}
+                            >
+                                {this.props.section.info.label()}
+                            </h2>
+                            <FontIcon
+                                className={classNames(
+                                    'material-icons',
+                                    'icon',
+                                    styles.gridIcon
+                                )}
+                            >
+                                {this.props.section.info.icon}
+                            </FontIcon>
+                        </div>
+                        <p
                             className={classNames(
-                                'section-title',
-                                styles.gridTitleDescription
+                                'section-description',
+                                'row',
+                                styles.gridDescription
                             )}
                         >
-                            {this.props.section.info.label()}
-                        </h2>
-                        <FontIcon
-                            className={classNames(
-                                'material-icons',
-                                'icon',
-                                styles.gridIcon
-                            )}
-                        >
-                            {this.props.section.info.icon}
-                        </FontIcon>
+                            {this.props.section.info.description()}
+                        </p>
                     </div>
-                    <span
-                        className={classNames(
-                            'section-description',
-                            'row',
-                            styles.gridDescription
-                        )}
-                    >
-                        {this.props.section.info.description()}
-                    </span>
                     <span
                         className={classNames(
                             'section-action-text',

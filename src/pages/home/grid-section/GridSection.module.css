@@ -1,5 +1,17 @@
+.link {
+    display: block;
+    height: 100%;
+    text-decoration: none !important;
+}
+
 .gridElement {
+    display: flex !important;
+    flex-direction: column;
     padding: var(--spacers-dp24);
+}
+
+.gridElement > div {
+    flex: 1;
 }
 
 .gridTitleBar {
@@ -21,12 +33,12 @@
 }
 
 .gridDescription {
+    display: block;
+    /* min-height: 70px; */
+    margin: var(--spacers-dp12) 0;
     font-size: 14px;
     text-align: left;
     color: #757575;
-    margin-top: 42px;
-    margin-bottom: 35px;
-    display: block;
 }
 
 .gridActionText {
@@ -34,5 +46,5 @@
     font-size: 16px;
     font-weight: 600;
     text-align: left;
-    color: #2196f3;
+    color: var(--colors-blue700);
 }
