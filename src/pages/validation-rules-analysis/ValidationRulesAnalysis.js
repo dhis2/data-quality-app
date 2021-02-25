@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import classNames from 'classnames'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'

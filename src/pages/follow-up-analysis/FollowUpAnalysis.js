@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import classNames from 'classnames'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
@@ -258,10 +257,7 @@ class FollowUpAnalysis extends Page {
                         }}
                     >
                         <div className="row">
-                            <div
-                                id="data-sets-container"
-                                className="col-md-4"
-                            >
+                            <div id="data-sets-container" className="col-md-4">
                                 <div className={cssPageStyles.formLabel}>
                                     {i18n.t('Data Set')}
                                 </div>

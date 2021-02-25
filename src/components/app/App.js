@@ -1,5 +1,3 @@
-import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
-import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
@@ -50,8 +48,8 @@ class App extends PureComponent {
     updateAppState = appState => {
         if (
             appState.currentSection &&
-                !appState.pageState &&
-                this.state.currentSection !== appState.currentSection
+            !appState.pageState &&
+            this.state.currentSection !== appState.currentSection
         ) {
             // clear page state because we are updating page
             this.setState({ ...appState, pageState: {}, showSnackbar: false })
@@ -61,17 +59,15 @@ class App extends PureComponent {
     }
 
     render() {
-        const translatedSections = sections.map(section =>
-            ({
-                ...section,
-                icon: section.info.icon,
-                label: section.info.label(),
-                containerElement: <Link to={section.path} />,
-            })
-        )
+        const translatedSections = sections.map(section => ({
+            ...section,
+            icon: section.info.icon,
+            label: section.info.label(),
+            containerElement: <Link to={section.path} />,
+        }))
 
         const hideSidebar =
-              this.state.pageState && this.state.pageState.showTable
+            this.state.pageState && this.state.pageState.showTable
 
         return (
             <div className={styles.container}>
