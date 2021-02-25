@@ -93,10 +93,7 @@ class OutlierDetection extends Page {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                OutlierDetection.STATE_PROPERTIES.includes(property)
-            ) {
+            if (OutlierDetection.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })

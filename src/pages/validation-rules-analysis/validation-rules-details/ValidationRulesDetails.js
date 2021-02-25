@@ -15,10 +15,10 @@ class ValidationRulesDetails extends Page {
     static STATE_PROPERTIES = ['loading']
 
     static propTypes = {
-        validationRuleId: PropTypes.string.isRequired,
-        periodId: PropTypes.string.isRequired,
-        organisationUnitId: PropTypes.string.isRequired,
         attributeOptionComboId: PropTypes.string.isRequired,
+        organisationUnitId: PropTypes.string.isRequired,
+        periodId: PropTypes.string.isRequired,
+        validationRuleId: PropTypes.string.isRequired,
     }
 
     constructor() {

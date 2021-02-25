@@ -10,8 +10,8 @@ class AvailableOrganisationUnitsTree extends PureComponent {
     }
 
     static propTypes = {
-        onChange: PropTypes.func,
         multiselect: PropTypes.bool,
+        onChange: PropTypes.func,
     }
 
     static defaultProps = {

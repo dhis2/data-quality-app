@@ -56,10 +56,7 @@ class ValidationRulesAnalysis extends Page {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)
-            ) {
+            if (ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })

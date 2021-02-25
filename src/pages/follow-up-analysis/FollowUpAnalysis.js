@@ -57,10 +57,7 @@ class FollowUpAnalysis extends Page {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                FollowUpAnalysis.STATE_PROPERTIES.includes(property)
-            ) {
+            if (FollowUpAnalysis.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })

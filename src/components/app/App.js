@@ -15,8 +15,8 @@ class App extends PureComponent {
         currentSection: PropTypes.string,
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
-            type: PropTypes.string,
             message: PropTypes.string,
+            type: PropTypes.string,
         }),
         updateAppState: PropTypes.func,
     }

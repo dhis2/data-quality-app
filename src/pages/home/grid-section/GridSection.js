@@ -9,14 +9,14 @@ import styles from './GridSection.module.css'
 class GridSection extends PureComponent {
     static propTypes = {
         section: PropTypes.shape({
-            key: PropTypes.string,
-            path: PropTypes.string,
             info: PropTypes.shape({
-                label: PropTypes.func,
+                actionText: PropTypes.func,
                 description: PropTypes.func,
                 icon: PropTypes.string,
-                actionText: PropTypes.func,
+                label: PropTypes.func,
             }),
+            key: PropTypes.string,
+            path: PropTypes.string,
         }).isRequired,
     }
 

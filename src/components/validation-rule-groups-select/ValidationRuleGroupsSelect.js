@@ -12,8 +12,8 @@ export const ALL_VALIDATION_RULE_GROUPS_OPTION = {
 
 class ValidationRuleGroupsSelect extends PureComponent {
     static propTypes = {
-        style: PropTypes.object,
         onChange: PropTypes.func.isRequired,
+        style: PropTypes.object,
     }
 
     static defaultProps = {

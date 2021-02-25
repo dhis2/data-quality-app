@@ -26,9 +26,9 @@ import styles from './FollowUpAnalysisTable.module.css'
 class FollowUpAnalysisTable extends Component {
     static propTypes = {
         elements: PropTypes.array.isRequired,
+        loading: PropTypes.bool.isRequired,
         toggleCheckbox: PropTypes.func.isRequired,
         unfollow: PropTypes.func.isRequired,
-        loading: PropTypes.bool.isRequired,
     }
 
     static contextTypes = {
@@ -123,6 +123,7 @@ class FollowUpAnalysisTable extends Component {
 
         const commentDialogActions = [
             <FlatButton
+                key={'close'}
                 label={i18n.t('Close')}
                 primary
                 onClick={this.closeCommentDialog}

@@ -193,10 +193,10 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
 })
 
 OutlierAnalyisTable.propTypes = {
-    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
     csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
+    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
 }
 
 OutlierAnalyisTable.contextTypes = {

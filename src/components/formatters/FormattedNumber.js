@@ -15,14 +15,14 @@ const FormattedNumber = ({
 )
 
 FormattedNumber.defaultProps = {
-    minimumFractionDigits: 2,
     maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
 }
 
 FormattedNumber.propTypes = {
     value: PropTypes.number.isRequired,
-    minimumFractionDigits: PropTypes.number,
     maximumFractionDigits: PropTypes.number,
+    minimumFractionDigits: PropTypes.number,
 }
 
 export default FormattedNumber
