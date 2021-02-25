@@ -1,6 +1,7 @@
+import i18n from '@dhis2/d2-i18n'
+import { MultiSelect, MultiSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
-import styles from './AvailableDatasetsSelect.module.css'
 
 class AvailableDatasetsSelect extends PureComponent {
     static contextTypes = {
@@ -8,11 +9,8 @@ class AvailableDatasetsSelect extends PureComponent {
     }
 
     static propTypes = {
+        selected: PropTypes.array,
         onChange: PropTypes.func,
-    }
-
-    static defaultProps = {
-        onChange: null,
     }
 
     constructor() {
@@ -37,28 +35,27 @@ class AvailableDatasetsSelect extends PureComponent {
                     })
                 })
                 .catch(() => {
-                    this.manageError()
+                    // TODO: Show critical alert
                 })
         }
     }
 
     render() {
         return (
-            <select
-                multiple
-                className={styles.select}
+            <MultiSelect
+                filterable
+                noMatchText={i18n.t('No match found')}
                 onChange={this.props.onChange}
+                selected={this.props.selected}
             >
                 {(this.state.dataSets || []).map(item => (
-                    <option
+                    <MultiSelectOption
                         key={item.id}
                         value={item.id}
-                        className={styles.options}
-                    >
-                        {item.displayName}
-                    </option>
+                        label={item.displayName}
+                    />
                 ))}
-            </select>
+            </MultiSelect>
         )
     }
 }

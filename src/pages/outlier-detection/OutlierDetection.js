@@ -79,7 +79,6 @@ class OutlierDetection extends Page {
         this.startDateOnChange = this.startDateOnChange.bind(this)
         this.endDateOnChange = this.endDateOnChange.bind(this)
         this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
-        this.dataSetsOnChange = this.dataSetsOnChange.bind(this)
         this.thresholdOnChange = this.thresholdOnChange.bind(this)
         this.algorithmOnChange = this.algorithmOnChange.bind(this)
         this.dataStartDateOnChange = this.dataStartDateOnChange.bind(this)
@@ -237,13 +236,8 @@ class OutlierDetection extends Page {
         this.setState({ organisationUnitIds })
     }
 
-    dataSetsOnChange(event) {
-        const dataSetIds = []
-        const selectedOptions = event.target.selectedOptions
-        for (let i = 0; i < selectedOptions.length; i++) {
-            dataSetIds.push(selectedOptions[i].value)
-        }
-        this.setState({ dataSetIds })
+    dataSetsOnChange = ({ selected }) => {
+        this.setState({ dataSetIds: selected })
     }
 
     thresholdOnChange(event, index, value) {
@@ -438,17 +432,16 @@ class OutlierDetection extends Page {
                         }}
                     >
                         <div className="row">
-                            <div className="col-sm-12 col-md-4">
-                                <div>
-                                    <h3 className={cssPageStyles.formLabel}>
-                                        {i18n.t('Data set')}
-                                    </h3>
-                                    <AvailableDatasetsSelect
-                                        onChange={this.dataSetsOnChange}
-                                    />
-                                </div>
+                            <div className="col-sm-12 col-md-6 col-lg-4">
+                                <h3 className={cssPageStyles.formLabel}>
+                                    {i18n.t('Data set')}
+                                </h3>
+                                <AvailableDatasetsSelect
+                                    selected={this.state.dataSetIds}
+                                    onChange={this.dataSetsOnChange}
+                                />
                             </div>
-                            <div className="col-sm-12 col-md-4">
+                            <div className="col-sm-12 col-md-6 col-lg-4">
                                 <h3 className={cssPageStyles.formLabel}>
                                     {i18n.t('Organisation units')}
                                 </h3>
@@ -457,7 +450,7 @@ class OutlierDetection extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div className="col-sm-12 col-md-4">
+                            <div className="col-sm-12 col-md-6 col-lg-4">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}

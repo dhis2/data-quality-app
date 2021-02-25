@@ -47,7 +47,6 @@ class FollowUpAnalysis extends Page {
         this.startDateOnChange = this.startDateOnChange.bind(this)
         this.endDateOnChange = this.endDateOnChange.bind(this)
         this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
-        this.dataSetsOnChange = this.dataSetsOnChange.bind(this)
         this.toggleCheckbox = this.toggleCheckbox.bind(this)
         this.unfollow = this.unfollow.bind(this)
     }
@@ -135,13 +134,8 @@ class FollowUpAnalysis extends Page {
         this.setState({ organisationUnitId })
     }
 
-    dataSetsOnChange(event) {
-        const dataSetIds = []
-        const selectedOptions = event.target.selectedOptions
-        for (let i = 0; i < selectedOptions.length; i++) {
-            dataSetIds.push(selectedOptions[i].value)
-        }
-        this.setState({ dataSetIds })
+    dataSetsOnChange = ({ selected }) => {
+        this.setState({ dataSetIds: selected })
     }
 
     toggleCheckbox(element) {
@@ -257,17 +251,16 @@ class FollowUpAnalysis extends Page {
                         }}
                     >
                         <div className="row">
-                            <div className="col-sm-12 col-md-4">
-                                <div>
-                                    <h3 className={cssPageStyles.formLabel}>
-                                        {i18n.t('Data Set')}
-                                    </h3>
-                                    <AvailableDatasetsSelect
-                                        onChange={this.dataSetsOnChange}
-                                    />
-                                </div>
+                            <div className="col-sm-12 col-md-6 col-lg-4">
+                                <h3 className={cssPageStyles.formLabel}>
+                                    {i18n.t('Data Set')}
+                                </h3>
+                                <AvailableDatasetsSelect
+                                    selected={this.state.dataSetIds}
+                                    onChange={this.dataSetsOnChange}
+                                />
                             </div>
-                            <div className="col-sm-12 col-md-4">
+                            <div className="col-sm-12 col-md-6 col-lg-4">
                                 <h3 className={cssPageStyles.formLabel}>
                                     {i18n.t('Parent organisation unit')}
                                 </h3>
@@ -275,7 +268,7 @@ class FollowUpAnalysis extends Page {
                                     onChange={this.organisationUnitOnChange}
                                 />
                             </div>
-                            <div className="col-sm-12 col-md-4">
+                            <div className="col-sm-12 col-md-6 col-lg-4">
                                 <DatePicker
                                     id="start-date"
                                     textFieldStyle={jsPageStyles.inputForm}
