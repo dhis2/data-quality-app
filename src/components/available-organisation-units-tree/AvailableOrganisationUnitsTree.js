@@ -1,9 +1,10 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { OrganisationUnitTree } from '@dhis2/ui'
-import { useDataQuery } from '@dhis2/app-runtime'
 import { CircularLoader, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import styles from './AvailableOrganisationUnitsTree.module.css'
 
 const query = {
     roots: {
@@ -18,7 +19,10 @@ const query = {
 
 const noop = () => {}
 
-const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange = noop }) => {
+const AvailableOrganisationUnitsTree = ({
+    multiselect = false,
+    onChange = noop,
+}) => {
     const { loading, data, error } = useDataQuery(query)
     const [selected, setSelected] = useState([])
 
@@ -38,11 +42,7 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange = noop }
 
     if (data.roots.organisationUnits.length === 0) {
         return (
-            <p>
-                {i18n.t(
-                    'You do not have access to any organisation units.'
-                )}
-            </p>
+            <p>{i18n.t('You do not have access to any organisation units.')}</p>
         )
     }
 
@@ -58,12 +58,11 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange = noop }
 
     const handleOrgUnitClickMulti = ({ path }) => {
         const newSelected = selected.includes(path)
-              ? selected.filter(selectedPath => selectedPath !== path)
-              : [...selected, path]
+            ? selected.filter(selectedPath => selectedPath !== path)
+            : [...selected, path]
         setSelected(newSelected)
 
-        const getOrgUnitIdFromPath = (path) =>
-              path.split('/').pop()
+        const getOrgUnitIdFromPath = path => path.split('/').pop()
 
         if (onChange) {
             // TODO: Store org unit id in 'selected' instead
@@ -71,17 +70,19 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange = noop }
         }
     }
 
-    const handleChange = true ||multiselect
-          ? handleOrgUnitClickMulti
-          : handleOrgUnitClickSingle
+    const handleChange = multiselect
+        ? handleOrgUnitClickMulti
+        : handleOrgUnitClickSingle
 
     return (
-        <OrganisationUnitTree
-            selected={selected}
-            roots={data.roots.organisationUnits.map(ou => ou.id)}
-            singleSelection={false && !multiselect}
-            onChange={handleChange}
-        />
+        <div className={styles.wrapper}>
+            <OrganisationUnitTree
+                selected={selected}
+                roots={data.roots.organisationUnits.map(ou => ou.id)}
+                singleSelection={!multiselect}
+                onChange={handleChange}
+            />
+        </div>
     )
 }
 

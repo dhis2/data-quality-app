@@ -1,4 +1,5 @@
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { CssVariables } from '@dhis2/ui'
 import { MuiThemeProvider } from 'material-ui/styles'
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
@@ -16,6 +17,7 @@ const AppWrapper = () => {
 
     return (
         <MuiThemeProvider muiTheme={appTheme}>
+            <CssVariables spacers colors />
             <HashRouter>
                 <App d2={d2} />
             </HashRouter>

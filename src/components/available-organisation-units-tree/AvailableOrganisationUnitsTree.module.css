@@ -1,0 +1,4 @@
+.wrapper {
+    max-height: var(--spacers-dp512);
+    overflow-y: auto;
+}
