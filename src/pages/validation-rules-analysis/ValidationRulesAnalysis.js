@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
+import { Button, Checkbox } from '@dhis2/ui'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
 import DatePicker from 'material-ui/DatePicker'
-import { Button, Checkbox } from '@dhis2/ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
@@ -163,7 +163,7 @@ class ValidationRulesAnalysis extends Page {
         this.setState({ validationRuleGroupId: value })
     }
 
-    updateSendNotifications = ({ checked } ) => {
+    updateSendNotifications = ({ checked }) => {
         this.setState({ notification: checked })
     }
 

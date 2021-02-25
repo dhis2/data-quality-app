@@ -17,10 +17,7 @@ const query = {
     },
 }
 
-const AvailableOrganisationUnitsTree = ({
-    multiselect = false,
-    onChange
-}) => {
+const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     const { loading, data, error } = useDataQuery(query)
     const [selected, setSelected] = useState([])
 

@@ -1,8 +1,8 @@
+import { Card } from '@dhis2/ui'
 import classNames from 'classnames'
 import FontIcon from 'material-ui/FontIcon'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
-import { Card } from '@dhis2/ui'
 import { Link } from 'react-router-dom'
 import styles from './GridSection.module.css'
 

@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import { Card, CardText } from 'material-ui/Card'
 import DatePicker from 'material-ui/DatePicker'
-import { Button } from '@dhis2/ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
@@ -88,17 +88,17 @@ class FollowUpAnalysis extends Page {
                         )
 
                         const feedback =
-                              elements && elements.length > 0
-                              ? {
-                                  showSnackbar: false,
-                              }
-                              : {
-                                  showSnackbar: true,
-                                  snackbarConf: {
-                                      type: SUCCESS,
-                                      message: i18n.t('No values found'),
-                                  },
-                              }
+                            elements && elements.length > 0
+                                ? {
+                                      showSnackbar: false,
+                                  }
+                                : {
+                                      showSnackbar: true,
+                                      snackbarConf: {
+                                          type: SUCCESS,
+                                          message: i18n.t('No values found'),
+                                      },
+                                  }
 
                         this.context.updateAppState({
                             ...feedback,
@@ -208,10 +208,10 @@ class FollowUpAnalysis extends Page {
     isFormValid() {
         return (
             this.state.startDate &&
-                this.state.endDate &&
-                this.state.organisationUnitId &&
-                this.state.dataSetIds &&
-                this.state.dataSetIds.length > 0
+            this.state.endDate &&
+            this.state.organisationUnitId &&
+            this.state.dataSetIds &&
+            this.state.dataSetIds.length > 0
         )
     }
 
@@ -222,8 +222,8 @@ class FollowUpAnalysis extends Page {
     showAlertBar() {
         return (
             this.state.showTable &&
-                this.state.elements &&
-                this.state.elements.length >= apiConf.results.analysis.limit
+            this.state.elements &&
+            this.state.elements.length >= apiConf.results.analysis.limit
         )
     }
 
