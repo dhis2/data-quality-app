@@ -42,9 +42,17 @@ const OutlierAnalyisTable = ({
 
         return (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.displayName}</TableRowColumn>
+                <TableRowColumn>
+                    <span title={element.displayName}>
+                        {element.displayName}
+                    </span>
+                </TableRowColumn>
                 <TableRowColumn>{element.pe}</TableRowColumn>
-                <TableRowColumn>{element.ouName}</TableRowColumn>
+                <TableRowColumn>
+                    <span title={element.ouName}>
+                        {element.ouName}
+                    </span>
+                </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber
                         value={element.value}
