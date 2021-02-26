@@ -7,7 +7,6 @@
 .contentArea {
     border-left: 1px solid var(--colors-grey400);
     flex: 1;
-    max-width: 1000px;
     padding-left: 1em;
     padding: 0px 20px 20px 20px;
 }
