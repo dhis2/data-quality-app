@@ -1,39 +1,31 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
+import { Card } from '@dhis2/ui'
 import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
-import { Card, CardText } from 'material-ui/Card'
-import DatePicker from 'material-ui/DatePicker'
-import MenuItem from 'material-ui/MenuItem'
-import SelectField from 'material-ui/SelectField'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
-import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
 import PageHelper from '../../components/page-helper/PageHelper'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
-import jsPageStyles from '../PageStyles'
 import { getDocsKeyForSection } from '../sections.conf'
+import {
+    Z_SCORE,
+    DEFAULT_THRESHOLD,
+    DEFAULT_ALGORITHM,
+    DEFAULT_MAX_RESULTS,
+    DEFAULT_SORT_BY,
+} from './constants'
+import Form from './Form'
 import styles from './OutlierDetection.module.css'
-
-export const Z_SCORE = 'Z_SCORE'
-export const DEFAULT_THRESHOLD = 3.0
-export const DEFAULT_ALGORITHM = Z_SCORE
-export const DEFAULT_MAX_RESULTS = 500
-export const DEFAULT_SORT_BY = Z_SCORE
 
 const threeMonthsAgo = () => {
     const date = new Date()
     date.setMonth(date.getMonth() - 3)
     return date
 }
-
-const getMarkedForFollowUpSuccesMessage = marked =>
-    marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -72,19 +64,6 @@ class OutlierDetection extends Page {
             maxResults: DEFAULT_MAX_RESULTS,
             sortBy: DEFAULT_SORT_BY,
         }
-
-        this.start = this.start.bind(this)
-        this.back = this.back.bind(this)
-
-        this.startDateOnChange = this.startDateOnChange.bind(this)
-        this.endDateOnChange = this.endDateOnChange.bind(this)
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
-        this.thresholdOnChange = this.thresholdOnChange.bind(this)
-        this.algorithmOnChange = this.algorithmOnChange.bind(this)
-        this.dataStartDateOnChange = this.dataStartDateOnChange.bind(this)
-        this.dataEndDateOnChange = this.dataEndDateOnChange.bind(this)
-        this.maxResultsOnChange = this.maxResultsOnChange.bind(this)
-        this.sortByOnChange = this.sortByOnChange.bind(this)
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -99,53 +78,34 @@ class OutlierDetection extends Page {
         this.setState(nextState)
     }
 
-    start() {
+    start = async () => {
         const api = this.context.d2.Api.getApi()
-        if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
-            })
+        this.context.updateAppState({
+            pageState: {
+                loading: true,
+            },
+        })
 
-            const endpoint = apiConf.endpoints.outlierDetection
-            const csvQueryStr = this.createQueryString()
+        const endpoint = apiConf.endpoints.outlierDetection
+        const csvQueryStr = this.createQueryString()
 
-            api.get(`${endpoint}?${csvQueryStr}`)
-                .then(response => {
-                    if (this.isPageMounted()) {
-                        const elements = response.outlierValues.map(
-                            OutlierAnalyisTable.convertElementFromApiResponse
-                        )
-
-                        const feedback =
-                            elements && elements.length > 0
-                                ? {
-                                      showSnackbar: false,
-                                  }
-                                : {
-                                      showSnackbar: true,
-                                      snackbarConf: {
-                                          type: SUCCESS,
-                                          message: i18n.t('No values found'),
-                                      },
-                                  }
-
-                        this.context.updateAppState({
-                            ...feedback,
-                            pageState: {
-                                loading: false,
-                                elements,
-                                showTable: elements && elements.length > 0,
-                                csvQueryStr,
-                            },
-                        })
-                    }
-                })
-                .catch(error => {
-                    this.manageError(error)
-                })
+        const response = await api.get(`${endpoint}?${csvQueryStr}`)
+        if (!this.isPageMounted()) {
+            return
         }
+
+        const elements = response.outlierValues.map(
+            OutlierAnalyisTable.convertElementFromApiResponse
+        )
+        this.context.updateAppState({
+            pageState: {
+                loading: false,
+                elements,
+                showTable: elements && elements.length > 0,
+                csvQueryStr,
+            },
+        })
+        return elements.length === 0 ? 'NO_VALUES_FOUND' : null
     }
 
     createQueryString() {
@@ -183,34 +143,34 @@ class OutlierDetection extends Page {
         return querySegments.join('&')
     }
 
-    back() {
+    back = () => {
         this.setState({ showTable: false, csvQueryStr: null })
         this.context.updateAppState({
             pageState: { showTable: false },
         })
     }
 
-    startDateOnChange(event, date) {
+    handleStartDateChange = (event, date) => {
         this.setState({ startDate: new Date(date) })
     }
 
-    endDateOnChange(event, date) {
+    handleEndDateOnChange = (event, date) => {
         this.setState({ endDate: new Date(date) })
     }
 
-    dataStartDateOnChange(event, date) {
+    handleDataStartDateChange = (event, date) => {
         this.setState({ dataStartDate: new Date(date) })
     }
 
-    dataEndDateOnChange(event, date) {
+    handleDataEndDateChange = (event, date) => {
         this.setState({ dataEndDate: new Date(date) })
     }
 
-    maxResultsOnChange(event, index, value) {
+    handleMaxResultsChange = (event, index, value) => {
         this.setState({ maxResults: value })
     }
 
-    sortByOnChange(event, index, value) {
+    handleSortByChange = (event, index, value) => {
         this.setState({ sortBy: value })
     }
 
@@ -232,29 +192,27 @@ class OutlierDetection extends Page {
         }
     }
 
-    organisationUnitOnChange(organisationUnitIds) {
+    handleOrganisationUnitChange = organisationUnitIds => {
         this.setState({ organisationUnitIds })
     }
 
-    dataSetsOnChange = ({ selected }) => {
+    handleDataSetsChange = ({ selected }) => {
         this.setState({ dataSetIds: selected })
     }
 
-    thresholdOnChange(event, index, value) {
+    handleThresholdChange = (event, index, value) => {
         this.setState({ threshold: value })
     }
 
-    algorithmOnChange(event, index, value) {
+    handleAlgorithmChange = (event, index, value) => {
         this.setState({ algorithm: value })
     }
 
-    toggleCheckbox = element => {
-        const api = this.context.d2.Api.getApi()
+    toggleCheckbox = async element => {
         const currentElementIndex = this.state.elements.findIndex(
             ({ key }) => key === element.key
         )
         const currentElement = this.state.elements[currentElementIndex]
-
         if (!currentElement) {
             return
         }
@@ -269,143 +227,66 @@ class OutlierDetection extends Page {
         const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
             currentElement
         )
-        api.update(apiConf.endpoints.markDataValue, data)
-            .then(() => {
-                if (this.isPageMounted()) {
-                    const updatedElement = {
-                        ...currentElement,
-                        marked: !currentElement.marked,
-                    }
-                    const elements = [
-                        ...this.state.elements.slice(0, currentElementIndex),
-                        updatedElement,
-                        ...this.state.elements.slice(currentElementIndex + 1),
-                    ]
+        const api = this.context.d2.Api.getApi()
+        try {
+            await api.update(apiConf.endpoints.markDataValue, data)
+            if (!this.isPageMounted()) {
+                return
+            }
 
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: getMarkedForFollowUpSuccesMessage(
-                                updatedElement.marked
-                            ),
-                        },
-                        pageState: {
-                            elements,
-                            loading: false,
-                            showTable: true,
-                        },
-                    })
-                }
+            const updatedElement = {
+                ...currentElement,
+                marked: !currentElement.marked,
+            }
+            const elements = [
+                ...this.state.elements.slice(0, currentElementIndex),
+                updatedElement,
+                ...this.state.elements.slice(currentElementIndex + 1),
+            ]
+            // TODO: Replace with `useAlert`
+            const getMarkedForFollowUpSuccessMessage = marked =>
+                marked
+                    ? i18n.t('Marked for follow-up')
+                    : i18n.t('Unmarked for follow-up')
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    type: SUCCESS,
+                    message: getMarkedForFollowUpSuccessMessage(
+                        updatedElement.marked
+                    ),
+                },
+                pageState: {
+                    elements,
+                    loading: false,
+                    showTable: true,
+                },
             })
-            .catch(error => {
-                this.manageError(error)
-            })
+        } catch (error) {
+            this.manageError(error)
+        }
     }
 
-    isFormValid() {
-        return (
-            this.state.startDate &&
-            this.state.endDate &&
-            this.state.organisationUnitIds &&
-            this.state.organisationUnitIds.length > 0 &&
-            this.state.threshold &&
-            this.state.dataSetIds &&
-            this.state.dataSetIds.length > 0
-        )
-    }
+    isFormValid = () =>
+        this.state.startDate &&
+        this.state.endDate &&
+        this.state.organisationUnitIds &&
+        this.state.organisationUnitIds.length > 0 &&
+        this.state.threshold &&
+        this.state.dataSetIds &&
+        this.state.dataSetIds.length > 0
 
-    isActionDisabled() {
-        return !this.isFormValid() || this.state.loading
-    }
+    isActionDisabled = () => !this.isFormValid() || this.state.loading
 
-    showAlertBar() {
-        return (
-            this.state.showTable &&
-            this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit
-        )
-    }
-
-    renderThresholdField() {
-        return (
-            <SelectField
-                id="threshold"
-                style={jsPageStyles.inputForm}
-                floatingLabelText={i18n.t('Threshold')}
-                onChange={this.thresholdOnChange}
-                value={this.state.threshold}
-            >
-                <MenuItem value={1.0} primaryText="1.0" />
-                <MenuItem value={1.5} primaryText="1.5" />
-                <MenuItem value={2.0} primaryText="2.0" />
-                <MenuItem value={2.5} primaryText="2.5" />
-                <MenuItem value={3} primaryText="3.0" />
-                <MenuItem value={3.5} primaryText="3.5" />
-                <MenuItem value={4} primaryText="4.0" />
-                <MenuItem value={4.5} primaryText="4.5" />
-                <MenuItem value={5} primaryText="5.0" />
-            </SelectField>
-        )
-    }
-
-    renderZScoreFields() {
-        const { showAdvancedZScoreFields } = this.state
-        const buttonLabel = showAdvancedZScoreFields
-            ? i18n.t('Hide advanced options')
-            : i18n.t('Show advanced options')
-
-        return (
-            <>
-                <Button
-                    small
-                    secondary
-                    className={styles.toggleBtn}
-                    onClick={this.toggleShowAdvancedZScoreFields}
-                >
-                    {buttonLabel}
-                </Button>
-                {showAdvancedZScoreFields && (
-                    <>
-                        <DatePicker
-                            id="data-start-date"
-                            textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data start date')}
-                            onChange={this.dataStartDateOnChange}
-                            maxDate={this.state.dataEndDate}
-                            value={this.state.dataStartDate}
-                        />
-                        <DatePicker
-                            id="data-end-date"
-                            textFieldStyle={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Data end date')}
-                            onChange={this.dataEndDateOnChange}
-                            minDate={this.state.dataStartDate}
-                            value={this.state.dataEndDate}
-                        />
-                        <SelectField
-                            id="sort-by"
-                            style={jsPageStyles.inputForm}
-                            floatingLabelText={i18n.t('Sort by')}
-                            onChange={this.sortByOnChange}
-                            value={this.state.sortBy}
-                        >
-                            <MenuItem value={Z_SCORE} primaryText="Z-score" />
-                            <MenuItem
-                                value="MEAN_ABS_DEV"
-                                primaryText="Absolute Deviation from Mean"
-                            />
-                        </SelectField>
-                    </>
-                )}
-            </>
-        )
-    }
+    showAlertBar = () =>
+        this.state.showTable &&
+        this.state.elements &&
+        this.state.elements.length >= apiConf.results.analysis.limit
 
     render() {
         return (
             <div>
-                <h1 className={cssPageStyles.pageHeader}>
+                <header className={cssPageStyles.pageHeader}>
                     <IconButton
                         onClick={this.back}
                         style={{
@@ -416,111 +297,58 @@ class OutlierDetection extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t('Outlier Detection')}
+                    <h1>{i18n.t('Outlier Detection')}</h1>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
                             this.props.sectionKey
                         )}
                     />
-                </h1>
+                </header>
                 <AlertBar show={this.showAlertBar()} />
-                <Card>
-                    {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
-                    <CardText
-                        style={{
-                            display: !this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
-                        <div className="row">
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <h3 className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data set')}
-                                </h3>
-                                <AvailableDatasetsSelect
-                                    selected={this.state.dataSetIds}
-                                    onChange={this.dataSetsOnChange}
-                                />
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <h3 className={cssPageStyles.formLabel}>
-                                    {i18n.t('Organisation units')}
-                                </h3>
-                                <AvailableOrganisationUnitsTree
-                                    multiselect
-                                    onChange={this.organisationUnitOnChange}
-                                />
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <DatePicker
-                                    id="start-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Start date')}
-                                    onChange={this.startDateOnChange}
-                                    defaultDate={new Date()}
-                                    maxDate={this.state.endDate}
-                                    value={this.state.startDate}
-                                />
-                                <DatePicker
-                                    id="end-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('End date')}
-                                    onChange={this.endDateOnChange}
-                                    defaultDate={new Date()}
-                                    minDate={this.state.startDate}
-                                    value={this.state.endDate}
-                                />
-                                <SelectField
-                                    id="algorithm"
-                                    style={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Algorithm')}
-                                    onChange={this.algorithmOnChange}
-                                    value={this.state.algorithm}
-                                >
-                                    <MenuItem
-                                        value={Z_SCORE}
-                                        primaryText="Z-score"
-                                    />
-                                    <MenuItem
-                                        value="MIN_MAX"
-                                        primaryText="Min-max values"
-                                    />
-                                </SelectField>
-                                {this.state.algorithm === Z_SCORE &&
-                                    this.renderThresholdField()}
-                                <SelectField
-                                    id="max-results"
-                                    style={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Max results')}
-                                    onChange={this.maxResultsOnChange}
-                                    value={this.state.maxResults}
-                                >
-                                    <MenuItem value={100} primaryText="100" />
-                                    <MenuItem value={200} primaryText="200" />
-                                    <MenuItem value={500} primaryText="500" />
-                                </SelectField>
-                                {this.state.algorithm === Z_SCORE &&
-                                    this.renderZScoreFields()}
-                            </div>
-                        </div>
-                        <Button
-                            primary
-                            className={cssPageStyles.mainButton}
-                            onClick={this.start}
-                            disabled={this.isActionDisabled()}
-                        >
-                            {i18n.t('Start')}
-                        </Button>
-                    </CardText>
-                    {/* TABLE */}
+                <Card className={styles.card}>
+                    {/* FORM: hidden to avoid not needed api requests when going back from table */}
+                    {!this.state.showTable && (
+                        <Form
+                            onSubmit={this.start}
+                            submitDisabled={this.isActionDisabled()}
+                            startDate={this.state.startDate}
+                            endDate={this.state.endDate}
+                            algorithm={this.state.algorithm}
+                            showAdvancedZScoreFields={
+                                this.state.showAdvancedZScoreFields
+                            }
+                            onToggleAdvancedZScoreFields={
+                                this.toggleShowAdvancedZScoreFields
+                            }
+                            onAlgorithmChange={this.handleAlgorithmChange}
+                            threshold={this.state.threshold}
+                            onThresholdChange={this.handleThresholdChange}
+                            sortBy={this.state.sortBy}
+                            onSortByChange={this.handleSortByChange}
+                            dataStartDate={this.state.dataStartDate}
+                            onDataStartDateChange={
+                                this.handleDataStartDateChange
+                            }
+                            onDataEndDateChange={this.handleDataEndDateChange}
+                            dataEndDate={this.state.dataEndDate}
+                            dataSetIds={this.state.dataSetIds}
+                            onDataSetsOnChange={this.handleDataSetsChange}
+                            onOrganisationUnitChange={
+                                this.handleOrganisationUnitChange
+                            }
+                            maxResults={this.state.maxResults}
+                            onMaxResultsChange={this.handleMaxResultsChange}
+                            onStartDateChange={this.handleStartDateChange}
+                            onEndDateChange={this.handleEndDateChange}
+                        />
+                    )}
                     {this.state.showTable && this.state.csvQueryStr && (
-                        <CardText id="results-table">
-                            <OutlierAnalyisTable
-                                algorithm={this.state.algorithm}
-                                csvQueryStr={this.state.csvQueryStr}
-                                elements={this.state.elements}
-                                toggleCheckbox={this.toggleCheckbox}
-                            />
-                        </CardText>
+                        <OutlierAnalyisTable
+                            algorithm={this.state.algorithm}
+                            csvQueryStr={this.state.csvQueryStr}
+                            elements={this.state.elements}
+                            toggleCheckbox={this.toggleCheckbox}
+                        />
                     )}
                 </Card>
             </div>
