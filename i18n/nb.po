@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "Du har ikke tilgang til noen organisasjonsenheter."
 
 msgid "DOWNLOAD AS PDF"
 msgstr "LAST NED SOM PDF"
@@ -53,13 +53,13 @@ msgid "Z-Score"
 msgstr ""
 
 msgid "Deviation"
-msgstr ""
+msgstr "Avvik"
 
 msgid "Std Dev"
 msgstr "Standardavvik"
 
 msgid "Mean"
-msgstr ""
+msgstr "Gjennomsnitt"
 
 msgid "Min"
 msgstr "Min"
@@ -119,7 +119,7 @@ msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Threshold"
-msgstr ""
+msgstr "Terskel"
 
 msgid "Hide advanced options"
 msgstr "Skjul avanserte alternativer"
@@ -152,10 +152,10 @@ msgid "End date"
 msgstr "Sluttdato"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritme"
 
 msgid "Max results"
-msgstr ""
+msgstr "Maks resultater"
 
 msgid "Start"
 msgstr "Start"
@@ -205,10 +205,10 @@ msgid "validate"
 msgstr "Valider"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Attributtalternativkombinasjon"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Attributtalt. kombinasjon"
 
 msgid "Importance"
 msgstr "Viktighet"
