@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -7,7 +8,7 @@ const FormattedNumber = ({
     maximumFractionDigits,
 }) => (
     <span>
-        {new Intl.NumberFormat(sessionStorage.getItem('uiLocale'), {
+        {new Intl.NumberFormat(i18n.language, {
             minimumFractionDigits,
             maximumFractionDigits,
         }).format(value)}
