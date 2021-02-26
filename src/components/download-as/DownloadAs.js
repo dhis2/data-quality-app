@@ -38,18 +38,18 @@ class DownloadAs extends PureComponent {
         return (
             <div className={styles.downloadAs}>
                 {fileTypes.includes('pdf') && (
-                    <a className="export-pdf-action" href={hrefs.pdf} download>
-                        {i18n.t('DOWNLOAD AS PDF')}
+                    <a href={hrefs.pdf} download>
+                        {i18n.t('Download as PDF')}
                     </a>
                 )}
                 {fileTypes.includes('xls') && (
-                    <a className="export-xls-action" href={hrefs.xls} download>
-                        {i18n.t('DOWNLOAD AS XLS')}
+                    <a href={hrefs.xls} download>
+                        {i18n.t('Download as XLS')}
                     </a>
                 )}
                 {fileTypes.includes('csv') && (
-                    <a className="export-csv-action" href={hrefs.csv} download>
-                        {i18n.t('DOWNLOAD AS CSV')}
+                    <a href={hrefs.csv} download>
+                        {i18n.t('Download as CSV')}
                     </a>
                 )}
             </div>

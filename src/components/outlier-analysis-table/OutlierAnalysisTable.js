@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../components/download-as/DownloadAs'
 import FormattedNumber from '../../components/formatters/FormattedNumber'
+import { Z_SCORE } from '../../pages/outlier-detection/constants'
 import cssPageStyles from '../../pages/Page.module.css'
 import jsPageStyles from '../../pages/PageStyles'
 import { apiConf } from '../../server.conf'
@@ -24,7 +25,7 @@ const OutlierAnalyisTable = ({
     toggleCheckbox,
     algorithm,
 }) => {
-    const isZScoreAlgorithm = algorithm === 'Z_SCORE'
+    const isZScoreAlgorithm = algorithm === Z_SCORE
 
     const downloadLink = (
         <DownloadAs
@@ -49,9 +50,7 @@ const OutlierAnalyisTable = ({
                 </TableRowColumn>
                 <TableRowColumn>{element.pe}</TableRowColumn>
                 <TableRowColumn>
-                    <span title={element.ouName}>
-                        {element.ouName}
-                    </span>
+                    <span title={element.ouName}>{element.ouName}</span>
                 </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber
@@ -204,7 +203,7 @@ OutlierAnalyisTable.propTypes = {
     csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
-    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
+    algorithm: PropTypes.oneOf([Z_SCORE, 'MIN_MAX']),
 }
 
 OutlierAnalyisTable.contextTypes = {

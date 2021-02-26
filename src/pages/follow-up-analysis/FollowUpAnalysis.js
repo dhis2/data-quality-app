@@ -224,7 +224,7 @@ class FollowUpAnalysis extends Page {
     render() {
         return (
             <div>
-                <h1 className={cssPageStyles.pageHeader}>
+                <header className={cssPageStyles.pageHeader}>
                     <IconButton
                         onClick={this.back}
                         style={{
@@ -235,13 +235,13 @@ class FollowUpAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    <span>{i18n.t('Follow-Up Analysis')}</span>
+                    <h1>{i18n.t('Follow-Up Analysis')}</h1>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
                             this.props.sectionKey
                         )}
                     />
-                </h1>
+                </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
                     {/* FORM: hidden using style to avoid not needed api requests when going back from table */}

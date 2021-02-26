@@ -21,12 +21,6 @@ import {
 import Form from './Form'
 import styles from './OutlierDetection.module.css'
 
-const threeMonthsAgo = () => {
-    const date = new Date()
-    date.setMonth(date.getMonth() - 3)
-    return date
-}
-
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
         'showTable',
@@ -47,6 +41,12 @@ class OutlierDetection extends Page {
 
     constructor() {
         super()
+
+        const threeMonthsAgo = () => {
+            const date = new Date()
+            date.setMonth(date.getMonth() - 3)
+            return date
+        }
 
         this.state = {
             showTable: false,
@@ -79,16 +79,14 @@ class OutlierDetection extends Page {
     }
 
     start = async () => {
-        const api = this.context.d2.Api.getApi()
         this.context.updateAppState({
             pageState: {
                 loading: true,
             },
         })
-
         const endpoint = apiConf.endpoints.outlierDetection
         const csvQueryStr = this.createQueryString()
-
+        const api = this.context.d2.Api.getApi()
         const response = await api.get(`${endpoint}?${csvQueryStr}`)
         if (!this.isPageMounted()) {
             return
@@ -176,7 +174,6 @@ class OutlierDetection extends Page {
 
     toggleShowAdvancedZScoreFields = () => {
         const shouldShow = !this.state.showAdvancedZScoreFields
-
         if (shouldShow) {
             this.setState({
                 showAdvancedZScoreFields: true,

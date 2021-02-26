@@ -194,7 +194,7 @@ class ValidationRulesAnalysis extends Page {
     render() {
         return (
             <div>
-                <h1 className={cssPageStyles.pageHeader}>
+                <header className={cssPageStyles.pageHeader}>
                     <IconButton
                         onClick={this.back}
                         style={{
@@ -205,13 +205,13 @@ class ValidationRulesAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t('Validation Rule Analysis')}
+                    <h1>{i18n.t('Validation Rule Analysis')}</h1>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
                             this.props.sectionKey
                         )}
                     />
-                </h1>
+                </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card>
                     <CardText
