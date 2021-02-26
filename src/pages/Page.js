@@ -1,5 +1,3 @@
-import i18n from '@dhis2/d2-i18n'
-import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
 
@@ -34,23 +32,7 @@ class Page extends Component {
     }
 
     manageError(error) {
-        if (this.isPageMounted()) {
-            const messageError =
-                error && error.message
-                    ? error.message
-                    : i18n.t('An unexpected error happened during analysis')
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: ERROR,
-                    message: messageError,
-                },
-                pageState: {
-                    loading: false,
-                },
-            })
-        }
+        console.error(error)
     }
 }
 

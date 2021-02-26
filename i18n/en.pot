@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-25T22:23:04.643Z\n"
-"PO-Revision-Date: 2021-02-25T22:23:04.643Z\n"
+"POT-Creation-Date: 2021-02-26T23:36:40.716Z\n"
+"PO-Revision-Date: 2021-02-26T23:36:40.716Z\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -20,13 +20,13 @@ msgstr ""
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
 msgstr ""
 
 msgid "Data Element"
@@ -65,9 +65,6 @@ msgstr ""
 msgid "Validation Rule Group"
 msgstr ""
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
-
 msgid "No values found"
 msgstr ""
 
@@ -104,10 +101,10 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Unmarked for follow-up"
+msgid "Start"
 msgstr ""
 
 msgid "Threshold"
@@ -128,9 +125,6 @@ msgstr ""
 msgid "Sort by"
 msgstr ""
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr ""
 
@@ -149,7 +143,13 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
+msgid "Outlier Detection"
 msgstr ""
 
 msgid "Validation Rule Analysis"

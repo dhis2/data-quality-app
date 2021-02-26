@@ -13,11 +13,6 @@ class App extends PureComponent {
     static childContextTypes = {
         d2: PropTypes.object,
         currentSection: PropTypes.string,
-        showSnackbar: PropTypes.bool,
-        snackbarConf: PropTypes.shape({
-            message: PropTypes.string,
-            type: PropTypes.string,
-        }),
         updateAppState: PropTypes.func,
     }
 
@@ -26,11 +21,6 @@ class App extends PureComponent {
 
         this.state = {
             currentSection: '',
-            showSnackbar: false,
-            snackbarConf: {
-                type: '',
-                message: '',
-            },
             pageState: {},
         }
     }
@@ -38,8 +28,6 @@ class App extends PureComponent {
     getChildContext() {
         return {
             d2: this.props.d2,
-            showSnackbar: this.state.showSnackbar,
-            snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
             updateAppState: this.updateAppState,
         }
@@ -52,7 +40,7 @@ class App extends PureComponent {
             this.state.currentSection !== appState.currentSection
         ) {
             // clear page state because we are updating page
-            this.setState({ ...appState, pageState: {}, showSnackbar: false })
+            this.setState({ ...appState, pageState: {} })
         } else {
             this.setState(appState)
         }
