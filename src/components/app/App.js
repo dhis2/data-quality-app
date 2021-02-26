@@ -66,12 +66,11 @@ class App extends PureComponent {
             containerElement: <Link to={section.path} />,
         }))
 
-        const hideSidebar =
-            this.state.pageState && this.state.pageState.showTable
+        const showSidebar = !this.state.pageState?.showTable
 
         return (
             <div className={styles.container}>
-                {!hideSidebar && (
+                {showSidebar && (
                     <Sidebar
                         sections={translatedSections}
                         currentSection={this.state.currentSection}
