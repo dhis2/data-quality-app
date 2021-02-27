@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-26T23:36:40.716Z\n"
-"PO-Revision-Date: 2021-02-26T23:36:40.716Z\n"
+"POT-Creation-Date: 2021-02-27T00:22:40.345Z\n"
+"PO-Revision-Date: 2021-02-27T00:22:40.345Z\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -27,6 +27,12 @@ msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -141,12 +147,6 @@ msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr ""
-
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"

@@ -1,3 +1,4 @@
+import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
@@ -25,6 +26,16 @@ const OutlierAnalyisTable = ({
     toggleCheckbox,
     algorithm,
 }) => {
+    const successfulMarkAlert = useAlert(
+        ({ marked }) =>
+            marked
+                ? i18n.t('Marked for follow-up')
+                : i18n.t('Unmarked for follow-up'),
+        { success: true }
+    )
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
     const isZScoreAlgorithm = algorithm === Z_SCORE
 
     const downloadLink = (
@@ -35,10 +46,14 @@ const OutlierAnalyisTable = ({
         />
     )
 
-    // Table Rows
-    const rows = elements.map(element => {
-        const updateCheckbox = () => {
-            toggleCheckbox(element)
+    const tableRows = elements.map(element => {
+        const updateCheckbox = async (event, marked) => {
+            try {
+                await toggleCheckbox(element)
+                successfulMarkAlert.show({ marked })
+            } catch (error) {
+                errorAlert.show({ error })
+            }
         }
 
         return (
@@ -165,7 +180,7 @@ const OutlierAnalyisTable = ({
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {rows}
+                    {tableRows}
                 </TableBody>
             </Table>
             <div

@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { FontIcon, IconButton } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
@@ -225,43 +224,27 @@ class OutlierDetection extends Page {
             currentElement
         )
         const api = this.context.d2.Api.getApi()
-        try {
-            await api.update(apiConf.endpoints.markDataValue, data)
-            if (!this.isPageMounted()) {
-                return
-            }
-
-            const updatedElement = {
-                ...currentElement,
-                marked: !currentElement.marked,
-            }
-            const elements = [
-                ...this.state.elements.slice(0, currentElementIndex),
-                updatedElement,
-                ...this.state.elements.slice(currentElementIndex + 1),
-            ]
-            // TODO: Replace with `useAlert`
-            const getMarkedForFollowUpSuccessMessage = marked =>
-                marked
-                    ? i18n.t('Marked for follow-up')
-                    : i18n.t('Unmarked for follow-up')
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: SUCCESS,
-                    message: getMarkedForFollowUpSuccessMessage(
-                        updatedElement.marked
-                    ),
-                },
-                pageState: {
-                    elements,
-                    loading: false,
-                    showTable: true,
-                },
-            })
-        } catch (error) {
-            this.manageError(error)
+        await api.update(apiConf.endpoints.markDataValue, data)
+        if (!this.isPageMounted()) {
+            return
         }
+
+        const updatedElement = {
+            ...currentElement,
+            marked: !currentElement.marked,
+        }
+        const elements = [
+            ...this.state.elements.slice(0, currentElementIndex),
+            updatedElement,
+            ...this.state.elements.slice(currentElementIndex + 1),
+        ]
+        this.context.updateAppState({
+            pageState: {
+                elements,
+                loading: false,
+                showTable: true,
+            },
+        })
     }
 
     isFormValid = () =>
