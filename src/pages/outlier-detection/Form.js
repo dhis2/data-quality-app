@@ -10,7 +10,7 @@ import AvailableOrganisationUnitsTree from '../../components/available-organisat
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 import { Z_SCORE } from './constants'
-import styles from './OutlierDetection.module.css'
+import styles from './Form.module.css'
 
 /* eslint-disable react/prop-types */
 

@@ -1,21 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
+import { Card } from '@dhis2/ui'
 import { FontIcon, IconButton } from 'material-ui'
-import { Card, CardText } from 'material-ui/Card'
-import DatePicker from 'material-ui/DatePicker'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
-import AvailableDatasetsSelect from '../../components/available-datasets-select/AvailableDatasetsSelect'
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
 import PageHelper from '../../components/page-helper/PageHelper'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
-import jsPageStyles from '../PageStyles'
 import { getDocsKeyForSection } from '../sections.conf'
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
+import Form from './Form'
 
 class FollowUpAnalysis extends Page {
     static STATE_PROPERTIES = [
@@ -40,15 +35,6 @@ class FollowUpAnalysis extends Page {
             elements: [],
             loading: false,
         }
-
-        this.getFollowUpList = this.getFollowUpList.bind(this)
-        this.back = this.back.bind(this)
-
-        this.startDateOnChange = this.startDateOnChange.bind(this)
-        this.endDateOnChange = this.endDateOnChange.bind(this)
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
-        this.toggleCheckbox = this.toggleCheckbox.bind(this)
-        this.unfollow = this.unfollow.bind(this)
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -63,140 +49,110 @@ class FollowUpAnalysis extends Page {
         this.setState(nextState)
     }
 
-    getFollowUpList() {
-        const api = this.context.d2.Api.getApi()
-        if (this.isFormValid()) {
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
-            })
-
-            const request = {
-                startDate: convertDateToApiDateFormat(this.state.startDate),
-                endDate: convertDateToApiDateFormat(this.state.endDate),
-                ou: this.state.organisationUnitId,
-                ds: this.state.dataSetIds,
-            }
-
-            api.post(apiConf.endpoints.folloupAnalysis, request)
-                .then(response => {
-                    if (this.isPageMounted()) {
-                        const elements = response.map(
-                            FollowUpAnalysisTable.convertElementFromApiResponse
-                        )
-
-                        const feedback =
-                            elements && elements.length > 0
-                                ? {
-                                      showSnackbar: false,
-                                  }
-                                : {
-                                      showSnackbar: true,
-                                      snackbarConf: {
-                                          type: SUCCESS,
-                                          message: i18n.t('No values found'),
-                                      },
-                                  }
-
-                        this.context.updateAppState({
-                            ...feedback,
-                            pageState: {
-                                loading: false,
-                                elements,
-                                showTable: elements && elements.length > 0,
-                            },
-                        })
-                    }
-                })
-                .catch(() => {
-                    this.manageError()
-                })
-        }
-    }
-
-    back() {
-        this.setState({ showTable: false })
-        this.context.updateAppState({
-            pageState: { showTable: false },
-        })
-    }
-
-    startDateOnChange(event, date) {
-        this.setState({ startDate: new Date(date) })
-    }
-
-    endDateOnChange(event, date) {
-        this.setState({ endDate: new Date(date) })
-    }
-
-    organisationUnitOnChange(organisationUnitId) {
-        this.setState({ organisationUnitId })
-    }
-
-    dataSetsOnChange = ({ selected }) => {
-        this.setState({ dataSetIds: selected })
-    }
-
-    toggleCheckbox(element) {
-        const elements = this.state.elements
-        for (let i = 0; i < elements.length; i++) {
-            const currentElement = elements[i]
-            if (currentElement.key === element.key) {
-                currentElement.marked = !currentElement.marked
-                elements[i] = currentElement
-                this.setState({ elements })
-                break
-            }
-        }
-    }
-
-    unfollow(unfollowups) {
-        const api = this.context.d2.Api.getApi()
+    getFollowUpList = async () => {
         this.context.updateAppState({
             pageState: {
                 loading: true,
             },
         })
 
-        api.post(apiConf.endpoints.markDataValue, {
+        const api = this.context.d2.Api.getApi()
+        const request = {
+            startDate: convertDateToApiDateFormat(this.state.startDate),
+            endDate: convertDateToApiDateFormat(this.state.endDate),
+            ou: this.state.organisationUnitId,
+            ds: this.state.dataSetIds,
+        }
+        const response = await api.post(
+            apiConf.endpoints.folloupAnalysis,
+            request
+        )
+        if (!this.isPageMounted()) {
+            return
+        }
+
+        const elements = response.map(
+            FollowUpAnalysisTable.convertElementFromApiResponse
+        )
+        this.context.updateAppState({
+            pageState: {
+                loading: false,
+                elements,
+                showTable: elements && elements.length > 0,
+            },
+        })
+        return elements.length === 0 ? 'NO_VALUES_FOUND' : null
+    }
+
+    back = () => {
+        this.setState({ showTable: false })
+        this.context.updateAppState({
+            pageState: { showTable: false },
+        })
+    }
+
+    startDateOnChange = (event, date) => {
+        this.setState({ startDate: new Date(date) })
+    }
+
+    endDateOnChange = (event, date) => {
+        this.setState({ endDate: new Date(date) })
+    }
+
+    handleOrganisationUnitChange = organisationUnitId => {
+        this.setState({ organisationUnitId })
+    }
+
+    handleDataSetsChange = ({ selected }) => {
+        this.setState({ dataSetIds: selected })
+    }
+
+    toggleCheckbox = element => {
+        this.setState({
+            elements: this.state.elements.map(e => {
+                if (e.key === element.key) {
+                    return {
+                        ...e,
+                        marked: !e.marked,
+                    }
+                }
+                return e
+            }),
+        })
+    }
+
+    unfollow = async unfollowups => {
+        this.context.updateAppState({
+            pageState: {
+                loading: true,
+            },
+        })
+
+        const api = this.context.d2.Api.getApi()
+        await api.post(apiConf.endpoints.markDataValue, {
             followups: unfollowups,
         })
-            .then(() => {
-                if (this.isPageMounted()) {
-                    // remove unfollowed elements
-                    const elements = this.state.elements.filter(element => {
-                        for (let j = 0; j < unfollowups.length; j++) {
-                            const unfollow = unfollowups[j]
-                            if (
-                                FollowUpAnalysisTable.areElementsTheSame(
-                                    element,
-                                    unfollow
-                                )
-                            ) {
-                                return false
-                            }
-                        }
+        if (!this.isPageMounted()) {
+            return
+        }
 
-                        return true
-                    })
-
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: i18n.t('Unfollow done'),
-                        },
-                        pageState: {
-                            loading: false,
-                            elements,
-                        },
-                    })
+        // remove unfollowed elements
+        const elements = this.state.elements.filter(element => {
+            for (const unfollow of unfollowups) {
+                if (
+                    FollowUpAnalysisTable.areElementsTheSame(element, unfollow)
+                ) {
+                    return false
                 }
-            })
-            .catch(() => {
-                this.manageError()
-            })
+            }
+            return true
+        })
+        this.context.updateAppState({
+            pageState: {
+                loading: false,
+                elements,
+            },
+        })
     }
 
     isFormValid() {
@@ -243,75 +199,30 @@ class FollowUpAnalysis extends Page {
                     />
                 </header>
                 <AlertBar show={this.showAlertBar()} />
-                <Card>
-                    {/* FORM: hidden using style to avoid not needed api requests when going back from table */}
-                    <CardText
-                        style={{
-                            display: !this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
-                        <div className="row">
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <h3 className={cssPageStyles.formLabel}>
-                                    {i18n.t('Data Set')}
-                                </h3>
-                                <AvailableDatasetsSelect
-                                    selected={this.state.dataSetIds}
-                                    onChange={this.dataSetsOnChange}
-                                />
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <h3 className={cssPageStyles.formLabel}>
-                                    {i18n.t('Parent organisation unit')}
-                                </h3>
-                                <AvailableOrganisationUnitsTree
-                                    onChange={this.organisationUnitOnChange}
-                                />
-                            </div>
-                            <div className="col-sm-12 col-md-6 col-lg-4">
-                                <DatePicker
-                                    id="start-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Start Date')}
-                                    onChange={this.startDateOnChange}
-                                    defaultDate={new Date()}
-                                    maxDate={this.state.endDate}
-                                    value={this.state.startDate}
-                                />
-                                <DatePicker
-                                    id="end-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('End Date')}
-                                    onChange={this.endDateOnChange}
-                                    defaultDate={new Date()}
-                                    minDate={this.state.startDate}
-                                    value={this.state.endDate}
-                                />
-                            </div>
-                        </div>
-                        <Button
-                            primary
-                            className={cssPageStyles.mainButton}
-                            onClick={this.getFollowUpList}
-                            disabled={this.isActionDisabled()}
-                        >
-                            {i18n.t('Follow up')}
-                        </Button>
-                    </CardText>
-                    {/* TABLE */}
-                    <CardText
-                        id="results-table"
-                        style={{
-                            display: this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
+                <Card className={cssPageStyles.card}>
+                    {!this.state.showTable && (
+                        <Form
+                            onSubmit={this.getFollowUpList}
+                            submitDisabled={this.isActionDisabled()}
+                            dataSetIds={this.state.dataSetIds}
+                            onDataSetsChange={this.handleDataSetsChange}
+                            onOrganisationUnitChange={
+                                this.handleOrganisationUnitChange
+                            }
+                            startDate={this.state.startDate}
+                            onStartDateChange={this.startDateOnChange}
+                            endDate={this.state.endDate}
+                            onEndDateChange={this.endDateOnChange}
+                        />
+                    )}
+                    {this.state.showTable && (
                         <FollowUpAnalysisTable
                             elements={this.state.elements}
                             toggleCheckbox={this.toggleCheckbox}
                             unfollow={this.unfollow}
                             loading={this.state.loading}
                         />
-                    </CardText>
+                    )}
                 </Card>
             </div>
         )

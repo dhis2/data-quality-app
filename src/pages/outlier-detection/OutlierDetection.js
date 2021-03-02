@@ -18,7 +18,6 @@ import {
     DEFAULT_SORT_BY,
 } from './constants'
 import Form from './Form'
-import styles from './OutlierDetection.module.css'
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -285,7 +284,7 @@ class OutlierDetection extends Page {
                     />
                 </header>
                 <AlertBar show={this.showAlertBar()} />
-                <Card className={styles.card}>
+                <Card className={cssPageStyles.card}>
                     {/* FORM: hidden to avoid not needed api requests when going back from table */}
                     {!this.state.showTable && (
                         <Form

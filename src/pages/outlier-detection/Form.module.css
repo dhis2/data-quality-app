@@ -1,7 +1,3 @@
 .toggleBtn {
     margin-top: var(--spacers-dp12);
 }
-
-.card {
-    padding: var(--spacers-dp16);
-}
