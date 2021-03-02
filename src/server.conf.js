@@ -7,6 +7,7 @@ export const apiConf = {
         outlierDetection: '/outlierDetection',
         folloupAnalysis: '/dataAnalysis/followup',
         markDataValue: '/dataValues/followup',
+        updateMarkDataValue: '/dataAnalysis/followup/mark',
         reportAnalysis: '/dataAnalysis/report',
     },
     results: {
