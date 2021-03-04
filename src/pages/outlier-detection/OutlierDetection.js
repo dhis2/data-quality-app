@@ -20,18 +20,13 @@ import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 
 export const Z_SCORE = 'Z_SCORE'
 export const DEFAULT_THRESHOLD = 3.0
 export const DEFAULT_ALGORITHM = Z_SCORE
 export const DEFAULT_MAX_RESULTS = 500
 export const DEFAULT_SORT_BY = Z_SCORE
-
-const threeMonthsAgo = () => {
-    const date = new Date()
-    date.setMonth(date.getMonth() - 3)
-    return date
-}
 
 const getMarkedForFollowUpSuccesMessage = marked =>
     marked ? i18n.t('Marked for follow-up') : i18n.t('Unmarked for follow-up')
