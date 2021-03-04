@@ -6,6 +6,7 @@ import AlertBar from '../../components/alert-bar/AlertBar'
 import PageHelper from '../../components/page-helper/PageHelper'
 import { ALL_VALIDATION_RULE_GROUPS_ID } from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
@@ -21,7 +22,7 @@ class ValidationRulesAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,

@@ -5,6 +5,7 @@ import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import PageHelper from '../../components/page-helper/PageHelper'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
@@ -28,7 +29,7 @@ class FollowUpAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             dataSetIds: [],
