@@ -19,6 +19,7 @@ import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 
 export const DEFAULT_STANDARD_DEVIATION = 3.0
 
@@ -39,7 +40,7 @@ class StdDevOutlierAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             dataSetIds: [],
