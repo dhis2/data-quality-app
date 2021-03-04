@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/dhis2/data-quality-app/compare/v1.4.6...v1.5.0) (2021-03-04)
+
+
+### Features
+
+* set start date to three months ago in all sections ([a865b28](https://github.com/dhis2/data-quality-app/commit/a865b289e7cab41971510adab8d38cc7b5476cf8))
+
 ## [1.4.6](https://github.com/dhis2/data-quality-app/compare/v1.4.5...v1.4.6) (2021-02-26)
 
 
