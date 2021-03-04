@@ -17,6 +17,7 @@ import { getDocsKeyForSection } from '../sections.conf'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 
 class MinMaxOutlierAnalysis extends Page {
     static STATE_PROPERTIES = [
@@ -34,7 +35,7 @@ class MinMaxOutlierAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             dataSetIds: [],

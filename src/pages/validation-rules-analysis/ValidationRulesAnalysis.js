@@ -20,6 +20,7 @@ import cssPageStyles from '../Page.module.css'
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
 import { apiConf } from '../../server.conf'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 
 class ValidationRulesAnalysis extends Page {
     static STATE_PROPERTIES = ['loading', 'elements', 'showTable']
@@ -29,7 +30,7 @@ class ValidationRulesAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,
