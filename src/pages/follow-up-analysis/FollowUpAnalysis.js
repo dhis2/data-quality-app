@@ -171,7 +171,7 @@ class FollowUpAnalysis extends Page {
             },
         })
 
-        api.post(apiConf.endpoints.updateMarkDataValue, {
+        api.post(apiConf.endpoints.markFollowUpDataValue, {
             followups: unfollowups,
         })
             .then(() => {

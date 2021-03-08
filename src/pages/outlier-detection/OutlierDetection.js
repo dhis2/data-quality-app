@@ -286,7 +286,7 @@ class OutlierDetection extends Page {
         const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
             currentElement
         )
-        api.update(apiConf.endpoints.markDataValue, data)
+        api.update(apiConf.endpoints.markOutlierDataValue, data)
             .then(() => {
                 if (this.isPageMounted()) {
                     const updatedElement = {
