@@ -128,7 +128,7 @@ msgid "Show advanced options"
 msgstr "Vis avanserte alternativer"
 
 msgid "Data start date"
-msgstr ""
+msgstr "Datastartdato"
 
 msgid "Data end date"
 msgstr ""
@@ -137,7 +137,7 @@ msgid "Sort by"
 msgstr "Sorter etter"
 
 msgid "Outlier Detection"
-msgstr ""
+msgstr "Utliggerberegning"
 
 msgid "Data set"
 msgstr "Datasett"
@@ -172,7 +172,7 @@ msgid "Run Validation"
 msgstr "Kjør validering"
 
 msgid "Outlier detection"
-msgstr ""
+msgstr "Utliggerberegning"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
