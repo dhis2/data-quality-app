@@ -130,7 +130,7 @@ class FollowUpAnalysis extends Page {
         })
 
         const api = this.context.d2.Api.getApi()
-        await api.post(apiConf.endpoints.updateMarkDataValue, {
+        await api.post(apiConf.endpoints.markFollowUpDataValue, {
             followups: unfollowups,
         })
         if (!this.isPageMounted()) {

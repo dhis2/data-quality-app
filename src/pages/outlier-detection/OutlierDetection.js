@@ -223,7 +223,7 @@ class OutlierDetection extends Page {
             currentElement
         )
         const api = this.context.d2.Api.getApi()
-        await api.update(apiConf.endpoints.markDataValue, data)
+        await api.update(apiConf.endpoints.markOutlierDataValue, data)
         if (!this.isPageMounted()) {
             return
         }
