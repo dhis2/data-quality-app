@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2020
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-24T14:06:47.222Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,7 +93,7 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "min-max tidligere analyse"
+msgstr "Min-Max utliggeranalyse"
 
 msgid "Analyze"
 msgstr "Analyser"
@@ -102,8 +102,8 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"Analyser potensielle tidligere verdier basert på min- og maksverdier. "
-"Tidligere verdier kan undersøkes og merkes for oppfølging."
+"Analyser potensielle utliggerverdier basert på min- og maksverdier. "
+"Utliggerverdier kan undersøkes og merkes for oppfølging."
 
 msgid "start"
 msgstr "start"
@@ -112,14 +112,14 @@ msgid "Mark"
 msgstr "Merk"
 
 msgid "Std Dev Outlier Analysis"
-msgstr "Std avvik tidl. analyse"
+msgstr "Std avvik utliggeranalyse"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
-"Analyser potensielle tidligere verdier basert på standardavvik. Tidligere "
-"verdier kan undersøkes og merkes for oppfølging."
+"Analyser potensielle utliggerverdier basert på standardavvik. "
+"Utliggerverdier kan undersøkes og merkes for oppfølging."
 
 msgid "Select number of standard deviations"
 msgstr "Velg antall standardavvik"
