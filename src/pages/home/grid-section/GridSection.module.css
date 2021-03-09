@@ -1,17 +1,21 @@
+.link {
+    display: block;
+    height: 100%;
+    text-decoration: none !important;
+}
+
 .gridElement {
-    border-radius: 5px;
-    background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    padding-left: 38px;
-    padding-right: 38px;
-    margin-bottom: 8px;
-    min-height: 218px;
-    min-width: 200px;
+    display: flex !important;
+    flex-direction: column;
+    padding: var(--spacers-dp24);
+}
+
+.gridElement > div {
+    flex: 1;
 }
 
 .gridTitleBar {
     position: relative;
-    margin-top: 30px;
     height: 42px;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -19,32 +23,28 @@
 }
 
 .gridTitleDescription {
-    font-size: 24px;
-    text-align: left;
-    color: #000000;
+    margin: 0;
+    font-size: 18px;
+    color: var(--colors-grey800);
 }
 
 .gridIcon {
-    float: right;
     color: #757575 !important;
-    font-size: 50px !important;
 }
 
 .gridDescription {
+    display: block;
+    /* min-height: 70px; */
+    margin: var(--spacers-dp12) 0;
     font-size: 14px;
     text-align: left;
     color: #757575;
-    margin-top: 42px;
-    margin-bottom: 35px;
-    display: block;
 }
 
 .gridActionText {
-    position: absolute;
-    bottom: 20px;
     display: block;
     font-size: 16px;
     font-weight: 600;
     text-align: left;
-    color: #2196f3;
+    color: var(--colors-blue700);
 }

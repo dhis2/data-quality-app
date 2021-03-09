@@ -1,10 +1,12 @@
-.section {
-    min-height: 280px;
-    max-height: 598px;
+.card {
+    padding: var(--spacers-dp16);
 }
 
 .mainButton {
-    margin-top: 48px;
+    min-width: 100px;
+    margin-top: 36px;
+    /* align with grid padding */
+    margin-left: 0.5em;
 }
 
 .appTable th {
@@ -15,7 +17,7 @@
 }
 
 .appTable tr {
-    color: #000000 !important;
+    color: black !important;
     border-bottom: 1px solid #e0e0e0 !important;
 }
 
@@ -40,6 +42,12 @@
 .pageHeader {
     display: flex;
     align-items: center;
+    margin-top: var(--spacers-dp12);
+    margin-bottom: var(--spacers-dp12);
+}
+
+.pageHeader h1 {
+    margin: 0;
 }
 
 .cardHeader {
@@ -65,11 +73,13 @@
 }
 
 .formLabel {
+    margin-top: 0;
+    margin-bottom: 5px;
     font-family: Roboto;
     font-size: 14px;
+    font-weight: 500;
     text-align: left;
-    color: #757575;
-    margin-bottom: 5px;
+    color: var(--colors-grey600);
 }
 
 .checkboxWrapper {

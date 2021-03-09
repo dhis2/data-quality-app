@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
     Table,
@@ -9,14 +8,15 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui'
-import FormattedNumber from '../../../components/formatters/FormattedNumber'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import DownloadAs from '../../../components/download-as/DownloadAs'
-import cssPageStyles from '../../Page.module.css'
-import styles from './ValidationRulesAnalysisTable.module.css'
-import i18n from '@dhis2/d2-i18n'
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
-import { apiConf } from '../../../server.conf'
+import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import TableCellContent from '../../../components/table/TableCellContent'
+import { apiConf } from '../../../server.conf'
+import cssPageStyles from '../../Page.module.css'
+import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
+import styles from './ValidationRulesAnalysisTable.module.css'
 
 class ValidationRulesAnalysisTable extends PureComponent {
     static propTypes = {
