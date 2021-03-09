@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Data Quality"
-msgstr "Качество данных"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -46,7 +46,7 @@ msgid "Period"
 msgstr "Период"
 
 msgid "Organisation Unit"
-msgstr "Организационная единица"
+msgstr "Организация"
 
 msgid "Value"
 msgstr "Значение"
@@ -58,19 +58,19 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "Среднеквадратическое Отклонение"
+msgstr ""
 
 msgid "Mean"
 msgstr ""
 
 msgid "Min"
-msgstr "Мин"
+msgstr "Минимум"
 
 msgid "Max"
-msgstr "Макс"
+msgstr "Максимум"
 
 msgid "Follow-up"
-msgstr "Дальнейшие действия"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Группа правил проверки"
@@ -91,7 +91,7 @@ msgid "Data Set"
 msgstr "Набор данных"
 
 msgid "Parent organisation unit"
-msgstr "Родительская организационная единица"
+msgstr "Родительская организация"
 
 msgid "Start Date"
 msgstr "Дата начала"
@@ -124,10 +124,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Скрыть дополнительные опции"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Показать дополнительные опции"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -136,22 +136,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Сортировать по"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Набор данных"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Организационные единицы"
+msgstr ""
 
 msgid "Start date"
-msgstr "Дата начала"
+msgstr ""
 
 msgid "End date"
-msgstr "Дата окончания"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Начать"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Анализ по правилам валидации"
@@ -219,10 +219,10 @@ msgid "Validation Rule"
 msgstr "Правило проверки"
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Операция"
 
 msgid "Details"
-msgstr "Подробности"
+msgstr "Детали"
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr "ПОДРОБНОСТИ РЕЗУЛЬТАТОВ ПРОВЕРКИ"

@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter, 2021
+# trendspotter, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: trendspotter, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Data Quality"
-msgstr "Kvalita dat"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
@@ -25,7 +25,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "You do not have access to any organisation units."
-msgstr "Nemáte přístup k žádným organizačním jednotkám."
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "STÁHNOUT JAKO PDF"
@@ -49,16 +49,16 @@ msgid "Value"
 msgstr "Hodnota"
 
 msgid "Z-Score"
-msgstr "Z-skóre"
+msgstr ""
 
 msgid "Deviation"
-msgstr "Odchylka"
+msgstr ""
 
 msgid "Std Dev"
-msgstr "Standardní odchylka"
+msgstr ""
 
 msgid "Mean"
-msgstr "Střední"
+msgstr ""
 
 msgid "Min"
 msgstr "Min"
@@ -67,7 +67,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr "Následovat"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Skupina pravidel ověření"
@@ -112,52 +112,52 @@ msgid "unfollow"
 msgstr "přestat sledovat"
 
 msgid "Marked for follow-up"
-msgstr "Označeno pro další sledování"
+msgstr ""
 
 msgid "Unmarked for follow-up"
-msgstr "Neoznačeno pro další sledování"
+msgstr ""
 
 msgid "Threshold"
-msgstr "Práh"
+msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Skrýt pokročilé možnosti"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Zobrazit pokročilé možnosti"
+msgstr ""
 
 msgid "Data start date"
-msgstr "Datum zahájení dat"
+msgstr ""
 
 msgid "Data end date"
-msgstr "Datum ukončení dat"
+msgstr ""
 
 msgid "Sort by"
-msgstr "Seřazeno podle"
+msgstr ""
 
 msgid "Outlier Detection"
-msgstr "Detekce odlehlých hodnot"
+msgstr ""
 
 msgid "Data set"
-msgstr "Datová sada"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Organizační jednotky"
+msgstr ""
 
 msgid "Start date"
-msgstr "Datum začátku"
+msgstr ""
 
 msgid "End date"
-msgstr "Datum ukončení"
+msgstr ""
 
 msgid "Algorithm"
-msgstr "Algoritmus"
+msgstr ""
 
 msgid "Max results"
-msgstr "Max. Počet výsledků"
+msgstr ""
 
 msgid "Start"
-msgstr "Start"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analýza ověřovacích pravidel"
@@ -173,15 +173,12 @@ msgid "Run Validation"
 msgstr "Spustit ověření"
 
 msgid "Outlier detection"
-msgstr "Detekce odlehlých hodnot"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
 msgstr ""
-"Analyzujte potenciální odlehlé hodnoty na základě standardních odchylek nebo"
-" hodnot min-max. Odlehlé hodnoty lze prozkoumat a označit pro následné "
-"sledování."
 
 msgid "Analyze"
 msgstr "Analyzovat"
@@ -209,10 +206,10 @@ msgid "validate"
 msgstr "ověřit"
 
 msgid "Attribute Option Combination"
-msgstr "Kombinace možností atributů"
+msgstr ""
 
 msgid "Attr. Opt. Combo"
-msgstr "Attr. Opt. Combo"
+msgstr ""
 
 msgid "Importance"
 msgstr "Důležitost"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Quality"
-msgstr "Маълумотлар сифати"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -57,7 +57,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "Стандарт оғиш"
+msgstr ""
 
 msgid "Mean"
 msgstr ""
@@ -69,13 +69,13 @@ msgid "Max"
 msgstr "Максимум"
 
 msgid "Follow-up"
-msgstr "Кузатиш"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Текширув гуруҳи қоидалари"
 
 msgid "An unexpected error happened during analysis"
-msgstr "Таҳлил жараёнида кутилмаган хатолик юз берди"
+msgstr "Таҳлил жараёнида нимадир нотўғри кетди"
 
 msgid "No values found"
 msgstr "Қиймат топилмади"
@@ -114,7 +114,7 @@ msgid "unfollow"
 msgstr "бекор қилиш"
 
 msgid "Marked for follow-up"
-msgstr "Кузатув учун белгиланган"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -123,10 +123,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Мураккаб вариантларни беркитиш"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Вариантларни кенгайтирилган ҳолда кўриш"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -135,22 +135,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Саралаш тури"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Маълумотлар тўплами"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Ташкилий бўлимлар"
+msgstr ""
 
 msgid "Start date"
-msgstr "Бошланиш санаси"
+msgstr ""
 
 msgid "End date"
-msgstr "Якунланиш санаси"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -159,7 +159,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Бошлаш"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Тасдиқлаш Қоидаси Аналитикаси"
@@ -208,10 +208,10 @@ msgid "validate"
 msgstr "тасдиқлаш"
 
 msgid "Attribute Option Combination"
-msgstr "Атрибут вариантлари комбинацияси"
+msgstr ""
 
 msgid "Attr. Opt. Combo"
-msgstr "Атрибут вариантлари комбинацияси"
+msgstr ""
 
 msgid "Importance"
 msgstr "Аҳамиятли"
@@ -247,7 +247,7 @@ msgid "VALUE"
 msgstr "ҚИЙМАТ"
 
 msgid "Validation Details"
-msgstr "Текширув деталлари"
+msgstr "Тасдиқланган деталлар"
 
 msgid "LEFT SIDE"
 msgstr "ЧАП ТОМОН"

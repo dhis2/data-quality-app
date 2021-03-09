@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr "Сифати иттилоот"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -70,7 +70,7 @@ msgid "Max"
 msgstr "Макс"
 
 msgid "Follow-up"
-msgstr "Пайгирӣ кардан"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr ""
@@ -136,22 +136,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Ҷудокунӣ аз рӯи"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Маҷмӯи иттилоот"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "воҳидҳои сохторӣ"
+msgstr ""
 
 msgid "Start date"
-msgstr "Санаи оғоз"
+msgstr ""
 
 msgid "End date"
-msgstr "Санаи анҷом"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Оғоз"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Таҳлили қоидаи санҷиши эътибор"

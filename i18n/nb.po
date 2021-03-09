@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr "Datakvalitet"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
@@ -26,7 +26,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "You do not have access to any organisation units."
-msgstr "Du har ikke tilgang til noen organisasjonsenheter."
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "LAST NED SOM PDF"
@@ -53,13 +53,13 @@ msgid "Z-Score"
 msgstr ""
 
 msgid "Deviation"
-msgstr "Avvik"
+msgstr ""
 
 msgid "Std Dev"
-msgstr "Standardavvik"
+msgstr ""
 
 msgid "Mean"
-msgstr "Gjennomsnitt"
+msgstr ""
 
 msgid "Min"
 msgstr "Min"
@@ -68,7 +68,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr "Oppfølging"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
@@ -119,13 +119,13 @@ msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Threshold"
-msgstr "Terskel"
+msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Skjul avanserte alternativer"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Vis avanserte alternativer"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -134,31 +134,31 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Sorter etter"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Datasett"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisasjonsenheter"
+msgstr ""
 
 msgid "Start date"
-msgstr "Startdato"
+msgstr ""
 
 msgid "End date"
-msgstr "Sluttdato"
+msgstr ""
 
 msgid "Algorithm"
-msgstr "Algoritme"
+msgstr ""
 
 msgid "Max results"
-msgstr "Maks resultater"
+msgstr ""
 
 msgid "Start"
-msgstr "Start"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Valideringsregel analyse"
@@ -205,10 +205,10 @@ msgid "validate"
 msgstr "Valider"
 
 msgid "Attribute Option Combination"
-msgstr "Attributtalternativkombinasjon"
+msgstr ""
 
 msgid "Attr. Opt. Combo"
-msgstr "Attributtalt. kombinasjon"
+msgstr ""
 
 msgid "Importance"
 msgstr "Viktighet"

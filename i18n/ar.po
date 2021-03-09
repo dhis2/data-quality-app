@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Hamza Assada <7amza.it@gmail.com>, 2021
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Data Quality"
-msgstr "جودة البيانات"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -58,19 +58,19 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "الانحراف المعياري"
+msgstr ""
 
 msgid "Mean"
 msgstr ""
 
 msgid "Min"
-msgstr "اﻷدنى"
+msgstr "الأدنى"
 
 msgid "Max"
 msgstr "الأعلى"
 
 msgid "Follow-up"
-msgstr "متابعة"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "مجموعة قواعد التحقق"
@@ -115,7 +115,7 @@ msgid "unfollow"
 msgstr "إلغاء المتابعة"
 
 msgid "Marked for follow-up"
-msgstr "مُعلَّم للمتابعة"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -124,10 +124,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "إخفاء الخيارات المتقدمة"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "إظهار الخيارات المتقدمة"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -136,22 +136,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "الفرز حسب"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "حزمة البيانات"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "الوحدات التنظيمية"
+msgstr ""
 
 msgid "Start date"
-msgstr "تاريخ البداية"
+msgstr ""
 
 msgid "End date"
-msgstr "تاريخ النهاية"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "بدء"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "تحليل قواعد التحقق"
