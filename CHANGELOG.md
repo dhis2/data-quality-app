@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/dhis2/data-quality-app/compare/v1.5.1...v1.6.0) (2021-03-09)
+
+
+### Features
+
+* port to app-platform ([#702](https://github.com/dhis2/data-quality-app/issues/702)) ([6429fd6](https://github.com/dhis2/data-quality-app/commit/6429fd62ba4a849277151727d714123709c7bb36))
+
 ## [1.5.1](https://github.com/dhis2/data-quality-app/compare/v1.5.0...v1.5.1) (2021-03-09)
 
 
