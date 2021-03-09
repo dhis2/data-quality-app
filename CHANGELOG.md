@@ -1,3 +1,24 @@
+## [1.5.1](https://github.com/dhis2/data-quality-app/compare/v1.5.0...v1.5.1) (2021-03-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e15753c](https://github.com/dhis2/data-quality-app/commit/e15753c1fac808cf2e4aae5850347e1f081442e5))
+
+# [1.5.0](https://github.com/dhis2/data-quality-app/compare/v1.4.6...v1.5.0) (2021-03-04)
+
+
+### Features
+
+* set start date to three months ago in all sections ([a865b28](https://github.com/dhis2/data-quality-app/commit/a865b289e7cab41971510adab8d38cc7b5476cf8))
+
+## [1.4.6](https://github.com/dhis2/data-quality-app/compare/v1.4.5...v1.4.6) (2021-02-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f2f6c80](https://github.com/dhis2/data-quality-app/commit/f2f6c8090059bb59020d7d4b0737d62cb63aaeeb))
+
 ## [1.4.5](https://github.com/dhis2/data-quality-app/compare/v1.4.4...v1.4.5) (2021-02-21)
 
 
