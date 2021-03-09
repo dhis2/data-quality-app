@@ -85,4 +85,4 @@ AvailableOrganisationUnitsTree.propTypes = {
     onChange: PropTypes.func,
 }
 
-export default React.memo(AvailableOrganisationUnitsTree)
+export default AvailableOrganisationUnitsTree
