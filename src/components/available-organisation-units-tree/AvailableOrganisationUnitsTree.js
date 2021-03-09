@@ -19,7 +19,7 @@ const query = {
 
 const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     const { loading, data, error } = useDataQuery(query)
-    const [selected, setSelected] = useState([])
+    const [selected, setSelected] = useState(new Map())
 
     if (loading) {
         return <CircularLoader />
@@ -42,26 +42,25 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     }
 
     const handleOrgUnitClickSingle = ({ id, path }) => {
-        if (selected.includes(path)) {
+        if (selected.has(path)) {
             return
         }
-        setSelected([path])
+        setSelected(new Map(selected).set(path, id))
         if (onChange) {
             onChange(id)
         }
     }
 
-    const handleOrgUnitClickMulti = ({ path }) => {
-        const newSelected = selected.includes(path)
-            ? selected.filter(selectedPath => selectedPath !== path)
-            : [...selected, path]
+    const handleOrgUnitClickMulti = ({ id, path, selected: s }) => {
+        const newSelected = new Map(selected)
+        if (s.includes(path)) {
+            newSelected.set(path, id)
+        } else {
+            newSelected.delete(path)
+        }
         setSelected(newSelected)
-
-        const getOrgUnitIdFromPath = path => path.split('/').pop()
-
         if (onChange) {
-            // TODO: Store org unit id in 'selected' instead
-            onChange(newSelected.map(getOrgUnitIdFromPath))
+            onChange([...newSelected.values()])
         }
     }
 
@@ -72,7 +71,7 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     return (
         <div className={styles.wrapper}>
             <OrganisationUnitTree
-                selected={selected}
+                selected={[...selected.keys()]}
                 roots={data.roots.organisationUnits.map(ou => ou.id)}
                 singleSelection={!multiselect}
                 onChange={handleChange}
