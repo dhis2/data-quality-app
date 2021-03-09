@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -15,28 +15,37 @@ msgstr ""
 "Language: uz@Latn\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr "Maʼlumotlar sifati"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "500 dan ortiq natija topildi, Iltimos, qidiruv maydonini qisqartiring, "
 "natijani koʼrish uchun"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "Muassasalar daraxti (ketma-ketligi) yangilanmoqda..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
-msgstr "PDF SIFАTIDА YuKLАSh"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "XLS SIFАTIDА YuKLАSh"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "CSV SIFАTIDА YuKLАSh"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr "Kuzatuv uchun belgilangan"
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Data Element"
 msgstr ""
@@ -74,17 +83,17 @@ msgstr "Kuzatish"
 msgid "Validation Rule Group"
 msgstr "Tekshiruv guruhi qoidalari"
 
-msgid "An unexpected error happened during analysis"
-msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
+msgid "Follow-Up Analysis"
+msgstr "Аnalitikani kuzatish"
 
 msgid "No values found"
 msgstr "Qiymat topilmadi"
 
-msgid "Unfollow done"
-msgstr "Bekor qilish bajarildi"
+msgid "An unexpected error happened during analysis"
+msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
 
-msgid "Follow-Up Analysis"
-msgstr "Аnalitikani kuzatish"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr ""
@@ -98,9 +107,6 @@ msgstr "Boshlanish sanasi"
 msgid "End Date"
 msgstr "Yakunlanish sanasi"
 
-msgid "follow up"
-msgstr "kuzatish"
-
 msgid "Close"
 msgstr "Yopmoq"
 
@@ -113,11 +119,8 @@ msgstr "Bekor qilish"
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr "Kuzatuv uchun belgilangan"
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Boshlash"
 
 msgid "Threshold"
 msgstr ""
@@ -137,9 +140,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Saralash turi"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Maʼlumotlar toʼplami"
 
@@ -158,8 +158,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Boshlash"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Tasdiqlash Qoidasi Аnalitikasi"
@@ -194,14 +194,14 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "Tasdiqlash Mavaffaqiyatli Oʼtdi"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "Bildirishnoma Yuborish"
 
 msgid "Persist new results"
 msgstr "Doimiy yangi natijalar"
-
-msgid "validate"
-msgstr "tasdiqlash"
 
 msgid "Attribute Option Combination"
 msgstr "Аtribut variantlari kombinatsiyasi"

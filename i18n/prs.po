@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -15,26 +15,35 @@ msgstr ""
 "Language: fa_AF\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Data Quality"
-msgstr "کیفیت اطلاعات"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "بیشتر از 500 ارزش پیدا شد، لطفآ جستجوی را باریک سازید تا همه را بیبینید"
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -73,17 +82,17 @@ msgstr "تعقیب کردن"
 msgid "Validation Rule Group"
 msgstr ""
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "پیگیری تحلیل"
 
 msgid "No values found"
 msgstr "هیچ ارزش پیدا نشد"
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "پیگیری تحلیل"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "مجموعه اطلاعات"
@@ -95,9 +104,6 @@ msgid "Start Date"
 msgstr ""
 
 msgid "End Date"
-msgstr ""
-
-msgid "follow up"
 msgstr ""
 
 msgid "Close"
@@ -112,11 +118,8 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "شروع"
 
 msgid "Threshold"
 msgstr ""
@@ -136,9 +139,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "طبقه بندي یې کړئ"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "د مالوماتو (ډاټا) ټولګه"
 
@@ -157,8 +157,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "شروع"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "تحلیل قانون اعتبار سنجی"
@@ -197,13 +197,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "دستور سنجی موفقانه انجام یافت"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"

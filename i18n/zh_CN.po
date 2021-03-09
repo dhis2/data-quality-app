@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -16,25 +16,34 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr "数据质量管理"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "更新机构树"
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -73,17 +82,17 @@ msgstr ""
 msgid "Validation Rule Group"
 msgstr "验证规则组"
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "后续分析"
 
 msgid "No values found"
 msgstr "无值被找到"
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "后续分析"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "数据集"
@@ -95,9 +104,6 @@ msgid "Start Date"
 msgstr "开始日期"
 
 msgid "End Date"
-msgstr ""
-
-msgid "follow up"
 msgstr ""
 
 msgid "Close"
@@ -112,11 +118,8 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "开始"
 
 msgid "Threshold"
 msgstr ""
@@ -136,9 +139,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "排序"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "数据集"
 
@@ -157,8 +157,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "开始"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "验证规则分析"
@@ -193,13 +193,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "验证已成功"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"
