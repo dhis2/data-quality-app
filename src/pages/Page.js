@@ -1,7 +1,5 @@
-import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import i18n from '@dhis2/d2-i18n'
+import { Component } from 'react'
 
 class Page extends Component {
     static propTypes = {
@@ -14,7 +12,7 @@ class Page extends Component {
         updateAppState: PropTypes.func,
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.pageMounted = true
 
         // update section on side bar
@@ -34,23 +32,7 @@ class Page extends Component {
     }
 
     manageError(error) {
-        if (this.isPageMounted()) {
-            const messageError =
-                error && error.message
-                    ? error.message
-                    : i18n.t('An unexpected error happened during analysis')
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: ERROR,
-                    message: messageError,
-                },
-                pageState: {
-                    loading: false,
-                },
-            })
-        }
+        console.error(error)
     }
 }
 

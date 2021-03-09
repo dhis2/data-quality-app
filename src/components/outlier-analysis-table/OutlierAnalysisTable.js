@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { useAlert } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
     Checkbox,
@@ -10,12 +10,14 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui'
-import FormattedNumber from '../../components/formatters/FormattedNumber'
+import PropTypes from 'prop-types'
+import React from 'react'
 import DownloadAs from '../../components/download-as/DownloadAs'
-import i18n from '@dhis2/d2-i18n'
-import { apiConf } from '../../server.conf'
+import FormattedNumber from '../../components/formatters/FormattedNumber'
+import { Z_SCORE } from '../../pages/outlier-detection/constants'
 import cssPageStyles from '../../pages/Page.module.css'
 import jsPageStyles from '../../pages/PageStyles'
+import { apiConf } from '../../server.conf'
 import styles from './OutlierAnalysisTable.module.css'
 
 const OutlierAnalyisTable = ({
@@ -24,7 +26,17 @@ const OutlierAnalyisTable = ({
     toggleCheckbox,
     algorithm,
 }) => {
-    const isZScoreAlgorithm = algorithm === 'Z_SCORE'
+    const successfulMarkAlert = useAlert(
+        ({ marked }) =>
+            marked
+                ? i18n.t('Marked for follow-up')
+                : i18n.t('Unmarked for follow-up'),
+        { success: true }
+    )
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
+    const isZScoreAlgorithm = algorithm === Z_SCORE
 
     const downloadLink = (
         <DownloadAs
@@ -34,17 +46,27 @@ const OutlierAnalyisTable = ({
         />
     )
 
-    // Table Rows
-    const rows = elements.map(element => {
-        const updateCheckbox = () => {
-            toggleCheckbox(element)
+    const tableRows = elements.map(element => {
+        const updateCheckbox = async (event, marked) => {
+            try {
+                await toggleCheckbox(element)
+                successfulMarkAlert.show({ marked })
+            } catch (error) {
+                errorAlert.show({ error })
+            }
         }
 
         return (
             <TableRow key={element.key}>
-                <TableRowColumn>{element.displayName}</TableRowColumn>
+                <TableRowColumn>
+                    <span title={element.displayName}>
+                        {element.displayName}
+                    </span>
+                </TableRowColumn>
                 <TableRowColumn>{element.pe}</TableRowColumn>
-                <TableRowColumn>{element.ouName}</TableRowColumn>
+                <TableRowColumn>
+                    <span title={element.ouName}>{element.ouName}</span>
+                </TableRowColumn>
                 <TableRowColumn className={cssPageStyles.right}>
                     <FormattedNumber
                         value={element.value}
@@ -158,7 +180,7 @@ const OutlierAnalyisTable = ({
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {rows}
+                    {tableRows}
                 </TableBody>
             </Table>
             <div
@@ -174,9 +196,7 @@ const OutlierAnalyisTable = ({
 }
 
 OutlierAnalyisTable.generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${
-        e.sourceId
-    }-${e.dataElementId}`
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
 
 OutlierAnalyisTable.convertElementFromApiResponse = e => ({
     displayName: getDisplayName(e),
@@ -195,10 +215,10 @@ OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
 })
 
 OutlierAnalyisTable.propTypes = {
-    algorithm: PropTypes.oneOf(['Z_SCORE', 'MIN_MAX']),
     csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
     toggleCheckbox: PropTypes.func.isRequired,
+    algorithm: PropTypes.oneOf([Z_SCORE, 'MIN_MAX']),
 }
 
 OutlierAnalyisTable.contextTypes = {
