@@ -1,19 +1,18 @@
 # 
 # Translators:
 # Matthieu Pinard <matthieu@pinard.no>, 2019
-# Bram Piot <bram.piot@gmail.com>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Data Quality"
-msgstr "Qualité de données"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -63,7 +62,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "Dev. Std."
+msgstr ""
 
 msgid "Mean"
 msgstr ""
@@ -75,7 +74,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr "Suivi"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
@@ -141,22 +140,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Trier par"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Ensemble de données"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Unités d'organisation"
+msgstr ""
 
 msgid "Start date"
-msgstr "Date de début"
+msgstr ""
 
 msgid "End date"
-msgstr "Date de fin"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -165,7 +164,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Démarrer"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analyse de règle de validation"

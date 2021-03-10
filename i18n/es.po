@@ -1,15 +1,15 @@
 # 
 # Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Quality"
-msgstr "Calidad de Datos"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -59,7 +59,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "Desviación estándar"
+msgstr ""
 
 msgid "Mean"
 msgstr ""
@@ -71,7 +71,7 @@ msgid "Max"
 msgstr "Máx"
 
 msgid "Follow-up"
-msgstr "Seguimiento"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Grupo de Reglas de Validación"
@@ -92,7 +92,7 @@ msgid "Data Set"
 msgstr "Set de Datos"
 
 msgid "Parent organisation unit"
-msgstr "Unidad organizativa padre"
+msgstr "Padre de la unidad organizativa"
 
 msgid "Start Date"
 msgstr "Fecha de inicio"
@@ -137,22 +137,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Ordenar por"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Set de Datos\\:"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Unidades orgenizativas"
+msgstr ""
 
 msgid "Start date"
-msgstr "Fecha inicial"
+msgstr ""
 
 msgid "End date"
-msgstr "Fecha final"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -161,7 +161,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Comienzo"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Análisis por reglas de validación"

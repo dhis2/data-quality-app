@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Quality"
-msgstr "Maʼlumotlar sifati"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -69,7 +69,7 @@ msgid "Max"
 msgstr "Maksimum"
 
 msgid "Follow-up"
-msgstr "Kuzatish"
+msgstr ""
 
 msgid "Validation Rule Group"
 msgstr "Tekshiruv guruhi qoidalari"
@@ -114,7 +114,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "Kuzatuv uchun belgilangan"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -135,22 +135,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Saralash turi"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr "Maʼlumotlar toʼplami"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Tashkiliy birliklar"
+msgstr ""
 
 msgid "Start date"
-msgstr "Boshlanish sanasi"
+msgstr ""
 
 msgid "End date"
-msgstr "Yakunlanish sanasi"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
@@ -159,7 +159,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr "Boshlash"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Tasdiqlash Qoidasi Аnalitikasi"
@@ -204,10 +204,10 @@ msgid "validate"
 msgstr "tasdiqlash"
 
 msgid "Attribute Option Combination"
-msgstr "Аtribut variantlari kombinatsiyasi"
+msgstr ""
 
 msgid "Attr. Opt. Combo"
-msgstr "Аtribut variantlari kombinatsiyasi"
+msgstr ""
 
 msgid "Importance"
 msgstr "Аhamiyatli"
