@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,13 +36,13 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Exportar como PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Exportar como CSV"
 
 msgid "Marked for follow-up"
 msgstr "Marcado para acompanhamento"
@@ -96,7 +96,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "Ocorreu um erro inesperado durante a análise"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Acompanhamento"
 
 msgid "Data Set"
 msgstr "Ficha"
@@ -202,7 +202,7 @@ msgid "Validation passed successfully"
 msgstr "Validado com sucesso"
 
 msgid "Validate"
-msgstr ""
+msgstr "Validado"
 
 msgid "Send Notifications"
 msgstr "Enviar notificação "

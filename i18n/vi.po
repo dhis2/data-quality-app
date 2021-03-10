@@ -34,13 +34,13 @@ msgid "You do not have access to any organisation units."
 msgstr "Bạn không có quyền truy cập vào bất kỳ đơn vị nào."
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Tải xuống với PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Tải xuống với CSV"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -94,7 +94,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "Xảy ra sự cố khi phân tích"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Theo dõi"
 
 msgid "Data Set"
 msgstr "Biểu nhập"
@@ -198,7 +198,7 @@ msgid "Validation passed successfully"
 msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
 
 msgid "Validate"
-msgstr ""
+msgstr "Kiểm tra hợp lệ"
 
 msgid "Send Notifications"
 msgstr "Gửi thông báo"

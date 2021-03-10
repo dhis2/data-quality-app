@@ -92,7 +92,7 @@ msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow up"
-msgstr ""
+msgstr "តាមដាន"
 
 msgid "Data Set"
 msgstr "ទិន្នន័យឈុត"
