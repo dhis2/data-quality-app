@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Quality"
-msgstr ""
+msgstr "Maʼlumotlar sifati"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -57,7 +57,7 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr ""
+msgstr "Standart ogʼish"
 
 msgid "Mean"
 msgstr ""
@@ -69,7 +69,7 @@ msgid "Max"
 msgstr "Maksimum"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Kuzatish"
 
 msgid "Validation Rule Group"
 msgstr "Tekshiruv guruhi qoidalari"
@@ -114,7 +114,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Kuzatuv uchun belgilangan"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -135,22 +135,22 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "Saralash turi"
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Tashkiliy birliklar"
 
 msgid "Start date"
-msgstr ""
+msgstr "Boshlanish sanasi"
 
 msgid "End date"
-msgstr ""
+msgstr "Yakunlanish sanasi"
 
 msgid "Algorithm"
 msgstr ""
@@ -159,7 +159,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Boshlash"
 
 msgid "Validation Rule Analysis"
 msgstr "Tasdiqlash Qoidasi Аnalitikasi"
@@ -204,10 +204,10 @@ msgid "validate"
 msgstr "tasdiqlash"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Аtribut variantlari kombinatsiyasi"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Аtribut variantlari kombinatsiyasi"
 
 msgid "Importance"
 msgstr "Аhamiyatli"
