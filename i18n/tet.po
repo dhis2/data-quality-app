@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
@@ -16,25 +16,34 @@ msgstr ""
 "Language: tet\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr "Kualidade Dadus"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -73,16 +82,16 @@ msgstr "Segimentu"
 msgid "Validation Rule Group"
 msgstr ""
 
-msgid "An unexpected error happened during analysis"
+msgid "Follow-Up Analysis"
 msgstr ""
 
 msgid "No values found"
 msgstr ""
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
+msgid "Follow up"
 msgstr ""
 
 msgid "Data Set"
@@ -97,9 +106,6 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
-msgid "follow up"
-msgstr ""
-
 msgid "Close"
 msgstr "Taka"
 
@@ -112,10 +118,7 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
+msgid "Start"
 msgstr ""
 
 msgid "Threshold"
@@ -136,9 +139,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ordena tuir"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Pakote dadus"
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
+msgid "Outlier Detection"
 msgstr ""
 
 msgid "Validation Rule Analysis"
@@ -193,13 +193,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr ""
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"

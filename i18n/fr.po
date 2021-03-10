@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -21,27 +21,36 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Data Quality"
-msgstr "Qualité de données"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "Plus de 500 valeurs trouvées. Veuillez les corriger ou affiner la recherche "
 "pour pour voir tout"
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -80,17 +89,17 @@ msgstr "Suivi"
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "Analyse des Suivis"
 
 msgid "No values found"
 msgstr "Pas de valeurs trouvées"
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "Analyse des Suivis"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Ensemble de données"
@@ -104,9 +113,6 @@ msgstr "Date de début"
 msgid "End Date"
 msgstr "Date de fin"
 
-msgid "follow up"
-msgstr ""
-
 msgid "Close"
 msgstr "Fermer"
 
@@ -119,11 +125,8 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Démarrer"
 
 msgid "Threshold"
 msgstr ""
@@ -143,9 +146,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Trier par"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Ensemble de données"
 
@@ -164,8 +164,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Démarrer"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analyse de règle de validation"
@@ -204,13 +204,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "Succès de la validation"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"
