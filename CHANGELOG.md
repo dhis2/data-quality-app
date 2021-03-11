@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/dhis2/data-quality-app/compare/v1.6.2...v1.7.0) (2021-03-11)
+
+
+### Features
+
+* upgrade to @dhis2/ui v6 and bump other dependency versions ([#717](https://github.com/dhis2/data-quality-app/issues/717)) ([a7f245d](https://github.com/dhis2/data-quality-app/commit/a7f245ddfd6de846646280b4634a138f28703c90))
+
 ## [1.6.2](https://github.com/dhis2/data-quality-app/compare/v1.6.1...v1.6.2) (2021-03-11)
 
 
