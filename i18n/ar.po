@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -17,27 +17,36 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-msgid "Data Quality"
-msgstr "جودة البيانات"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "تم العثور على أكثر من 500 قيمة، الرجاء تضييق نطاق البحث لمشاهدة الجميع"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "جار تحديث شجرة الوحدات التنظيمية..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
-msgstr "تنزيل كملف PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "تنزيل كملف XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "تنزيل كملف CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr "مُعلَّم للمتابعة"
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Data Element"
 msgstr "عنصر البيانات"
@@ -75,17 +84,17 @@ msgstr "متابعة"
 msgid "Validation Rule Group"
 msgstr "مجموعة قواعد التحقق"
 
-msgid "An unexpected error happened during analysis"
-msgstr "حدث خطأ غير متوقع أثناء التحليل"
+msgid "Follow-Up Analysis"
+msgstr "تحليل المتابعة"
 
 msgid "No values found"
 msgstr "لم يتم العثور على أية قيمة"
 
-msgid "Unfollow done"
-msgstr "تم إلغاء المتابعة"
+msgid "An unexpected error happened during analysis"
+msgstr "حدث خطأ غير متوقع أثناء التحليل"
 
-msgid "Follow-Up Analysis"
-msgstr "تحليل المتابعة"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "حزمة البيانات"
@@ -99,9 +108,6 @@ msgstr "تاريخ البداية"
 msgid "End Date"
 msgstr "تاريخ النهاية"
 
-msgid "follow up"
-msgstr "متابعة"
-
 msgid "Close"
 msgstr "إغلاق"
 
@@ -114,11 +120,8 @@ msgstr "إلغاء المتابعة"
 msgid "unfollow"
 msgstr "إلغاء المتابعة"
 
-msgid "Marked for follow-up"
-msgstr "مُعلَّم للمتابعة"
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "بدء"
 
 msgid "Threshold"
 msgstr ""
@@ -138,9 +141,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "الفرز حسب"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "حزمة البيانات"
 
@@ -159,8 +159,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "بدء"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "تحليل قواعد التحقق"
@@ -199,14 +199,14 @@ msgstr "عرض قيم البيانات"
 msgid "Validation passed successfully"
 msgstr "تم اجتياز التحقق بنجاح"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "إرسال إشعارات"
 
 msgid "Persist new results"
 msgstr "المواصلة بنتائج جديدة"
-
-msgid "validate"
-msgstr "تحقق"
 
 msgid "Attribute Option Combination"
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
@@ -16,27 +16,36 @@ msgstr ""
 "Language: my\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr "အချက်အလက်၏အရည်အသွေး"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "More than 500 values found, please fix the violations or narrow the search "
 "to see all"
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -75,17 +84,17 @@ msgstr "စောင့်ကြပ်ကြည့်ရှုခြင်း"
 msgid "Validation Rule Group"
 msgstr ""
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "Follow-up Analysis"
 
 msgid "No values found"
 msgstr ""
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "Follow-up Analysis"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Data အစု"
@@ -97,9 +106,6 @@ msgid "Start Date"
 msgstr ""
 
 msgid "End Date"
-msgstr ""
-
-msgid "follow up"
 msgstr ""
 
 msgid "Close"
@@ -114,10 +120,7 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
+msgid "Start"
 msgstr ""
 
 msgid "Threshold"
@@ -138,9 +141,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "ဖြင့်စီပါ။"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Dataset"
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
+msgid "Outlier Detection"
 msgstr ""
 
 msgid "Validation Rule Analysis"
@@ -195,13 +195,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "Validation passed successfully"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"
