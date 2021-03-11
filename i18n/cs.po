@@ -19,25 +19,25 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
 
 msgid "Error loading datasets."
-msgstr ""
+msgstr "Chyba při načítání datových sad."
 
 msgid "No match found"
-msgstr ""
+msgstr "Žádná shoda nenalezena"
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr ""
+msgstr "Při načítání vašich organizačních jednotek se něco pokazilo."
 
 msgid "You do not have access to any organisation units."
 msgstr "Nemáte přístup k žádným organizačním jednotkám."
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Stáhnout jako PDF"
 
 msgid "Download as XLS"
-msgstr ""
+msgstr "Stáhnout jako XLS"
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Stáhnout jako CSV"
 
 msgid "Marked for follow-up"
 msgstr "Označeno pro další sledování"
@@ -91,7 +91,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "Během analýzy došlo k neočekávané chybě"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Následovat"
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -200,7 +200,7 @@ msgid "Validation passed successfully"
 msgstr "Ověření proběhlo úspěšně"
 
 msgid "Validate"
-msgstr ""
+msgstr "Ověřit"
 
 msgid "Send Notifications"
 msgstr "Odeslat oznámení"

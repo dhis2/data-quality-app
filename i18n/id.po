@@ -3,6 +3,7 @@
 # Carwoto Sa'an <carwoto@gmail.com>, 2021
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # phil_dhis2, 2021
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -35,13 +36,13 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Download dalam bentuk PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Download dalam bentuk CSV"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -95,7 +96,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "Terjadi kesalahan tak terduga selama analisis"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Tindak lanjut"
 
 msgid "Data Set"
 msgstr "Data Set"
@@ -201,7 +202,7 @@ msgid "Validation passed successfully"
 msgstr "Lulus validasi"
 
 msgid "Validate"
-msgstr ""
+msgstr "Memvalidasi"
 
 msgid "Send Notifications"
 msgstr "Kirim Notifikasi"

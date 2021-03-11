@@ -39,7 +39,7 @@ msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "CSV sifatida yuklang"
 
 msgid "Marked for follow-up"
 msgstr "Kuzatuv uchun belgilangan"
@@ -93,7 +93,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Kuzatib borish"
 
 msgid "Data Set"
 msgstr ""
@@ -195,7 +195,7 @@ msgid "Validation passed successfully"
 msgstr "Tasdiqlash Mavaffaqiyatli Oʼtdi"
 
 msgid "Validate"
-msgstr ""
+msgstr "Tasdiqlash"
 
 msgid "Send Notifications"
 msgstr "Bildirishnoma Yuborish"

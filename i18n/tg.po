@@ -34,13 +34,13 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Боргирӣ ҳамчун файли PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Боргирӣ ҳамчун файли CSV"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -200,7 +200,7 @@ msgid "Validation passed successfully"
 msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
 
 msgid "Validate"
-msgstr ""
+msgstr "Санҷиши эътибор"
 
 msgid "Send Notifications"
 msgstr ""

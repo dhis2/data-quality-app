@@ -37,7 +37,7 @@ msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "تنزيل كملف CSV"
 
 msgid "Marked for follow-up"
 msgstr ""
