@@ -1,25 +1,18 @@
-import React from 'react'
-import classNames from 'classnames'
-import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import DatePicker from 'material-ui/DatePicker'
-import Checkbox from 'material-ui/Checkbox'
-import { FontIcon, IconButton } from 'material-ui'
-import { SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import Page from '../Page'
-import AlertBar from '../../components/alert-bar/AlertBar'
-import ValidationRuleGroupsSelect, {
-    ALL_VALIDATION_RULE_GROUPS_ID,
-} from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
 import i18n from '@dhis2/d2-i18n'
-import jsPageStyles from '../PageStyles'
-import cssPageStyles from '../Page.module.css'
-import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
-import { apiConf } from '../../server.conf'
+import { Card } from '@dhis2/ui'
+import { FontIcon, IconButton } from 'material-ui'
+import React from 'react'
+import AlertBar from '../../components/alert-bar/AlertBar'
+import PageHelper from '../../components/page-helper/PageHelper'
+import { ALL_VALIDATION_RULE_GROUPS_ID } from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
+import { apiConf } from '../../server.conf'
+import Page from '../Page'
+import cssPageStyles from '../Page.module.css'
+import { getDocsKeyForSection } from '../sections.conf'
+import Form from './Form'
+import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
 
 class ValidationRulesAnalysis extends Page {
     static STATE_PROPERTIES = ['loading', 'elements', 'showTable']
@@ -29,50 +22,31 @@ class ValidationRulesAnalysis extends Page {
 
         this.state = {
             showTable: false,
-            startDate: new Date(),
+            startDate: threeMonthsAgo(),
             endDate: new Date(),
             organisationUnitId: null,
             validationRuleGroupId: ALL_VALIDATION_RULE_GROUPS_ID,
-            notification: false,
-            persist: false,
+            sendNotfications: false,
+            persistNewResults: false,
             elements: [],
             loading: false,
         }
-
-        this.validate = this.validate.bind(this)
-        this.back = this.back.bind(this)
-
-        this.startDateOnChange = this.startDateOnChange.bind(this)
-        this.endDateOnChange = this.endDateOnChange.bind(this)
-        this.organisationUnitOnChange = this.organisationUnitOnChange.bind(this)
-        this.validationRuleGroupOnChange = this.validationRuleGroupOnChange.bind(
-            this
-        )
-        this.updateSendNotifications = this.updateSendNotifications.bind(this)
-        this.updatePersistNewResults = this.updatePersistNewResults.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)
-            ) {
+            if (ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     static generateElementKey = e =>
-        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${
-            e.attributeOptionComboId
-        }`
+        `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${e.attributeOptionComboId}`
 
     static convertElementFromApiResponse = e => ({
         key: ValidationRulesAnalysis.generateElementKey(e),
@@ -90,96 +64,81 @@ class ValidationRulesAnalysis extends Page {
         rightValue: e.rightSideValue,
     })
 
-    validate() {
-        const api = this.context.d2.Api.getApi()
-
-        if (this.isFormValid()) {
-            const request = {
-                startDate: convertDateToApiDateFormat(this.state.startDate),
-                endDate: convertDateToApiDateFormat(this.state.endDate),
-                ou: this.state.organisationUnitId,
-                notification: this.state.notification,
-                persist: this.state.persist,
-            }
-
-            if (
-                this.state.validationRuleGroupId !==
-                ALL_VALIDATION_RULE_GROUPS_ID
-            ) {
-                request.vrg = this.state.validationRuleGroupId
-            }
-
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
-            })
-
-            api.post(apiConf.endpoints.validationRulesAnalysis, { ...request })
-                .then(response => {
-                    if (this.isPageMounted()) {
-                        const elements = response.map(
-                            ValidationRulesAnalysis.convertElementFromApiResponse
-                        )
-                        const feedback =
-                            elements && elements.length > 0
-                                ? {
-                                      showSnackbar: false,
-                                  }
-                                : {
-                                      showSnackbar: true,
-                                      snackbarConf: {
-                                          type: SUCCESS,
-                                          message: i18n.t(
-                                              'Validation passed successfully'
-                                          ),
-                                      },
-                                  }
-                        this.context.updateAppState({
-                            ...feedback,
-                            pageState: {
-                                loading: false,
-                                elements,
-                                showTable: elements && elements.length > 0,
-                            },
-                        })
-                    }
-                })
-                .catch(() => {
-                    this.manageError()
-                })
+    validate = async () => {
+        if (!this.isFormValid()) {
+            return
         }
+
+        const request = {
+            startDate: convertDateToApiDateFormat(this.state.startDate),
+            endDate: convertDateToApiDateFormat(this.state.endDate),
+            ou: this.state.organisationUnitId,
+            notification: this.state.notification,
+            persist: this.state.persist,
+        }
+        if (
+            this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID
+        ) {
+            request.vrg = this.state.validationRuleGroupId
+        }
+
+        this.context.updateAppState({
+            pageState: {
+                loading: true,
+            },
+        })
+
+        const api = this.context.d2.Api.getApi()
+        const response = await api.post(
+            apiConf.endpoints.validationRulesAnalysis,
+            { ...request }
+        )
+        if (!this.isPageMounted()) {
+            return
+        }
+
+        const elements = response.map(
+            ValidationRulesAnalysis.convertElementFromApiResponse
+        )
+        this.context.updateAppState({
+            pageState: {
+                loading: false,
+                elements,
+                showTable: elements.length > 0,
+            },
+        })
+        return elements.length === 0 ? 'VALIDATION_PASSED' : null
     }
 
-    back() {
+    back = () => {
         this.setState({ showTable: false })
         this.context.updateAppState({
             pageState: { showTable: false },
         })
     }
 
-    startDateOnChange(event, date) {
+    handleStartDateChange = (event, date) => {
         this.setState({ startDate: new Date(date) })
     }
 
-    endDateOnChange(event, date) {
+    handleEndDateChange = (event, date) => {
         this.setState({ endDate: new Date(date) })
     }
 
-    organisationUnitOnChange(organisationUnitId) {
+    handleOrganisationUnitChange = organisationUnitId => {
         this.setState({ organisationUnitId })
     }
 
-    validationRuleGroupOnChange(event, index, value) {
+    handleValidationRuleGroupChange = (event, index, value) => {
         this.setState({ validationRuleGroupId: value })
     }
 
-    updateSendNotifications(event, checked) {
-        this.setState({ notification: checked })
+    handleSendNotificationsChange = ({ checked }) => {
+        this.setState({ sendNotfications: checked })
     }
 
-    updatePersistNewResults(event, checked) {
-        this.setState({ persist: checked })
+    handlePersistNewResultsChange = ({ checked }) => {
+        this.setState({ persistNewResults: checked })
     }
 
     showAlertBar() {
@@ -205,7 +164,7 @@ class ValidationRulesAnalysis extends Page {
     render() {
         return (
             <div>
-                <h1 className={cssPageStyles.pageHeader}>
+                <header className={cssPageStyles.pageHeader}>
                     <IconButton
                         onClick={this.back}
                         style={{
@@ -216,103 +175,43 @@ class ValidationRulesAnalysis extends Page {
                             arrow_back
                         </FontIcon>
                     </IconButton>
-                    {i18n.t('Validation Rule Analysis')}
+                    <h1>{i18n.t('Validation Rule Analysis')}</h1>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
                             this.props.sectionKey
                         )}
                     />
-                </h1>
+                </header>
                 <AlertBar show={this.showAlertBar()} />
-                <Card>
-                    <CardText
-                        style={{
-                            display: !this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
-                        <div className="row">
-                            <div
-                                className={classNames(
-                                    'col-md-6',
-                                    cssPageStyles.section
-                                )}
-                            >
-                                <div className={cssPageStyles.formLabel}>
-                                    {i18n.t('Parent organisation unit')}
-                                </div>
-                                <AvailableOrganisationUnitsTree
-                                    onChange={this.organisationUnitOnChange}
-                                />
-                            </div>
-                            <div
-                                className={classNames(
-                                    'col-md-6',
-                                    cssPageStyles.section
-                                )}
-                            >
-                                <DatePicker
-                                    id="start-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('Start Date')}
-                                    onChange={this.startDateOnChange}
-                                    value={this.state.startDate}
-                                    defaultDate={new Date()}
-                                    maxDate={this.state.endDate}
-                                />
-                                <DatePicker
-                                    id="end-date"
-                                    textFieldStyle={jsPageStyles.inputForm}
-                                    floatingLabelText={i18n.t('End Date')}
-                                    onChange={this.endDateOnChange}
-                                    value={this.state.endDate}
-                                    defaultDate={new Date()}
-                                    minDate={this.state.startDate}
-                                />
-                                <div id="validation-rule-groups">
-                                    <ValidationRuleGroupsSelect
-                                        style={jsPageStyles.inputForm}
-                                        onChange={
-                                            this.validationRuleGroupOnChange
-                                        }
-                                    />
-                                </div>
-                                <div id="send-notifications-option">
-                                    <Checkbox
-                                        label={i18n.t('Send Notifications')}
-                                        labelPosition="left"
-                                        checked={this.state.notification}
-                                        onCheck={this.updateSendNotifications}
-                                    />
-                                </div>
-                                <div id="persist-results-option">
-                                    <Checkbox
-                                        label={i18n.t('Persist new results')}
-                                        labelPosition="left"
-                                        checked={this.state.persist}
-                                        onCheck={this.updatePersistNewResults}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <RaisedButton
-                            id="start-analysis-button"
-                            className={cssPageStyles.mainButton}
-                            label={i18n.t('validate')}
-                            primary
-                            disabled={this.isActionDisabled()}
-                            onClick={this.validate}
+                <Card className={cssPageStyles.card}>
+                    {!this.state.showTable && (
+                        <Form
+                            onSubmit={this.validate}
+                            submitDisabled={this.isActionDisabled()}
+                            onOrganisationUnitChange={
+                                this.handleOrganisationUnitChange
+                            }
+                            startDate={this.state.startDate}
+                            onStartDateChange={this.handleStartDateChange}
+                            endDate={this.state.endDate}
+                            onValidationRuleGroupChange={
+                                this.handleValidationRuleGroupChange
+                            }
+                            sendNotfications={this.state.sendNotfications}
+                            onSendNotificationsChange={
+                                this.handleSendNotificationsChange
+                            }
+                            persistNewResults={this.state.persistNewResults}
+                            onPersistNewResultsChange={
+                                this.handlePersistNewResultsChange
+                            }
                         />
-                    </CardText>
-                    <CardText
-                        id="results-table"
-                        style={{
-                            display: this.state.showTable ? 'block' : 'none',
-                        }}
-                    >
+                    )}
+                    {this.state.showTable && (
                         <ValidationRulesAnalysisTable
                             elements={this.state.elements}
                         />
-                    </CardText>
+                    )}
                 </Card>
             </div>
         )

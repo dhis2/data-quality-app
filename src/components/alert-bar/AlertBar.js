@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Paper } from 'material-ui'
-import styles from './AlertBar.module.css'
 import i18n from '@dhis2/d2-i18n'
+import { Paper } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
+import styles from './AlertBar.module.css'
 
 class AlertBar extends PureComponent {
     static propTypes = {

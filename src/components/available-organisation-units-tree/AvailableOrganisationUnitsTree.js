@@ -1,131 +1,88 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { OrganisationUnitTree } from '@dhis2/ui'
+import { CircularLoader, Help } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import styles from './AvailableOrganisationUnitsTree.module.css'
 
-class AvailableOrganisationUnitsTree extends PureComponent {
-    static contextTypes = {
-        d2: PropTypes.object,
+const query = {
+    roots: {
+        resource: 'organisationUnits',
+        params: {
+            filter: 'level:eq:1',
+            fields: 'id',
+            paging: 'false',
+        },
+    },
+}
+
+const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
+    const { loading, data, error } = useDataQuery(query)
+    const [selected, setSelected] = useState(new Map())
+
+    if (loading) {
+        return <CircularLoader />
     }
 
-    static propTypes = {
-        onChange: PropTypes.func,
-        multiselect: PropTypes.bool,
-    }
-
-    static defaultProps = {
-        onChange: null,
-        multiselect: false,
-    }
-
-    constructor() {
-        super()
-
-        this.state = {
-            selected: [],
-            rootsWithMembers: null,
-        }
-
-        this.getOrgUnitIdFromPath = this.getOrgUnitIdFromPath.bind(this)
-        this.handleOrgUnitClickSingle = this.handleOrgUnitClickSingle.bind(this)
-        this.handleOrgUnitClickMulti = this.handleOrgUnitClickMulti.bind(this)
-        this.loadAvailableOrgUnits = this.loadAvailableOrgUnits.bind(this)
-    }
-
-    componentDidMount() {
-        if (this.state.rootsWithMembers === null) {
-            this.loadAvailableOrgUnits()
-                .then(organisationUnitsResponse => {
-                    const organisationUnits = organisationUnitsResponse.toArray()
-                    this.setState({
-                        rootsWithMembers: organisationUnits,
-                    })
-                })
-                .catch(() => {
-                    this.manageError()
-                })
-        }
-    }
-
-    async loadAvailableOrgUnits() {
-        const d2 = this.context.d2
-
-        const orgUnits = await d2.currentUser.getOrganisationUnits({
-            fields: 'id,displayName,path,children::isNotEmpty,memberCount',
-            paging: false,
-        })
-
-        if (!orgUnits.size && d2.currentUser.authorities.has('ALL')) {
-            // if special all-authority we have access to all orgunits
-            return d2.models.organisationUnits.list({
-                paging: false,
-                level: 1,
-                fields: 'id,displayName,path,children::isNotEmpty,memberCount',
-            })
-        }
-
-        return orgUnits
-    }
-
-    getOrgUnitIdFromPath(path) {
-        return path.split('/').pop()
-    }
-
-    handleOrgUnitClickSingle(event, orgUnit) {
-        if (this.state.selected.includes(orgUnit.path)) {
-            return
-        }
-        const id = this.getOrgUnitIdFromPath(orgUnit.path)
-        this.setState({ selected: [orgUnit.path] })
-        this.props.onChange && this.props.onChange(id)
-    }
-
-    handleOrgUnitClickMulti(event, { path }) {
-        const { selected } = this.state
-        const paths = selected.includes(path)
-            ? selected.filter(selectedPath => selectedPath !== path)
-            : [...this.state.selected, path]
-
-        this.setState({ selected: paths })
-        this.props.onChange &&
-            this.props.onChange(paths.map(this.getOrgUnitIdFromPath))
-    }
-
-    render() {
-        if (!this.state.rootsWithMembers) {
-            return <span>{i18n.t('Updating Organisation Units Tree...')}</span>
-        }
-
-        if (this.state.rootsWithMembers.length < 1) {
-            return (
-                <p>
-                    {i18n.t(
-                        'You do not have access to any organisation units.'
-                    )}
-                </p>
-            )
-        }
-
-        const onSelectClick = this.props.multiselect
-            ? this.handleOrgUnitClickMulti
-            : this.handleOrgUnitClickSingle
-
+    if (error) {
         return (
-            <div className={styles.tree}>
-                {this.state.rootsWithMembers.map(rootOrgUnit => (
-                    <OrgUnitTree
-                        key={rootOrgUnit.id}
-                        hideMemberCount={Boolean(true)}
-                        root={rootOrgUnit}
-                        selected={this.state.selected}
-                        initiallyExpanded={[`/${rootOrgUnit.id}`]}
-                        onSelectClick={onSelectClick}
-                    />
-                ))}
-            </div>
+            <Help error>
+                {i18n.t(
+                    'Something went wrong whilst loading your organisation units.'
+                )}
+            </Help>
         )
     }
+
+    if (data.roots.organisationUnits.length === 0) {
+        return (
+            <p>{i18n.t('You do not have access to any organisation units.')}</p>
+        )
+    }
+
+    const handleOrgUnitClickSingle = ({ id, path }) => {
+        if (selected.has(path)) {
+            return
+        }
+        setSelected(new Map(selected).set(path, id))
+        if (onChange) {
+            onChange(id)
+        }
+    }
+
+    const handleOrgUnitClickMulti = ({ id, path, selected: s }) => {
+        const newSelected = new Map(selected)
+        if (s.includes(path)) {
+            newSelected.set(path, id)
+        } else {
+            newSelected.delete(path)
+        }
+        setSelected(newSelected)
+        if (onChange) {
+            onChange([...newSelected.values()])
+        }
+    }
+
+    const handleChange = multiselect
+        ? handleOrgUnitClickMulti
+        : handleOrgUnitClickSingle
+
+    return (
+        <div className={styles.wrapper}>
+            <OrganisationUnitTree
+                selected={[...selected.keys()]}
+                roots={data.roots.organisationUnits.map(ou => ou.id)}
+                singleSelection={!multiselect}
+                onChange={handleChange}
+            />
+        </div>
+    )
+}
+
+AvailableOrganisationUnitsTree.propTypes = {
+    multiselect: PropTypes.bool,
+    onChange: PropTypes.func,
 }
 
 export default AvailableOrganisationUnitsTree
