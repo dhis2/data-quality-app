@@ -34,13 +34,13 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "تنزيل كملف PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "تنزيل كملف CSV"
 
 msgid "Marked for follow-up"
 msgstr "مُعلَّم للمتابعة"
@@ -94,7 +94,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "حدث خطأ غير متوقع أثناء التحليل"
 
 msgid "Follow up"
-msgstr ""
+msgstr "متابعة"
 
 msgid "Data Set"
 msgstr "حزمة البيانات"
@@ -200,7 +200,7 @@ msgid "Validation passed successfully"
 msgstr "تم اجتياز التحقق بنجاح"
 
 msgid "Validate"
-msgstr ""
+msgstr "تحقق"
 
 msgid "Send Notifications"
 msgstr "إرسال إشعارات"

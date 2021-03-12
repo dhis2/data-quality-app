@@ -22,25 +22,25 @@ msgid "More than 500 values found, please narrow the search to see all"
 msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Error loading datasets."
-msgstr ""
+msgstr "加载数据集时出错。"
 
 msgid "No match found"
-msgstr ""
+msgstr "找不到匹配项"
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr ""
+msgstr "加载组织单位时出了点问题。"
 
 msgid "You do not have access to any organisation units."
 msgstr "您无权访问任何组织单位。"
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "获取pdf格式报表"
 
 msgid "Download as XLS"
-msgstr ""
+msgstr "下载为XLS"
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "获取CSV格式报表"
 
 msgid "Marked for follow-up"
 msgstr "标记为后续"
@@ -94,7 +94,7 @@ msgid "An unexpected error happened during analysis"
 msgstr "分析中发生意外错误"
 
 msgid "Follow up"
-msgstr ""
+msgstr "后续跟踪"
 
 msgid "Data Set"
 msgstr "数据集"
@@ -196,7 +196,7 @@ msgid "Validation passed successfully"
 msgstr "验证已成功"
 
 msgid "Validate"
-msgstr ""
+msgstr "验证"
 
 msgid "Send Notifications"
 msgstr "发送通知"
