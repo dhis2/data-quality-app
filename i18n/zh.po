@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -18,26 +18,35 @@ msgstr ""
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr "数据质量管理"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "更新机构树"
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr "您无权访问任何组织单位。"
 
-msgid "DOWNLOAD AS PDF"
-msgstr "下载为PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "下载为XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "下载为CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr "标记为后续"
+
+msgid "Unmarked for follow-up"
+msgstr "未标记为后续"
 
 msgid "Data Element"
 msgstr "数据元"
@@ -75,17 +84,17 @@ msgstr "后续"
 msgid "Validation Rule Group"
 msgstr "验证规则组"
 
-msgid "An unexpected error happened during analysis"
-msgstr "分析中发生意外错误"
+msgid "Follow-Up Analysis"
+msgstr "后续分析"
 
 msgid "No values found"
 msgstr "无值被找到"
 
-msgid "Unfollow done"
-msgstr "取消后续完成"
+msgid "An unexpected error happened during analysis"
+msgstr "分析中发生意外错误"
 
-msgid "Follow-Up Analysis"
-msgstr "后续分析"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "数据集"
@@ -99,9 +108,6 @@ msgstr "开始日期"
 msgid "End Date"
 msgstr "结束日期"
 
-msgid "follow up"
-msgstr "后续跟进"
-
 msgid "Close"
 msgstr "关闭"
 
@@ -114,11 +120,8 @@ msgstr "取消后续跟踪"
 msgid "unfollow"
 msgstr "取消后续跟踪"
 
-msgid "Marked for follow-up"
-msgstr "标记为后续"
-
-msgid "Unmarked for follow-up"
-msgstr "未标记为后续"
+msgid "Start"
+msgstr "开始"
 
 msgid "Threshold"
 msgstr "临界点"
@@ -138,9 +141,6 @@ msgstr "数据结束日期"
 msgid "Sort by"
 msgstr "排序"
 
-msgid "Outlier Detection"
-msgstr "离群值检测"
-
 msgid "Data set"
 msgstr "数据集"
 
@@ -159,8 +159,8 @@ msgstr "算法"
 msgid "Max results"
 msgstr "最大结果"
 
-msgid "Start"
-msgstr "开始"
+msgid "Outlier Detection"
+msgstr "离群值检测"
 
 msgid "Validation Rule Analysis"
 msgstr "验证规则分析"
@@ -195,14 +195,14 @@ msgstr "查看数据值"
 msgid "Validation passed successfully"
 msgstr "验证已成功"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "发送通知"
 
 msgid "Persist new results"
 msgstr "持久化新的结果"
-
-msgid "validate"
-msgstr "验证"
 
 msgid "Attribute Option Combination"
 msgstr "属性选项组合"

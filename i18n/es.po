@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -17,27 +17,36 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Data Quality"
-msgstr "Calidad de Datos"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "Se encontraron más de 500 valores, por favor corrija los errores o restrinja"
 " la búsqueda para verlos todos"
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -76,17 +85,17 @@ msgstr "Seguimiento"
 msgid "Validation Rule Group"
 msgstr "Grupo de Reglas de Validación"
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "Análisis por seguimiento"
 
 msgid "No values found"
 msgstr "No se encontraron valores"
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "Análisis por seguimiento"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Set de Datos"
@@ -98,9 +107,6 @@ msgid "Start Date"
 msgstr "Fecha de inicio"
 
 msgid "End Date"
-msgstr ""
-
-msgid "follow up"
 msgstr ""
 
 msgid "Close"
@@ -115,11 +121,8 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Comienzo"
 
 msgid "Threshold"
 msgstr ""
@@ -139,9 +142,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ordenar por"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Set de Datos\\:"
 
@@ -160,8 +160,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Comienzo"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Análisis por reglas de validación"
@@ -200,13 +200,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "Validado correctamente"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"

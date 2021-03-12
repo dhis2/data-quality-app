@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -16,27 +16,36 @@ msgstr ""
 "Language: tg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Data Quality"
-msgstr "Сифати иттилоот"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "Зиёда аз 500 қимат ёфт шуд, лутфан вайронкуниҳоро ислоҳ кунед ё доираи "
 "ҷустуҷӯро тангтар карда ҳамаро бинед"
 
-msgid "Updating Organisation Units Tree..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
+msgid "Download as PDF"
 msgstr ""
 
-msgid "DOWNLOAD AS XLS"
+msgid "Download as XLS"
 msgstr ""
 
-msgid "DOWNLOAD AS CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
@@ -75,17 +84,17 @@ msgstr "Пайгирӣ кардан"
 msgid "Validation Rule Group"
 msgstr ""
 
-msgid "An unexpected error happened during analysis"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "Таҳлил барои пайгирӣ"
 
 msgid "No values found"
 msgstr "Ягон қимат ёфт нашуд"
 
-msgid "Unfollow done"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow-Up Analysis"
-msgstr "Таҳлил барои пайгирӣ"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Маҷмӯи иттилоот"
@@ -97,9 +106,6 @@ msgid "Start Date"
 msgstr ""
 
 msgid "End Date"
-msgstr ""
-
-msgid "follow up"
 msgstr ""
 
 msgid "Close"
@@ -114,11 +120,8 @@ msgstr ""
 msgid "unfollow"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Оғоз"
 
 msgid "Threshold"
 msgstr ""
@@ -138,9 +141,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ҷудокунӣ аз рӯи"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Маҷмӯи иттилоот"
 
@@ -159,8 +159,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Оғоз"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Таҳлили қоидаи санҷиши эътибор"
@@ -199,13 +199,13 @@ msgstr ""
 msgid "Validation passed successfully"
 msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
-msgstr ""
-
-msgid "validate"
 msgstr ""
 
 msgid "Attribute Option Combination"

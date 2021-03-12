@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -15,26 +15,35 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-msgid "Data Quality"
-msgstr "Kvalita dat"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "Aktualizace stromu Organizačních jednotek ..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr "Nemáte přístup k žádným organizačním jednotkám."
 
-msgid "DOWNLOAD AS PDF"
-msgstr "STÁHNOUT JAKO PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "STÁHNOUT JAKO XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "STÁHNOUT JAKO CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr "Označeno pro další sledování"
+
+msgid "Unmarked for follow-up"
+msgstr "Neoznačeno pro další sledování"
 
 msgid "Data Element"
 msgstr "Datový prvek"
@@ -72,17 +81,17 @@ msgstr "Následovat"
 msgid "Validation Rule Group"
 msgstr "Skupina pravidel ověření"
 
-msgid "An unexpected error happened during analysis"
-msgstr "Během analýzy došlo k neočekávané chybě"
+msgid "Follow-Up Analysis"
+msgstr "Následná analýza"
 
 msgid "No values found"
 msgstr "Nenalezeny žádné hodnoty"
 
-msgid "Unfollow done"
-msgstr "Provedeno ukončení sledování"
+msgid "An unexpected error happened during analysis"
+msgstr "Během analýzy došlo k neočekávané chybě"
 
-msgid "Follow-Up Analysis"
-msgstr "Následná analýza"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -96,9 +105,6 @@ msgstr "Datum začátku"
 msgid "End Date"
 msgstr "Datum ukončení"
 
-msgid "follow up"
-msgstr "následovat"
-
 msgid "Close"
 msgstr "Zavřít"
 
@@ -111,11 +117,8 @@ msgstr "Zrušit sledování"
 msgid "unfollow"
 msgstr "přestat sledovat"
 
-msgid "Marked for follow-up"
-msgstr "Označeno pro další sledování"
-
-msgid "Unmarked for follow-up"
-msgstr "Neoznačeno pro další sledování"
+msgid "Start"
+msgstr "Start"
 
 msgid "Threshold"
 msgstr "Práh"
@@ -135,9 +138,6 @@ msgstr "Datum ukončení dat"
 msgid "Sort by"
 msgstr "Seřazeno podle"
 
-msgid "Outlier Detection"
-msgstr "Detekce odlehlých hodnot"
-
 msgid "Data set"
 msgstr "Datová sada"
 
@@ -156,8 +156,8 @@ msgstr "Algoritmus"
 msgid "Max results"
 msgstr "Max. Počet výsledků"
 
-msgid "Start"
-msgstr "Start"
+msgid "Outlier Detection"
+msgstr "Detekce odlehlých hodnot"
 
 msgid "Validation Rule Analysis"
 msgstr "Analýza ověřovacích pravidel"
@@ -199,14 +199,14 @@ msgstr "Zobrazit datové hodnoty"
 msgid "Validation passed successfully"
 msgstr "Ověření proběhlo úspěšně"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "Odeslat oznámení"
 
 msgid "Persist new results"
 msgstr "Zachovat nové výsledky"
-
-msgid "validate"
-msgstr "ověřit"
 
 msgid "Attribute Option Combination"
 msgstr "Kombinace možností atributů"

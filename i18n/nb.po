@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -16,26 +16,35 @@ msgstr ""
 "Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Data Quality"
-msgstr "Datakvalitet"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "Oppdaterer Organisasjonsenhettreet..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr "Du har ikke tilgang til noen organisasjonsenheter."
 
-msgid "DOWNLOAD AS PDF"
-msgstr "LAST NED SOM PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "LAST NED SOM XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "LAST NED SOM CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Data Element"
 msgstr "Dataelementer"
@@ -73,17 +82,17 @@ msgstr "Oppfølging"
 msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
 
-msgid "An unexpected error happened during analysis"
-msgstr "En uventet feil oppsto under analysen"
+msgid "Follow-Up Analysis"
+msgstr "Oppfølgingsanalyse"
 
 msgid "No values found"
 msgstr "Ingen verdier funnet"
 
-msgid "Unfollow done"
-msgstr "Sluttet å følge"
+msgid "An unexpected error happened during analysis"
+msgstr "En uventet feil oppsto under analysen"
 
-msgid "Follow-Up Analysis"
-msgstr "Oppfølgingsanalyse"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Datasett"
@@ -97,9 +106,6 @@ msgstr "Startdato"
 msgid "End Date"
 msgstr "Sluttdato"
 
-msgid "follow up"
-msgstr "oppfølging"
-
 msgid "Close"
 msgstr "Lukk"
 
@@ -112,11 +118,8 @@ msgstr "Slutt å følge"
 msgid "unfollow"
 msgstr "Slutt å følge"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Start"
 
 msgid "Threshold"
 msgstr "Terskel"
@@ -136,9 +139,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Sorter etter"
 
-msgid "Outlier Detection"
-msgstr "Utliggerberegning"
-
 msgid "Data set"
 msgstr "Datasett"
 
@@ -157,8 +157,8 @@ msgstr "Algoritme"
 msgid "Max results"
 msgstr "Maks resultater"
 
-msgid "Start"
-msgstr "Start"
+msgid "Outlier Detection"
+msgstr "Utliggerberegning"
 
 msgid "Validation Rule Analysis"
 msgstr "Valideringsregel analyse"
@@ -195,14 +195,14 @@ msgstr "Vis dataverdier"
 msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "Send varslinger"
 
 msgid "Persist new results"
 msgstr "Vedvar nye resultater"
-
-msgid "validate"
-msgstr "Valider"
 
 msgid "Attribute Option Combination"
 msgstr "Attributtalternativkombinasjon"

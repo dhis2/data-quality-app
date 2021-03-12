@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -18,27 +18,36 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Data Quality"
-msgstr ""
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "Lebih dari 500 nilai ditemukan, persempit pencarian untuk melihat semuanya"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "Memperbarui Pohon Unit Organisasi.."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
-msgstr "UNDUH SEBAGAI PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "UNDUH SEBAGAI XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "UNDUH SEBAGAI CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Data Element"
 msgstr "Data Elemen"
@@ -76,17 +85,17 @@ msgstr ""
 msgid "Validation Rule Group"
 msgstr "Grup Aturan Validasi"
 
-msgid "An unexpected error happened during analysis"
-msgstr "Terjadi kesalahan tak terduga selama analisis"
+msgid "Follow-Up Analysis"
+msgstr "Analisis Tindak Lanjut"
 
 msgid "No values found"
 msgstr "Tidak ada nilai ditemukan"
 
-msgid "Unfollow done"
-msgstr "Berhenti mengikuti"
+msgid "An unexpected error happened during analysis"
+msgstr "Terjadi kesalahan tak terduga selama analisis"
 
-msgid "Follow-Up Analysis"
-msgstr "Analisis Tindak Lanjut"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Data Set"
@@ -100,9 +109,6 @@ msgstr "Tanggal Mulai"
 msgid "End Date"
 msgstr "Tanggal Selesai"
 
-msgid "follow up"
-msgstr "tindak lanjuti"
-
 msgid "Close"
 msgstr "Tutup"
 
@@ -115,11 +121,8 @@ msgstr "Berhenti Ikuti"
 msgid "unfollow"
 msgstr "berhenti mengikuti"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Mulai"
 
 msgid "Threshold"
 msgstr ""
@@ -139,9 +142,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Urutkan berdasar"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Data set"
 
@@ -160,8 +160,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Mulai"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Analisis Aturan Validasi"
@@ -200,14 +200,14 @@ msgstr "Lihat Nilai Data"
 msgid "Validation passed successfully"
 msgstr "Lulus validasi"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "Kirim Notifikasi"
 
 msgid "Persist new results"
 msgstr "Gunakan hasil baru"
-
-msgid "validate"
-msgstr "validasi"
 
 msgid "Attribute Option Combination"
 msgstr ""

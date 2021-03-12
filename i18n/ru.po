@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T12:09:22.622Z\n"
+"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -16,28 +16,37 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid "Data Quality"
-msgstr "Качество данных"
-
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
 "Найдено более 500 значений, пожалуйста сузьте поиск, чтобы увидеть все "
 "варианты"
 
-msgid "Updating Organisation Units Tree..."
-msgstr "Обновление дерева организационных единиц ..."
+msgid "Error loading datasets."
+msgstr ""
+
+msgid "No match found"
+msgstr ""
+
+msgid "Something went wrong whilst loading your organisation units."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
 
-msgid "DOWNLOAD AS PDF"
-msgstr "СКАЧАТЬ КАК PDF"
+msgid "Download as PDF"
+msgstr ""
 
-msgid "DOWNLOAD AS XLS"
-msgstr "СКАЧАТЬ КАК XLS"
+msgid "Download as XLS"
+msgstr ""
 
-msgid "DOWNLOAD AS CSV"
-msgstr "СКАЧАТЬ КАК CSV"
+msgid "Download as CSV"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Data Element"
 msgstr "Элемент данных"
@@ -75,17 +84,17 @@ msgstr "Дальнейшие действия"
 msgid "Validation Rule Group"
 msgstr "Группа правил проверки"
 
-msgid "An unexpected error happened during analysis"
-msgstr "Произошла непредвиденная ошибка во время анализа"
+msgid "Follow-Up Analysis"
+msgstr "Анализ Follow-Up"
 
 msgid "No values found"
 msgstr "Значения не найдены"
 
-msgid "Unfollow done"
-msgstr "Не отслеживать"
+msgid "An unexpected error happened during analysis"
+msgstr "Произошла непредвиденная ошибка во время анализа"
 
-msgid "Follow-Up Analysis"
-msgstr "Анализ Follow-Up"
+msgid "Follow up"
+msgstr ""
 
 msgid "Data Set"
 msgstr "Набор данных"
@@ -99,9 +108,6 @@ msgstr "Дата начала"
 msgid "End Date"
 msgstr "Дата окончания"
 
-msgid "follow up"
-msgstr "отслеживать"
-
 msgid "Close"
 msgstr "Закрыть"
 
@@ -114,11 +120,8 @@ msgstr "Не отслеживать"
 msgid "unfollow"
 msgstr "не отслеживать"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
+msgid "Start"
+msgstr "Начать"
 
 msgid "Threshold"
 msgstr ""
@@ -138,9 +141,6 @@ msgstr ""
 msgid "Sort by"
 msgstr "Сортировать по"
 
-msgid "Outlier Detection"
-msgstr ""
-
 msgid "Data set"
 msgstr "Набор данных"
 
@@ -159,8 +159,8 @@ msgstr ""
 msgid "Max results"
 msgstr ""
 
-msgid "Start"
-msgstr "Начать"
+msgid "Outlier Detection"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr "Анализ по правилам валидации"
@@ -197,14 +197,14 @@ msgstr "Просмотр значений данных"
 msgid "Validation passed successfully"
 msgstr "Проверка прошла успешно"
 
+msgid "Validate"
+msgstr ""
+
 msgid "Send Notifications"
 msgstr "Отправка уведомлений"
 
 msgid "Persist new results"
 msgstr "Сохранять новые результаты"
-
-msgid "validate"
-msgstr "проверять"
 
 msgid "Attribute Option Combination"
 msgstr ""
