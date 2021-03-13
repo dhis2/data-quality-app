@@ -194,7 +194,7 @@ msgid "Validation passed successfully"
 msgstr ""
 
 msgid "Validate"
-msgstr ""
+msgstr "Перевірити"
 
 msgid "Send Notifications"
 msgstr ""
