@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/dhis2/data-quality-app/compare/v1.7.0...v1.7.1) (2021-03-21)
+
+
+### Bug Fixes
+
+* update @dhis2/ui to 6.5.6 due to fixed select filter z-index ([#721](https://github.com/dhis2/data-quality-app/issues/721)) ([3ad2ea1](https://github.com/dhis2/data-quality-app/commit/3ad2ea14992175419400f61f56c77923c61f1fb4))
+
 # [1.7.0](https://github.com/dhis2/data-quality-app/compare/v1.6.2...v1.7.0) (2021-03-11)
 
 
