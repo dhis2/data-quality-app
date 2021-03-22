@@ -70,8 +70,8 @@ const ThresholdField = ({ threshold, onChange }) => (
 const ZScoreFields = ({
     showAdvancedZScoreFields,
     onToggleAdvancedZScoreFields,
-    sortBy,
-    onSortByChange,
+    orderBy,
+    onOrderByChange,
     dataStartDate,
     dataEndDate,
     onDataStartDateChange,
@@ -107,8 +107,8 @@ const ZScoreFields = ({
                 <SelectField
                     style={jsPageStyles.inputForm}
                     floatingLabelText={i18n.t('Sort by')}
-                    onChange={onSortByChange}
-                    value={sortBy}
+                    onChange={onOrderByChange}
+                    value={orderBy}
                 >
                     <MenuItem value={Z_SCORE} primaryText="Z-score" />
                     <MenuItem
@@ -132,8 +132,8 @@ const Form = ({
     onAlgorithmChange,
     threshold,
     onThresholdChange,
-    sortBy,
-    onSortByChange,
+    orderBy,
+    onOrderByChange,
     dataStartDate,
     dataEndDate,
     onDataStartDateChange,
@@ -214,8 +214,8 @@ const Form = ({
                         onToggleAdvancedZScoreFields={
                             onToggleAdvancedZScoreFields
                         }
-                        sortBy={sortBy}
-                        onSortByChange={onSortByChange}
+                        orderBy={orderBy}
+                        onOrderByChange={onOrderByChange}
                         dataStartDate={dataStartDate}
                         dataEndDate={dataEndDate}
                         onDataStartDateChange={onDataStartDateChange}
