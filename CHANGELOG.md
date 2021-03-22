@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/dhis2/data-quality-app/compare/v1.7.1...v1.7.2) (2021-03-22)
+
+
+### Bug Fixes
+
+* **outlier-detection:** change sortBy to orderBy and default value ([0927027](https://github.com/dhis2/data-quality-app/commit/0927027be7f954f56ae24dd74762161a7a9fe735))
+
 ## [1.7.1](https://github.com/dhis2/data-quality-app/compare/v1.7.0...v1.7.1) (2021-03-21)
 
 
