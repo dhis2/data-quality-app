@@ -34,7 +34,7 @@ class OutlierDetection extends Page {
         'dataStartDate',
         'dataEndDate',
         'maxResults',
-        'sortBy',
+        'orderBy',
     ]
 
     constructor() {
@@ -60,7 +60,7 @@ class OutlierDetection extends Page {
             dataStartDate: null,
             dataEndDate: null,
             maxResults: DEFAULT_MAX_RESULTS,
-            sortBy: DEFAULT_SORT_BY,
+            orderBy: DEFAULT_SORT_BY,
         }
     }
 
@@ -113,7 +113,7 @@ class OutlierDetection extends Page {
             `endDate=${convertDateToApiDateFormat(this.state.endDate)}`,
             `algorithm=${this.state.algorithm}`,
             `maxResults=${this.state.maxResults}`,
-            `sortBy=${this.state.sortBy}`,
+            `orderBy=${this.state.orderBy}`,
         ]
 
         if (isZScoreAlgorithm) {
@@ -166,8 +166,8 @@ class OutlierDetection extends Page {
         this.setState({ maxResults: value })
     }
 
-    handleSortByChange = (event, index, value) => {
-        this.setState({ sortBy: value })
+    handleOrderByChange = (event, index, value) => {
+        this.setState({ orderBy: value })
     }
 
     toggleShowAdvancedZScoreFields = () => {
@@ -182,7 +182,7 @@ class OutlierDetection extends Page {
                 // Also reset advanced fields
                 dataStartDate: null,
                 dataEndDate: null,
-                sortBy: DEFAULT_SORT_BY,
+                orderBy: DEFAULT_SORT_BY,
             })
         }
     }
@@ -302,8 +302,8 @@ class OutlierDetection extends Page {
                             onAlgorithmChange={this.handleAlgorithmChange}
                             threshold={this.state.threshold}
                             onThresholdChange={this.handleThresholdChange}
-                            sortBy={this.state.sortBy}
-                            onSortByChange={this.handleSortByChange}
+                            orderBy={this.state.orderBy}
+                            onOrderByChange={this.handleOrderByChange}
                             dataStartDate={this.state.dataStartDate}
                             onDataStartDateChange={
                                 this.handleDataStartDateChange
