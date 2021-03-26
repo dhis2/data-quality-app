@@ -22,7 +22,6 @@ const query = {
         resource: 'me',
         params: {
             fields: 'organisationUnits, authorities',
-            paging: false,
         },
     },
 }
