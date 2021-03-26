@@ -79,12 +79,16 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     }
 
     const handleOrgUnitClickSingle = ({ id, path }) => {
+        let selectedId = id
         if (selected.has(path)) {
-            return
+            //deselect
+            selectedId = null
+            setSelected(new Map())
+        } else {
+            setSelected(new Map().set(path, id))
         }
-        setSelected(new Map().set(path, id))
         if (onChange) {
-            onChange(id)
+            onChange(selectedId)
         }
     }
 
