@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/dhis2/data-quality-app/compare/v1.7.2...v1.7.3) (2021-03-29)
+
+
+### Bug Fixes
+
+* **org-unit-tree:** load user org units ([#727](https://github.com/dhis2/data-quality-app/issues/727)) ([9bed94f](https://github.com/dhis2/data-quality-app/commit/9bed94f1a4848f6af02649246385e19da1838dc3))
+
 ## [1.7.2](https://github.com/dhis2/data-quality-app/compare/v1.7.1...v1.7.2) (2021-03-22)
 
 
