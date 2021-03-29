@@ -3,11 +3,11 @@ import i18n from '@dhis2/d2-i18n'
 import { OrganisationUnitTree } from '@dhis2/ui'
 import { CircularLoader, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './AvailableOrganisationUnitsTree.module.css'
 
-const query = {
-    roots: {
+const allRootQuery = {
+    allRoots: {
         resource: 'organisationUnits',
         params: {
             filter: 'level:eq:1',
@@ -17,9 +17,45 @@ const query = {
     },
 }
 
-const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
+const query = {
+    data: {
+        resource: 'me',
+        params: {
+            fields: 'organisationUnits, authorities',
+        },
+    },
+}
+
+const useUserOrganisationUnits = () => {
     const { loading, data, error } = useDataQuery(query)
+    const {
+        loading: loadingAll,
+        data: dataAll,
+        error: errorAll,
+        refetch,
+    } = useDataQuery(allRootQuery, { lazy: true })
+
+    useEffect(() => {
+        if (
+            !data?.data.organisationUnits.length &&
+            data?.data?.authorities.includes('ALL')
+        ) {
+            //fetch all orgs
+            refetch()
+        }
+    }, [data])
+
+    return {
+        loading: loadingAll || loading,
+        organisationUnits:
+            dataAll?.allRoots.organisationUnits || data?.data.organisationUnits,
+        error: errorAll || error,
+    }
+}
+
+const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
     const [selected, setSelected] = useState(new Map())
+    const { loading, organisationUnits, error } = useUserOrganisationUnits()
 
     if (loading) {
         return <CircularLoader />
@@ -35,19 +71,23 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
         )
     }
 
-    if (data.roots.organisationUnits.length === 0) {
+    if (organisationUnits.length === 0) {
         return (
             <p>{i18n.t('You do not have access to any organisation units.')}</p>
         )
     }
 
     const handleOrgUnitClickSingle = ({ id, path }) => {
+        let selectedId = id
         if (selected.has(path)) {
-            return
+            //deselect
+            selectedId = null
+            setSelected(new Map())
+        } else {
+            setSelected(new Map().set(path, id))
         }
-        setSelected(new Map(selected).set(path, id))
         if (onChange) {
-            onChange(id)
+            onChange(selectedId)
         }
     }
 
@@ -72,7 +112,7 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
         <div className={styles.wrapper}>
             <OrganisationUnitTree
                 selected={[...selected.keys()]}
-                roots={data.roots.organisationUnits.map(ou => ou.id)}
+                roots={organisationUnits.map(ou => ou.id)}
                 singleSelection={!multiselect}
                 onChange={handleChange}
             />
