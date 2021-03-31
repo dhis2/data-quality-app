@@ -150,7 +150,7 @@ class OutlierDetection extends Page {
         this.setState({ startDate: new Date(date) })
     }
 
-    handleEndDateOnChange = (event, date) => {
+    handleEndDateChange = (event, date) => {
         this.setState({ endDate: new Date(date) })
     }
 
