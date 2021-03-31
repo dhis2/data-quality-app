@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/dhis2/data-quality-app/compare/v1.7.4...v1.7.5) (2021-03-31)
+
+
+### Bug Fixes
+
+* **validation rule analysis:** send correct persist & notification values ([61245f0](https://github.com/dhis2/data-quality-app/commit/61245f065fab417270e70b183ab07b487c43ddaa))
+
 ## [1.7.4](https://github.com/dhis2/data-quality-app/compare/v1.7.3...v1.7.4) (2021-03-29)
 
 
