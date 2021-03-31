@@ -73,8 +73,8 @@ class ValidationRulesAnalysis extends Page {
             startDate: convertDateToApiDateFormat(this.state.startDate),
             endDate: convertDateToApiDateFormat(this.state.endDate),
             ou: this.state.organisationUnitId,
-            notification: this.state.notification,
-            persist: this.state.persist,
+            notification: this.state.sendNotfications,
+            persist: this.state.persistNewResults,
         }
         if (
             this.state.validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID
