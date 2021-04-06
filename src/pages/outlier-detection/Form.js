@@ -90,20 +90,40 @@ const ZScoreFields = ({
         </Button>
         {showAdvancedZScoreFields && (
             <>
-                <DatePicker
-                    textFieldStyle={jsPageStyles.inputForm}
-                    floatingLabelText={i18n.t('Data start date')}
-                    onChange={onDataStartDateChange}
-                    maxDate={dataEndDate}
-                    value={dataStartDate}
-                />
-                <DatePicker
-                    textFieldStyle={jsPageStyles.inputForm}
-                    floatingLabelText={i18n.t('Data end date')}
-                    onChange={onDataEndDateChange}
-                    minDate={dataStartDate}
-                    value={dataEndDate}
-                />
+                <div className={styles.optionalDatepickerContainer}>
+                    <DatePicker
+                        textFieldStyle={jsPageStyles.inputForm}
+                        floatingLabelText={i18n.t('Data start date')}
+                        onChange={(event, date) => onDataStartDateChange(date)}
+                        maxDate={dataEndDate}
+                        value={dataStartDate}
+                    />
+                    <Button
+                        secondary
+                        small
+                        disabled={!dataStartDate}
+                        onClick={() => onDataStartDateChange(null)}
+                    >
+                        {i18n.t('Clear')}
+                    </Button>
+                </div>
+                <div className={styles.optionalDatepickerContainer}>
+                    <DatePicker
+                        textFieldStyle={jsPageStyles.inputForm}
+                        floatingLabelText={i18n.t('Data end date')}
+                        onChange={(event, date) => onDataEndDateChange(date)}
+                        minDate={dataStartDate}
+                        value={dataEndDate}
+                    />
+                    <Button
+                        secondary
+                        small
+                        disabled={!dataEndDate}
+                        onClick={() => onDataEndDateChange(null)}
+                    >
+                        {i18n.t('Clear')}
+                    </Button>
+                </div>
                 <SelectField
                     style={jsPageStyles.inputForm}
                     floatingLabelText={i18n.t('Sort by')}
