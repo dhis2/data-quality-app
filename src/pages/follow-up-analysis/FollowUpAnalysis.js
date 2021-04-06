@@ -201,7 +201,12 @@ class FollowUpAnalysis extends Page {
                 </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
-                    {!this.state.showTable && (
+                    {/* Hide form instead of not rendering to preserve org unit state */}
+                    <div
+                        style={{
+                            display: this.state.showTable ? 'none' : 'block',
+                        }}
+                    >
                         <Form
                             onSubmit={this.getFollowUpList}
                             submitDisabled={this.isActionDisabled()}
@@ -215,7 +220,7 @@ class FollowUpAnalysis extends Page {
                             endDate={this.state.endDate}
                             onEndDateChange={this.endDateOnChange}
                         />
-                    )}
+                    </div>
                     {this.state.showTable && (
                         <FollowUpAnalysisTable
                             elements={this.state.elements}

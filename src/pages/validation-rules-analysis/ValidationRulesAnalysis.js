@@ -184,7 +184,12 @@ class ValidationRulesAnalysis extends Page {
                 </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
-                    {!this.state.showTable && (
+                    {/* Hide form instead of not rendering to preserve org unit state */}
+                    <div
+                        style={{
+                            display: this.state.showTable ? 'none' : 'block',
+                        }}
+                    >
                         <Form
                             onSubmit={this.validate}
                             submitDisabled={this.isActionDisabled()}
@@ -207,7 +212,7 @@ class ValidationRulesAnalysis extends Page {
                                 this.handlePersistNewResultsChange
                             }
                         />
-                    )}
+                    </div>
                     {this.state.showTable && (
                         <ValidationRulesAnalysisTable
                             elements={this.state.elements}
