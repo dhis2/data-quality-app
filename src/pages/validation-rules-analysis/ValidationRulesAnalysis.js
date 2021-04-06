@@ -194,6 +194,7 @@ class ValidationRulesAnalysis extends Page {
                             startDate={this.state.startDate}
                             onStartDateChange={this.handleStartDateChange}
                             endDate={this.state.endDate}
+                            onEndDateChange={this.handleEndDateChange}
                             onValidationRuleGroupChange={
                                 this.handleValidationRuleGroupChange
                             }
