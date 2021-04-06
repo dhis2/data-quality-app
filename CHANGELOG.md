@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/dhis2/data-quality-app/compare/v1.7.5...v1.7.6) (2021-04-06)
+
+
+### Bug Fixes
+
+* update end dates for visualisation analysis and outliers ([#745](https://github.com/dhis2/data-quality-app/issues/745)) ([b71f91a](https://github.com/dhis2/data-quality-app/commit/b71f91aa732460c0f7309190bc8f485038abda3b))
+
 ## [1.7.5](https://github.com/dhis2/data-quality-app/compare/v1.7.4...v1.7.5) (2021-03-31)
 
 
