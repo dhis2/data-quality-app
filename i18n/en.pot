@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-02T13:20:58.188Z\n"
-"PO-Revision-Date: 2021-03-02T13:20:58.188Z\n"
+"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"PO-Revision-Date: 2021-04-06T20:10:13.953Z\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -123,6 +123,9 @@ msgid "Show advanced options"
 msgstr ""
 
 msgid "Data start date"
+msgstr ""
+
+msgid "Clear"
 msgstr ""
 
 msgid "Data end date"
