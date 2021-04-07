@@ -1,3 +1,10 @@
+## [1.7.7](https://github.com/dhis2/data-quality-app/compare/v1.7.6...v1.7.7) (2021-04-07)
+
+
+### Bug Fixes
+
+* preserve org-unit state when navigating back from table ([#748](https://github.com/dhis2/data-quality-app/issues/748)) ([0a42f3e](https://github.com/dhis2/data-quality-app/commit/0a42f3e09ced27e17b32d9289ead65ecc9a71235))
+
 ## [1.7.6](https://github.com/dhis2/data-quality-app/compare/v1.7.5...v1.7.6) (2021-04-06)
 
 
