@@ -285,8 +285,12 @@ class OutlierDetection extends Page {
                 </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
-                    {/* FORM: hidden to avoid not needed api requests when going back from table */}
-                    {!this.state.showTable && (
+                    {/* Hide form instead of not rendering to preserve org unit state */}
+                    <div
+                        style={{
+                            display: this.state.showTable ? 'none' : 'block',
+                        }}
+                    >
                         <Form
                             onSubmit={this.start}
                             submitDisabled={this.isActionDisabled()}
@@ -320,7 +324,7 @@ class OutlierDetection extends Page {
                             onStartDateChange={this.handleStartDateChange}
                             onEndDateChange={this.handleEndDateChange}
                         />
-                    )}
+                    </div>
                     {this.state.showTable && this.state.csvQueryStr && (
                         <OutlierAnalyisTable
                             algorithm={this.state.algorithm}
