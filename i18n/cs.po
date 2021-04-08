@@ -133,7 +133,7 @@ msgid "Data start date"
 msgstr "Datum zahájení dat"
 
 msgid "Clear"
-msgstr ""
+msgstr "Vyčistit"
 
 msgid "Data end date"
 msgstr "Datum ukončení dat"
