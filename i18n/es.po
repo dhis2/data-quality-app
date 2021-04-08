@@ -137,7 +137,7 @@ msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr ""
+msgstr "Limpiar"
 
 msgid "Data end date"
 msgstr ""
