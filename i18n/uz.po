@@ -135,7 +135,7 @@ msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr ""
+msgstr "Тозалаш"
 
 msgid "Data end date"
 msgstr ""
