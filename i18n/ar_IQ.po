@@ -133,7 +133,7 @@ msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr ""
+msgstr "مسح"
 
 msgid "Data end date"
 msgstr ""
