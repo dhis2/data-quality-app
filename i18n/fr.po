@@ -33,13 +33,13 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Arborescence des Unités d'organisation..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "Télécharger au format PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "TÉLÉCHARGER AU FORMAT XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "TÉLÉCHARGER AU FORMAT CSV"
 
 msgid "Data Element"
 msgstr "Élément de donnée"
@@ -74,7 +74,7 @@ msgid "No values found"
 msgstr "Pas de valeurs trouvées"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Se désabonner effectué"
 
 msgid "Follow-Up Analysis"
 msgstr "Analyse des Suivis"
@@ -92,7 +92,7 @@ msgid "End Date"
 msgstr "Date de fin"
 
 msgid "follow up"
-msgstr ""
+msgstr "Suivi"
 
 msgid "Close"
 msgstr "Fermer"
@@ -110,7 +110,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr "Analyse Min-Max des valeurs aberrantes"
 
 msgid "start"
-msgstr ""
+msgstr "Démarrer"
 
 msgid "Validation Rule Analysis"
 msgstr "Analyse de règle de validation"
@@ -168,7 +168,7 @@ msgid "Persist new results"
 msgstr "Persister de nouveaux résultats"
 
 msgid "validate"
-msgstr ""
+msgstr "Valider"
 
 msgid "Importance"
 msgstr "Importance"
