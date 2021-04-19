@@ -28,16 +28,16 @@ msgid "Data Set"
 msgstr "Ensemble de données"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Tous les ensembles de données]"
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "TÉLÉCHARGER AU FORMAT PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "TÉLÉCHARGER AU FORMAT XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "TÉLÉCHARGER AU FORMAT CSV"
 
 msgid "Follow-Up Analysis"
 msgstr "Analyse des Suivis"
@@ -53,7 +53,7 @@ msgstr ""
 "durant la saisie ou l'analyse des données."
 
 msgid "follow up"
-msgstr ""
+msgstr "Suivi"
 
 msgid "unfollow"
 msgstr "Se désabonner"
@@ -113,7 +113,7 @@ msgstr ""
 "min. Les valeurs aberrante peuvent être examinées et marquées pour le suivi."
 
 msgid "start"
-msgstr ""
+msgstr "Démarrer"
 
 msgid "Mark"
 msgstr "Marquer"
@@ -145,7 +145,7 @@ msgstr ""
 "erreurs dans la base de données."
 
 msgid "validate"
-msgstr ""
+msgstr "Valider"
 
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
@@ -199,16 +199,16 @@ msgid "no data available"
 msgstr "Pas de données disponibles"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Toutes les règles de validation]"
 
 msgid "Performing request"
-msgstr ""
+msgstr "Exécution de la requête"
 
 msgid "Performing analysis"
-msgstr ""
+msgstr "Effectuer une analyse"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Analyse effectuée"
 
 msgid "Validation passed successfully"
 msgstr "Succès de la validation"
@@ -222,10 +222,10 @@ msgstr ""
 "Une erreur inattendue s'est produite lors de l'analyse"
 
 msgid "Marked"
-msgstr ""
+msgstr "Marqué"
 
 msgid "Unmarked"
-msgstr ""
+msgstr "Non marqué"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Se désabonner effectué"
