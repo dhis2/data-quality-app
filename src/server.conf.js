@@ -6,8 +6,8 @@ export const apiConf = {
         validationRules: '/validationRules',
         outlierDetection: '/outlierDetection',
         followupAnalysis: '/dataAnalysis/followup',
-        markOutlierDataValue: '/dataValues/followup',
-        markFollowUpDataValue: '/dataAnalysis/followup/mark',
+        markFollowups: '/dataValues/followups',
+        markOutlier: '/dataValues/followup',
         reportAnalysis: '/dataAnalysis/report',
     },
     results: {

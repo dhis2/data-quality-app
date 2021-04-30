@@ -131,8 +131,7 @@ class FollowUpAnalysis extends Page {
         })
 
         const api = this.context.d2.Api.getApi()
-        // TODO: Use new API with UIDs
-        await api.post(apiConf.endpoints.markFollowUpDataValue, {
+        await api.update(apiConf.endpoints.markFollowups, {
             followups: unfollowups,
         })
         if (!this.isPageMounted()) {
