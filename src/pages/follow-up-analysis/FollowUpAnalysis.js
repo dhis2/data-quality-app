@@ -64,17 +64,18 @@ class FollowUpAnalysis extends Page {
             ou: this.state.organisationUnitId,
             ds: this.state.dataSetIds,
         }
-        const response = await api.post(
-            apiConf.endpoints.folloupAnalysis,
+        const response = await api.get(
+            apiConf.endpoints.followupAnalysis,
             request
         )
         if (!this.isPageMounted()) {
             return
         }
 
-        const elements = response.map(
+        const elements = response.followupValues.map(
             FollowUpAnalysisTable.convertElementFromApiResponse
         )
+
         this.context.updateAppState({
             pageState: {
                 loading: false,
@@ -130,6 +131,7 @@ class FollowUpAnalysis extends Page {
         })
 
         const api = this.context.d2.Api.getApi()
+        // TODO: Use new API with UIDs
         await api.post(apiConf.endpoints.markFollowUpDataValue, {
             followups: unfollowups,
         })

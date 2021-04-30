@@ -35,24 +35,20 @@ class FollowUpAnalysisTable extends Component {
         d2: PropTypes.object,
     }
 
-    static generateElementKey = e =>
-        `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
-
     static convertElementFromApiResponse = e => ({
-        key: FollowUpAnalysisTable.generateElementKey(e),
-        attributeOptionComboId: e.attributeOptionComboId,
-        categoryOptionComboId: e.categoryOptionComboId,
-        periodId: e.periodId,
-        organisationUnitId: e.sourceId,
-        dataElementId: e.dataElementId,
-        dataElement: e.dataElementName,
-        organisation: e.sourceName,
-        period: e.period.name,
+        key: `${e.aoc}-${e.coc}-${e.pe}-${e.ou}-${e.de}`,
+        attributeOptionComboId: e.aoc,
+        categoryOptionComboId: e.coc,
+        periodId: e.pe,
+        period: e.pe,
+        organisationUnitId: e.ou,
+        organisation: e.ouName,
+        dataElementId: e.de,
+        dataElement: e.deName,
         min: e.min,
         max: e.max,
         value: Number.parseFloat(e.value, 10),
-        marked: !e.followup,
-        comment: e.comment,
+        marked: false,
     })
 
     static convertElementToUnFollowupRequest = e => ({
