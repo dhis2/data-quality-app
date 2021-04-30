@@ -1,177 +1,149 @@
 import i18n from '@dhis2/d2-i18n'
-import classNames from 'classnames'
 import {
+    Button,
     Checkbox,
-    RaisedButton,
     Table,
+    TableHead,
+    TableRowHead,
+    TableCellHead,
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
     TableRow,
-    TableRowColumn,
-} from 'material-ui'
+    TableCell,
+} from '@dhis2/ui'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import DownloadAs from '../../../components/download-as/DownloadAs'
 import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
-import jsPageStyles from '../../PageStyles'
 import styles from './FollowUpAnalysisTable.module.css'
 
-class FollowUpAnalysisTable extends Component {
-    static propTypes = {
-        elements: PropTypes.array.isRequired,
-        loading: PropTypes.bool.isRequired,
-        toggleCheckbox: PropTypes.func.isRequired,
-        unfollow: PropTypes.func.isRequired,
+const Footer = ({ submitButtonDisabled, onSubmit }) => (
+    <div
+        className={classNames(
+            cssPageStyles.cardFooter,
+            cssPageStyles.spaceBetween
+        )}
+    >
+        <Button primary disabled={submitButtonDisabled} onClick={onSubmit}>
+            {i18n.t('Unfollow elements')}
+        </Button>
+        <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
+    </div>
+)
+
+Footer.propTypes = {
+    submitButtonDisabled: PropTypes.bool.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+}
+
+const convertElementToUnFollowupRequest = e => ({
+    dataElement: e.dataElementId,
+    period: e.periodId,
+    orgUnit: e.organisationUnitId,
+    categoryOptionCombo: e.categoryOptionComboId,
+    attributeOptionCombo: e.attributeOptionComboId,
+    followup: false,
+})
+
+const ElementRow = ({ element, onCheckboxToggle }) => {
+    const handleMarkedToggle = () => {
+        onCheckboxToggle(element)
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-    }
+    return (
+        <TableRow>
+            <TableCell>{element.dataElement}</TableCell>
+            <TableCell>{element.organisation}</TableCell>
+            <TableCell>{element.period}</TableCell>
+            <TableCell className={cssPageStyles.right}>
+                <FormattedNumber value={element.min} />
+            </TableCell>
+            <TableCell className={cssPageStyles.right}>
+                <FormattedNumber value={element.value} />
+            </TableCell>
+            <TableCell className={cssPageStyles.right}>
+                <FormattedNumber value={element.max} />
+            </TableCell>
+            <TableCell className={cssPageStyles.centerFlex}>
+                <Checkbox
+                    checked={element.marked}
+                    onChange={handleMarkedToggle}
+                />
+            </TableCell>
+        </TableRow>
+    )
+}
 
-    static convertElementFromApiResponse = e => ({
-        key: `${e.aoc}-${e.coc}-${e.pe}-${e.ou}-${e.de}`,
-        attributeOptionComboId: e.aoc,
-        categoryOptionComboId: e.coc,
-        periodId: e.pe,
-        period: e.pe,
-        organisationUnitId: e.ou,
-        organisation: e.ouName,
-        dataElementId: e.de,
-        dataElement: e.deName,
-        min: e.min,
-        max: e.max,
-        value: Number.parseFloat(e.value, 10),
-        marked: false,
-    })
+ElementRow.propTypes = {
+    element: PropTypes.object.isRequired,
+    onCheckboxToggle: PropTypes.func.isRequired,
+}
 
-    static convertElementToUnFollowupRequest = e => ({
-        dataElement: e.dataElementId,
-        period: e.periodId,
-        orgUnit: e.organisationUnitId,
-        categoryOptionCombo: e.categoryOptionComboId,
-        attributeOptionCombo: e.attributeOptionComboId,
-        followup: false,
-    })
-
-    static areElementsTheSame(element1, element2) {
-        return (
-            element1.attributeOptionComboId ===
-                element2.attributeOptionComboId &&
-            element1.categoryOptionComboId === element2.categoryOptionComboId &&
-            element1.periodId === element2.periodId &&
-            element1.organisationUnitId === element2.organisationUnitId &&
-            element1.dataElementId === element2.dataElementId
-        )
-    }
-
-    handleUnfollowMarked = () => {
-        const unfollowups = this.props.elements
+const FollowUpAnalysisTable = ({
+    elements,
+    loading,
+    onCheckboxToggle,
+    onBatchUnfollow,
+}) => {
+    const handleBatchUnfollow = () => {
+        const unfollowups = elements
             .filter(element => element.marked)
-            .map(FollowUpAnalysisTable.convertElementToUnFollowupRequest)
-        this.props.unfollow(unfollowups)
+            .map(convertElementToUnFollowupRequest)
+        onBatchUnfollow(unfollowups)
     }
 
-    render() {
-        const rows = this.props.elements.map(element => {
-            const handleMarkedToggle = () => {
-                this.props.toggleCheckbox(element)
-            }
-
-            return (
-                <TableRow key={element.key}>
-                    <TableRowColumn>{element.dataElement}</TableRowColumn>
-                    <TableRowColumn>{element.organisation}</TableRowColumn>
-                    <TableRowColumn>{element.period}</TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.min} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.value} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.max} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.centerFlex}>
-                        <span className={cssPageStyles.checkboxWrapper}>
-                            <Checkbox
-                                checked={element.marked}
-                                onCheck={handleMarkedToggle}
-                                iconStyle={jsPageStyles.iconColor}
-                            />
-                        </span>
-                    </TableRowColumn>
-                </TableRow>
-            )
-        })
-
-        return (
-            <div>
-                <div className={cssPageStyles.cardHeader}>
-                    <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
-                </div>
-                <Table
-                    selectable={false}
-                    className={classNames(
-                        cssPageStyles.appTable,
-                        styles.followUpAnalysisTable
-                    )}
-                >
-                    <TableHeader
-                        displaySelectAll={false}
-                        adjustForCheckbox={false}
-                        enableSelectAll={false}
-                    >
-                        <TableRow>
-                            <TableHeaderColumn>
-                                {i18n.t('Data Element')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {i18n.t('Organisation Unit')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn>
-                                {i18n.t('Period')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t('Min')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t('Value')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
-                                {i18n.t('Max')}
-                            </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.center}>
-                                {i18n.t('Unfollow')}
-                            </TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody displayRowCheckbox={false} stripedRows={false}>
-                        {rows}
-                    </TableBody>
-                </Table>
-                <div
-                    className={classNames(
-                        cssPageStyles.cardFooter,
-                        cssPageStyles.spaceBetween
-                    )}
-                >
-                    <RaisedButton
-                        primary
-                        disabled={
-                            this.props.loading ||
-                            !this.props.elements.some(e => e.marked)
-                        }
-                        label={i18n.t('unfollow')}
-                        onClick={this.handleUnfollowMarked}
-                    />
-                    <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
-                </div>
+    return (
+        <>
+            <div className={cssPageStyles.cardHeader}>
+                <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
             </div>
-        )
-    }
+            <Table className={styles.followUpAnalysisTable}>
+                <TableHead>
+                    <TableRowHead>
+                        <TableCellHead>{i18n.t('Data Element')}</TableCellHead>
+                        <TableCellHead>
+                            {i18n.t('Organisation Unit')}
+                        </TableCellHead>
+                        <TableCellHead>{i18n.t('Period')}</TableCellHead>
+                        <TableCellHead className={cssPageStyles.right}>
+                            {i18n.t('Min')}
+                        </TableCellHead>
+                        <TableCellHead className={cssPageStyles.right}>
+                            {i18n.t('Value')}
+                        </TableCellHead>
+                        <TableCellHead className={cssPageStyles.right}>
+                            {i18n.t('Max')}
+                        </TableCellHead>
+                        <TableCellHead className={cssPageStyles.center}>
+                            {i18n.t('Unfollow')}
+                        </TableCellHead>
+                    </TableRowHead>
+                </TableHead>
+                <TableBody>
+                    {elements.map(element => (
+                        <ElementRow
+                            key={element.key}
+                            element={element}
+                            onCheckboxToggle={onCheckboxToggle}
+                        />
+                    ))}
+                </TableBody>
+            </Table>
+            <Footer
+                submitButtonDisabled={loading || !elements.some(e => e.marked)}
+                onSubmit={handleBatchUnfollow}
+            />
+        </>
+    )
+}
+
+FollowUpAnalysisTable.propTypes = {
+    elements: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+    onBatchUnfollow: PropTypes.func.isRequired,
+    onCheckboxToggle: PropTypes.func.isRequired,
 }
 
 export default FollowUpAnalysisTable

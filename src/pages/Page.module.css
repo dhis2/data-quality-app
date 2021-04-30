@@ -90,3 +90,7 @@
 .checkboxWrapper > div > div > div {
     margin: 0px !important;
 }
+
+.tableBackButton {
+    margin-right: var(--spacers-dp8);
+}

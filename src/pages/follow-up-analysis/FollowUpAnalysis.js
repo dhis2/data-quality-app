@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
-import { Card } from '@dhis2/ui'
-import { FontIcon, IconButton } from 'material-ui'
+import { Card, Button } from '@dhis2/ui'
+import { FontIcon } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import PageHelper from '../../components/page-helper/PageHelper'
@@ -8,10 +8,35 @@ import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
-import cssPageStyles from '../Page.module.css'
+import pageStyles from '../Page.module.css'
 import { getDocsKeyForSection } from '../sections.conf'
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
 import Form from './Form'
+
+const elementsEqual = (element1, element2) =>
+    [
+        'attributeOptionComboId',
+        'categoryOptionComboId',
+        'periodId',
+        'organisationUnitId',
+        'dataElementId',
+    ].every(key => element1[key] === element2[key])
+
+const convertElementFromApiResponse = e => ({
+    key: `${e.aoc}-${e.coc}-${e.pe}-${e.ou}-${e.de}`,
+    attributeOptionComboId: e.aoc,
+    categoryOptionComboId: e.coc,
+    periodId: e.pe,
+    period: e.pe,
+    organisationUnitId: e.ou,
+    organisation: e.ouName,
+    dataElementId: e.de,
+    dataElement: e.deName,
+    min: e.min,
+    max: e.max,
+    value: Number.parseFloat(e.value, 10),
+    marked: false,
+})
 
 class FollowUpAnalysis extends Page {
     static STATE_PROPERTIES = [
@@ -73,7 +98,7 @@ class FollowUpAnalysis extends Page {
         }
 
         const elements = response.followupValues.map(
-            FollowUpAnalysisTable.convertElementFromApiResponse
+            convertElementFromApiResponse
         )
 
         this.context.updateAppState({
@@ -109,7 +134,7 @@ class FollowUpAnalysis extends Page {
         this.setState({ dataSetIds: selected })
     }
 
-    toggleCheckbox = element => {
+    handleCheckboxToggle = element => {
         this.setState({
             elements: this.state.elements.map(e => {
                 if (e.key === element.key) {
@@ -123,7 +148,7 @@ class FollowUpAnalysis extends Page {
         })
     }
 
-    unfollow = async unfollowups => {
+    handleBatchUnfollow = async unfollowups => {
         this.context.updateAppState({
             pageState: {
                 loading: true,
@@ -139,16 +164,9 @@ class FollowUpAnalysis extends Page {
         }
 
         // remove unfollowed elements
-        const elements = this.state.elements.filter(element => {
-            for (const unfollow of unfollowups) {
-                if (
-                    FollowUpAnalysisTable.areElementsTheSame(element, unfollow)
-                ) {
-                    return false
-                }
-            }
-            return true
-        })
+        const elements = this.state.elements.filter(element =>
+            unfollowups.every(unfollow => !elementsEqual(element, unfollow))
+        )
         this.context.updateAppState({
             pageState: {
                 loading: false,
@@ -182,17 +200,20 @@ class FollowUpAnalysis extends Page {
     render() {
         return (
             <div>
-                <header className={cssPageStyles.pageHeader}>
-                    <IconButton
-                        onClick={this.back}
-                        style={{
-                            display: this.state.showTable ? 'inline' : 'none',
-                        }}
-                    >
-                        <FontIcon className={'material-icons'}>
-                            arrow_back
-                        </FontIcon>
-                    </IconButton>
+                <header className={pageStyles.pageHeader}>
+                    {this.state.showTable && (
+                        <Button
+                            small
+                            secondary
+                            icon={
+                                <FontIcon className={'material-icons'}>
+                                    arrow_back
+                                </FontIcon>
+                            }
+                            onClick={this.back}
+                            className={pageStyles.tableBackButton}
+                        />
+                    )}
                     <h1>{i18n.t('Follow-Up Analysis')}</h1>
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(
@@ -201,7 +222,7 @@ class FollowUpAnalysis extends Page {
                     />
                 </header>
                 <AlertBar show={this.showAlertBar()} />
-                <Card className={cssPageStyles.card}>
+                <Card className={pageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}
                     <div
                         style={{
@@ -225,9 +246,9 @@ class FollowUpAnalysis extends Page {
                     {this.state.showTable && (
                         <FollowUpAnalysisTable
                             elements={this.state.elements}
-                            toggleCheckbox={this.toggleCheckbox}
-                            unfollow={this.unfollow}
                             loading={this.state.loading}
+                            onCheckboxToggle={this.handleCheckboxToggle}
+                            onBatchUnfollow={this.handleBatchUnfollow}
                         />
                     )}
                 </Card>
