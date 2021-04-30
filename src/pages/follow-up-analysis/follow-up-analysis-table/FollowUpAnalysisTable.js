@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
     Checkbox,
-    FontIcon,
     RaisedButton,
     Table,
     TableBody,
@@ -10,9 +9,6 @@ import {
     TableHeaderColumn,
     TableRow,
     TableRowColumn,
-    IconButton,
-    Dialog,
-    FlatButton,
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -71,72 +67,18 @@ class FollowUpAnalysisTable extends Component {
         )
     }
 
-    constructor() {
-        super()
-
-        this.state = {
-            showComment: false,
-            comment: null,
-        }
-
-        this.unfollow = this.unfollow.bind(this)
-        this.closeCommentDialog = this.closeCommentDialog.bind(this)
-    }
-
-    unfollow() {
-        const unfollowups = []
-        for (let i = 0; i < this.props.elements.length; i++) {
-            const e = this.props.elements[i]
-            if (e.marked) {
-                unfollowups.push(
-                    FollowUpAnalysisTable.convertElementToUnFollowupRequest(e)
-                )
-            }
-        }
-
+    handleUnfollowMarked = () => {
+        const unfollowups = this.props.elements
+            .filter(element => element.marked)
+            .map(FollowUpAnalysisTable.convertElementToUnFollowupRequest)
         this.props.unfollow(unfollowups)
     }
 
-    closeCommentDialog() {
-        this.setState({ showComment: false })
-    }
-
-    updateCheckbox(element) {
-        this.props.toggleCheckbox(element)
-    }
-
-    showComment(element) {
-        if (element.comment) {
-            this.setState({
-                showComment: true,
-                comment: element.comment,
-            })
-        }
-    }
-
     render() {
-        let oneChecked = false
-
-        const commentDialogActions = [
-            <FlatButton
-                key={'close'}
-                label={i18n.t('Close')}
-                primary
-                onClick={this.closeCommentDialog}
-            />,
-        ]
-
-        // Table Rows
         const rows = this.props.elements.map(element => {
-            const updateCheckbox = () => {
-                this.updateCheckbox(element)
+            const handleMarkedToggle = () => {
+                this.props.toggleCheckbox(element)
             }
-
-            const showComment = () => {
-                this.showComment(element)
-            }
-
-            oneChecked = element.marked ? true : oneChecked
 
             return (
                 <TableRow key={element.key}>
@@ -156,22 +98,10 @@ class FollowUpAnalysisTable extends Component {
                         <span className={cssPageStyles.checkboxWrapper}>
                             <Checkbox
                                 checked={element.marked}
-                                onCheck={updateCheckbox}
+                                onCheck={handleMarkedToggle}
                                 iconStyle={jsPageStyles.iconColor}
                             />
                         </span>
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.center}>
-                        {element.comment && (
-                            <IconButton key={element.key} onClick={showComment}>
-                                <FontIcon
-                                    className={'material-icons'}
-                                    style={jsPageStyles.cursorStyle}
-                                >
-                                    speaker_notes
-                                </FontIcon>
-                            </IconButton>
-                        )}
                     </TableRowColumn>
                 </TableRow>
             )
@@ -179,15 +109,6 @@ class FollowUpAnalysisTable extends Component {
 
         return (
             <div>
-                <Dialog
-                    title={i18n.t('Comment')}
-                    actions={commentDialogActions}
-                    modal={false}
-                    open={this.state.showComment}
-                    onRequestClose={this.closeCommentDialog}
-                >
-                    <div id={'comment-content'}>{this.state.comment}</div>
-                </Dialog>
                 <div className={cssPageStyles.cardHeader}>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
@@ -225,9 +146,6 @@ class FollowUpAnalysisTable extends Component {
                             <TableHeaderColumn className={cssPageStyles.center}>
                                 {i18n.t('Unfollow')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.center}>
-                                {i18n.t('Comment')}
-                            </TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false} stripedRows={false}>
@@ -241,11 +159,13 @@ class FollowUpAnalysisTable extends Component {
                     )}
                 >
                     <RaisedButton
-                        id="unfollow-action"
                         primary
-                        disabled={this.props.loading || !oneChecked}
+                        disabled={
+                            this.props.loading ||
+                            !this.props.elements.some(e => e.marked)
+                        }
                         label={i18n.t('unfollow')}
-                        onClick={this.unfollow}
+                        onClick={this.handleUnfollowMarked}
                     />
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
