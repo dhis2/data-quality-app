@@ -57,13 +57,13 @@ const ElementRow = ({ element, onCheckboxToggle }) => {
             <TableCell>{element.dataElement}</TableCell>
             <TableCell>{element.organisation}</TableCell>
             <TableCell>{element.period}</TableCell>
-            <TableCell className={cssPageStyles.right}>
+            <TableCell className={styles.formattedNumberColumn}>
                 <FormattedNumber value={element.min} />
             </TableCell>
-            <TableCell className={cssPageStyles.right}>
+            <TableCell className={styles.formattedNumberColumn}>
                 <FormattedNumber value={element.value} />
             </TableCell>
-            <TableCell className={cssPageStyles.right}>
+            <TableCell className={styles.formattedNumberColumn}>
                 <FormattedNumber value={element.max} />
             </TableCell>
             <TableCell className={cssPageStyles.centerFlex}>
@@ -99,7 +99,7 @@ const FollowUpAnalysisTable = ({
             <div className={cssPageStyles.cardHeader}>
                 <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
             </div>
-            <Table className={styles.followUpAnalysisTable}>
+            <Table>
                 <TableHead>
                     <TableRowHead>
                         <TableCellHead>{i18n.t('Data Element')}</TableCellHead>
@@ -107,13 +107,13 @@ const FollowUpAnalysisTable = ({
                             {i18n.t('Organisation Unit')}
                         </TableCellHead>
                         <TableCellHead>{i18n.t('Period')}</TableCellHead>
-                        <TableCellHead className={cssPageStyles.right}>
+                        <TableCellHead className={styles.formattedNumberColumn}>
                             {i18n.t('Min')}
                         </TableCellHead>
-                        <TableCellHead className={cssPageStyles.right}>
+                        <TableCellHead className={styles.formattedNumberColumn}>
                             {i18n.t('Value')}
                         </TableCellHead>
-                        <TableCellHead className={cssPageStyles.right}>
+                        <TableCellHead className={styles.formattedNumberColumn}>
                             {i18n.t('Max')}
                         </TableCellHead>
                         <TableCellHead className={cssPageStyles.center}>

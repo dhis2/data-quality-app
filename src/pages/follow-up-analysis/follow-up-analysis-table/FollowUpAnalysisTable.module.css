@@ -1,5 +1,4 @@
-.followUpAnalysisTable td:nth-child(4),
-.followUpAnalysisTable td:nth-child(5),
-.followUpAnalysisTable td:nth-child(6) {
+.formattedNumberColumn {
     overflow: visible !important;
+    text-align: right !important;
 }
