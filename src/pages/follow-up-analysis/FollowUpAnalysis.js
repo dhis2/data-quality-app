@@ -13,15 +13,6 @@ import { getDocsKeyForSection } from '../sections.conf'
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
 import Form from './Form'
 
-const elementsEqual = (element1, element2) =>
-    [
-        'attributeOptionComboId',
-        'categoryOptionComboId',
-        'periodId',
-        'organisationUnitId',
-        'dataElementId',
-    ].every(key => element1[key] === element2[key])
-
 const convertElementFromApiResponse = e => ({
     key: `${e.aoc}-${e.coc}-${e.pe}-${e.ou}-${e.de}`,
     attributeOptionComboId: e.aoc,
@@ -164,8 +155,9 @@ class FollowUpAnalysis extends Page {
         }
 
         // remove unfollowed elements
-        const elements = this.state.elements.filter(element =>
-            unfollowups.every(unfollow => !elementsEqual(element, unfollow))
+        const elements = this.state.elements.filter(
+            element =>
+                !unfollowups.some(unfollow => element.key === unfollow.key)
         )
         this.context.updateAppState({
             pageState: {
