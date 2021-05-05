@@ -1,10 +1,11 @@
-.downloadAs {
-    color: #757575;
-    font-size: 12px;
-}
 .downloadAs a {
     margin-left: 20px;
-    color: inherit;
-    font-size: inherit;
+    color: var(--colors-grey700);
+    font-size: 12px;
     text-decoration: none;
+}
+
+.downloadAs a:hover, .downloadAs a:focus {
+    color: var(--colors-grey900);
+    text-decoration: underline;
 }
