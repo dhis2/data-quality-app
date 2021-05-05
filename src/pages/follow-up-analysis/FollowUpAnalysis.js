@@ -26,6 +26,7 @@ const convertElementFromApiResponse = e => ({
     min: e.min,
     max: e.max,
     value: Number.parseFloat(e.value, 10),
+    comment: e.comment,
     marked: false,
 })
 

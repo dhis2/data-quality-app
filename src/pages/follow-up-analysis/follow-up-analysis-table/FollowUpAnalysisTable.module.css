@@ -2,3 +2,11 @@
     overflow: visible !important;
     text-align: right !important;
 }
+
+.centeredCheckbox {
+    justify-content: center !important;
+}
+
+.commentColumn {
+    text-align: center;
+}

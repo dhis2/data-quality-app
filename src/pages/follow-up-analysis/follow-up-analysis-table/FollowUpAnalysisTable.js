@@ -9,15 +9,29 @@ import {
     TableBody,
     TableRow,
     TableCell,
+    Modal,
+    ModalTitle,
+    ModalContent,
+    ModalActions,
+    ButtonStrip,
 } from '@dhis2/ui'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import DownloadAs from '../../../components/download-as/DownloadAs'
 import FormattedNumber from '../../../components/formatters/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
 import styles from './FollowUpAnalysisTable.module.css'
+
+const convertElementToUnFollowupRequest = e => ({
+    dataElement: e.dataElementId,
+    period: e.periodId,
+    orgUnit: e.organisationUnitId,
+    categoryOptionCombo: e.categoryOptionComboId,
+    attributeOptionCombo: e.attributeOptionComboId,
+    followup: false,
+})
 
 const Footer = ({ submitButtonDisabled, onSubmit }) => (
     <div
@@ -38,16 +52,34 @@ Footer.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 }
 
-const convertElementToUnFollowupRequest = e => ({
-    dataElement: e.dataElementId,
-    period: e.periodId,
-    orgUnit: e.organisationUnitId,
-    categoryOptionCombo: e.categoryOptionComboId,
-    attributeOptionCombo: e.attributeOptionComboId,
-    followup: false,
-})
+const CommentModal = ({ comment, onClose }) => (
+    <Modal>
+        <ModalTitle>Comment</ModalTitle>
+        <ModalContent>{comment}</ModalContent>
+        <ModalActions>
+            <ButtonStrip end>
+                <Button secondary onClick={onClose}>
+                    Close
+                </Button>
+            </ButtonStrip>
+        </ModalActions>
+    </Modal>
+)
+
+CommentModal.propTypes = {
+    comment: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
+}
 
 const ElementRow = ({ element, onCheckboxToggle }) => {
+    const [isCommentVisible, setIsCommentVisible] = useState(false)
+
+    const handleShowComment = () => {
+        setIsCommentVisible(true)
+    }
+    const handleHideComment = () => {
+        setIsCommentVisible(false)
+    }
     const handleMarkedToggle = () => {
         onCheckboxToggle(element)
     }
@@ -66,11 +98,27 @@ const ElementRow = ({ element, onCheckboxToggle }) => {
             <TableCell className={styles.formattedNumberColumn}>
                 <FormattedNumber value={element.max} />
             </TableCell>
-            <TableCell className={cssPageStyles.centerFlex}>
+            <TableCell>
                 <Checkbox
+                    className={styles.centeredCheckbox}
                     checked={element.marked}
                     onChange={handleMarkedToggle}
                 />
+            </TableCell>
+            <TableCell className={styles.commentColumn}>
+                {element.comment && (
+                    <>
+                        {isCommentVisible && (
+                            <CommentModal
+                                comment={element.comment}
+                                onClose={handleHideComment}
+                            />
+                        )}
+                        <Button small secondary onClick={handleShowComment}>
+                            View comment
+                        </Button>
+                    </>
+                )}
             </TableCell>
         </TableRow>
     )
@@ -118,6 +166,9 @@ const FollowUpAnalysisTable = ({
                         </TableCellHead>
                         <TableCellHead className={cssPageStyles.center}>
                             {i18n.t('Unfollow')}
+                        </TableCellHead>
+                        <TableCellHead className={cssPageStyles.center}>
+                            {i18n.t('Comment')}
                         </TableCellHead>
                     </TableRowHead>
                 </TableHead>
