@@ -25,6 +25,7 @@ import cssPageStyles from '../../Page.module.css'
 import styles from './FollowUpAnalysisTable.module.css'
 
 const convertElementToUnFollowupRequest = e => ({
+    key: `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.organisationUnitId}-${e.dataElementId}`,
     dataElement: e.dataElementId,
     period: e.periodId,
     orgUnit: e.organisationUnitId,

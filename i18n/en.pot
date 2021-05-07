@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-04-30T13:25:32.427Z\n"
-"PO-Revision-Date: 2021-04-30T13:25:32.427Z\n"
+"POT-Creation-Date: 2021-05-07T11:15:43.680Z\n"
+"PO-Revision-Date: 2021-05-07T11:15:43.680Z\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -102,6 +102,9 @@ msgid "Unfollow elements"
 msgstr ""
 
 msgid "Unfollow"
+msgstr ""
+
+msgid "Comment"
 msgstr ""
 
 msgid "Start"
