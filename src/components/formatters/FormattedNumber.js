@@ -8,7 +8,7 @@ const FormattedNumber = ({
     maximumFractionDigits,
 }) => (
     <span>
-        {new Intl.NumberFormat(i18n.language, {
+        {typeof value === 'number' && new Intl.NumberFormat(i18n.language, {
             minimumFractionDigits,
             maximumFractionDigits,
         }).format(value)}
