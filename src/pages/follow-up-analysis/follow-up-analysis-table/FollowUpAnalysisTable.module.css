@@ -1,3 +1,7 @@
+.dataElementColumn {
+    max-width: 20vw;
+}
+
 .formattedNumberColumn {
     overflow: visible !important;
     text-align: right !important;

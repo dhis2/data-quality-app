@@ -87,7 +87,9 @@ const ElementRow = ({ element, onCheckboxToggle }) => {
 
     return (
         <TableRow>
-            <TableCell>{element.dataElement}</TableCell>
+            <TableCell className={styles.dataElementColumn}>
+                {element.dataElement}
+            </TableCell>
             <TableCell>{element.organisation}</TableCell>
             <TableCell>{element.period}</TableCell>
             <TableCell className={styles.formattedNumberColumn}>
