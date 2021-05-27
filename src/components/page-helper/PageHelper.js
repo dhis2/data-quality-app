@@ -29,9 +29,9 @@ class PageHelper extends PureComponent {
             <IconButton
                 className="helper-icon"
                 iconStyle={{ color: '#276696' }}
-                href={`${DOCS_LINK}/${getDocsVersion(
+                href={`${DOCS_LINK}/${lng}/use/user-guides/dhis-core-version-${getDocsVersion(
                     d2.system.version
-                )}/${lng}/user/html/${sectionDocsKey}.html`}
+                )}/collecting-data/data-quality.html#${sectionDocsKey}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 tooltip={i18n.t(DOCS_TOOLTIP_LABEL)}
