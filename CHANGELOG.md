@@ -1,3 +1,10 @@
+## [1.7.12](https://github.com/dhis2/data-quality-app/compare/v1.7.11...v1.7.12) (2021-06-02)
+
+
+### Bug Fixes
+
+* update documentation URLs  ([#777](https://github.com/dhis2/data-quality-app/issues/777)) ([b4425a1](https://github.com/dhis2/data-quality-app/commit/b4425a150ecd657124517b61847a2abdad0f2900))
+
 ## [1.7.11](https://github.com/dhis2/data-quality-app/compare/v1.7.10...v1.7.11) (2021-04-20)
 
 
