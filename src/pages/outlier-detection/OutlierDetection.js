@@ -4,13 +4,11 @@ import { FontIcon, IconButton } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
-import PageHelper from '../../components/page-helper/PageHelper'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
-import { getDocsKeyForSection } from '../sections.conf'
 import {
     Z_SCORE,
     DEFAULT_THRESHOLD,
@@ -272,11 +270,6 @@ class OutlierDetection extends Page {
                         </FontIcon>
                     </IconButton>
                     <h1>{i18n.t('Outlier Detection')}</h1>
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
                 </header>
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
