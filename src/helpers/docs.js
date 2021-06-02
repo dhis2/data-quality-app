@@ -14,7 +14,7 @@ export const getDocsVersion = ({ major, minor, snapshot }) => {
     if (snapshot) {
         return 'master'
     }
-    return `${major}.${minor}`
+    return `${major}${minor}`
 }
 
 export default getDocsVersion
