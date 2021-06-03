@@ -32,7 +32,7 @@ class GridSection extends PureComponent {
                                     styles.gridTitleDescription
                                 )}
                             >
-                                {this.props.section.info.label()}
+                                {this.props.section.info.label}
                             </h2>
                             <FontIcon
                                 className={classNames(
@@ -51,7 +51,7 @@ class GridSection extends PureComponent {
                                 styles.gridDescription
                             )}
                         >
-                            {this.props.section.info.description()}
+                            {this.props.section.info.description}
                         </p>
                     </div>
                     <span
@@ -61,7 +61,7 @@ class GridSection extends PureComponent {
                             styles.gridActionText
                         )}
                     >
-                        {this.props.section.info.actionText()}
+                        {this.props.section.info.actionText}
                     </span>
                 </Card>
             </Link>

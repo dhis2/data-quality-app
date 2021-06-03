@@ -1,16 +1,14 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
-import { FontIcon, IconButton } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
-import PageHelper from '../../components/page-helper/PageHelper'
+import PageHeader from '../../components/PageHeader/PageHeader'
 import { ALL_VALIDATION_RULE_GROUPS_ID } from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
-import { getDocsKeyForSection } from '../sections.conf'
 import Form from './Form'
 import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
 
@@ -164,24 +162,11 @@ class ValidationRulesAnalysis extends Page {
     render() {
         return (
             <div>
-                <header className={cssPageStyles.pageHeader}>
-                    <IconButton
-                        onClick={this.back}
-                        style={{
-                            display: this.state.showTable ? 'inline' : 'none',
-                        }}
-                    >
-                        <FontIcon className={'material-icons'}>
-                            arrow_back
-                        </FontIcon>
-                    </IconButton>
-                    <h1>{i18n.t('Validation Rule Analysis')}</h1>
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </header>
+                <PageHeader
+                    title={i18n.t('Validation Rule Analysis')}
+                    onBack={this.state.showTable ? this.back : null}
+                    sectionKey={this.props.sectionKey}
+                />
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}

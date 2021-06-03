@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
-import { FontIcon, IconButton } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
 import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
+import PageHeader from '../../components/PageHeader/PageHeader'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
@@ -137,7 +137,7 @@ class OutlierDetection extends Page {
         return querySegments.join('&')
     }
 
-    back = () => {
+    handleBack = () => {
         this.setState({ showTable: false, csvQueryStr: null })
         this.context.updateAppState({
             pageState: { showTable: false },
@@ -263,19 +263,10 @@ class OutlierDetection extends Page {
     render() {
         return (
             <div>
-                <header className={cssPageStyles.pageHeader}>
-                    <IconButton
-                        onClick={this.back}
-                        style={{
-                            display: this.state.showTable ? 'inline' : 'none',
-                        }}
-                    >
-                        <FontIcon className={'material-icons'}>
-                            arrow_back
-                        </FontIcon>
-                    </IconButton>
-                    <h1>{i18n.t('Outlier Detection')}</h1>
-                </header>
+                <PageHeader
+                    title={i18n.t('Outlier Detection')}
+                    onBack={this.state.showTable ? this.handleBack : null}
+                />
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}

@@ -1,15 +1,13 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
-import { FontIcon, IconButton } from 'material-ui'
 import React from 'react'
 import AlertBar from '../../components/alert-bar/AlertBar'
-import PageHelper from '../../components/page-helper/PageHelper'
+import PageHeader from '../../components/PageHeader/PageHeader'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
-import { getDocsKeyForSection } from '../sections.conf'
 import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
 import Form from './Form'
 
@@ -85,7 +83,7 @@ class FollowUpAnalysis extends Page {
         return elements.length === 0 ? 'NO_VALUES_FOUND' : null
     }
 
-    back = () => {
+    handleBack = () => {
         this.setState({ showTable: false })
         this.context.updateAppState({
             pageState: { showTable: false },
@@ -181,24 +179,11 @@ class FollowUpAnalysis extends Page {
     render() {
         return (
             <div>
-                <header className={cssPageStyles.pageHeader}>
-                    <IconButton
-                        onClick={this.back}
-                        style={{
-                            display: this.state.showTable ? 'inline' : 'none',
-                        }}
-                    >
-                        <FontIcon className={'material-icons'}>
-                            arrow_back
-                        </FontIcon>
-                    </IconButton>
-                    <h1>{i18n.t('Follow-Up Analysis')}</h1>
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </header>
+                <PageHeader
+                    title={i18n.t('Follow-Up Analysis')}
+                    onBack={this.state.showTable ? this.handleBack : null}
+                    sectionKey={this.props.sectionKey}
+                />
                 <AlertBar show={this.showAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}
