@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-03T13:49:57.472Z\n"
-"PO-Revision-Date: 2021-06-03T13:49:57.472Z\n"
+"POT-Creation-Date: 2021-06-03T14:19:10.160Z\n"
+"PO-Revision-Date: 2021-06-03T14:19:10.160Z\n"
 
 msgid "Error loading datasets."
 msgstr "Error loading datasets."
@@ -214,6 +214,9 @@ msgstr "DATA ELEMENT"
 
 msgid "VALUE"
 msgstr "VALUE"
+
+msgid "Show details"
+msgstr "Show details"
 
 msgid "Validation Details"
 msgstr "Validation Details"

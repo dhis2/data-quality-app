@@ -1,19 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
+import { Button, CircularLoader, Tooltip } from '@dhis2/ui'
 import classNames from 'classnames'
+import { getInstance as getD2Instance } from 'd2'
 import { Dialog, FlatButton, FontIcon } from 'material-ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Component } from 'react'
 import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
 import { apiConf } from '../../../server.conf'
-import Page from '../../Page'
 import cssPageStyles from '../../Page.module.css'
-import jsPageStyles from '../../PageStyles'
-import ValidationRulesAnalysis from '../ValidationRulesAnalysis'
 import styles from './ValidationRulesDetails.module.css'
 
-class ValidationRulesDetails extends Page {
-    static STATE_PROPERTIES = ['loading']
-
+class ValidationRulesDetails extends Component {
     static propTypes = {
         attributeOptionComboId: PropTypes.string.isRequired,
         organisationUnitId: PropTypes.string.isRequired,
@@ -21,66 +18,44 @@ class ValidationRulesDetails extends Page {
         validationRuleId: PropTypes.string.isRequired,
     }
 
-    constructor() {
-        super()
-
-        this.state = {
-            loading: false,
-            openDetails: false,
-            rule: {},
-            expression: {
-                leftSide: [],
-                rightSide: [],
-            },
-        }
-
-        this.loadDetails = this.loadDetails.bind(this)
-        this.handleClose = this.handleClose.bind(this)
+    state = {
+        loading: false,
+        openDetails: false,
+        rule: {},
+        expression: {
+            leftSide: [],
+            rightSide: [],
+        },
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (ValidationRulesAnalysis.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
+    loadDetails = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
+        const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`
+        const requestExpression =
+            `${apiConf.endpoints.validationRulesExpression}` +
+            `?validationRuleId=${this.props.validationRuleId}` +
+            `&periodId=${this.props.periodId}` +
+            `&organisationUnitId=${this.props.organisationUnitId}` +
+            `&attributeOptionComboId=${this.props.attributeOptionComboId}`
+        this.setState({
+            loading: true,
         })
-
-        this.setState(nextState)
-    }
-
-    loadDetails() {
-        if (!this.state.loading) {
-            const api = this.context.d2.Api.getApi()
-            const requestRule = `${apiConf.endpoints.validationRules}/${this.props.validationRuleId}`
-            const requestExpression =
-                `${apiConf.endpoints.validationRulesExpression}` +
-                `?validationRuleId=${this.props.validationRuleId}` +
-                `&periodId=${this.props.periodId}` +
-                `&organisationUnitId=${this.props.organisationUnitId}` +
-                `&attributeOptionComboId=${this.props.attributeOptionComboId}`
-            this.context.updateAppState({
-                pageState: {
-                    loading: true,
-                },
+        Promise.all([api.get(requestRule), api.get(requestExpression)])
+            .then(([rule, expression]) => {
+                this.setState({
+                    loading: false,
+                    openDetails: true,
+                    rule,
+                    expression,
+                })
             })
-            Promise.all([api.get(requestRule), api.get(requestExpression)])
-                .then(([rule, expression]) => {
-                    this.context.updateAppState({
-                        pageState: {
-                            loading: false,
-                        },
-                    })
-                    this.setState({ openDetails: true, rule, expression })
-                })
-                .catch(() => {
-                    this.manageError()
-                })
-        }
+            .catch(() => {
+                this.manageError()
+            })
     }
 
-    handleClose() {
+    handleClose = () => {
         this.setState({ openDetails: false })
     }
 
@@ -175,16 +150,26 @@ class ValidationRulesDetails extends Page {
 
         return (
             <div>
-                <FontIcon
-                    key={`FI|${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
-                    className={
-                        'validation-rules-show-details-action material-icons'
-                    }
-                    style={jsPageStyles.cursorStyle}
-                    onClick={this.loadDetails}
+                <Tooltip
+                    content={i18n.t('Show details')}
+                    openDelay={0}
+                    closeDelay={0}
                 >
-                    info
-                </FontIcon>
+                    <Button
+                        small
+                        icon={
+                            this.state.loading ? (
+                                <CircularLoader small />
+                            ) : (
+                                <FontIcon className="material-icons">
+                                    info
+                                </FontIcon>
+                            )
+                        }
+                        disabled={this.state.loading}
+                        onClick={this.loadDetails}
+                    />
+                </Tooltip>
                 <Dialog
                     className="validation-rules-details-dialog"
                     key={`D${this.props.organisationUnitId}-${this.props.periodId}-${this.props.validationRuleId}`}
