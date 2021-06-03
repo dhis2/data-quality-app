@@ -9,13 +9,12 @@ export const sections = [
         path: '/validation-rules-analysis',
         component: ValidationRulesAnalysis,
         info: {
-            label: () => i18n.t('Validation Rule Analysis'),
+            label: i18n.t('Validation Rule Analysis'),
             icon: 'done_all',
-            description: () =>
-                i18n.t(
-                    'Run validation rules in order to unveil anomalies and errors in the data in the database.'
-                ),
-            actionText: () => i18n.t('Run Validation'),
+            description: i18n.t(
+                'Run validation rules in order to unveil anomalies and errors in the data in the database.'
+            ),
+            actionText: i18n.t('Run Validation'),
             docs: 'validation_rule_analysis',
         },
     },
@@ -24,13 +23,12 @@ export const sections = [
         path: '/outlier-detection',
         component: OutlierDetection,
         info: {
-            label: () => i18n.t('Outlier detection'),
+            label: i18n.t('Outlier detection'),
             icon: 'show_chart',
-            description: () =>
-                i18n.t(
-                    'Analyze potential outlier values based on standard deviations or min-max values. Outlier values can be examined and marked for follow-up.'
-                ),
-            actionText: () => i18n.t('Analyze'),
+            description: i18n.t(
+                'Analyze potential outlier values based on standard deviations or min-max values. Outlier values can be examined and marked for follow-up.'
+            ),
+            actionText: i18n.t('Analyze'),
             docs: 'outlier_detection',
         },
     },
@@ -39,13 +37,12 @@ export const sections = [
         path: '/follow-up-analysis',
         component: FollowUpAnalysis,
         info: {
-            label: () => i18n.t('Follow-Up Analysis'),
+            label: i18n.t('Follow-Up Analysis'),
             icon: 'description',
-            description: () =>
-                i18n.t(
-                    'View or edit data values marked for further follow-up during data entry or analysis.'
-                ),
-            actionText: () => i18n.t('View Data Values'),
+            description: i18n.t(
+                'View or edit data values marked for further follow-up during data entry or analysis.'
+            ),
+            actionText: i18n.t('View Data Values'),
             docs: 'follow_up_analysis',
         },
     },

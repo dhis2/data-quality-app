@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
-"PO-Revision-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-03T10:06:11.839Z\n"
+"PO-Revision-Date: 2021-06-03T10:06:11.839Z\n"
+
+msgid "Open user guide"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
