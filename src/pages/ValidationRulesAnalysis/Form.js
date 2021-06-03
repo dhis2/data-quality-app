@@ -1,6 +1,5 @@
-import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button, Checkbox } from '@dhis2/ui'
+import { Button, Checkbox, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import React from 'react'
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
@@ -10,46 +9,10 @@ import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect'
 
 /* eslint-disable react/prop-types */
 
-const ValidateButton = ({ onClick, disabled }) => {
-    const validationPassedAlert = useAlert(
-        i18n.t('Validation passed successfully'),
-        {
-            success: true,
-        }
-    )
-    const errorAlert = useAlert(
-        ({ error }) => {
-            error?.message ||
-                i18n.t('An unexpected error happened during analysis')
-        },
-        { critical: true }
-    )
-    const handleClick = async () => {
-        try {
-            const result = await onClick()
-            if (result === 'VALIDATION_PASSED') {
-                validationPassedAlert.show()
-            }
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-    }
-
-    return (
-        <Button
-            primary
-            className={cssPageStyles.mainButton}
-            disabled={disabled}
-            onClick={handleClick}
-        >
-            {i18n.t('Validate')}
-        </Button>
-    )
-}
-
 const Form = ({
     onSubmit,
-    submitDisabled,
+    valid,
+    loading,
     onOrganisationUnitChange,
     startDate,
     onStartDateChange,
@@ -110,7 +73,21 @@ const Form = ({
                 </div>
             </div>
         </div>
-        <ValidateButton onClick={onSubmit} disabled={submitDisabled} />
+        <Button
+            primary
+            className={cssPageStyles.mainButton}
+            disabled={!valid || loading}
+            onClick={onSubmit}
+        >
+            {loading ? (
+                <>
+                    {i18n.t('Validating...')}
+                    <CircularLoader small />
+                </>
+            ) : (
+                i18n.t('Validate')
+            )}
+        </Button>
     </>
 )
 

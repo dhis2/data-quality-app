@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import { Component } from 'react'
 
+// TODO: Delete file
+
 class Page extends Component {
     static propTypes = {
         sectionKey: PropTypes.string.isRequired,
