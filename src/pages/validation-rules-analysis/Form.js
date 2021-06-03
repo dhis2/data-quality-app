@@ -18,10 +18,9 @@ const ValidateButton = ({ onClick, disabled }) => {
         }
     )
     const errorAlert = useAlert(
-        ({ error }) => {
+        ({ error }) =>
             error?.message ||
-                i18n.t('An unexpected error happened during analysis')
-        },
+            i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
     const handleClick = async () => {
