@@ -12,12 +12,12 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DownloadAs from '../../components/download-as/DownloadAs'
-import FormattedNumber from '../../components/formatters/FormattedNumber'
-import { Z_SCORE } from '../../pages/outlier-detection/constants'
-import cssPageStyles from '../../pages/Page.module.css'
-import jsPageStyles from '../../pages/PageStyles'
-import { apiConf } from '../../server.conf'
+import DownloadAs from '../../../components/DownloadAs/DownloadAs'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
+import { apiConf } from '../../../server.conf'
+import cssPageStyles from '../../Page.module.css'
+import jsPageStyles from '../../PageStyles'
+import { Z_SCORE } from '../constants'
 import styles from './OutlierAnalysisTable.module.css'
 
 const OutlierAnalyisTable = ({

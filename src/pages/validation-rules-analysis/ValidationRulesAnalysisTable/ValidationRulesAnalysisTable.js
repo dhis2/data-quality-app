@@ -10,12 +10,12 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
-import DownloadAs from '../../../components/download-as/DownloadAs'
-import FormattedNumber from '../../../components/formatters/FormattedNumber'
-import TableCellContent from '../../../components/table/TableCellContent'
+import DownloadAs from '../../../components/DownloadAs/DownloadAs'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
-import ValidationRulesDetails from '../validation-rules-details/ValidationRulesDetails'
+import ValidationRulesDetails from '../ValidationRulesDetails/ValidationRulesDetails'
+import TableCellContent from './TableCellContent'
 import styles from './ValidationRulesAnalysisTable.module.css'
 
 class ValidationRulesAnalysisTable extends PureComponent {

@@ -1,16 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import React from 'react'
-import AlertBar from '../../components/alert-bar/AlertBar'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
-import { ALL_VALIDATION_RULE_GROUPS_ID } from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
 import Form from './Form'
-import ValidationRulesAnalysisTable from './validation-rules-analysis-table/ValidationRulesAnalysisTable'
+import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect'
+import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/ValidationRulesAnalysisTable'
 
 class ValidationRulesAnalysis extends Page {
     static STATE_PROPERTIES = ['loading', 'elements', 'showTable']
@@ -139,13 +139,10 @@ class ValidationRulesAnalysis extends Page {
         this.setState({ persistNewResults: checked })
     }
 
-    showAlertBar() {
-        return (
-            this.state.showTable &&
-            this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit
-        )
-    }
+    showMaxResultsAlertBar = () =>
+        this.state.showTable &&
+        this.state.elements &&
+        this.state.elements.length >= apiConf.results.analysis.limit
 
     isFormValid() {
         return (
@@ -167,7 +164,7 @@ class ValidationRulesAnalysis extends Page {
                     onBack={this.state.showTable ? this.back : null}
                     sectionKey={this.props.sectionKey}
                 />
-                <AlertBar show={this.showAlertBar()} />
+                <MaxResultsAlertBar show={this.showMaxResultsAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}
                     <div

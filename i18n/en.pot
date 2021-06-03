@@ -5,10 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-03T10:06:11.839Z\n"
-"PO-Revision-Date: 2021-06-03T10:06:11.839Z\n"
+"POT-Creation-Date: 2021-06-03T11:35:41.938Z\n"
+"PO-Revision-Date: 2021-06-03T11:35:41.938Z\n"
 
 msgid "Open user guide"
+msgstr ""
+
+msgid "Download as PDF"
+msgstr ""
+
+msgid "Download as XLS"
+msgstr ""
+
+msgid "Download as CSV"
 msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
@@ -24,57 +33,6 @@ msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
-msgstr ""
-
-msgid "Download as PDF"
-msgstr ""
-
-msgid "Download as XLS"
-msgstr ""
-
-msgid "Download as CSV"
-msgstr ""
-
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr ""
-
-msgid "Period"
-msgstr ""
-
-msgid "Organisation Unit"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
-msgid "Follow-up"
-msgstr ""
-
-msgid "Validation Rule Group"
 msgstr ""
 
 msgid "Follow-Up Analysis"
@@ -105,6 +63,24 @@ msgid "Close"
 msgstr ""
 
 msgid "Comment"
+msgstr ""
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Min"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Max"
 msgstr ""
 
 msgid "Unfollow"
@@ -158,6 +134,27 @@ msgstr ""
 msgid "Outlier Detection"
 msgstr ""
 
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
+
+msgid "Z-Score"
+msgstr ""
+
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr ""
+
 msgid "Validation Rule Analysis"
 msgstr ""
 
@@ -198,6 +195,9 @@ msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
+msgstr ""
+
+msgid "Validation Rule Group"
 msgstr ""
 
 msgid "Attribute Option Combination"

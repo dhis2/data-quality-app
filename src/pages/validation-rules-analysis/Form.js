@@ -3,10 +3,10 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Checkbox } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import React from 'react'
-import AvailableOrganisationUnitsTree from '../../components/available-organisation-units-tree/AvailableOrganisationUnitsTree'
-import ValidationRuleGroupsSelect from '../../components/validation-rule-groups-select/ValidationRuleGroupsSelect'
+import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect'
 
 /* eslint-disable react/prop-types */
 

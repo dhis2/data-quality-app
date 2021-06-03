@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
-import AppRouter from '../app-router/AppRouter'
+import AppRouter from '../AppRouter/AppRouter'
 import Sidebar from '../Sidebar/Sidebar'
 import styles from './App.module.css'
 

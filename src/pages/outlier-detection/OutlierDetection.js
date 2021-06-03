@@ -1,8 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import React from 'react'
-import AlertBar from '../../components/alert-bar/AlertBar'
-import OutlierAnalyisTable from '../../components/outlier-analysis-table/OutlierAnalysisTable'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { apiConf } from '../../server.conf'
@@ -16,6 +15,7 @@ import {
     DEFAULT_SORT_BY,
 } from './constants'
 import Form from './Form'
+import OutlierAnalyisTable from './outlier-analysis-table/OutlierAnalysisTable'
 
 class OutlierDetection extends Page {
     static STATE_PROPERTIES = [
@@ -255,7 +255,7 @@ class OutlierDetection extends Page {
 
     isActionDisabled = () => !this.isFormValid() || this.state.loading
 
-    showAlertBar = () =>
+    showMaxResultsAlertBar = () =>
         this.state.showTable &&
         this.state.elements &&
         this.state.elements.length >= apiConf.results.analysis.limit
@@ -267,7 +267,7 @@ class OutlierDetection extends Page {
                     title={i18n.t('Outlier Detection')}
                     onBack={this.state.showTable ? this.handleBack : null}
                 />
-                <AlertBar show={this.showAlertBar()} />
+                <MaxResultsAlertBar show={this.showMaxResultsAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}
                     <div

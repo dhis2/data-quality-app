@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import React from 'react'
-import AlertBar from '../../components/alert-bar/AlertBar'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
@@ -168,13 +168,10 @@ class FollowUpAnalysis extends Page {
         return !this.isFormValid() || this.state.loading
     }
 
-    showAlertBar() {
-        return (
-            this.state.showTable &&
-            this.state.elements &&
-            this.state.elements.length >= apiConf.results.analysis.limit
-        )
-    }
+    showMaxResultsAlertBar = () =>
+        this.state.showTable &&
+        this.state.elements &&
+        this.state.elements.length >= apiConf.results.analysis.limit
 
     render() {
         return (
@@ -184,7 +181,7 @@ class FollowUpAnalysis extends Page {
                     onBack={this.state.showTable ? this.handleBack : null}
                     sectionKey={this.props.sectionKey}
                 />
-                <AlertBar show={this.showAlertBar()} />
+                <MaxResultsAlertBar show={this.showMaxResultsAlertBar()} />
                 <Card className={cssPageStyles.card}>
                     {/* Hide form instead of not rendering to preserve org unit state */}
                     <div
