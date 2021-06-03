@@ -3,13 +3,9 @@ import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
 import OutlierDetection from './outlier-detection/OutlierDetection'
 import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
 
-export const VALIDATION_RULES_ANALYSIS_SECTION_KEY = 'validationRulesAnalysis'
-export const OUTLIER_DETECTION_SECTION_KEY = 'outlierDetection'
-export const FOLLOW_UP_ANALYSIS_SECTION_KEY = 'followUpAnalysis'
-
 export const sections = [
     {
-        key: VALIDATION_RULES_ANALYSIS_SECTION_KEY,
+        key: 'validationRulesAnalysis',
         path: '/validation-rules-analysis',
         component: ValidationRulesAnalysis,
         info: {
@@ -24,7 +20,7 @@ export const sections = [
         },
     },
     {
-        key: OUTLIER_DETECTION_SECTION_KEY,
+        key: 'outlierDetection',
         path: '/outlier-detection',
         component: OutlierDetection,
         info: {
@@ -39,7 +35,7 @@ export const sections = [
         },
     },
     {
-        key: FOLLOW_UP_ANALYSIS_SECTION_KEY,
+        key: 'followUpAnalysis',
         path: '/follow-up-analysis',
         component: FollowUpAnalysis,
         info: {
