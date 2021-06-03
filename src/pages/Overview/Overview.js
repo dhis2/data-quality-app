@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React from 'react'
 import { sections } from '../sections.conf'
 import GridSection from './grid-section/GridSection'
-import styles from './Home.module.css'
+import styles from './Overview.module.css'
 
-const Home = () => (
+const Overview = () => (
     <div className="row">
         {sections.map(section => (
             <div
@@ -20,4 +20,4 @@ const Home = () => (
     </div>
 )
 
-export default Home
+export default Overview

@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
-import FollowUpAnalysis from './follow-up-analysis/FollowUpAnalysis'
-import OutlierDetection from './outlier-detection/OutlierDetection'
-import ValidationRulesAnalysis from './validation-rules-analysis/ValidationRulesAnalysis'
+import FollowUpAnalysis from './FollowUpAnalysis/FollowUpAnalysis'
+import OutlierDetection from './OutlierDetection/OutlierDetection'
+import ValidationRulesAnalysis from './ValidationRulesAnalysis/ValidationRulesAnalysis'
 
 export const sections = [
     {
@@ -48,15 +48,7 @@ export const sections = [
     },
 ]
 
-export const getDocsKeyForSection = sectionKey => {
-    for (let i = 0; i < sections.length; i++) {
-        const section = sections[i]
-        if (section.key === sectionKey) {
-            return section.info.docs
-        }
-    }
-
-    return ''
-}
+export const getDocsKeyForSection = sectionKey =>
+    sections.find(section => section.key === sectionKey)?.info.docs || ''
 
 export default sections

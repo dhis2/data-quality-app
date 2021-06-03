@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from '../../pages/home/Home'
+import Overview from '../../pages/Overview/Overview'
 import { sections } from '../../pages/sections.conf'
 import NoMatch from './NoMatch'
 
@@ -21,10 +21,7 @@ const AppRouter = ({ pageState }) => {
         )
     })
 
-    /* Home route */
-    const homeRouteRender = () => <Home sectionKey="home" />
-
-    routes.push(<Route key="home" exact path="/" render={homeRouteRender} />)
+    routes.push(<Route key="overview" exact path="/" component={Overview} />)
 
     /* No Match Route */
     routes.push(<Route key="no-match-route" component={NoMatch} />)
