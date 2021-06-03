@@ -7,12 +7,7 @@ import styles from './PageHeader.module.css'
 const PageHeader = ({ title, onBack, sectionKey }) => (
     <header className={styles.header}>
         {onBack && (
-            <IconButton
-                onClick={this.onBack}
-                style={{
-                    display: this.state.showTable ? 'inline' : 'none',
-                }}
-            >
+            <IconButton onClick={onBack}>
                 <FontIcon className={'material-icons'}>arrow_back</FontIcon>
             </IconButton>
         )}
