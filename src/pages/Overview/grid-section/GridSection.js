@@ -10,10 +10,10 @@ class GridSection extends PureComponent {
     static propTypes = {
         section: PropTypes.shape({
             info: PropTypes.shape({
-                actionText: PropTypes.func,
-                description: PropTypes.func,
+                actionText: PropTypes.string,
+                description: PropTypes.string,
                 icon: PropTypes.string,
-                label: PropTypes.func,
+                label: PropTypes.string,
             }),
             key: PropTypes.string,
             path: PropTypes.string,
