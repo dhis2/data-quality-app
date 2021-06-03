@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-03T12:05:54.155Z\n"
-"PO-Revision-Date: 2021-06-03T12:05:54.155Z\n"
+"POT-Creation-Date: 2021-06-03T13:49:57.472Z\n"
+"PO-Revision-Date: 2021-06-03T13:49:57.472Z\n"
 
 msgid "Error loading datasets."
 msgstr "Error loading datasets."
@@ -155,20 +155,23 @@ msgstr "Mean"
 msgid "Follow-up"
 msgstr "Follow-up"
 
-msgid "Validation passed successfully"
-msgstr "Validation passed successfully"
-
-msgid "Validate"
-msgstr "Validate"
-
 msgid "Send Notifications"
 msgstr "Send Notifications"
 
 msgid "Persist new results"
 msgstr "Persist new results"
 
+msgid "Validating..."
+msgstr "Validating..."
+
+msgid "Validate"
+msgstr "Validate"
+
 msgid "Validation Rule Group"
 msgstr "Validation Rule Group"
+
+msgid "Validation passed successfully"
+msgstr "Validation passed successfully"
 
 msgid "Validation Rule Analysis"
 msgstr "Validation Rule Analysis"
