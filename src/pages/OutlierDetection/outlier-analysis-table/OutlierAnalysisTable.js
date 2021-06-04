@@ -1,41 +1,27 @@
-import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import {
-    Checkbox,
     Table,
     TableBody,
     TableHeader,
     TableHeaderColumn,
     TableRow,
-    TableRowColumn,
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
-import jsPageStyles from '../../PageStyles'
-import { Z_SCORE } from '../constants'
+import { Z_SCORE, MIN_MAX } from '../constants'
+import ElementRow from './ElementRow'
 import styles from './OutlierAnalysisTable.module.css'
 
 const OutlierAnalyisTable = ({
     csvQueryStr,
     elements,
-    toggleCheckbox,
+    onToggleCheckbox,
     algorithm,
 }) => {
-    const successfulMarkAlert = useAlert(
-        ({ marked }) =>
-            marked
-                ? i18n.t('Marked for follow-up')
-                : i18n.t('Unmarked for follow-up'),
-        { success: true }
-    )
-    const errorAlert = useAlert(({ error }) => error.message, {
-        critical: true,
-    })
     const isZScoreAlgorithm = algorithm === Z_SCORE
 
     const downloadLink = (
@@ -45,82 +31,6 @@ const OutlierAnalyisTable = ({
             queryStr={csvQueryStr}
         />
     )
-
-    const tableRows = elements.map(element => {
-        const updateCheckbox = async (event, marked) => {
-            try {
-                await toggleCheckbox(element)
-                successfulMarkAlert.show({ marked })
-            } catch (error) {
-                errorAlert.show({ error })
-            }
-        }
-
-        return (
-            <TableRow key={element.key}>
-                <TableRowColumn>
-                    <span title={element.displayName}>
-                        {element.displayName}
-                    </span>
-                </TableRowColumn>
-                <TableRowColumn>{element.pe}</TableRowColumn>
-                <TableRowColumn>
-                    <span title={element.ouName}>{element.ouName}</span>
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber
-                        value={element.value}
-                        minimumFractionDigits={0}
-                    />
-                </TableRowColumn>
-                {isZScoreAlgorithm && (
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.zScore} />
-                    </TableRowColumn>
-                )}
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber
-                        value={element.absDev}
-                        minimumFractionDigits={0}
-                    />
-                </TableRowColumn>
-                {isZScoreAlgorithm && (
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber value={element.stdDev} />
-                    </TableRowColumn>
-                )}
-                {isZScoreAlgorithm && (
-                    <TableRowColumn className={cssPageStyles.right}>
-                        <FormattedNumber
-                            value={element.mean}
-                            minimumFractionDigits={0}
-                        />
-                    </TableRowColumn>
-                )}
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber
-                        value={element.lowerBound}
-                        minimumFractionDigits={0}
-                    />
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.right}>
-                    <FormattedNumber
-                        value={element.upperBound}
-                        minimumFractionDigits={0}
-                    />
-                </TableRowColumn>
-                <TableRowColumn className={cssPageStyles.centerFlex}>
-                    <span className={cssPageStyles.checkboxWrapper}>
-                        <Checkbox
-                            checked={element.marked}
-                            onCheck={updateCheckbox}
-                            iconStyle={jsPageStyles.iconColor}
-                        />
-                    </span>
-                </TableRowColumn>
-            </TableRow>
-        )
-    })
 
     return (
         <div>
@@ -180,7 +90,14 @@ const OutlierAnalyisTable = ({
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {tableRows}
+                    {elements.map(element => (
+                        <ElementRow
+                            key={element.key}
+                            element={element}
+                            isZScoreAlgorithm={isZScoreAlgorithm}
+                            onToggleCheckbox={onToggleCheckbox}
+                        />
+                    ))}
                 </TableBody>
             </Table>
             <div
@@ -195,51 +112,11 @@ const OutlierAnalyisTable = ({
     )
 }
 
-OutlierAnalyisTable.generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
-
-OutlierAnalyisTable.convertElementFromApiResponse = e => ({
-    displayName: getDisplayName(e),
-    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${e.ou}`,
-    marked: e.followup,
-    ...e,
-})
-
-OutlierAnalyisTable.convertElementToToggleFollowupRequest = e => ({
-    dataElement: e.de,
-    period: e.pe,
-    orgUnit: e.ou,
-    categoryOptionCombo: e.coc || null,
-    attributeOptionCombo: e.aoc || null,
-    followup: !e.marked,
-})
-
 OutlierAnalyisTable.propTypes = {
+    algorithm: PropTypes.oneOf([Z_SCORE, MIN_MAX]).isRequired,
     csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
-    toggleCheckbox: PropTypes.func.isRequired,
-    algorithm: PropTypes.oneOf([Z_SCORE, 'MIN_MAX']),
-}
-
-OutlierAnalyisTable.contextTypes = {
-    d2: PropTypes.object,
-}
-
-function getDisplayName(e) {
-    let str = e.deName
-
-    // In the context of a dataElement, the default COC or AOC means "none".
-    // The "default" string is not localised, and probably won't ever be.
-    // That is why the conditions below should work in the foreseeable future.
-    if (e.cocName !== 'default') {
-        str += ` (${e.cocName})`
-    }
-
-    if (e.aocName !== 'default') {
-        str += ` (${e.aocName})`
-    }
-
-    return str
+    onToggleCheckbox: PropTypes.func.isRequired,
 }
 
 export default OutlierAnalyisTable

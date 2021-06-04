@@ -1,8 +1,8 @@
 import { useAlert } from '@dhis2/app-runtime'
+import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { PropTypes } from '@dhis2/prop-types'
 import { Card } from '@dhis2/ui'
-import { getInstance as getD2Instance } from 'd2'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
@@ -78,6 +78,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
     const [loading, setLoading] = useState(false)
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
+    const { d2 } = useD2()
     const {
         organisationUnitId,
         handleOrganisationUnitChange,
@@ -115,7 +116,6 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
     }
 
     const handleValidate = async () => {
-        const d2 = await getD2Instance()
         const api = d2.Api.getApi()
 
         const request = {

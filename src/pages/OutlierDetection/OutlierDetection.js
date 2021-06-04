@@ -1,326 +1,341 @@
+import { useAlert } from '@dhis2/app-runtime'
+import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
-import React from 'react'
+import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { useSidebar } from '../../components/Sidebar/SidebarContext'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
-import Page from '../Page'
 import cssPageStyles from '../Page.module.css'
 import {
     Z_SCORE,
     DEFAULT_THRESHOLD,
     DEFAULT_ALGORITHM,
     DEFAULT_MAX_RESULTS,
-    DEFAULT_SORT_BY,
+    DEFAULT_ORDER_BY,
 } from './constants'
 import Form from './Form'
 import OutlierAnalyisTable from './outlier-analysis-table/OutlierAnalysisTable'
 
-class OutlierDetection extends Page {
-    static STATE_PROPERTIES = [
-        'showTable',
-        'startDate',
-        'endDate',
-        'organisationUnitIds',
-        'dataSetIds',
-        'elements',
-        'threshold',
-        'loading',
-        'csvQueryStr',
-        'showAdvancedZScoreFields',
-        'dataStartDate',
-        'dataEndDate',
-        'maxResults',
-        'orderBy',
-    ]
+const getElementDisplayName = e => {
+    let str = e.deName
 
-    constructor() {
-        super()
-
-        const threeMonthsAgo = () => {
-            const date = new Date()
-            date.setMonth(date.getMonth() - 3)
-            return date
-        }
-
-        this.state = {
-            showTable: false,
-            startDate: threeMonthsAgo(),
-            endDate: new Date(),
-            organisationUnitIds: [],
-            dataSetIds: [],
-            elements: [],
-            algorithm: DEFAULT_ALGORITHM,
-            threshold: DEFAULT_THRESHOLD,
-            csvQueryStr: null,
-            showAdvancedZScoreFields: false,
-            dataStartDate: null,
-            dataEndDate: null,
-            maxResults: DEFAULT_MAX_RESULTS,
-            orderBy: DEFAULT_SORT_BY,
-        }
+    // In the context of a dataElement, the default COC or AOC means "none".
+    // The "default" string is not localised, and probably won't ever be.
+    // That is why the conditions below should work in the foreseeable future.
+    if (e.cocName !== 'default') {
+        str += ` (${e.cocName})`
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (OutlierDetection.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
+    if (e.aocName !== 'default') {
+        str += ` (${e.aocName})`
     }
 
-    start = async () => {
-        this.context.updateAppState({
-            pageState: {
-                loading: true,
-            },
-        })
-        const endpoint = apiConf.endpoints.outlierDetection
-        const csvQueryStr = this.createQueryString()
-        const api = this.context.d2.Api.getApi()
-        const response = await api.get(`${endpoint}?${csvQueryStr}`)
-        if (!this.isPageMounted()) {
-            return
+    return str
+}
+
+const convertElementFromApiResponse = e => ({
+    displayName: getElementDisplayName(e),
+    key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${e.ou}`,
+    marked: e.followup,
+    ...e,
+})
+
+const convertElementToToggleFollowupRequest = e => ({
+    dataElement: e.de,
+    period: e.pe,
+    orgUnit: e.ou,
+    categoryOptionCombo: e.coc || null,
+    attributeOptionCombo: e.aoc || null,
+    followup: !e.marked,
+})
+
+const useFormState = () => {
+    const [startDate, setStartDate] = useState(threeMonthsAgo())
+    const [endDate, setEndDate] = useState(new Date())
+    const [organisationUnitIds, setOrganisationUnitIds] = useState([])
+    const [algorithm, setAlgorithm] = useState(DEFAULT_ALGORITHM)
+    const [showAdvancedZScoreFields, setShowAdvancedZScoreFields] = useState(
+        false
+    )
+    const [threshold, setThreshold] = useState(DEFAULT_THRESHOLD)
+    const [orderBy, setOrderBy] = useState(DEFAULT_ORDER_BY)
+    const [dataStartDate, setDataStartDate] = useState(null)
+    const [dataEndDate, setDataEndDate] = useState(null)
+    const [dataSetIds, setDataSetIds] = useState([])
+    const [maxResults, setMaxResults] = useState(DEFAULT_MAX_RESULTS)
+
+    const handleStartDateChange = (event, date) => {
+        setStartDate(new Date(date))
+    }
+    const handleEndDateChange = (event, date) => {
+        setEndDate(new Date(date))
+    }
+    const handleAlgorithmChange = (event, index, value) => {
+        setAlgorithm(value)
+    }
+    const handleToggleAdvancedZScoreFields = () => {
+        if (showAdvancedZScoreFields) {
+            setDataStartDate(null)
+            setDataEndDate(null)
+            setOrderBy(DEFAULT_ORDER_BY)
         }
-
-        const elements = response.outlierValues.map(
-            OutlierAnalyisTable.convertElementFromApiResponse
-        )
-        this.context.updateAppState({
-            pageState: {
-                loading: false,
-                elements,
-                showTable: elements && elements.length > 0,
-                csvQueryStr,
-            },
-        })
-        return elements.length === 0 ? 'NO_VALUES_FOUND' : null
+        setShowAdvancedZScoreFields(!showAdvancedZScoreFields)
+    }
+    const handleThresholdChange = (event, index, value) => {
+        setThreshold(value)
+    }
+    const handleOrderByChange = (event, index, value) => {
+        setOrderBy(value)
+    }
+    const handleDataStartDateChange = date => {
+        setDataStartDate(date && new Date(date))
+    }
+    const handleDataEndDateChange = date => {
+        setDataEndDate(date && new Date(date))
+    }
+    const handleDataSetsChange = ({ selected }) => {
+        setDataSetIds(selected)
+    }
+    const handleMaxResultsChange = (event, index, value) => {
+        setMaxResults(value)
     }
 
-    createQueryString() {
-        const isZScoreAlgorithm = this.state.algorithm === Z_SCORE
+    return {
+        organisationUnitIds,
+        handleOrganisationUnitChange: setOrganisationUnitIds,
+        startDate,
+        handleStartDateChange,
+        endDate,
+        handleEndDateChange,
+        algorithm,
+        handleAlgorithmChange,
+        showAdvancedZScoreFields,
+        handleToggleAdvancedZScoreFields,
+        threshold,
+        handleThresholdChange,
+        orderBy,
+        handleOrderByChange,
+        dataStartDate,
+        handleDataStartDateChange,
+        dataEndDate,
+        handleDataEndDateChange,
+        dataSetIds,
+        handleDataSetsChange,
+        maxResults,
+        handleMaxResultsChange,
+    }
+}
+
+const OutlierDetection = () => {
+    const sidebar = useSidebar()
+    const [loading, setLoading] = useState(false)
+    const [tableVisible, setTableVisible] = useState(false)
+    const [elements, setElements] = useState([])
+    const [csvQueryStr, setCsvQueryStr] = useState(null)
+    const { d2 } = useD2()
+    const {
+        organisationUnitIds,
+        handleOrganisationUnitChange,
+        startDate,
+        handleStartDateChange,
+        endDate,
+        handleEndDateChange,
+        algorithm,
+        handleAlgorithmChange,
+        showAdvancedZScoreFields,
+        handleToggleAdvancedZScoreFields,
+        threshold,
+        handleThresholdChange,
+        orderBy,
+        handleOrderByChange,
+        dataStartDate,
+        handleDataStartDateChange,
+        dataEndDate,
+        handleDataEndDateChange,
+        dataSetIds,
+        handleDataSetsChange,
+        maxResults,
+        handleMaxResultsChange,
+    } = useFormState()
+    const noValuesFoundAlert = useAlert(i18n.t('No values found'), {
+        success: true,
+    })
+    const successfulMarkAlert = useAlert(
+        ({ marked }) =>
+            marked
+                ? i18n.t('Marked for follow-up')
+                : i18n.t('Unmarked for follow-up'),
+        { success: true, duration: 2e3 }
+    )
+    const errorAlert = useAlert(
+        ({ error }) =>
+            error?.message ||
+            i18n.t('An unexpected error happened during analysis'),
+        { critical: true }
+    )
+
+    const showForm = () => {
+        setTableVisible(false)
+        setCsvQueryStr(null)
+        sidebar.show()
+    }
+    const showTable = () => {
+        setTableVisible(true)
+        sidebar.hide()
+    }
+
+    const createQueryString = () => {
         const querySegments = [
-            ...this.state.dataSetIds.map(id => `ds=${id}`),
-            ...this.state.organisationUnitIds.map(id => `ou=${id}`),
-            `startDate=${convertDateToApiDateFormat(this.state.startDate)}`,
-            `endDate=${convertDateToApiDateFormat(this.state.endDate)}`,
-            `algorithm=${this.state.algorithm}`,
-            `maxResults=${this.state.maxResults}`,
-            `orderBy=${this.state.orderBy}`,
+            ...dataSetIds.map(id => `ds=${id}`),
+            ...organisationUnitIds.map(id => `ou=${id}`),
+            `startDate=${convertDateToApiDateFormat(startDate)}`,
+            `endDate=${convertDateToApiDateFormat(endDate)}`,
+            `algorithm=${algorithm}`,
+            `maxResults=${maxResults}`,
+            `orderBy=${orderBy}`,
         ]
 
-        if (isZScoreAlgorithm) {
-            querySegments.push(`threshold=${this.state.threshold}`)
-        }
+        if (algorithm === Z_SCORE) {
+            querySegments.push(`threshold=${threshold}`)
 
-        if (isZScoreAlgorithm && this.state.dataStartDate) {
-            querySegments.push(
-                `dataStartDate=${convertDateToApiDateFormat(
-                    this.state.dataStartDate
-                )}`
-            )
-        }
+            if (dataStartDate) {
+                querySegments.push(
+                    `dataStartDate=${convertDateToApiDateFormat(dataStartDate)}`
+                )
+            }
 
-        if (isZScoreAlgorithm && this.state.dataEndDate) {
-            querySegments.push(
-                `dataEndDate=${convertDateToApiDateFormat(
-                    this.state.dataEndDate
-                )}`
-            )
+            if (dataEndDate) {
+                querySegments.push(
+                    `dataEndDate=${convertDateToApiDateFormat(dataEndDate)}`
+                )
+            }
         }
 
         return querySegments.join('&')
     }
+    const handleStart = async () => {
+        const api = d2.Api.getApi()
 
-    handleBack = () => {
-        this.setState({ showTable: false, csvQueryStr: null })
-        this.context.updateAppState({
-            pageState: { showTable: false },
-        })
-    }
+        const endpoint = apiConf.endpoints.outlierDetection
+        const csvQueryStr = createQueryString()
 
-    handleStartDateChange = (event, date) => {
-        this.setState({ startDate: new Date(date) })
-    }
-
-    handleEndDateChange = (event, date) => {
-        this.setState({ endDate: new Date(date) })
-    }
-
-    handleDataStartDateChange = date => {
-        this.setState({ dataStartDate: date && new Date(date) })
-    }
-
-    handleDataEndDateChange = date => {
-        this.setState({ dataEndDate: date && new Date(date) })
-    }
-
-    handleMaxResultsChange = (event, index, value) => {
-        this.setState({ maxResults: value })
-    }
-
-    handleOrderByChange = (event, index, value) => {
-        this.setState({ orderBy: value })
-    }
-
-    toggleShowAdvancedZScoreFields = () => {
-        const shouldShow = !this.state.showAdvancedZScoreFields
-        if (shouldShow) {
-            this.setState({
-                showAdvancedZScoreFields: true,
-            })
-        } else {
-            this.setState({
-                showAdvancedZScoreFields: false,
-                // Also reset advanced fields
-                dataStartDate: null,
-                dataEndDate: null,
-                orderBy: DEFAULT_SORT_BY,
-            })
+        setLoading(true)
+        try {
+            const response = await api.get(`${endpoint}?${csvQueryStr}`)
+            const elements = response.outlierValues.map(
+                convertElementFromApiResponse
+            )
+            setElements(elements)
+            setCsvQueryStr(csvQueryStr)
+            if (elements.length > 0) {
+                showTable()
+            } else {
+                noValuesFoundAlert.show()
+            }
+        } catch (error) {
+            errorAlert.show({ error })
         }
+        setLoading(false)
     }
-
-    handleOrganisationUnitChange = organisationUnitIds => {
-        this.setState({ organisationUnitIds })
-    }
-
-    handleDataSetsChange = ({ selected }) => {
-        this.setState({ dataSetIds: selected })
-    }
-
-    handleThresholdChange = (event, index, value) => {
-        this.setState({ threshold: value })
-    }
-
-    handleAlgorithmChange = (event, index, value) => {
-        this.setState({ algorithm: value })
-    }
-
-    toggleCheckbox = async element => {
-        const currentElementIndex = this.state.elements.findIndex(
-            ({ key }) => key === element.key
-        )
-        const currentElement = this.state.elements[currentElementIndex]
+    const handleToggleCheckbox = async element => {
+        const currentElement = elements.find(({ key }) => key === element.key)
+        // TODO: Verify that this check is needed
         if (!currentElement) {
             return
         }
 
-        this.context.updateAppState({
-            pageState: {
-                loading: true,
-                elements: this.state.elements,
-                showTable: true,
-            },
-        })
-        const data = OutlierAnalyisTable.convertElementToToggleFollowupRequest(
-            currentElement
-        )
-        const api = this.context.d2.Api.getApi()
-        await api.update(apiConf.endpoints.markOutlierDataValue, data)
-        if (!this.isPageMounted()) {
-            return
+        const api = d2.Api.getApi()
+        try {
+            await api.update(
+                apiConf.endpoints.markOutlierDataValue,
+                convertElementToToggleFollowupRequest(currentElement)
+            )
+            const newMarked = !element.marked
+            setElements(
+                elements.map(e => {
+                    if (e.key === element.key) {
+                        return {
+                            ...e,
+                            marked: newMarked,
+                        }
+                    } else {
+                        return e
+                    }
+                })
+            )
+            successfulMarkAlert.show({ marked: newMarked })
+        } catch (error) {
+            errorAlert.show({ error })
         }
-
-        const updatedElement = {
-            ...currentElement,
-            marked: !currentElement.marked,
-        }
-        const elements = [
-            ...this.state.elements.slice(0, currentElementIndex),
-            updatedElement,
-            ...this.state.elements.slice(currentElementIndex + 1),
-        ]
-        this.context.updateAppState({
-            pageState: {
-                elements,
-                loading: false,
-                showTable: true,
-            },
-        })
     }
 
-    isFormValid = () =>
-        this.state.startDate &&
-        this.state.endDate &&
-        this.state.organisationUnitIds &&
-        this.state.organisationUnitIds.length > 0 &&
-        this.state.threshold &&
-        this.state.dataSetIds &&
-        this.state.dataSetIds.length > 0
+    const formValid =
+        startDate &&
+        endDate &&
+        organisationUnitIds.length > 0 &&
+        threshold &&
+        dataSetIds.length > 0
+    const shouldShowMaxResultsAlertBar =
+        tableVisible && elements.length >= apiConf.results.analysis.limit
 
-    isActionDisabled = () => !this.isFormValid() || this.state.loading
-
-    showMaxResultsAlertBar = () =>
-        this.state.showTable &&
-        this.state.elements &&
-        this.state.elements.length >= apiConf.results.analysis.limit
-
-    render() {
-        return (
-            <div>
-                <PageHeader
-                    title={i18n.t('Outlier Detection')}
-                    onBack={this.state.showTable ? this.handleBack : null}
-                />
-                <MaxResultsAlertBar show={this.showMaxResultsAlertBar()} />
-                <Card className={cssPageStyles.card}>
-                    {/* Hide form instead of not rendering to preserve org unit state */}
-                    <div
-                        style={{
-                            display: this.state.showTable ? 'none' : 'block',
-                        }}
-                    >
-                        <Form
-                            onSubmit={this.start}
-                            submitDisabled={this.isActionDisabled()}
-                            startDate={this.state.startDate}
-                            endDate={this.state.endDate}
-                            algorithm={this.state.algorithm}
-                            showAdvancedZScoreFields={
-                                this.state.showAdvancedZScoreFields
-                            }
-                            onToggleAdvancedZScoreFields={
-                                this.toggleShowAdvancedZScoreFields
-                            }
-                            onAlgorithmChange={this.handleAlgorithmChange}
-                            threshold={this.state.threshold}
-                            onThresholdChange={this.handleThresholdChange}
-                            orderBy={this.state.orderBy}
-                            onOrderByChange={this.handleOrderByChange}
-                            dataStartDate={this.state.dataStartDate}
-                            onDataStartDateChange={
-                                this.handleDataStartDateChange
-                            }
-                            onDataEndDateChange={this.handleDataEndDateChange}
-                            dataEndDate={this.state.dataEndDate}
-                            dataSetIds={this.state.dataSetIds}
-                            onDataSetsOnChange={this.handleDataSetsChange}
-                            onOrganisationUnitChange={
-                                this.handleOrganisationUnitChange
-                            }
-                            maxResults={this.state.maxResults}
-                            onMaxResultsChange={this.handleMaxResultsChange}
-                            onStartDateChange={this.handleStartDateChange}
-                            onEndDateChange={this.handleEndDateChange}
-                        />
-                    </div>
-                    {this.state.showTable && this.state.csvQueryStr && (
-                        <OutlierAnalyisTable
-                            algorithm={this.state.algorithm}
-                            csvQueryStr={this.state.csvQueryStr}
-                            elements={this.state.elements}
-                            toggleCheckbox={this.toggleCheckbox}
-                        />
-                    )}
-                </Card>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <PageHeader
+                title={i18n.t('Outlier Detection')}
+                onBack={tableVisible ? showForm : null}
+            />
+            <MaxResultsAlertBar show={shouldShowMaxResultsAlertBar} />
+            <Card className={cssPageStyles.card}>
+                {/* Hide form instead of not rendering to preserve org unit state */}
+                <div
+                    style={{
+                        display: tableVisible ? 'none' : 'block',
+                    }}
+                >
+                    <Form
+                        onSubmit={handleStart}
+                        valid={formValid}
+                        loading={loading}
+                        onOrganisationUnitChange={handleOrganisationUnitChange}
+                        startDate={startDate}
+                        onStartDateChange={handleStartDateChange}
+                        endDate={endDate}
+                        onEndDateChange={handleEndDateChange}
+                        algorithm={algorithm}
+                        onAlgorithmChange={handleAlgorithmChange}
+                        showAdvancedZScoreFields={showAdvancedZScoreFields}
+                        onToggleAdvancedZScoreFields={
+                            handleToggleAdvancedZScoreFields
+                        }
+                        threshold={threshold}
+                        onThresholdChange={handleThresholdChange}
+                        orderBy={orderBy}
+                        onOrderByChange={handleOrderByChange}
+                        dataStartDate={dataStartDate}
+                        onDataStartDateChange={handleDataStartDateChange}
+                        dataEndDate={dataEndDate}
+                        onDataEndDateChange={handleDataEndDateChange}
+                        dataSetIds={dataSetIds}
+                        onDataSetsOnChange={handleDataSetsChange}
+                        maxResults={maxResults}
+                        onMaxResultsChange={handleMaxResultsChange}
+                    />
+                </div>
+                {tableVisible && csvQueryStr && (
+                    <OutlierAnalyisTable
+                        algorithm={algorithm}
+                        csvQueryStr={csvQueryStr}
+                        elements={elements}
+                        onToggleCheckbox={handleToggleCheckbox}
+                    />
+                )}
+            </Card>
+        </div>
+    )
 }
 
 export default OutlierDetection

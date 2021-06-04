@@ -1,6 +1,5 @@
-import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
+import { Button, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
@@ -9,43 +8,10 @@ import AvailableDatasetsSelect from '../../components/AvailableDatasetsSelect/Av
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
-import { Z_SCORE } from './constants'
+import { Z_SCORE, MIN_MAX, MEAN_ABS_DEV } from './constants'
 import styles from './Form.module.css'
 
 /* eslint-disable react/prop-types */
-
-const StartButton = ({ onClick, disabled }) => {
-    const noValuesFoundAlert = useAlert(i18n.t('No values found'), {
-        success: true,
-    })
-    const errorAlert = useAlert(
-        ({ error }) =>
-            error?.message ||
-            i18n.t('An unexpected error happened during analysis'),
-        { critical: true }
-    )
-    const handleClick = async () => {
-        try {
-            const result = await onClick()
-            if (result === 'NO_VALUES_FOUND') {
-                noValuesFoundAlert.show()
-            }
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-    }
-
-    return (
-        <Button
-            primary
-            className={cssPageStyles.mainButton}
-            onClick={handleClick}
-            disabled={disabled}
-        >
-            {i18n.t('Start')}
-        </Button>
-    )
-}
 
 const ThresholdField = ({ threshold, onChange }) => (
     <SelectField
@@ -131,7 +97,7 @@ const ZScoreFields = ({
                 >
                     <MenuItem value={Z_SCORE} primaryText="Z-score" />
                     <MenuItem
-                        value="MEAN_ABS_DEV"
+                        value={MEAN_ABS_DEV}
                         primaryText="Absolute Deviation from Mean"
                     />
                 </SelectField>
@@ -142,7 +108,8 @@ const ZScoreFields = ({
 
 const Form = ({
     onSubmit,
-    submitDisabled,
+    valid,
+    loading,
     startDate,
     endDate,
     algorithm,
@@ -209,7 +176,7 @@ const Form = ({
                     value={algorithm}
                 >
                     <MenuItem value={Z_SCORE} primaryText="Z-score" />
-                    <MenuItem value="MIN_MAX" primaryText="Min-max values" />
+                    <MenuItem value={MIN_MAX} primaryText="Min-max values" />
                 </SelectField>
                 {algorithm === Z_SCORE && (
                     <ThresholdField
@@ -243,7 +210,21 @@ const Form = ({
                 )}
             </div>
         </div>
-        <StartButton onClick={onSubmit} disabled={submitDisabled} />
+        <Button
+            primary
+            className={cssPageStyles.mainButton}
+            disabled={!valid || loading}
+            onClick={onSubmit}
+        >
+            {loading ? (
+                <>
+                    {i18n.t('Processing...')}
+                    <CircularLoader small />
+                </>
+            ) : (
+                i18n.t('Start')
+            )}
+        </Button>
     </>
 )
 

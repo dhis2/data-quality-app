@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-04T10:27:36.673Z\n"
-"PO-Revision-Date: 2021-06-04T10:27:36.673Z\n"
+"POT-Creation-Date: 2021-06-04T18:11:00.279Z\n"
+"PO-Revision-Date: 2021-06-04T18:11:00.279Z\n"
 
 msgid "Error loading datasets."
 msgstr "Error loading datasets."
@@ -89,9 +89,6 @@ msgstr "Unfollow"
 msgid "unfollow"
 msgstr "unfollow"
 
-msgid "Start"
-msgstr "Start"
-
 msgid "Threshold"
 msgstr "Threshold"
 
@@ -131,14 +128,20 @@ msgstr "Algorithm"
 msgid "Max results"
 msgstr "Max results"
 
-msgid "Outlier Detection"
-msgstr "Outlier Detection"
+msgid "Processing..."
+msgstr "Processing..."
+
+msgid "Start"
+msgstr "Start"
 
 msgid "Marked for follow-up"
 msgstr "Marked for follow-up"
 
 msgid "Unmarked for follow-up"
 msgstr "Unmarked for follow-up"
+
+msgid "Outlier Detection"
+msgstr "Outlier Detection"
 
 msgid "Z-Score"
 msgstr "Z-Score"
