@@ -18,7 +18,7 @@ import {
     DEFAULT_ORDER_BY,
 } from './constants'
 import Form from './Form'
-import OutlierAnalyisTable from './outlier-analysis-table/OutlierAnalysisTable'
+import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
 
 const getElementDisplayName = e => {
     let str = e.deName
