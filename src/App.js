@@ -21,7 +21,7 @@ const AppWrapper = () => {
             <CssVariables spacers colors />
             <MuiThemeProvider muiTheme={appTheme}>
                 <HashRouter>
-                    <App d2={d2} />
+                    <App />
                 </HashRouter>
             </MuiThemeProvider>
         </>

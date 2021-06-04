@@ -1,94 +1,81 @@
+import { useAlert } from '@dhis2/app-runtime'
+import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const ALL_VALIDATION_RULE_GROUPS_ID = -1
 export const ALL_VALIDATION_RULE_GROUPS_OPTION = {
     id: ALL_VALIDATION_RULE_GROUPS_ID,
-    displayName: '[All Validation Rules]',
+    displayName: i18n.t('[All Validation Rules]'),
 }
 
-class ValidationRuleGroupsSelect extends PureComponent {
-    static propTypes = {
-        onChange: PropTypes.func.isRequired,
-        style: PropTypes.object,
-    }
-
-    static defaultProps = {
-        style: {},
-    }
-
-    static contextTypes = {
-        d2: PropTypes.object,
-    }
-
-    constructor() {
-        super()
-
-        this.state = {
-            validationRuleGroups: [ALL_VALIDATION_RULE_GROUPS_OPTION],
-            selected: ALL_VALIDATION_RULE_GROUPS_ID,
+const ValidationRuleGroupsSelect = ({ onChange, style }) => {
+    const [validationRuleGroups, setValidationRuleGroups] = useState([
+        ALL_VALIDATION_RULE_GROUPS_OPTION,
+    ])
+    const [selected, setSelected] = useState(ALL_VALIDATION_RULE_GROUPS_ID)
+    const validationRuleGroupsLoadErrorAlert = useAlert(
+        ({ error }) =>
+            i18n.t('Error loading validation rule groups: {{error}}', {
+                nsSeparator: null,
+                error,
+            }),
+        {
+            critical: true,
         }
+    )
+    const { d2 } = useD2()
 
-        this.onChange = this.onChange.bind(this)
-    }
-
-    componentDidMount() {
-        const d2 = this.context.d2
-        const translatedAllValidationRulesOption = ALL_VALIDATION_RULE_GROUPS_OPTION
-        translatedAllValidationRulesOption.displayName = i18n.t(
-            ALL_VALIDATION_RULE_GROUPS_OPTION.displayName
-        )
+    useEffect(() => {
         d2.models.validationRuleGroup
             .list({
                 paging: false,
                 fields: 'id,displayName',
             })
             .then(validationRuleGroupsResponse => {
-                this.setState({
-                    validationRuleGroups: [
-                        translatedAllValidationRulesOption,
-                        ...validationRuleGroupsResponse.toArray(),
-                    ],
-                })
+                setValidationRuleGroups([
+                    ALL_VALIDATION_RULE_GROUPS_OPTION,
+                    ...validationRuleGroupsResponse.toArray(),
+                ])
             })
-            .catch(() => {
-                this.manageError()
+            .catch(error => {
+                validationRuleGroupsLoadErrorAlert.show({ error })
             })
+    }, [])
+
+    const handleChange = (event, index, value) => {
+        setSelected(value)
+        onChange(value)
     }
 
-    onChange(event, index, value) {
-        this.setState({
-            selected: value,
-            selectedName:
-                value === ALL_VALIDATION_RULE_GROUPS_ID
-                    ? '[All Validation Rules]'
-                    : this.state.validationRuleGroups[index].displayName,
-        })
+    return (
+        <SelectField
+            style={style}
+            floatingLabelText={i18n.t('Validation Rule Group')}
+            onChange={handleChange}
+            value={selected}
+        >
+            {validationRuleGroups.map(item => (
+                <MenuItem
+                    key={item.id}
+                    value={item.id}
+                    primaryText={item.displayName}
+                />
+            ))}
+        </SelectField>
+    )
+}
 
-        this.props.onChange(event, index, value)
-    }
+ValidationRuleGroupsSelect.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    style: PropTypes.object,
+}
 
-    render() {
-        return (
-            <SelectField
-                style={this.props.style}
-                floatingLabelText={i18n.t('Validation Rule Group')}
-                onChange={this.onChange}
-                value={this.state.selected}
-            >
-                {this.state.validationRuleGroups.map(item => (
-                    <MenuItem
-                        key={item.id}
-                        value={item.id}
-                        primaryText={item.displayName}
-                    />
-                ))}
-            </SelectField>
-        )
-    }
+ValidationRuleGroupsSelect.defaultProps = {
+    style: {},
 }
 
 export default ValidationRuleGroupsSelect

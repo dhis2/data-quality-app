@@ -1,69 +1,54 @@
-import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
-import { withRouter } from 'react-router-dom'
+import classnames from 'classnames'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import AppRouter from '../AppRouter/AppRouter'
 import Sidebar from '../Sidebar/Sidebar'
+import { SidebarProvider } from '../Sidebar/SidebarContext'
 import styles from './App.module.css'
 
-class App extends PureComponent {
-    static childContextTypes = {
-        d2: PropTypes.object,
-        updateAppState: PropTypes.func,
+const useSidebar = () => {
+    const [visible, setVisible] = useState(true)
+    return {
+        visible,
+        show: () => {
+            setVisible(true)
+        },
+        hide: () => {
+            setVisible(false)
+        },
     }
+}
 
-    constructor(props) {
-        super(props)
+const App = () => {
+    const sidebar = useSidebar()
+    const history = useHistory()
 
-        this.state = {
-            pageState: {},
-        }
-    }
+    useEffect(() => {
+        // Restore sidebar when user visits different page (which could be
+        // triggered by back button)
+        history.listen(() => {
+            sidebar.show()
+        })
+    }, [])
 
-    getChildContext() {
-        return {
-            d2: this.props.d2,
-            updateAppState: this.updateAppState,
-        }
-    }
-
-    updateAppState = appState => {
-        // TODO: Replace with history.listen
-        // https://github.com/ReactTraining/history/blob/master/docs/getting-started.md#listening
-        /*if (
-            appState.currentSection &&
-            !appState.pageState &&
-            this.state.currentSection !== appState.currentSection
-        ) {
-            // clear page state because we are updating page
-            this.setState({ ...appState, pageState: {} })
-        } else {
-            this.setState(appState)
-        }*/
-        this.setState(appState)
-    }
-
-    render() {
-        const showSidebar = !this.state.pageState?.showTable
-
-        return (
-            <div className={styles.container}>
-                {showSidebar && (
-                    <div className={styles.sidebar}>
-                        <Sidebar />
-                    </div>
-                )}
-                <div className={styles.content}>
-                    <div className={styles.contentWrapper}>
-                        <AppRouter pageState={this.state.pageState} />
-                    </div>
+    return (
+        <div
+            className={classnames(styles.container, {
+                [styles.containerWithSidebar]: sidebar.visible,
+            })}
+        >
+            <div className={styles.sidebar}>
+                <Sidebar />
+            </div>
+            <div className={styles.content}>
+                <div className={styles.contentWrapper}>
+                    <SidebarProvider value={sidebar}>
+                        <AppRouter />
+                    </SidebarProvider>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
-App.propTypes = {
-    d2: PropTypes.object,
-}
-
-export default withRouter(App)
+export default App

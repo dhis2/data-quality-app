@@ -6,6 +6,7 @@ import { getInstance as getD2Instance } from 'd2'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { useSidebar } from '../../components/Sidebar/SidebarContext'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
@@ -49,9 +50,6 @@ const useFormState = () => {
     const handleEndDateChange = (event, date) => {
         setEndDate(new Date(date))
     }
-    const handleValidationRuleGroupChange = (event, index, value) => {
-        setValidationRuleGroupId(value)
-    }
     const handleSendNotificationsChange = ({ checked }) => {
         setSendNotifications(checked)
     }
@@ -67,7 +65,7 @@ const useFormState = () => {
         endDate,
         handleEndDateChange,
         validationRuleGroupId,
-        handleValidationRuleGroupChange,
+        handleValidationRuleGroupChange: setValidationRuleGroupId,
         sendNotfications,
         handleSendNotificationsChange,
         persistNewResults,
@@ -76,8 +74,7 @@ const useFormState = () => {
 }
 
 const ValidationRulesAnalysis = ({ sectionKey }) => {
-    // TODO: Make hook to control sidebar and hide sidebar (using context api under the hood)
-    // TODO: Have `showForm` and `showTable` functions that show/hide sidebar
+    const sidebar = useSidebar()
     const [loading, setLoading] = useState(false)
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
@@ -108,9 +105,15 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         { critical: true }
     )
 
-    const handleBack = () => {
+    const showForm = () => {
         setTableVisible(false)
+        sidebar.show()
     }
+    const showTable = () => {
+        setTableVisible(true)
+        sidebar.hide()
+    }
+
     const handleValidate = async () => {
         const d2 = await getD2Instance()
         const api = d2.Api.getApi()
@@ -135,7 +138,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
             const elements = response.map(convertElementFromApiResponse)
             setElements(elements)
             if (elements.length > 0) {
-                setTableVisible(true)
+                showTable()
             } else {
                 validationPassedAlert.show()
             }
@@ -151,7 +154,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         <div>
             <PageHeader
                 title={i18n.t('Validation Rule Analysis')}
-                onBack={tableVisible ? handleBack : null}
+                onBack={tableVisible ? showForm : null}
                 sectionKey={sectionKey}
             />
             <MaxResultsAlertBar show={shouldShowMaxResultsAlertBar} />

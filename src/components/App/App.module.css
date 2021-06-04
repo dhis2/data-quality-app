@@ -2,8 +2,12 @@
     display: grid;
     height: 100%;
     grid-template-areas: "sidebar main";
-    grid-template-columns: 300px auto;
+    grid-template-columns: 0 auto;
     color: var(--colors-grey900);
+}
+
+.containerWithSidebar {
+    grid-template-columns: 300px auto;
 }
 
 .sidebar {
@@ -21,6 +25,6 @@
     background: var(--colors-grey100);
 }
 
-.contentWrapper {
+.containerWithSidebar .contentWrapper {
     max-width: 960px;
 }
