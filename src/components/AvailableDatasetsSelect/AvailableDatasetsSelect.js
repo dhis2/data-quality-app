@@ -9,7 +9,7 @@ const AvailableDatasetsSelect = ({ selected, onChange }) => {
     const [error, setError] = useState(false)
     const { d2 } = useD2()
 
-    useEffect(async () => {
+    const fetchDataSets = async () => {
         try {
             const dataSetsResponse = await d2.models.dataSet.list({
                 paging: false,
@@ -19,6 +19,10 @@ const AvailableDatasetsSelect = ({ selected, onChange }) => {
         } catch (error) {
             setError(true)
         }
+    }
+
+    useEffect(() => {
+        fetchDataSets()
     }, [])
 
     if (error) {
