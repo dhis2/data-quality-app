@@ -14,6 +14,35 @@ import cssPageStyles from '../Page.module.css'
 import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable'
 import Form from './Form'
 
+const generateElementKey = e =>
+    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
+
+const convertElementFromApiResponse = e => ({
+    key: generateElementKey(e),
+    attributeOptionComboId: e.attributeOptionComboId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    periodId: e.periodId,
+    organisationUnitId: e.sourceId,
+    dataElementId: e.dataElementId,
+    dataElement: e.dataElementName,
+    organisation: e.sourceName,
+    period: e.period.name,
+    min: e.min,
+    max: e.max,
+    value: Number.parseFloat(e.value, 10),
+    marked: !e.followup,
+    comment: e.comment,
+})
+
+const convertElementToUnFollowupRequest = e => ({
+    dataElementId: e.dataElementId,
+    periodId: e.periodId,
+    organisationUnitId: e.organisationUnitId,
+    categoryOptionComboId: e.categoryOptionComboId,
+    attributeOptionComboId: e.attributeOptionComboId,
+    followup: false,
+})
+
 const useFormState = () => {
     const [startDate, setStartDate] = useState(threeMonthsAgo())
     const [endDate, setEndDate] = useState(new Date())
@@ -92,9 +121,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
                 ou: organisationUnitId,
                 ds: dataSetIds,
             })
-            const elements = response.map(
-                FollowUpAnalysisTable.convertElementFromApiResponse
-            )
+            const elements = response.map(convertElementFromApiResponse)
             setElements(elements)
             if (elements.length > 0) {
                 showTable()
@@ -113,9 +140,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         try {
             const unfollowups = elements.filter(element => element.marked)
             await api.post(apiConf.endpoints.markFollowUpDataValue, {
-                followups: unfollowups.map(
-                    FollowUpAnalysisTable.convertElementToUnFollowupRequest
-                ),
+                followups: unfollowups.map(convertElementToUnFollowupRequest),
             })
             setElements(
                 elements.filter(element => !unfollowups.includes(element))
@@ -126,10 +151,10 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         }
         setLoading(false)
     }
-    const handleCheckboxToggle = element => {
+    const handleCheckboxToggle = elementKey => {
         setElements(
             elements.map(e => {
-                if (e.key === element.key) {
+                if (e.key === elementKey) {
                     return {
                         ...e,
                         marked: !e.marked,

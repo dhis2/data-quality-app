@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-07T16:24:06.290Z\n"
-"PO-Revision-Date: 2021-06-07T16:24:06.290Z\n"
+"POT-Creation-Date: 2021-06-07T16:41:43.646Z\n"
+"PO-Revision-Date: 2021-06-07T16:41:43.646Z\n"
 
 msgid "Error loading datasets."
 msgstr "Error loading datasets."
@@ -47,26 +47,11 @@ msgstr "An unexpected error happened during analysis"
 msgid "Follow-Up Analysis"
 msgstr "Follow-Up Analysis"
 
-msgid "Data Set"
-msgstr "Data Set"
-
-msgid "Parent organisation unit"
-msgstr "Parent organisation unit"
-
-msgid "Start Date"
-msgstr "Start Date"
-
-msgid "End Date"
-msgstr "End Date"
-
-msgid "Follow up"
-msgstr "Follow up"
+msgid "Comment"
+msgstr "Comment"
 
 msgid "Close"
 msgstr "Close"
-
-msgid "Comment"
-msgstr "Comment"
 
 msgid "Data Element"
 msgstr "Data Element"
@@ -91,6 +76,21 @@ msgstr "Unfollow"
 
 msgid "Unfollowing..."
 msgstr "Unfollowing..."
+
+msgid "Data Set"
+msgstr "Data Set"
+
+msgid "Parent organisation unit"
+msgstr "Parent organisation unit"
+
+msgid "Start Date"
+msgstr "Start Date"
+
+msgid "End Date"
+msgstr "End Date"
+
+msgid "Follow up"
+msgstr "Follow up"
 
 msgid "Threshold"
 msgstr "Threshold"

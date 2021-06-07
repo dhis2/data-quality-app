@@ -31,77 +31,33 @@ class FollowUpAnalysisTable extends Component {
         onUnfollow: PropTypes.func.isRequired,
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-    }
-
-    static generateElementKey = e =>
-        `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
-
-    static convertElementFromApiResponse = e => ({
-        key: FollowUpAnalysisTable.generateElementKey(e),
-        attributeOptionComboId: e.attributeOptionComboId,
-        categoryOptionComboId: e.categoryOptionComboId,
-        periodId: e.periodId,
-        organisationUnitId: e.sourceId,
-        dataElementId: e.dataElementId,
-        dataElement: e.dataElementName,
-        organisation: e.sourceName,
-        period: e.period.name,
-        min: e.min,
-        max: e.max,
-        value: Number.parseFloat(e.value, 10),
-        marked: !e.followup,
-        comment: e.comment,
-    })
-
-    static convertElementToUnFollowupRequest = e => ({
-        dataElementId: e.dataElementId,
-        periodId: e.periodId,
-        organisationUnitId: e.organisationUnitId,
-        categoryOptionComboId: e.categoryOptionComboId,
-        attributeOptionComboId: e.attributeOptionComboId,
-        followup: false,
-    })
-
     state = {
         showComment: false,
         comment: null,
     }
 
-    closeCommentDialog = () => {
+    handleCloseCommentDialog = () => {
         this.setState({ showComment: false })
     }
 
-    showComment(element) {
-        if (element.comment) {
-            this.setState({
-                showComment: true,
-                comment: element.comment,
-            })
-        }
+    handleShowComment(element) {
+        this.setState({
+            showComment: true,
+            comment: element.comment,
+        })
     }
 
     render() {
         let oneChecked = false
 
-        const commentDialogActions = [
-            <FlatButton
-                key={'close'}
-                label={i18n.t('Close')}
-                primary
-                onClick={this.closeCommentDialog}
-            />,
-        ]
-
         // Table Rows
         const rows = this.props.elements.map(element => {
-            const updateCheckbox = () => {
-                this.props.onCheckboxToggle(element)
+            const handleCheckboxToggle = () => {
+                this.props.onCheckboxToggle(element.key)
             }
 
-            const showComment = () => {
-                this.showComment(element)
+            const handleShowComment = () => {
+                this.handleShowComment(element)
             }
 
             if (element.marked) {
@@ -126,14 +82,14 @@ class FollowUpAnalysisTable extends Component {
                         <span className={cssPageStyles.checkboxWrapper}>
                             <Checkbox
                                 checked={element.marked}
-                                onCheck={updateCheckbox}
+                                onCheck={handleCheckboxToggle}
                                 iconStyle={jsPageStyles.iconColor}
                             />
                         </span>
                     </TableRowColumn>
                     <TableRowColumn className={cssPageStyles.center}>
                         {element.comment && (
-                            <IconButton key={element.key} onClick={showComment}>
+                            <IconButton onClick={handleShowComment}>
                                 <FontIcon
                                     className={'material-icons'}
                                     style={jsPageStyles.cursorStyle}
@@ -151,10 +107,17 @@ class FollowUpAnalysisTable extends Component {
             <div>
                 <Dialog
                     title={i18n.t('Comment')}
-                    actions={commentDialogActions}
+                    actions={[
+                        <FlatButton
+                            key="Close"
+                            label={i18n.t('Close')}
+                            primary
+                            onClick={this.handleCloseCommentDialog}
+                        />,
+                    ]}
                     modal={false}
                     open={this.state.showComment}
-                    onRequestClose={this.closeCommentDialog}
+                    onRequestClose={this.handleCloseCommentDialog}
                 >
                     <div>{this.state.comment}</div>
                 </Dialog>
