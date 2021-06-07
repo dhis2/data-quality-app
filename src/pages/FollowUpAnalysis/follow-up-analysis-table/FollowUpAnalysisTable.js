@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
+import { Button, CircularLoader } from '@dhis2/ui'
 import classNames from 'classnames'
 import {
     Checkbox,
     FontIcon,
-    RaisedButton,
     Table,
     TableBody,
     TableHeader,
@@ -27,8 +27,8 @@ class FollowUpAnalysisTable extends Component {
     static propTypes = {
         elements: PropTypes.array.isRequired,
         loading: PropTypes.bool.isRequired,
-        toggleCheckbox: PropTypes.func.isRequired,
-        unfollow: PropTypes.func.isRequired,
+        onCheckboxToggle: PropTypes.func.isRequired,
+        onUnfollow: PropTypes.func.isRequired,
     }
 
     static contextTypes = {
@@ -64,49 +64,13 @@ class FollowUpAnalysisTable extends Component {
         followup: false,
     })
 
-    static areElementsTheSame(element1, element2) {
-        return (
-            element1.attributeOptionComboId ===
-                element2.attributeOptionComboId &&
-            element1.categoryOptionComboId === element2.categoryOptionComboId &&
-            element1.periodId === element2.periodId &&
-            element1.organisationUnitId === element2.organisationUnitId &&
-            element1.dataElementId === element2.dataElementId
-        )
+    state = {
+        showComment: false,
+        comment: null,
     }
 
-    constructor() {
-        super()
-
-        this.state = {
-            showComment: false,
-            comment: null,
-        }
-
-        this.unfollow = this.unfollow.bind(this)
-        this.closeCommentDialog = this.closeCommentDialog.bind(this)
-    }
-
-    unfollow() {
-        const unfollowups = []
-        for (let i = 0; i < this.props.elements.length; i++) {
-            const e = this.props.elements[i]
-            if (e.marked) {
-                unfollowups.push(
-                    FollowUpAnalysisTable.convertElementToUnFollowupRequest(e)
-                )
-            }
-        }
-
-        this.props.unfollow(unfollowups)
-    }
-
-    closeCommentDialog() {
+    closeCommentDialog = () => {
         this.setState({ showComment: false })
-    }
-
-    updateCheckbox(element) {
-        this.props.toggleCheckbox(element)
     }
 
     showComment(element) {
@@ -133,14 +97,16 @@ class FollowUpAnalysisTable extends Component {
         // Table Rows
         const rows = this.props.elements.map(element => {
             const updateCheckbox = () => {
-                this.updateCheckbox(element)
+                this.props.onCheckboxToggle(element)
             }
 
             const showComment = () => {
                 this.showComment(element)
             }
 
-            oneChecked = element.marked ? true : oneChecked
+            if (element.marked) {
+                oneChecked = true
+            }
 
             return (
                 <TableRow key={element.key}>
@@ -190,7 +156,7 @@ class FollowUpAnalysisTable extends Component {
                     open={this.state.showComment}
                     onRequestClose={this.closeCommentDialog}
                 >
-                    <div id={'comment-content'}>{this.state.comment}</div>
+                    <div>{this.state.comment}</div>
                 </Dialog>
                 <div className={cssPageStyles.cardHeader}>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
@@ -244,13 +210,20 @@ class FollowUpAnalysisTable extends Component {
                         cssPageStyles.spaceBetween
                     )}
                 >
-                    <RaisedButton
-                        id="unfollow-action"
+                    <Button
                         primary
                         disabled={this.props.loading || !oneChecked}
-                        label={i18n.t('unfollow')}
-                        onClick={this.unfollow}
-                    />
+                        onClick={this.props.onUnfollow}
+                    >
+                        {this.props.loading ? (
+                            <>
+                                {i18n.t('Unfollowing...')}
+                                <CircularLoader small />
+                            </>
+                        ) : (
+                            i18n.t('Unfollow')
+                        )}
+                    </Button>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
             </div>
