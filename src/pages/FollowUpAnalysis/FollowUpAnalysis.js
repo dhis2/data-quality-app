@@ -11,7 +11,7 @@ import { convertDateToApiDateFormat } from '../../helpers/dates'
 import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
-import FollowUpAnalysisTable from './follow-up-analysis-table/FollowUpAnalysisTable'
+import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable'
 import Form from './Form'
 
 const useFormState = () => {
