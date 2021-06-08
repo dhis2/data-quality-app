@@ -6,15 +6,15 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Yao Selom Saka <ysaka@hispwca.org>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,9 +98,7 @@ msgid "No values found"
 msgstr "Pas de valeurs trouvées"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
-"85%match\n"
-"Une erreur inattendue s'est produite lors de l'analyse"
+msgstr "Une erreur inattendue s'est produite lors de l'analyse"
 
 msgid "Follow up"
 msgstr "Suivi"
@@ -194,8 +192,9 @@ msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
 msgstr ""
-"92%match\n"
-"Analyser les potentielles valeurs atypiques sur la base des écarts types ou des valeurs min-max. Les valeurs atypiques peuvent être examinées et marquées pour suivi."
+"Analyser les potentielles valeurs atypiques sur la base des écarts types ou "
+"des valeurs min-max. Les valeurs atypiques peuvent être examinées et "
+"marquées pour suivi."
 
 msgid "Analyze"
 msgstr "Analyser"
