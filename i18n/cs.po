@@ -1,0 +1,221 @@
+# 
+# Translators:
+# trendspotter, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-10-24T14:06:47.222Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: trendspotter, 2020\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Aktualizace stromu Organizačních jednotek ..."
+
+msgid "Data Set"
+msgstr "Datová sada"
+
+msgid "[All Data Sets]"
+msgstr "[Všechny datové sady]"
+
+msgid "DOWNLOAD AS PDF"
+msgstr "STÁHNOUT JAKO PDF"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "STÁHNOUT JAKO XLS"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "STÁHNOUT JAKO CSV"
+
+msgid "Follow-Up Analysis"
+msgstr "Následná analýza"
+
+msgid "View Data Values"
+msgstr "Zobrazit datové hodnoty"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Zobrazte nebo upravte hodnoty dat označené pro další sledování během "
+"zadávání nebo analýzy dat."
+
+msgid "follow up"
+msgstr "následovat"
+
+msgid "unfollow"
+msgstr "přestat sledovat"
+
+msgid "Parent organisation unit"
+msgstr "Nadřazená organizační jednotka"
+
+msgid "Start Date"
+msgstr "Datum začátku"
+
+msgid "End Date"
+msgstr "Datum ukončení"
+
+msgid "Data Element"
+msgstr "Datový prvek"
+
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Hodnota"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Unfollow"
+msgstr "Zrušit sledování"
+
+msgid "Comment"
+msgstr "Komentář"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Alalýza krajních Min-Max hodnot"
+
+msgid "Analyze"
+msgstr "Analyzovat"
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"Analyzujte potenciální odlehlé hodnoty na základě minimálních a maximálních "
+"hodnot. Odlehlé hodnoty lze prozkoumat a označit pro následné sledování."
+
+msgid "start"
+msgstr "Start"
+
+msgid "Mark"
+msgstr "Označit"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Analýza standardní odchylky krajních hodnot"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"Analyzujte potenciální hodnoty odlehlých hodnot na základě standardních "
+"odchylek. Odlehlé hodnoty lze prozkoumat a označit pro následné sledování."
+
+msgid "Select number of standard deviations"
+msgstr "Vybrat počet směrodatných odchylek"
+
+msgid "Validation Rule Analysis"
+msgstr "Analýza ověřovacích pravidel"
+
+msgid "Run Validation"
+msgstr "Spustit ověření"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Spusťte ověřovací pravidla, abyste odhalili anomálie a chyby v datech v "
+"databázi."
+
+msgid "validate"
+msgstr "ověřit"
+
+msgid "Validation Rule Group"
+msgstr "Skupina pravidel ověření"
+
+msgid "Send Notifications"
+msgstr "Odeslat oznámení"
+
+msgid "Persist new results"
+msgstr "Zachovat nové výsledky"
+
+msgid "Importance"
+msgstr "Důležitost"
+
+msgid "Validation Rule"
+msgstr "Pravidlo ověření"
+
+msgid "Operator"
+msgstr "Operátor"
+
+msgid "Details"
+msgstr "Detaily"
+
+msgid "Validation Details"
+msgstr "Podrobnosti ověření"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "PODROBNOSTI O VÝSLEDKU OVĚŘENÍ"
+
+msgid "VALIDATION RULE"
+msgstr "OVĚŘOVACÍ PRAVIDLO"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "LEFT SIDE"
+msgstr "LEVÁ STRANA"
+
+msgid "RIGHT SIDE"
+msgstr "PRAVÁ STRANA"
+
+msgid "DATA ELEMENT"
+msgstr "DATOVÝ PRVEK"
+
+msgid "VALUE"
+msgstr "HODNOTA"
+
+msgid "no data available"
+msgstr "údaje nejsou k dispozici"
+
+msgid "[All Validation Rules]"
+msgstr "[Všechna ověřovací pravidla]"
+
+msgid "Performing request"
+msgstr "Provádění požadavku"
+
+msgid "Performing analysis"
+msgstr "Provádění analýzy"
+
+msgid "Analysis done"
+msgstr "Analýza hotova"
+
+msgid "Validation passed successfully"
+msgstr "Ověření proběhlo úspěšně"
+
+msgid "No values found"
+msgstr "Nenalezeny žádné hodnoty"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Během analýzy došlo k neočekávané chybě"
+
+msgid "Marked"
+msgstr "Zvýrazněno"
+
+msgid "Unmarked"
+msgstr "Neoznačený"
+
+msgid "Unfollow done"
+msgstr "Provedeno ukončení sledování"

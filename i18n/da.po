@@ -1,26 +1,25 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-24T14:06:47.222Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
-"Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
+"Last-Translator: phil_dhis2, 2020\n"
+"Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tg\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "Маҷмӯи иттилоот"
+msgstr ""
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -35,7 +34,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Таҳлил барои пайгирӣ"
+msgstr ""
 
 msgid "View Data Values"
 msgstr ""
@@ -44,8 +43,6 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"Қиматҳои иттилоотро, ки барои пайгирӣ ҳангоми вуруди иттилоот ё таҳлил  қайд"
-" карда шудаанд, бинед ва таҳрир кунед."
 
 msgid "follow up"
 msgstr ""
@@ -54,7 +51,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Воҳиди сохтории болоӣ"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -66,36 +63,34 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Воҳиди сохторӣ"
+msgstr ""
 
 msgid "Period"
-msgstr "Давра"
+msgstr ""
 
 msgid "Min"
-msgstr "Мин"
+msgstr "Min"
 
 msgid "Value"
-msgstr "Қимат"
+msgstr ""
 
 msgid "Max"
-msgstr "Макс"
+msgstr "Max"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr "Шарҳ"
+msgstr "Comment"
 
 msgid "Close"
-msgstr "Пӯшидан"
+msgstr "Close"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"Зиёда аз 500 қимат ёфт шуд, лутфан вайронкуниҳоро ислоҳ кунед ё доираи "
-"ҷустуҷӯро тангтар карда ҳамаро бинед"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "Таҳлили қиматҳои аз ҳудуд беруни мин-макс"
+msgstr ""
 
 msgid "Analyze"
 msgstr ""
@@ -104,32 +99,26 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии қиматҳои мин-макс таҳлил кунед. "
-"Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  карда "
-"шаванд."
 
 msgid "start"
 msgstr ""
 
 msgid "Mark"
-msgstr "Қайд кардан"
+msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "Таҳлили қиматҳои аз ҳудуд беруни тамоили стандартӣ"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
-"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии тамоилҳои стандартӣ таҳлил "
-"кунед. Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  "
-"карда шаванд."
 
 msgid "Select number of standard deviations"
-msgstr "Интихоби шумораи тамоилҳои стандартӣ"
+msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr "Таҳлили қоидаи санҷиши эътибор"
+msgstr ""
 
 msgid "Run Validation"
 msgstr ""
@@ -138,8 +127,6 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
-"Қоидаҳои санҷиши эътиборро кор фармуда, аномалияҳо ва хатогиҳои иттилоот ва "
-"пойгоҳи иттилоотиро ошкор намоед."
 
 msgid "validate"
 msgstr ""
@@ -160,10 +147,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr "Operator"
 
 msgid "Details"
-msgstr "Маълумоти муфассал"
+msgstr "Details"
 
 msgid "Validation Details"
 msgstr ""
@@ -175,10 +162,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "Ном"
+msgstr "Name"
 
 msgid "Description"
-msgstr "Тавсиф"
+msgstr "Description"
 
 msgid "LEFT SIDE"
 msgstr ""
@@ -208,10 +195,10 @@ msgid "Analysis done"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
+msgstr ""
 
 msgid "No values found"
-msgstr "Ягон қимат ёфт нашуд"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
 msgstr ""

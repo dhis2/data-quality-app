@@ -1,26 +1,26 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-24T14:06:47.222Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
-"Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tg\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "Data Set"
-msgstr "Маҷмӯи иттилоот"
+msgstr "数据集"
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -35,7 +35,7 @@ msgid "DOWNLOAD AS CSV"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Таҳлил барои пайгирӣ"
+msgstr "后续分析"
 
 msgid "View Data Values"
 msgstr ""
@@ -43,9 +43,7 @@ msgstr ""
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
-msgstr ""
-"Қиматҳои иттилоотро, ки барои пайгирӣ ҳангоми вуруди иттилоот ё таҳлил  қайд"
-" карда шудаанд, бинед ва таҳрир кунед."
+msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
 
 msgid "follow up"
 msgstr ""
@@ -54,48 +52,46 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Воҳиди сохтории болоӣ"
+msgstr "上级组织机构"
 
 msgid "Start Date"
-msgstr ""
+msgstr "开始日期"
 
 msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "数据元"
 
 msgid "Organisation Unit"
-msgstr "Воҳиди сохторӣ"
+msgstr "组织机构"
 
 msgid "Period"
-msgstr "Давра"
+msgstr "期间"
 
 msgid "Min"
-msgstr "Мин"
+msgstr "最小"
 
 msgid "Value"
-msgstr "Қимат"
+msgstr "值"
 
 msgid "Max"
-msgstr "Макс"
+msgstr "最大"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr "Шарҳ"
+msgstr "评论"
 
 msgid "Close"
-msgstr "Пӯшидан"
+msgstr "关闭"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
-"Зиёда аз 500 қимат ёфт шуд, лутфан вайронкуниҳоро ислоҳ кунед ё доираи "
-"ҷустуҷӯро тангтар карда ҳамаро бинед"
+msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "Таҳлили қиматҳои аз ҳудуд беруни мин-макс"
+msgstr "最小-最大值孤立分析"
 
 msgid "Analyze"
 msgstr ""
@@ -103,33 +99,27 @@ msgstr ""
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
-msgstr ""
-"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии қиматҳои мин-макс таҳлил кунед. "
-"Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  карда "
-"шаванд."
+msgstr "基于最小和最大值分析异常值。异常值能被后续检查和标记"
 
 msgid "start"
 msgstr ""
 
 msgid "Mark"
-msgstr "Қайд кардан"
+msgstr "标记"
 
 msgid "Std Dev Outlier Analysis"
-msgstr "Таҳлили қиматҳои аз ҳудуд беруни тамоили стандартӣ"
+msgstr "标准差孤立分析"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
-msgstr ""
-"Қиматҳои аз ҳудуд беруни эҳтимолиро бо ёрии тамоилҳои стандартӣ таҳлил "
-"кунед. Қиматҳои аз ҳудуд берун метавонанд санҷида шуда, барои пайгирӣ қайд  "
-"карда шаванд."
+msgstr "基于标准差分析潜在的异常值。异常值能被后续检查和标记。"
 
 msgid "Select number of standard deviations"
-msgstr "Интихоби шумораи тамоилҳои стандартӣ"
+msgstr "选择标准差编号"
 
 msgid "Validation Rule Analysis"
-msgstr "Таҳлили қоидаи санҷиши эътибор"
+msgstr "验证规则分析"
 
 msgid "Run Validation"
 msgstr ""
@@ -137,15 +127,13 @@ msgstr ""
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
-"Қоидаҳои санҷиши эътиборро кор фармуда, аномалияҳо ва хатогиҳои иттилоот ва "
-"пойгоҳи иттилоотиро ошкор намоед."
+msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
 
 msgid "validate"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "验证规则组"
 
 msgid "Send Notifications"
 msgstr ""
@@ -154,16 +142,16 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "重要性"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "验证规则"
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr "操作符"
 
 msgid "Details"
-msgstr "Маълумоти муфассал"
+msgstr "详情"
 
 msgid "Validation Details"
 msgstr ""
@@ -175,10 +163,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "Ном"
+msgstr "名称"
 
 msgid "Description"
-msgstr "Тавсиф"
+msgstr "描述"
 
 msgid "LEFT SIDE"
 msgstr ""
@@ -208,10 +196,10 @@ msgid "Analysis done"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
+msgstr "验证已成功"
 
 msgid "No values found"
-msgstr "Ягон қимат ёфт нашуд"
+msgstr "无值被找到"
 
 msgid "An unexpected error happened during analysis"
 msgstr ""
