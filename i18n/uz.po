@@ -1,0 +1,225 @@
+# 
+# Translators:
+# Ibatov <ibatovk@who.int>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
+"PO-Revision-Date: 2019-09-01 20:45+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
+
+msgid "Data Set"
+msgstr "Маълумотлар тўплами"
+
+msgid "[All Data Sets]"
+msgstr "[Барча маълумотлар тўпламлари]"
+
+msgid "DOWNLOAD AS PDF"
+msgstr "PDF СИФАТИДА ЮКЛАШ"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "XLS СИФАТИДА ЮКЛАШ"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "CSV СИФАТИДА ЮКЛАШ"
+
+msgid "Follow-Up Analysis"
+msgstr "Аналитикани кузатиш"
+
+msgid "View Data Values"
+msgstr "Маълумотлар қийматини кўрсатиш"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Маълумотларни киритиш ёки таҳлил қилиш пайтида кейинги кузатув учун "
+"белгиланган маълумотлар қийматини кўриш ёки таҳрирлаш."
+
+msgid "follow up"
+msgstr "кузатиш"
+
+msgid "unfollow"
+msgstr "бекор қилиш"
+
+msgid "Parent organisation unit"
+msgstr "Юқори ташкилот бўлими"
+
+msgid "Start Date"
+msgstr "Бошланиш санаси"
+
+msgid "End Date"
+msgstr "Якунланиш санаси"
+
+msgid "Data Element"
+msgstr "Маълумотлар элементи"
+
+msgid "Organisation Unit"
+msgstr "Ташкилий бирлик"
+
+msgid "Period"
+msgstr "давр"
+
+msgid "Min"
+msgstr "Минимум"
+
+msgid "Value"
+msgstr "Қиймат"
+
+msgid "Max"
+msgstr "Максимум"
+
+msgid "Unfollow"
+msgstr "Бекор қилиш"
+
+msgid "Comment"
+msgstr "Изоҳ"
+
+msgid "Close"
+msgstr "Ёпиш"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
+"натижани кўриш учун"
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Минимал-Максимал чекиниш Аналитикаси"
+
+msgid "Analyze"
+msgstr "Аналитика/Таҳлил"
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+"Минимал ва максимал қийматлар асосида потенциал юқори кўрсатгичларни таҳлил "
+"қилинг. Ортиқча қийматларни текшириш ва уларни текшириш учун белгилаш "
+"мумкин."
+
+msgid "start"
+msgstr "бошлаш"
+
+msgid "Mark"
+msgstr "Белги"
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Ўртача квадратик оғиш Аналитикаси"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+"Мумкин бўлган чекланишлар қийматларини стандарт оғишлар асосида таҳлил "
+"қилинг. Ортиқча қийматларни текшириш ва уларни текшириш учун белгилаш "
+"мумкин."
+
+msgid "Select number of standard deviations"
+msgstr "Стандарт оғишлар сонини аниқланг"
+
+msgid "Validation Rule Analysis"
+msgstr "Тасдиқлаш Қоидаси Аналитикаси"
+
+msgid "Run Validation"
+msgstr "Тасдиқлашни ишга туширинг"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Маълумотлар базасидаги маълумотлардаги аномалиялар ва хатоликларни аниқлаш "
+"учун тасдиқлаш қоидаларини ишга туширинг."
+
+msgid "validate"
+msgstr "тасдиқлаш"
+
+msgid "Validation Rule Group"
+msgstr "Текширув гуруҳи қоидалари"
+
+msgid "Send Notifications"
+msgstr "Билдиришнома Юбориш"
+
+msgid "Persist new results"
+msgstr "Доимий янги натижалар"
+
+msgid "Importance"
+msgstr "Аҳамиятли"
+
+msgid "Validation Rule"
+msgstr "Тасдиқлаш Қоидаси"
+
+msgid "Operator"
+msgstr "Оператор"
+
+msgid "Details"
+msgstr "Тафсилотлари"
+
+msgid "Validation Details"
+msgstr "Тасдиқланган деталлар"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "ТЕКШИРУВ ДЕТАЛЛАРИ НАТИЖАСИ"
+
+msgid "VALIDATION RULE"
+msgstr "ТЕКШИРУВ ҚОИДАСИ"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "LEFT SIDE"
+msgstr "ЧАП ТОМОН"
+
+msgid "RIGHT SIDE"
+msgstr "ЎНГ ТОМОН"
+
+msgid "DATA ELEMENT"
+msgstr "МАЪЛУМОТЛАР ЭЛЕМЕНТИ"
+
+msgid "VALUE"
+msgstr "ҚИЙМАТ"
+
+msgid "no data available"
+msgstr "маълумотлар мавжуд эмас"
+
+msgid "[All Validation Rules]"
+msgstr "[Барча тасдиқлаш қоидалари]"
+
+msgid "Performing request"
+msgstr "Сўров бажарилмоқда"
+
+msgid "Performing analysis"
+msgstr "Таҳлилни амалга ошириш"
+
+msgid "Analysis done"
+msgstr "Таҳлил бажарилди"
+
+msgid "Validation passed successfully"
+msgstr "Тасдиқлаш Маваффақиятли Ўтди"
+
+msgid "No values found"
+msgstr "Қиймат топилмади"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Таҳлил жараёнида нимадир нотўғри кетди"
+
+msgid "Marked"
+msgstr "Белгиланган"
+
+msgid "Unmarked"
+msgstr "Белгиланмаган"
+
+msgid "Unfollow done"
+msgstr "Бекор қилиш бажарилди"
