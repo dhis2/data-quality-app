@@ -1,23 +1,11 @@
 import classnames from 'classnames'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import AppRouter from '../AppRouter/AppRouter'
 import Sidebar from '../Sidebar/Sidebar'
 import { SidebarProvider } from '../Sidebar/SidebarContext'
 import styles from './App.module.css'
-
-const useSidebar = () => {
-    const [visible, setVisible] = useState(true)
-    return {
-        visible,
-        show: () => {
-            setVisible(true)
-        },
-        hide: () => {
-            setVisible(false)
-        },
-    }
-}
+import useSidebar from './use-sidebar'
 
 const App = () => {
     const sidebar = useSidebar()
