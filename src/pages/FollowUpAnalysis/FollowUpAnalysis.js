@@ -92,7 +92,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
     })
     const successfulUnfollowAlert = useAlert(i18n.t('Elements unfollowed'), {
         success: true,
-        duration: 2e3,
+        duration: 2000,
     })
     const errorAlert = useAlert(
         ({ error }) =>
