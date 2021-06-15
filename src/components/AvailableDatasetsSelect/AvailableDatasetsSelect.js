@@ -1,6 +1,6 @@
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { MultiSelect, MultiSelectOption, Help, CircularLoader } from '@dhis2/ui'
+import { MultiSelect, MultiSelectOption, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 
@@ -25,29 +25,26 @@ const AvailableDatasetsSelect = ({ selected, onChange }) => {
         fetchDataSets()
     }, [])
 
-    if (error) {
-        return <Help error>{i18n.t('Error loading datasets.')}</Help>
-    }
-
-    if (!dataSets) {
-        return <CircularLoader />
-    }
-
     return (
-        <MultiSelect
-            filterable
-            noMatchText={i18n.t('No match found')}
-            onChange={onChange}
-            selected={selected}
-        >
-            {dataSets.map(item => (
-                <MultiSelectOption
-                    key={item.id}
-                    value={item.id}
-                    label={item.displayName}
-                />
-            ))}
-        </MultiSelect>
+        <>
+            <MultiSelect
+                error={error}
+                loading={!dataSets}
+                filterable
+                noMatchText={i18n.t('No match found')}
+                onChange={onChange}
+                selected={selected}
+            >
+                {dataSets?.map(item => (
+                    <MultiSelectOption
+                        key={item.id}
+                        value={item.id}
+                        label={item.displayName}
+                    />
+                ))}
+            </MultiSelect>
+            {error && <Help error>{i18n.t('Error loading datasets.')}</Help>}
+        </>
     )
 }
 
