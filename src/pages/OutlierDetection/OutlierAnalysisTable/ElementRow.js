@@ -14,37 +14,37 @@ const ElementRow = ({ element, isZScoreAlgorithm, onToggleCheckbox }) => (
         <TableRowColumn>
             <span title={element.ouName}>{element.ouName}</span>
         </TableRowColumn>
-        <TableRowColumn className={cssPageStyles.right}>
+        <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber value={element.value} minimumFractionDigits={0} />
         </TableRowColumn>
         {isZScoreAlgorithm && (
-            <TableRowColumn className={cssPageStyles.right}>
+            <TableRowColumn className={cssPageStyles.numericalRow}>
                 <FormattedNumber value={element.zScore} />
             </TableRowColumn>
         )}
-        <TableRowColumn className={cssPageStyles.right}>
+        <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber value={element.absDev} minimumFractionDigits={0} />
         </TableRowColumn>
         {isZScoreAlgorithm && (
-            <TableRowColumn className={cssPageStyles.right}>
+            <TableRowColumn className={cssPageStyles.numericalRow}>
                 <FormattedNumber value={element.stdDev} />
             </TableRowColumn>
         )}
         {isZScoreAlgorithm && (
-            <TableRowColumn className={cssPageStyles.right}>
+            <TableRowColumn className={cssPageStyles.numericalRow}>
                 <FormattedNumber
                     value={element.mean}
                     minimumFractionDigits={0}
                 />
             </TableRowColumn>
         )}
-        <TableRowColumn className={cssPageStyles.right}>
+        <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber
                 value={element.lowerBound}
                 minimumFractionDigits={0}
             />
         </TableRowColumn>
-        <TableRowColumn className={cssPageStyles.right}>
+        <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber
                 value={element.upperBound}
                 minimumFractionDigits={0}

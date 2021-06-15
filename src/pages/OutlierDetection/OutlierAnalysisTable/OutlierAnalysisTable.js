@@ -57,31 +57,45 @@ const OutlierAnalyisTable = ({
                         <TableHeaderColumn>
                             {i18n.t('Organisation Unit')}
                         </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.right}>
+                        <TableHeaderColumn
+                            className={cssPageStyles.numericalRow}
+                        >
                             {i18n.t('Value')}
                         </TableHeaderColumn>
                         {isZScoreAlgorithm && (
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Z-Score')}
                             </TableHeaderColumn>
                         )}
-                        <TableHeaderColumn className={cssPageStyles.right}>
+                        <TableHeaderColumn
+                            className={cssPageStyles.numericalRow}
+                        >
                             {i18n.t('Deviation')}
                         </TableHeaderColumn>
                         {isZScoreAlgorithm && (
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Std Dev')}
                             </TableHeaderColumn>
                         )}
                         {isZScoreAlgorithm && (
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Mean')}
                             </TableHeaderColumn>
                         )}
-                        <TableHeaderColumn className={cssPageStyles.right}>
+                        <TableHeaderColumn
+                            className={cssPageStyles.numericalRow}
+                        >
                             {i18n.t('Min')}
                         </TableHeaderColumn>
-                        <TableHeaderColumn className={cssPageStyles.right}>
+                        <TableHeaderColumn
+                            className={cssPageStyles.numericalRow}
+                        >
                             {i18n.t('Max')}
                         </TableHeaderColumn>
                         <TableHeaderColumn className={cssPageStyles.center}>

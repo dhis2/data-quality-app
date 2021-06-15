@@ -21,7 +21,6 @@ import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles'
-import styles from './FollowUpAnalysisTable.module.css'
 
 class FollowUpAnalysisTable extends Component {
     static propTypes = {
@@ -50,7 +49,6 @@ class FollowUpAnalysisTable extends Component {
     render() {
         let oneChecked = false
 
-        // Table Rows
         const rows = this.props.elements.map(element => {
             const handleCheckboxToggle = () => {
                 this.props.onCheckboxToggle(element.key)
@@ -69,13 +67,13 @@ class FollowUpAnalysisTable extends Component {
                     <TableRowColumn>{element.dataElement}</TableRowColumn>
                     <TableRowColumn>{element.organisation}</TableRowColumn>
                     <TableRowColumn>{element.period}</TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
+                    <TableRowColumn className={cssPageStyles.numericalRow}>
                         <FormattedNumber value={element.min} />
                     </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
+                    <TableRowColumn className={cssPageStyles.numericalRow}>
                         <FormattedNumber value={element.value} />
                     </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.right}>
+                    <TableRowColumn className={cssPageStyles.numericalRow}>
                         <FormattedNumber value={element.max} />
                     </TableRowColumn>
                     <TableRowColumn className={cssPageStyles.centerFlex}>
@@ -124,13 +122,7 @@ class FollowUpAnalysisTable extends Component {
                 <div className={cssPageStyles.cardHeader}>
                     <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
                 </div>
-                <Table
-                    selectable={false}
-                    className={classNames(
-                        cssPageStyles.appTable,
-                        styles.followUpAnalysisTable
-                    )}
-                >
+                <Table selectable={false} className={cssPageStyles.appTable}>
                     <TableHeader
                         displaySelectAll={false}
                         adjustForCheckbox={false}
@@ -146,13 +138,19 @@ class FollowUpAnalysisTable extends Component {
                             <TableHeaderColumn>
                                 {i18n.t('Period')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Min')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Value')}
                             </TableHeaderColumn>
-                            <TableHeaderColumn className={cssPageStyles.right}>
+                            <TableHeaderColumn
+                                className={cssPageStyles.numericalRow}
+                            >
                                 {i18n.t('Max')}
                             </TableHeaderColumn>
                             <TableHeaderColumn className={cssPageStyles.center}>
