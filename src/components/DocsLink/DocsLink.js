@@ -1,5 +1,6 @@
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { colors } from '@dhis2/ui'
 import { IconButton } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -20,7 +21,7 @@ const DocsLink = ({ sectionKey }) => {
     return (
         <IconButton
             className="helper-icon"
-            iconStyle={{ color: '#276696' }}
+            iconStyle={{ color: colors.blue700 }}
             href={`https://docs.dhis2.org/en/use/user-guides/dhis-core-version-${docsVersion}/collecting-data/data-quality.html#${docsKey}`}
             target="_blank"
             rel="noopener noreferrer"
