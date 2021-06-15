@@ -1,5 +1,5 @@
-import { PropTypes } from '@dhis2/prop-types'
 import { Menu, MenuItem } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 import { sections } from '../../pages/sections.conf'
