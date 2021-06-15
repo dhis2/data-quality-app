@@ -19,12 +19,12 @@ const App = () => {
         })
     }, [])
 
+    const containerClassName = classnames(styles.container, {
+        [styles.containerWithSidebar]: sidebar.visible,
+    })
+
     return (
-        <div
-            className={classnames(styles.container, {
-                [styles.containerWithSidebar]: sidebar.visible,
-            })}
-        >
+        <div className={containerClassName}>
             <div className={styles.sidebar}>
                 <Sidebar />
             </div>
