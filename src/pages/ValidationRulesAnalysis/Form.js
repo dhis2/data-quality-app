@@ -1,13 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import { Button, Checkbox, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
+import PropTypes from 'prop-types'
 import React from 'react'
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect'
-
-/* eslint-disable react/prop-types */
 
 const Form = ({
     onSubmit,
@@ -90,5 +89,21 @@ const Form = ({
         </Button>
     </>
 )
+
+Form.propTypes = {
+    endDate: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired,
+    persistNewResults: PropTypes.bool.isRequired,
+    sendNotfications: PropTypes.bool.isRequired,
+    startDate: PropTypes.object.isRequired,
+    valid: PropTypes.bool.isRequired,
+    onEndDateChange: PropTypes.func.isRequired,
+    onOrganisationUnitChange: PropTypes.func.isRequired,
+    onPersistNewResultsChange: PropTypes.func.isRequired,
+    onSendNotificationsChange: PropTypes.func.isRequired,
+    onStartDateChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    onValidationRuleGroupChange: PropTypes.func.isRequired,
+}
 
 export default Form

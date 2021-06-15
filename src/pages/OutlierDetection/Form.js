@@ -3,6 +3,7 @@ import { Button, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
+import PropTypes from 'prop-types'
 import React from 'react'
 import AvailableDatasetsSelect from '../../components/AvailableDatasetsSelect/AvailableDatasetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
@@ -10,8 +11,6 @@ import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
 import { Z_SCORE, MIN_MAX, MEAN_ABS_DEV } from './constants'
 import styles from './Form.module.css'
-
-/* eslint-disable react/prop-types */
 
 const ThresholdField = ({ threshold, onChange }) => (
     <SelectField
@@ -31,6 +30,11 @@ const ThresholdField = ({ threshold, onChange }) => (
         <MenuItem value={5} primaryText="5.0" />
     </SelectField>
 )
+
+ThresholdField.propTypes = {
+    threshold: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
+}
 
 const ZScoreFields = ({
     showAdvancedZScoreFields,
@@ -105,6 +109,17 @@ const ZScoreFields = ({
         )}
     </>
 )
+
+ZScoreFields.propTypes = {
+    orderBy: PropTypes.string.isRequired,
+    showAdvancedZScoreFields: PropTypes.bool.isRequired,
+    onDataEndDateChange: PropTypes.func.isRequired,
+    onDataStartDateChange: PropTypes.func.isRequired,
+    onOrderByChange: PropTypes.func.isRequired,
+    onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
+    dataEndDate: PropTypes.object,
+    dataStartDate: PropTypes.object,
+}
 
 const Form = ({
     onSubmit,
@@ -227,5 +242,32 @@ const Form = ({
         </Button>
     </>
 )
+
+Form.propTypes = {
+    algorithm: PropTypes.string.isRequired,
+    dataSetIds: PropTypes.array.isRequired,
+    endDate: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired,
+    maxResults: PropTypes.number.isRequired,
+    orderBy: PropTypes.string.isRequired,
+    showAdvancedZScoreFields: PropTypes.bool.isRequired,
+    startDate: PropTypes.object.isRequired,
+    threshold: PropTypes.number.isRequired,
+    valid: PropTypes.bool.isRequired,
+    onAlgorithmChange: PropTypes.func.isRequired,
+    onDataEndDateChange: PropTypes.func.isRequired,
+    onDataSetsOnChange: PropTypes.func.isRequired,
+    onDataStartDateChange: PropTypes.func.isRequired,
+    onEndDateChange: PropTypes.func.isRequired,
+    onMaxResultsChange: PropTypes.func.isRequired,
+    onOrderByChange: PropTypes.func.isRequired,
+    onOrganisationUnitChange: PropTypes.func.isRequired,
+    onStartDateChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    onThresholdChange: PropTypes.func.isRequired,
+    onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
+    dataEndDate: PropTypes.object,
+    dataStartDate: PropTypes.object,
+}
 
 export default Form

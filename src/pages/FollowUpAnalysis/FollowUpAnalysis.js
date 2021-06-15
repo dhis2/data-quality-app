@@ -1,8 +1,8 @@
 import { useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { PropTypes } from '@dhis2/prop-types'
 import { Card } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
@@ -165,8 +165,12 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         )
     }
 
-    const formValid =
-        startDate && endDate && organisationUnitId && dataSetIds.length > 0
+    const formValid = !!(
+        startDate &&
+        endDate &&
+        organisationUnitId &&
+        dataSetIds.length > 0
+    )
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
 

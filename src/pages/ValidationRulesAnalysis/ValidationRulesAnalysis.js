@@ -1,8 +1,8 @@
 import { useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { PropTypes } from '@dhis2/prop-types'
 import { Card } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
@@ -147,6 +147,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         }
         setLoading(false)
     }
+    const formValid = !!(startDate && endDate && organisationUnitId)
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
 
@@ -167,7 +168,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
                 >
                     <Form
                         onSubmit={handleValidate}
-                        valid={startDate && endDate && organisationUnitId}
+                        valid={formValid}
                         loading={loading}
                         onOrganisationUnitChange={handleOrganisationUnitChange}
                         startDate={startDate}

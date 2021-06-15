@@ -273,12 +273,13 @@ const OutlierDetection = () => {
         }
     }
 
-    const formValid =
+    const formValid = !!(
         startDate &&
         endDate &&
         organisationUnitIds.length > 0 &&
         threshold &&
         dataSetIds.length > 0
+    )
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
 
