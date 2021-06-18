@@ -8,68 +8,13 @@ import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAl
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { useSidebar } from '../../components/Sidebar/SidebarContext'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
+import convertElementFromApiResponse from './convert-element-from-api-response'
+import convertElementToUnFollowupRequest from './convert-element-to-un-followup-request'
 import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable'
 import Form from './Form'
-
-const generateElementKey = e =>
-    `${e.attributeOptionComboId}-${e.categoryOptionComboId}-${e.periodId}-${e.sourceId}-${e.dataElementId}`
-
-const convertElementFromApiResponse = e => ({
-    key: generateElementKey(e),
-    attributeOptionComboId: e.attributeOptionComboId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    periodId: e.periodId,
-    organisationUnitId: e.sourceId,
-    dataElementId: e.dataElementId,
-    dataElement: e.dataElementName,
-    organisation: e.sourceName,
-    period: e.period.name,
-    min: e.min,
-    max: e.max,
-    value: Number.parseFloat(e.value, 10),
-    marked: !e.followup,
-    comment: e.comment,
-})
-
-const convertElementToUnFollowupRequest = e => ({
-    dataElementId: e.dataElementId,
-    periodId: e.periodId,
-    organisationUnitId: e.organisationUnitId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    attributeOptionComboId: e.attributeOptionComboId,
-    followup: false,
-})
-
-const useFormState = () => {
-    const [startDate, setStartDate] = useState(threeMonthsAgo())
-    const [endDate, setEndDate] = useState(new Date())
-    const [organisationUnitId, setOrganisationUnitId] = useState(null)
-    const [dataSetIds, setDataSetIds] = useState([])
-
-    const handleStartDateChange = (event, date) => {
-        setStartDate(new Date(date))
-    }
-    const handleEndDateChange = (event, date) => {
-        setEndDate(new Date(date))
-    }
-    const handleDataSetsChange = ({ selected }) => {
-        setDataSetIds(selected)
-    }
-
-    return {
-        startDate,
-        handleStartDateChange,
-        endDate,
-        handleEndDateChange,
-        organisationUnitId,
-        handleOrganisationUnitChange: setOrganisationUnitId,
-        dataSetIds,
-        handleDataSetsChange,
-    }
-}
+import useFormState from './use-form-state'
 
 const FollowUpAnalysis = ({ sectionKey }) => {
     const sidebar = useSidebar()
