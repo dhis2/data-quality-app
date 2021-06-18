@@ -6,74 +6,19 @@ import {
     TableHeader,
     TableHeaderColumn,
     TableRow,
-    TableRowColumn,
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
-import ValidationRulesDetails from '../ValidationRulesDetails/ValidationRulesDetails'
-import TableCellContent from './TableCellContent'
+import ElementRow from './ElementRow'
 import styles from './ValidationRulesAnalysisTable.module.css'
 
 const ValidationRulesAnalysisTable = ({ elements }) => {
     const shouldDisplayAttributeOptionCombo = elements.some(
         e => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
     )
-
-    // Table Rows
-    const rows = elements.map(element => (
-        <TableRow key={element.key}>
-            <TableRowColumn title={element.organisation}>
-                <TableCellContent>{element.organisation}</TableCellContent>
-            </TableRowColumn>
-            {shouldDisplayAttributeOptionCombo && (
-                <TableRowColumn title={element.attributeOptionCombo}>
-                    <TableCellContent size="wide">
-                        {element.attributeOptionCombo}
-                    </TableCellContent>
-                </TableRowColumn>
-            )}
-            <TableRowColumn title={element.period}>
-                <TableCellContent>{element.period}</TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn title={element.importance}>
-                <TableCellContent>{element.importance}</TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn title={element.validationRule}>
-                <TableCellContent size={'medium'}>
-                    {element.validationRule}
-                </TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn title={element.leftValue}>
-                <TableCellContent>
-                    <FormattedNumber value={element.leftValue} />
-                </TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn title={element.operator}>
-                <TableCellContent className={styles.operator}>
-                    {element.operator}
-                </TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn title={element.rightValue}>
-                <TableCellContent>
-                    <FormattedNumber value={element.rightValue} />
-                </TableCellContent>
-            </TableRowColumn>
-            <TableRowColumn>
-                <TableCellContent>
-                    <ValidationRulesDetails
-                        validationRuleId={element.validationRuleId}
-                        periodId={element.periodId}
-                        organisationUnitId={element.organisationUnitId}
-                        attributeOptionComboId={element.attributeOptionComboId}
-                    />
-                </TableCellContent>
-            </TableRowColumn>
-        </TableRow>
-    ))
 
     return (
         <div>
@@ -131,7 +76,15 @@ const ValidationRulesAnalysisTable = ({ elements }) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {rows}
+                    {elements.map(element => (
+                        <ElementRow
+                            key={element.key}
+                            element={element}
+                            shouldDisplayAttributeOptionCombo={
+                                shouldDisplayAttributeOptionCombo
+                            }
+                        />
+                    ))}
                 </TableBody>
             </Table>
             <div
