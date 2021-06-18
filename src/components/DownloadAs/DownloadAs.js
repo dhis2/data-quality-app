@@ -1,22 +1,8 @@
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './DownloadAs.module.css'
-
-const useHrefs = ({ endpoint, fileTypes, queryStr }) => {
-    const { d2 } = useD2()
-    const { baseUrl } = d2.Api.getApi()
-    const timestamp = Date.now()
-    // The new outlierDetection endpoint produces the correct report
-    // based on query params, but older endpoints only take a timestamp
-    queryStr = queryStr || `t=${timestamp}`
-
-    return fileTypes.reduce((acc, type) => {
-        acc[type] = `${baseUrl}${endpoint}.${type}?${queryStr}`
-        return acc
-    }, {})
-}
+import useHrefs from './use-hrefs'
 
 const DownloadAs = ({ endpoint, fileTypes, queryStr }) => {
     const hrefs = useHrefs({ endpoint, fileTypes, queryStr })
