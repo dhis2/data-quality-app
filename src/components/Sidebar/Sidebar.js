@@ -1,30 +1,7 @@
-import { Menu, MenuItem } from '@dhis2/ui'
-import PropTypes from 'prop-types'
+import { Menu } from '@dhis2/ui'
 import React from 'react'
-import { useHistory, useRouteMatch } from 'react-router-dom'
 import { sections } from '../../pages/sections.conf'
-import styles from './Sidebar.module.css'
-
-const SidebarItem = ({ label, path }) => {
-    const history = useHistory()
-    const isActive = !!useRouteMatch(path)
-    const navigateToPath = () => history.push(path)
-
-    return (
-        <MenuItem
-            className={styles.sidebarItem}
-            onClick={navigateToPath}
-            href={path}
-            active={isActive}
-            label={label}
-        />
-    )
-}
-
-SidebarItem.propTypes = {
-    label: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-}
+import SidebarItem from './SidebarItem'
 
 const Sidebar = () => (
     <Menu>
