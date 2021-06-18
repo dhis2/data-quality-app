@@ -2,25 +2,20 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, CircularLoader } from '@dhis2/ui'
 import classNames from 'classnames'
 import {
-    Checkbox,
-    FontIcon,
     Table,
     TableBody,
     TableHeader,
     TableHeaderColumn,
     TableRow,
-    TableRowColumn,
-    IconButton,
     Dialog,
     FlatButton,
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
 import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
-import jsPageStyles from '../../PageStyles'
+import ElementRow from './ElementRow'
 
 class FollowUpAnalysisTable extends Component {
     static propTypes = {
@@ -47,59 +42,7 @@ class FollowUpAnalysisTable extends Component {
     }
 
     render() {
-        let oneChecked = false
-
-        const rows = this.props.elements.map(element => {
-            const handleCheckboxToggle = () => {
-                this.props.onCheckboxToggle(element.key)
-            }
-
-            const handleShowComment = () => {
-                this.handleShowComment(element)
-            }
-
-            if (element.marked) {
-                oneChecked = true
-            }
-
-            return (
-                <TableRow key={element.key}>
-                    <TableRowColumn>{element.dataElement}</TableRowColumn>
-                    <TableRowColumn>{element.organisation}</TableRowColumn>
-                    <TableRowColumn>{element.period}</TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.numericalRow}>
-                        <FormattedNumber value={element.min} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.numericalRow}>
-                        <FormattedNumber value={element.value} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.numericalRow}>
-                        <FormattedNumber value={element.max} />
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.centerFlex}>
-                        <span className={cssPageStyles.checkboxWrapper}>
-                            <Checkbox
-                                checked={element.marked}
-                                onCheck={handleCheckboxToggle}
-                                iconStyle={jsPageStyles.iconColor}
-                            />
-                        </span>
-                    </TableRowColumn>
-                    <TableRowColumn className={cssPageStyles.center}>
-                        {element.comment && (
-                            <IconButton onClick={handleShowComment}>
-                                <FontIcon
-                                    className={'material-icons'}
-                                    style={jsPageStyles.cursorStyle}
-                                >
-                                    speaker_notes
-                                </FontIcon>
-                            </IconButton>
-                        )}
-                    </TableRowColumn>
-                </TableRow>
-            )
-        })
+        const oneChecked = this.props.elements.some(element => element.marked)
 
         return (
             <div>
@@ -162,7 +105,18 @@ class FollowUpAnalysisTable extends Component {
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false} stripedRows={false}>
-                        {rows}
+                        {this.props.elements.map(element => (
+                            <ElementRow
+                                key={element.key}
+                                element={element}
+                                onCheckboxToggle={() =>
+                                    this.props.onCheckboxToggle(element.key)
+                                }
+                                onShowComment={() =>
+                                    this.handleShowComment(element)
+                                }
+                            />
+                        ))}
                     </TableBody>
                 </Table>
                 <div
