@@ -8,70 +8,13 @@ import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAl
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { useSidebar } from '../../components/Sidebar/SidebarContext'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
+import convertElementFromApiResponse from './convert-element-from-api-response'
 import Form from './Form'
+import useFormState from './use-form-state'
 import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect'
 import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/ValidationRulesAnalysisTable'
-
-const generateElementKey = e =>
-    `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${e.attributeOptionComboId}`
-
-const convertElementFromApiResponse = e => ({
-    key: generateElementKey(e),
-    validationRuleId: e.validationRuleId,
-    attributeOptionCombo: e.attributeOptionComboDisplayName,
-    attributeOptionComboId: e.attributeOptionComboId,
-    organisation: e.organisationUnitDisplayName,
-    organisationUnitId: e.organisationUnitId,
-    period: e.periodDisplayName,
-    periodId: e.periodId,
-    importance: e.importance,
-    validationRule: e.validationRuleDescription,
-    leftValue: e.leftSideValue,
-    operator: e.operator,
-    rightValue: e.rightSideValue,
-})
-
-const useFormState = () => {
-    const [organisationUnitId, setOrganisationUnitId] = useState(null)
-    const [startDate, setStartDate] = useState(threeMonthsAgo())
-    const [endDate, setEndDate] = useState(new Date())
-    const [validationRuleGroupId, setValidationRuleGroupId] = useState(
-        ALL_VALIDATION_RULE_GROUPS_ID
-    )
-    const [sendNotfications, setSendNotifications] = useState(false)
-    const [persistNewResults, setPersistNewResults] = useState(false)
-
-    const handleStartDateChange = (event, date) => {
-        setStartDate(new Date(date))
-    }
-    const handleEndDateChange = (event, date) => {
-        setEndDate(new Date(date))
-    }
-    const handleSendNotificationsChange = ({ checked }) => {
-        setSendNotifications(checked)
-    }
-    const handlePersistNewResultsChange = ({ checked }) => {
-        setPersistNewResults(checked)
-    }
-
-    return {
-        organisationUnitId,
-        handleOrganisationUnitChange: setOrganisationUnitId,
-        startDate,
-        handleStartDateChange,
-        endDate,
-        handleEndDateChange,
-        validationRuleGroupId,
-        handleValidationRuleGroupChange: setValidationRuleGroupId,
-        sendNotfications,
-        handleSendNotificationsChange,
-        persistNewResults,
-        handlePersistNewResultsChange,
-    }
-}
 
 const ValidationRulesAnalysis = ({ sectionKey }) => {
     const sidebar = useSidebar()
