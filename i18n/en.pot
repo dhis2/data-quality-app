@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-15T15:05:11.684Z\n"
-"PO-Revision-Date: 2021-06-15T15:05:11.684Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"PO-Revision-Date: 2021-06-18T12:06:57.717Z\n"
 
 msgid "No match found"
 msgstr "No match found"
@@ -92,27 +92,6 @@ msgstr "End Date"
 msgid "Follow up"
 msgstr "Follow up"
 
-msgid "Threshold"
-msgstr "Threshold"
-
-msgid "Hide advanced options"
-msgstr "Hide advanced options"
-
-msgid "Show advanced options"
-msgstr "Show advanced options"
-
-msgid "Data start date"
-msgstr "Data start date"
-
-msgid "Clear"
-msgstr "Clear"
-
-msgid "Data end date"
-msgstr "Data end date"
-
-msgid "Sort by"
-msgstr "Sort by"
-
 msgid "Data set"
 msgstr "Data set"
 
@@ -136,6 +115,27 @@ msgstr "Processing..."
 
 msgid "Start"
 msgstr "Start"
+
+msgid "Threshold"
+msgstr "Threshold"
+
+msgid "Hide advanced options"
+msgstr "Hide advanced options"
+
+msgid "Show advanced options"
+msgstr "Show advanced options"
+
+msgid "Data start date"
+msgstr "Data start date"
+
+msgid "Clear"
+msgstr "Clear"
+
+msgid "Data end date"
+msgstr "Data end date"
+
+msgid "Sort by"
+msgstr "Sort by"
 
 msgid "Z-Score"
 msgstr "Z-Score"

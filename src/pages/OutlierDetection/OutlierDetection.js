@@ -12,7 +12,7 @@ import cssPageStyles from '../Page.module.css'
 import { Z_SCORE } from './constants'
 import convertElementFromApiResponse from './convert-element-from-api-response'
 import convertElementToToggleFollowupRequest from './convert-element-to-toggle-followup-request'
-import Form from './Form'
+import Form from './Form/Form'
 import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
 import useFormState from './use-form-state'
 

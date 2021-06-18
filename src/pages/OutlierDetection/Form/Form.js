@@ -5,121 +5,13 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDatasetsSelect from '../../components/AvailableDatasetsSelect/AvailableDatasetsSelect'
-import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
-import cssPageStyles from '../Page.module.css'
-import jsPageStyles from '../PageStyles'
-import { Z_SCORE, MIN_MAX, MEAN_ABS_DEV } from './constants'
-import styles from './Form.module.css'
-
-const ThresholdField = ({ threshold, onChange }) => (
-    <SelectField
-        style={jsPageStyles.inputForm}
-        floatingLabelText={i18n.t('Threshold')}
-        onChange={onChange}
-        value={threshold}
-    >
-        <MenuItem value={1} primaryText="1.0" />
-        <MenuItem value={1.5} primaryText="1.5" />
-        <MenuItem value={2} primaryText="2.0" />
-        <MenuItem value={2.5} primaryText="2.5" />
-        <MenuItem value={3} primaryText="3.0" />
-        <MenuItem value={3.5} primaryText="3.5" />
-        <MenuItem value={4} primaryText="4.0" />
-        <MenuItem value={4.5} primaryText="4.5" />
-        <MenuItem value={5} primaryText="5.0" />
-    </SelectField>
-)
-
-ThresholdField.propTypes = {
-    threshold: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired,
-}
-
-const ZScoreFields = ({
-    showAdvancedZScoreFields,
-    onToggleAdvancedZScoreFields,
-    orderBy,
-    onOrderByChange,
-    dataStartDate,
-    dataEndDate,
-    onDataStartDateChange,
-    onDataEndDateChange,
-}) => (
-    <>
-        <Button
-            small
-            secondary
-            className={styles.toggleBtn}
-            onClick={onToggleAdvancedZScoreFields}
-        >
-            {showAdvancedZScoreFields
-                ? i18n.t('Hide advanced options')
-                : i18n.t('Show advanced options')}
-        </Button>
-        {showAdvancedZScoreFields && (
-            <>
-                <div className={styles.optionalDatepickerContainer}>
-                    <DatePicker
-                        textFieldStyle={jsPageStyles.inputForm}
-                        floatingLabelText={i18n.t('Data start date')}
-                        onChange={(event, date) => onDataStartDateChange(date)}
-                        maxDate={dataEndDate}
-                        value={dataStartDate}
-                    />
-                    <Button
-                        secondary
-                        small
-                        disabled={!dataStartDate}
-                        onClick={() => onDataStartDateChange(null)}
-                    >
-                        {i18n.t('Clear')}
-                    </Button>
-                </div>
-                <div className={styles.optionalDatepickerContainer}>
-                    <DatePicker
-                        textFieldStyle={jsPageStyles.inputForm}
-                        floatingLabelText={i18n.t('Data end date')}
-                        onChange={(event, date) => onDataEndDateChange(date)}
-                        minDate={dataStartDate}
-                        value={dataEndDate}
-                    />
-                    <Button
-                        secondary
-                        small
-                        disabled={!dataEndDate}
-                        onClick={() => onDataEndDateChange(null)}
-                    >
-                        {i18n.t('Clear')}
-                    </Button>
-                </div>
-                <SelectField
-                    style={jsPageStyles.inputForm}
-                    floatingLabelText={i18n.t('Sort by')}
-                    onChange={onOrderByChange}
-                    value={orderBy}
-                >
-                    <MenuItem value={Z_SCORE} primaryText="Z-score" />
-                    <MenuItem
-                        value={MEAN_ABS_DEV}
-                        primaryText="Absolute Deviation from Mean"
-                    />
-                </SelectField>
-            </>
-        )}
-    </>
-)
-
-ZScoreFields.propTypes = {
-    orderBy: PropTypes.string.isRequired,
-    showAdvancedZScoreFields: PropTypes.bool.isRequired,
-    onDataEndDateChange: PropTypes.func.isRequired,
-    onDataStartDateChange: PropTypes.func.isRequired,
-    onOrderByChange: PropTypes.func.isRequired,
-    onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
-    dataEndDate: PropTypes.object,
-    dataStartDate: PropTypes.object,
-}
+import AvailableDatasetsSelect from '../../../components/AvailableDatasetsSelect/AvailableDatasetsSelect'
+import AvailableOrganisationUnitsTree from '../../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
+import cssPageStyles from '../../Page.module.css'
+import jsPageStyles from '../../PageStyles'
+import { Z_SCORE, MIN_MAX } from '../constants'
+import ThresholdField from './ThresholdField'
+import ZScoreFields from './ZScoreFields'
 
 const Form = ({
     onSubmit,
