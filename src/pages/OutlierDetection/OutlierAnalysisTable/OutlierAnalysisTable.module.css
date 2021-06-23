@@ -1,0 +1,10 @@
+.outlierAnalysisTable th,
+.outlierAnalysisTable td {
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+}
+
+.outlierAnalysisTable th:first-child,
+.outlierAnalysisTable td:first-child {
+    width: 20%;
+}

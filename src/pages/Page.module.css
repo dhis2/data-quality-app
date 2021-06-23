@@ -25,6 +25,11 @@
     font-size: 14px !important;
 }
 
+.numericalRow {
+    text-align: right !important;
+    overflow: visible !important;
+}
+
 .right {
     text-align: right !important;
 }

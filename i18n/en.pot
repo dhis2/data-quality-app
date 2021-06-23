@@ -5,242 +5,269 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
-"PO-Revision-Date: 2021-04-06T20:10:13.953Z\n"
-
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
-
-msgid "Error loading datasets."
-msgstr ""
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"PO-Revision-Date: 2021-06-18T12:06:57.717Z\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "No match found"
+
+msgid "Error loading datasets."
+msgstr "Error loading datasets."
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr ""
+msgstr "Something went wrong whilst loading your organisation units."
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "You do not have access to any organisation units."
+
+msgid "Open user guide"
+msgstr "Open user guide"
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Download as PDF"
 
 msgid "Download as XLS"
-msgstr ""
+msgstr "Download as XLS"
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Download as CSV"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr ""
-
-msgid "Period"
-msgstr ""
-
-msgid "Organisation Unit"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
-msgid "Follow-up"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr ""
-
-msgid "Follow-Up Analysis"
-msgstr ""
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "More than 500 values found, please narrow the search to see all"
 
 msgid "No values found"
-msgstr ""
+msgstr "No values found"
+
+msgid "Elements unfollowed"
+msgstr "Elements unfollowed"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "An unexpected error happened during analysis"
 
-msgid "Follow up"
-msgstr ""
-
-msgid "Data Set"
-msgstr ""
-
-msgid "Parent organisation unit"
-msgstr ""
-
-msgid "Start Date"
-msgstr ""
-
-msgid "End Date"
-msgstr ""
-
-msgid "Close"
-msgstr ""
+msgid "Follow-Up Analysis"
+msgstr "Follow-Up Analysis"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comment"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Data Element"
+msgstr "Data Element"
+
+msgid "Organisation Unit"
+msgstr "Organisation Unit"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Value"
+
+msgid "Max"
+msgstr "Max"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Unfollow"
 
-msgid "unfollow"
-msgstr ""
+msgid "Unfollowing..."
+msgstr "Unfollowing..."
 
-msgid "Start"
-msgstr ""
+msgid "Data Set"
+msgstr "Data Set"
 
-msgid "Threshold"
-msgstr ""
+msgid "Parent organisation unit"
+msgstr "Parent organisation unit"
 
-msgid "Hide advanced options"
-msgstr ""
+msgid "Start Date"
+msgstr "Start Date"
 
-msgid "Show advanced options"
-msgstr ""
+msgid "End Date"
+msgstr "End Date"
 
-msgid "Data start date"
-msgstr ""
-
-msgid "Clear"
-msgstr ""
-
-msgid "Data end date"
-msgstr ""
-
-msgid "Sort by"
-msgstr ""
+msgid "Follow up"
+msgstr "Follow up"
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisation units"
 
 msgid "Start date"
-msgstr ""
+msgstr "Start date"
 
 msgid "End date"
-msgstr ""
+msgstr "End date"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorithm"
 
 msgid "Max results"
-msgstr ""
+msgstr "Max results"
+
+msgid "Processing..."
+msgstr "Processing..."
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Threshold"
+msgstr "Threshold"
+
+msgid "Hide advanced options"
+msgstr "Hide advanced options"
+
+msgid "Show advanced options"
+msgstr "Show advanced options"
+
+msgid "Data start date"
+msgstr "Data start date"
+
+msgid "Clear"
+msgstr "Clear"
+
+msgid "Data end date"
+msgstr "Data end date"
+
+msgid "Sort by"
+msgstr "Sort by"
+
+msgid "Z-Score"
+msgstr "Z-Score"
+
+msgid "Deviation"
+msgstr "Deviation"
+
+msgid "Std Dev"
+msgstr "Std Dev"
+
+msgid "Mean"
+msgstr "Mean"
+
+msgid "Follow-up"
+msgstr "Follow-up"
+
+msgid "Marked for follow-up"
+msgstr "Marked for follow-up"
+
+msgid "Unmarked for follow-up"
+msgstr "Unmarked for follow-up"
 
 msgid "Outlier Detection"
-msgstr ""
+msgstr "Outlier Detection"
+
+msgid "Send Notifications"
+msgstr "Send Notifications"
+
+msgid "Persist new results"
+msgstr "Persist new results"
+
+msgid "Validating..."
+msgstr "Validating..."
+
+msgid "Validate"
+msgstr "Validate"
+
+msgid "[All Validation Rules]"
+msgstr "[All Validation Rules]"
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr "Error loading validation rule groups: {{error}}"
+
+msgid "Validation Rule Group"
+msgstr "Validation Rule Group"
+
+msgid "Validation passed successfully"
+msgstr "Validation passed successfully"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Validation Rule Analysis"
+
+msgid "Attribute Option Combination"
+msgstr "Attribute Option Combination"
+
+msgid "Attr. Opt. Combo"
+msgstr "Attr. Opt. Combo"
+
+msgid "Importance"
+msgstr "Importance"
+
+msgid "Validation Rule"
+msgstr "Validation Rule"
+
+msgid "Operator"
+msgstr "Operator"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "VALIDATIONS RESULT DETAILS"
+
+msgid "VALIDATION RULE"
+msgstr "VALIDATION RULE"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "no data available"
+msgstr "no data available"
+
+msgid "DATA ELEMENT"
+msgstr "DATA ELEMENT"
+
+msgid "VALUE"
+msgstr "VALUE"
+
+msgid "Show details"
+msgstr "Show details"
+
+msgid "Validation Details"
+msgstr "Validation Details"
+
+msgid "LEFT SIDE"
+msgstr "LEFT SIDE"
+
+msgid "RIGHT SIDE"
+msgstr "RIGHT SIDE"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Run Validation"
 
 msgid "Outlier detection"
-msgstr ""
+msgstr "Outlier detection"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
 msgstr ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyze"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
 
 msgid "View Data Values"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr ""
-
-msgid "Validate"
-msgstr ""
-
-msgid "Send Notifications"
-msgstr ""
-
-msgid "Persist new results"
-msgstr ""
-
-msgid "Attribute Option Combination"
-msgstr ""
-
-msgid "Attr. Opt. Combo"
-msgstr ""
-
-msgid "Importance"
-msgstr ""
-
-msgid "Validation Rule"
-msgstr ""
-
-msgid "Operator"
-msgstr ""
-
-msgid "Details"
-msgstr ""
-
-msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
-
-msgid "VALIDATION RULE"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "no data available"
-msgstr ""
-
-msgid "DATA ELEMENT"
-msgstr ""
-
-msgid "VALUE"
-msgstr ""
-
-msgid "Validation Details"
-msgstr ""
-
-msgid "LEFT SIDE"
-msgstr ""
-
-msgid "RIGHT SIDE"
-msgstr ""
+msgstr "View Data Values"
