@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -15,21 +15,19 @@ msgstr ""
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
-"натижани кўриш учун"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -41,59 +39,52 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "CSV сифатида юкланг"
 
-msgid "Marked for follow-up"
-msgstr "Кузатув учун белгиланган"
-
-msgid "Unmarked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-
-msgid "Data Element"
-msgstr "Маълумотлар элементи"
-
-msgid "Period"
-msgstr "давр"
-
-msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
-
-msgid "Value"
-msgstr "Қиймат"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr "Стандарт оғиш"
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Минимум"
-
-msgid "Max"
-msgstr "Максимум"
-
-msgid "Follow-up"
-msgstr "Кузатиш"
-
-msgid "Validation Rule Group"
-msgstr "Текширув гуруҳи қоидалари"
-
-msgid "Follow-Up Analysis"
-msgstr "Аналитикани кузатиш"
+"500 дан ортиқ натижа топилди, Илтимос, қидирув майдонини қисқартиринг, "
+"натижани кўриш учун"
 
 msgid "No values found"
 msgstr "Қиймат топилмади"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Таҳлил жараёнида кутилмаган хатолик юз берди"
 
-msgid "Follow up"
-msgstr "Кузатиб бориш"
+msgid "Follow-Up Analysis"
+msgstr "Аналитикани кузатиш"
+
+msgid "Comment"
+msgstr "Изоҳ"
+
+msgid "Close"
+msgstr "Ёпиш"
+
+msgid "Data Element"
+msgstr "Маълумотлар элементи"
+
+msgid "Organisation Unit"
+msgstr "Ташкилий бирлик"
+
+msgid "Period"
+msgstr "давр"
+
+msgid "Min"
+msgstr "Минимум"
+
+msgid "Value"
+msgstr "Қиймат"
+
+msgid "Max"
+msgstr "Максимум"
+
+msgid "Unfollow"
+msgstr "Бекор қилиш"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Маълумотлар тўплами"
@@ -107,17 +98,29 @@ msgstr "Бошланиш санаси"
 msgid "End Date"
 msgstr "Якунланиш санаси"
 
-msgid "Close"
-msgstr "Ёпиш"
+msgid "Follow up"
+msgstr "Кузатиб бориш"
 
-msgid "Comment"
-msgstr "Изоҳ"
+msgid "Data set"
+msgstr "Маълумотлар тўплами"
 
-msgid "Unfollow"
-msgstr "Бекор қилиш"
+msgid "Organisation units"
+msgstr "Ташкилий бўлимлар"
 
-msgid "unfollow"
-msgstr "бекор қилиш"
+msgid "Start date"
+msgstr "Бошланиш санаси"
+
+msgid "End date"
+msgstr "Якунланиш санаси"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
 
 msgid "Start"
 msgstr "Бошлаш"
@@ -143,72 +146,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Саралаш тури"
 
-msgid "Data set"
-msgstr "Маълумотлар тўплами"
-
-msgid "Organisation units"
-msgstr "Ташкилий бўлимлар"
-
-msgid "Start date"
-msgstr "Бошланиш санаси"
-
-msgid "End date"
-msgstr "Якунланиш санаси"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr "Стандарт оғиш"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "Кузатиш"
+
+msgid "Marked for follow-up"
+msgstr "Кузатув учун белгиланган"
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Тасдиқлаш Қоидаси Аналитикаси"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Маълумотлар базасидаги маълумотлардаги аномалиялар ва хатоликларни аниқлаш "
-"учун тасдиқлаш қоидаларини ишга туширинг."
-
-msgid "Run Validation"
-msgstr "Тасдиқлашни ишга туширинг"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Аналитика/Таҳлил"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Маълумотларни киритиш ёки таҳлил қилиш пайтида кейинги кузатув учун "
-"белгиланган маълумотлар қийматини кўриш ёки таҳрирлаш."
-
-msgid "View Data Values"
-msgstr "Маълумотлар қийматини кўрсатиш"
-
-msgid "Validation passed successfully"
-msgstr "Тасдиқлаш Маваффақиятли Ўтди"
-
-msgid "Validate"
-msgstr "Тасдиқлаш"
 
 msgid "Send Notifications"
 msgstr "Билдиришнома Юбориш"
 
 msgid "Persist new results"
 msgstr "Доимий янги натижалар"
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "Тасдиқлаш"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Текширув гуруҳи қоидалари"
+
+msgid "Validation passed successfully"
+msgstr "Тасдиқлаш Маваффақиятли Ўтди"
+
+msgid "Validation Rule Analysis"
+msgstr "Тасдиқлаш Қоидаси Аналитикаси"
 
 msgid "Attribute Option Combination"
 msgstr "Атрибут вариантлари комбинацияси"
@@ -249,6 +236,9 @@ msgstr "МАЪЛУМОТЛАР ЭЛЕМЕНТИ"
 msgid "VALUE"
 msgstr "ҚИЙМАТ"
 
+msgid "Show details"
+msgstr ""
+
 msgid "Validation Details"
 msgstr "Текширув деталлари"
 
@@ -257,3 +247,34 @@ msgstr "ЧАП ТОМОН"
 
 msgid "RIGHT SIDE"
 msgstr "ЎНГ ТОМОН"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Маълумотлар базасидаги маълумотлардаги аномалиялар ва хатоликларни аниқлаш "
+"учун тасдиқлаш қоидаларини ишга туширинг."
+
+msgid "Run Validation"
+msgstr "Тасдиқлашни ишга туширинг"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Аналитика/Таҳлил"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Маълумотларни киритиш ёки таҳлил қилиш пайтида кейинги кузатув учун "
+"белгиланган маълумотлар қийматини кўриш ёки таҳрирлаш."
+
+msgid "View Data Values"
+msgstr "Маълумотлар қийматини кўрсатиш"

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -19,20 +19,19 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"Lebih dari 500 nilai ditemukan, persempit pencarian untuk melihat semuanya"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -44,59 +43,51 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Download dalam bentuk CSV"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "Data Elemen"
-
-msgid "Period"
-msgstr "Periode"
-
-msgid "Organisation Unit"
-msgstr "Unit Organisasi"
-
-msgid "Value"
-msgstr "Nilai"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr "Std Dev"
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Min"
-
-msgid "Max"
-msgstr "Maks"
-
-msgid "Follow-up"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr "Grup Aturan Validasi"
-
-msgid "Follow-Up Analysis"
-msgstr "Analisis Tindak Lanjut"
+"Lebih dari 500 nilai ditemukan, persempit pencarian untuk melihat semuanya"
 
 msgid "No values found"
 msgstr "Tidak ada nilai ditemukan"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Terjadi kesalahan tak terduga selama analisis"
 
-msgid "Follow up"
-msgstr "Tindak lanjut"
+msgid "Follow-Up Analysis"
+msgstr "Analisis Tindak Lanjut"
+
+msgid "Comment"
+msgstr "Komentar"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Data Element"
+msgstr "Data Elemen"
+
+msgid "Organisation Unit"
+msgstr "Unit Organisasi"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Nilai"
+
+msgid "Max"
+msgstr "Maks"
+
+msgid "Unfollow"
+msgstr "Berhenti Ikuti"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Data Set"
@@ -110,17 +101,29 @@ msgstr "Tanggal Mulai"
 msgid "End Date"
 msgstr "Tanggal Selesai"
 
-msgid "Close"
-msgstr "Tutup"
+msgid "Follow up"
+msgstr "Tindak lanjut"
 
-msgid "Comment"
-msgstr "Komentar"
+msgid "Data set"
+msgstr "Data set"
 
-msgid "Unfollow"
-msgstr "Berhenti Ikuti"
+msgid "Organisation units"
+msgstr "Unit organisasi"
 
-msgid "unfollow"
-msgstr "berhenti mengikuti"
+msgid "Start date"
+msgstr "Tanggal dimulai"
+
+msgid "End date"
+msgstr "Tanggal berakhir"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
 
 msgid "Start"
 msgstr "Mulai"
@@ -146,72 +149,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Urutkan berdasar"
 
-msgid "Data set"
-msgstr "Data set"
-
-msgid "Organisation units"
-msgstr "Unit organisasi"
-
-msgid "Start date"
-msgstr "Tanggal dimulai"
-
-msgid "End date"
-msgstr "Tanggal berakhir"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr "Std Dev"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Analisis Aturan Validasi"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Jalankan aturan validasi untuk menampilkan anomali dan kesalahan data dalam "
-"basis data."
-
-msgid "Run Validation"
-msgstr "Jalankan Validasi"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Analisis"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Lihat atau edit nilai data yang ditandai untuk tindak lanjut selama entry "
-"data atau analisis."
-
-msgid "View Data Values"
-msgstr "Lihat Nilai Data"
-
-msgid "Validation passed successfully"
-msgstr "Lulus validasi"
-
-msgid "Validate"
-msgstr "Memvalidasi"
 
 msgid "Send Notifications"
 msgstr "Kirim Notifikasi"
 
 msgid "Persist new results"
 msgstr "Gunakan hasil baru"
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "Memvalidasi"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Grup Aturan Validasi"
+
+msgid "Validation passed successfully"
+msgstr "Lulus validasi"
+
+msgid "Validation Rule Analysis"
+msgstr "Analisis Aturan Validasi"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -252,6 +239,9 @@ msgstr "DATA ELEMEN"
 msgid "VALUE"
 msgstr "NILAI"
 
+msgid "Show details"
+msgstr ""
+
 msgid "Validation Details"
 msgstr "Rincian Validasi"
 
@@ -260,3 +250,34 @@ msgstr "SISI KIRI"
 
 msgid "RIGHT SIDE"
 msgstr "SISI KANAN"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Jalankan aturan validasi untuk menampilkan anomali dan kesalahan data dalam "
+"basis data."
+
+msgid "Run Validation"
+msgstr "Jalankan Validasi"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Analisis"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Lihat atau edit nilai data yang ditandai untuk tindak lanjut selama entry "
+"data atau analisis."
+
+msgid "View Data Values"
+msgstr "Lihat Nilai Data"

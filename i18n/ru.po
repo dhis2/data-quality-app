@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"Найдено более 500 значений, пожалуйста сузьте поиск, чтобы увидеть все "
-"варианты"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -42,58 +40,51 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Загрузить в формате CSV"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "Элемент данных"
-
-msgid "Period"
-msgstr "Период"
-
-msgid "Organisation Unit"
-msgstr "Организационная единица"
-
-msgid "Value"
-msgstr "Значение"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr "Среднеквадратическое Отклонение"
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Мин"
-
-msgid "Max"
-msgstr "Макс"
-
-msgid "Follow-up"
-msgstr "Дальнейшие действия"
-
-msgid "Validation Rule Group"
-msgstr "Группа правил проверки"
-
-msgid "Follow-Up Analysis"
-msgstr "Анализ Follow-Up"
+"Найдено более 500 значений, пожалуйста сузьте поиск, чтобы увидеть все "
+"варианты"
 
 msgid "No values found"
 msgstr "Значения не найдены"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Произошла непредвиденная ошибка во время анализа"
 
-msgid "Follow up"
+msgid "Follow-Up Analysis"
+msgstr "Анализ Follow-Up"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Data Element"
+msgstr "Элемент данных"
+
+msgid "Organisation Unit"
+msgstr "Организационная единица"
+
+msgid "Period"
+msgstr "Период"
+
+msgid "Min"
+msgstr "Мин"
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "Max"
+msgstr "Макс"
+
+msgid "Unfollow"
+msgstr "Не отслеживать"
+
+msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
@@ -108,17 +99,29 @@ msgstr "Дата начала"
 msgid "End Date"
 msgstr "Дата окончания"
 
-msgid "Close"
-msgstr "Закрыть"
+msgid "Follow up"
+msgstr ""
 
-msgid "Comment"
-msgstr "Комментарий"
+msgid "Data set"
+msgstr "Набор данных"
 
-msgid "Unfollow"
-msgstr "Не отслеживать"
+msgid "Organisation units"
+msgstr "Организационные единицы"
 
-msgid "unfollow"
-msgstr "не отслеживать"
+msgid "Start date"
+msgstr "Дата начала"
+
+msgid "End date"
+msgstr "Дата окончания"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
 
 msgid "Start"
 msgstr "Начать"
@@ -144,70 +147,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Сортировать по"
 
-msgid "Data set"
-msgstr "Набор данных"
-
-msgid "Organisation units"
-msgstr "Организационные единицы"
-
-msgid "Start date"
-msgstr "Дата начала"
-
-msgid "End date"
-msgstr "Дата окончания"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr "Среднеквадратическое Отклонение"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "Дальнейшие действия"
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Анализ по правилам валидации"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr "Запуск правил проверки для выявления аномалий и ошибок в базе данных."
-
-msgid "Run Validation"
-msgstr "Запуск проверки"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Анализировать"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Просмотр или редактирование значений данных, помеченных для дальнейшего "
-"отслеживания во время ввода или анализа данных."
-
-msgid "View Data Values"
-msgstr "Просмотр значений данных"
-
-msgid "Validation passed successfully"
-msgstr "Проверка прошла успешно"
-
-msgid "Validate"
-msgstr "Проверить"
 
 msgid "Send Notifications"
 msgstr "Отправка уведомлений"
 
 msgid "Persist new results"
 msgstr "Сохранять новые результаты"
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "Проверить"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Группа правил проверки"
+
+msgid "Validation passed successfully"
+msgstr "Проверка прошла успешно"
+
+msgid "Validation Rule Analysis"
+msgstr "Анализ по правилам валидации"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -248,6 +237,9 @@ msgstr "ЭЛЕМЕНТ ДАННЫХ"
 msgid "VALUE"
 msgstr "ЗНАЧЕНИЕ"
 
+msgid "Show details"
+msgstr ""
+
 msgid "Validation Details"
 msgstr "Детали проверки"
 
@@ -256,3 +248,32 @@ msgstr "ЛЕВАЯ СТОРОНА"
 
 msgid "RIGHT SIDE"
 msgstr "ПРАВАЯ СТОРОНА"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr "Запуск правил проверки для выявления аномалий и ошибок в базе данных."
+
+msgid "Run Validation"
+msgstr "Запуск проверки"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Анализировать"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Просмотр или редактирование значений данных, помеченных для дальнейшего "
+"отслеживания во время ввода или анализа данных."
+
+msgid "View Data Values"
+msgstr "Просмотр значений данных"

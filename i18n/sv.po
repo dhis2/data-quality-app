@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -16,19 +16,19 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
-
-msgid "Error loading datasets."
+msgid "No match found"
 msgstr ""
 
-msgid "No match found"
+msgid "Error loading datasets."
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -40,59 +40,50 @@ msgstr ""
 msgid "Download as CSV"
 msgstr ""
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "Data element"
-
-msgid "Period"
-msgstr "Period"
-
-msgid "Organisation Unit"
-msgstr "Organisationsenhet"
-
-msgid "Value"
-msgstr "Värde"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "min"
-
-msgid "Max"
-msgstr "max"
-
-msgid "Follow-up"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr "Valideringsregelngrupp"
-
-msgid "Follow-Up Analysis"
-msgstr "Uppföljningsanalys"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
 
 msgid "No values found"
 msgstr "Inga värden hittades"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Ett oväntat fel inträffade under analysen"
 
-msgid "Follow up"
-msgstr "Följ upp"
+msgid "Follow-Up Analysis"
+msgstr "Uppföljningsanalys"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Close"
+msgstr "Stäng"
+
+msgid "Data Element"
+msgstr "Data element"
+
+msgid "Organisation Unit"
+msgstr "Organisationsenhet"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Min"
+msgstr "min"
+
+msgid "Value"
+msgstr "Värde"
+
+msgid "Max"
+msgstr "max"
+
+msgid "Unfollow"
+msgstr "Sluta följa"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr ""
@@ -106,17 +97,29 @@ msgstr "Start datum"
 msgid "End Date"
 msgstr "Slutdatum"
 
-msgid "Close"
-msgstr "Stäng"
+msgid "Follow up"
+msgstr "Följ upp"
 
-msgid "Comment"
-msgstr "Kommentar"
+msgid "Data set"
+msgstr "datamängd"
 
-msgid "Unfollow"
-msgstr "Sluta följa"
+msgid "Organisation units"
+msgstr "Organisation enheter"
 
-msgid "unfollow"
-msgstr "sluta följa"
+msgid "Start date"
+msgstr "Start datum"
+
+msgid "End date"
+msgstr "Slutdatum"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr ""
 
 msgid "Start"
 msgstr ""
@@ -142,61 +145,28 @@ msgstr ""
 msgid "Sort by"
 msgstr ""
 
-msgid "Data set"
-msgstr "datamängd"
-
-msgid "Organisation units"
-msgstr "Organisation enheter"
-
-msgid "Start date"
-msgstr "Start datum"
-
-msgid "End date"
-msgstr "Slutdatum"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
-msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Valideringsregeln analys"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-
-msgid "Run Validation"
-msgstr "Kör validering"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Analysera"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-
-msgid "View Data Values"
-msgstr "Visa datavärden"
-
-msgid "Validation passed successfully"
-msgstr "Validering godkänd"
-
-msgid "Validate"
 msgstr ""
 
 msgid "Send Notifications"
@@ -204,6 +174,27 @@ msgstr "Skicka notifieringar"
 
 msgid "Persist new results"
 msgstr "Spara nya resultater"
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr ""
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregelngrupp"
+
+msgid "Validation passed successfully"
+msgstr "Validering godkänd"
+
+msgid "Validation Rule Analysis"
+msgstr "Valideringsregeln analys"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -244,6 +235,9 @@ msgstr "DATAELEMENT"
 msgid "VALUE"
 msgstr "VÄRDE"
 
+msgid "Show details"
+msgstr ""
+
 msgid "Validation Details"
 msgstr "Validering Detaljer"
 
@@ -252,3 +246,30 @@ msgstr "VÄNSTER SIDA"
 
 msgid "RIGHT SIDE"
 msgstr "HÖGRE SIDA"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr "Kör validering"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Analysera"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr "Visa datavärden"

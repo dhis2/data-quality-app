@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -15,20 +15,20 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
+msgid "No match found"
+msgstr "Žádná shoda nenalezena"
 
 msgid "Error loading datasets."
 msgstr "Chyba při načítání datových sad."
-
-msgid "No match found"
-msgstr "Žádná shoda nenalezena"
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr "Při načítání vašich organizačních jednotek se něco pokazilo."
 
 msgid "You do not have access to any organisation units."
 msgstr "Nemáte přístup k žádným organizačním jednotkám."
+
+msgid "Open user guide"
+msgstr ""
 
 msgid "Download as PDF"
 msgstr "Stáhnout jako PDF"
@@ -39,59 +39,50 @@ msgstr "Stáhnout jako XLS"
 msgid "Download as CSV"
 msgstr "Stáhnout jako CSV"
 
-msgid "Marked for follow-up"
-msgstr "Označeno pro další sledování"
-
-msgid "Unmarked for follow-up"
-msgstr "Neoznačeno pro další sledování"
-
-msgid "Data Element"
-msgstr "Datový prvek"
-
-msgid "Period"
-msgstr "Období"
-
-msgid "Organisation Unit"
-msgstr "Organizační jednotka"
-
-msgid "Value"
-msgstr "Hodnota"
-
-msgid "Z-Score"
-msgstr "Z-skóre"
-
-msgid "Deviation"
-msgstr "Odchylka"
-
-msgid "Std Dev"
-msgstr "Standardní odchylka"
-
-msgid "Mean"
-msgstr "Střední"
-
-msgid "Min"
-msgstr "Min"
-
-msgid "Max"
-msgstr "Max"
-
-msgid "Follow-up"
-msgstr "Následovat"
-
-msgid "Validation Rule Group"
-msgstr "Skupina pravidel ověření"
-
-msgid "Follow-Up Analysis"
-msgstr "Následná analýza"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Nalezeno více než 500 hodnot, zúžením vyhledávání zobrazíte všechny"
 
 msgid "No values found"
 msgstr "Nenalezeny žádné hodnoty"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Během analýzy došlo k neočekávané chybě"
 
-msgid "Follow up"
-msgstr "Následovat"
+msgid "Follow-Up Analysis"
+msgstr "Následná analýza"
+
+msgid "Comment"
+msgstr "Komentář"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Data Element"
+msgstr "Datový prvek"
+
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Hodnota"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Unfollow"
+msgstr "Zrušit sledování"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -105,17 +96,29 @@ msgstr "Datum začátku"
 msgid "End Date"
 msgstr "Datum ukončení"
 
-msgid "Close"
-msgstr "Zavřít"
+msgid "Follow up"
+msgstr "Následovat"
 
-msgid "Comment"
-msgstr "Komentář"
+msgid "Data set"
+msgstr "Datová sada"
 
-msgid "Unfollow"
-msgstr "Zrušit sledování"
+msgid "Organisation units"
+msgstr "Organizační jednotky"
 
-msgid "unfollow"
-msgstr "přestat sledovat"
+msgid "Start date"
+msgstr "Datum začátku"
+
+msgid "End date"
+msgstr "Datum ukončení"
+
+msgid "Algorithm"
+msgstr "Algoritmus"
+
+msgid "Max results"
+msgstr "Max. Počet výsledků"
+
+msgid "Processing..."
+msgstr ""
 
 msgid "Start"
 msgstr "Start"
@@ -141,75 +144,56 @@ msgstr "Datum ukončení dat"
 msgid "Sort by"
 msgstr "Seřazeno podle"
 
-msgid "Data set"
-msgstr "Datová sada"
+msgid "Z-Score"
+msgstr "Z-skóre"
 
-msgid "Organisation units"
-msgstr "Organizační jednotky"
+msgid "Deviation"
+msgstr "Odchylka"
 
-msgid "Start date"
-msgstr "Datum začátku"
+msgid "Std Dev"
+msgstr "Standardní odchylka"
 
-msgid "End date"
-msgstr "Datum ukončení"
+msgid "Mean"
+msgstr "Střední"
 
-msgid "Algorithm"
-msgstr "Algoritmus"
+msgid "Follow-up"
+msgstr "Následovat"
 
-msgid "Max results"
-msgstr "Max. Počet výsledků"
+msgid "Marked for follow-up"
+msgstr "Označeno pro další sledování"
+
+msgid "Unmarked for follow-up"
+msgstr "Neoznačeno pro další sledování"
 
 msgid "Outlier Detection"
 msgstr "Detekce odlehlých hodnot"
-
-msgid "Validation Rule Analysis"
-msgstr "Analýza ověřovacích pravidel"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Spusťte ověřovací pravidla, abyste odhalili anomálie a chyby v datech v "
-"databázi."
-
-msgid "Run Validation"
-msgstr "Spustit ověření"
-
-msgid "Outlier detection"
-msgstr "Detekce odlehlých hodnot"
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-"Analyzujte potenciální odlehlé hodnoty na základě standardních odchylek nebo"
-" hodnot min-max. Odlehlé hodnoty lze prozkoumat a označit pro následné "
-"sledování."
-
-msgid "Analyze"
-msgstr "Analyzovat"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Zobrazte nebo upravte hodnoty dat označené pro další sledování během "
-"zadávání nebo analýzy dat."
-
-msgid "View Data Values"
-msgstr "Zobrazit datové hodnoty"
-
-msgid "Validation passed successfully"
-msgstr "Ověření proběhlo úspěšně"
-
-msgid "Validate"
-msgstr "Ověřit"
 
 msgid "Send Notifications"
 msgstr "Odeslat oznámení"
 
 msgid "Persist new results"
 msgstr "Zachovat nové výsledky"
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "Ověřit"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Skupina pravidel ověření"
+
+msgid "Validation passed successfully"
+msgstr "Ověření proběhlo úspěšně"
+
+msgid "Validation Rule Analysis"
+msgstr "Analýza ověřovacích pravidel"
 
 msgid "Attribute Option Combination"
 msgstr "Kombinace možností atributů"
@@ -250,6 +234,9 @@ msgstr "DATOVÝ PRVEK"
 msgid "VALUE"
 msgstr "HODNOTA"
 
+msgid "Show details"
+msgstr ""
+
 msgid "Validation Details"
 msgstr "Podrobnosti ověření"
 
@@ -258,3 +245,37 @@ msgstr "LEVÁ STRANA"
 
 msgid "RIGHT SIDE"
 msgstr "PRAVÁ STRANA"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Spusťte ověřovací pravidla, abyste odhalili anomálie a chyby v datech v "
+"databázi."
+
+msgid "Run Validation"
+msgstr "Spustit ověření"
+
+msgid "Outlier detection"
+msgstr "Detekce odlehlých hodnot"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+"Analyzujte potenciální odlehlé hodnoty na základě standardních odchylek nebo"
+" hodnot min-max. Odlehlé hodnoty lze prozkoumat a označit pro následné "
+"sledování."
+
+msgid "Analyze"
+msgstr "Analyzovat"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Zobrazte nebo upravte hodnoty dat označené pro další sledování během "
+"zadávání nebo analýzy dat."
+
+msgid "View Data Values"
+msgstr "Zobrazit datové hodnoty"
