@@ -121,7 +121,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "Коркард..."
 
 msgid "Start"
 msgstr "Оғоз"
@@ -238,7 +238,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Нишон додани маълумоти муфассал"
 
 msgid "Validation Details"
 msgstr ""

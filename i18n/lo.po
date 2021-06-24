@@ -238,7 +238,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "ເບີ່ງລາຍລະອຽດ"
 
 msgid "Validation Details"
 msgstr ""

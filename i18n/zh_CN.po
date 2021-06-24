@@ -29,7 +29,7 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Open user guide"
-msgstr ""
+msgstr "打开用户指南"
 
 msgid "Download as PDF"
 msgstr "获取pdf格式报表"
@@ -119,7 +119,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "正在处理......"
 
 msgid "Start"
 msgstr "开始"
@@ -176,7 +176,7 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Validating..."
-msgstr ""
+msgstr "验证中"
 
 msgid "Validate"
 msgstr "验证"
@@ -236,7 +236,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "显示详情"
 
 msgid "Validation Details"
 msgstr ""

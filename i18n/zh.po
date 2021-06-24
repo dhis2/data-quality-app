@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2021
 # phil_dhis2, 2021
+# 晓东 林 <13981924470@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgid "You do not have access to any organisation units."
 msgstr "您无权访问任何组织单位。"
 
 msgid "Open user guide"
-msgstr ""
+msgstr "打开用户指南"
 
 msgid "Download as PDF"
 msgstr "获取pdf格式报表"
@@ -121,7 +121,7 @@ msgid "Max results"
 msgstr "最大结果"
 
 msgid "Processing..."
-msgstr ""
+msgstr "正在处理......"
 
 msgid "Start"
 msgstr "开始"
@@ -178,13 +178,13 @@ msgid "Persist new results"
 msgstr "持久化新的结果"
 
 msgid "Validating..."
-msgstr ""
+msgstr "验证中"
 
 msgid "Validate"
 msgstr "验证"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "【所有验证规则】"
 
 msgid "Error loading validation rule groups: {{error}}"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "VALUE"
 msgstr "值"
 
 msgid "Show details"
-msgstr ""
+msgstr "显示详情"
 
 msgid "Validation Details"
 msgstr "有效性验证详情"

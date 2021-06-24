@@ -1,15 +1,15 @@
 # 
 # Translators:
+# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Hamza Assada <7amza.it@gmail.com>, 2021
-# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Open user guide"
-msgstr ""
+msgstr "فتح دليل المستخدم"
 
 msgid "Download as PDF"
 msgstr "تنزيل كملف PDF"
@@ -121,7 +121,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "جار المعالجة"
 
 msgid "Start"
 msgstr "بدء"
@@ -178,13 +178,13 @@ msgid "Persist new results"
 msgstr "المواصلة بنتائج جديدة"
 
 msgid "Validating..."
-msgstr ""
+msgstr "يتم التحقق..."
 
 msgid "Validate"
 msgstr "تحقق"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[جميع قواعد التحقق]"
 
 msgid "Error loading validation rule groups: {{error}}"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "VALUE"
 msgstr "القيمة"
 
 msgid "Show details"
-msgstr ""
+msgstr "إظهار التفاصيل"
 
 msgid "Validation Details"
 msgstr "تفاصيل التحقق"

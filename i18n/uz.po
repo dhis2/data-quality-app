@@ -28,7 +28,7 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Open user guide"
-msgstr ""
+msgstr "Фойдаланувчи қўлланмасини очиш"
 
 msgid "Download as PDF"
 msgstr "PDF сифатида юкланг"
@@ -120,7 +120,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "Жараёнда"
 
 msgid "Start"
 msgstr "Бошлаш"
@@ -177,13 +177,13 @@ msgid "Persist new results"
 msgstr "Доимий янги натижалар"
 
 msgid "Validating..."
-msgstr ""
+msgstr "Тасдиқланмоқда..."
 
 msgid "Validate"
 msgstr "Тасдиқлаш"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Барча тасдиқлаш қоидалари]"
 
 msgid "Error loading validation rule groups: {{error}}"
 msgstr ""
@@ -237,7 +237,7 @@ msgid "VALUE"
 msgstr "ҚИЙМАТ"
 
 msgid "Show details"
-msgstr ""
+msgstr "Тафсилотларни кўрсатинг"
 
 msgid "Validation Details"
 msgstr "Текширув деталлари"

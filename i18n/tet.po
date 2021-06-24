@@ -119,7 +119,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "Prosesa daudaun..."
 
 msgid "Start"
 msgstr ""
@@ -236,7 +236,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Hatudu detalles"
 
 msgid "Validation Details"
 msgstr ""

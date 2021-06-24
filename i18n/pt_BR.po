@@ -121,7 +121,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "Processando..."
 
 msgid "Start"
 msgstr "Inicio"
@@ -238,7 +238,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Mostrar detalhes"
 
 msgid "Validation Details"
 msgstr ""

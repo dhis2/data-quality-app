@@ -235,7 +235,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Show details"
 
 msgid "Validation Details"
 msgstr ""
