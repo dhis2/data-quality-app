@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,14 +17,10 @@ msgstr ""
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"Tìm thấy hơn 500 giá trị, xin vui lòng cung cấp thêm thông tin tìm kiếm."
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
@@ -32,6 +28,9 @@ msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr "Bạn không có quyền truy cập vào bất kỳ đơn vị nào."
+
+msgid "Open user guide"
+msgstr "Mở hướng dẫn sử dụng"
 
 msgid "Download as PDF"
 msgstr "Tải xuống với PDF"
@@ -42,59 +41,51 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Tải xuống với CSV"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "Phần tử dữ liệu"
-
-msgid "Period"
-msgstr "Thời điểm"
-
-msgid "Organisation Unit"
-msgstr "Đơn vị"
-
-msgid "Value"
-msgstr "Giá trị"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr "Độ lệch chuẩn"
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Nhỏ nhất"
-
-msgid "Max"
-msgstr "Lớn nhất"
-
-msgid "Follow-up"
-msgstr "Theo dõi sau"
-
-msgid "Validation Rule Group"
-msgstr "Nhóm luật hợp lệ"
-
-msgid "Follow-Up Analysis"
-msgstr "Phân Tích Theo Dõi"
+"Tìm thấy hơn 500 giá trị, xin vui lòng cung cấp thêm thông tin tìm kiếm."
 
 msgid "No values found"
 msgstr "Không tìm thấy giá trị"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Xảy ra sự cố khi phân tích"
 
-msgid "Follow up"
-msgstr "Theo dõi"
+msgid "Follow-Up Analysis"
+msgstr "Phân Tích Theo Dõi"
+
+msgid "Comment"
+msgstr "Bình luận"
+
+msgid "Close"
+msgstr "Đóng lại"
+
+msgid "Data Element"
+msgstr "Phần tử dữ liệu"
+
+msgid "Organisation Unit"
+msgstr "Đơn vị"
+
+msgid "Period"
+msgstr "Thời điểm"
+
+msgid "Min"
+msgstr "Nhỏ nhất"
+
+msgid "Value"
+msgstr "Giá trị"
+
+msgid "Max"
+msgstr "Lớn nhất"
+
+msgid "Unfollow"
+msgstr "Bỏ theo dõi"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Biểu nhập"
@@ -108,17 +99,29 @@ msgstr "Ngày bắt đầu"
 msgid "End Date"
 msgstr "Ngày kết thúc"
 
-msgid "Close"
-msgstr "Đóng lại"
+msgid "Follow up"
+msgstr "Theo dõi"
 
-msgid "Comment"
-msgstr "Bình luận"
+msgid "Data set"
+msgstr "Tập dữ liệu"
 
-msgid "Unfollow"
-msgstr "Bỏ theo dõi"
+msgid "Organisation units"
+msgstr "Đơn vị"
 
-msgid "unfollow"
-msgstr "Bỏ theo dõi"
+msgid "Start date"
+msgstr "Ngày bắt đầu"
+
+msgid "End date"
+msgstr "Ngày kết thúc"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr "Đang thực hiện..."
 
 msgid "Start"
 msgstr "Bắt đầu"
@@ -144,70 +147,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Sắp xếp theo"
 
-msgid "Data set"
-msgstr "Tập dữ liệu"
-
-msgid "Organisation units"
-msgstr "Đơn vị"
-
-msgid "Start date"
-msgstr "Ngày bắt đầu"
-
-msgid "End date"
-msgstr "Ngày kết thúc"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr "Độ lệch chuẩn"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "Theo dõi sau"
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Phân Tích Tính Hợp Lệ"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr "Chạy luật hợp lệ trước để tìm ra bất thường và lỗi trong dữ liệu."
-
-msgid "Run Validation"
-msgstr "Chạy xác thực"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Phân tích"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Xem hoặc Sửa giá trị dữ liệu đã đánh dấu để theo dõi trong khi nhập hoặc "
-"phân tích dữ liệu."
-
-msgid "View Data Values"
-msgstr "Xem giá trị dữ liệu"
-
-msgid "Validation passed successfully"
-msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
-
-msgid "Validate"
-msgstr "Kiểm tra hợp lệ"
 
 msgid "Send Notifications"
 msgstr "Gửi thông báo"
 
 msgid "Persist new results"
 msgstr "Giữ kết quả mới"
+
+msgid "Validating..."
+msgstr "Đang xác thực ..."
+
+msgid "Validate"
+msgstr "Kiểm tra hợp lệ"
+
+msgid "[All Validation Rules]"
+msgstr "[Tất cả các quy tắc xác thực]"
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Nhóm luật hợp lệ"
+
+msgid "Validation passed successfully"
+msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
+
+msgid "Validation Rule Analysis"
+msgstr "Phân Tích Tính Hợp Lệ"
 
 msgid "Attribute Option Combination"
 msgstr "Kết hợp tùy chọn thuộc tính"
@@ -248,6 +237,9 @@ msgstr "Phần tử dữ liệu"
 msgid "VALUE"
 msgstr "Giá trị"
 
+msgid "Show details"
+msgstr "Hiển thị chi tiết"
+
 msgid "Validation Details"
 msgstr "Chi tiết kết quả kiểm tra hợp lệ"
 
@@ -256,3 +248,32 @@ msgstr "Vế trái"
 
 msgid "RIGHT SIDE"
 msgstr "Vế phải"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr "Chạy luật hợp lệ trước để tìm ra bất thường và lỗi trong dữ liệu."
+
+msgid "Run Validation"
+msgstr "Chạy xác thực"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Phân tích"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Xem hoặc Sửa giá trị dữ liệu đã đánh dấu để theo dõi trong khi nhập hoặc "
+"phân tích dữ liệu."
+
+msgid "View Data Values"
+msgstr "Xem giá trị dữ liệu"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"​ຜົນ​ອອກ​ມາ​ເກີນກວ່າ ໕໐໐ "
-"​ກະ​ລຸ​ນາ​ຄົ້ນ​ຫາ​ໃນ​ຂອບ​ເຂດ​ທີ່​ຕ່ຳ​ກວ່ານີ້​ເພື່ອ​ເບີ່ງ​ທັງ​ໝົດ"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -42,59 +40,52 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "ດາວໂຫຼດເປັນ CSV"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"​ຜົນ​ອອກ​ມາ​ເກີນກວ່າ ໕໐໐ "
+"​ກະ​ລຸ​ນາ​ຄົ້ນ​ຫາ​ໃນ​ຂອບ​ເຂດ​ທີ່​ຕ່ຳ​ກວ່ານີ້​ເພື່ອ​ເບີ່ງ​ທັງ​ໝົດ"
+
+msgid "No values found"
+msgstr "ບໍ່ມີຄ່າ"
+
+msgid "Elements unfollowed"
 msgstr ""
 
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr ""
-
-msgid "Period"
-msgstr "ໄລຍະ ເວລາ"
-
-msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
-
-msgid "Value"
-msgstr "ຄ່າ"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "ຄ່າຕໍ່າສຸດ"
-
-msgid "Max"
-msgstr "ຄ່າໃຫ່ຍສຸດ"
-
-msgid "Follow-up"
-msgstr "ຕິດຕາມ"
-
-msgid "Validation Rule Group"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow-Up Analysis"
 msgstr "Follow-Up Analysis"
 
-msgid "No values found"
-msgstr "ບໍ່ມີຄ່າ"
+msgid "Comment"
+msgstr "​ຄຳ​ເຫັນ​ຕ່າງໆ"
 
-msgid "An unexpected error happened during analysis"
+msgid "Close"
+msgstr "ປິດ"
+
+msgid "Data Element"
 msgstr ""
 
-msgid "Follow up"
-msgstr "ຕິດຕາມ"
+msgid "Organisation Unit"
+msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+
+msgid "Period"
+msgstr "ໄລຍະ ເວລາ"
+
+msgid "Min"
+msgstr "ຄ່າຕໍ່າສຸດ"
+
+msgid "Value"
+msgstr "ຄ່າ"
+
+msgid "Max"
+msgstr "ຄ່າໃຫ່ຍສຸດ"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
@@ -108,16 +99,28 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
-msgid "Close"
-msgstr "ປິດ"
+msgid "Follow up"
+msgstr "ຕິດຕາມ"
 
-msgid "Comment"
-msgstr "​ຄຳ​ເຫັນ​ຕ່າງໆ"
+msgid "Data set"
+msgstr "Data set\\:"
 
-msgid "Unfollow"
+msgid "Organisation units"
+msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
+
+msgid "Start date"
+msgstr "ວັນທີເລີ່ມຕົ້ນ"
+
+msgid "End date"
+msgstr "ວັນທີສຸດທ້າຍ"
+
+msgid "Algorithm"
 msgstr ""
 
-msgid "unfollow"
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
 msgstr ""
 
 msgid "Start"
@@ -144,71 +147,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "ຈັດລຽນຕາມ"
 
-msgid "Data set"
-msgstr "Data set\\:"
-
-msgid "Organisation units"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
-
-msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
-
-msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "ຕິດຕາມ"
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "ກວດສອບຂໍ້ມູນ"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
-" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
-
-msgid "Run Validation"
-msgstr ""
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
-
-msgid "View Data Values"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "Validation passed successfully"
-
-msgid "Validate"
-msgstr "ກວດສອບ"
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
 msgstr ""
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "ກວດສອບ"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr "Validation passed successfully"
+
+msgid "Validation Rule Analysis"
+msgstr "ກວດສອບຂໍ້ມູນ"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -249,6 +237,9 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
+msgid "Show details"
+msgstr "ເບີ່ງລາຍລະອຽດ"
+
 msgid "Validation Details"
 msgstr ""
 
@@ -256,4 +247,34 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
+" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
+
+msgid "View Data Values"
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -16,13 +16,10 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
-
-msgid "Error loading datasets."
+msgid "No match found"
 msgstr ""
 
-msgid "No match found"
+msgid "Error loading datasets."
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
@@ -30,6 +27,9 @@ msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
+
+msgid "Open user guide"
+msgstr "打开用户指南"
 
 msgid "Download as PDF"
 msgstr "获取pdf格式报表"
@@ -40,59 +40,50 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "获取CSV格式报表"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "数据元"
-
-msgid "Period"
-msgstr "期间"
-
-msgid "Organisation Unit"
-msgstr "组织机构"
-
-msgid "Value"
-msgstr "值"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "最小"
-
-msgid "Max"
-msgstr "最大"
-
-msgid "Follow-up"
-msgstr ""
-
-msgid "Validation Rule Group"
-msgstr "验证规则组"
-
-msgid "Follow-Up Analysis"
-msgstr "后续分析"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "No values found"
 msgstr "无值被找到"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr ""
 
-msgid "Follow up"
-msgstr "后续跟踪"
+msgid "Follow-Up Analysis"
+msgstr "后续分析"
+
+msgid "Comment"
+msgstr "评论"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Data Element"
+msgstr "数据元"
+
+msgid "Organisation Unit"
+msgstr "组织机构"
+
+msgid "Period"
+msgstr "期间"
+
+msgid "Min"
+msgstr "最小"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Max"
+msgstr "最大"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "数据集"
@@ -106,17 +97,29 @@ msgstr "开始日期"
 msgid "End Date"
 msgstr ""
 
-msgid "Close"
-msgstr "关闭"
+msgid "Follow up"
+msgstr "后续跟踪"
 
-msgid "Comment"
-msgstr "评论"
+msgid "Data set"
+msgstr "数据集"
 
-msgid "Unfollow"
+msgid "Organisation units"
+msgstr "组织机构"
+
+msgid "Start date"
+msgstr "起始日期"
+
+msgid "End date"
+msgstr "结束日期"
+
+msgid "Algorithm"
 msgstr ""
 
-msgid "unfollow"
+msgid "Max results"
 msgstr ""
+
+msgid "Processing..."
+msgstr "正在处理......"
 
 msgid "Start"
 msgstr "开始"
@@ -142,68 +145,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "排序"
 
-msgid "Data set"
-msgstr "数据集"
-
-msgid "Organisation units"
-msgstr "组织机构"
-
-msgid "Start date"
-msgstr "起始日期"
-
-msgid "End date"
-msgstr "结束日期"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr ""
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "验证规则分析"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
-
-msgid "Run Validation"
-msgstr ""
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
-
-msgid "View Data Values"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "验证已成功"
-
-msgid "Validate"
-msgstr "验证"
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
 msgstr ""
+
+msgid "Validating..."
+msgstr "验证中"
+
+msgid "Validate"
+msgstr "验证"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "验证规则组"
+
+msgid "Validation passed successfully"
+msgstr "验证已成功"
+
+msgid "Validation Rule Analysis"
+msgstr "验证规则分析"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -244,6 +235,9 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
+msgid "Show details"
+msgstr "显示详情"
+
 msgid "Validation Details"
 msgstr ""
 
@@ -251,4 +245,31 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
+
+msgid "View Data Values"
 msgstr ""

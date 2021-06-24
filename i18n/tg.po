@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Language: tg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"Зиёда аз 500 қимат ёфт шуд, лутфан вайронкуниҳоро ислоҳ кунед ё доираи "
-"ҷустуҷӯро тангтар карда ҳамаро бинед"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
+msgstr ""
+
+msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
@@ -42,58 +40,51 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Боргирӣ ҳамчун файли CSV"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"Зиёда аз 500 қимат ёфт шуд, лутфан вайронкуниҳоро ислоҳ кунед ё доираи "
+"ҷустуҷӯро тангтар карда ҳамаро бинед"
+
+msgid "No values found"
+msgstr "Ягон қимат ёфт нашуд"
+
+msgid "Elements unfollowed"
 msgstr ""
 
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr ""
-
-msgid "Period"
-msgstr "Давра"
-
-msgid "Organisation Unit"
-msgstr "Воҳиди сохторӣ"
-
-msgid "Value"
-msgstr "Қимат"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Мин"
-
-msgid "Max"
-msgstr "Макс"
-
-msgid "Follow-up"
-msgstr "Пайгирӣ кардан"
-
-msgid "Validation Rule Group"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow-Up Analysis"
 msgstr "Таҳлил барои пайгирӣ"
 
-msgid "No values found"
-msgstr "Ягон қимат ёфт нашуд"
+msgid "Comment"
+msgstr "Шарҳ"
 
-msgid "An unexpected error happened during analysis"
+msgid "Close"
+msgstr "Пӯшидан"
+
+msgid "Data Element"
 msgstr ""
 
-msgid "Follow up"
+msgid "Organisation Unit"
+msgstr "Воҳиди сохторӣ"
+
+msgid "Period"
+msgstr "Давра"
+
+msgid "Min"
+msgstr "Мин"
+
+msgid "Value"
+msgstr "Қимат"
+
+msgid "Max"
+msgstr "Макс"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
@@ -108,17 +99,29 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
-msgid "Close"
-msgstr "Пӯшидан"
-
-msgid "Comment"
-msgstr "Шарҳ"
-
-msgid "Unfollow"
+msgid "Follow up"
 msgstr ""
 
-msgid "unfollow"
+msgid "Data set"
+msgstr "Маҷмӯи иттилоот"
+
+msgid "Organisation units"
+msgstr "воҳидҳои сохторӣ"
+
+msgid "Start date"
+msgstr "Санаи оғоз"
+
+msgid "End date"
+msgstr "Санаи анҷом"
+
+msgid "Algorithm"
 msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr "Коркард..."
 
 msgid "Start"
 msgstr "Оғоз"
@@ -144,72 +147,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ҷудокунӣ аз рӯи"
 
-msgid "Data set"
-msgstr "Маҷмӯи иттилоот"
-
-msgid "Organisation units"
-msgstr "воҳидҳои сохторӣ"
-
-msgid "Start date"
-msgstr "Санаи оғоз"
-
-msgid "End date"
-msgstr "Санаи анҷом"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "Пайгирӣ кардан"
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Таҳлили қоидаи санҷиши эътибор"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Қоидаҳои санҷиши эътиборро кор фармуда, аномалияҳо ва хатогиҳои иттилоот ва "
-"пойгоҳи иттилоотиро ошкор намоед."
-
-msgid "Run Validation"
-msgstr ""
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Қиматҳои иттилоотро, ки барои пайгирӣ ҳангоми вуруди иттилоот ё таҳлил  қайд"
-" карда шудаанд, бинед ва таҳрир кунед."
-
-msgid "View Data Values"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
-
-msgid "Validate"
-msgstr "Санҷиши эътибор"
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
 msgstr ""
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "Санҷиши эътибор"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr "Санҷиши эътибор бомуваффақият иҷро шуд"
+
+msgid "Validation Rule Analysis"
+msgstr "Таҳлили қоидаи санҷиши эътибор"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -250,6 +237,9 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
+msgid "Show details"
+msgstr "Нишон додани маълумоти муфассал"
+
 msgid "Validation Details"
 msgstr ""
 
@@ -257,4 +247,35 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Қоидаҳои санҷиши эътиборро кор фармуда, аномалияҳо ва хатогиҳои иттилоот ва "
+"пойгоҳи иттилоотиро ошкор намоед."
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Қиматҳои иттилоотро, ки барои пайгирӣ ҳангоми вуруди иттилоот ё таҳлил  қайд"
+" карда шудаанд, бинед ва таҳрир кунед."
+
+msgid "View Data Values"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -15,14 +15,10 @@ msgstr ""
 "Language: fa_AF\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"بیشتر از 500 ارزش پیدا شد، لطفآ جستجوی را باریک سازید تا همه را بیبینید"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
@@ -30,6 +26,9 @@ msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
+
+msgid "Open user guide"
+msgstr "باز کردن رهنما استفاده کننده"
 
 msgid "Download as PDF"
 msgstr "داونلود به فارمت پی دی اف"
@@ -40,58 +39,50 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "داونلود به فارمت سی اس وی"
 
-msgid "Marked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"بیشتر از 500 ارزش پیدا شد، لطفآ جستجوی را باریک سازید تا همه را بیبینید"
+
+msgid "No values found"
+msgstr "هیچ ارزش پیدا نشد"
+
+msgid "Elements unfollowed"
 msgstr ""
 
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr ""
-
-msgid "Period"
-msgstr "دوره"
-
-msgid "Organisation Unit"
-msgstr "واحد سازمان"
-
-msgid "Value"
-msgstr "مقدار"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr ""
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "کوچکتر"
-
-msgid "Max"
-msgstr "بزرگتر"
-
-msgid "Follow-up"
-msgstr "تعقیب کردن"
-
-msgid "Validation Rule Group"
+msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow-Up Analysis"
 msgstr "پیگیری تحلیل"
 
-msgid "No values found"
-msgstr "هیچ ارزش پیدا نشد"
+msgid "Comment"
+msgstr "نظر"
 
-msgid "An unexpected error happened during analysis"
+msgid "Close"
+msgstr "بستن"
+
+msgid "Data Element"
 msgstr ""
 
-msgid "Follow up"
+msgid "Organisation Unit"
+msgstr "واحد سازمان"
+
+msgid "Period"
+msgstr "دوره"
+
+msgid "Min"
+msgstr "کوچکتر"
+
+msgid "Value"
+msgstr "مقدار"
+
+msgid "Max"
+msgstr "بزرگتر"
+
+msgid "Unfollow"
+msgstr ""
+
+msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
@@ -106,17 +97,29 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
-msgid "Close"
-msgstr "بستن"
-
-msgid "Comment"
-msgstr "نظر"
-
-msgid "Unfollow"
+msgid "Follow up"
 msgstr ""
 
-msgid "unfollow"
+msgid "Data set"
+msgstr "د مالوماتو (ډاټا) ټولګه"
+
+msgid "Organisation units"
+msgstr "واحد های سازمان"
+
+msgid "Start date"
+msgstr "تاریخ شروع"
+
+msgid "End date"
+msgstr "تاریخ اتمام"
+
+msgid "Algorithm"
 msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr "پروسس..."
 
 msgid "Start"
 msgstr "شروع"
@@ -142,72 +145,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "طبقه بندي یې کړئ"
 
-msgid "Data set"
-msgstr "د مالوماتو (ډاټا) ټولګه"
-
-msgid "Organisation units"
-msgstr "واحد های سازمان"
-
-msgid "Start date"
-msgstr "تاریخ شروع"
-
-msgid "End date"
-msgstr "تاریخ اتمام"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "تعقیب کردن"
+
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "تحلیل قانون اعتبار سنجی"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"اجرای قوانین اعتبار سنجی به منظور پرده ناهنجاری و خطاهای موجود در دیتا در "
-"دیتابیس."
-
-msgid "Run Validation"
-msgstr ""
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr ""
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"مشاهده یا ویرایش ارزش ها دیتا مشخص شده برای بیشتر پیگیری در هنگام ورود "
-"اطلاعات و یا تجزیه و تحلیل"
-
-msgid "View Data Values"
-msgstr ""
-
-msgid "Validation passed successfully"
-msgstr "دستور سنجی موفقانه انجام یافت"
-
-msgid "Validate"
-msgstr "معتبر"
 
 msgid "Send Notifications"
 msgstr ""
 
 msgid "Persist new results"
 msgstr ""
+
+msgid "Validating..."
+msgstr ""
+
+msgid "Validate"
+msgstr "معتبر"
+
+msgid "[All Validation Rules]"
+msgstr ""
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr ""
+
+msgid "Validation passed successfully"
+msgstr "دستور سنجی موفقانه انجام یافت"
+
+msgid "Validation Rule Analysis"
+msgstr "تحلیل قانون اعتبار سنجی"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -248,6 +235,9 @@ msgstr ""
 msgid "VALUE"
 msgstr ""
 
+msgid "Show details"
+msgstr "نمایش جزییات"
+
 msgid "Validation Details"
 msgstr ""
 
@@ -255,4 +245,35 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
+msgstr ""
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"اجرای قوانین اعتبار سنجی به منظور پرده ناهنجاری و خطاهای موجود در دیتا در "
+"دیتابیس."
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"مشاهده یا ویرایش ارزش ها دیتا مشخص شده برای بیشتر پیگیری در هنگام ورود "
+"اطلاعات و یا تجزیه و تحلیل"
+
+msgid "View Data Values"
 msgstr ""

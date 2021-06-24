@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Ge Joao <gsimango@saudigitus.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # phil_dhis2, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Ge Joao <gsimango@saudigitus.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,15 +18,10 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
+msgid "No match found"
 msgstr ""
-"Mais de 500 valores encontrados, corrija as violações ou restrinja a "
-"pesquisa para ver todos"
 
 msgid "Error loading datasets."
-msgstr ""
-
-msgid "No match found"
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
@@ -34,6 +29,9 @@ msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr ""
+
+msgid "Open user guide"
+msgstr "Abrir o guião de utilizador "
 
 msgid "Download as PDF"
 msgstr "Exportar como PDF"
@@ -44,59 +42,52 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Exportar como CSV"
 
-msgid "Marked for follow-up"
-msgstr "Marcado para acompanhamento"
-
-msgid "Unmarked for follow-up"
+msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-
-msgid "Data Element"
-msgstr "Elemento de dados"
-
-msgid "Period"
-msgstr "Periodo"
-
-msgid "Organisation Unit"
-msgstr "Unidade organizacional"
-
-msgid "Value"
-msgstr "Valor"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr ""
-
-msgid "Std Dev"
-msgstr "Std Dev"
-
-msgid "Mean"
-msgstr ""
-
-msgid "Min"
-msgstr "Mínimo"
-
-msgid "Max"
-msgstr "Máximo"
-
-msgid "Follow-up"
-msgstr "Seguimento"
-
-msgid "Validation Rule Group"
-msgstr "Grupo de Regras de Validação"
-
-msgid "Follow-Up Analysis"
-msgstr "Análise do Acompanhamento"
+"Mais de 500 valores encontrados, corrija as violações ou restrinja a "
+"pesquisa para ver todos"
 
 msgid "No values found"
 msgstr "Nenhum valor encontrado"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "Ocorreu um erro inesperado durante a análise"
 
-msgid "Follow up"
-msgstr "Acompanhamento"
+msgid "Follow-Up Analysis"
+msgstr "Análise do Acompanhamento"
+
+msgid "Comment"
+msgstr "Comentário"
+
+msgid "Close"
+msgstr "fFechar"
+
+msgid "Data Element"
+msgstr "Elemento de dados"
+
+msgid "Organisation Unit"
+msgstr "Unidade organizacional"
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "Min"
+msgstr "Mínimo"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Max"
+msgstr "Máximo"
+
+msgid "Unfollow"
+msgstr "Deixar de seguir"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Ficha"
@@ -110,17 +101,29 @@ msgstr "Data de Início"
 msgid "End Date"
 msgstr "Fim da data "
 
-msgid "Close"
-msgstr "fFechar"
+msgid "Follow up"
+msgstr "Acompanhamento"
 
-msgid "Comment"
-msgstr "Comentário"
+msgid "Data set"
+msgstr "Ficha"
 
-msgid "Unfollow"
-msgstr "Deixar de seguir"
+msgid "Organisation units"
+msgstr "Unidades organizacionais"
 
-msgid "unfollow"
-msgstr "Deixar de seguir "
+msgid "Start date"
+msgstr "Data Início"
+
+msgid "End date"
+msgstr "Data Final"
+
+msgid "Algorithm"
+msgstr ""
+
+msgid "Max results"
+msgstr ""
+
+msgid "Processing..."
+msgstr "Processando..."
 
 msgid "Start"
 msgstr "Inicio"
@@ -146,72 +149,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ordenar por"
 
-msgid "Data set"
-msgstr "Ficha"
-
-msgid "Organisation units"
-msgstr "Unidades organizacionais"
-
-msgid "Start date"
-msgstr "Data Início"
-
-msgid "End date"
-msgstr "Data Final"
-
-msgid "Algorithm"
+msgid "Z-Score"
 msgstr ""
 
-msgid "Max results"
+msgid "Deviation"
+msgstr ""
+
+msgid "Std Dev"
+msgstr "Std Dev"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Follow-up"
+msgstr "Seguimento"
+
+msgid "Marked for follow-up"
+msgstr "Marcado para acompanhamento"
+
+msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
-
-msgid "Validation Rule Analysis"
-msgstr "Analise das regras de validação"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr ""
-"Executar as regras de validação, a fim de revelar anomalias e erros nos "
-"dados existentes na base de dados."
-
-msgid "Run Validation"
-msgstr "Executar validação"
-
-msgid "Outlier detection"
-msgstr ""
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Analisar"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Ver ou editar valores de dados marcados para posterior acompanhamento "
-"durante a entrada de dados ou análise."
-
-msgid "View Data Values"
-msgstr "Exibir valores de dados"
-
-msgid "Validation passed successfully"
-msgstr "Validado com sucesso"
-
-msgid "Validate"
-msgstr "Validado"
 
 msgid "Send Notifications"
 msgstr "Enviar notificação "
 
 msgid "Persist new results"
 msgstr "Persistir novos resultados"
+
+msgid "Validating..."
+msgstr "Validando..."
+
+msgid "Validate"
+msgstr "Validado"
+
+msgid "[All Validation Rules]"
+msgstr "[Todas regras de validação]"
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Grupo de Regras de Validação"
+
+msgid "Validation passed successfully"
+msgstr "Validado com sucesso"
+
+msgid "Validation Rule Analysis"
+msgstr "Analise das regras de validação"
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -252,6 +239,9 @@ msgstr "Elemento de dado"
 msgid "VALUE"
 msgstr "Valor "
 
+msgid "Show details"
+msgstr "Mostrar detalhes"
+
 msgid "Validation Details"
 msgstr "Detalhes da validação "
 
@@ -260,3 +250,34 @@ msgstr "LADO ESQUERDO"
 
 msgid "RIGHT SIDE"
 msgstr "LADO DIREITO "
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+"Executar as regras de validação, a fim de revelar anomalias e erros nos "
+"dados existentes na base de dados."
+
+msgid "Run Validation"
+msgstr "Executar validação"
+
+msgid "Outlier detection"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Analisar"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Ver ou editar valores de dados marcados para posterior acompanhamento "
+"durante a entrada de dados ou análise."
+
+msgid "View Data Values"
+msgstr "Exibir valores de dados"

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
+"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,13 +16,10 @@ msgstr ""
 "Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
-
-msgid "Error loading datasets."
+msgid "No match found"
 msgstr ""
 
-msgid "No match found"
+msgid "Error loading datasets."
 msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
@@ -30,6 +27,9 @@ msgstr ""
 
 msgid "You do not have access to any organisation units."
 msgstr "Du har ikke tilgang til noen organisasjonsenheter."
+
+msgid "Open user guide"
+msgstr "Åpne brukerveiledning"
 
 msgid "Download as PDF"
 msgstr "Last ned i PDF format"
@@ -40,59 +40,50 @@ msgstr ""
 msgid "Download as CSV"
 msgstr "Last ned i CSV format"
 
-msgid "Marked for follow-up"
-msgstr ""
-
-msgid "Unmarked for follow-up"
-msgstr ""
-
-msgid "Data Element"
-msgstr "Dataelementer"
-
-msgid "Period"
-msgstr "Periode"
-
-msgid "Organisation Unit"
-msgstr "Organisasjonsenhet"
-
-msgid "Value"
-msgstr "Verdi"
-
-msgid "Z-Score"
-msgstr ""
-
-msgid "Deviation"
-msgstr "Avvik"
-
-msgid "Std Dev"
-msgstr "Standardavvik"
-
-msgid "Mean"
-msgstr "Gjennomsnitt"
-
-msgid "Min"
-msgstr "Min"
-
-msgid "Max"
-msgstr "Max"
-
-msgid "Follow-up"
-msgstr "Oppfølging"
-
-msgid "Validation Rule Group"
-msgstr "Valideringsregelgruppe"
-
-msgid "Follow-Up Analysis"
-msgstr "Oppfølgingsanalyse"
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
 
 msgid "No values found"
 msgstr "Ingen verdier funnet"
 
+msgid "Elements unfollowed"
+msgstr ""
+
 msgid "An unexpected error happened during analysis"
 msgstr "En uventet feil oppsto under analysen"
 
-msgid "Follow up"
-msgstr "Oppfølging"
+msgid "Follow-Up Analysis"
+msgstr "Oppfølgingsanalyse"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Close"
+msgstr "Lukk"
+
+msgid "Data Element"
+msgstr "Dataelementer"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Value"
+msgstr "Verdi"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Unfollow"
+msgstr "Slutt å følge"
+
+msgid "Unfollowing..."
+msgstr ""
 
 msgid "Data Set"
 msgstr "Datasett"
@@ -106,17 +97,29 @@ msgstr "Startdato"
 msgid "End Date"
 msgstr "Sluttdato"
 
-msgid "Close"
-msgstr "Lukk"
+msgid "Follow up"
+msgstr "Oppfølging"
 
-msgid "Comment"
-msgstr "Kommentar"
+msgid "Data set"
+msgstr "Datasett"
 
-msgid "Unfollow"
-msgstr "Slutt å følge"
+msgid "Organisation units"
+msgstr "Organisasjonsenheter"
 
-msgid "unfollow"
-msgstr "Slutt å følge"
+msgid "Start date"
+msgstr "Startdato"
+
+msgid "End date"
+msgstr "Sluttdato"
+
+msgid "Algorithm"
+msgstr "Algoritme"
+
+msgid "Max results"
+msgstr "Maks resultater"
+
+msgid "Processing..."
+msgstr "Behandler..."
 
 msgid "Start"
 msgstr "Start"
@@ -142,70 +145,56 @@ msgstr ""
 msgid "Sort by"
 msgstr "Sorter etter"
 
-msgid "Data set"
-msgstr "Datasett"
+msgid "Z-Score"
+msgstr ""
 
-msgid "Organisation units"
-msgstr "Organisasjonsenheter"
+msgid "Deviation"
+msgstr "Avvik"
 
-msgid "Start date"
-msgstr "Startdato"
+msgid "Std Dev"
+msgstr "Standardavvik"
 
-msgid "End date"
-msgstr "Sluttdato"
+msgid "Mean"
+msgstr "Gjennomsnitt"
 
-msgid "Algorithm"
-msgstr "Algoritme"
+msgid "Follow-up"
+msgstr "Oppfølging"
 
-msgid "Max results"
-msgstr "Maks resultater"
+msgid "Marked for follow-up"
+msgstr ""
+
+msgid "Unmarked for follow-up"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr "Utliggerberegning"
-
-msgid "Validation Rule Analysis"
-msgstr "Valideringsregel analyse"
-
-msgid ""
-"Run validation rules in order to unveil anomalies and errors in the data in "
-"the database."
-msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
-
-msgid "Run Validation"
-msgstr "Kjør validering"
-
-msgid "Outlier detection"
-msgstr "Utliggerberegning"
-
-msgid ""
-"Analyze potential outlier values based on standard deviations or min-max "
-"values. Outlier values can be examined and marked for follow-up."
-msgstr ""
-
-msgid "Analyze"
-msgstr "Analyser"
-
-msgid ""
-"View or edit data values marked for further follow-up during data entry or "
-"analysis."
-msgstr ""
-"Vis eller rediger dataverdier merket for videre oppfølging under "
-"dataregistrering eller analyse."
-
-msgid "View Data Values"
-msgstr "Vis dataverdier"
-
-msgid "Validation passed successfully"
-msgstr "Validering ble gjennomført"
-
-msgid "Validate"
-msgstr "Valider"
 
 msgid "Send Notifications"
 msgstr "Send varslinger"
 
 msgid "Persist new results"
 msgstr "Vedvar nye resultater"
+
+msgid "Validating..."
+msgstr "Validerer..."
+
+msgid "Validate"
+msgstr "Valider"
+
+msgid "[All Validation Rules]"
+msgstr "[Alle valideringsregler]"
+
+msgid "Error loading validation rule groups: {{error}}"
+msgstr ""
+
+msgid "Validation Rule Group"
+msgstr "Valideringsregelgruppe"
+
+msgid "Validation passed successfully"
+msgstr "Validering ble gjennomført"
+
+msgid "Validation Rule Analysis"
+msgstr "Valideringsregel analyse"
 
 msgid "Attribute Option Combination"
 msgstr "Attributtalternativkombinasjon"
@@ -246,6 +235,9 @@ msgstr "DATAELEMENTER"
 msgid "VALUE"
 msgstr "VERDI"
 
+msgid "Show details"
+msgstr "Vis detaljer"
+
 msgid "Validation Details"
 msgstr "Valideringsdetaljer"
 
@@ -254,3 +246,32 @@ msgstr "VENSTRE SIDE"
 
 msgid "RIGHT SIDE"
 msgstr "HØYRE SIDE"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
+
+msgid "Run Validation"
+msgstr "Kjør validering"
+
+msgid "Outlier detection"
+msgstr "Utliggerberegning"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations or min-max "
+"values. Outlier values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr "Analyser"
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+"Vis eller rediger dataverdier merket for videre oppfølging under "
+"dataregistrering eller analyse."
+
+msgid "View Data Values"
+msgstr "Vis dataverdier"
