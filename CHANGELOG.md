@@ -1,3 +1,10 @@
+## [1.7.17](https://github.com/dhis2/data-quality-app/compare/v1.7.16...v1.7.17) (2021-06-30)
+
+
+### Bug Fixes
+
+* when react-router-dom is used as a hash router, we must prefix the href of internal links with '#' ([#790](https://github.com/dhis2/data-quality-app/issues/790)) ([6699ab7](https://github.com/dhis2/data-quality-app/commit/6699ab7ddf8300507fb4781424ca3b8863aafdc7))
+
 ## [1.7.16](https://github.com/dhis2/data-quality-app/compare/v1.7.15...v1.7.16) (2021-06-28)
 
 
