@@ -8,12 +8,17 @@ const SidebarItem = ({ label, path }) => {
     const history = useHistory()
     const isActive = !!useRouteMatch(path)
     const navigateToPath = () => history.push(path)
+    const href = history.createHref({
+        pathname: path,
+        search: '',
+        hash: '',
+    })
 
     return (
         <MenuItem
             className={styles.sidebarItem}
             onClick={navigateToPath}
-            href={path}
+            href={href}
             active={isActive}
             label={label}
         />
