@@ -1,5 +1,4 @@
-import { useDataQuery, useAlert } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { useDataQuery, useDataMutation, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import queryString from 'query-string'
@@ -12,7 +11,6 @@ import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
 import { Z_SCORE } from './constants'
 import convertElementFromApiResponse from './convert-element-from-api-response'
-import convertElementToToggleFollowupRequest from './convert-element-to-toggle-followup-request'
 import Form from './Form/Form'
 import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
 import useFormState from './use-form-state'
@@ -24,12 +22,17 @@ const query = {
     },
 }
 
+const markOutlierMutation = {
+    resource: '/dataValues/followup',
+    type: 'update',
+    data: data => data,
+}
+
 const OutlierDetection = () => {
     const sidebar = useSidebar()
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
     const [csvQueryStr, setCsvQueryStr] = useState(null)
-    const { d2 } = useD2()
     const {
         organisationUnitIds,
         handleOrganisationUnitChange,
@@ -87,6 +90,11 @@ const OutlierDetection = () => {
             errorAlert.show({ error })
         },
     })
+    const [markOutlier] = useDataMutation(markOutlierMutation, {
+        onError: error => {
+            errorAlert.show({ error })
+        },
+    })
 
     const showForm = () => {
         setTableVisible(false)
@@ -123,29 +131,29 @@ const OutlierDetection = () => {
     const handleToggleCheckbox = async element => {
         const currentElement = elements.find(({ key }) => key === element.key)
 
-        const api = d2.Api.getApi()
-        try {
-            await api.update(
-                apiConf.endpoints.markOutlierDataValue,
-                convertElementToToggleFollowupRequest(currentElement)
-            )
-            const newMarked = !element.marked
-            setElements(
-                elements.map(e => {
-                    if (e.key === element.key) {
-                        return {
-                            ...e,
-                            marked: newMarked,
-                        }
-                    } else {
-                        return e
+        await markOutlier({
+            dataElement: currentElement.de,
+            period: currentElement.pe,
+            orgUnit: currentElement.ou,
+            categoryOptionCombo: currentElement.coc || null,
+            attributeOptionCombo: currentElement.aoc || null,
+            followup: !currentElement.marked,
+        })
+
+        const newMarked = !element.marked
+        setElements(
+            elements.map(e => {
+                if (e.key === element.key) {
+                    return {
+                        ...e,
+                        marked: newMarked,
                     }
-                })
-            )
-            successfulMarkAlert.show({ marked: newMarked })
-        } catch (error) {
-            errorAlert.show({ error })
-        }
+                } else {
+                    return e
+                }
+            })
+        )
+        successfulMarkAlert.show({ marked: newMarked })
     }
 
     const formValid = !!(
