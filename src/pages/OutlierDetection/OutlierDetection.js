@@ -1,7 +1,8 @@
-import { useAlert } from '@dhis2/app-runtime'
+import { useDataQuery, useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
+import queryString from 'query-string'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
 import PageHeader from '../../components/PageHeader/PageHeader'
@@ -16,9 +17,15 @@ import Form from './Form/Form'
 import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
 import useFormState from './use-form-state'
 
+const query = {
+    outliers: {
+        resource: 'outlierDetection',
+        params: params => params,
+    },
+}
+
 const OutlierDetection = () => {
     const sidebar = useSidebar()
-    const [loading, setLoading] = useState(false)
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
     const [csvQueryStr, setCsvQueryStr] = useState(null)
@@ -63,6 +70,23 @@ const OutlierDetection = () => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
+    const { loading, refetch: fetchOutliers } = useDataQuery(query, {
+        lazy: true,
+        onComplete: data => {
+            const elements = data.outliers.outlierValues.map(
+                convertElementFromApiResponse
+            )
+            setElements(elements)
+            if (elements.length > 0) {
+                showTable()
+            } else {
+                noValuesFoundAlert.show()
+            }
+        },
+        onError: error => {
+            errorAlert.show({ error })
+        },
+    })
 
     const showForm = () => {
         setTableVisible(false)
@@ -74,65 +98,30 @@ const OutlierDetection = () => {
         sidebar.hide()
     }
 
-    const createQueryString = () => {
-        const querySegments = [
-            ...dataSetIds.map(id => `ds=${id}`),
-            ...organisationUnitIds.map(id => `ou=${id}`),
-            `startDate=${convertDateToApiDateFormat(startDate)}`,
-            `endDate=${convertDateToApiDateFormat(endDate)}`,
-            `algorithm=${algorithm}`,
-            `maxResults=${maxResults}`,
-            `orderBy=${orderBy}`,
-        ]
-
+    const handleStart = () => {
+        const params = {
+            ds: dataSetIds,
+            ou: organisationUnitIds,
+            startDate: convertDateToApiDateFormat(startDate),
+            endDate: convertDateToApiDateFormat(endDate),
+            algorithm,
+            maxResults,
+            orderBy,
+        }
         if (algorithm === Z_SCORE) {
-            querySegments.push(`threshold=${threshold}`)
-
+            params.threshold = threshold
             if (dataStartDate) {
-                querySegments.push(
-                    `dataStartDate=${convertDateToApiDateFormat(dataStartDate)}`
-                )
+                params.dataStartDate = convertDateToApiDateFormat(dataStartDate)
             }
-
             if (dataEndDate) {
-                querySegments.push(
-                    `dataEndDate=${convertDateToApiDateFormat(dataEndDate)}`
-                )
+                params.dataEndDate = convertDateToApiDateFormat(dataEndDate)
             }
         }
-
-        return querySegments.join('&')
-    }
-    const handleStart = async () => {
-        const api = d2.Api.getApi()
-
-        const endpoint = apiConf.endpoints.outlierDetection
-        const csvQueryStr = createQueryString()
-
-        setLoading(true)
-        try {
-            const response = await api.get(`${endpoint}?${csvQueryStr}`)
-            const elements = response.outlierValues.map(
-                convertElementFromApiResponse
-            )
-            setElements(elements)
-            setCsvQueryStr(csvQueryStr)
-            if (elements.length > 0) {
-                showTable()
-            } else {
-                noValuesFoundAlert.show()
-            }
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-        setLoading(false)
+        fetchOutliers(params)
+        setCsvQueryStr(queryString.stringify(params))
     }
     const handleToggleCheckbox = async element => {
         const currentElement = elements.find(({ key }) => key === element.key)
-        // TODO: Verify that this check is needed
-        if (!currentElement) {
-            return
-        }
 
         const api = d2.Api.getApi()
         try {
