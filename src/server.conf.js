@@ -1,8 +1,7 @@
 export const apiConf = {
     endpoints: {
-        validationRulesExpression: '/dataAnalysis/validationRulesExpression',
         validationRulesReport: '/dataAnalysis/validationRules/report',
-        validationRules: '/validationRules',
+        validationRules: '/',
         reportAnalysis: '/dataAnalysis/report',
     },
     results: {
