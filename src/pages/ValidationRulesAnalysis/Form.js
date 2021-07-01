@@ -6,6 +6,7 @@ import React from 'react'
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
+import styles from './Form.module.css'
 import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect'
 
 const Form = ({
@@ -52,18 +53,15 @@ const Form = ({
                 />
                 <div>
                     <ValidationRuleGroupsSelect
-                        style={jsPageStyles.inputForm}
                         onChange={onValidationRuleGroupChange}
                     />
                 </div>
-                <div>
+                <div className={styles.checkboxes}>
                     <Checkbox
                         label={i18n.t('Send Notifications')}
                         checked={sendNotfications}
                         onChange={onSendNotificationsChange}
                     />
-                </div>
-                <div>
                     <Checkbox
                         label={i18n.t('Persist new results')}
                         checked={persistNewResults}

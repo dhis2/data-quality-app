@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
-"PO-Revision-Date: 2021-06-18T12:06:57.717Z\n"
+"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
+"PO-Revision-Date: 2021-07-01T16:30:31.413Z\n"
 
 msgid "No match found"
 msgstr "No match found"
@@ -176,11 +176,11 @@ msgstr "Validate"
 msgid "[All Validation Rules]"
 msgstr "[All Validation Rules]"
 
-msgid "Error loading validation rule groups: {{error}}"
-msgstr "Error loading validation rule groups: {{error}}"
-
 msgid "Validation Rule Group"
 msgstr "Validation Rule Group"
+
+msgid "Error loading validation rule groups: {{- error}}"
+msgstr "Error loading validation rule groups: {{- error}}"
 
 msgid "Validation passed successfully"
 msgstr "Validation passed successfully"
