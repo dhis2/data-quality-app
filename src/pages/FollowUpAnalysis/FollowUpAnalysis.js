@@ -1,5 +1,4 @@
 import { useDataMutation, useAlert } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -16,6 +15,7 @@ import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable
 import Form from './Form'
 import useFormState from './use-form-state'
 
+// TODO: Replace with new UUID-based `GET /dataAnalysis/followup` API
 const followUpAnalysisMutation = {
     resource: 'dataAnalysis/followup',
     type: 'create',
@@ -26,13 +26,18 @@ const followUpAnalysisMutation = {
         ds,
     }),
 }
+const unfollowMutation = {
+    resource: 'dataAnalysis/followup/mark',
+    type: 'create',
+    data: ({ followups }) => ({
+        followups,
+    }),
+}
 
 const FollowUpAnalysis = ({ sectionKey }) => {
     const sidebar = useSidebar()
-    const [loading, setLoading] = useState(false)
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
-    const { d2 } = useD2()
     const {
         startDate,
         handleStartDateChange,
@@ -73,6 +78,17 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             errorAlert.show({ error })
         },
     })
+    const [unfollow, { loading: loadingUnfollow }] = useDataMutation(
+        unfollowMutation,
+        {
+            onComplete: () => {
+                successfulUnfollowAlert.show()
+            },
+            onError: error => {
+                errorAlert.show({ error })
+            },
+        }
+    )
 
     const showForm = () => {
         setTableVisible(false)
@@ -83,7 +99,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         sidebar.hide()
     }
 
-    const handleGetFollowUpList = async () => {
+    const handleGetFollowUpList = () => {
         fetchFollowUpList({
             startDate: convertDateToApiDateFormat(startDate),
             endDate: convertDateToApiDateFormat(endDate),
@@ -92,22 +108,14 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         })
     }
     const handleUnfollow = async () => {
-        const api = d2.Api.getApi()
-
-        setLoading(true)
-        try {
-            const unfollowups = elements.filter(element => element.marked)
-            await api.post(apiConf.endpoints.markFollowUpDataValue, {
-                followups: unfollowups.map(convertElementToUnFollowupRequest),
-            })
+        const unfollowups = elements.filter(element => element.marked)
+        unfollow({
+            followups: unfollowups.map(convertElementToUnFollowupRequest),
+        }).then(() => {
             setElements(
                 elements.filter(element => !unfollowups.includes(element))
             )
-            successfulUnfollowAlert.show()
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-        setLoading(false)
+        })
     }
     const handleCheckboxToggle = elementKey => {
         setElements(
@@ -165,7 +173,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
                         elements={elements}
                         onCheckboxToggle={handleCheckboxToggle}
                         onUnfollow={handleUnfollow}
-                        loading={loading}
+                        loading={loadingUnfollow}
                     />
                 )}
             </Card>
