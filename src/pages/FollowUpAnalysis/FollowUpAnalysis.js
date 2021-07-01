@@ -1,4 +1,4 @@
-import { useAlert } from '@dhis2/app-runtime'
+import { useDataMutation, useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
@@ -15,6 +15,17 @@ import convertElementToUnFollowupRequest from './convert-element-to-un-followup-
 import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable'
 import Form from './Form'
 import useFormState from './use-form-state'
+
+const followUpAnalysisMutation = {
+    resource: 'dataAnalysis/followup',
+    type: 'create',
+    data: ({ startDate, endDate, ou, ds }) => ({
+        startDate,
+        endDate,
+        ou,
+        ds,
+    }),
+}
 
 const FollowUpAnalysis = ({ sectionKey }) => {
     const sidebar = useSidebar()
@@ -45,6 +56,23 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
+    const [
+        fetchFollowUpList,
+        { loading: loadingFollowUpList },
+    ] = useDataMutation(followUpAnalysisMutation, {
+        onComplete: response => {
+            const elements = response.map(convertElementFromApiResponse)
+            setElements(elements)
+            if (elements.length > 0) {
+                showTable()
+            } else {
+                noValuesFoundAlert.show()
+            }
+        },
+        onError: error => {
+            errorAlert.show({ error })
+        },
+    })
 
     const showForm = () => {
         setTableVisible(false)
@@ -56,27 +84,12 @@ const FollowUpAnalysis = ({ sectionKey }) => {
     }
 
     const handleGetFollowUpList = async () => {
-        const api = d2.Api.getApi()
-
-        setLoading(true)
-        try {
-            const response = await api.post(apiConf.endpoints.folloupAnalysis, {
-                startDate: convertDateToApiDateFormat(startDate),
-                endDate: convertDateToApiDateFormat(endDate),
-                ou: organisationUnitId,
-                ds: dataSetIds,
-            })
-            const elements = response.map(convertElementFromApiResponse)
-            setElements(elements)
-            if (elements.length > 0) {
-                showTable()
-            } else {
-                noValuesFoundAlert.show()
-            }
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-        setLoading(false)
+        fetchFollowUpList({
+            startDate: convertDateToApiDateFormat(startDate),
+            endDate: convertDateToApiDateFormat(endDate),
+            ou: organisationUnitId,
+            ds: dataSetIds,
+        })
     }
     const handleUnfollow = async () => {
         const api = d2.Api.getApi()
@@ -137,7 +150,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
                     <Form
                         onSubmit={handleGetFollowUpList}
                         valid={formValid}
-                        loading={loading}
+                        loading={loadingFollowUpList}
                         dataSetIds={dataSetIds}
                         onDataSetsChange={handleDataSetsChange}
                         onOrganisationUnitChange={handleOrganisationUnitChange}
