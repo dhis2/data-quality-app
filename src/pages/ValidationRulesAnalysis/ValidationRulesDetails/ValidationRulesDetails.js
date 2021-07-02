@@ -1,7 +1,16 @@
 import { useDataQuery, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button, CircularLoader, Tooltip } from '@dhis2/ui'
-import { Dialog, FlatButton, FontIcon } from 'material-ui'
+import {
+    Button,
+    CircularLoader,
+    Tooltip,
+    Modal,
+    ModalTitle,
+    ModalContent,
+    ModalActions,
+    ButtonStrip,
+} from '@dhis2/ui'
+import { FontIcon } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Result from './Result'
@@ -71,25 +80,10 @@ const ValidationRulesDetails = ({
                     onClick={data ? handleModalOpen : fetchDetails}
                 />
             </Tooltip>
-            <Dialog
-                className="validation-rules-details-dialog"
-                autoScrollBodyContent={true}
-                title={i18n.t('Validation Details')}
-                actions={[
-                    <FlatButton
-                        className="close-action"
-                        key="close"
-                        label={i18n.t('Close')}
-                        primary={true}
-                        onClick={handleModalClose}
-                    />,
-                ]}
-                modal={true}
-                open={detailsVisible}
-                onRequestClose={handleModalClose}
-            >
-                {data && (
-                    <>
+            {detailsVisible && data && (
+                <Modal onClose={handleModalClose}>
+                    <ModalTitle>{i18n.t('Validation Details')}</ModalTitle>
+                    <ModalContent>
                         <Result rule={data.rule} />
                         <Section
                             side={i18n.t('LEFT SIDE')}
@@ -101,9 +95,16 @@ const ValidationRulesDetails = ({
                             elements={data.expression.rightSide}
                             classNameRow="right-side-row"
                         />
-                    </>
-                )}
-            </Dialog>
+                    </ModalContent>
+                    <ModalActions>
+                        <ButtonStrip end>
+                            <Button onClick={handleModalClose}>
+                                {i18n.t('Close')}
+                            </Button>
+                        </ButtonStrip>
+                    </ModalActions>
+                </Modal>
+            )}
         </>
     )
 }
