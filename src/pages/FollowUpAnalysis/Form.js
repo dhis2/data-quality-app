@@ -3,7 +3,7 @@ import { Button } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDatasetsSelect from '../../components/AvailableDatasetsSelect/AvailableDatasetsSelect'
+import AvailableDataSetsSelect from '../../components/AvailableDataSetsSelect/AvailableDataSetsSelect'
 import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../Page.module.css'
 import jsPageStyles from '../PageStyles'
@@ -26,7 +26,7 @@ const Form = ({
                 <h3 className={cssPageStyles.formLabel}>
                     {i18n.t('Data Set')}
                 </h3>
-                <AvailableDatasetsSelect
+                <AvailableDataSetsSelect
                     selected={dataSetIds}
                     onChange={onDataSetsChange}
                 />

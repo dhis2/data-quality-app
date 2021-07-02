@@ -5,7 +5,7 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDatasetsSelect from '../../../components/AvailableDatasetsSelect/AvailableDatasetsSelect'
+import AvailableDataSetsSelect from '../../../components/AvailableDataSetsSelect/AvailableDataSetsSelect'
 import AvailableOrganisationUnitsTree from '../../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles'
@@ -45,7 +45,7 @@ const Form = ({
                 <h3 className={cssPageStyles.formLabel}>
                     {i18n.t('Data set')}
                 </h3>
-                <AvailableDatasetsSelect
+                <AvailableDataSetsSelect
                     selected={dataSetIds}
                     onChange={onDataSetsOnChange}
                 />

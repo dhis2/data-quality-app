@@ -1,5 +1,4 @@
-import { useAlert } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { useDataMutation, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -16,12 +15,16 @@ import useFormState from './use-form-state'
 import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect'
 import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/ValidationRulesAnalysisTable'
 
+const validationMutation = {
+    resource: 'dataAnalysis/validationRules',
+    type: 'create',
+    data: data => data,
+}
+
 const ValidationRulesAnalysis = ({ sectionKey }) => {
     const sidebar = useSidebar()
-    const [loading, setLoading] = useState(false)
     const [tableVisible, setTableVisible] = useState(false)
     const [elements, setElements] = useState([])
-    const { d2 } = useD2()
     const {
         organisationUnitId,
         handleOrganisationUnitChange,
@@ -48,6 +51,20 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
+    const [validate, { loading }] = useDataMutation(validationMutation, {
+        onComplete: data => {
+            const elements = data.map(convertElementFromApiResponse)
+            setElements(elements)
+            if (elements.length > 0) {
+                showTable()
+            } else {
+                validationPassedAlert.show()
+            }
+        },
+        onError: error => {
+            errorAlert.show({ error })
+        },
+    })
 
     const showForm = () => {
         setTableVisible(false)
@@ -59,9 +76,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
     }
 
     const handleValidate = async () => {
-        const api = d2.Api.getApi()
-
-        const request = {
+        const params = {
             startDate: convertDateToApiDateFormat(startDate),
             endDate: convertDateToApiDateFormat(endDate),
             ou: organisationUnitId,
@@ -69,26 +84,9 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
             persist: persistNewResults,
         }
         if (validationRuleGroupId !== ALL_VALIDATION_RULE_GROUPS_ID) {
-            request.vrg = validationRuleGroupId
+            params.vrg = validationRuleGroupId
         }
-
-        setLoading(true)
-        try {
-            const response = await api.post(
-                apiConf.endpoints.validationRulesAnalysis,
-                request
-            )
-            const elements = response.map(convertElementFromApiResponse)
-            setElements(elements)
-            if (elements.length > 0) {
-                showTable()
-            } else {
-                validationPassedAlert.show()
-            }
-        } catch (error) {
-            errorAlert.show({ error })
-        }
-        setLoading(false)
+        validate(params)
     }
     const formValid = !!(startDate && endDate && organisationUnitId)
     const shouldShowMaxResultsAlertBar =

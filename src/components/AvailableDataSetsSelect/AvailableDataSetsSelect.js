@@ -1,35 +1,28 @@
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { MultiSelect, MultiSelectOption, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+
+const query = {
+    dataSets: {
+        resource: 'dataSets',
+        params: {
+            fields: 'id,displayName',
+            paging: false,
+        },
+    },
+}
 
 const AvailableDatasetsSelect = ({ selected, onChange }) => {
-    const [dataSets, setDataSets] = useState(null)
-    const [error, setError] = useState(false)
-    const { d2 } = useD2()
-
-    const fetchDataSets = async () => {
-        try {
-            const dataSetsResponse = await d2.models.dataSet.list({
-                paging: false,
-                fields: 'id,displayName',
-            })
-            setDataSets(dataSetsResponse.toArray())
-        } catch (error) {
-            setError(true)
-        }
-    }
-
-    useEffect(() => {
-        fetchDataSets()
-    }, [])
+    const { loading, error, data } = useDataQuery(query)
+    const dataSets = data?.dataSets.dataSets
 
     return (
         <>
             <MultiSelect
                 error={error}
-                loading={!dataSets}
+                loading={loading}
                 filterable
                 noMatchText={i18n.t('No match found')}
                 onChange={onChange}

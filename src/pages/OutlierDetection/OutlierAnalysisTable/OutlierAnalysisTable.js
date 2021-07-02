@@ -10,7 +10,6 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
-import { apiConf } from '../../../server.conf'
 import cssPageStyles from '../../Page.module.css'
 import { Z_SCORE, MIN_MAX } from '../constants'
 import ElementRow from './ElementRow'
@@ -27,7 +26,7 @@ const OutlierAnalyisTable = ({
     const downloadLink = (
         <DownloadAs
             fileTypes={['csv']}
-            endpoint={apiConf.endpoints.outlierDetection}
+            endpoint={'/outlierDetection'}
             queryStr={csvQueryStr}
         />
     )

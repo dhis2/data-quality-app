@@ -52,6 +52,7 @@ const ElementRow = ({ element, isZScoreAlgorithm, onToggleCheckbox }) => (
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.centerFlex}>
             <span className={cssPageStyles.checkboxWrapper}>
+                {/* TODO: Show loading spinner if waiting for onToggleCheckbox to resolve/reject */}
                 <Checkbox
                     checked={element.marked}
                     onCheck={() => onToggleCheckbox(element)}
