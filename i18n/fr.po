@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -193,11 +193,11 @@ msgstr "Valider"
 msgid "[All Validation Rules]"
 msgstr "[Toutes les règles de validation]"
 
-msgid "Error loading validation rule groups: {{error}}"
-msgstr ""
-
 msgid "Validation Rule Group"
 msgstr "Groupe de règles de validation"
+
+msgid "Error loading validation rule groups: {{- error}}"
+msgstr ""
 
 msgid "Validation passed successfully"
 msgstr "Succès de la validation"

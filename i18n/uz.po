@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -185,11 +185,11 @@ msgstr "Тасдиқлаш"
 msgid "[All Validation Rules]"
 msgstr "[Барча тасдиқлаш қоидалари]"
 
-msgid "Error loading validation rule groups: {{error}}"
-msgstr ""
-
 msgid "Validation Rule Group"
 msgstr "Текширув гуруҳи қоидалари"
+
+msgid "Error loading validation rule groups: {{- error}}"
+msgstr ""
 
 msgid "Validation passed successfully"
 msgstr "Тасдиқлаш Маваффақиятли Ўтди"
