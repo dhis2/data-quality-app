@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -186,11 +186,11 @@ msgstr "تحقق"
 msgid "[All Validation Rules]"
 msgstr "[جميع قواعد التحقق]"
 
-msgid "Error loading validation rule groups: {{error}}"
-msgstr ""
-
 msgid "Validation Rule Group"
 msgstr "مجموعة قواعد التحقق"
+
+msgid "Error loading validation rule groups: {{- error}}"
+msgstr ""
 
 msgid "Validation passed successfully"
 msgstr "تم اجتياز التحقق بنجاح"

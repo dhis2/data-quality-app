@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-18T12:06:57.717Z\n"
+"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -186,11 +186,11 @@ msgstr "Kiểm tra hợp lệ"
 msgid "[All Validation Rules]"
 msgstr "[Tất cả các quy tắc xác thực]"
 
-msgid "Error loading validation rule groups: {{error}}"
-msgstr ""
-
 msgid "Validation Rule Group"
 msgstr "Nhóm luật hợp lệ"
+
+msgid "Error loading validation rule groups: {{- error}}"
+msgstr ""
 
 msgid "Validation passed successfully"
 msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
