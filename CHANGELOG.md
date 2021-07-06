@@ -1,3 +1,10 @@
+## [1.7.19](https://github.com/dhis2/data-quality-app/compare/v1.7.18...v1.7.19) (2021-07-06)
+
+
+### Bug Fixes
+
+* bump cli-app-scripts to 7.1.0 ([#793](https://github.com/dhis2/data-quality-app/issues/793)) ([ce38499](https://github.com/dhis2/data-quality-app/commit/ce3849912a2ef6dd7b0deeba43606462a72951c1))
+
 ## [1.7.18](https://github.com/dhis2/data-quality-app/compare/v1.7.17...v1.7.18) (2021-07-02)
 
 
