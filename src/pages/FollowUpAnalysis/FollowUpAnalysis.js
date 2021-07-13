@@ -28,10 +28,10 @@ const query = {
 }
 
 const unfollowMutation = {
-    resource: 'dataAnalysis/followup/mark',
-    type: 'create',
-    data: ({ followups }) => ({
-        followups,
+    resource: 'dataValues/followups',
+    type: 'update',
+    data: ({ values }) => ({
+        values,
     }),
 }
 
@@ -114,7 +114,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
     const handleUnfollow = async () => {
         const unfollowups = elements.filter(element => element.marked)
         unfollow({
-            followups: unfollowups.map(convertElementToUnFollowupRequest),
+            values: unfollowups.map(convertElementToUnFollowupRequest),
         }).then(() => {
             setElements(
                 elements.filter(element => !unfollowups.includes(element))
