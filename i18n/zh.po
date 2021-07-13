@@ -190,7 +190,7 @@ msgid "Validation Rule Group"
 msgstr "验证规则组"
 
 msgid "Error loading validation rule groups: {{- error}}"
-msgstr ""
+msgstr "加载验证规则组时出错：{{- error}}"
 
 msgid "Validation passed successfully"
 msgstr "验证已成功"
