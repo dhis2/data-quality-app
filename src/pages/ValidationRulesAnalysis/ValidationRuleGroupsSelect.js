@@ -21,18 +21,14 @@ const query = {
 }
 
 const ValidationRuleGroupsSelect = ({ onChange }) => {
-    const [validationRuleGroups, setValidationRuleGroups] = useState([
-        ALL_VALIDATION_RULE_GROUPS_OPTION,
-    ])
     const [selected, setSelected] = useState(ALL_VALIDATION_RULE_GROUPS_ID)
-    const { loading, error } = useDataQuery(query, {
-        onComplete: data => {
-            setValidationRuleGroups([
-                ALL_VALIDATION_RULE_GROUPS_OPTION,
-                ...data.validationRuleGroups.validationRuleGroups,
-            ])
-        },
-    })
+    const { loading, error, data } = useDataQuery(query)
+    const validationRuleGroups = data
+        ? [
+              ALL_VALIDATION_RULE_GROUPS_OPTION,
+              ...data.validationRuleGroups.validationRuleGroups,
+          ]
+        : [ALL_VALIDATION_RULE_GROUPS_OPTION]
 
     const handleChange = ({ selected }) => {
         setSelected(selected)
