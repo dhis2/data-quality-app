@@ -1,9 +1,9 @@
 const convertElementToUnFollowupRequest = e => ({
-    dataElementId: e.dataElementId,
-    periodId: e.periodId,
-    organisationUnitId: e.organisationUnitId,
-    categoryOptionComboId: e.categoryOptionComboId,
-    attributeOptionComboId: e.attributeOptionComboId,
+    dataElement: e.dataElementId,
+    period: e.periodId,
+    orgUnit: e.organisationUnitId,
+    categoryOptionCombo: e.categoryOptionComboId || null,
+    attributeOptionCombo: e.attributeOptionComboId || null,
     followup: false,
 })
 
