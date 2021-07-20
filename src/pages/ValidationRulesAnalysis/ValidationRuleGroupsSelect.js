@@ -58,7 +58,7 @@ const ValidationRuleGroupsSelect = ({ onChange }) => {
                     {i18n.t(
                         'Error loading validation rule groups: {{- error}}',
                         {
-                            nsSeparator: null,
+                            nsSeparator: '-:-',
                             error,
                         }
                     )}
