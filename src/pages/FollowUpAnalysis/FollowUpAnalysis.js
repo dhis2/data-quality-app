@@ -61,23 +61,21 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
-    const [
-        fetchFollowUpList,
-        { loading: loadingFollowUpList },
-    ] = useDataMutation(followUpAnalysisMutation, {
-        onComplete: response => {
-            const elements = response.map(convertElementFromApiResponse)
-            setElements(elements)
-            if (elements.length > 0) {
-                showTable()
-            } else {
-                noValuesFoundAlert.show()
-            }
-        },
-        onError: error => {
-            errorAlert.show({ error })
-        },
-    })
+    const [fetchFollowUpList, { loading: loadingFollowUpList }] =
+        useDataMutation(followUpAnalysisMutation, {
+            onComplete: response => {
+                const elements = response.map(convertElementFromApiResponse)
+                setElements(elements)
+                if (elements.length > 0) {
+                    showTable()
+                } else {
+                    noValuesFoundAlert.show()
+                }
+            },
+            onError: error => {
+                errorAlert.show({ error })
+            },
+        })
     const [unfollow, { loading: loadingUnfollow }] = useDataMutation(
         unfollowMutation,
         {

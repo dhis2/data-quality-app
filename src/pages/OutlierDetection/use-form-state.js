@@ -12,9 +12,8 @@ const useFormState = () => {
     const [endDate, setEndDate] = useState(new Date())
     const [organisationUnitIds, setOrganisationUnitIds] = useState([])
     const [algorithm, setAlgorithm] = useState(DEFAULT_ALGORITHM)
-    const [showAdvancedZScoreFields, setShowAdvancedZScoreFields] = useState(
-        false
-    )
+    const [showAdvancedZScoreFields, setShowAdvancedZScoreFields] =
+        useState(false)
     const [threshold, setThreshold] = useState(DEFAULT_THRESHOLD)
     const [orderBy, setOrderBy] = useState(DEFAULT_ORDER_BY)
     const [dataStartDate, setDataStartDate] = useState(null)
