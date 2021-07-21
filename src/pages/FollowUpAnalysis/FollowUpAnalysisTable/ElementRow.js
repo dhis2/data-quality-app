@@ -17,13 +17,17 @@ const ElementRow = ({ element, onCheckboxToggle, onShowComment }) => (
         <TableRowColumn>{element.organisation}</TableRowColumn>
         <TableRowColumn>{element.period}</TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
-            {element.min && <FormattedNumber value={element.min} />}
+            {typeof element.min === 'number' && (
+                <FormattedNumber value={element.min} />
+            )}
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber value={element.value} />
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
-            {element.max && <FormattedNumber value={element.max} />}
+            {typeof element.max === 'number' && (
+                <FormattedNumber value={element.max} />
+            )}
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.centerFlex}>
             <span className={cssPageStyles.checkboxWrapper}>
