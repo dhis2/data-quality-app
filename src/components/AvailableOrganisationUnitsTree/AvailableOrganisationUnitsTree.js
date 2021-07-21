@@ -1,7 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { OrganisationUnitTree } from '@dhis2/ui'
-import { CircularLoader, Help } from '@dhis2/ui'
+import { OrganisationUnitTree, CircularLoader, Help } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import styles from './AvailableOrganisationUnitsTree.module.css'

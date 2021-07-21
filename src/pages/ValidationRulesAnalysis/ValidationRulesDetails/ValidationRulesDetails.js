@@ -37,7 +37,11 @@ const ValidationRulesDetails = ({
     const errorAlert = useAlert(({ error }) => error.message, {
         critical: true,
     })
-    const { loading, data, refetch: fetchDetails } = useDataQuery(query, {
+    const {
+        loading,
+        data,
+        refetch: fetchDetails,
+    } = useDataQuery(query, {
         lazy: true,
         variables: {
             validationRuleId,
