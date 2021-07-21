@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
+import { Button, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -66,7 +66,14 @@ const Form = ({
             disabled={!valid || loading}
             onClick={onSubmit}
         >
-            {i18n.t('Follow up')}
+            {loading ? (
+                <>
+                    {i18n.t('Processing...')}
+                    <CircularLoader small />
+                </>
+            ) : (
+                i18n.t('Follow up')
+            )}
         </Button>
     </>
 )

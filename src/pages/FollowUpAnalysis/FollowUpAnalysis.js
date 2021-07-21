@@ -1,4 +1,4 @@
-import { useDataMutation, useAlert } from '@dhis2/app-runtime'
+import { useDataQuery, useDataMutation, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -15,22 +15,23 @@ import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable
 import Form from './Form'
 import useFormState from './use-form-state'
 
-// TODO: Replace with new UUID-based `GET /dataAnalysis/followup` API
-const followUpAnalysisMutation = {
-    resource: 'dataAnalysis/followup',
-    type: 'create',
-    data: ({ startDate, endDate, ou, ds }) => ({
-        startDate,
-        endDate,
-        ou,
-        ds,
-    }),
+const query = {
+    followups: {
+        resource: 'dataAnalysis/followup',
+        params: ({ startDate, endDate, ou, ds }) => ({
+            startDate,
+            endDate,
+            ou,
+            ds,
+        }),
+    },
 }
+
 const unfollowMutation = {
-    resource: 'dataAnalysis/followup/mark',
-    type: 'create',
-    data: ({ followups }) => ({
-        followups,
+    resource: 'dataValues/followups',
+    type: 'update',
+    data: ({ values }) => ({
+        values,
     }),
 }
 
@@ -61,10 +62,13 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
-    const [fetchFollowUpList, { loading: loadingFollowUpList }] =
-        useDataMutation(followUpAnalysisMutation, {
-            onComplete: response => {
-                const elements = response.map(convertElementFromApiResponse)
+    const { loading: loadingFollowUpList, refetch: fetchFollowUpList } =
+        useDataQuery(query, {
+            lazy: true,
+            onComplete: data => {
+                const elements = data.followups.followupValues.map(
+                    convertElementFromApiResponse
+                )
                 setElements(elements)
                 if (elements.length > 0) {
                     showTable()
@@ -108,7 +112,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
     const handleUnfollow = async () => {
         const unfollowups = elements.filter(element => element.marked)
         unfollow({
-            followups: unfollowups.map(convertElementToUnFollowupRequest),
+            values: unfollowups.map(convertElementToUnFollowupRequest),
         }).then(() => {
             setElements(
                 elements.filter(element => !unfollowups.includes(element))
