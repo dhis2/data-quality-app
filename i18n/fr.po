@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
+"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -106,6 +106,9 @@ msgstr "Date de début"
 msgid "End Date"
 msgstr "Date de fin"
 
+msgid "Processing..."
+msgstr "Traitement en cours"
+
 msgid "Follow up"
 msgstr "Suivi"
 
@@ -126,9 +129,6 @@ msgstr "Algorithme"
 
 msgid "Max results"
 msgstr "Max résultats"
-
-msgid "Processing..."
-msgstr "Traitement en cours"
 
 msgid "Start"
 msgstr "Démarrer"

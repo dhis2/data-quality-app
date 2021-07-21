@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
+"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -96,6 +96,9 @@ msgstr "Datum začátku"
 msgid "End Date"
 msgstr "Datum ukončení"
 
+msgid "Processing..."
+msgstr "Zpracovává se..."
+
 msgid "Follow up"
 msgstr "Následovat"
 
@@ -116,9 +119,6 @@ msgstr "Algoritmus"
 
 msgid "Max results"
 msgstr "Max. Počet výsledků"
-
-msgid "Processing..."
-msgstr "Zpracovává se..."
 
 msgid "Start"
 msgstr "Start"
