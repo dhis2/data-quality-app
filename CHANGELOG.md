@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/dhis2/data-quality-app/compare/v1.7.21...v1.8.0) (2021-07-21)
+
+
+### Features
+
+* use new ID-based followups API ([#797](https://github.com/dhis2/data-quality-app/issues/797)) ([b1c76ed](https://github.com/dhis2/data-quality-app/commit/b1c76ed966731dd9a73147b4d81f0915cc1d82fe))
+
 ## [1.7.21](https://github.com/dhis2/data-quality-app/compare/v1.7.20...v1.7.21) (2021-07-21)
 
 
