@@ -1,3 +1,10 @@
+## [1.7.21](https://github.com/dhis2/data-quality-app/compare/v1.7.20...v1.7.21) (2021-07-21)
+
+
+### Bug Fixes
+
+* make src/locales/index.js first import in src/App.js ([#798](https://github.com/dhis2/data-quality-app/issues/798)) ([0ceadd0](https://github.com/dhis2/data-quality-app/commit/0ceadd06404ab8b3506a96863b3270cb22349a7f))
+
 ## [1.7.20](https://github.com/dhis2/data-quality-app/compare/v1.7.19...v1.7.20) (2021-07-13)
 
 

@@ -62,26 +62,24 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
-    const {
-        loading: loadingFollowUpList,
-        refetch: fetchFollowUpList,
-    } = useDataQuery(query, {
-        lazy: true,
-        onComplete: data => {
-            const elements = data.followups.followupValues.map(
-                convertElementFromApiResponse
-            )
-            setElements(elements)
-            if (elements.length > 0) {
-                showTable()
-            } else {
-                noValuesFoundAlert.show()
-            }
-        },
-        onError: error => {
-            errorAlert.show({ error })
-        },
-    })
+    const { loading: loadingFollowUpList, refetch: fetchFollowUpList } =
+        useDataQuery(query, {
+            lazy: true,
+            onComplete: data => {
+                const elements = data.followups.followupValues.map(
+                    convertElementFromApiResponse
+                )
+                setElements(elements)
+                if (elements.length > 0) {
+                    showTable()
+                } else {
+                    noValuesFoundAlert.show()
+                }
+            },
+            onError: error => {
+                errorAlert.show({ error })
+            },
+        })
     const [unfollow, { loading: loadingUnfollow }] = useDataMutation(
         unfollowMutation,
         {
