@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
+"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -99,6 +99,9 @@ msgstr ""
 msgid "End Date"
 msgstr ""
 
+msgid "Processing..."
+msgstr "Коркард..."
+
 msgid "Follow up"
 msgstr ""
 
@@ -119,9 +122,6 @@ msgstr ""
 
 msgid "Max results"
 msgstr ""
-
-msgid "Processing..."
-msgstr "Коркард..."
 
 msgid "Start"
 msgstr "Оғоз"

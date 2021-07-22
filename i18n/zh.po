@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-01T16:30:31.413Z\n"
+"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -99,6 +99,9 @@ msgstr "开始日期"
 msgid "End Date"
 msgstr "结束日期"
 
+msgid "Processing..."
+msgstr "正在处理......"
+
 msgid "Follow up"
 msgstr "后续跟踪"
 
@@ -119,9 +122,6 @@ msgstr "算法"
 
 msgid "Max results"
 msgstr "最大结果"
-
-msgid "Processing..."
-msgstr "正在处理......"
 
 msgid "Start"
 msgstr "开始"
