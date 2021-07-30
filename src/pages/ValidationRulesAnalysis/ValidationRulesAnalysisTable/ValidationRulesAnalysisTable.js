@@ -21,7 +21,7 @@ const ValidationRulesAnalysisTable = ({ elements }) => {
     )
 
     return (
-        <div>
+        <div data-test="validation-rules-violations-table">
             <div className={cssPageStyles.cardHeader}>
                 <DownloadAs
                     endpoint={apiConf.endpoints.validationRulesReport}
