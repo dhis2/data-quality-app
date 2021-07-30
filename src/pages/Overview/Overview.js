@@ -5,7 +5,7 @@ import GridSection from './grid-section/GridSection'
 import styles from './Overview.module.css'
 
 const Overview = () => (
-    <div className="row">
+    <div className="row" data-test="overview">
         {sections.map(section => (
             <div
                 key={section.key}

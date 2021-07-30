@@ -3,3 +3,8 @@ node_modules
 .d2
 src/locales
 build
+
+# Yarn
+yarn-error.log
+
+cypress.env.json
