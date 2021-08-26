@@ -9,7 +9,7 @@ import { useSidebar } from '../../components/Sidebar/SidebarContext'
 import { convertDateToApiDateFormat } from '../../helpers/dates'
 import { apiConf } from '../../server.conf'
 import cssPageStyles from '../Page.module.css'
-import { Z_SCORE } from './constants'
+import { Z_SCORE_ALGORITHMS } from './constants'
 import convertElementFromApiResponse from './convert-element-from-api-response'
 import Form from './Form/Form'
 import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
@@ -116,7 +116,7 @@ const OutlierDetection = () => {
             maxResults,
             orderBy,
         }
-        if (algorithm === Z_SCORE) {
+        if (Z_SCORE_ALGORITHMS.has(algorithm)) {
             params.threshold = threshold
             if (dataStartDate) {
                 params.dataStartDate = convertDateToApiDateFormat(dataStartDate)

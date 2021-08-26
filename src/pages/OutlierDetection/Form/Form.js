@@ -9,7 +9,7 @@ import AvailableDataSetsSelect from '../../../components/AvailableDataSetsSelect
 import AvailableOrganisationUnitsTree from '../../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles'
-import { Z_SCORE, MIN_MAX } from '../constants'
+import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP } from '../constants'
 import ThresholdField from './ThresholdField'
 import ZScoreFields from './ZScoreFields'
 
@@ -82,10 +82,15 @@ const Form = ({
                     onChange={onAlgorithmChange}
                     value={algorithm}
                 >
-                    <MenuItem value={Z_SCORE} primaryText="Z-score" />
-                    <MenuItem value={MIN_MAX} primaryText="Min-max values" />
+                    {Object.keys(ALGORITHM_TO_LABEL_MAP).map(algo => (
+                        <MenuItem
+                            key={algo}
+                            value={algo}
+                            primaryText={ALGORITHM_TO_LABEL_MAP[algo]}
+                        />
+                    ))}
                 </SelectField>
-                {algorithm === Z_SCORE && (
+                {Z_SCORE_ALGORITHMS.has(algorithm) && (
                     <ThresholdField
                         threshold={threshold}
                         onChange={onThresholdChange}
@@ -101,8 +106,9 @@ const Form = ({
                     <MenuItem value={200} primaryText="200" />
                     <MenuItem value={500} primaryText="500" />
                 </SelectField>
-                {algorithm === Z_SCORE && (
+                {Z_SCORE_ALGORITHMS.has(algorithm) && (
                     <ZScoreFields
+                        algorithm={algorithm}
                         showAdvancedZScoreFields={showAdvancedZScoreFields}
                         onToggleAdvancedZScoreFields={
                             onToggleAdvancedZScoreFields
