@@ -73,7 +73,10 @@ const ZScoreFields = ({
                     onChange={onOrderByChange}
                     value={orderBy}
                 >
-                    <MenuItem value={algorithm} primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]} />
+                    <MenuItem
+                        value={algorithm}
+                        primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
+                    />
                     <MenuItem
                         value={MEAN_ABS_DEV}
                         primaryText="Absolute Deviation from Mean"

@@ -6,7 +6,7 @@ export const MEAN_ABS_DEV = 'MEAN_ABS_DEV'
 export const ALGORITHM_TO_LABEL_MAP = {
     Z_SCORE: 'Z-score',
     MOD_Z_SCORE: 'Modified Z-score',
-    MIN_MAX: 'Min-max values'
+    MIN_MAX: 'Min-max values',
 }
 
 export const Z_SCORE_ALGORITHMS = new Set([Z_SCORE, MODIFIED_Z_SCORE])
