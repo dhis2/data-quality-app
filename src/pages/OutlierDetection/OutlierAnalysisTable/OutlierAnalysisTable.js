@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
 import cssPageStyles from '../../Page.module.css'
-import { Z_SCORE, MIN_MAX } from '../constants'
+import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP } from '../constants'
 import ElementRow from './ElementRow'
 import styles from './OutlierAnalysisTable.module.css'
 
@@ -21,7 +21,7 @@ const OutlierAnalyisTable = ({
     onToggleCheckbox,
     algorithm,
 }) => {
-    const isZScoreAlgorithm = algorithm === Z_SCORE
+    const isZScoreAlgorithm = Z_SCORE_ALGORITHMS.has(algorithm)
 
     const downloadLink = (
         <DownloadAs
@@ -65,7 +65,7 @@ const OutlierAnalyisTable = ({
                             <TableHeaderColumn
                                 className={cssPageStyles.numericalRow}
                             >
-                                {i18n.t('Z-Score')}
+                                {i18n.t(ALGORITHM_TO_LABEL_MAP[algorithm])}
                             </TableHeaderColumn>
                         )}
                         <TableHeaderColumn
@@ -126,7 +126,7 @@ const OutlierAnalyisTable = ({
 }
 
 OutlierAnalyisTable.propTypes = {
-    algorithm: PropTypes.oneOf([Z_SCORE, MIN_MAX]).isRequired,
+    algorithm: PropTypes.oneOf(Array.from(Z_SCORE_ALGORITHMS)).isRequired,
     csvQueryStr: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
     onToggleCheckbox: PropTypes.func.isRequired,

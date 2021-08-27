@@ -86,7 +86,7 @@ const Form = ({
                         <MenuItem
                             key={algo}
                             value={algo}
-                            primaryText={ALGORITHM_TO_LABEL_MAP[algo]}
+                            primaryText={i18n.t(ALGORITHM_TO_LABEL_MAP[algo])}
                         />
                     ))}
                 </SelectField>
