@@ -6,7 +6,7 @@ import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 import jsPageStyles from '../../PageStyles'
-import { ALGORITHM_TO_LABEL_MAP, MEAN_ABS_DEV } from '../constants'
+import { Z_SCORE, MEAN_ABS_DEV } from '../constants'
 import styles from './ZScoreFields.module.css'
 
 const ZScoreFields = ({
@@ -74,8 +74,8 @@ const ZScoreFields = ({
                     value={orderBy}
                 >
                     <MenuItem
-                        value={algorithm}
-                        primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
+                        value={Z_SCORE}
+                        primaryText='Z-score'
                     />
                     <MenuItem
                         value={MEAN_ABS_DEV}
