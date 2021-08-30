@@ -11,7 +11,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
 import cssPageStyles from '../../Page.module.css'
-import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP, Z_SCORE } from '../constants'
+import {
+    Z_SCORE_ALGORITHMS,
+    ALGORITHM_TO_LABEL_MAP,
+    Z_SCORE,
+} from '../constants'
 import ElementRow from './ElementRow'
 import styles from './OutlierAnalysisTable.module.css'
 
