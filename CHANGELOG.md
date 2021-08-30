@@ -1,3 +1,20 @@
+# [1.9.0](https://github.com/dhis2/data-quality-app/compare/v1.8.3...v1.9.0) (2021-08-30)
+
+
+### Bug Fixes
+
+* dont use dynamic translation strings ([4d50489](https://github.com/dhis2/data-quality-app/commit/4d504891c7ab61f2b013b60085e4dcf2f3e6b4b2))
+* fix en.pot file ([5ab33d2](https://github.com/dhis2/data-quality-app/commit/5ab33d24f4267a11cb7b81a90eae903164676d9e))
+* null dataStartDate and dataEndDate when cleared ([50fd13f](https://github.com/dhis2/data-quality-app/commit/50fd13f6746f414cc87e42e12ccde067b9f0bcf5))
+* show modified Z-score in table, translate ([89f7447](https://github.com/dhis2/data-quality-app/commit/89f74474b57af73272eee8b393c8a08b1b94e663))
+* use median for modified z-score ([3cb3a9c](https://github.com/dhis2/data-quality-app/commit/3cb3a9cd34df1cdfff1004f5820475f37f39e555))
+* use z-score for sorting instead of mod-z-score ([ccbd752](https://github.com/dhis2/data-quality-app/commit/ccbd752ce344f1d07ffbaeee6bbacf31073996be))
+
+
+### Features
+
+* **outlier-detection:** support for modified z-score ([afe7ad0](https://github.com/dhis2/data-quality-app/commit/afe7ad07a5a4b4da120a1d31a29435323cef33b9))
+
 ## [1.8.3](https://github.com/dhis2/data-quality-app/compare/v1.8.2...v1.8.3) (2021-08-12)
 
 
