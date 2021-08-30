@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs'
 import cssPageStyles from '../../Page.module.css'
-import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP } from '../constants'
+import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP, Z_SCORE } from '../constants'
 import ElementRow from './ElementRow'
 import styles from './OutlierAnalysisTable.module.css'
 
@@ -84,9 +84,9 @@ const OutlierAnalyisTable = ({
                             <TableHeaderColumn
                                 className={cssPageStyles.numericalRow}
                             >
-                                {algorithm === 'MOD_Z_SCORE'
-                                    ? i18n.t('Median')
-                                    : i18n.t('Mean')}
+                                {algorithm === Z_SCORE
+                                    ? i18n.t('Mean')
+                                    : i18n.t('Median')}
                             </TableHeaderColumn>
                         )}
                         <TableHeaderColumn
