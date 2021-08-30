@@ -77,7 +77,7 @@ const ZScoreFields = ({
                         /* API uses Z-Score for both modified and regular Z-score
                         But we show the algorithm selected to user */
                         value={Z_SCORE}
-                        primaryText={i18n.t(ALGORITHM_TO_LABEL_MAP[algorithm])}
+                        primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
                     />
                     <MenuItem
                         value={MEAN_ABS_DEV}
