@@ -116,7 +116,7 @@ const OutlierDetection = () => {
             maxResults,
             orderBy,
             dataStartDate: null, // needed to clear previous values
-            dataEndDate: null
+            dataEndDate: null,
         }
         if (Z_SCORE_ALGORITHMS.has(algorithm)) {
             params.threshold = threshold
