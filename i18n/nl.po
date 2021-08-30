@@ -159,7 +159,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 msgid "Details"
 msgstr ""
