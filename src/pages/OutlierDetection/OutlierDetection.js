@@ -115,16 +115,20 @@ const OutlierDetection = () => {
             algorithm,
             maxResults,
             orderBy,
+            dataStartDate: null, // needed to clear previous values
+            dataEndDate: null
         }
         if (Z_SCORE_ALGORITHMS.has(algorithm)) {
             params.threshold = threshold
             if (dataStartDate) {
+                console.log('has startDate', dataStartDate)
                 params.dataStartDate = convertDateToApiDateFormat(dataStartDate)
             }
             if (dataEndDate) {
                 params.dataEndDate = convertDateToApiDateFormat(dataEndDate)
             }
         }
+        console.log('fetch with params', params)
         fetchOutliers(params)
         setCsvQueryStr(queryString.stringify(params))
     }
