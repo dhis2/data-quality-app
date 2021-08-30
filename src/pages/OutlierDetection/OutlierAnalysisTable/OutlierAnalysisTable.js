@@ -65,7 +65,7 @@ const OutlierAnalyisTable = ({
                             <TableHeaderColumn
                                 className={cssPageStyles.numericalRow}
                             >
-                                {i18n.t(ALGORITHM_TO_LABEL_MAP[algorithm])}
+                                {ALGORITHM_TO_LABEL_MAP[algorithm]}
                             </TableHeaderColumn>
                         )}
                         <TableHeaderColumn
@@ -84,7 +84,9 @@ const OutlierAnalyisTable = ({
                             <TableHeaderColumn
                                 className={cssPageStyles.numericalRow}
                             >
-                                {i18n.t('Mean')}
+                                {algorithm === 'MOD_Z_SCORE'
+                                    ? i18n.t('Median')
+                                    : i18n.t('Mean')}
                             </TableHeaderColumn>
                         )}
                         <TableHeaderColumn

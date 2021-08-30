@@ -128,7 +128,6 @@ const OutlierDetection = () => {
                 params.dataEndDate = convertDateToApiDateFormat(dataEndDate)
             }
         }
-        console.log('fetch with params', params)
         fetchOutliers(params)
         setCsvQueryStr(queryString.stringify(params))
     }

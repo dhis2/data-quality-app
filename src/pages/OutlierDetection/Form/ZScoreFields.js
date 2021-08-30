@@ -75,13 +75,17 @@ const ZScoreFields = ({
                 >
                     <MenuItem
                         /* API uses Z-Score for both modified and regular Z-score
-                        But we show the algorithm selected to user */
+                        But show the algorithm selected to user */
                         value={Z_SCORE}
                         primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
                     />
                     <MenuItem
                         value={MEAN_ABS_DEV}
-                        primaryText={i18n.t('Absolute Deviation from Mean')}
+                        primaryText={
+                            algorithm === Z_SCORE
+                                ? i18n.t('Absolute Deviation from Mean')
+                                : i18n.t('Absolute Deviation from Median')
+                        }
                     />
                 </SelectField>
             </>
