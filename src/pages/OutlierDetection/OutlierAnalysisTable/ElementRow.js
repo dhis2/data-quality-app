@@ -33,7 +33,7 @@ const ElementRow = ({ element, isZScoreAlgorithm, onToggleCheckbox }) => (
         {isZScoreAlgorithm && (
             <TableRowColumn className={cssPageStyles.numericalRow}>
                 <FormattedNumber
-                    value={element.mean}
+                    value={element.mean || element.median}
                     minimumFractionDigits={0}
                 />
             </TableRowColumn>

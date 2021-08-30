@@ -6,10 +6,11 @@ import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 import jsPageStyles from '../../PageStyles'
-import { Z_SCORE, MEAN_ABS_DEV } from '../constants'
+import { Z_SCORE, MEAN_ABS_DEV, ALGORITHM_TO_LABEL_MAP } from '../constants'
 import styles from './ZScoreFields.module.css'
 
 const ZScoreFields = ({
+    algorithm,
     showAdvancedZScoreFields,
     onToggleAdvancedZScoreFields,
     orderBy,
@@ -72,10 +73,19 @@ const ZScoreFields = ({
                     onChange={onOrderByChange}
                     value={orderBy}
                 >
-                    <MenuItem value={Z_SCORE} primaryText="Z-score" />
+                    <MenuItem
+                        /* API uses Z-Score for both modified and regular Z-score
+                        But show the algorithm selected to user */
+                        value={Z_SCORE}
+                        primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
+                    />
                     <MenuItem
                         value={MEAN_ABS_DEV}
-                        primaryText="Absolute Deviation from Mean"
+                        primaryText={
+                            algorithm === Z_SCORE
+                                ? i18n.t('Absolute Deviation from Mean')
+                                : i18n.t('Absolute Deviation from Median')
+                        }
                     />
                 </SelectField>
             </>
@@ -90,6 +100,7 @@ ZScoreFields.propTypes = {
     onDataStartDateChange: PropTypes.func.isRequired,
     onOrderByChange: PropTypes.func.isRequired,
     onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
+    algorithm: PropTypes.string,
     dataEndDate: PropTypes.object,
     dataStartDate: PropTypes.object,
 }
