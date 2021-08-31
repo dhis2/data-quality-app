@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
+"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -154,8 +154,8 @@ msgstr "Date de fin des données"
 msgid "Sort by"
 msgstr "Trier par"
 
-msgid "Z-Score"
-msgstr "Z-Score"
+msgid "Absolute Deviation from Mean"
+msgstr ""
 
 msgid "Deviation"
 msgstr "Déviation"
@@ -177,6 +177,15 @@ msgstr "Non marqué pour suivi"
 
 msgid "Outlier Detection"
 msgstr "Détection des valeurs atypiques"
+
+msgid "Z-score"
+msgstr ""
+
+msgid "Modified Z-score"
+msgstr ""
+
+msgid "Min-max values"
+msgstr ""
 
 msgid "Send Notifications"
 msgstr "Envoyer les notification"

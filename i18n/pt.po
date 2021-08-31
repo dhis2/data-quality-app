@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-07-14T10:00:52.368Z\n"
+"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Sort by"
 msgstr "Ordenar por"
 
-msgid "Z-Score"
+msgid "Absolute Deviation from Mean"
 msgstr ""
 
 msgid "Deviation"
@@ -171,6 +171,15 @@ msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Outlier Detection"
+msgstr ""
+
+msgid "Z-score"
+msgstr ""
+
+msgid "Modified Z-score"
+msgstr ""
+
+msgid "Min-max values"
 msgstr ""
 
 msgid "Send Notifications"
