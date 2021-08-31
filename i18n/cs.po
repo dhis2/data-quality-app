@@ -172,7 +172,7 @@ msgid "Z-score"
 msgstr ""
 
 msgid "Modified Z-score"
-msgstr ""
+msgstr "Upravené Z-skóre"
 
 msgid "Min-max values"
 msgstr ""
