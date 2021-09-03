@@ -148,7 +148,7 @@ msgid "Sort by"
 msgstr "排序"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "与平均值的绝对偏差"
 
 msgid "Deviation"
 msgstr "偏差"
@@ -172,13 +172,13 @@ msgid "Outlier Detection"
 msgstr "离群值检测"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Z-分数"
 
 msgid "Modified Z-score"
-msgstr ""
+msgstr "修正 Z 分数"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "最小值-最大值"
 
 msgid "Send Notifications"
 msgstr "发送通知"
