@@ -145,7 +145,7 @@ msgid "Sort by"
 msgstr "Seřazeno podle"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "Absolutní odchylka od průměru"
 
 msgid "Deviation"
 msgstr "Odchylka"
@@ -169,13 +169,13 @@ msgid "Outlier Detection"
 msgstr "Detekce odlehlých hodnot"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Z-score"
 
 msgid "Modified Z-score"
 msgstr "Upravené Z-skóre"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "Min-max hodnoty"
 
 msgid "Send Notifications"
 msgstr "Odeslat oznámení"
