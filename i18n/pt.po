@@ -1,7 +1,7 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
 # 
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2021-09-03 23:45+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgid "Comment"
 msgstr "Comentário"
 
 msgid "Close"
-msgstr "fFechar"
+msgstr "Fechar"
 
 msgid "Data Element"
 msgstr "Elemento de dados"
@@ -72,7 +72,7 @@ msgid "Organisation Unit"
 msgstr "Unidade organizacional"
 
 msgid "Period"
-msgstr "Periodo"
+msgstr "Período"
 
 msgid "Min"
 msgstr "Mínimo"
@@ -81,7 +81,7 @@ msgid "Value"
 msgstr "Valor"
 
 msgid "Max"
-msgstr "Máximo"
+msgstr "Máx"
 
 msgid "Unfollow"
 msgstr "Deixar de seguir"

@@ -1,11 +1,10 @@
 # 
 # Translators:
-# Matthieu Pinard <matthieu@pinard.no>, 2019
-# Bram Piot <bram.piot@gmail.com>, 2019
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Yao Selom Saka <ysaka@hispwca.org>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
+# Matthieu Pinard <matthieu@pinard.no>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2021-09-03 23:45+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -230,7 +229,7 @@ msgid "Operator"
 msgstr "Opérateur"
 
 msgid "Details"
-msgstr "Détails"
+msgstr "Details"
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr "DÉTAILS DES RÉSULTATS DE VALIDATIONS"

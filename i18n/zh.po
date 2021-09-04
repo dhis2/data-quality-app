@@ -1,7 +1,7 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2021
 # 
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2021-09-03 23:45+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "No match found"
-msgstr "找不到匹配项"
+msgstr "未找到匹配项"
 
 msgid "Error loading datasets."
 msgstr "加载数据集时出错。"
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr "加载组织单位时出了点问题。"
+msgstr "加载您的组织单位时出现问题。"
 
 msgid "You do not have access to any organisation units."
 msgstr "您无权访问任何组织单位。"
@@ -37,7 +37,7 @@ msgid "Download as PDF"
 msgstr "获取pdf格式报表"
 
 msgid "Download as XLS"
-msgstr "下载为XLS"
+msgstr "下载为 XLS"
 
 msgid "Download as CSV"
 msgstr "获取CSV格式报表"
@@ -70,7 +70,7 @@ msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Period"
-msgstr "周期"
+msgstr "期间"
 
 msgid "Min"
 msgstr "最小"
@@ -127,7 +127,7 @@ msgid "Start"
 msgstr "开始"
 
 msgid "Threshold"
-msgstr "阈"
+msgstr "临界点"
 
 msgid "Hide advanced options"
 msgstr "隐藏高级选项"
@@ -148,7 +148,7 @@ msgid "Sort by"
 msgstr "排序"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "与平均值的绝对偏差"
 
 msgid "Deviation"
 msgstr "偏差"
@@ -166,19 +166,19 @@ msgid "Marked for follow-up"
 msgstr "标记为后续"
 
 msgid "Unmarked for follow-up"
-msgstr "未标记为后续"
+msgstr "未标记跟进"
 
 msgid "Outlier Detection"
-msgstr "离群值检测"
+msgstr "异常值检测"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Z-分数"
 
 msgid "Modified Z-score"
-msgstr ""
+msgstr "修正 Z 分数"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "最小值-最大值"
 
 msgid "Send Notifications"
 msgstr "发送通知"
@@ -267,12 +267,12 @@ msgid "Run Validation"
 msgstr "运行有效性验证"
 
 msgid "Outlier detection"
-msgstr "离群值检测"
+msgstr "异常值检测"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
-msgstr "根据标准偏差或最小-最大值分析潜在的异常值。可以检查异常值并标记以进行后续处理。"
+msgstr "根据标准偏差或最小值-最大值分析潜在的异常值。可以检查异常值并标记以进行后续跟踪。"
 
 msgid "Analyze"
 msgstr "分析"
