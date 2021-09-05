@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
+"PO-Revision-Date: 2021-09-03 23:45+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgid "Sort by"
 msgstr "Seřazeno podle"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "Absolutní odchylka od průměru"
 
 msgid "Deviation"
 msgstr "Odchylka"
@@ -169,13 +169,13 @@ msgid "Outlier Detection"
 msgstr "Detekce odlehlých hodnot"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Z-score"
 
 msgid "Modified Z-score"
 msgstr "Upravené Z-skóre"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "Min-max hodnoty"
 
 msgid "Send Notifications"
 msgstr "Odeslat oznámení"
