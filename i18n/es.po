@@ -99,7 +99,7 @@ msgid "Start Date"
 msgstr "Fecha de inicio"
 
 msgid "End Date"
-msgstr "Fecha de finalización"
+msgstr "Fecha de fin"
 
 msgid "Processing..."
 msgstr "Procesando…"
