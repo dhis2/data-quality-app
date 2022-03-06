@@ -1,3 +1,10 @@
+## [1.9.11](https://github.com/dhis2/data-quality-app/compare/v1.9.10...v1.9.11) (2022-03-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([424fddf](https://github.com/dhis2/data-quality-app/commit/424fddf73dd07412f630dfadde37ee9d06c193f4))
+
 ## [1.9.10](https://github.com/dhis2/data-quality-app/compare/v1.9.9...v1.9.10) (2022-02-15)
 
 
