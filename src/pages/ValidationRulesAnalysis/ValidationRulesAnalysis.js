@@ -18,7 +18,7 @@ import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/Validat
 const validationMutation = {
     resource: 'dataAnalysis/validationRules',
     type: 'create',
-    data: data => data,
+    data: (data) => data,
 }
 
 const ValidationRulesAnalysis = ({ sectionKey }) => {
@@ -52,7 +52,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         { critical: true }
     )
     const [validate, { loading }] = useDataMutation(validationMutation, {
-        onComplete: data => {
+        onComplete: (data) => {
             const elements = data.map(convertElementFromApiResponse)
             setElements(elements)
             if (elements.length > 0) {
@@ -61,7 +61,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
                 validationPassedAlert.show()
             }
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })

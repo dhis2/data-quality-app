@@ -17,7 +17,7 @@ import styles from './ValidationRulesAnalysisTable.module.css'
 
 const ValidationRulesAnalysisTable = ({ elements }) => {
     const shouldDisplayAttributeOptionCombo = elements.some(
-        e => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
+        (e) => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
     )
 
     return (
@@ -76,7 +76,7 @@ const ValidationRulesAnalysisTable = ({ elements }) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {elements.map(element => (
+                    {elements.map((element) => (
                         <ElementRow
                             key={element.key}
                             element={element}

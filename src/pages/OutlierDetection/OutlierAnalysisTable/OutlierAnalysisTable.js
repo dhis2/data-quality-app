@@ -109,7 +109,7 @@ const OutlierAnalyisTable = ({
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {elements.map(element => (
+                    {elements.map((element) => (
                         <ElementRow
                             key={element.key}
                             element={element}

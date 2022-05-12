@@ -5,7 +5,7 @@ import { sections } from '../../pages/sections.conf'
 import NoMatch from './NoMatch'
 
 const AppRouter = () => {
-    const routes = sections.map(section => {
+    const routes = sections.map((section) => {
         const routeRender = () => {
             const Page = section.component
             return <Page sectionKey={section.key} />

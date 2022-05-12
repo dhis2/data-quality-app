@@ -45,7 +45,7 @@ const ValidationRuleGroupsSelect = ({ onChange }) => {
                 filterable
                 onChange={handleChange}
             >
-                {validationRuleGroups.map(item => (
+                {validationRuleGroups.map((item) => (
                     <SingleSelectOption
                         key={item.id}
                         label={item.displayName}

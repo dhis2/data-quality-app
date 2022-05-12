@@ -39,7 +39,7 @@ const Section = ({ side, elements, classNameRow }) => {
             >
                 {i18n.t('VALUE')}
             </div>
-            {elements.map(element => (
+            {elements.map((element) => (
                 <div key={element.name} className={'col-xs-12'}>
                     <div className={'row'}>
                         <div className={'col-xs-10'}>{element.name}</div>

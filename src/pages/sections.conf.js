@@ -48,8 +48,8 @@ export const sections = [
     },
 ]
 
-export const getDocsKeyForSection = sectionKey => {
-    const section = sections.find(s => s.key === sectionKey)
+export const getDocsKeyForSection = (sectionKey) => {
+    const section = sections.find((s) => s.key === sectionKey)
     return section?.info.docs || ''
 }
 

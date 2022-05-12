@@ -23,7 +23,7 @@ const query = {
     },
     expression: {
         resource: 'dataAnalysis/validationRulesExpression',
-        params: params => params,
+        params: (params) => params,
     },
 }
 
@@ -52,7 +52,7 @@ const ValidationRulesDetails = ({
         onComplete: () => {
             handleModalOpen()
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })

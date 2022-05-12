@@ -65,7 +65,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
     const { loading: loadingFollowUpList, refetch: fetchFollowUpList } =
         useDataQuery(query, {
             lazy: true,
-            onComplete: data => {
+            onComplete: (data) => {
                 const elements = data.followups.followupValues.map(
                     convertElementFromApiResponse
                 )
@@ -76,7 +76,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
                     noValuesFoundAlert.show()
                 }
             },
-            onError: error => {
+            onError: (error) => {
                 errorAlert.show({ error })
             },
         })
@@ -86,7 +86,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             onComplete: () => {
                 successfulUnfollowAlert.show()
             },
-            onError: error => {
+            onError: (error) => {
                 errorAlert.show({ error })
             },
         }
@@ -110,18 +110,18 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         })
     }
     const handleUnfollow = async () => {
-        const unfollowups = elements.filter(element => element.marked)
+        const unfollowups = elements.filter((element) => element.marked)
         unfollow({
             values: unfollowups.map(convertElementToUnFollowupRequest),
         }).then(() => {
             setElements(
-                elements.filter(element => !unfollowups.includes(element))
+                elements.filter((element) => !unfollowups.includes(element))
             )
         })
     }
-    const handleCheckboxToggle = elementKey => {
+    const handleCheckboxToggle = (elementKey) => {
         setElements(
-            elements.map(e => {
+            elements.map((e) => {
                 if (e.key === elementKey) {
                     return {
                         ...e,

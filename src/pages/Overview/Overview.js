@@ -6,7 +6,7 @@ import styles from './Overview.module.css'
 
 const Overview = () => (
     <div className="row">
-        {sections.map(section => (
+        {sections.map((section) => (
             <div
                 key={section.key}
                 className={classNames(

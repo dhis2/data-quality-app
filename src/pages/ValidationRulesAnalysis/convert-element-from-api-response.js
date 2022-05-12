@@ -1,7 +1,7 @@
-const generateElementKey = e =>
+const generateElementKey = (e) =>
     `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${e.attributeOptionComboId}`
 
-const convertElementFromApiResponse = e => ({
+const convertElementFromApiResponse = (e) => ({
     key: generateElementKey(e),
     validationRuleId: e.validationRuleId,
     attributeOptionCombo: e.attributeOptionComboDisplayName,

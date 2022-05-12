@@ -82,7 +82,7 @@ const Form = ({
                     onChange={onAlgorithmChange}
                     value={algorithm}
                 >
-                    {Object.keys(ALGORITHM_TO_LABEL_MAP).map(algo => (
+                    {Object.keys(ALGORITHM_TO_LABEL_MAP).map((algo) => (
                         <MenuItem
                             key={algo}
                             value={algo}

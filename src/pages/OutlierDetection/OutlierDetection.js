@@ -18,14 +18,14 @@ import useFormState from './use-form-state'
 const query = {
     outliers: {
         resource: 'outlierDetection',
-        params: params => params,
+        params: (params) => params,
     },
 }
 
 const markOutlierMutation = {
     resource: '/dataValues/followup',
     type: 'update',
-    data: data => data,
+    data: (data) => data,
 }
 
 const OutlierDetection = () => {
@@ -75,7 +75,7 @@ const OutlierDetection = () => {
     )
     const { loading, refetch: fetchOutliers } = useDataQuery(query, {
         lazy: true,
-        onComplete: data => {
+        onComplete: (data) => {
             const elements = data.outliers.outlierValues.map(
                 convertElementFromApiResponse
             )
@@ -86,12 +86,12 @@ const OutlierDetection = () => {
                 noValuesFoundAlert.show()
             }
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
     const [markOutlier] = useDataMutation(markOutlierMutation, {
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
@@ -131,7 +131,7 @@ const OutlierDetection = () => {
         fetchOutliers(params)
         setCsvQueryStr(queryString.stringify(params))
     }
-    const handleToggleCheckbox = async element => {
+    const handleToggleCheckbox = async (element) => {
         const currentElement = elements.find(({ key }) => key === element.key)
 
         await markOutlier({
@@ -145,7 +145,7 @@ const OutlierDetection = () => {
 
         const newMarked = !element.marked
         setElements(
-            elements.map(e => {
+            elements.map((e) => {
                 if (e.key === element.key) {
                     return {
                         ...e,

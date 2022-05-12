@@ -28,7 +28,7 @@ const AvailableDatasetsSelect = ({ selected, onChange }) => {
                 onChange={onChange}
                 selected={selected}
             >
-                {dataSets?.map(item => (
+                {dataSets?.map((item) => (
                     <MultiSelectOption
                         key={item.id}
                         value={item.id}

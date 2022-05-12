@@ -29,12 +29,12 @@ const FollowUpAnalysisTable = ({
     const handleCloseCommentDialog = () => {
         setCommentVisible(false)
     }
-    const handleShowComment = element => {
+    const handleShowComment = (element) => {
         setComment(element.comment)
         setCommentVisible(true)
     }
 
-    const oneChecked = elements.some(element => element.marked)
+    const oneChecked = elements.some((element) => element.marked)
 
     return (
         <div>
@@ -97,7 +97,7 @@ const FollowUpAnalysisTable = ({
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {elements.map(element => (
+                    {elements.map((element) => (
                         <ElementRow
                             key={element.key}
                             element={element}
