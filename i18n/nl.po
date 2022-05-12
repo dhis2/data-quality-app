@@ -54,7 +54,7 @@ msgid "Period"
 msgstr "Periode"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Value"
 msgstr "Waarde"
@@ -69,7 +69,7 @@ msgid "Std Dev"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "Gemiddelde"
 
 msgid "Min"
 msgstr "Min"
