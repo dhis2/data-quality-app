@@ -7,9 +7,9 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.js'
 import cssPageStyles from '../../Page.module.css'
-import jsPageStyles from '../../PageStyles'
+import jsPageStyles from '../../PageStyles.js'
 
 const ElementRow = ({ element, onCheckboxToggle, onShowComment }) => (
     <TableRow>

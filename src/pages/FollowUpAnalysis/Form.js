@@ -3,10 +3,10 @@ import { Button, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDataSetsSelect from '../../components/AvailableDataSetsSelect/AvailableDataSetsSelect'
-import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
+import AvailableDataSetsSelect from '../../components/AvailableDataSetsSelect/AvailableDataSetsSelect.js'
+import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.js'
 import cssPageStyles from '../Page.module.css'
-import jsPageStyles from '../PageStyles'
+import jsPageStyles from '../PageStyles.js'
 
 const Form = ({
     onSubmit,

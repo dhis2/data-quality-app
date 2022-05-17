@@ -4,7 +4,7 @@ import { colors } from '@dhis2/ui'
 import { IconButton } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { getDocsKeyForSection } from '../../pages/sections.conf'
+import { getDocsKeyForSection } from '../../pages/sections.conf.js'
 
 const getDocsVersion = ({ major, minor, tag }) => {
     if (tag === 'SNAPSHOT') {

@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
 import {
     DEFAULT_THRESHOLD,
     DEFAULT_ALGORITHM,
     DEFAULT_MAX_RESULTS,
     DEFAULT_ORDER_BY,
-} from './constants'
+} from './constants.js'
 
 const useFormState = () => {
     const [startDate, setStartDate] = useState(threeMonthsAgo())

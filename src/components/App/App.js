@@ -1,11 +1,11 @@
 import classnames from 'classnames'
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import AppRouter from '../AppRouter/AppRouter'
-import Sidebar from '../Sidebar/Sidebar'
-import { SidebarProvider } from '../Sidebar/SidebarContext'
+import AppRouter from '../AppRouter/AppRouter.js'
+import Sidebar from '../Sidebar/Sidebar.js'
+import { SidebarProvider } from '../Sidebar/SidebarContext.js'
 import styles from './App.module.css'
-import useSidebar from './use-sidebar'
+import useSidebar from './use-sidebar.js'
 
 const App = () => {
     const sidebar = useSidebar()

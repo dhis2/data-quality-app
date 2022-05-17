@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './DownloadAs.module.css'
-import useHrefs from './use-hrefs'
+import useHrefs from './use-hrefs.js'
 
 const DownloadAs = ({ endpoint, fileTypes, queryStr }) => {
     const hrefs = useHrefs({ endpoint, fileTypes, queryStr })

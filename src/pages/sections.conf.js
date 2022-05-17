@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
-import FollowUpAnalysis from './FollowUpAnalysis/FollowUpAnalysis'
-import OutlierDetection from './OutlierDetection/OutlierDetection'
-import ValidationRulesAnalysis from './ValidationRulesAnalysis/ValidationRulesAnalysis'
+import FollowUpAnalysis from './FollowUpAnalysis/FollowUpAnalysis.js'
+import OutlierDetection from './OutlierDetection/OutlierDetection.js'
+import ValidationRulesAnalysis from './ValidationRulesAnalysis/ValidationRulesAnalysis.js'
 
 export const sections = [
     {
