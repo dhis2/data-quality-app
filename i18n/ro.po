@@ -51,7 +51,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Organizația părinte"
 
 msgid "Start Date"
 msgstr ""
