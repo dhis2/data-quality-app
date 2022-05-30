@@ -31,13 +31,13 @@ msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Descărcare ca PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Descărcare ca CSV"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -88,7 +88,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Organizația părinte"
 
 msgid "Start Date"
 msgstr ""
