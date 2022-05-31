@@ -31,13 +31,13 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Download as PDF"
-msgstr ""
+msgstr "Descărcare ca PDF"
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Descărcare ca CSV"
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -97,7 +97,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Organizația părinte"
 
 msgid "Start Date"
 msgstr ""
