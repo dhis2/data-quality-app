@@ -37,7 +37,7 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Period"
 msgstr ""
