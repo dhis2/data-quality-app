@@ -52,7 +52,7 @@ msgid "Period"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Value"
 msgstr ""
@@ -142,16 +142,16 @@ msgid "Sort by"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unități organizaționale"
 
 msgid "Start date"
-msgstr ""
+msgstr "Data de început"
 
 msgid "End date"
-msgstr ""
+msgstr "Data de sfîrșit"
 
 msgid "Algorithm"
 msgstr ""
