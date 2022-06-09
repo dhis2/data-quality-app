@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
 
 const useFormState = () => {
     const [startDate, setStartDate] = useState(threeMonthsAgo())

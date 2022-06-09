@@ -1,7 +1,7 @@
 import { FontIcon, IconButton } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DocsLink from '../DocsLink/DocsLink'
+import DocsLink from '../DocsLink/DocsLink.js'
 import styles from './PageHeader.module.css'
 
 const PageHeader = ({ title, onBack, sectionKey }) => (

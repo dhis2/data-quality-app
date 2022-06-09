@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import React from 'react'
-import { sections } from '../sections.conf'
-import GridSection from './grid-section/GridSection'
+import { sections } from '../sections.conf.js'
+import GridSection from './grid-section/GridSection.js'
 import styles from './Overview.module.css'
 
 const Overview = () => (
     <div className="row">
-        {sections.map(section => (
+        {sections.map((section) => (
             <div
                 key={section.key}
                 className={classNames(

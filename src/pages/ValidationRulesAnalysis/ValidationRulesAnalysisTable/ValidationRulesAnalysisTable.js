@@ -9,15 +9,15 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DownloadAs from '../../../components/DownloadAs/DownloadAs'
-import { apiConf } from '../../../server.conf'
+import DownloadAs from '../../../components/DownloadAs/DownloadAs.js'
+import { apiConf } from '../../../server.conf.js'
 import cssPageStyles from '../../Page.module.css'
-import ElementRow from './ElementRow'
+import ElementRow from './ElementRow.js'
 import styles from './ValidationRulesAnalysisTable.module.css'
 
 const ValidationRulesAnalysisTable = ({ elements }) => {
     const shouldDisplayAttributeOptionCombo = elements.some(
-        e => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
+        (e) => e.attributeOptionCombo && e.attributeOptionCombo !== 'default'
     )
 
     return (
@@ -76,7 +76,7 @@ const ValidationRulesAnalysisTable = ({ elements }) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {elements.map(element => (
+                    {elements.map((element) => (
                         <ElementRow
                             key={element.key}
                             element={element}

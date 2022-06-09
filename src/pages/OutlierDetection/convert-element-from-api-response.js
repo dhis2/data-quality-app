@@ -1,4 +1,4 @@
-const getElementDisplayName = e => {
+const getElementDisplayName = (e) => {
     let str = e.deName
 
     // In the context of a dataElement, the default COC or AOC means "none".
@@ -15,7 +15,7 @@ const getElementDisplayName = e => {
     return str
 }
 
-const convertElementFromApiResponse = e => ({
+const convertElementFromApiResponse = (e) => ({
     displayName: getElementDisplayName(e),
     key: `${e.aoc}-${e.coc}-${e.de}-${e.pe}-${e.ou}`,
     marked: e.followup,

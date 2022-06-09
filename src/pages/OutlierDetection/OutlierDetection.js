@@ -3,29 +3,29 @@ import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import queryString from 'query-string'
 import React, { useState } from 'react'
-import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { useSidebar } from '../../components/Sidebar/SidebarContext'
-import { convertDateToApiDateFormat } from '../../helpers/dates'
-import { apiConf } from '../../server.conf'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
+import { convertDateToApiDateFormat } from '../../helpers/dates.js'
+import { apiConf } from '../../server.conf.js'
 import cssPageStyles from '../Page.module.css'
-import { Z_SCORE_ALGORITHMS } from './constants'
-import convertElementFromApiResponse from './convert-element-from-api-response'
-import Form from './Form/Form'
-import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable'
-import useFormState from './use-form-state'
+import { Z_SCORE_ALGORITHMS } from './constants.js'
+import convertElementFromApiResponse from './convert-element-from-api-response.js'
+import Form from './Form/Form.js'
+import OutlierAnalyisTable from './OutlierAnalysisTable/OutlierAnalysisTable.js'
+import useFormState from './use-form-state.js'
 
 const query = {
     outliers: {
         resource: 'outlierDetection',
-        params: params => params,
+        params: (params) => params,
     },
 }
 
 const markOutlierMutation = {
     resource: '/dataValues/followup',
     type: 'update',
-    data: data => data,
+    data: (data) => data,
 }
 
 const OutlierDetection = () => {
@@ -75,7 +75,7 @@ const OutlierDetection = () => {
     )
     const { loading, refetch: fetchOutliers } = useDataQuery(query, {
         lazy: true,
-        onComplete: data => {
+        onComplete: (data) => {
             const elements = data.outliers.outlierValues.map(
                 convertElementFromApiResponse
             )
@@ -86,12 +86,12 @@ const OutlierDetection = () => {
                 noValuesFoundAlert.show()
             }
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
     const [markOutlier] = useDataMutation(markOutlierMutation, {
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
@@ -131,7 +131,7 @@ const OutlierDetection = () => {
         fetchOutliers(params)
         setCsvQueryStr(queryString.stringify(params))
     }
-    const handleToggleCheckbox = async element => {
+    const handleToggleCheckbox = async (element) => {
         const currentElement = elements.find(({ key }) => key === element.key)
 
         await markOutlier({
@@ -145,7 +145,7 @@ const OutlierDetection = () => {
 
         const newMarked = !element.marked
         setElements(
-            elements.map(e => {
+            elements.map((e) => {
                 if (e.key === element.key) {
                     return {
                         ...e,

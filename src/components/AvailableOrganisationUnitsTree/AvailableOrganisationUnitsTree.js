@@ -111,7 +111,7 @@ const AvailableOrganisationUnitsTree = ({ multiselect = false, onChange }) => {
         <div className={styles.wrapper}>
             <OrganisationUnitTree
                 selected={[...selected.keys()]}
-                roots={organisationUnits.map(ou => ou.id)}
+                roots={organisationUnits.map((ou) => ou.id)}
                 singleSelection={!multiselect}
                 onChange={handleChange}
             />

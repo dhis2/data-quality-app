@@ -1,4 +1,4 @@
-const convertElementFromApiResponse = e => ({
+const convertElementFromApiResponse = (e) => ({
     key: `${e.aoc}-${e.coc}-${e.pe}-${e.ou}-${e.de}`,
     attributeOptionComboId: e.aoc,
     categoryOptionComboId: e.coc,

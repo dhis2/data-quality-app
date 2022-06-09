@@ -5,8 +5,8 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import jsPageStyles from '../../PageStyles'
-import { Z_SCORE, MEAN_ABS_DEV, ALGORITHM_TO_LABEL_MAP } from '../constants'
+import jsPageStyles from '../../PageStyles.js'
+import { Z_SCORE, MEAN_ABS_DEV, ALGORITHM_TO_LABEL_MAP } from '../constants.js'
 import styles from './ZScoreFields.module.css'
 
 const ZScoreFields = ({

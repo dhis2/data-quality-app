@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
 import {
     DEFAULT_THRESHOLD,
     DEFAULT_ALGORITHM,
     DEFAULT_MAX_RESULTS,
     DEFAULT_ORDER_BY,
-} from './constants'
+} from './constants.js'
 
 const useFormState = () => {
     const [startDate, setStartDate] = useState(threeMonthsAgo())
@@ -44,10 +44,10 @@ const useFormState = () => {
     const handleOrderByChange = (event, index, value) => {
         setOrderBy(value)
     }
-    const handleDataStartDateChange = date => {
+    const handleDataStartDateChange = (date) => {
         setDataStartDate(date && new Date(date))
     }
-    const handleDataEndDateChange = date => {
+    const handleDataEndDateChange = (date) => {
         setDataEndDate(date && new Date(date))
     }
     const handleDataSetsChange = ({ selected }) => {

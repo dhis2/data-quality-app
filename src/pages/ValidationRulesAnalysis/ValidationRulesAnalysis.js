@@ -3,22 +3,22 @@ import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { useSidebar } from '../../components/Sidebar/SidebarContext'
-import { convertDateToApiDateFormat } from '../../helpers/dates'
-import { apiConf } from '../../server.conf'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
+import { convertDateToApiDateFormat } from '../../helpers/dates.js'
+import { apiConf } from '../../server.conf.js'
 import cssPageStyles from '../Page.module.css'
-import convertElementFromApiResponse from './convert-element-from-api-response'
-import Form from './Form'
-import useFormState from './use-form-state'
-import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect'
-import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/ValidationRulesAnalysisTable'
+import convertElementFromApiResponse from './convert-element-from-api-response.js'
+import Form from './Form.js'
+import useFormState from './use-form-state.js'
+import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect.js'
+import ValidationRulesAnalysisTable from './ValidationRulesAnalysisTable/ValidationRulesAnalysisTable.js'
 
 const validationMutation = {
     resource: 'dataAnalysis/validationRules',
     type: 'create',
-    data: data => data,
+    data: (data) => data,
 }
 
 const ValidationRulesAnalysis = ({ sectionKey }) => {
@@ -52,7 +52,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         { critical: true }
     )
     const [validate, { loading }] = useDataMutation(validationMutation, {
-        onComplete: data => {
+        onComplete: (data) => {
             const elements = data.map(convertElementFromApiResponse)
             setElements(elements)
             if (elements.length > 0) {
@@ -61,7 +61,7 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
                 validationPassedAlert.show()
             }
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })

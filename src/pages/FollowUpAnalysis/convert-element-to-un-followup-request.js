@@ -1,4 +1,4 @@
-const convertElementToUnFollowupRequest = e => ({
+const convertElementToUnFollowupRequest = (e) => ({
     dataElement: e.dataElementId,
     period: e.periodId,
     orgUnit: e.organisationUnitId,

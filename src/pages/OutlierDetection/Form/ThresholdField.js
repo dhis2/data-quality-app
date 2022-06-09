@@ -3,7 +3,7 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import jsPageStyles from '../../PageStyles'
+import jsPageStyles from '../../PageStyles.js'
 
 const ThresholdField = ({ threshold, onChange }) => (
     <SelectField

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Overview from '../../pages/Overview/Overview'
-import { sections } from '../../pages/sections.conf'
-import NoMatch from './NoMatch'
+import Overview from '../../pages/Overview/Overview.js'
+import { sections } from '../../pages/sections.conf.js'
+import NoMatch from './NoMatch.js'
 
 const AppRouter = () => {
-    const routes = sections.map(section => {
+    const routes = sections.map((section) => {
         const routeRender = () => {
             const Page = section.component
             return <Page sectionKey={section.key} />

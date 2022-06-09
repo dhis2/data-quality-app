@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
-import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect'
+import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
+import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect.js'
 
 const useFormState = () => {
     const [organisationUnitId, setOrganisationUnitId] = useState(null)

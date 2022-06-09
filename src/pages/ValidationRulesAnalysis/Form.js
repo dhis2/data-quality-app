@@ -3,11 +3,11 @@ import { Button, Checkbox, CircularLoader } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree'
+import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.js'
 import cssPageStyles from '../Page.module.css'
-import jsPageStyles from '../PageStyles'
+import jsPageStyles from '../PageStyles.js'
 import styles from './Form.module.css'
-import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect'
+import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect.js'
 
 const Form = ({
     onSubmit,
