@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2022
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr "جار تحديث شجرة الوحدات التنظيمية..."
+msgstr ""
 
 msgid "Data Set"
-msgstr "حزمة البيانات"
+msgstr ""
 
 msgid "[All Data Sets]"
-msgstr "[جميع حزم البيانات]"
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "تنزيل كملف PDF"
@@ -39,82 +39,77 @@ msgid "Follow-Up Analysis"
 msgstr "تحليل المتابعة"
 
 msgid "View Data Values"
-msgstr "عرض قيم البيانات"
+msgstr ""
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"عرض أو تعديل قيم البيانات التي تم وضع علامة متابعة لاحقة عليها خلال إدخال "
-"البيانات أو التحليل."
 
 msgid "follow up"
-msgstr "متابعة"
+msgstr ""
 
 msgid "unfollow"
 msgstr "إلغاء المتابعة"
 
 msgid "Parent organisation unit"
-msgstr "الوحدة التنظيمية الأصل"
+msgstr ""
 
 msgid "Start Date"
-msgstr "تاريخ البداية"
+msgstr ""
 
 msgid "End Date"
-msgstr "تاريخ النهاية"
+msgstr ""
 
 msgid "Data Element"
-msgstr "عنصر البيانات"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "الوحدة التنظيمية"
+msgstr ""
 
 msgid "Period"
-msgstr "الفترة الزمنية"
+msgstr ""
 
 msgid "Min"
 msgstr "الأدنى"
 
 msgid "Value"
-msgstr "القيمة"
+msgstr ""
 
 msgid "Max"
-msgstr "الأعلى"
+msgstr ""
 
 msgid "Unfollow"
-msgstr "إلغاء المتابعة"
+msgstr ""
 
 msgid "Comment"
-msgstr "تعليق"
+msgstr ""
 
 msgid "Close"
-msgstr "إغلاق"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"تم العثور على أكثر من 500 قيمة، الرجاء تضييق نطاق البحث لمشاهدة الجميع"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "تحليل القيم الدنيا-العليا للقيم المتطرفة"
+msgstr ""
 
 msgid "Analyze"
-msgstr "تحليل"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"تحليل القيم المتطرفة المحتملة اعتماداً على القيم الدنيا والعليا. من الممكن "
-"فحص القيم المتطرفة ووضع علامة عليها للمتابعة."
 
 msgid "start"
-msgstr "بدء"
+msgstr ""
 
 msgid "Mark"
-msgstr "وضع علامة"
+msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "تحليل القيم المتطرفة - الانحراف المعياري"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -127,98 +122,96 @@ msgid "Select number of standard deviations"
 msgstr "تحديد عدد الانحرافات المعيارية"
 
 msgid "Validation Rule Analysis"
-msgstr "تحليل قواعد التحقق"
+msgstr ""
 
 msgid "Run Validation"
-msgstr "تشغيل التحقق"
+msgstr ""
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
-"تشغيل قواعد التحقق من أجل الكشف عن الحالات الشاذة و أخطاء البيانات في قاعدة "
-"البيانات."
 
 msgid "validate"
 msgstr "تحقق"
 
 msgid "Validation Rule Group"
-msgstr "مجموعة قواعد التحقق"
+msgstr ""
 
 msgid "Send Notifications"
-msgstr "إرسال إشعارات"
+msgstr ""
 
 msgid "Persist new results"
-msgstr "المواصلة بنتائج جديدة"
+msgstr ""
 
 msgid "Importance"
-msgstr "الأهمية"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "قاعدة التحقق"
+msgstr ""
 
 msgid "Operator"
-msgstr "العامل"
+msgstr ""
 
 msgid "Details"
-msgstr "التفاصيل"
+msgstr ""
 
 msgid "Validation Details"
-msgstr "تفاصيل التحقق"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr "تفاصيل نتيجة التحقق"
+msgstr ""
 
 msgid "VALIDATION RULE"
 msgstr "قاعدة التحقق"
 
 msgid "Name"
-msgstr "الاسم"
+msgstr ""
 
 msgid "Description"
-msgstr "الوصف"
+msgstr ""
 
 msgid "LEFT SIDE"
-msgstr "الطرف الأيسر"
+msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr "الطرف الأيمن"
+msgstr ""
 
 msgid "DATA ELEMENT"
-msgstr "عنصر البيانات"
+msgstr ""
 
 msgid "VALUE"
-msgstr "القيمة"
+msgstr ""
 
 msgid "no data available"
 msgstr "لا توجد بيانات متاحة"
 
 msgid "[All Validation Rules]"
-msgstr "[جميع قواعد التحقق]"
+msgstr ""
 
 msgid "Performing request"
-msgstr "جار تنفيذ الطلب"
+msgstr ""
 
 msgid "Performing analysis"
 msgstr "جار تنفيذ التحليل"
 
 msgid "Analysis done"
-msgstr "تم التحليل"
+msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "تم اجتياز التحقق بنجاح"
+msgstr ""
 
 msgid "No values found"
-msgstr "لم يتم العثور على أية قيمة"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr "حدث خطأ غير متوقع أثناء التحليل"
+msgstr ""
 
 msgid "Marked"
-msgstr "تم وضع علامة"
+msgstr ""
 
 msgid "Unmarked"
 msgstr "تمت إزالة العلامة"
 
 msgid "Unfollow done"
-msgstr "تم إلغاء المتابعة"
+msgstr ""

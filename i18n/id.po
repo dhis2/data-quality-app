@@ -1,15 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2022
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr "Memperbarui Pohon Unit Organisasi.."
+msgstr ""
 
 msgid "Data Set"
-msgstr "Data Set"
+msgstr ""
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -39,14 +38,12 @@ msgid "Follow-Up Analysis"
 msgstr "Analisis Tindak Lanjut"
 
 msgid "View Data Values"
-msgstr "Lihat Nilai Data"
+msgstr ""
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"Lihat atau edit nilai data yang ditandai untuk tindak lanjut selama entry "
-"data atau analisis."
 
 msgid "follow up"
 msgstr "tindak lanjuti"
@@ -55,47 +52,46 @@ msgid "unfollow"
 msgstr "berhenti mengikuti"
 
 msgid "Parent organisation unit"
-msgstr "Unit organisasi induk"
+msgstr ""
 
 msgid "Start Date"
-msgstr "Tanggal Mulai"
+msgstr ""
 
 msgid "End Date"
-msgstr "Tanggal Selesai"
+msgstr ""
 
 msgid "Data Element"
-msgstr "Data Elemen"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unit Organisasi"
+msgstr ""
 
 msgid "Period"
-msgstr "Periode"
+msgstr ""
 
 msgid "Min"
-msgstr "Min"
+msgstr "Minimal"
 
 msgid "Value"
-msgstr "Nilai"
+msgstr ""
 
 msgid "Max"
-msgstr "Maks"
+msgstr ""
 
 msgid "Unfollow"
-msgstr "Berhenti Ikuti"
+msgstr ""
 
 msgid "Comment"
-msgstr "Komentar"
+msgstr ""
 
 msgid "Close"
-msgstr "Tutup"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"Lebih dari 500 nilai ditemukan, persempit pencarian untuk melihat semuanya"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "Analisis Outlier Min-Maks"
+msgstr ""
 
 msgid "Analyze"
 msgstr "Analisis"
@@ -104,17 +100,15 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"Analisis kemungkinan nilai outlier berdasarkan nilai min dan maks. Nilai "
-"outlier dapat diperiksa dan ditandai untuk tindak lanjut."
 
 msgid "start"
-msgstr "mulai"
+msgstr ""
 
 msgid "Mark"
-msgstr "Tandai"
+msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "Analisis Outlier Dev Std"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -127,68 +121,66 @@ msgid "Select number of standard deviations"
 msgstr "Pilih jumlah deviasi standar"
 
 msgid "Validation Rule Analysis"
-msgstr "Analisis Aturan Validasi"
+msgstr ""
 
 msgid "Run Validation"
-msgstr "Jalankan Validasi"
+msgstr ""
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
-"Jalankan aturan validasi untuk menampilkan anomali dan kesalahan data dalam "
-"basis data."
 
 msgid "validate"
 msgstr "validasi"
 
 msgid "Validation Rule Group"
-msgstr "Grup Aturan Validasi"
+msgstr ""
 
 msgid "Send Notifications"
-msgstr "Kirim Notifikasi"
+msgstr ""
 
 msgid "Persist new results"
-msgstr "Gunakan hasil baru"
+msgstr ""
 
 msgid "Importance"
-msgstr "Kepentingan"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Aturan validasi"
+msgstr ""
 
 msgid "Operator"
-msgstr "Operator"
+msgstr ""
 
 msgid "Details"
-msgstr "Rincian"
+msgstr ""
 
 msgid "Validation Details"
-msgstr "Rincian Validasi"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr "RINCIAN HASIL VALIDASI"
+msgstr ""
 
 msgid "VALIDATION RULE"
 msgstr "ATURAN VALIDASI"
 
 msgid "Name"
-msgstr "Nama"
+msgstr ""
 
 msgid "Description"
-msgstr "Deskripsi"
+msgstr ""
 
 msgid "LEFT SIDE"
-msgstr "SISI KIRI"
+msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr "SISI KANAN"
+msgstr ""
 
 msgid "DATA ELEMENT"
-msgstr "DATA ELEMEN"
+msgstr ""
 
 msgid "VALUE"
-msgstr "NILAI"
+msgstr ""
 
 msgid "no data available"
 msgstr "tidak ada data"
@@ -209,13 +201,13 @@ msgid "Validation passed successfully"
 msgstr "Lulus validasi"
 
 msgid "No values found"
-msgstr "Tidak ada nilai ditemukan"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr "Terjadi kesalahan tak terduga selama analisis"
+msgstr ""
 
 msgid "Marked"
-msgstr "Ditandai"
+msgstr ""
 
 msgid "Unmarked"
 msgstr "Batal menandai"

@@ -1,22 +1,18 @@
 # 
-# Translators:
-# Ibatov <ibatovk@who.int>, 2022
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
 "PO-Revision-Date: 2022-08-21 23:40+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"Language-Team: Korean (Korea) (https://www.transifex.com/hisp-uio/teams/100509/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uz@Cyrl\n"
+"Language: ko_KR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr "Муассасалар дарахти (шажараси) янгиланмоқда..."
+msgstr ""
 
 msgid "Data Set"
 msgstr ""
@@ -25,16 +21,16 @@ msgid "[All Data Sets]"
 msgstr ""
 
 msgid "DOWNLOAD AS PDF"
-msgstr "PDF СИФАТИДА ЮКЛАШ"
+msgstr ""
 
 msgid "DOWNLOAD AS XLS"
-msgstr "XLS СИФАТИДА ЮКЛАШ"
+msgstr ""
 
 msgid "DOWNLOAD AS CSV"
-msgstr "CSV СИФАТИДА ЮКЛАШ"
+msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Аналитикани кузатиш"
+msgstr ""
 
 msgid "View Data Values"
 msgstr ""
@@ -45,10 +41,10 @@ msgid ""
 msgstr ""
 
 msgid "follow up"
-msgstr "кузатиш"
+msgstr ""
 
 msgid "unfollow"
-msgstr "бекор қилиш"
+msgstr ""
 
 msgid "Parent organisation unit"
 msgstr ""
@@ -69,7 +65,7 @@ msgid "Period"
 msgstr ""
 
 msgid "Min"
-msgstr "Минимум"
+msgstr ""
 
 msgid "Value"
 msgstr ""
@@ -93,7 +89,7 @@ msgid "Min-Max Outlier Analysis"
 msgstr ""
 
 msgid "Analyze"
-msgstr "Аналитика/Таҳлил"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -113,12 +109,9 @@ msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
 "values can be examined and marked for follow-up."
 msgstr ""
-"Мумкин бўлган чекланишлар қийматларини стандарт оғишлар асосида таҳлил "
-"қилинг. Ортиқча қийматларни текшириш ва уларни текшириш учун белгилаш "
-"мумкин."
 
 msgid "Select number of standard deviations"
-msgstr "Стандарт оғишлар сонини аниқланг"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr ""
@@ -132,10 +125,10 @@ msgid ""
 msgstr ""
 
 msgid "validate"
-msgstr "тасдиқлаш"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Текширув гуруҳи қоидалари"
+msgstr ""
 
 msgid "Send Notifications"
 msgstr ""
@@ -150,7 +143,7 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "Оператор"
+msgstr ""
 
 msgid "Details"
 msgstr ""
@@ -162,7 +155,7 @@ msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
 
 msgid "VALIDATION RULE"
-msgstr "ТЕКШИРУВ ҚОИДАСИ"
+msgstr ""
 
 msgid "Name"
 msgstr ""
@@ -174,7 +167,7 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr "ЎНГ ТОМОН"
+msgstr ""
 
 msgid "DATA ELEMENT"
 msgstr ""
@@ -183,22 +176,22 @@ msgid "VALUE"
 msgstr ""
 
 msgid "no data available"
-msgstr "маълумотлар мавжуд эмас"
+msgstr ""
 
 msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Performing request"
-msgstr "Сўров бажарилмоқда"
+msgstr ""
 
 msgid "Performing analysis"
-msgstr "Таҳлилни амалга ошириш"
+msgstr ""
 
 msgid "Analysis done"
-msgstr "Таҳлил бажарилди"
+msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Тасдиқлаш Маваффақиятли Ўтди"
+msgstr ""
 
 msgid "No values found"
 msgstr ""
@@ -210,7 +203,7 @@ msgid "Marked"
 msgstr ""
 
 msgid "Unmarked"
-msgstr "Белгиланмаган"
+msgstr ""
 
 msgid "Unfollow done"
-msgstr "Бекор қилиш бажарилди"
+msgstr ""

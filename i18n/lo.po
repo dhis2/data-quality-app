@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
+msgstr ""
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -44,7 +44,6 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
 
 msgid "follow up"
 msgstr ""
@@ -53,7 +52,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງຂັ້ນສູງ"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -65,36 +64,34 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Period"
-msgstr "ໄລຍະ ເວລາ"
+msgstr ""
 
 msgid "Min"
-msgstr "ຄ່າຕໍ່າສຸດ"
+msgstr "ຄ່ານ້ອຍສຸດ"
 
 msgid "Value"
-msgstr "ຄ່າ"
+msgstr ""
 
 msgid "Max"
-msgstr "ຄ່າໃຫ່ຍສຸດ"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr "​ຄຳ​ເຫັນ​ຕ່າງໆ"
+msgstr ""
 
 msgid "Close"
-msgstr "ປິດ"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"​ຜົນ​ອອກ​ມາ​ເກີນກວ່າ ໕໐໐ "
-"​ກະ​ລຸ​ນາ​ຄົ້ນ​ຫາ​ໃນ​ຂອບ​ເຂດ​ທີ່​ຕ່ຳ​ກວ່ານີ້​ເພື່ອ​ເບີ່ງ​ທັງ​ໝົດ"
 
 msgid "Min-Max Outlier Analysis"
-msgstr "​ການ​ວິ​ໄຈ​ຄ່າ​ສູງ ແລະ ຄ່າ​ຕໍ່​ສຸດ"
+msgstr ""
 
 msgid "Analyze"
 msgstr ""
@@ -103,17 +100,15 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"​ວິ​ໄຈ​ເບີ່ງ​ທ່າ​ອ່ຽງ​ມູນ​ຄ່າ​ທີ່​ເກີນ​ອີງ​ໃສ່​ຫລັກ​ການຂອງ​ຄ່າ​ສູງ​ສຸດ ແລະ "
-"ຄ່າ​ຕ່ຳ​ສຸດ. ຄ່າ​ທີ່​ເກີນ​ສາ​ມາດກວດ​ກາ​ເບີ່ງ​ແລະ ໝາຍ​ໃວ້​ເພື່ອ​ຕິດ​ຕາມ"
 
 msgid "start"
 msgstr ""
 
 msgid "Mark"
-msgstr "ໝາຍ"
+msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "​​ຫົວ​ໜ່ວຍມາດ​ຕະ​ຖານ​ການ​ວິ​ໄຈ​ຄວາມ​ຫລຸດ​ລື່ນ"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -126,7 +121,7 @@ msgid "Select number of standard deviations"
 msgstr "Select number of standard deviations"
 
 msgid "Validation Rule Analysis"
-msgstr "ກວດສອບຂໍ້ມູນ"
+msgstr ""
 
 msgid "Run Validation"
 msgstr ""
@@ -135,8 +130,6 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
-"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
-" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
 
 msgid "validate"
 msgstr ""
@@ -151,16 +144,16 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr "ສຳຄັນ"
+msgstr ""
 
 msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "Operator"
+msgstr ""
 
 msgid "Details"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Validation Details"
 msgstr ""
@@ -172,10 +165,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr ""
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "LEFT SIDE"
 msgstr ""
@@ -208,7 +201,7 @@ msgid "Validation passed successfully"
 msgstr "Validation passed successfully"
 
 msgid "No values found"
-msgstr "ບໍ່ມີຄ່າ"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
 msgstr ""

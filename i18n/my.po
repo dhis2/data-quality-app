@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "Data အစု"
+msgstr ""
 
 msgid "[All Data Sets]"
 msgstr ""
@@ -52,7 +52,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Parent organisation unit"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -64,33 +64,31 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "အဖွဲ့အစည်းယူနစ်"
+msgstr ""
 
 msgid "Period"
-msgstr "အချိန်ကာလ"
+msgstr ""
 
 msgid "Min"
 msgstr "အနည်းဆုံး"
 
 msgid "Value"
-msgstr "တန်ဖိုး"
+msgstr ""
 
 msgid "Max"
-msgstr "အများဆုံး"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr "မှတ်ချက်"
+msgstr ""
 
 msgid "Close"
-msgstr "ပိတ်သည်"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"More than 500 values found, please fix the violations or narrow the search "
-"to see all"
 
 msgid "Min-Max Outlier Analysis"
 msgstr ""
@@ -150,10 +148,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "စုစည်းစီမံသူ"
+msgstr ""
 
 msgid "Details"
-msgstr "အသေးစိတ်များ"
+msgstr ""
 
 msgid "Validation Details"
 msgstr ""
@@ -165,10 +163,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "အမည်"
+msgstr ""
 
 msgid "Description"
-msgstr "ဖော်ပြချက်"
+msgstr ""
 
 msgid "LEFT SIDE"
 msgstr ""

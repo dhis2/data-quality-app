@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,10 +20,10 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "Data Set"
-msgstr "Datasett"
+msgstr ""
 
 msgid "[All Data Sets]"
-msgstr "[Alle datasett]"
+msgstr ""
 
 msgid "DOWNLOAD AS PDF"
 msgstr "LAST NED SOM PDF"
@@ -38,14 +38,12 @@ msgid "Follow-Up Analysis"
 msgstr "Oppfølgingsanalyse"
 
 msgid "View Data Values"
-msgstr "Vis dataverdier"
+msgstr ""
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"Vis eller rediger dataverdier merket for videre oppfølging under "
-"dataregistrering eller analyse."
 
 msgid "follow up"
 msgstr "oppfølging"
@@ -54,46 +52,46 @@ msgid "unfollow"
 msgstr "Slutt å følge"
 
 msgid "Parent organisation unit"
-msgstr "Overordnet organisasjonsenhet"
+msgstr ""
 
 msgid "Start Date"
-msgstr "Startdato"
+msgstr ""
 
 msgid "End Date"
-msgstr "Sluttdato"
+msgstr ""
 
 msgid "Data Element"
-msgstr "Dataelementer"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisasjonsenhet"
+msgstr ""
 
 msgid "Period"
-msgstr "Periode"
+msgstr ""
 
 msgid "Min"
 msgstr "Min"
 
 msgid "Value"
-msgstr "Verdi"
+msgstr ""
 
 msgid "Max"
-msgstr "Max"
+msgstr ""
 
 msgid "Unfollow"
-msgstr "Slutt å følge"
+msgstr ""
 
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 msgid "Close"
-msgstr "Lukk"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Mer enn 500 verdier funnet. Begrens søket for å se alle"
+msgstr ""
 
 msgid "Min-Max Outlier Analysis"
-msgstr "Min-Max utliggeranalyse"
+msgstr ""
 
 msgid "Analyze"
 msgstr "Analyser"
@@ -102,17 +100,15 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
-"Analyser potensielle utliggerverdier basert på min- og maksverdier. "
-"Utliggerverdier kan undersøkes og merkes for oppfølging."
 
 msgid "start"
-msgstr "start"
+msgstr ""
 
 msgid "Mark"
-msgstr "Merk"
+msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr "Std avvik utliggeranalyse"
+msgstr ""
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -125,15 +121,15 @@ msgid "Select number of standard deviations"
 msgstr "Velg antall standardavvik"
 
 msgid "Validation Rule Analysis"
-msgstr "Valideringsregel analyse"
+msgstr ""
 
 msgid "Run Validation"
-msgstr "Kjør validering"
+msgstr ""
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
+msgstr ""
 
 msgid "validate"
 msgstr "Valider"
@@ -142,55 +138,55 @@ msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
 
 msgid "Send Notifications"
-msgstr "Send varslinger"
+msgstr ""
 
 msgid "Persist new results"
-msgstr "Vedvar nye resultater"
+msgstr ""
 
 msgid "Importance"
-msgstr "Viktighet"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Valideringsregel"
+msgstr ""
 
 msgid "Operator"
 msgstr "Operator"
 
 msgid "Details"
-msgstr "Detaljer"
+msgstr ""
 
 msgid "Validation Details"
-msgstr "Valideringsdetaljer"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr "VALIDERINGSRESULTATER DETALJER"
+msgstr ""
 
 msgid "VALIDATION RULE"
 msgstr "VALIDERINGSREGEL"
 
 msgid "Name"
-msgstr "Navn"
+msgstr ""
 
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr ""
 
 msgid "LEFT SIDE"
-msgstr "VENSTRE SIDE"
+msgstr ""
 
 msgid "RIGHT SIDE"
 msgstr "HØYRE SIDE"
 
 msgid "DATA ELEMENT"
-msgstr "DATAELEMENTER"
+msgstr ""
 
 msgid "VALUE"
-msgstr "VERDI"
+msgstr ""
 
 msgid "no data available"
 msgstr "ingen data tilgjengelig"
 
 msgid "[All Validation Rules]"
-msgstr "[Alle valideringsregler]"
+msgstr ""
 
 msgid "Performing request"
 msgstr "Utfører forespørsel"
@@ -205,13 +201,13 @@ msgid "Validation passed successfully"
 msgstr "Validering ble gjennomført"
 
 msgid "No values found"
-msgstr "Ingen verdier funnet"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr "En uventet feil oppsto under analysen"
+msgstr ""
 
 msgid "Marked"
-msgstr "Merket"
+msgstr ""
 
 msgid "Unmarked"
 msgstr "Ikke merket"
