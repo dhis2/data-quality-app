@@ -23,7 +23,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Alle datasett]"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "LAST NED SOM PDF"
@@ -38,12 +38,14 @@ msgid "Follow-Up Analysis"
 msgstr "Oppfølgingsanalyse"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Vis dataverdier"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Vis eller rediger dataverdier merket for videre oppfølging under "
+"dataregistrering eller analyse."
 
 msgid "follow up"
 msgstr "oppfølging"
@@ -52,19 +54,19 @@ msgid "unfollow"
 msgstr "Slutt å følge"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Overordnet organisasjonsenhet"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Startdato"
 
 msgid "End Date"
-msgstr ""
+msgstr "Sluttdato"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Dataelementer"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisasjonsenhet"
 
 msgid "Period"
 msgstr ""
@@ -73,19 +75,19 @@ msgid "Min"
 msgstr "Min"
 
 msgid "Value"
-msgstr ""
+msgstr "Verdi"
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -100,6 +102,8 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analyser potensielle utliggerverdier basert på min- og maksverdier. "
+"Utliggerverdier kan undersøkes og merkes for oppfølging."
 
 msgid "start"
 msgstr ""
@@ -108,7 +112,7 @@ msgid "Mark"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Std avvik utliggeranalyse"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -121,15 +125,15 @@ msgid "Select number of standard deviations"
 msgstr "Velg antall standardavvik"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Valideringsregel analyse"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Kjør validering"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "Kjør valideringsregler for avdekke avvik og problemer i databasen."
 
 msgid "validate"
 msgstr "Valider"
@@ -138,55 +142,55 @@ msgid "Validation Rule Group"
 msgstr "Valideringsregelgruppe"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Send varslinger"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Vedvar nye resultater"
 
 msgid "Importance"
-msgstr ""
+msgstr "Viktighet"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Valideringsregel"
 
 msgid "Operator"
 msgstr "Operator"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Valideringsdetaljer"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "VALIDERINGSRESULTATER DETALJER"
 
 msgid "VALIDATION RULE"
 msgstr "VALIDERINGSREGEL"
 
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "VENSTRE SIDE"
 
 msgid "RIGHT SIDE"
 msgstr "HØYRE SIDE"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATAELEMENTER"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VERDI"
 
 msgid "no data available"
 msgstr "ingen data tilgjengelig"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "[Alle valideringsregler]"
 
 msgid "Performing request"
 msgstr "Utfører forespørsel"
@@ -204,10 +208,10 @@ msgid "No values found"
 msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "En uventet feil oppsto under analysen"
 
 msgid "Marked"
-msgstr ""
+msgstr "Merket"
 
 msgid "Unmarked"
 msgstr "Ikke merket"

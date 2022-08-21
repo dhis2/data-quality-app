@@ -44,6 +44,7 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
 
 msgid "follow up"
 msgstr ""
@@ -52,7 +53,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "ໂຄງຮ່າງການຈັດຕັ້ງຂັ້ນສູງ"
 
 msgid "Start Date"
 msgstr ""
@@ -64,7 +65,7 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "Period"
 msgstr ""
@@ -73,19 +74,19 @@ msgid "Min"
 msgstr "ຄ່ານ້ອຍສຸດ"
 
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 msgid "Max"
-msgstr ""
+msgstr "ຄ່າສູງສຸດ"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "​ຄຳ​ເຫັນ​ຕ່າງໆ"
 
 msgid "Close"
-msgstr ""
+msgstr "ປິດ"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -100,6 +101,8 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"​ວິ​ໄຈ​ເບີ່ງ​ທ່າ​ອ່ຽງ​ມູນ​ຄ່າ​ທີ່​ເກີນ​ອີງ​ໃສ່​ຫລັກ​ການຂອງ​ຄ່າ​ສູງ​ສຸດ ແລະ "
+"ຄ່າ​ຕ່ຳ​ສຸດ. ຄ່າ​ທີ່​ເກີນ​ສາ​ມາດກວດ​ກາ​ເບີ່ງ​ແລະ ໝາຍ​ໃວ້​ເພື່ອ​ຕິດ​ຕາມ"
 
 msgid "start"
 msgstr ""
@@ -108,7 +111,7 @@ msgid "Mark"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "​​ຫົວ​ໜ່ວຍມາດ​ຕະ​ຖານ​ການ​ວິ​ໄຈ​ຄວາມ​ຫລຸດ​ລື່ນ"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -121,7 +124,7 @@ msgid "Select number of standard deviations"
 msgstr "Select number of standard deviations"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "ກວດສອບຂໍ້ມູນ"
 
 msgid "Run Validation"
 msgstr ""
@@ -130,6 +133,8 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
+" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
 
 msgid "validate"
 msgstr ""
@@ -144,16 +149,16 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "ສຳຄັນ"
 
 msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "ເຄື່ອງໝາຍເລກ"
 
 msgid "Details"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgid "Validation Details"
 msgstr ""
@@ -165,10 +170,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "ຊື່"
 
 msgid "Description"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgid "LEFT SIDE"
 msgstr ""

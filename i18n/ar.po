@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "جار تحديث شجرة الوحدات التنظيمية..."
 
 msgid "Data Set"
 msgstr ""
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[جميع حزم البيانات]"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "تنزيل كملف PDF"
@@ -45,27 +45,29 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"عرض أو تعديل قيم البيانات التي تم وضع علامة متابعة لاحقة عليها خلال إدخال "
+"البيانات أو التحليل."
 
 msgid "follow up"
-msgstr ""
+msgstr "متابعة"
 
 msgid "unfollow"
 msgstr "إلغاء المتابعة"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "الوحدة التنظيمية الأصل"
 
 msgid "Start Date"
-msgstr ""
+msgstr "تاريخ البداية"
 
 msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "عنصر البيانات"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "الوحدة التنظيمية"
 
 msgid "Period"
 msgstr ""
@@ -74,19 +76,19 @@ msgid "Min"
 msgstr "الأدنى"
 
 msgid "Value"
-msgstr ""
+msgstr "القيمة"
 
 msgid "Max"
-msgstr ""
+msgstr "الأعلى"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "تعليق"
 
 msgid "Close"
-msgstr ""
+msgstr "إغلاق"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -95,12 +97,14 @@ msgid "Min-Max Outlier Analysis"
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "تحليل"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"تحليل القيم المتطرفة المحتملة اعتماداً على القيم الدنيا والعليا. من الممكن "
+"فحص القيم المتطرفة ووضع علامة عليها للمتابعة."
 
 msgid "start"
 msgstr ""
@@ -131,42 +135,44 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"تشغيل قواعد التحقق من أجل الكشف عن الحالات الشاذة و أخطاء البيانات في قاعدة "
+"البيانات."
 
 msgid "validate"
 msgstr "تحقق"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "مجموعة قواعد التحقق من الصحة"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "إرسال إشعارات"
 
 msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "الأهمية"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "قاعدة تحقق من الصحة"
 
 msgid "Operator"
-msgstr ""
+msgstr "العامل"
 
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "تفاصيل التحقق"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "تفاصيل نتيجة التحقق"
 
 msgid "VALIDATION RULE"
 msgstr "قاعدة التحقق"
 
 msgid "Name"
-msgstr ""
+msgstr "الإسم"
 
 msgid "Description"
 msgstr ""
@@ -175,13 +181,13 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "الطرف الأيمن"
 
 msgid "DATA ELEMENT"
 msgstr ""
 
 msgid "VALUE"
-msgstr ""
+msgstr "القيمة"
 
 msgid "no data available"
 msgstr "لا توجد بيانات متاحة"
@@ -190,22 +196,22 @@ msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Performing request"
-msgstr ""
+msgstr "جار تنفيذ الطلب"
 
 msgid "Performing analysis"
 msgstr "جار تنفيذ التحليل"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "تم التحليل"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "تم اجتياز التحقق بنجاح"
 
 msgid "No values found"
 msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء التحليل"
 
 msgid "Marked"
 msgstr ""
@@ -214,4 +220,4 @@ msgid "Unmarked"
 msgstr "تمت إزالة العلامة"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "تم إلغاء المتابعة"

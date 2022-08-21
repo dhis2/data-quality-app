@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
 # easylin <lin_xd@126.com>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
 # phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
 "PO-Revision-Date: 2022-08-21 23:40+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,10 +22,10 @@ msgid "Updating Organisation Units Tree..."
 msgstr "更新机构树"
 
 msgid "Data Set"
-msgstr ""
+msgstr "数据集"
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "【所有数据集】"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "下载为PDF"
@@ -40,12 +40,12 @@ msgid "Follow-Up Analysis"
 msgstr "后续分析"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "查看数据值"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
-msgstr ""
+msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
 
 msgid "follow up"
 msgstr "后续跟进"
@@ -54,46 +54,46 @@ msgid "unfollow"
 msgstr "取消后续跟踪"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "上级组织机构"
 
 msgid "Start Date"
-msgstr ""
+msgstr "开始日期"
 
 msgid "End Date"
-msgstr ""
+msgstr "结束日期"
 
 msgid "Data Element"
-msgstr ""
+msgstr "数据元"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "组织机构"
 
 msgid "Period"
-msgstr ""
+msgstr "期间"
 
 msgid "Min"
 msgstr "最小"
 
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 msgid "Max"
-msgstr ""
+msgstr "最大"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "取消后续跟踪"
 
 msgid "Comment"
-msgstr ""
+msgstr "评论"
 
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr ""
+msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "最小-最大值孤立分析"
 
 msgid "Analyze"
 msgstr "分析"
@@ -101,16 +101,16 @@ msgstr "分析"
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
-msgstr ""
+msgstr "基于最小和最大值分析异常值。异常值能被后续检查和标记"
 
 msgid "start"
-msgstr ""
+msgstr "开始"
 
 msgid "Mark"
-msgstr ""
+msgstr "标记"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "标准差孤立分析"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -121,15 +121,15 @@ msgid "Select number of standard deviations"
 msgstr "选择标准差编号"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "验证规则分析"
 
 msgid "Run Validation"
-msgstr ""
+msgstr "运行有效性验证"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr ""
+msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
 
 msgid "validate"
 msgstr "验证"
@@ -138,55 +138,55 @@ msgid "Validation Rule Group"
 msgstr "验证规则组"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "发送通知"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "持久化新的结果"
 
 msgid "Importance"
-msgstr ""
+msgstr "重要性"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "验证规则"
 
 msgid "Operator"
 msgstr "操作符"
 
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "有效性验证详情"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "验证结果详情"
 
 msgid "VALIDATION RULE"
 msgstr "验证规则"
 
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "左边"
 
 msgid "RIGHT SIDE"
 msgstr "右边"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "数据元"
 
 msgid "VALUE"
-msgstr ""
+msgstr "值"
 
 msgid "no data available"
 msgstr "没有可用数据"
 
 msgid "[All Validation Rules]"
-msgstr ""
+msgstr "【所有验证规则】"
 
 msgid "Performing request"
 msgstr "执行请求"
@@ -201,13 +201,13 @@ msgid "Validation passed successfully"
 msgstr "验证已成功"
 
 msgid "No values found"
-msgstr ""
+msgstr "无值被找到"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "分析中发生意外错误"
 
 msgid "Marked"
-msgstr ""
+msgstr "已标记"
 
 msgid "Unmarked"
 msgstr "未标记"

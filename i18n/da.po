@@ -75,16 +75,16 @@ msgid "Value"
 msgstr ""
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Comment"
 
 msgid "Close"
-msgstr ""
+msgstr "Close"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -147,10 +147,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 msgid "Validation Details"
 msgstr ""
@@ -162,7 +162,7 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Description"
 msgstr ""

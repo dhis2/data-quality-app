@@ -1,6 +1,8 @@
 # 
 # Translators:
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # phil_dhis2, 2022
+# Janeth Cruz, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
@@ -17,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Actualizando árbol de unidades organizativas..."
 
 msgid "Data Set"
 msgstr ""
@@ -44,6 +46,8 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Ver o editar valores de los datos marcados para seguimiento durante la "
+"entrada de datos o análisis."
 
 msgid "follow up"
 msgstr ""
@@ -52,19 +56,19 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Padre de la unidad organizativa"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha de inicio"
 
 msgid "End Date"
-msgstr ""
+msgstr "Fecha de fin"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Elemento de datos"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unidad Organizativa"
 
 msgid "Period"
 msgstr ""
@@ -73,19 +77,19 @@ msgid "Min"
 msgstr "Mín"
 
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 msgid "Max"
-msgstr ""
+msgstr "Máx"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -100,6 +104,8 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analizar los posibles valores atípicos en base a los valores mínimos y "
+"máximos. Los valores atípicos se pueden examinar y marcar para seguimiento."
 
 msgid "start"
 msgstr ""
@@ -108,7 +114,7 @@ msgid "Mark"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Análisis por desviación estandar"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -130,12 +136,14 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Ejecutar las reglas de validación para detectar anomalías y errores en los "
+"datos de la base de datos."
 
 msgid "validate"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grupo de Reglas de Validación"
 
 msgid "Send Notifications"
 msgstr ""
@@ -147,13 +155,13 @@ msgid "Importance"
 msgstr ""
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Regla de Validación"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operador"
 
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 msgid "Validation Details"
 msgstr ""
@@ -165,7 +173,7 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 msgid "Description"
 msgstr ""
@@ -198,7 +206,7 @@ msgid "Analysis done"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Validado correctamente"
 
 msgid "No values found"
 msgstr ""

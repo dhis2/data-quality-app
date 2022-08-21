@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2022
+# easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:47:48.323Z\n"
-"PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:40+0000\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,7 +67,7 @@ msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "Period"
-msgstr "期间"
+msgstr "周期"
 
 msgid "Min"
 msgstr "最小"
@@ -76,13 +76,13 @@ msgid "Value"
 msgstr "值"
 
 msgid "Max"
-msgstr "最大"
+msgstr "最大值"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr "评论"
+msgstr "意见"
 
 msgid "Close"
 msgstr "关闭"
@@ -148,7 +148,7 @@ msgid "Validation Rule"
 msgstr "验证规则"
 
 msgid "Operator"
-msgstr "操作符"
+msgstr "操作员"
 
 msgid "Details"
 msgstr "详情"

@@ -16,13 +16,13 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "Data Set"
 msgstr ""
 
 msgid "[All Data Sets]"
-msgstr ""
+msgstr "[Všechny datové sady]"
 
 msgid "DOWNLOAD AS PDF"
 msgstr "STÁHNOUT JAKO PDF"
@@ -43,27 +43,29 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Zobrazte nebo upravte hodnoty dat označené pro další sledování během "
+"zadávání nebo analýzy dat."
 
 msgid "follow up"
-msgstr ""
+msgstr "následovat"
 
 msgid "unfollow"
 msgstr "přestat sledovat"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Nadřazená organizační jednotka"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Datum začátku"
 
 msgid "End Date"
 msgstr ""
 
 msgid "Data Element"
-msgstr ""
+msgstr "Datový prvek"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organizační jednotka"
 
 msgid "Period"
 msgstr ""
@@ -72,19 +74,19 @@ msgid "Min"
 msgstr "Min"
 
 msgid "Value"
-msgstr ""
+msgstr "Hodnota"
 
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -93,12 +95,14 @@ msgid "Min-Max Outlier Analysis"
 msgstr ""
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analyzovat"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analyzujte potenciální odlehlé hodnoty na základě minimálních a maximálních "
+"hodnot. Odlehlé hodnoty lze prozkoumat a označit pro následné sledování."
 
 msgid "start"
 msgstr ""
@@ -129,42 +133,44 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Spusťte ověřovací pravidla, abyste odhalili anomálie a chyby v datech v "
+"databázi."
 
 msgid "validate"
 msgstr "ověřit"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Skupina pravidel ověření"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Odeslat oznámení"
 
 msgid "Persist new results"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "Důležitost"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Pravidlo ověření"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operátor"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Podrobnosti ověření"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "PODROBNOSTI O VÝSLEDKU OVĚŘENÍ"
 
 msgid "VALIDATION RULE"
 msgstr "OVĚŘOVACÍ PRAVIDLO"
 
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 msgid "Description"
 msgstr ""
@@ -173,13 +179,13 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "PRAVÁ STRANA"
 
 msgid "DATA ELEMENT"
 msgstr ""
 
 msgid "VALUE"
-msgstr ""
+msgstr "HODNOTA"
 
 msgid "no data available"
 msgstr "údaje nejsou k dispozici"
@@ -188,22 +194,22 @@ msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Performing request"
-msgstr ""
+msgstr "Provádění požadavku"
 
 msgid "Performing analysis"
 msgstr "Provádění analýzy"
 
 msgid "Analysis done"
-msgstr ""
+msgstr "Analýza hotova"
 
 msgid "Validation passed successfully"
-msgstr ""
+msgstr "Ověření proběhlo úspěšně"
 
 msgid "No values found"
 msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Během analýzy došlo k neočekávané chybě"
 
 msgid "Marked"
 msgstr ""
@@ -212,4 +218,4 @@ msgid "Unmarked"
 msgstr "Neoznačeno"
 
 msgid "Unfollow done"
-msgstr ""
+msgstr "Provedeno ukončení sledování"

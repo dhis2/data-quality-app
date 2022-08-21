@@ -52,7 +52,7 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Parent organisation unit"
 
 msgid "Start Date"
 msgstr ""
@@ -64,7 +64,7 @@ msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "အဖွဲ့အစည်းယူနစ်"
 
 msgid "Period"
 msgstr ""
@@ -73,19 +73,19 @@ msgid "Min"
 msgstr "အနည်းဆုံး"
 
 msgid "Value"
-msgstr ""
+msgstr "တန်ဖိုး"
 
 msgid "Max"
-msgstr ""
+msgstr "အများဆုံး"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "မှတ်ချက်"
 
 msgid "Close"
-msgstr ""
+msgstr "ပိတ်သည်"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -148,10 +148,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr ""
+msgstr "စုစည်းစီမံသူ"
 
 msgid "Details"
-msgstr ""
+msgstr "အသေးစိတ်များ"
 
 msgid "Validation Details"
 msgstr ""
@@ -163,10 +163,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "အမည်"
 
 msgid "Description"
-msgstr ""
+msgstr "ဖော်ပြချက်"
 
 msgid "LEFT SIDE"
 msgstr ""

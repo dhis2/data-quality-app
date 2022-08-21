@@ -51,46 +51,48 @@ msgid "unfollow"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Yuqori tashkilot boʼlimi"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Boshlanish sanasi"
 
 msgid "End Date"
-msgstr ""
+msgstr "Yakunlanish Sana"
 
 msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Tashkiliy birlik"
 
 msgid "Period"
-msgstr ""
+msgstr "davr"
 
 msgid "Min"
 msgstr "Минимум"
 
 msgid "Value"
-msgstr ""
+msgstr "Қиймат"
 
 msgid "Max"
-msgstr ""
+msgstr "Максимум"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Bekor qilish"
 
 msgid "Comment"
-msgstr ""
+msgstr "Izoh"
 
 msgid "Close"
-msgstr ""
+msgstr "Yopmoq"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
+"500 dan ortiq natija topildi, Iltimos, qidiruv maydonini qisqartiring, "
+"natijani koʼrish uchun"
 
 msgid "Min-Max Outlier Analysis"
-msgstr ""
+msgstr "Minimal-Maksimal chekinish Аnalitikasi"
 
 msgid "Analyze"
 msgstr ""
@@ -104,10 +106,10 @@ msgid "start"
 msgstr ""
 
 msgid "Mark"
-msgstr ""
+msgstr "Belgi"
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Oʼrtacha kvadratik ogʼish chekinishlari Аnalitikasi"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -118,7 +120,7 @@ msgid "Select number of standard deviations"
 msgstr "Standart ogʼishlar sonini aniqlang"
 
 msgid "Validation Rule Analysis"
-msgstr ""
+msgstr "Tasdiqlash Qoidasi Аnalitikasi"
 
 msgid "Run Validation"
 msgstr ""
@@ -135,49 +137,49 @@ msgid "Validation Rule Group"
 msgstr "Tekshiruv guruhi qoidalari"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Bildirishnoma Yuborish"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Doimiy yangi natijalar"
 
 msgid "Importance"
-msgstr ""
+msgstr "Аhamiyatli"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Tasdiqlash Qoidasi"
 
 msgid "Operator"
 msgstr "Operator"
 
 msgid "Details"
-msgstr ""
+msgstr "Тафсилотлари"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Tekshiruv detallari"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "TEKShIRUV DETАLLАRI NАTIJАSI"
 
 msgid "VALIDATION RULE"
 msgstr "TEKShIRUV QOIDАSI"
 
 msgid "Name"
-msgstr ""
+msgstr "Исми"
 
 msgid "Description"
-msgstr ""
+msgstr "Tavsif"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "ChАP TOMON"
 
 msgid "RIGHT SIDE"
 msgstr "OʼNG TOMON"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "MАЪLUMOTLАR ELEMENTI"
 
 msgid "VALUE"
-msgstr ""
+msgstr "QIYMАT"
 
 msgid "no data available"
 msgstr "maʼlumotlar mavjud emas"
@@ -198,10 +200,10 @@ msgid "Validation passed successfully"
 msgstr "Tasdiqlash Mavaffaqiyatli Oʼtdi"
 
 msgid "No values found"
-msgstr ""
+msgstr "Qiymat topilmadi"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
 
 msgid "Marked"
 msgstr ""

@@ -1,6 +1,8 @@
 # 
 # Translators:
+# phil_dhis2, 2022
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # 
 msgid ""
@@ -17,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Memperbarui Pohon Unit Organisasi.."
 
 msgid "Data Set"
 msgstr ""
@@ -38,12 +40,14 @@ msgid "Follow-Up Analysis"
 msgstr "Analisis Tindak Lanjut"
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Lihat Nilai Data"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
+"Lihat atau edit nilai data yang ditandai untuk tindak lanjut selama entry "
+"data atau analisis."
 
 msgid "follow up"
 msgstr "tindak lanjuti"
@@ -52,19 +56,19 @@ msgid "unfollow"
 msgstr "berhenti mengikuti"
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Unit organisasi induk"
 
 msgid "Start Date"
-msgstr ""
+msgstr "Tanggal Mulai"
 
 msgid "End Date"
-msgstr ""
+msgstr "Tanggal Selesai"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Data Elemen"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unit Organisasi"
 
 msgid "Period"
 msgstr ""
@@ -73,19 +77,19 @@ msgid "Min"
 msgstr "Minimal"
 
 msgid "Value"
-msgstr ""
+msgstr "Nilai"
 
 msgid "Max"
-msgstr ""
+msgstr "Maksimal"
 
 msgid "Unfollow"
 msgstr ""
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentar"
 
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -100,6 +104,8 @@ msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
 " can be examined and marked for follow-up."
 msgstr ""
+"Analisis kemungkinan nilai outlier berdasarkan nilai min dan maks. Nilai "
+"outlier dapat diperiksa dan ditandai untuk tindak lanjut."
 
 msgid "start"
 msgstr ""
@@ -108,7 +114,7 @@ msgid "Mark"
 msgstr ""
 
 msgid "Std Dev Outlier Analysis"
-msgstr ""
+msgstr "Analisis Outlier Dev Std"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations. Outlier "
@@ -124,48 +130,50 @@ msgid "Validation Rule Analysis"
 msgstr ""
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Jalankan Validasi"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
+"Jalankan aturan validasi untuk menampilkan anomali dan kesalahan data dalam "
+"basis data."
 
 msgid "validate"
 msgstr "validasi"
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Grup Aturan Validasi"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Kirim Notifikasi"
 
 msgid "Persist new results"
-msgstr ""
+msgstr "Gunakan hasil baru"
 
 msgid "Importance"
-msgstr ""
+msgstr "Kepentingan"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Aturan validasi"
 
 msgid "Operator"
-msgstr ""
+msgstr "Operator"
 
 msgid "Details"
-msgstr ""
+msgstr "Rincian"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Rincian Validasi"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "RINCIAN HASIL VALIDASI"
 
 msgid "VALIDATION RULE"
 msgstr "ATURAN VALIDASI"
 
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 msgid "Description"
 msgstr ""
@@ -174,13 +182,13 @@ msgid "LEFT SIDE"
 msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "SISI KANAN"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "DATA ELEMEN"
 
 msgid "VALUE"
-msgstr ""
+msgstr "NILAI"
 
 msgid "no data available"
 msgstr "tidak ada data"
@@ -204,10 +212,10 @@ msgid "No values found"
 msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Terjadi kesalahan tak terduga selama analisis"
 
 msgid "Marked"
-msgstr ""
+msgstr "Ditandai"
 
 msgid "Unmarked"
 msgstr "Batal menandai"
