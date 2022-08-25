@@ -63,7 +63,7 @@ msgid "Close"
 msgstr "Закрити"
 
 msgid "Data Element"
-msgstr ""
+msgstr "Елемент даних"
 
 msgid "Organisation Unit"
 msgstr "Організаційний підрозділ"
@@ -195,7 +195,7 @@ msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "Група правил перевірки"
 
 msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
@@ -216,7 +216,7 @@ msgid "Importance"
 msgstr "Importance"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "Правило перевірки"
 
 msgid "Operator"
 msgstr "Оператор"
