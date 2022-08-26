@@ -186,7 +186,7 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Validating..."
-msgstr ""
+msgstr "Перевірка..."
 
 msgid "Validate"
 msgstr "Перевірити"
