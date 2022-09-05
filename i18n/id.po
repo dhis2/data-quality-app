@@ -8,13 +8,14 @@
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # Raja Fathurrahim, 2022
+# Farida Sibuea <farida_sibuea@yahoo.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Raja Fathurrahim, 2022\n"
+"Last-Translator: Farida Sibuea <farida_sibuea@yahoo.com>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,16 +24,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "tidak ditemukan data yang sesuai"
 
 msgid "Error loading datasets."
-msgstr ""
+msgstr "terjadi kesalahan dalam membuka dataset"
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr ""
+msgstr "ada kesalahan ketika membuka unit organisasi"
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "anda tidak memiliki akses ke unit organisasi"
 
 msgid "Open user guide"
 msgstr "Buka pedoman pengguna"
@@ -41,7 +42,7 @@ msgid "Download as PDF"
 msgstr "Download dalam bentuk PDF"
 
 msgid "Download as XLS"
-msgstr ""
+msgstr "download dalam bentuk XLS"
 
 msgid "Download as CSV"
 msgstr "Download dalam bentuk CSV"
@@ -90,7 +91,7 @@ msgid "Unfollow"
 msgstr "Berhenti Ikuti"
 
 msgid "Unfollowing..."
-msgstr ""
+msgstr "meninggalkan"
 
 msgid "Data Set"
 msgstr "Data Set"
@@ -105,7 +106,7 @@ msgid "End Date"
 msgstr "Tanggal Selesai"
 
 msgid "Processing..."
-msgstr ""
+msgstr "sedang memroses"
 
 msgid "Follow up"
 msgstr "Tindak lanjut"
@@ -123,16 +124,16 @@ msgid "End date"
 msgstr "Tanggal berakhir"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "algoritma"
 
 msgid "Max results"
-msgstr ""
+msgstr "hasil maksimal"
 
 msgid "Start"
 msgstr "Mulai"
 
 msgid "Threshold"
-msgstr ""
+msgstr "ambang batas"
 
 msgid "Hide advanced options"
 msgstr "Sembunyikan piliihan lanjutan"
@@ -192,7 +193,7 @@ msgid "Persist new results"
 msgstr "Gunakan hasil baru"
 
 msgid "Validating..."
-msgstr ""
+msgstr "sedang memvalidasi"
 
 msgid "Validate"
 msgstr "Memvalidasi"
