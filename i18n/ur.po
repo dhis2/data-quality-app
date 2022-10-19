@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2022-10-15 22:30+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -201,7 +201,7 @@ msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr " توثیق کامیاب ہوگئی"
+msgstr "توثیق کامیاب ہوگئی"
 
 msgid "Validation Rule Analysis"
 msgstr "توثیق کے اصول تجزیہ"
@@ -231,7 +231,7 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "نام"
+msgstr "ÙØ§Ù"
 
 msgid "Description"
 msgstr "تفصیلات"

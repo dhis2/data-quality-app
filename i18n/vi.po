@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
+"PO-Revision-Date: 2022-10-15 22:30+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +62,7 @@ msgid "Comment"
 msgstr "Bình luận"
 
 msgid "Close"
-msgstr "Đóng lại"
+msgstr "Đóng"
 
 msgid "Data Element"
 msgstr "Phần tử dữ liệu"
@@ -91,7 +92,7 @@ msgid "Data Set"
 msgstr "Biểu nhập"
 
 msgid "Parent organisation unit"
-msgstr "Đơn vị cha"
+msgstr "Đơn vị tuyến trên"
 
 msgid "Start Date"
 msgstr "Ngày bắt đầu"
@@ -232,10 +233,10 @@ msgid "VALIDATION RULE"
 msgstr "Quy tắc hợp lệ"
 
 msgid "Name"
-msgstr "Tên tài khoản"
+msgstr "Tên"
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr "Mô tả"
 
 msgid "no data available"
 msgstr "Không có sẵn dữ liệu"
