@@ -4,16 +4,16 @@
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
-# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2021-09-03 23:45+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +55,7 @@ msgid "No values found"
 msgstr "Pas de valeurs trouvées"
 
 msgid "Elements unfollowed"
-msgstr ""
+msgstr "Éléments non suivis"
 
 msgid "An unexpected error happened during analysis"
 msgstr "Une erreur inattendue s'est produite lors de l'analyse"
@@ -91,7 +91,7 @@ msgid "Unfollow"
 msgstr "Se désabonner"
 
 msgid "Unfollowing..."
-msgstr ""
+msgstr "Ne plus suivre..."
 
 msgid "Data Set"
 msgstr "Ensemble de données"
@@ -154,7 +154,7 @@ msgid "Sort by"
 msgstr "Trier par"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "Écart absolu par rapport à la moyenne"
 
 msgid "Deviation"
 msgstr "Déviation"
@@ -178,13 +178,13 @@ msgid "Outlier Detection"
 msgstr "Détection des valeurs atypiques"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Z-score"
 
 msgid "Modified Z-score"
 msgstr "Z-score modifié"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "Valeurs min-max"
 
 msgid "Send Notifications"
 msgstr "Envoyer les notification"
@@ -206,6 +206,7 @@ msgstr "Groupe de règles de validation"
 
 msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
+"Erreur de chargement des groupes de règles de validation : {{- erreur}}"
 
 msgid "Validation passed successfully"
 msgstr "Succès de la validation"
