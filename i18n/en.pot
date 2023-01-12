@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
-"PO-Revision-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-01-12T07:21:12.471Z\n"
+"PO-Revision-Date: 2023-01-12T07:21:12.471Z\n"
 
 msgid "No match found"
 msgstr "No match found"
@@ -101,12 +101,6 @@ msgstr "Data set"
 msgid "Organisation units"
 msgstr "Organisation units"
 
-msgid "Start date"
-msgstr "Start date"
-
-msgid "End date"
-msgstr "End date"
-
 msgid "Algorithm"
 msgstr "Algorithm"
 
@@ -140,6 +134,9 @@ msgstr "Sort by"
 msgid "Absolute Deviation from Mean"
 msgstr "Absolute Deviation from Mean"
 
+msgid "Absolute Deviation from Median"
+msgstr "Absolute Deviation from Median"
+
 msgid "Deviation"
 msgstr "Deviation"
 
@@ -148,6 +145,9 @@ msgstr "Std Dev"
 
 msgid "Mean"
 msgstr "Mean"
+
+msgid "Median"
+msgstr "Median"
 
 msgid "Follow-up"
 msgstr "Follow-up"

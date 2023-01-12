@@ -1,5 +1,6 @@
+import { useConfig } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
+import { getCalendarDate } from '../../helpers/dates.js'
 import {
     DEFAULT_THRESHOLD,
     DEFAULT_ALGORITHM,
@@ -8,8 +9,13 @@ import {
 } from './constants.js'
 
 const useFormState = () => {
-    const [startDate, setStartDate] = useState(threeMonthsAgo())
-    const [endDate, setEndDate] = useState(new Date())
+    const { systemInfo = {} } = useConfig()
+    const { calendar = 'gregory' } = systemInfo
+
+    const [startDate, setStartDate] = useState(
+        getCalendarDate(calendar, { months: -3 })
+    )
+    const [endDate, setEndDate] = useState(getCalendarDate(calendar))
     const [organisationUnitIds, setOrganisationUnitIds] = useState([])
     const [algorithm, setAlgorithm] = useState(DEFAULT_ALGORITHM)
     const [showAdvancedZScoreFields, setShowAdvancedZScoreFields] =
@@ -22,10 +28,10 @@ const useFormState = () => {
     const [maxResults, setMaxResults] = useState(DEFAULT_MAX_RESULTS)
 
     const handleStartDateChange = (event, date) => {
-        setStartDate(new Date(date))
+        setStartDate(date)
     }
     const handleEndDateChange = (event, date) => {
-        setEndDate(new Date(date))
+        setEndDate(date)
     }
     const handleAlgorithmChange = (event, index, value) => {
         setAlgorithm(value)
@@ -45,10 +51,10 @@ const useFormState = () => {
         setOrderBy(value)
     }
     const handleDataStartDateChange = (date) => {
-        setDataStartDate(date && new Date(date))
+        setDataStartDate(date)
     }
     const handleDataEndDateChange = (date) => {
-        setDataEndDate(date && new Date(date))
+        setDataEndDate(date)
     }
     const handleDataSetsChange = ({ selected }) => {
         setDataSetIds(selected)

@@ -1,17 +1,23 @@
+import { useConfig } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo.js'
+import { getCalendarDate } from '../../helpers/dates.js'
 
 const useFormState = () => {
-    const [startDate, setStartDate] = useState(threeMonthsAgo())
-    const [endDate, setEndDate] = useState(new Date())
+    const { systemInfo = {} } = useConfig()
+    const { calendar = 'gregory' } = systemInfo
+
+    const [startDate, setStartDate] = useState(
+        getCalendarDate(calendar, { months: -3 })
+    )
+    const [endDate, setEndDate] = useState(getCalendarDate(calendar))
     const [organisationUnitId, setOrganisationUnitId] = useState(null)
     const [dataSetIds, setDataSetIds] = useState([])
 
     const handleStartDateChange = (event, date) => {
-        setStartDate(new Date(date))
+        setStartDate(date)
     }
     const handleEndDateChange = (event, date) => {
-        setEndDate(new Date(date))
+        setEndDate(date)
     }
     const handleDataSetsChange = ({ selected }) => {
         setDataSetIds(selected)
