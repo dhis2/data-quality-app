@@ -27,10 +27,10 @@ const useFormState = () => {
     const [dataSetIds, setDataSetIds] = useState([])
     const [maxResults, setMaxResults] = useState(DEFAULT_MAX_RESULTS)
 
-    const handleStartDateChange = (event, date) => {
+    const handleStartDateChange = ({ calendarDateString: date }) => {
         setStartDate(date)
     }
-    const handleEndDateChange = (event, date) => {
+    const handleEndDateChange = ({ calendarDateString: date }) => {
         setEndDate(date)
     }
     const handleAlgorithmChange = (event, index, value) => {
@@ -51,9 +51,11 @@ const useFormState = () => {
         setOrderBy(value)
     }
     const handleDataStartDateChange = (date) => {
+        console.log('>>>>[outlier] start', date)
         setDataStartDate(date)
     }
     const handleDataEndDateChange = (date) => {
+        console.log('>>>>[outlier] end', date)
         setDataEndDate(date)
     }
     const handleDataSetsChange = ({ selected }) => {
