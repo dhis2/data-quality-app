@@ -13,10 +13,12 @@ const useFormState = () => {
     const [organisationUnitId, setOrganisationUnitId] = useState(null)
     const [dataSetIds, setDataSetIds] = useState([])
 
-    const handleStartDateChange = ({ calendarDateString: date }) => {
+    const handleStartDateChange = (selectedDate) => {
+        const date = selectedDate?.calendarDateString
         setStartDate(date)
     }
-    const handleEndDateChange = ({ calendarDateString: date }) => {
+    const handleEndDateChange = (selectedDate) => {
+        const date = selectedDate?.calendarDateString
         setEndDate(date)
     }
     const handleDataSetsChange = ({ selected }) => {

@@ -1,6 +1,6 @@
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
-import DatePicker from 'material-ui/DatePicker'
+import { Button, CalendarInput } from '@dhis2/ui'
 import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
@@ -19,79 +19,70 @@ const ZScoreFields = ({
     dataEndDate,
     onDataStartDateChange,
     onDataEndDateChange,
-}) => (
-    <>
-        <Button
-            small
-            secondary
-            className={styles.toggleBtn}
-            onClick={onToggleAdvancedZScoreFields}
-        >
-            {showAdvancedZScoreFields
-                ? i18n.t('Hide advanced options')
-                : i18n.t('Show advanced options')}
-        </Button>
-        {showAdvancedZScoreFields && (
-            <>
-                <div className={styles.optionalDatepickerContainer}>
-                    <DatePicker
-                        textFieldStyle={jsPageStyles.inputForm}
-                        floatingLabelText={i18n.t('Data start date')}
-                        onChange={(event, date) => onDataStartDateChange(date)}
-                        maxDate={dataEndDate}
-                        value={dataStartDate}
-                    />
-                    <Button
-                        secondary
-                        small
-                        disabled={!dataStartDate}
-                        onClick={() => onDataStartDateChange(null)}
+}) => {
+    const { systemInfo = {} } = useConfig()
+    const { calendar = 'gregory' } = systemInfo
+
+    return (
+        <>
+            <Button
+                small
+                secondary
+                className={styles.toggleBtn}
+                onClick={onToggleAdvancedZScoreFields}
+            >
+                {showAdvancedZScoreFields
+                    ? i18n.t('Hide advanced options')
+                    : i18n.t('Show advanced options')}
+            </Button>
+            {showAdvancedZScoreFields && (
+                <>
+                    <div className={styles.optionalDatepickerContainer}>
+                        <CalendarInput
+                            onDateSelect={onDataStartDateChange}
+                            date={dataStartDate}
+                            calendar={calendar}
+                            locale="en"
+                            label={i18n.t('Data start date')}
+                            clearable
+                        />
+                    </div>
+                    <div className={styles.optionalDatepickerContainer}>
+                        <CalendarInput
+                            onDateSelect={(date) => onDataEndDateChange(date)}
+                            date={dataEndDate}
+                            calendar={calendar}
+                            locale="en"
+                            label={i18n.t('Data end date')}
+                            clearable
+                        />
+                    </div>
+                    <SelectField
+                        style={jsPageStyles.inputForm}
+                        floatingLabelText={i18n.t('Sort by')}
+                        onChange={onOrderByChange}
+                        value={orderBy}
                     >
-                        {i18n.t('Clear')}
-                    </Button>
-                </div>
-                <div className={styles.optionalDatepickerContainer}>
-                    <DatePicker
-                        textFieldStyle={jsPageStyles.inputForm}
-                        floatingLabelText={i18n.t('Data end date')}
-                        onChange={(event, date) => onDataEndDateChange(date)}
-                        minDate={dataStartDate}
-                        value={dataEndDate}
-                    />
-                    <Button
-                        secondary
-                        small
-                        disabled={!dataEndDate}
-                        onClick={() => onDataEndDateChange(null)}
-                    >
-                        {i18n.t('Clear')}
-                    </Button>
-                </div>
-                <SelectField
-                    style={jsPageStyles.inputForm}
-                    floatingLabelText={i18n.t('Sort by')}
-                    onChange={onOrderByChange}
-                    value={orderBy}
-                >
-                    <MenuItem
-                        /* API uses Z-Score for both modified and regular Z-score
-                        But show the algorithm selected to user */
-                        value={Z_SCORE}
-                        primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
-                    />
-                    <MenuItem
-                        value={MEAN_ABS_DEV}
-                        primaryText={
-                            algorithm === Z_SCORE
-                                ? i18n.t('Absolute Deviation from Mean')
-                                : i18n.t('Absolute Deviation from Median')
-                        }
-                    />
-                </SelectField>
-            </>
-        )}
-    </>
-)
+                        <MenuItem
+                            /* API uses Z-Score for both modified and regular Z-score
+                                But show the algorithm selected to user */
+                            value={Z_SCORE}
+                            primaryText={ALGORITHM_TO_LABEL_MAP[algorithm]}
+                        />
+                        <MenuItem
+                            value={MEAN_ABS_DEV}
+                            primaryText={
+                                algorithm === Z_SCORE
+                                    ? i18n.t('Absolute Deviation from Mean')
+                                    : i18n.t('Absolute Deviation from Median')
+                            }
+                        />
+                    </SelectField>
+                </>
+            )}
+        </>
+    )
+}
 
 ZScoreFields.propTypes = {
     orderBy: PropTypes.string.isRequired,
@@ -101,8 +92,8 @@ ZScoreFields.propTypes = {
     onOrderByChange: PropTypes.func.isRequired,
     onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
     algorithm: PropTypes.string,
-    dataEndDate: PropTypes.object,
-    dataStartDate: PropTypes.object,
+    dataEndDate: PropTypes.string,
+    dataStartDate: PropTypes.string,
 }
 
 export default ZScoreFields

@@ -153,12 +153,12 @@ const Form = ({
 Form.propTypes = {
     algorithm: PropTypes.string.isRequired,
     dataSetIds: PropTypes.array.isRequired,
-    endDate: PropTypes.object.isRequired,
+    endDate: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     maxResults: PropTypes.number.isRequired,
     orderBy: PropTypes.string.isRequired,
     showAdvancedZScoreFields: PropTypes.bool.isRequired,
-    startDate: PropTypes.object.isRequired,
+    startDate: PropTypes.string.isRequired,
     threshold: PropTypes.number.isRequired,
     valid: PropTypes.bool.isRequired,
     onAlgorithmChange: PropTypes.func.isRequired,
@@ -173,8 +173,8 @@ Form.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onThresholdChange: PropTypes.func.isRequired,
     onToggleAdvancedZScoreFields: PropTypes.func.isRequired,
-    dataEndDate: PropTypes.object,
-    dataStartDate: PropTypes.object,
+    dataEndDate: PropTypes.string,
+    dataStartDate: PropTypes.string,
 }
 
 export default Form

@@ -17,10 +17,12 @@ const useFormState = () => {
     const [sendNotfications, setSendNotifications] = useState(false)
     const [persistNewResults, setPersistNewResults] = useState(false)
 
-    const handleStartDateChange = ({ calendarDateString: date }) => {
+    const handleStartDateChange = (selectedDate) => {
+        const date = selectedDate?.calendarDateString
         setStartDate(date)
     }
-    const handleEndDateChange = ({ calendarDateString: date }) => {
+    const handleEndDateChange = (selectedDate) => {
+        const date = selectedDate?.calendarDateString
         setEndDate(date)
     }
     const handleSendNotificationsChange = ({ checked }) => {

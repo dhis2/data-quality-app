@@ -84,9 +84,9 @@ const Form = ({
 
 Form.propTypes = {
     dataSetIds: PropTypes.array.isRequired,
-    endDate: PropTypes.object.isRequired,
+    endDate: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
-    startDate: PropTypes.object.isRequired,
+    startDate: PropTypes.string.isRequired,
     valid: PropTypes.bool.isRequired,
     onDataSetsChange: PropTypes.func.isRequired,
     onEndDateChange: PropTypes.func.isRequired,

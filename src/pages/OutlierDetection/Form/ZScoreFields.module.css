@@ -3,10 +3,5 @@
 }
 
 .optionalDatepickerContainer {
-    display: flex;
-    align-items: baseline;
-}
-
-.optionalDatepickerContainer button {
-    margin-left: var(--spacers-dp8);
+    margin-top: var(--spacers-dp12);
 }

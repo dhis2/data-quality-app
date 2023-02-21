@@ -95,11 +95,11 @@ const Form = ({
 }
 
 Form.propTypes = {
-    endDate: PropTypes.object.isRequired,
+    endDate: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     persistNewResults: PropTypes.bool.isRequired,
     sendNotfications: PropTypes.bool.isRequired,
-    startDate: PropTypes.object.isRequired,
+    startDate: PropTypes.string.isRequired,
     valid: PropTypes.bool.isRequired,
     onEndDateChange: PropTypes.func.isRequired,
     onOrganisationUnitChange: PropTypes.func.isRequired,
