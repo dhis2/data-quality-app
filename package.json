@@ -24,7 +24,7 @@
     "dependencies": {
         "@dhis2/app-runtime": "^3.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/multi-calendar-dates": "1.0.0-alpha.18",
+        "@dhis2/multi-calendar-dates": "^1.0.0",
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "8.12.0",
         "classnames": "^2.2.5",
