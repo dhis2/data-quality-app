@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/dhis2/data-quality-app/compare/v1.9.27...v1.10.0) (2023-03-01)
+
+
+### Features
+
+* use multi-calendar day picker to support non-Gregorian calendars ([#1001](https://github.com/dhis2/data-quality-app/issues/1001)) ([5e318a8](https://github.com/dhis2/data-quality-app/commit/5e318a8b3fcd2fbff779b1da33f1aafa00fa36d0))
+
 ## [1.9.27](https://github.com/dhis2/data-quality-app/compare/v1.9.26...v1.9.27) (2022-11-24)
 
 
