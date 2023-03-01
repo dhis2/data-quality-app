@@ -6,7 +6,6 @@ import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.js'
 import PageHeader from '../../components/PageHeader/PageHeader.js'
 import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
-import { convertDateToApiDateFormat } from '../../helpers/dates.js'
 import { apiConf } from '../../server.conf.js'
 import cssPageStyles from '../Page.module.css'
 import convertElementFromApiResponse from './convert-element-from-api-response.js'
@@ -103,8 +102,8 @@ const FollowUpAnalysis = ({ sectionKey }) => {
 
     const handleGetFollowUpList = () => {
         fetchFollowUpList({
-            startDate: convertDateToApiDateFormat(startDate),
-            endDate: convertDateToApiDateFormat(endDate),
+            startDate,
+            endDate,
             ou: organisationUnitId,
             ds: dataSetIds,
         })

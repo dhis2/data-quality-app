@@ -6,7 +6,6 @@ import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.js'
 import PageHeader from '../../components/PageHeader/PageHeader.js'
 import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
-import { convertDateToApiDateFormat } from '../../helpers/dates.js'
 import { apiConf } from '../../server.conf.js'
 import cssPageStyles from '../Page.module.css'
 import { Z_SCORE_ALGORITHMS } from './constants.js'
@@ -110,8 +109,8 @@ const OutlierDetection = () => {
         const params = {
             ds: dataSetIds,
             ou: organisationUnitIds,
-            startDate: convertDateToApiDateFormat(startDate),
-            endDate: convertDateToApiDateFormat(endDate),
+            startDate,
+            endDate,
             algorithm,
             maxResults,
             orderBy,
@@ -122,10 +121,10 @@ const OutlierDetection = () => {
             params.threshold = threshold
             if (dataStartDate) {
                 console.log('has startDate', dataStartDate)
-                params.dataStartDate = convertDateToApiDateFormat(dataStartDate)
+                params.dataStartDate = dataStartDate
             }
             if (dataEndDate) {
-                params.dataEndDate = convertDateToApiDateFormat(dataEndDate)
+                params.dataEndDate = dataEndDate
             }
         }
         fetchOutliers(params)

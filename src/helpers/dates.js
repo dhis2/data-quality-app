@@ -1,5 +1,16 @@
-// get Date from YYYY-MM-DDTHH:mm:ss.mmmm
-export const convertDateToApiDateFormat = (date) =>
-    date.toISOString().split('T')[0]
+import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 
-export default convertDateToApiDateFormat
+const padWithZeroes = (number, count = 2) => String(number).padStart(count, '0')
+
+export const formatYyyyMmDD = (date) => {
+    const year = date.eraYear ?? date.year
+    const month = padWithZeroes(date.month)
+    const dayString = padWithZeroes(date.day)
+
+    return `${year}-${month}-${dayString}`
+}
+
+export const getCalendarDate = (calendar, period = { days: 0 }) => {
+    const now = getNowInCalendar(calendar).add(period)
+    return formatYyyyMmDD(now)
+}

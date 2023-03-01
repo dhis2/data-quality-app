@@ -1,3 +1,7 @@
 .checkboxes {
     margin-top: var(--spacers-dp12);
 }
+
+.datepickers {
+    margin-bottom: var(--spacers-dp12);
+}
