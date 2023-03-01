@@ -3,17 +3,16 @@ import i18n from '@dhis2/d2-i18n'
 import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { useSidebar } from '../../components/Sidebar/SidebarContext'
-import { convertDateToApiDateFormat } from '../../helpers/dates'
-import { apiConf } from '../../server.conf'
+import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
+import { apiConf } from '../../server.conf.js'
 import cssPageStyles from '../Page.module.css'
-import convertElementFromApiResponse from './convert-element-from-api-response'
-import convertElementToUnFollowupRequest from './convert-element-to-un-followup-request'
-import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable'
-import Form from './Form'
-import useFormState from './use-form-state'
+import convertElementFromApiResponse from './convert-element-from-api-response.js'
+import convertElementToUnFollowupRequest from './convert-element-to-un-followup-request.js'
+import FollowUpAnalysisTable from './FollowUpAnalysisTable/FollowUpAnalysisTable.js'
+import Form from './Form.js'
+import useFormState from './use-form-state.js'
 
 const query = {
     followups: {
@@ -103,8 +102,8 @@ const FollowUpAnalysis = ({ sectionKey }) => {
 
     const handleGetFollowUpList = () => {
         fetchFollowUpList({
-            startDate: convertDateToApiDateFormat(startDate),
-            endDate: convertDateToApiDateFormat(endDate),
+            startDate,
+            endDate,
             ou: organisationUnitId,
             ds: dataSetIds,
         })
