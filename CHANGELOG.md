@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/dhis2/data-quality-app/compare/v1.10.0...v1.10.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* update label casing to follow design guidelines ([42c3fca](https://github.com/dhis2/data-quality-app/commit/42c3fca18efa223e8979a3b52854b8ad7d421cb9))
+
 # [1.10.0](https://github.com/dhis2/data-quality-app/compare/v1.9.27...v1.10.0) (2023-03-01)
 
 
