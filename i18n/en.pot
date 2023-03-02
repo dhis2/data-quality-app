@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-12T07:21:12.471Z\n"
-"PO-Revision-Date: 2023-01-12T07:21:12.471Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
+"PO-Revision-Date: 2023-03-02T10:03:37.227Z\n"
 
 msgid "No match found"
 msgstr "No match found"
@@ -83,11 +83,11 @@ msgstr "Data Set"
 msgid "Parent organisation unit"
 msgstr "Parent organisation unit"
 
-msgid "Start Date"
-msgstr "Start Date"
+msgid "Start date"
+msgstr "Start date"
 
-msgid "End Date"
-msgstr "End Date"
+msgid "End date"
+msgstr "End date"
 
 msgid "Processing..."
 msgstr "Processing..."
@@ -121,9 +121,6 @@ msgstr "Show advanced options"
 
 msgid "Data start date"
 msgstr "Data start date"
-
-msgid "Clear"
-msgstr "Clear"
 
 msgid "Data end date"
 msgstr "Data end date"
