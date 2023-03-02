@@ -44,7 +44,7 @@ const Form = ({
                             date={startDate}
                             calendar={calendar}
                             locale="en"
-                            label={i18n.t('Start Date')}
+                            label={i18n.t('Start date')}
                         />
                     </div>
                     <div className={styles.datepickers}>
@@ -53,7 +53,7 @@ const Form = ({
                             date={endDate}
                             calendar={calendar}
                             locale="en"
-                            label={i18n.t('End Date')}
+                            label={i18n.t('End date')}
                         />
                     </div>
                     <div>

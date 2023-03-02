@@ -70,7 +70,7 @@ const Form = ({
                             date={startDate}
                             calendar={calendar}
                             locale="en"
-                            label={i18n.t('Start Date')}
+                            label={i18n.t('Start date')}
                         />
                     </div>
                     <div className={cssPageStyles.datepickers}>
@@ -79,7 +79,7 @@ const Form = ({
                             date={endDate}
                             calendar={calendar}
                             locale="en"
-                            label={i18n.t('End Date')}
+                            label={i18n.t('End date')}
                         />
                     </div>
                     <SelectField
