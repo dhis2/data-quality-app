@@ -22,15 +22,19 @@
         "@dhis2/cli-style": "^9.2.0"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^3.2.0",
+        "@dhis2/app-runtime": "^3.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
+        "@dhis2/multi-calendar-dates": "^1.0.0",
         "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^7.1.1",
+        "@dhis2/ui": "8.12.1",
         "classnames": "^2.2.5",
         "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "0.20.2",
         "prop-types": "^15.7.2",
         "query-string": "^7.0.1",
         "react-router-dom": "^5.0.0"
+    },
+    "resolutions": {
+        "@dhis2/ui": "^8.12.1"
     }
 }

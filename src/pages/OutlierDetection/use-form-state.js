@@ -1,15 +1,21 @@
+import { useConfig } from '@dhis2/app-runtime'
 import { useState } from 'react'
-import threeMonthsAgo from '../../helpers/threeMonthsAgo'
+import { getCalendarDate } from '../../helpers/dates.js'
 import {
     DEFAULT_THRESHOLD,
     DEFAULT_ALGORITHM,
     DEFAULT_MAX_RESULTS,
     DEFAULT_ORDER_BY,
-} from './constants'
+} from './constants.js'
 
 const useFormState = () => {
-    const [startDate, setStartDate] = useState(threeMonthsAgo())
-    const [endDate, setEndDate] = useState(new Date())
+    const { systemInfo = {} } = useConfig()
+    const { calendar = 'gregory' } = systemInfo
+
+    const [startDate, setStartDate] = useState(
+        getCalendarDate(calendar, { months: -3 })
+    )
+    const [endDate, setEndDate] = useState(getCalendarDate(calendar))
     const [organisationUnitIds, setOrganisationUnitIds] = useState([])
     const [algorithm, setAlgorithm] = useState(DEFAULT_ALGORITHM)
     const [showAdvancedZScoreFields, setShowAdvancedZScoreFields] =
@@ -21,11 +27,13 @@ const useFormState = () => {
     const [dataSetIds, setDataSetIds] = useState([])
     const [maxResults, setMaxResults] = useState(DEFAULT_MAX_RESULTS)
 
-    const handleStartDateChange = (event, date) => {
-        setStartDate(new Date(date))
+    const handleStartDateChange = selectedDate => {
+        const date = selectedDate?.calendarDateString
+        setStartDate(date)
     }
-    const handleEndDateChange = (event, date) => {
-        setEndDate(new Date(date))
+    const handleEndDateChange = selectedDate => {
+        const date = selectedDate?.calendarDateString
+        setEndDate(date)
     }
     const handleAlgorithmChange = (event, index, value) => {
         setAlgorithm(value)
@@ -44,11 +52,13 @@ const useFormState = () => {
     const handleOrderByChange = (event, index, value) => {
         setOrderBy(value)
     }
-    const handleDataStartDateChange = date => {
-        setDataStartDate(date && new Date(date))
+    const handleDataStartDateChange = selectedDate => {
+        const date = selectedDate?.calendarDateString
+        setDataStartDate(date)
     }
-    const handleDataEndDateChange = date => {
-        setDataEndDate(date && new Date(date))
+    const handleDataEndDateChange = selectedDate => {
+        const date = selectedDate?.calendarDateString
+        setDataEndDate(date)
     }
     const handleDataSetsChange = ({ selected }) => {
         setDataSetIds(selected)
