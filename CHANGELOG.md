@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/dhis2/data-quality-app/compare/v1.10.1...v1.10.2) (2023-03-09)
+
+
+### Bug Fixes
+
+* **DHIS2-14900:** bump dhis/ui version to fix ethiopic calendar bug ([#1011](https://github.com/dhis2/data-quality-app/issues/1011)) ([b833bc7](https://github.com/dhis2/data-quality-app/commit/b833bc7a8336311729ef66f688c38b3c215415e5))
+
 ## [1.10.1](https://github.com/dhis2/data-quality-app/compare/v1.10.0...v1.10.1) (2023-03-02)
 
 
