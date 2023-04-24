@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/dhis2/data-quality-app/compare/v1.10.2...v1.10.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* disable button if start date is after end date ([#1014](https://github.com/dhis2/data-quality-app/issues/1014)) ([790a155](https://github.com/dhis2/data-quality-app/commit/790a155f35e27d52e2aaad10b907d8b2fdd18be5))
+
 ## [1.10.2](https://github.com/dhis2/data-quality-app/compare/v1.10.1...v1.10.2) (2023-03-09)
 
 
