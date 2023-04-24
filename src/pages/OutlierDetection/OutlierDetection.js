@@ -163,7 +163,8 @@ const OutlierDetection = () => {
         endDate &&
         organisationUnitIds.length > 0 &&
         threshold &&
-        dataSetIds.length > 0
+        dataSetIds.length > 0 &&
+        startDate < endDate
     )
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
