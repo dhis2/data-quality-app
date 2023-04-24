@@ -87,7 +87,12 @@ const ValidationRulesAnalysis = ({ sectionKey }) => {
         }
         validate(params)
     }
-    const formValid = !!(startDate && endDate && organisationUnitId)
+    const formValid = !!(
+        startDate &&
+        endDate &&
+        organisationUnitId &&
+        startDate < endDate
+    )
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
 

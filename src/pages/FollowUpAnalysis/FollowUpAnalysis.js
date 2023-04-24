@@ -136,7 +136,8 @@ const FollowUpAnalysis = ({ sectionKey }) => {
         startDate &&
         endDate &&
         organisationUnitId &&
-        dataSetIds.length > 0
+        dataSetIds.length > 0 &&
+        startDate < endDate
     )
     const shouldShowMaxResultsAlertBar =
         tableVisible && elements.length >= apiConf.results.analysis.limit
