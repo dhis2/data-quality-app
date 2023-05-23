@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,10 +92,10 @@ msgstr "Маълумотлар тўплами"
 msgid "Parent organisation unit"
 msgstr "Юқори ташкилот бўлими"
 
-msgid "Start Date"
+msgid "Start date"
 msgstr "Бошланиш санаси"
 
-msgid "End Date"
+msgid "End date"
 msgstr "Якунланиш санаси"
 
 msgid "Processing..."
@@ -109,12 +109,6 @@ msgstr "Маълумотлар тўплами"
 
 msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
-
-msgid "Start date"
-msgstr "Бошланиш санаси"
-
-msgid "End date"
-msgstr "Якунланиш санаси"
 
 msgid "Algorithm"
 msgstr ""
@@ -137,9 +131,6 @@ msgstr "Вариантларни кенгайтирилган ҳолда кўр�
 msgid "Data start date"
 msgstr ""
 
-msgid "Clear"
-msgstr "Тозалаш"
-
 msgid "Data end date"
 msgstr ""
 
@@ -149,6 +140,9 @@ msgstr "Саралаш тури"
 msgid "Absolute Deviation from Mean"
 msgstr ""
 
+msgid "Absolute Deviation from Median"
+msgstr ""
+
 msgid "Deviation"
 msgstr ""
 
@@ -156,6 +150,9 @@ msgid "Std Dev"
 msgstr "Стандарт оғиш"
 
 msgid "Mean"
+msgstr ""
+
+msgid "Median"
 msgstr ""
 
 msgid "Follow-up"
