@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
-"Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,10 +92,10 @@ msgstr ""
 msgid "Parent organisation unit"
 msgstr "Yuqori tashkilot boʼlimi"
 
-msgid "Start Date"
+msgid "Start date"
 msgstr "Boshlanish sanasi"
 
-msgid "End Date"
+msgid "End date"
 msgstr "Yakunlanish sanasi"
 
 msgid "Processing..."
@@ -109,12 +109,6 @@ msgstr "Maʼlumotlar toʼplami"
 
 msgid "Organisation units"
 msgstr "Tashkiliy birliklar"
-
-msgid "Start date"
-msgstr "Boshlanish sanasi"
-
-msgid "End date"
-msgstr "Yakunlanish sanasi"
 
 msgid "Algorithm"
 msgstr ""
@@ -137,9 +131,6 @@ msgstr ""
 msgid "Data start date"
 msgstr ""
 
-msgid "Clear"
-msgstr "Аниқ"
-
 msgid "Data end date"
 msgstr ""
 
@@ -149,6 +140,9 @@ msgstr "Saralash turi"
 msgid "Absolute Deviation from Mean"
 msgstr ""
 
+msgid "Absolute Deviation from Median"
+msgstr ""
+
 msgid "Deviation"
 msgstr ""
 
@@ -156,6 +150,9 @@ msgid "Std Dev"
 msgstr "Standart ogʼish"
 
 msgid "Mean"
+msgstr ""
+
+msgid "Median"
 msgstr ""
 
 msgid "Follow-up"

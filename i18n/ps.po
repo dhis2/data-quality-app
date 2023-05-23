@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
-"Language-Team: Pashto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
+"Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,11 +91,11 @@ msgstr ""
 msgid "Parent organisation unit"
 msgstr "د لوی سازمان واحد"
 
-msgid "Start Date"
-msgstr ""
+msgid "Start date"
+msgstr "د پیل نېټه"
 
-msgid "End Date"
-msgstr ""
+msgid "End date"
+msgstr "د پای نېټه"
 
 msgid "Processing..."
 msgstr "د پروسېس په حال کې"
@@ -108,12 +108,6 @@ msgstr "د مالوماتو (ډاټا) ټولګه"
 
 msgid "Organisation units"
 msgstr "د سازمان واحدونه"
-
-msgid "Start date"
-msgstr "د پیل نېټه"
-
-msgid "End date"
-msgstr "د پای نېټه"
 
 msgid "Algorithm"
 msgstr ""
@@ -136,9 +130,6 @@ msgstr ""
 msgid "Data start date"
 msgstr ""
 
-msgid "Clear"
-msgstr "پاک یې کړئ"
-
 msgid "Data end date"
 msgstr ""
 
@@ -148,6 +139,9 @@ msgstr "طبقه بندي یې کړئ"
 msgid "Absolute Deviation from Mean"
 msgstr ""
 
+msgid "Absolute Deviation from Median"
+msgstr ""
+
 msgid "Deviation"
 msgstr ""
 
@@ -155,6 +149,9 @@ msgid "Std Dev"
 msgstr ""
 
 msgid "Mean"
+msgstr ""
+
+msgid "Median"
 msgstr ""
 
 msgid "Follow-up"

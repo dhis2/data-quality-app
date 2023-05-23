@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2021
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,10 +90,10 @@ msgstr "Datová sada"
 msgid "Parent organisation unit"
 msgstr "Nadřazená organizační jednotka"
 
-msgid "Start Date"
+msgid "Start date"
 msgstr "Datum začátku"
 
-msgid "End Date"
+msgid "End date"
 msgstr "Datum ukončení"
 
 msgid "Processing..."
@@ -107,12 +107,6 @@ msgstr "Datová sada"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
-
-msgid "Start date"
-msgstr "Datum začátku"
-
-msgid "End date"
-msgstr "Datum ukončení"
 
 msgid "Algorithm"
 msgstr "Algoritmus"
@@ -135,9 +129,6 @@ msgstr "Zobrazit pokročilé možnosti"
 msgid "Data start date"
 msgstr "Datum zahájení dat"
 
-msgid "Clear"
-msgstr "Vyčistit"
-
 msgid "Data end date"
 msgstr "Datum ukončení dat"
 
@@ -147,6 +138,9 @@ msgstr "Seřazeno podle"
 msgid "Absolute Deviation from Mean"
 msgstr "Absolutní odchylka od průměru"
 
+msgid "Absolute Deviation from Median"
+msgstr ""
+
 msgid "Deviation"
 msgstr "Odchylka"
 
@@ -155,6 +149,9 @@ msgstr "Standardní odchylka"
 
 msgid "Mean"
 msgstr "Střední"
+
+msgid "Median"
+msgstr "Medián"
 
 msgid "Follow-up"
 msgstr "Následovat"
