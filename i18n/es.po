@@ -1,8 +1,6 @@
 # 
 # Translators:
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2022
-# Janeth Cruz, 2022
-# Prabhjot Singh, 2022
 # phil_dhis2, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
@@ -10,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
+"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2022-04-20 10:03+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,11 +95,11 @@ msgstr "Set de Datos"
 msgid "Parent organisation unit"
 msgstr "Padre de la unidad organizativa"
 
-msgid "Start Date"
-msgstr "Fecha de inicio"
+msgid "Start date"
+msgstr "Fecha inicial"
 
-msgid "End Date"
-msgstr "Fecha de fin"
+msgid "End date"
+msgstr "Fecha final"
 
 msgid "Processing..."
 msgstr "Procesando…"
@@ -114,12 +112,6 @@ msgstr "Set de Datos"
 
 msgid "Organisation units"
 msgstr "Unidades organizativas"
-
-msgid "Start date"
-msgstr "Fecha inicial"
-
-msgid "End date"
-msgstr "Fecha final"
 
 msgid "Algorithm"
 msgstr ""
@@ -142,9 +134,6 @@ msgstr ""
 msgid "Data start date"
 msgstr ""
 
-msgid "Clear"
-msgstr "Limpiar"
-
 msgid "Data end date"
 msgstr ""
 
@@ -154,6 +143,9 @@ msgstr "Ordenar por"
 msgid "Absolute Deviation from Mean"
 msgstr ""
 
+msgid "Absolute Deviation from Median"
+msgstr ""
+
 msgid "Deviation"
 msgstr ""
 
@@ -161,6 +153,9 @@ msgid "Std Dev"
 msgstr "Desviación estándar"
 
 msgid "Mean"
+msgstr ""
+
+msgid "Median"
 msgstr ""
 
 msgid "Follow-up"
