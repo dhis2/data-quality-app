@@ -226,7 +226,7 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Description"
 msgstr "විස්තරය"
