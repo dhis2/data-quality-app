@@ -190,7 +190,7 @@ msgid "Validating..."
 msgstr ""
 
 msgid "Validate"
-msgstr ""
+msgstr "Valideren"
 
 msgid "[All Validation Rules]"
 msgstr ""
