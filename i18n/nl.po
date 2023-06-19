@@ -160,7 +160,7 @@ msgid "Follow-up"
 msgstr ""
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Gemarkeerd voor vervolg"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -244,7 +244,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Toon details"
 
 msgid "Validation Details"
 msgstr ""
