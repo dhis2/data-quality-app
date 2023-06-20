@@ -3,14 +3,14 @@
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2022-04-20 10:03+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,7 +142,7 @@ msgid "Absolute Deviation from Mean"
 msgstr "与平均值的绝对偏差"
 
 msgid "Absolute Deviation from Median"
-msgstr ""
+msgstr "与中位数的绝对偏差"
 
 msgid "Deviation"
 msgstr "偏差"
@@ -154,7 +154,7 @@ msgid "Mean"
 msgstr "平均 "
 
 msgid "Median"
-msgstr ""
+msgstr "中位数"
 
 msgid "Follow-up"
 msgstr "后续"
