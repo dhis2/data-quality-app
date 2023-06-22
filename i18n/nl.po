@@ -40,7 +40,7 @@ msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Downloaden als CSV"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -157,7 +157,7 @@ msgid "Median"
 msgstr "Mediaan"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Opvolgen"
 
 msgid "Marked for follow-up"
 msgstr "Gemarkeerd voor vervolg"
