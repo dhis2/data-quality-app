@@ -40,7 +40,7 @@ msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr ""
+msgstr "Downloaden als CSV"
 
 msgid "Marked for follow-up"
 msgstr "Gemarkeerd voor vervolg"
@@ -79,7 +79,7 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Opvolgen"
 
 msgid "Validation Rule Group"
 msgstr ""
