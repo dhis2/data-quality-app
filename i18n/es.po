@@ -28,7 +28,7 @@ msgid "Error loading datasets."
 msgstr ""
 
 msgid "No match found"
-msgstr ""
+msgstr "No se encontraron coincidencias"
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
