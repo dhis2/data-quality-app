@@ -262,7 +262,7 @@ msgstr ""
 "учун тасдиқлаш қоидаларини ишга туширинг."
 
 msgid "Run Validation"
-msgstr "Тасдиқлашни ишга туширинг"
+msgstr "Текшириш ўтказилсин"
 
 msgid "Outlier detection"
 msgstr ""
