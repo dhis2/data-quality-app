@@ -113,6 +113,7 @@ const Form = ({
                         <MenuItem value={100} primaryText="100" />
                         <MenuItem value={200} primaryText="200" />
                         <MenuItem value={500} primaryText="500" />
+                        <MenuItem value={1500} primaryText="1500" />
                     </SelectField>
                     {Z_SCORE_ALGORITHMS.has(algorithm) && (
                         <ZScoreFields

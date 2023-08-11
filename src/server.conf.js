@@ -1,11 +1,12 @@
 export const apiConf = {
     endpoints: {
-        validationRulesReport: '/dataAnalysis/validationRules/report',
-        reportAnalysis: '/dataAnalysis/report',
+        validationRulesReport: 'dataAnalysis/validationRules/report',
+        reportAnalysis: 'dataAnalysis/report',
+        outlierDetection: 'outlierDetection',
     },
     results: {
         analysis: {
-            limit: 500,
+            limit: 5000,
         },
     },
 }

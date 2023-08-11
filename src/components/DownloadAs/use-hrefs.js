@@ -1,6 +1,6 @@
 import { useConfig } from '@dhis2/app-runtime'
 
-const useHrefs = ({ endpoint, fileTypes, queryStr }) => {
+const useHrefs = ({ endpoint, fileTypes, queryStr, skipExtension }) => {
     const { baseUrl, apiVersion } = useConfig()
     const timestamp = Date.now()
     // The new outlierDetection endpoint produces the correct report
@@ -8,7 +8,7 @@ const useHrefs = ({ endpoint, fileTypes, queryStr }) => {
     queryStr = queryStr || `t=${timestamp}`
 
     return fileTypes.reduce((acc, type) => {
-        const downloadUrl = `${baseUrl}/api/${apiVersion}/${endpoint}.${type}?${queryStr}`
+        const downloadUrl = `${baseUrl}/api/${apiVersion}/${endpoint}${skipExtension?``:`.${type}`}?${queryStr}`
         acc[type] = downloadUrl
         return acc
     }, {})
