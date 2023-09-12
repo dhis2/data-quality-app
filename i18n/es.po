@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Janeth Cruz, 2023
@@ -30,13 +30,13 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Actualizando árbol de unidades organizativas..."
 
 msgid "DOWNLOAD AS PDF"
-msgstr ""
+msgstr "DESCARGAR COMO PDF"
 
 msgid "DOWNLOAD AS XLS"
-msgstr ""
+msgstr "DESCARGAR COMO XLS"
 
 msgid "DOWNLOAD AS CSV"
-msgstr ""
+msgstr "DESCARGAR COMO CSV"
 
 msgid "Data Element"
 msgstr "Elemento de datos"
@@ -63,7 +63,7 @@ msgid "Validation Rule Group"
 msgstr "Grupo de Reglas de Validación"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante el análisis"
 
 msgid "No values found"
 msgstr "No se encontraron valores"
@@ -87,7 +87,7 @@ msgid "End Date"
 msgstr "Fecha final"
 
 msgid "follow up"
-msgstr ""
+msgstr "seguimiento"
 
 msgid "Close"
 msgstr "Cerrar"
@@ -96,16 +96,16 @@ msgid "Comment"
 msgstr "Comentario"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Dejar de seguir"
 
 msgid "unfollow"
-msgstr ""
+msgstr "dejar de seguir"
 
 msgid "Min-Max Outlier Analysis"
 msgstr "Análisis por máximos y mínimos"
 
 msgid "start"
-msgstr ""
+msgstr "iniciar"
 
 msgid "Validation Rule Analysis"
 msgstr "Análisis por reglas de validación"
@@ -118,7 +118,7 @@ msgstr ""
 "datos de la base de datos."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Ejecutar validación"
 
 msgid "Std Dev Outlier Analysis"
 msgstr "Análisis por desviación estandar"
@@ -131,7 +131,7 @@ msgstr ""
 "estándar. Los valores atípicos se pueden examinar y marcar para seguimiento."
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analizar"
 
 msgid ""
 "Analyze potential outlier values based on min and max values. Outlier values"
@@ -148,7 +148,7 @@ msgstr ""
 "entrada de datos o análisis."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Ver valores de datos"
 
 msgid "Select number of standard deviations"
 msgstr "Seleccione el número de desviaciones estandar"
@@ -157,16 +157,16 @@ msgid "Validation passed successfully"
 msgstr "Validado correctamente"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Enviar notificaciones"
 
 msgid "Persist new results"
 msgstr ""
 
 msgid "validate"
-msgstr ""
+msgstr "validar"
 
 msgid "Importance"
-msgstr ""
+msgstr "Importancia"
 
 msgid "Validation Rule"
 msgstr "Regla de Validación"
@@ -178,10 +178,10 @@ msgid "Details"
 msgstr "Detalles"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "DETALLES DE RESULTADOS DE VALIDACIÓN"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "REGLA DE VALIDACIÓN"
 
 msgid "Name"
 msgstr "Nombre"
@@ -190,19 +190,19 @@ msgid "Description"
 msgstr "Descripción"
 
 msgid "no data available"
-msgstr ""
+msgstr "no hay datos disponibles"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "ELEMENTO DE DATOS"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VALOR"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Detalles de validación"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "LADO IZQUIERDO"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "LADO DERECHO"

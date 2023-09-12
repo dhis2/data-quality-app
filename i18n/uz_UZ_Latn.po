@@ -1,0 +1,197 @@
+# 
+# Translators:
+# Yury Rogachev <yury@dhis2.org>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2021-02-01T13:05:04.402Z\n"
+"PO-Revision-Date: 2020-12-22 22:15+0000\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Quality"
+msgstr "Maʼlumotlar sifati"
+
+msgid "More than 500 values found, please narrow the search to see all"
+msgstr ""
+"500 dan ortiq natija topildi, Iltimos, qidiruv maydonini qisqartiring, "
+"natijani koʼrish uchun"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Muassasalar daraxti (ketma-ketligi) yangilanmoqda..."
+
+msgid "DOWNLOAD AS PDF"
+msgstr "PDF SIFАTIDА YuKLАSh"
+
+msgid "DOWNLOAD AS XLS"
+msgstr "XLS SIFАTIDА YuKLАSh"
+
+msgid "DOWNLOAD AS CSV"
+msgstr "CSV SIFАTIDА YuKLАSh"
+
+msgid "Data Element"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "Tashkiliy birlik"
+
+msgid "Period"
+msgstr "Davr"
+
+msgid "Min"
+msgstr "Minimum"
+
+msgid "Value"
+msgstr "Qiymat"
+
+msgid "Max"
+msgstr "Maksimum"
+
+msgid "Mark"
+msgstr "Belgi"
+
+msgid "Validation Rule Group"
+msgstr "Tekshiruv guruhi qoidalari"
+
+msgid "An unexpected error happened during analysis"
+msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
+
+msgid "No values found"
+msgstr "Qiymat topilmadi"
+
+msgid "Unfollow done"
+msgstr "Bekor qilish bajarildi"
+
+msgid "Follow-Up Analysis"
+msgstr "Аnalitikani kuzatish"
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Parent organisation unit"
+msgstr "Yuqori tashkilot boʼlimi"
+
+msgid "Start Date"
+msgstr "Boshlanish sanasi"
+
+msgid "End Date"
+msgstr "Yakunlanish sanasi"
+
+msgid "follow up"
+msgstr "kuzatish"
+
+msgid "Close"
+msgstr "Yopmoq"
+
+msgid "Comment"
+msgstr "Izoh"
+
+msgid "Unfollow"
+msgstr "Bekor qilish"
+
+msgid "unfollow"
+msgstr ""
+
+msgid "Min-Max Outlier Analysis"
+msgstr "Minimal-Maksimal chekinish Аnalitikasi"
+
+msgid "start"
+msgstr ""
+
+msgid "Validation Rule Analysis"
+msgstr "Tasdiqlash Qoidasi Аnalitikasi"
+
+msgid ""
+"Run validation rules in order to unveil anomalies and errors in the data in "
+"the database."
+msgstr ""
+
+msgid "Run Validation"
+msgstr ""
+
+msgid "Std Dev Outlier Analysis"
+msgstr "Oʼrtacha kvadratik ogʼish chekinishlari Аnalitikasi"
+
+msgid ""
+"Analyze potential outlier values based on standard deviations. Outlier "
+"values can be examined and marked for follow-up."
+msgstr ""
+
+msgid "Analyze"
+msgstr ""
+
+msgid ""
+"Analyze potential outlier values based on min and max values. Outlier values"
+" can be examined and marked for follow-up."
+msgstr ""
+
+msgid ""
+"View or edit data values marked for further follow-up during data entry or "
+"analysis."
+msgstr ""
+
+msgid "View Data Values"
+msgstr ""
+
+msgid "Select number of standard deviations"
+msgstr "Standart ogʼishlar sonini aniqlang"
+
+msgid "Validation passed successfully"
+msgstr "Tasdiqlash Mavaffaqiyatli Oʼtdi"
+
+msgid "Send Notifications"
+msgstr "Bildirishnoma Yuborish"
+
+msgid "Persist new results"
+msgstr "Doimiy yangi natijalar"
+
+msgid "validate"
+msgstr "tasdiqlash"
+
+msgid "Importance"
+msgstr "Аhamiyatli"
+
+msgid "Validation Rule"
+msgstr "Tasdiqlash Qoidasi"
+
+msgid "Operator"
+msgstr "Operator"
+
+msgid "Details"
+msgstr "Tafsilotlari"
+
+msgid "VALIDATIONS RESULT DETAILS"
+msgstr "TEKShIRUV DETАLLАRI NАTIJАSI"
+
+msgid "VALIDATION RULE"
+msgstr "TEKShIRUV QOIDАSI"
+
+msgid "Name"
+msgstr "Ismi"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "no data available"
+msgstr "maʼlumotlar mavjud emas"
+
+msgid "DATA ELEMENT"
+msgstr "MАЪLUMOTLАR ELEMENTI"
+
+msgid "VALUE"
+msgstr "QIYMАT"
+
+msgid "Validation Details"
+msgstr "Tekshiruv detallari"
+
+msgid "LEFT SIDE"
+msgstr "ChАP TOMON"
+
+msgid "RIGHT SIDE"
+msgstr "OʼNG TOMON"
