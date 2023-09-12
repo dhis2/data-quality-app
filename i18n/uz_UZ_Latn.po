@@ -1,87 +1,87 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Jason Pickering <jason@dhis2.org>, 2023
+# Yury Rogachev <yury@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2021-09-03 23:45+0000\n"
-"Last-Translator: Jason Pickering <jason@dhis2.org>, 2023\n"
-"Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "No match found"
-msgstr "ingen matchning hittad"
+msgstr ""
 
 msgid "Error loading datasets."
-msgstr "Fel vid inläsning av dataset."
+msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr "Något gick fel när organisationenheterna laddades."
+msgstr ""
 
 msgid "You do not have access to any organisation units."
-msgstr "Du har inte åtkomst till några organisationsenheter."
+msgstr ""
 
 msgid "Open user guide"
-msgstr "Öppna användarhandboken"
+msgstr "Foydalanuvchi qoʼllanmasini ochish"
 
 msgid "Download as PDF"
-msgstr "Ladda ner som PDF"
+msgstr ""
 
 msgid "Download as XLS"
-msgstr "Ladda ner som XLS"
+msgstr ""
 
 msgid "Download as CSV"
-msgstr "Ladda ner som CSV"
+msgstr "CSV sifatida yuklang"
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr "Mer än 500 värden hittas, vänligen begränsa sökningen för att se alla"
+msgstr ""
+"500 dan ortiq natija topildi, Iltimos, qidiruv maydonini qisqartiring, "
+"natijani koʼrish uchun"
 
 msgid "No values found"
-msgstr "Inga värden hittades"
+msgstr "Qiymat topilmadi"
 
 msgid "Elements unfollowed"
 msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr "Ett oväntat fel inträffade under analysen"
+msgstr "Tahlil jarayonida kutilmagan xatolik yuz berdi"
 
 msgid "Follow-Up Analysis"
-msgstr "Uppföljningsanalys"
+msgstr "Аnalitikani kuzatish"
 
 msgid "Comment"
-msgstr "Kommentar"
+msgstr "Izoh"
 
 msgid "Close"
-msgstr "Stänga"
+msgstr "Yopmoq"
 
 msgid "Data Element"
-msgstr "Data element"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisationsenhet"
+msgstr "Tashkiliy birlik"
 
 msgid "Period"
-msgstr "Period"
+msgstr "davr"
 
 msgid "Min"
-msgstr "min"
+msgstr "Минимум"
 
 msgid "Value"
-msgstr "Värde"
+msgstr "Қиймат"
 
 msgid "Max"
-msgstr "max"
+msgstr "Максимум"
 
 msgid "Unfollow"
-msgstr "Sluta följa"
+msgstr "Bekor qilish"
 
 msgid "Unfollowing..."
 msgstr ""
@@ -90,31 +90,31 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Parent organisation unit"
-msgstr ""
+msgstr "Yuqori tashkilot boʼlimi"
 
 msgid "Start Date"
-msgstr "Start datum"
+msgstr "Boshlanish sanasi"
 
 msgid "End Date"
-msgstr "Slutdatum"
+msgstr "Yakunlanish Sana"
 
 msgid "Processing..."
-msgstr "Bearbetning ..."
+msgstr "Jarayonda"
 
 msgid "Follow up"
-msgstr "Följ upp"
+msgstr "Kuzatib borish"
 
 msgid "Data set"
-msgstr "datamängd"
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "Organisation units"
-msgstr "Organisation enheter"
+msgstr "Tashkiliy birliklar"
 
 msgid "Start date"
-msgstr "Start datum"
+msgstr "Boshlanish sanasi"
 
 msgid "End date"
-msgstr "Slutdatum"
+msgstr "Yakunlanish sanasi"
 
 msgid "Algorithm"
 msgstr ""
@@ -123,7 +123,7 @@ msgid "Max results"
 msgstr ""
 
 msgid "Start"
-msgstr ""
+msgstr "Boshlash"
 
 msgid "Threshold"
 msgstr ""
@@ -138,13 +138,13 @@ msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr "Klar"
+msgstr "Аниқ"
 
 msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "Saralash turi"
 
 msgid "Absolute Deviation from Mean"
 msgstr ""
@@ -153,16 +153,16 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr ""
+msgstr "Standart ogʼish"
 
 msgid "Mean"
 msgstr ""
 
 msgid "Follow-up"
-msgstr ""
+msgstr "Kuzatish"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Kuzatuv uchun belgilangan"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -180,82 +180,82 @@ msgid "Min-max values"
 msgstr ""
 
 msgid "Send Notifications"
-msgstr "Skicka notifieringar"
+msgstr "Bildirishnoma Yuborish"
 
 msgid "Persist new results"
-msgstr "Spara nya resultater"
+msgstr "Doimiy yangi natijalar"
 
 msgid "Validating..."
-msgstr "Validerar..."
+msgstr "Tasdiqlanmoqda..."
 
 msgid "Validate"
-msgstr ""
+msgstr "Tasdiqlash"
 
 msgid "[All Validation Rules]"
-msgstr "[Alla valideringsregler]"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Valideringsregelngrupp"
+msgstr "Tekshiruv guruhi qoidalari"
 
 msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Validering godkänd"
+msgstr "Tasdiqlash Mavaffaqiyatli Oʼtdi"
 
 msgid "Validation Rule Analysis"
-msgstr "Valideringsregeln analys"
+msgstr "Tasdiqlash Qoidasi Аnalitikasi"
 
 msgid "Attribute Option Combination"
-msgstr ""
+msgstr "Аtribut variantlari kombinatsiyasi"
 
 msgid "Attr. Opt. Combo"
-msgstr ""
+msgstr "Аtribut variantlari kombinatsiyasi"
 
 msgid "Importance"
-msgstr "Viktighet"
+msgstr "Аhamiyatli"
 
 msgid "Validation Rule"
-msgstr "Valideringsregeln"
+msgstr "Tasdiqlash Qoidasi"
 
 msgid "Operator"
-msgstr "Operatör"
+msgstr "Operator"
 
 msgid "Details"
-msgstr "detaljer"
+msgstr "Тафсилотлари"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr "Valideringsregler Detaljer"
+msgstr "TEKShIRUV DETАLLАRI NАTIJАSI"
 
 msgid "VALIDATION RULE"
-msgstr "VALIDERINGSREGELN"
+msgstr "TEKShIRUV QOIDАSI"
 
 msgid "Name"
-msgstr "Namn"
+msgstr "Исми"
 
 msgid "Description"
-msgstr "Beskrivning"
+msgstr "Tavsif"
 
 msgid "no data available"
-msgstr ""
+msgstr "maʼlumotlar mavjud emas"
 
 msgid "DATA ELEMENT"
-msgstr "DATAELEMENT"
+msgstr "MАЪLUMOTLАR ELEMENTI"
 
 msgid "VALUE"
-msgstr "VÄRDE"
+msgstr "QIYMАT"
 
 msgid "Show details"
-msgstr "Visa detaljer"
+msgstr "Tafsilotlarni koʼrsating"
 
 msgid "Validation Details"
-msgstr "Validering Detaljer"
+msgstr "Tekshiruv detallari"
 
 msgid "LEFT SIDE"
-msgstr "VÄNSTER SIDA"
+msgstr "ChАP TOMON"
 
 msgid "RIGHT SIDE"
-msgstr "HÖGRE SIDA"
+msgstr "OʼNG TOMON"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -263,7 +263,7 @@ msgid ""
 msgstr ""
 
 msgid "Run Validation"
-msgstr "Kör validering"
+msgstr ""
 
 msgid "Outlier detection"
 msgstr ""
@@ -274,7 +274,7 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr "Analysera"
+msgstr ""
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -282,4 +282,4 @@ msgid ""
 msgstr ""
 
 msgid "View Data Values"
-msgstr "Visa datavärden"
+msgstr ""
