@@ -32,5 +32,10 @@
         "prop-types": "^15.7.2",
         "query-string": "^7.0.1",
         "react-router-dom": "^5.0.0"
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.js"
+        ]
     }
 }
