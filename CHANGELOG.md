@@ -1,3 +1,10 @@
+## [1.10.16](https://github.com/dhis2/data-quality-app/compare/v1.10.15...v1.10.16) (2023-09-12)
+
+
+### Bug Fixes
+
+* remove extra slash in download links ([5b5e1da](https://github.com/dhis2/data-quality-app/commit/5b5e1dafd5c64fe48dfe58e1fbeb1c3e9d8f48b4))
+
 ## [1.10.15](https://github.com/dhis2/data-quality-app/compare/v1.10.14...v1.10.15) (2023-07-11)
 
 
