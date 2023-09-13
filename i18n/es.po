@@ -3,7 +3,7 @@
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Pablo Del Médico, 2023
 # Janeth Cruz, 2023
 # 
@@ -24,13 +24,13 @@ msgid "No match found"
 msgstr "No se encontraron coincidencias"
 
 msgid "Error loading datasets."
-msgstr ""
+msgstr "Error al cargar sets de datos."
 
 msgid "Something went wrong whilst loading your organisation units."
-msgstr ""
+msgstr "Algo salió mal al cargar sus unidades organizativas"
 
 msgid "You do not have access to any organisation units."
-msgstr ""
+msgstr "No tiene acceso a ninguna de las unidades organizativas."
 
 msgid "Open user guide"
 msgstr "Abrir guía de usuario"
@@ -39,7 +39,7 @@ msgid "Download as PDF"
 msgstr "Descargar como PDF"
 
 msgid "Download as XLS"
-msgstr ""
+msgstr "Descargar como XLS"
 
 msgid "Download as CSV"
 msgstr "Descargar como CSV"
@@ -53,10 +53,10 @@ msgid "No values found"
 msgstr "No se encontraron valores"
 
 msgid "Elements unfollowed"
-msgstr ""
+msgstr "Elementos sin seguimiento"
 
 msgid "An unexpected error happened during analysis"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante el análisis"
 
 msgid "Follow-Up Analysis"
 msgstr "Análisis por seguimiento"
@@ -86,10 +86,10 @@ msgid "Max"
 msgstr "Máx"
 
 msgid "Unfollow"
-msgstr ""
+msgstr "Dejar de seguir"
 
 msgid "Unfollowing..."
-msgstr ""
+msgstr "Dejar de seguir..."
 
 msgid "Data Set"
 msgstr "Set de Datos"
@@ -116,10 +116,10 @@ msgid "Organisation units"
 msgstr "Unidades organizativas"
 
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmo"
 
 msgid "Max results"
-msgstr ""
+msgstr "Max resultados"
 
 msgid "Start"
 msgstr "Comienzo"
@@ -128,10 +128,10 @@ msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr ""
+msgstr "Ocultar opciones avanzadas"
 
 msgid "Show advanced options"
-msgstr ""
+msgstr "Mostrar opciones avanzadas"
 
 msgid "Data start date"
 msgstr ""
@@ -143,19 +143,19 @@ msgid "Sort by"
 msgstr "Ordenar por"
 
 msgid "Absolute Deviation from Mean"
-msgstr ""
+msgstr "Desviación absoluta de la media"
 
 msgid "Absolute Deviation from Median"
-msgstr ""
+msgstr "Desviación absoluta de la mediana"
 
 msgid "Deviation"
-msgstr ""
+msgstr "Desviación"
 
 msgid "Std Dev"
 msgstr "Desviación estándar"
 
 msgid "Mean"
-msgstr ""
+msgstr "Media"
 
 msgid "Median"
 msgstr "Mediana"
@@ -167,22 +167,22 @@ msgid "Marked for follow-up"
 msgstr "Marcado para hacer seguimiento"
 
 msgid "Unmarked for follow-up"
-msgstr ""
+msgstr "Desmarcado para seguimiento"
 
 msgid "Outlier Detection"
-msgstr ""
+msgstr "Detección de valores atípicos"
 
 msgid "Z-score"
-msgstr ""
+msgstr "Puntuación Z"
 
 msgid "Modified Z-score"
-msgstr "Z-score modificado"
+msgstr "Puntuación Z modificada"
 
 msgid "Min-max values"
-msgstr ""
+msgstr "Valores min-max"
 
 msgid "Send Notifications"
-msgstr ""
+msgstr "Enviar notificaciones"
 
 msgid "Persist new results"
 msgstr ""
@@ -200,7 +200,7 @@ msgid "Validation Rule Group"
 msgstr "Grupo de Reglas de Validación"
 
 msgid "Error loading validation rule groups: {{- error}}"
-msgstr ""
+msgstr "Error al cargar grupos de reglas de validación: {{- error}}"
 
 msgid "Validation passed successfully"
 msgstr "Validado correctamente"
@@ -215,7 +215,7 @@ msgid "Attr. Opt. Combo"
 msgstr ""
 
 msgid "Importance"
-msgstr ""
+msgstr "Importancia"
 
 msgid "Validation Rule"
 msgstr "Regla de Validación"
@@ -227,10 +227,10 @@ msgid "Details"
 msgstr "Detalles"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr ""
+msgstr "DETALLES DE RESULTADOS DE VALIDACIÓN"
 
 msgid "VALIDATION RULE"
-msgstr ""
+msgstr "REGLA DE VALIDACIÓN"
 
 msgid "Name"
 msgstr "Nombre"
@@ -239,25 +239,25 @@ msgid "Description"
 msgstr "Descripción"
 
 msgid "no data available"
-msgstr ""
+msgstr "no hay datos disponibles"
 
 msgid "DATA ELEMENT"
-msgstr ""
+msgstr "ELEMENTO DE DATOS"
 
 msgid "VALUE"
-msgstr ""
+msgstr "VALOR"
 
 msgid "Show details"
 msgstr "Mostrar detalles"
 
 msgid "Validation Details"
-msgstr ""
+msgstr "Detalles de validación"
 
 msgid "LEFT SIDE"
-msgstr ""
+msgstr "LADO IZQUIERDO"
 
 msgid "RIGHT SIDE"
-msgstr ""
+msgstr "LADO DERECHO"
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
@@ -267,18 +267,21 @@ msgstr ""
 "datos de la base de datos."
 
 msgid "Run Validation"
-msgstr ""
+msgstr "Ejecutar validación"
 
 msgid "Outlier detection"
-msgstr ""
+msgstr "Detección de valores atípicos"
 
 msgid ""
 "Analyze potential outlier values based on standard deviations or min-max "
 "values. Outlier values can be examined and marked for follow-up."
 msgstr ""
+"Analizar los posibles valores atípicos basándose ​​en su desviación estándar"
+" o valores min-max. Los valores atípicos se pueden examinar y marcar para "
+"seguimiento."
 
 msgid "Analyze"
-msgstr ""
+msgstr "Analizar"
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
@@ -288,4 +291,4 @@ msgstr ""
 "entrada de datos o análisis."
 
 msgid "View Data Values"
-msgstr ""
+msgstr "Ver valores de datos"
