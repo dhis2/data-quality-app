@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "Ҳеч нима топилмади"
 
 msgid "Error loading datasets."
 msgstr ""
