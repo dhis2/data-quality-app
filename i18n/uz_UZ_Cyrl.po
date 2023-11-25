@@ -150,10 +150,10 @@ msgid "Std Dev"
 msgstr "Стандарт оғиш"
 
 msgid "Mean"
-msgstr ""
+msgstr "Англатади"
 
 msgid "Median"
-msgstr ""
+msgstr "Медиана"
 
 msgid "Follow-up"
 msgstr "Кузатиш"
