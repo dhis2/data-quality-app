@@ -69,7 +69,7 @@ msgid "Std Dev"
 msgstr "Стандарт оғиш"
 
 msgid "Mean"
-msgstr ""
+msgstr "Англатади"
 
 msgid "Min"
 msgstr "Минимум"
