@@ -1,3 +1,10 @@
+## [1.10.22](https://github.com/dhis2/data-quality-app/compare/v1.10.21...v1.10.22) (2023-12-15)
+
+
+### Bug Fixes
+
+* trailing zeroes [DHIS2-10825] ([#1129](https://github.com/dhis2/data-quality-app/issues/1129)) ([718c019](https://github.com/dhis2/data-quality-app/commit/718c01934eb490524b84163e5f288fc130cc0ff9))
+
 ## [1.10.21](https://github.com/dhis2/data-quality-app/compare/v1.10.20...v1.10.21) (2023-11-26)
 
 
