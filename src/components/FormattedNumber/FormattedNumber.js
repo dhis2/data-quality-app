@@ -17,7 +17,7 @@ const FormattedNumber = ({
 
 FormattedNumber.defaultProps = {
     maximumFractionDigits: 2,
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 0,
 }
 
 FormattedNumber.propTypes = {
