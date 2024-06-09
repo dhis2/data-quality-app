@@ -2,15 +2,16 @@
 # Translators:
 # Valeriu Plesca <vplesca@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
+# Yury Rogachev <yury@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
+"Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "Совпадения не найдены"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -104,7 +105,7 @@ msgid "Processing..."
 msgstr "Обработкаâ¦"
 
 msgid "Follow up"
-msgstr ""
+msgstr "Отслеживать"
 
 msgid "Data set"
 msgstr "Набор данных"
