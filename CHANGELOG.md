@@ -1,3 +1,10 @@
+## [1.10.27](https://github.com/dhis2/data-quality-app/compare/v1.10.26...v1.10.27) (2024-09-04)
+
+
+### Bug Fixes
+
+* skip publishing to apphub ([59cc5a8](https://github.com/dhis2/data-quality-app/commit/59cc5a8527016e42b45407394840cb5dd2163848))
+
 ## [1.10.26](https://github.com/dhis2/data-quality-app/compare/v1.10.25...v1.10.26) (2024-06-09)
 
 
