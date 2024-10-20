@@ -154,10 +154,10 @@ msgid "Std Dev"
 msgstr "ຄ່າມາດຕະຖານການສົມທຽບ"
 
 msgid "Mean"
-msgstr ""
+msgstr "ຄ່າສະເລ່ຍ"
 
 msgid "Median"
-msgstr ""
+msgstr "ເສັ້ນຈອມກາງ"
 
 msgid "Follow-up"
 msgstr "ຕິດຕາມ"
