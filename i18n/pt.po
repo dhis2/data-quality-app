@@ -3,15 +3,15 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Philip Larsen Donnelly, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Ge Joao <gsimango@saudigitus.org>, 2021
 # Shelsea Chumaio, 2024
-# Ge Joao <gsimango@saudigitus.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2024\n"
+"Last-Translator: Shelsea Chumaio, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,13 +35,13 @@ msgid "Open user guide"
 msgstr "Abrir o guião de utilizador "
 
 msgid "Download as PDF"
-msgstr "Baixar  como PDF"
+msgstr "Descarregar como PDF"
 
 msgid "Download as XLS"
-msgstr "Baixar como XLS"
+msgstr "Descarregar como XLS"
 
 msgid "Download as CSV"
-msgstr "Exportar como CSV"
+msgstr "Descarregar como CSV"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "Details"
 msgstr "Detalhes"
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr " DETALHES  DE VALIDAÇÃO DOS  RESULTADOS"
+msgstr "DETALHES  DE VALIDAÇÃO DOS  RESULTADOS"
 
 msgid "VALIDATION RULE"
 msgstr "REGRAS DE VALIDAÇÃO"
