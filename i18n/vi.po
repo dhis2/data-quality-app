@@ -1,15 +1,17 @@
 # 
 # Translators:
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
+# Em Le <em.hispvietnam@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2022-04-20 10:03+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "Không tìm thấy kết quả phù hợp"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -115,7 +117,7 @@ msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr ""
+msgstr "Kết quả tối đa"
 
 msgid "Start"
 msgstr "Bắt đầu"
@@ -151,16 +153,16 @@ msgid "Std Dev"
 msgstr "Độ lệch chuẩn"
 
 msgid "Mean"
-msgstr ""
+msgstr "Giá Trị Trung Bình"
 
 msgid "Median"
-msgstr ""
+msgstr "Trung vị"
 
 msgid "Follow-up"
 msgstr "Theo dõi sau"
 
 msgid "Marked for follow-up"
-msgstr ""
+msgstr "Đã đánh dấu để theo dõi"
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -169,10 +171,10 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Z-score"
-msgstr ""
+msgstr "Điểm Z"
 
 msgid "Modified Z-score"
-msgstr ""
+msgstr "Chỉnh sửa điểm Z"
 
 msgid "Min-max values"
 msgstr ""
