@@ -1,66 +1,61 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Em Le <em.hispvietnam@gmail.com>, 2024
+# Siddharth Agarwal, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-04-06T20:10:13.953Z\n"
 "PO-Revision-Date: 2019-09-01 20:45+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
-"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"Tìm thấy hơn 500 giá trị, xin vui lòng cung cấp thêm thông tin tìm kiếm."
 
 msgid "Error loading datasets."
 msgstr ""
 
 msgid "No match found"
-msgstr "Không tìm thấy kết quả phù hợp"
+msgstr ""
 
 msgid "Something went wrong whilst loading your organisation units."
 msgstr ""
 
 msgid "You do not have access to any organisation units."
-msgstr "Bạn không có quyền truy cập vào bất kỳ đơn vị nào."
+msgstr ""
 
 msgid "Download as PDF"
-msgstr "Tải xuống với PDF"
+msgstr ""
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr "Tải xuống với CSV"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "Đã đánh dấu để theo dõi"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
 
 msgid "Data Element"
-msgstr "Phần tử dữ liệu"
+msgstr ""
 
 msgid "Period"
-msgstr "Thời điểm"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Đơn vị"
+msgstr ""
 
 msgid "Value"
-msgstr "Giá trị"
+msgstr ""
 
 msgid "Z-Score"
 msgstr ""
@@ -69,114 +64,114 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "Độ lệch chuẩn"
+msgstr ""
 
 msgid "Mean"
-msgstr "Giá Trị Trung Bình"
+msgstr ""
 
 msgid "Min"
-msgstr "Nhỏ nhất"
+msgstr ""
 
 msgid "Max"
-msgstr "Lớn nhất"
+msgstr ""
 
 msgid "Follow-up"
-msgstr "Theo dõi sau"
+msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "Nhóm luật hợp lệ"
+msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Phân Tích Theo Dõi"
+msgstr ""
 
 msgid "No values found"
-msgstr "Không tìm thấy giá trị"
+msgstr ""
 
 msgid "An unexpected error happened during analysis"
-msgstr "Xảy ra sự cố khi phân tích"
+msgstr ""
 
 msgid "Follow up"
-msgstr "Theo dõi"
+msgstr ""
 
 msgid "Data Set"
-msgstr "Biểu nhập"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Đơn vị cha"
+msgstr ""
 
 msgid "Start Date"
-msgstr "Ngày bắt đầu"
+msgstr ""
 
 msgid "End Date"
-msgstr "Ngày kết thúc"
+msgstr ""
 
 msgid "Close"
-msgstr "Đóng lại"
+msgstr "बंद करें"
 
 msgid "Comment"
-msgstr "Bình luận"
+msgstr ""
 
 msgid "Unfollow"
-msgstr "Bỏ theo dõi"
+msgstr ""
 
 msgid "unfollow"
-msgstr "Bỏ theo dõi"
+msgstr ""
 
 msgid "Start"
-msgstr "Bắt đầu"
+msgstr ""
 
 msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Ẩn tùy chọn nâng cao"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Hiện tùy chọn nâng cao"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr "Xóa"
+msgstr ""
 
 msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "Sắp xếp theo"
+msgstr ""
 
 msgid "Data set"
-msgstr "Tập dữ liệu"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Đơn vị"
+msgstr ""
 
 msgid "Start date"
-msgstr "Ngày bắt đầu"
+msgstr ""
 
 msgid "End date"
-msgstr "Ngày kết thúc"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr "Kết quả tối đa"
+msgstr ""
 
 msgid "Outlier Detection"
 msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr "Phân Tích Tính Hợp Lệ"
+msgstr ""
 
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr "Chạy luật hợp lệ trước để tìm ra bất thường và lỗi trong dữ liệu."
+msgstr ""
 
 msgid "Run Validation"
-msgstr "Chạy xác thực"
+msgstr ""
 
 msgid "Outlier detection"
 msgstr ""
@@ -187,74 +182,72 @@ msgid ""
 msgstr ""
 
 msgid "Analyze"
-msgstr "Phân tích"
+msgstr ""
 
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"Xem hoặc Sửa giá trị dữ liệu đã đánh dấu để theo dõi trong khi nhập hoặc "
-"phân tích dữ liệu."
 
 msgid "View Data Values"
-msgstr "Xem giá trị dữ liệu"
+msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Kiểm tra hợp lệ THÀNH CÔNG"
+msgstr ""
 
 msgid "Validate"
-msgstr "Kiểm tra hợp lệ"
+msgstr ""
 
 msgid "Send Notifications"
-msgstr "Gửi thông báo"
+msgstr ""
 
 msgid "Persist new results"
-msgstr "Giữ kết quả mới"
+msgstr ""
 
 msgid "Attribute Option Combination"
-msgstr "Kết hợp tùy chọn thuộc tính"
+msgstr ""
 
 msgid "Attr. Opt. Combo"
-msgstr "Kết hợp tùy chọn thuộc tính"
+msgstr ""
 
 msgid "Importance"
-msgstr "Quan trọng"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "Quy tắc hợp lệ"
+msgstr ""
 
 msgid "Operator"
-msgstr "Toán tử"
+msgstr ""
 
 msgid "Details"
-msgstr "Chi tiết"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
-msgstr "Chi tiết kết quả hợp lệ"
+msgstr ""
 
 msgid "VALIDATION RULE"
-msgstr "Quy tắc hợp lệ"
+msgstr ""
 
 msgid "Name"
-msgstr "Tên tài khoản"
+msgstr "नाम"
 
 msgid "Description"
-msgstr "Miêu tả"
+msgstr ""
 
 msgid "no data available"
-msgstr "Không có sẵn dữ liệu"
+msgstr ""
 
 msgid "DATA ELEMENT"
-msgstr "Phần tử dữ liệu"
+msgstr ""
 
 msgid "VALUE"
-msgstr "Giá trị"
+msgstr ""
 
 msgid "Validation Details"
-msgstr "Chi tiết xác nhận"
+msgstr ""
 
 msgid "LEFT SIDE"
-msgstr "Vế trái"
+msgstr ""
 
 msgid "RIGHT SIDE"
-msgstr "Vế phải"
+msgstr ""
