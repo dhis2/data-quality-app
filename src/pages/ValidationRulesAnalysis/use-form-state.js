@@ -1,7 +1,7 @@
 import { useConfig } from '@dhis2/app-runtime'
 import { useState } from 'react'
 import { getCalendarDate } from '../../helpers/dates.js'
-import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect.js'
+import { ALL_VALIDATION_RULE_GROUPS_ID } from './ValidationRuleGroupsSelect.jsx'
 
 const useFormState = () => {
     const { systemInfo = {} } = useConfig()

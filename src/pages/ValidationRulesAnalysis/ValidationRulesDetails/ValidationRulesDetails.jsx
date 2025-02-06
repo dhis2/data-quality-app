@@ -13,8 +13,8 @@ import {
 import { FontIcon } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import Result from './Result.js'
-import Section from './Section.js'
+import Result from './Result.jsx'
+import Section from './Section.jsx'
 
 const query = {
     rule: {
