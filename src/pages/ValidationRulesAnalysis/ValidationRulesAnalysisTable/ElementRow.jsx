@@ -1,10 +1,10 @@
 import { TableRow, TableRowColumn } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.js'
-import ValidationRulesDetails from '../ValidationRulesDetails/ValidationRulesDetails.js'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
+import ValidationRulesDetails from '../ValidationRulesDetails/ValidationRulesDetails.jsx'
 import styles from './ElementRow.module.css'
-import TableCellContent from './TableCellContent.js'
+import TableCellContent from './TableCellContent.jsx'
 
 const ElementRow = ({ element, shouldDisplayAttributeOptionCombo }) => (
     <TableRow key={element.key}>

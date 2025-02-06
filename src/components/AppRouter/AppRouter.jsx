@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Overview from '../../pages/Overview/Overview.js'
+import Overview from '../../pages/Overview/Overview.jsx'
 import { sections } from '../../pages/sections.conf.js'
-import NoMatch from './NoMatch.js'
+import NoMatch from './NoMatch.jsx'
 
 const AppRouter = () => {
     const routes = sections.map((section) => {

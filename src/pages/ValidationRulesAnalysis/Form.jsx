@@ -3,10 +3,10 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Checkbox, CircularLoader, CalendarInput } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.js'
+import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.jsx'
 import cssPageStyles from '../Page.module.css'
 import styles from './Form.module.css'
-import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect.js'
+import ValidationRuleGroupsSelect from './ValidationRuleGroupsSelect.jsx'
 
 const Form = ({
     onSubmit,

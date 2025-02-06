@@ -4,11 +4,12 @@
     max-width: 1000px;
 }
 
-.row > [class^="col-"] {
+.row > [class^='col-'] {
     padding: 0.5em;
 }
 
-.col-xs-12, .col-sm-12 {
+.col-xs-12,
+.col-sm-12 {
     width: 100%;
 }
 
@@ -25,7 +26,7 @@
 }
 
 @media (min-width: 992px) {
-    .row > [class^="col-md-"] {
+    .row > [class^='col-md-'] {
         flex: 0 0 auto;
     }
 
@@ -39,7 +40,7 @@
 }
 
 @media (min-width: 1200px) {
-    .row > [class^="col-lg-"] {
+    .row > [class^='col-lg-'] {
         flex: 0 0 auto;
     }
 

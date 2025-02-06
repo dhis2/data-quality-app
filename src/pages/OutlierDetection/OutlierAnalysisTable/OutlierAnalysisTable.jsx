@@ -9,14 +9,14 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import DownloadAs from '../../../components/DownloadAs/DownloadAs.js'
+import DownloadAs from '../../../components/DownloadAs/DownloadAs.jsx'
 import cssPageStyles from '../../Page.module.css'
 import {
     Z_SCORE_ALGORITHMS,
     ALGORITHM_TO_LABEL_MAP,
     Z_SCORE,
 } from '../constants.js'
-import ElementRow from './ElementRow.js'
+import ElementRow from './ElementRow.jsx'
 import styles from './OutlierAnalysisTable.module.css'
 
 const OutlierAnalyisTable = ({

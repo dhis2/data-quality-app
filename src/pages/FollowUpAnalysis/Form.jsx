@@ -3,8 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, CircularLoader, CalendarInput } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDataSetsSelect from '../../components/AvailableDataSetsSelect/AvailableDataSetsSelect.js'
-import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.js'
+import AvailableDataSetsSelect from '../../components/AvailableDataSetsSelect/AvailableDataSetsSelect.jsx'
+import AvailableOrganisationUnitsTree from '../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.jsx'
 import cssPageStyles from '../Page.module.css'
 
 const Form = ({

@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.js'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
 import cssPageStyles from '../../Page.module.css'
 import styles from './ValidationRulesDetails.module.css'
 
