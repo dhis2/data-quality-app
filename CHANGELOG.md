@@ -1,3 +1,10 @@
+## [1.10.36](https://github.com/dhis2/data-quality-app/compare/v1.10.35...v1.10.36) (2025-03-24)
+
+
+### Bug Fixes
+
+* **app-platform:** upgrade platform tools to use vite and react 18 ([3bbc985](https://github.com/dhis2/data-quality-app/commit/3bbc985579f880ac1a9e5207ff4b76ba61046094))
+
 ## [1.10.35](https://github.com/dhis2/data-quality-app/compare/v1.10.34...v1.10.35) (2025-02-04)
 
 
