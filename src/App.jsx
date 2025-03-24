@@ -8,7 +8,7 @@ import { MuiThemeProvider } from 'material-ui/styles'
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
 import 'material-design-icons-iconfont'
-import App from './components/App/App.js'
+import App from './components/App/App.jsx'
 import appTheme from './theme.js'
 
 const AppWrapper = () => (

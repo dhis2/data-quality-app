@@ -5,13 +5,13 @@ import MenuItem from 'material-ui/MenuItem'
 import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AvailableDataSetsSelect from '../../../components/AvailableDataSetsSelect/AvailableDataSetsSelect.js'
-import AvailableOrganisationUnitsTree from '../../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.js'
+import AvailableDataSetsSelect from '../../../components/AvailableDataSetsSelect/AvailableDataSetsSelect.jsx'
+import AvailableOrganisationUnitsTree from '../../../components/AvailableOrganisationUnitsTree/AvailableOrganisationUnitsTree.jsx'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles.js'
 import { Z_SCORE_ALGORITHMS, ALGORITHM_TO_LABEL_MAP } from '../constants.js'
-import ThresholdField from './ThresholdField.js'
-import ZScoreFields from './ZScoreFields.js'
+import ThresholdField from './ThresholdField.jsx'
+import ZScoreFields from './ZScoreFields.jsx'
 
 const Form = ({
     onSubmit,

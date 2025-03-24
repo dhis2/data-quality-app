@@ -7,7 +7,7 @@ import {
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.js'
+import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles.js'
 
