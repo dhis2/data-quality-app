@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/dhis2/data-quality-app/compare/v1.10.36...v1.11.0) (2025-09-17)
+
+
+### Features
+
+* add shortcuts to command palette ([#1255](https://github.com/dhis2/data-quality-app/issues/1255)) ([87e1336](https://github.com/dhis2/data-quality-app/commit/87e1336075b0961f48e7e737fe72e4216585f6f3))
+
 ## [1.10.36](https://github.com/dhis2/data-quality-app/compare/v1.10.35...v1.10.36) (2025-03-24)
 
 
