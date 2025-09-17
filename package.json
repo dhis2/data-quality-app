@@ -18,7 +18,7 @@
         "format": "d2-style apply"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^12.3.0",
+        "@dhis2/cli-app-scripts": "^12.7.2",
         "@dhis2/cli-style": "^10.7.6"
     },
     "dependencies": {

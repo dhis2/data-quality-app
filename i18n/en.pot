@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
-"PO-Revision-Date: 2023-03-02T10:03:37.227Z\n"
+"POT-Creation-Date: 2025-09-12T13:28:26.136Z\n"
+"PO-Revision-Date: 2025-09-12T13:28:26.136Z\n"
 
 msgid "No match found"
 msgstr "No match found"
@@ -277,3 +277,23 @@ msgstr ""
 
 msgid "View Data Values"
 msgstr "View Data Values"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "Data Quality"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Validation rule analysis"
+msgstr "Validation rule analysis"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Outlier detection"
+msgstr "Outlier detection"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Follow-up analysis"
+msgstr "Follow-up analysis"
