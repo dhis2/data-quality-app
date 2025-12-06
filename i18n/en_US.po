@@ -1,26 +1,22 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
-# Phouthasinh PHEUAYSITHIPHONE, 2023
-# Saysamone Sibounma, 2024
-# Namwan Chanthavisouk, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2019-07-30 08:30+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2025\n"
-"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "No match found"
-msgstr "ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນ"
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -35,21 +31,19 @@ msgid "Open user guide"
 msgstr ""
 
 msgid "Download as PDF"
-msgstr "ດາວໂຫຼດເປັນ PDF"
+msgstr ""
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr "ດາວໂຫຼດເປັນ CSV"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
 msgstr ""
-"​ຜົນ​ອອກ​ມາ​ເກີນກວ່າ ໕໐໐ "
-"​ກະ​ລຸ​ນາ​ຄົ້ນ​ຫາ​ໃນ​ຂອບ​ເຂດ​ທີ່​ຕ່ຳ​ກວ່ານີ້​ເພື່ອ​ເບີ່ງ​ທັງ​ໝົດ"
 
 msgid "No values found"
-msgstr "ບໍ່ມີຄ່າ"
+msgstr ""
 
 msgid "Elements unfollowed"
 msgstr ""
@@ -58,31 +52,31 @@ msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "Follow-Up Analysis"
+msgstr ""
 
 msgid "Comment"
-msgstr "​ຄຳ​ເຫັນ​ຕ່າງໆ"
+msgstr ""
 
 msgid "Close"
-msgstr "ປິດ"
+msgstr "बंद करे"
 
 msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Period"
-msgstr "ໄລຍະ ເວລາ"
+msgstr ""
 
 msgid "Min"
-msgstr "ຄ່າຕໍ່າສຸດ"
+msgstr ""
 
 msgid "Value"
-msgstr "ຄ່າ"
+msgstr ""
 
 msgid "Max"
-msgstr "ຄ່າໃຫ່ຍສຸດ"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
@@ -91,46 +85,46 @@ msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "ແບບຟອມ (ຊຸດ​ຂໍ້​ມູນ)"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງຂັ້ນສູງ"
+msgstr ""
 
 msgid "Start date"
-msgstr "ວັນທີເລີ່ມຕົ້ນ"
+msgstr ""
 
 msgid "End date"
-msgstr "ວັນທີສຸດທ້າຍ"
+msgstr ""
 
 msgid "Processing..."
-msgstr "ກຳລັງປະມວນຜົນ..."
+msgstr ""
 
 msgid "Follow up"
-msgstr "ຕິດຕາມ"
+msgstr ""
 
 msgid "Data set"
-msgstr "Data set\\:"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr "ຜົນຮັບສູງສຸດ"
+msgstr ""
 
 msgid "Start"
-msgstr "Start"
+msgstr ""
 
 msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "Hide advanced options"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "Show advanced options"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -139,7 +133,7 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "ຈັດລຽນຕາມ"
+msgstr ""
 
 msgid "Absolute Deviation from Mean"
 msgstr ""
@@ -151,19 +145,19 @@ msgid "Deviation"
 msgstr ""
 
 msgid "Std Dev"
-msgstr "ຄ່າມາດຕະຖານການສົມທຽບ"
+msgstr ""
 
 msgid "Mean"
-msgstr "ຄ່າສະເລ່ຍ"
+msgstr ""
 
 msgid "Median"
-msgstr "ເສັ້ນຈອມກາງ"
+msgstr ""
 
 msgid "Follow-up"
-msgstr "ຕິດຕາມ"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "ໝາຍໄວ້ເພື່ອຕິດຕາມ"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -172,10 +166,10 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Z-score"
-msgstr "Z-score"
+msgstr ""
 
 msgid "Modified Z-score"
-msgstr "ປັບປຸງ  Z - ຄະແນນ"
+msgstr ""
 
 msgid "Min-max values"
 msgstr ""
@@ -190,7 +184,7 @@ msgid "Validating..."
 msgstr ""
 
 msgid "Validate"
-msgstr "ກວດສອບ"
+msgstr ""
 
 msgid "[All Validation Rules]"
 msgstr ""
@@ -202,10 +196,10 @@ msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Validation passed successfully"
+msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr "ກວດສອບຂໍ້ມູນ"
+msgstr ""
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -214,16 +208,16 @@ msgid "Attr. Opt. Combo"
 msgstr ""
 
 msgid "Importance"
-msgstr "ສຳຄັນ"
+msgstr ""
 
 msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "Operator"
+msgstr ""
 
 msgid "Details"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -232,10 +226,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr ""
 
 msgid "Description"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
@@ -247,7 +241,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr "ເບີ່ງລາຍລະອຽດ"
+msgstr ""
 
 msgid "Validation Details"
 msgstr ""
@@ -262,8 +256,6 @@ msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
 msgstr ""
-"​ເປີດ​ເອົາ​ຫລັກ​ການຢັ້ງ​ຢືນ​ເພື່ອ​ເບີ່ງວ່າ​ຈະ​ມີ​ຫ​ຍັງ​ທີ່​ຜິດ​ປົກ​ກະ​ຕິ ແລະ"
-" ບໍ່​ຖືກ​ຕ້ອງ​ຂອງ​ຂໍ້​ມູນ​ຢູ່​ໃນ​ຖານ​ຂໍ້​ມູນ"
 
 msgid "Run Validation"
 msgstr ""
@@ -283,7 +275,6 @@ msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
 msgstr ""
-"​ວິວ​ເບີ່ງ​ຫລື​ແປງ​ມູນ​ຄ່າ​ຂໍ້​ມູນ​ທີ່​ໄດ້​ໝາຍ​ໄວ້​ເພື່ອ​ຕິດ​ຕາມນັ້ນ​ເວ​ລາ​ປ້ອນ​ຂໍ້​ມູນ​ຫລື​ວິ​ໄຈ​ຂໍ້​ມູນ"
 
 msgid "View Data Values"
 msgstr ""
