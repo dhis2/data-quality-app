@@ -56,7 +56,7 @@ msgid "Organisation Unit"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "वैल्यू"
 
 msgid "Z-Score"
 msgstr ""
