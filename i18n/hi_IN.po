@@ -74,7 +74,7 @@ msgid "Min"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "वैल्यू"
 
 msgid "Max"
 msgstr ""
