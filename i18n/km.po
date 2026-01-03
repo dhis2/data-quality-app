@@ -1,14 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
+# Em Le <em.hispvietnam@gmail.com>, 2025
+# Kiry Heng, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2023-05-22 18:23+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Kiry Heng, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -113,7 +115,7 @@ msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr ""
+msgstr "លទ្ធផលអតិបរិមា"
 
 msgid "Start"
 msgstr ""
@@ -134,7 +136,7 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr ""
+msgstr "តម្រៀបដោយ"
 
 msgid "Absolute Deviation from Mean"
 msgstr ""
@@ -149,10 +151,10 @@ msgid "Std Dev"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "មធ្យម"
 
 msgid "Median"
-msgstr ""
+msgstr "ម៉េឌីយ៉ាន"
 
 msgid "Follow-up"
 msgstr "តាមដាន"
