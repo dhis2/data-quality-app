@@ -1,6 +1,5 @@
 # 
 # Translators:
-# Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2025
 # 
 msgid ""
@@ -9,15 +8,15 @@ msgstr ""
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
 "Last-Translator: Rohit Wadhwani, 2025\n"
-"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi_IN\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -59,7 +58,7 @@ msgid "Comment"
 msgstr ""
 
 msgid "Close"
-msgstr "बंद करें"
+msgstr "बंद करे"
 
 msgid "Data Element"
 msgstr ""
@@ -74,7 +73,7 @@ msgid "Min"
 msgstr ""
 
 msgid "Value"
-msgstr "वैल्यू"
+msgstr ""
 
 msgid "Max"
 msgstr ""
@@ -230,7 +229,7 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "नाम"
+msgstr ""
 
 msgid "Description"
 msgstr ""
