@@ -1,23 +1,22 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2022
-# easylin <lin_xd@126.com>, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2022-04-20 10:03+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
-"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "No match found"
-msgstr "未找到匹配项"
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -29,22 +28,22 @@ msgid "You do not have access to any organisation units."
 msgstr ""
 
 msgid "Open user guide"
-msgstr "打开用户指南"
+msgstr ""
 
 msgid "Download as PDF"
-msgstr "获取pdf格式报表"
+msgstr ""
 
 msgid "Download as XLS"
 msgstr ""
 
 msgid "Download as CSV"
-msgstr "获取CSV格式报表"
+msgstr ""
 
 msgid "More than 500 values found, please narrow the search to see all"
-msgstr "超过500个值被找到，请修复这个规则或缩小搜索去查看全部"
+msgstr ""
 
 msgid "No values found"
-msgstr "无值被找到"
+msgstr ""
 
 msgid "Elements unfollowed"
 msgstr ""
@@ -53,31 +52,31 @@ msgid "An unexpected error happened during analysis"
 msgstr ""
 
 msgid "Follow-Up Analysis"
-msgstr "后续分析"
+msgstr ""
 
 msgid "Comment"
-msgstr "意见"
+msgstr ""
 
 msgid "Close"
-msgstr "关闭"
+msgstr "बंद करे"
 
 msgid "Data Element"
-msgstr "数据元"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "组织机构"
+msgstr ""
 
 msgid "Period"
-msgstr "周期"
+msgstr ""
 
 msgid "Min"
-msgstr "最小"
+msgstr ""
 
 msgid "Value"
-msgstr "值"
+msgstr ""
 
 msgid "Max"
-msgstr "最大值"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
@@ -86,46 +85,46 @@ msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "数据集"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "上级组织机构"
+msgstr ""
 
 msgid "Start date"
-msgstr "起始日期"
+msgstr ""
 
 msgid "End date"
-msgstr "结束日期"
+msgstr ""
 
 msgid "Processing..."
-msgstr "正在处理......"
+msgstr ""
 
 msgid "Follow up"
-msgstr "后续跟踪"
+msgstr ""
 
 msgid "Data set"
-msgstr "数据集"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "组织机构"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr "最大结果"
+msgstr ""
 
 msgid "Start"
-msgstr "开始"
+msgstr ""
 
 msgid "Threshold"
 msgstr ""
 
 msgid "Hide advanced options"
-msgstr "隐藏高级选项"
+msgstr ""
 
 msgid "Show advanced options"
-msgstr "显示高级选项"
+msgstr ""
 
 msgid "Data start date"
 msgstr ""
@@ -134,7 +133,7 @@ msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "排序"
+msgstr ""
 
 msgid "Absolute Deviation from Mean"
 msgstr ""
@@ -149,16 +148,16 @@ msgid "Std Dev"
 msgstr ""
 
 msgid "Mean"
-msgstr "平均 "
+msgstr ""
 
 msgid "Median"
-msgstr "中位数"
+msgstr ""
 
 msgid "Follow-up"
-msgstr "后续"
+msgstr ""
 
 msgid "Marked for follow-up"
-msgstr "标记为后续"
+msgstr ""
 
 msgid "Unmarked for follow-up"
 msgstr ""
@@ -167,10 +166,10 @@ msgid "Outlier Detection"
 msgstr ""
 
 msgid "Z-score"
-msgstr "Z-分数"
+msgstr ""
 
 msgid "Modified Z-score"
-msgstr "修改后的Z评分"
+msgstr ""
 
 msgid "Min-max values"
 msgstr ""
@@ -182,25 +181,25 @@ msgid "Persist new results"
 msgstr ""
 
 msgid "Validating..."
-msgstr "验证中"
+msgstr ""
 
 msgid "Validate"
-msgstr "验证"
+msgstr ""
 
 msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr "验证规则组"
+msgstr ""
 
 msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "验证已成功"
+msgstr ""
 
 msgid "Validation Rule Analysis"
-msgstr "验证规则分析"
+msgstr ""
 
 msgid "Attribute Option Combination"
 msgstr ""
@@ -209,16 +208,16 @@ msgid "Attr. Opt. Combo"
 msgstr ""
 
 msgid "Importance"
-msgstr "重要性"
+msgstr ""
 
 msgid "Validation Rule"
-msgstr "验证规则"
+msgstr ""
 
 msgid "Operator"
-msgstr "操作员"
+msgstr ""
 
 msgid "Details"
-msgstr "详情"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -227,10 +226,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 msgid "Description"
-msgstr "描述"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
@@ -242,7 +241,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr "显示详情"
+msgstr ""
 
 msgid "Validation Details"
 msgstr ""
@@ -256,7 +255,7 @@ msgstr ""
 msgid ""
 "Run validation rules in order to unveil anomalies and errors in the data in "
 "the database."
-msgstr "为发现数据库中数据的异常和错误而运行验证规则。"
+msgstr ""
 
 msgid "Run Validation"
 msgstr ""
@@ -275,7 +274,7 @@ msgstr ""
 msgid ""
 "View or edit data values marked for further follow-up during data entry or "
 "analysis."
-msgstr "查看或者编辑标记为后续进一步的输入或分析的数据值\n"
+msgstr ""
 
 msgid "View Data Values"
 msgstr ""
