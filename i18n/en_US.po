@@ -1,23 +1,22 @@
 # 
 # Translators:
-# Siddharth Agarwal, 2025
-# Rohit Wadhwani, 2026
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-02T10:03:37.227Z\n"
 "PO-Revision-Date: 2023-05-22 18:23+0000\n"
-"Last-Translator: Rohit Wadhwani, 2026\n"
-"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi_IN\n"
+"Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -56,10 +55,10 @@ msgid "Follow-Up Analysis"
 msgstr ""
 
 msgid "Comment"
-msgstr "कमेंट"
+msgstr ""
 
 msgid "Close"
-msgstr "बंद करें"
+msgstr "बंद करे"
 
 msgid "Data Element"
 msgstr ""
@@ -71,13 +70,13 @@ msgid "Period"
 msgstr ""
 
 msgid "Min"
-msgstr "न्यूनतम"
+msgstr ""
 
 msgid "Value"
-msgstr "वैल्यू"
+msgstr ""
 
 msgid "Max"
-msgstr "अधिकतम"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
@@ -104,7 +103,7 @@ msgid "Follow up"
 msgstr ""
 
 msgid "Data set"
-msgstr "डेटा सेट"
+msgstr ""
 
 msgid "Organisation units"
 msgstr ""
@@ -227,10 +226,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "नाम"
+msgstr ""
 
 msgid "Description"
-msgstr "विवरण"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
