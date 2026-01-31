@@ -1,25 +1,22 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2021-09-03 23:45+0000\n"
-"Last-Translator: Kiry Heng, 2025\n"
-"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "No match found"
-msgstr ""
+msgstr "कोई मिलान नहीं मिला"
 
 msgid "Error loading datasets."
 msgstr ""
@@ -58,28 +55,28 @@ msgid "Follow-Up Analysis"
 msgstr ""
 
 msgid "Comment"
-msgstr "មតិយោបល់"
+msgstr ""
 
 msgid "Close"
-msgstr "បិទ"
+msgstr "बंद करे"
 
 msgid "Data Element"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ផ្នែក​នៃ​អង្គការ"
+msgstr ""
 
 msgid "Period"
-msgstr "កំឡុងពេល"
+msgstr ""
 
 msgid "Min"
-msgstr "អប្បបរមា"
+msgstr ""
 
 msgid "Value"
-msgstr "តម្លៃ"
+msgstr ""
 
 msgid "Max"
-msgstr "អតិបរមា"
+msgstr ""
 
 msgid "Unfollow"
 msgstr ""
@@ -88,10 +85,10 @@ msgid "Unfollowing..."
 msgstr ""
 
 msgid "Data Set"
-msgstr "ទិន្នន័យឈុត"
+msgstr ""
 
 msgid "Parent organisation unit"
-msgstr "Parent organisation unit"
+msgstr ""
 
 msgid "Start Date"
 msgstr ""
@@ -103,25 +100,25 @@ msgid "Processing..."
 msgstr ""
 
 msgid "Follow up"
-msgstr "តាមដាន"
+msgstr ""
 
 msgid "Data set"
-msgstr "Data set"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisation units"
+msgstr ""
 
 msgid "Start date"
-msgstr "កាលបរិច្ឆេទ​ចាប់ផ្ដើម​"
+msgstr ""
 
 msgid "End date"
-msgstr "កាល​បរិច្ឆេទ​បញ្ចប់​"
+msgstr ""
 
 msgid "Algorithm"
 msgstr ""
 
 msgid "Max results"
-msgstr "លទ្ធផលអតិបរិមា"
+msgstr ""
 
 msgid "Start"
 msgstr ""
@@ -139,13 +136,13 @@ msgid "Data start date"
 msgstr ""
 
 msgid "Clear"
-msgstr "លុបចោល"
+msgstr "साफ़ करें"
 
 msgid "Data end date"
 msgstr ""
 
 msgid "Sort by"
-msgstr "តម្រៀបដោយ"
+msgstr ""
 
 msgid "Absolute Deviation from Mean"
 msgstr ""
@@ -157,10 +154,10 @@ msgid "Std Dev"
 msgstr ""
 
 msgid "Mean"
-msgstr "មធ្យម"
+msgstr ""
 
 msgid "Follow-up"
-msgstr "តាមដាន"
+msgstr ""
 
 msgid "Marked for follow-up"
 msgstr ""
@@ -202,7 +199,7 @@ msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
 
 msgid "Validation passed successfully"
-msgstr "Validation passed successfully"
+msgstr ""
 
 msgid "Validation Rule Analysis"
 msgstr ""
@@ -220,10 +217,10 @@ msgid "Validation Rule"
 msgstr ""
 
 msgid "Operator"
-msgstr "សញ្ញា​​​ប្រមាណ​វិធី"
+msgstr ""
 
 msgid "Details"
-msgstr "លម្អិត"
+msgstr ""
 
 msgid "VALIDATIONS RESULT DETAILS"
 msgstr ""
@@ -232,10 +229,10 @@ msgid "VALIDATION RULE"
 msgstr ""
 
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr ""
 
 msgid "Description"
-msgstr "ការ​ពិពណ៌នា"
+msgstr ""
 
 msgid "no data available"
 msgstr ""
@@ -247,7 +244,7 @@ msgid "VALUE"
 msgstr ""
 
 msgid "Show details"
-msgstr "បង្ហាញ​សេចក្ដី​លម្អិត"
+msgstr ""
 
 msgid "Validation Details"
 msgstr ""
