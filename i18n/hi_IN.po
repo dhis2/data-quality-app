@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2026
@@ -68,7 +67,7 @@ msgid "Organisation Unit"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "पीरियड"
 
 msgid "Min"
 msgstr "न्यूनतम"

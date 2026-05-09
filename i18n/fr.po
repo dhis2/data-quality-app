@@ -155,7 +155,7 @@ msgid "Deviation"
 msgstr "Déviation"
 
 msgid "Std Dev"
-msgstr "Dev. Std."
+msgstr "Écart-type"
 
 msgid "Mean"
 msgstr "Signifier"
