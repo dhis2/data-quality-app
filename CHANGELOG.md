@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/dhis2/data-quality-app/compare/v1.11.4...v1.11.5) (2026-05-13)
+
+
+### Bug Fixes
+
+* use gregorian calendar for iso to handle chrome bug ([ca96907](https://github.com/dhis2/data-quality-app/commit/ca969072b70a8d42037433003ab7180e26cbdacb))
+
 ## [1.11.4](https://github.com/dhis2/data-quality-app/compare/v1.11.3...v1.11.4) (2026-05-13)
 
 
