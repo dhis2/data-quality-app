@@ -15,7 +15,8 @@
         "format:js": "d2-style apply js",
         "format:text": "d2-style apply text",
         "format:staged": "d2-style apply --staged",
-        "format": "d2-style apply"
+        "format": "d2-style apply",
+        "postinstall": "patch-package"
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^12.7.2",
@@ -24,12 +25,14 @@
     "dependencies": {
         "@dhis2/app-runtime": "^3.13.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/multi-calendar-dates": "^1.0.0",
+        "@dhis2/multi-calendar-dates": "^2.1.2",
         "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^10.1.11",
+        "@dhis2/ui": "^10.14.0",
         "classnames": "^2.2.5",
         "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "0.20.2",
+        "patch-package": "^8.0.1",
+        "postinstall-postinstall": "^2.1.0",
         "prop-types": "^15.7.2",
         "query-string": "^7.0.1",
         "react-router-dom": "^5.0.0"
