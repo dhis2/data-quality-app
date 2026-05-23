@@ -1,20 +1,19 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Phouthasinh PHEUAYSITHIPHONE, 2023
-# Namwan Chanthavisouk, 2024
-# Saysamone Sibounma, 2024
+# Namwan Chanthavisouk, 2025
+# Saysamone Sibounma, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-30T13:01:40.506Z\n"
 "PO-Revision-Date: 2021-09-03 23:45+0000\n"
-"Last-Translator: Saysamone Sibounma, 2024\n"
+"Last-Translator: Saysamone Sibounma, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -67,7 +66,7 @@ msgid "Close"
 msgstr "ປິດ"
 
 msgid "Data Element"
-msgstr ""
+msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "Organisation Unit"
 msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
@@ -103,7 +102,7 @@ msgid "End Date"
 msgstr ""
 
 msgid "Processing..."
-msgstr ""
+msgstr "ກຳລັງປະມວນຜົນ..."
 
 msgid "Follow up"
 msgstr "ຕິດຕາມ"
@@ -199,7 +198,7 @@ msgid "[All Validation Rules]"
 msgstr ""
 
 msgid "Validation Rule Group"
-msgstr ""
+msgstr "ກຸ່ມກົດເກນການກວດສອບຄວາມຖືກຕ້ອງ"
 
 msgid "Error loading validation rule groups: {{- error}}"
 msgstr ""
@@ -220,7 +219,7 @@ msgid "Importance"
 msgstr "ສຳຄັນ"
 
 msgid "Validation Rule"
-msgstr ""
+msgstr "ກົດເກນການກວດສອບຄວາມຖືກຕ້ອງ"
 
 msgid "Operator"
 msgstr "ເຄື່ອງໝາຍເລກ"
