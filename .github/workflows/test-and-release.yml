@@ -18,7 +18,7 @@ jobs:
         needs: [lint-commits, lint, test]
         uses: dhis2/workflows-platform/.github/workflows/release.yml@v1
         with:
-            publish_apphub: false
+            publish_apphub: true
         # Skips forks and dependabot PRs
         if: '!github.event.push.repository.fork'
         secrets: inherit
