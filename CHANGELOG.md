@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/dhis2/data-quality-app/compare/v2.0.0...v2.1.0) (2026-06-02)
+
+
+### Features
+
+* trigger release ([#1372](https://github.com/dhis2/data-quality-app/issues/1372)) ([ed65a82](https://github.com/dhis2/data-quality-app/commit/ed65a822a4a4aa5a71a71ff5f8e134d05fbc2e5d))
+
 # [2.0.0](https://github.com/dhis2/data-quality-app/compare/v1.11.5...v2.0.0) (2026-06-02)
 
 
