@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dhis2/data-quality-app/compare/v1.11.5...v2.0.0) (2026-06-02)
+
+
+### Features
+
+* trigger release ([#1370](https://github.com/dhis2/data-quality-app/issues/1370)) ([57a507b](https://github.com/dhis2/data-quality-app/commit/57a507bf8cb9551a7e3d873acb69ce5f48061e88))
+
+
+### BREAKING CHANGES
+
+* bump to v100.0.0 for app hub release
+
 ## [1.11.5](https://github.com/dhis2/data-quality-app/compare/v1.11.4...v1.11.5) (2026-05-13)
 
 
