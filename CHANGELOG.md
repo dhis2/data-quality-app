@@ -1,3 +1,17 @@
+# [100.0.0](https://github.com/dhis2/data-quality-app/compare/v99.9.9...v100.0.0) (2026-06-10)
+
+
+### Features
+
+* bump to v100 ([#1374](https://github.com/dhis2/data-quality-app/issues/1374)) ([82b0364](https://github.com/dhis2/data-quality-app/commit/82b0364d7b4fc590a0e405c03229b0c56f6097d3))
+* bump to version 100 ([2adf86d](https://github.com/dhis2/data-quality-app/commit/2adf86df71bdd685b3d0c5ef400ca53c5e375fd1))
+
+
+### BREAKING CHANGES
+
+* bump to v100.0.0 for app hub release
+* bump to v100.0.0 for app hub release
+
 # [2.1.0](https://github.com/dhis2/data-quality-app/compare/v2.0.0...v2.1.0) (2026-06-02)
 
 
