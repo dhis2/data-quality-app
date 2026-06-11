@@ -1,3 +1,10 @@
+## [100.0.1](https://github.com/dhis2/data-quality-app/compare/v100.0.0...v100.0.1) (2026-06-11)
+
+
+### Bug Fixes
+
+* remove patch [DHIS2-21532] ([#1376](https://github.com/dhis2/data-quality-app/issues/1376)) ([02dc3d1](https://github.com/dhis2/data-quality-app/commit/02dc3d141dab40375135d067a081797447cba494))
+
 # [100.0.0](https://github.com/dhis2/data-quality-app/compare/v99.9.9...v100.0.0) (2026-06-10)
 
 
