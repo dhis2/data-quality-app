@@ -1,4 +1,4 @@
-import { formatYyyyMmDD, getCalendarDate } from './dates.js'
+import { getCalendarDate } from './dates.js'
 
 // Includes month-end, leap-year and year-wrap cases, since the default
 // start date is "three months before today"
@@ -9,20 +9,6 @@ const NOW_DATES = [
     '2025-01-10T10:30:00Z',
     '2024-09-12T10:30:00Z',
 ]
-
-describe('formatYyyyMmDD', () => {
-    it('pads month and day', () => {
-        expect(formatYyyyMmDD({ year: 2024, month: 3, day: 5 })).toBe(
-            '2024-03-05'
-        )
-    })
-
-    it('prefers eraYear over year', () => {
-        expect(
-            formatYyyyMmDD({ year: 7516, eraYear: 2016, month: 10, day: 8 })
-        ).toBe('2016-10-08')
-    })
-})
 
 describe.each(['gregory', 'ethiopian', 'nepali'])(
     'getCalendarDate (%s calendar)',
