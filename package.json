@@ -24,9 +24,9 @@
     "dependencies": {
         "@dhis2/app-runtime": "^3.13.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/multi-calendar-dates": "^2.1.2",
+        "@dhis2/multi-calendar-dates": "^3.2.1",
         "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^10.14.0",
+        "@dhis2/ui": "^10.19.3",
         "classnames": "^2.2.5",
         "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "0.20.2",
