@@ -2,17 +2,29 @@ import { Checkbox, TableRow, TableRowColumn } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
+import OrganisationUnitHierarchy from '../../../components/OrganisationUnitHierarchy/OrganisationUnitHierarchy.jsx'
+import { formatHierarchy } from '../../../helpers/org-unit-hierarchy.js'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles.js'
 
-const ElementRow = ({ element, isZScoreAlgorithm, onToggleCheckbox }) => (
+const ElementRow = ({
+    ancestors,
+    element,
+    isZScoreAlgorithm,
+    onToggleCheckbox,
+}) => (
     <TableRow>
         <TableRowColumn>
             <span title={element.displayName}>{element.displayName}</span>
         </TableRowColumn>
         <TableRowColumn>{element.pe}</TableRowColumn>
         <TableRowColumn>
-            <span title={element.ouName}>{element.ouName}</span>
+            <span title={formatHierarchy(element.ouName, ancestors)}>
+                <OrganisationUnitHierarchy
+                    name={element.ouName}
+                    ancestors={ancestors}
+                />
+            </span>
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber value={element.value} minimumFractionDigits={0} />
@@ -67,6 +79,7 @@ ElementRow.propTypes = {
     element: PropTypes.object.isRequired,
     isZScoreAlgorithm: PropTypes.bool.isRequired,
     onToggleCheckbox: PropTypes.func.isRequired,
+    ancestors: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default ElementRow

@@ -1,3 +1,5 @@
+import { parseAncestorNames } from '../../helpers/org-unit-hierarchy.js'
+
 const generateElementKey = (e) =>
     `${e.validationRuleId}-${e.periodId}-${e.organisationUnitId}-${e.attributeOptionComboId}`
 
@@ -8,6 +10,10 @@ const convertElementFromApiResponse = (e) => ({
     attributeOptionComboId: e.attributeOptionComboId,
     organisation: e.organisationUnitDisplayName,
     organisationUnitId: e.organisationUnitId,
+    organisationUnitAncestors: parseAncestorNames({
+        ancestorNames: e.organisationUnitAncestorNames,
+        path: e.organisationUnitPath,
+    }),
     period: e.periodDisplayName,
     periodId: e.periodId,
     importance: e.importance,
