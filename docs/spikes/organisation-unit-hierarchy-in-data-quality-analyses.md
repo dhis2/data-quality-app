@@ -2,6 +2,8 @@
 
 Status: spike / proof of concept. Not production-ready; see [Spike code vs production work](#18-recommended-next-step).
 
+For a plain-language walkthrough of each module's API calls, the OU lookup and the case for a backend change, see [organisation-unit-hierarchy-api-guide.md](./organisation-unit-hierarchy-api-guide.md).
+
 ## 1. Problem statement and scope
 
 The validation rule, outlier detection and follow-up analysis result tables show only the organisation unit (OU) name, e.g. `Ngelehun CHC`. Facility names repeat across districts and are often not unique, so national and regional users cannot tell where a finding is without leaving the app.
@@ -29,7 +31,10 @@ Other relevant facts:
 
 -   No OU metadata or hierarchy is cached anywhere in the app. `AvailableOrganisationUnitsTree` uses the `@dhis2/ui` `OrganisationUnitTree` for input only.
 -   Every result row already carries the OU UID, which is the stable join key.
--   Results are capped at 500 rows: the outlier form offers 100/200/500, and `apiConf.results.analysis.limit` is 500.
+-   Results are capped per analysis:
+    -   Validation rules: 500 by default (`ValidationService.MAX_INTERACTIVE_ALERTS`, also limited by the `keyDataQualityMaxLimit` system setting).
+    -   Outliers: the form offers 100/200/500.
+    -   Follow-up: **50**. The app doesn't send `maxResults`, so the server default in `FollowupAnalysisRequest` applies. The app's 500-row warning (`apiConf.results.analysis.limit`) can therefore never show on that page; this is pre-existing and not caused by the spike.
 -   Existing cells use the HTML `title` attribute to show full values on hover.
 -   Tests: Jest via `d2-app-scripts test` (jsdom). Before this spike there was only one spec file and no `@testing-library` dependency.
 
@@ -204,7 +209,9 @@ These examples are hand-written fixtures based on the DTOs, not captured API res
 
 -   **Request count:**
     -   Validation rules: 0 extra requests.
-    -   Outliers and follow-up: ⌈unique OUs / 100⌉ requests in parallel, at most 5 at the 500-row cap. Never one request per row.
+    -   Outliers: ⌈unique OUs / 100⌉ requests in parallel, at most 5 at the 500-row cap.
+    -   Follow-up: always 1 request, because of the 50-row cap.
+    -   Never one request per row: each request carries up to 100 OU UIDs.
 -   **Deduplication:** ids are deduplicated before batching. Per mounted table, each id is requested at most once, so toggling follow-up or unfollowing rows triggers no new requests.
 -   **Caching across pages:** not done in the spike. Running a new analysis remounts the table and refetches. Two options for production:
 
@@ -232,7 +239,13 @@ For production, a total failure should probably show one page-level `NoticeBox` 
 
 ## 13. Backend/API changes required
 
-None for this proof of concept. Optional improvement: add `ouPath` (or `ouAncestorNames`) to `OutlierValue` by selecting `ou.path` in the three `*SqlStatementProcessor`s and mapping it in `AbstractOutlierDetectionManager`. That would let outliers use option A or C, but only on new core versions, so the client-side join would still be needed for older servers.
+None are needed for the proof of concept, but a backend change is **recommended** as the long-term solution. The client-side join should only be a fallback for older servers.
+
+-   **Outliers:** select `ou.path` in the three `*SqlStatementProcessor`s, map it in `AbstractOutlierDetectionManager`, and add `ouPath` plus ancestor names to `OutlierValue`.
+-   **Follow-up:** add ancestor names to `FollowupValue`; `ouPath` is already there.
+-   **Downloads:** include the hierarchy in the CSV/PDF/XLS outputs. A client-side join can never add it there.
+
+Why: the server already reads the OU table during each analysis, validation rules already returns ancestor names, and other API users would benefit too. New fields only reach new core versions, so the app keeps the client-side join as a fallback until its minimum supported DHIS2 version includes them. See [Why the backend should provide this](./organisation-unit-hierarchy-api-guide.md#why-the-backend-should-provide-this).
 
 ## 14. Accessibility and localisation
 
@@ -295,7 +308,7 @@ These are **preliminary engineering estimates**, assuming the spike code is used
 | Follow-up analysis page                                                                          | 0.5–1 day            | Possibly switch to option C using `ouPath`                    |
 | Outlier detection page                                                                           | 1–1.5 days           | Includes performance check on a large DB                      |
 | QA on 2.38 + latest, RTL, narrow viewport                                                        | 1 day                |                                                               |
-| _Optional_ backend: `ouPath` in `OutlierValue`                                                   | 1–2 days (core team) | Separate story; doesn't block the app work                    |
+| Recommended backend: hierarchy fields in outlier/follow-up responses and downloads               | 2–3 days (core team) | Separate story; doesn't block the app work                    |
 
 Total for the app: about 5–7 days.
 
@@ -313,7 +326,7 @@ Acceptance criteria:
 -   `<bdi>` segments for RTL.
 -   Tests as in section 15.
 
-Plus an optional follow-up for the core team: add `ouPath` to the outlier detection response.
+Plus a recommended story for the core team: add hierarchy fields to the outlier and follow-up responses and to the downloads (section 13). The app then reads them directly and keeps the client-side join only for older servers.
 
 ### Spike code vs production work
 
