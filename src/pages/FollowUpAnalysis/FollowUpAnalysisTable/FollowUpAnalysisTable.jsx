@@ -13,6 +13,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs.jsx'
+import useOrganisationUnitAncestors from '../../../components/OrganisationUnitHierarchy/use-organisation-unit-ancestors.js'
 import { apiConf } from '../../../server.conf.js'
 import cssPageStyles from '../../Page.module.css'
 import ElementRow from './ElementRow.jsx'
@@ -25,6 +26,9 @@ const FollowUpAnalysisTable = ({
 }) => {
     const [commentVisible, setCommentVisible] = useState(false)
     const [comment, setComment] = useState(null)
+    const ancestorsById = useOrganisationUnitAncestors(
+        elements.map(({ organisationUnitId }) => organisationUnitId)
+    )
 
     const handleCloseCommentDialog = () => {
         setCommentVisible(false)
@@ -100,6 +104,9 @@ const FollowUpAnalysisTable = ({
                     {elements.map((element) => (
                         <ElementRow
                             key={element.key}
+                            ancestors={
+                                ancestorsById[element.organisationUnitId]
+                            }
                             element={element}
                             onCheckboxToggle={() =>
                                 onCheckboxToggle(element.key)

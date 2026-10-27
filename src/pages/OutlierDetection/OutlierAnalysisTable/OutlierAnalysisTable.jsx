@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import DownloadAs from '../../../components/DownloadAs/DownloadAs.jsx'
+import useOrganisationUnitAncestors from '../../../components/OrganisationUnitHierarchy/use-organisation-unit-ancestors.js'
 import cssPageStyles from '../../Page.module.css'
 import {
     Z_SCORE_ALGORITHMS,
@@ -26,6 +27,9 @@ const OutlierAnalyisTable = ({
     algorithm,
 }) => {
     const isZScoreAlgorithm = Z_SCORE_ALGORITHMS.has(algorithm)
+    const ancestorsById = useOrganisationUnitAncestors(
+        elements.map(({ ou }) => ou)
+    )
 
     const downloadLink = (
         <DownloadAs
@@ -112,6 +116,7 @@ const OutlierAnalyisTable = ({
                     {elements.map((element) => (
                         <ElementRow
                             key={element.key}
+                            ancestors={ancestorsById[element.ou]}
                             element={element}
                             isZScoreAlgorithm={isZScoreAlgorithm}
                             onToggleCheckbox={onToggleCheckbox}
