@@ -2,6 +2,8 @@ import { Checkbox, TableRow, TableRowColumn } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
+import OrganisationUnitHierarchy from '../../../components/OrganisationUnitHierarchy/OrganisationUnitHierarchy.jsx'
+import { formatHierarchy } from '../../../helpers/org-unit-hierarchy.js'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles.js'
 
@@ -11,8 +13,16 @@ const ElementRow = ({ element, isZScoreAlgorithm, onToggleCheckbox }) => (
             <span title={element.displayName}>{element.displayName}</span>
         </TableRowColumn>
         <TableRowColumn>{element.pe}</TableRowColumn>
-        <TableRowColumn>
-            <span title={element.ouName}>{element.ouName}</span>
+        <TableRowColumn
+            title={formatHierarchy(
+                element.ouName,
+                element.organisationUnitAncestors
+            )}
+        >
+            <OrganisationUnitHierarchy
+                name={element.ouName}
+                ancestors={element.organisationUnitAncestors}
+            />
         </TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
             <FormattedNumber value={element.value} minimumFractionDigits={0} />

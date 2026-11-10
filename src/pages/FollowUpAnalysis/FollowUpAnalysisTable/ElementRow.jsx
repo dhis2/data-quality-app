@@ -8,13 +8,25 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
+import OrganisationUnitHierarchy from '../../../components/OrganisationUnitHierarchy/OrganisationUnitHierarchy.jsx'
+import { formatHierarchy } from '../../../helpers/org-unit-hierarchy.js'
 import cssPageStyles from '../../Page.module.css'
 import jsPageStyles from '../../PageStyles.js'
 
 const ElementRow = ({ element, onCheckboxToggle, onShowComment }) => (
     <TableRow>
         <TableRowColumn>{element.dataElement}</TableRowColumn>
-        <TableRowColumn>{element.organisation}</TableRowColumn>
+        <TableRowColumn
+            title={formatHierarchy(
+                element.organisation,
+                element.organisationUnitAncestors
+            )}
+        >
+            <OrganisationUnitHierarchy
+                name={element.organisation}
+                ancestors={element.organisationUnitAncestors}
+            />
+        </TableRowColumn>
         <TableRowColumn>{element.period}</TableRowColumn>
         <TableRowColumn className={cssPageStyles.numericalRow}>
             {typeof element.min === 'number' && (

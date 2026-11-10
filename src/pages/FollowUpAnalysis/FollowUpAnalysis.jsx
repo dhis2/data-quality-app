@@ -4,6 +4,7 @@ import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import MaxResultsAlertBar from '../../components/MaxResultsAlertBar/MaxResultsAlertBar.jsx'
+import useAddOrganisationUnitAncestors from '../../components/OrganisationUnitHierarchy/use-add-organisation-unit-ancestors.js'
 import PageHeader from '../../components/PageHeader/PageHeader.jsx'
 import { useSidebar } from '../../components/Sidebar/SidebarContext.js'
 import { apiConf } from '../../server.conf.js'
@@ -61,12 +62,17 @@ const FollowUpAnalysis = ({ sectionKey }) => {
             i18n.t('An unexpected error happened during analysis'),
         { critical: true }
     )
+    const { addAncestors, loading: loadingAncestors } =
+        useAddOrganisationUnitAncestors()
     const { loading: loadingFollowUpList, refetch: fetchFollowUpList } =
         useDataQuery(query, {
             lazy: true,
-            onComplete: (data) => {
-                const elements = data.followups.followupValues.map(
-                    convertElementFromApiResponse
+            onComplete: async (data) => {
+                const elements = await addAncestors(
+                    data.followups.followupValues.map(
+                        convertElementFromApiResponse
+                    ),
+                    (element) => element.organisationUnitId
                 )
                 setElements(elements)
                 if (elements.length > 0) {
@@ -160,7 +166,7 @@ const FollowUpAnalysis = ({ sectionKey }) => {
                     <Form
                         onSubmit={handleGetFollowUpList}
                         valid={formValid}
-                        loading={loadingFollowUpList}
+                        loading={loadingFollowUpList || loadingAncestors}
                         dataSetIds={dataSetIds}
                         onDataSetsChange={handleDataSetsChange}
                         onOrganisationUnitChange={handleOrganisationUnitChange}
