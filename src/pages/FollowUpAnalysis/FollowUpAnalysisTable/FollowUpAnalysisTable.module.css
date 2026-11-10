@@ -1,0 +1,4 @@
+.followUpAnalysisTable th:nth-child(-n + 2),
+.followUpAnalysisTable td:nth-child(-n + 2) {
+    width: 20%;
+}

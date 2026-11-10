@@ -16,6 +16,7 @@ import DownloadAs from '../../../components/DownloadAs/DownloadAs.jsx'
 import { apiConf } from '../../../server.conf.js'
 import cssPageStyles from '../../Page.module.css'
 import ElementRow from './ElementRow.jsx'
+import styles from './FollowUpAnalysisTable.module.css'
 
 const FollowUpAnalysisTable = ({
     elements,
@@ -57,7 +58,13 @@ const FollowUpAnalysisTable = ({
             <div className={cssPageStyles.cardHeader}>
                 <DownloadAs endpoint={apiConf.endpoints.reportAnalysis} />
             </div>
-            <Table selectable={false} className={cssPageStyles.appTable}>
+            <Table
+                selectable={false}
+                className={classNames(
+                    cssPageStyles.appTable,
+                    styles.followUpAnalysisTable
+                )}
+            >
                 <TableHeader
                     displaySelectAll={false}
                     adjustForCheckbox={false}
