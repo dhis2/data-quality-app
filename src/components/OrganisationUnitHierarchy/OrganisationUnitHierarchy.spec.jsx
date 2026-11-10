@@ -13,9 +13,7 @@ describe('OrganisationUnitHierarchy', () => {
         })
 
         expect(html).toContain('Ngelehun CHC</bdi>')
-        expect(html).toContain(
-            '<bdi>Sierra Leone</bdi> / <bdi>Bo</bdi> / <bdi>Badjia</bdi>'
-        )
+        expect(html).toContain('<bdi>Sierra Leone / Bo / Badjia</bdi>')
     })
 
     it('shows only the name for a root org unit', () => {

@@ -12,12 +12,7 @@ const OrganisationUnitHierarchy = ({ name, ancestors }) => (
         <bdi>{name}</bdi>
         {ancestors?.length > 0 && (
             <div className={styles.ancestors}>
-                {ancestors.map((ancestor, index) => (
-                    <React.Fragment key={index}>
-                        {index > 0 && HIERARCHY_SEPARATOR}
-                        <bdi>{ancestor}</bdi>
-                    </React.Fragment>
-                ))}
+                <bdi>{ancestors.join(HIERARCHY_SEPARATOR)}</bdi>
             </div>
         )}
         {ancestors === null && (
