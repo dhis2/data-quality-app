@@ -2,14 +2,26 @@ import { TableRow, TableRowColumn } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormattedNumber from '../../../components/FormattedNumber/FormattedNumber.jsx'
+import OrganisationUnitHierarchy from '../../../components/OrganisationUnitHierarchy/OrganisationUnitHierarchy.jsx'
+import { formatHierarchy } from '../../../helpers/org-unit-hierarchy.js'
 import ValidationRulesDetails from '../ValidationRulesDetails/ValidationRulesDetails.jsx'
 import styles from './ElementRow.module.css'
 import TableCellContent from './TableCellContent.jsx'
 
 const ElementRow = ({ element, shouldDisplayAttributeOptionCombo }) => (
     <TableRow key={element.key}>
-        <TableRowColumn title={element.organisation}>
-            <TableCellContent>{element.organisation}</TableCellContent>
+        <TableRowColumn
+            title={formatHierarchy(
+                element.organisation,
+                element.organisationUnitAncestors
+            )}
+        >
+            <TableCellContent>
+                <OrganisationUnitHierarchy
+                    name={element.organisation}
+                    ancestors={element.organisationUnitAncestors}
+                />
+            </TableCellContent>
         </TableRowColumn>
         {shouldDisplayAttributeOptionCombo && (
             <TableRowColumn title={element.attributeOptionCombo}>
