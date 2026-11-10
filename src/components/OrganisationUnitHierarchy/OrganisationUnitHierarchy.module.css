@@ -1,8 +1,11 @@
+.container {
+    white-space: normal;
+}
+
 .ancestors {
     font-size: 12px;
     line-height: 16px;
     color: var(--colors-grey700);
-    white-space: normal;
 }
 
 .unavailable {

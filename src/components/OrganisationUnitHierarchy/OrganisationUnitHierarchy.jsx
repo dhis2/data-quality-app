@@ -8,7 +8,7 @@ import styles from './OrganisationUnitHierarchy.module.css'
 // `ancestors` is an empty array for a root org unit, null when the hierarchy
 // is unavailable and undefined when it was not loaded
 const OrganisationUnitHierarchy = ({ name, ancestors }) => (
-    <div>
+    <div className={styles.container}>
         <bdi>{name}</bdi>
         {ancestors?.length > 0 && (
             <div className={styles.ancestors}>

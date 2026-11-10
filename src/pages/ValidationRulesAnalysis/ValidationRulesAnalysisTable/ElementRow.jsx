@@ -16,12 +16,10 @@ const ElementRow = ({ element, shouldDisplayAttributeOptionCombo }) => (
                 element.organisationUnitAncestors
             )}
         >
-            <TableCellContent>
-                <OrganisationUnitHierarchy
-                    name={element.organisation}
-                    ancestors={element.organisationUnitAncestors}
-                />
-            </TableCellContent>
+            <OrganisationUnitHierarchy
+                name={element.organisation}
+                ancestors={element.organisationUnitAncestors}
+            />
         </TableRowColumn>
         {shouldDisplayAttributeOptionCombo && (
             <TableRowColumn title={element.attributeOptionCombo}>
